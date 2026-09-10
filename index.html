@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <title>Anspruchsfinder – passende Unterstützung finden</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Kostenloser Anspruchsfinder: In wenigen Schritten passende Unterstützungsleistungen finden und unverbindlich an Partner vermitteln lassen." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://leistungsfinder.netlify.app/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Anspruchsfinder – passende Unterstützung finden" />
+  <meta property="og:description" content="Kostenloser Anspruchsfinder: In wenigen Schritten passende Unterstützungsleistungen finden und unverbindlich an Partner vermitteln lassen." />
+  <meta property="og:url" content="https://leistungsfinder.netlify.app/" />
+  <meta property="og:locale" content="de_DE" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Anspruchsfinder – passende Unterstützung finden" />
+  <meta name="twitter:description" content="Kostenloser Anspruchsfinder: In wenigen Schritten passende Unterstützungsleistungen finden und unverbindlich an Partner vermitteln lassen." />
+  <style>
+    :root {
+      --primary: #1a365d;
+      --primary-dark: #0f2544;
+      --accent: #8a6d1a;
+      --bg: #f4f5f7;
+      --text: #1a202c;
+      --muted: #5a6472;
+      --success: #2f6b3a;
+      --warning: #8a6d1a;
+      --danger: #a12a2a;
+      --card: #ffffff;
+      --border: #cbd2db;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Georgia", "Times New Roman", Cambria, serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+    }
+    header {
+      background: var(--primary);
+      color: #fff;
+      padding: 1.75rem 1rem;
+      text-align: center;
+      border-bottom: 4px solid var(--accent);
+    }
+    header h1 { margin: 0 0 0.4rem; font-size: 1.7rem; font-weight: 700; letter-spacing: 0.02em; }
+    header p { margin: 0; opacity: 0.92; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; font-size: 0.95rem; }
+    .container { max-width: 980px; margin: 0 auto; padding: 1.5rem 1rem; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      padding: 1.4rem;
+      margin-bottom: 1.25rem;
+      box-shadow: 0 1px 2px rgba(15,23,42,0.05);
+      border-top: 3px solid var(--primary);
+    }
+    .card h2 { margin-top: 0; font-size: 1.25rem; font-family: "Georgia", "Times New Roman", Cambria, serif; color: var(--primary-dark); }
+    .target-group-switch {
+      display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem;
+    }
+    .target-group-switch button {
+      border: 1px solid var(--border);
+      background: #fff;
+      padding: 0.55rem 1rem;
+      border-radius: 2px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    .target-group-switch button.active {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+    .step { display: none; }
+    .step.active { display: block; }
+    .options { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.75rem; }
+    .option-btn {
+      border: 1px solid var(--border);
+      background: #fff;
+      padding: 0.9rem;
+      border-radius: 3px;
+      cursor: pointer;
+      text-align: left;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+    .option-btn:hover { border-color: var(--primary); box-shadow: 0 2px 8px rgba(26,54,93,0.10); }
+    .option-btn strong { display: block; margin-bottom: 0.25rem; }
+    .option-btn small { color: var(--muted); }
+    .nav-buttons { display: flex; gap: 0.5rem; margin-top: 1rem; flex-wrap: wrap; }
+    .btn {
+      border: 1px solid transparent;
+      padding: 0.65rem 1.1rem;
+      border-radius: 2px;
+      cursor: pointer;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+    }
+    .btn-primary { background: var(--primary); color: #fff; }
+    .btn-secondary { background: #eef1f5; color: var(--primary-dark); border: 1px solid var(--border); }
+    .btn-success { background: var(--success); color: #fff; }
+    .btn-warning { background: var(--warning); color: #fff; }
+    .progress {
+      display: flex; gap: 0.25rem; margin: 1rem 0;
+    }
+    .progress .dot {
+      height: 6px; flex: 1; border-radius: 1px; background: var(--border);
+    }
+    .progress .dot.active { background: var(--primary); }
+    .progress-label {
+      margin: -0.5rem 0 1rem 0; font-size: 0.85rem; color: var(--muted); text-align: right;
+    }
+    label { display: block; margin-bottom: 0.35rem; font-weight: 600; }
+    input[type="text"], input[type="email"], input[type="tel"], textarea, select {
+      width: 100%;
+      padding: 0.65rem 0.75rem;
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      font-size: 1rem;
+      margin-bottom: 0.75rem;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    }
+    .checkbox-row {
+      display: flex; align-items: flex-start; gap: 0.5rem; margin: 0.5rem 0;
+      font-size: 0.95rem;
+    }
+    .checkbox-row input { margin-top: 0.25rem; }
+    .result-list { margin: 0; padding-left: 1.1rem; }
+    .result-list li { margin-bottom: 0.4rem; }
+    .badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 2px;
+      background: #eef1f5;
+      color: var(--primary-dark);
+      border: 1px solid var(--border);
+      margin-right: 0.4rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+    .muted { color: var(--muted); }
+    .footer {
+      border-top: 1px solid var(--border);
+      padding: 1.25rem 1rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    .footer a { color: var(--primary-dark); text-decoration: none; }
+    .footer a:hover { text-decoration: underline; }
+    .visit-counter {
+      margin-top: 0.75rem;
+      padding-top: 0.75rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.8rem;
+      color: var(--muted);
+      letter-spacing: 0.02em;
+    }
+    .visit-counter strong { color: var(--primary-dark); }
+    .lead-status { font-size: 0.85rem; margin: 0.25rem 0 0.75rem 0; min-height: 1.1em; }
+    .lead-status.ok { color: var(--success); }
+    .lead-status.err { color: var(--danger); }
+    .disclaimer {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 0.5rem;
+    }
+    .success-box {
+      border: 1px solid #bcd0c0;
+      border-left: 4px solid var(--success);
+      background: #f2f7f3;
+      color: #1f4327;
+      padding: 0.9rem 1.1rem;
+      border-radius: 2px;
+    }
+    @media (max-width: 600px) {
+      header h1 { font-size: 1.4rem; }
+      .option-btn { padding: 0.75rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Anspruchsfinder</h1>
+    <p>In wenigen Schritten passende Unterstützung finden – kostenlos und unverbindlich.</p>
+  </header>
+
+  <div class="container">
+    <div class="card">
+      <h2>Für wen suchst du passende Unterstützung?</h2>
+      <div class="target-group-switch">
+        <button class="active" data-target="private">Privatpersonen / Familien</button>
+        <button data-target="business">Unternehmen / Selbstständige</button>
+      </div>
+
+      <div class="progress" id="progressBar">
+        <div class="dot active"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+      <p class="progress-label" id="progressLabel">Schritt 1 von 4</p>
+
+      <!-- Step 1: Zielgruppe bereits gewählt, jetzt Bedarf -->
+      <div class="step active" id="step1">
+        <h3>Welcher Bedarf passt am besten?</h3>
+        <div class="options" id="needsPrivate">
+          <button class="option-btn" data-need="pflege">
+            <strong>Pflege & Gesundheit</strong>
+            <small>Pflegedienste, Hilfsmittel, Beratung</small>
+          </button>
+          <button class="option-btn" data-need="finanzen">
+            <strong>Finanzielle Hilfen</strong>
+            <small>Zuschüsse, Darlehen, Sozialleistungen</small>
+          </button>
+          <button class="option-btn" data-need="arbeit">
+            <strong>Arbeit & Weiterbildung</strong>
+            <small>Jobs, Umschulung, Förderungen</small>
+          </button>
+          <button class="option-btn" data-need="familie">
+            <strong>Familie & Kinder</strong>
+            <small>Elterngeld, Kita, Unterhalt</small>
+          </button>
+          <button class="option-btn" data-need="wohnen">
+            <strong>Wohnen & Energie</strong>
+            <small>Wohngeld, Heizkosten, Umbau</small>
+          </button>
+          <button class="option-btn" data-need="sonstiges">
+            <strong>Sonstiges</strong>
+            <small>Andere Unterstützung</small>
+          </button>
+        </div>
+        <div class="options" id="needsBusiness" style="display:none;">
+          <button class="option-btn" data-need="foerderung">
+            <strong>Förderungen & Zuschüsse</strong>
+            <small>Investitionen, Digitalisierung, Gründung</small>
+          </button>
+          <button class="option-btn" data-need="beratung">
+            <strong>Beratung & Coaching</strong>
+            <small>Recht, Steuern, Strategie</small>
+          </button>
+          <button class="option-btn" data-need="personal">
+            <strong>Personal & Qualifizierung</strong>
+            <small>Weiterbildung, Förderungen</small>
+          </button>
+          <button class="option-btn" data-need="energie">
+            <strong>Energie & Nachhaltigkeit</strong>
+            <small>Effizienz, Umstellung, Zuschüsse</small>
+          </button>
+          <button class="option-btn" data-need="sonstiges_b">
+            <strong>Sonstiges</strong>
+            <small>Andere Unterstützung</small>
+          </button>
+        </div>
+        <div class="nav-buttons">
+          <button class="btn btn-secondary" disabled>Zurück</button>
+          <button class="btn btn-primary" id="toStep2" disabled>Weiter</button>
+        </div>
+        <p class="disclaimer">Hinweis: Dies ist eine erste Orientierung. Eine rechtsverbindliche Prüfung erfolgt durch die Partner.</p>
+      </div>
+
+      <!-- Step 2: Details -->
+      <div class="step" id="step2">
+        <h3>Erzähle kurz von deiner Situation</h3>
+        <label for="detailText">Deine Angaben (freiwillig, aber hilfreich)</label>
+        <textarea id="detailText" rows="4" placeholder="Beschreibe kurz, welche Unterstützung du suchst (z. B. Alter, Haushalt, Besonderheiten)."></textarea>
+
+        <label for="region">Region / Ort (optional)</label>
+        <input type="text" id="region" placeholder="z. B. Bremen, Niedersachsen, bundesweit" />
+
+        <div class="nav-buttons">
+          <button class="btn btn-secondary" id="backToStep1">Zurück</button>
+          <button class="btn btn-primary" id="toStep3">Weiter</button>
+        </div>
+      </div>
+
+      <!-- Step 3: Kontakt & Einwilligung -->
+      <div class="step" id="step3">
+        <h3>Kontaktdaten für die Vermittlung</h3>
+        <p class="muted">Wir leiten deine Anfrage an passende Partner weiter. Diese kontaktieren dich unverbindlich.</p>
+
+        <label for="name">Name</label>
+        <input type="text" id="name" placeholder="Vor- und Nachname" />
+
+        <label for="email">E-Mail</label>
+        <input type="email" id="email" placeholder="deine@adresse.de" />
+
+        <label for="phone">Telefon (optional)</label>
+        <input type="tel" id="phone" placeholder="+49 ..." />
+
+        <div class="checkbox-row">
+          <input type="checkbox" id="consentPartner" />
+          <label for="consentPartner" style="font-weight:400; margin:0;">
+            Ich stimme zu, dass meine Angaben an passende Partner weitergegeben werden, damit diese mich kontaktieren können.
+          </label>
+        </div>
+
+        <div class="checkbox-row">
+          <input type="checkbox" id="consentPrivacy" />
+          <label for="consentPrivacy" style="font-weight:400; margin:0;">
+            Ich habe die Datenschutzhinweise gelesen und stimme der Verarbeitung meiner Daten zu.
+          </label>
+        </div>
+
+        <div class="nav-buttons">
+          <button class="btn btn-secondary" id="backToStep2">Zurück</button>
+          <button class="btn btn-success" id="submitLead">Anfrage absenden</button>
+        </div>
+        <p class="disclaimer">Du kannst die Einwilligung jederzeit widerrufen. Weitere Infos in der Datenschutzerklärung.</p>
+      </div>
+
+      <!-- Step 4: Ergebnis / Weiterleitung -->
+      <div class="step" id="step4">
+        <div class="success-box">
+          <strong>Vielen Dank!</strong>
+          <p>Deine Anfrage wurde erfasst. Wir leiten sie an passende Partner weiter. Du erhältst in der Regel binnen 1–2 Werktagen eine Rückmeldung.</p>
+          <p class="muted">Optional: Du kannst auch direkt zu einem Partner weitergeleitet werden.</p>
+          <p class="lead-status" id="leadStatus"></p>
+          <div class="nav-buttons">
+            <a class="btn btn-primary" id="partnerLink" href="#" target="_blank" rel="noopener">Jetzt zu Partner-Angeboten</a>
+            <button class="btn btn-secondary" id="restart">Neue Suche starten</button>
+          </div>
+        </div>
+
+        <h3>Das könnte für dich passen</h3>
+        <ul class="result-list" id="resultList">
+          <li><span class="badge">Info</span> Hier erscheinen passende Leistungen basierend auf deiner Auswahl.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>So funktioniert es</h2>
+      <ol>
+        <li>Wähle, für wen du Unterstützung suchst (privat oder Unternehmen).</li>
+        <li>Beschreibe kurz deinen Bedarf.</li>
+        <li>Gib Kontaktdaten und deine Einwilligung zur Partner-Vermittlung.</li>
+        <li>Erhalte unverbindliche Angebote passender Partner.</li>
+      </ol>
+      <p class="disclaimer">Keine Rechtsberatung. Angaben ohne Gewähr. Stand: 2026.</p>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <p>
+        <strong>Impressum</strong><br>
+        Anbieter: Stefan Schmidt, Hannoversche Straße 90, 28309 Bremen, schmidtstefan312@gmail.com, [Telefon optional], [USt-IdNr. falls vorhanden]<br>
+        Verantwortlich gem. § 5 TMG.<br><br>
+        <strong>Datenschutz</strong><br>
+        Wir verarbeiten deine Daten zur Durchführung der Partner-Vermittlung auf Grundlage deiner Einwilligung (Art. 6 Abs. 1 lit. a DSGVO).<br>
+        Du hast das Recht auf Auskunft, Berichtigung, Löschung und Widerspruch. Kontakt: schmidtstefan312@gmail.com.<br>
+        Bei Nutzung von Cookies/Tracking wird hier entsprechend informiert.<br><br>
+        <strong>Haftungsausschluss</strong><br>
+        Die Inhalte dienen nur der ersten Orientierung. Eine rechtsverbindliche Prüfung erfolgt durch die Partner. Wir übernehmen keine Gewähr für Vollständigkeit und Richtigkeit.<br><br>
+        <a href="#top">Nach oben</a>
+      </p>
+      <p class="visit-counter" id="visitCounter">
+        Besucher seit Start: <img src="https://visitor-badge.laobi.icu/badge?page_id=leistungsfinder.stefanschmidt&text=&style=flat-square" alt="Besucherzähler" style="vertical-align: middle; height: 1.1em;">
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    // State
+    const state = {
+      target: 'private', // 'private' | 'business'
+      need: null,
+      detailText: '',
+      region: '',
+      name: '',
+      email: '',
+      phone: ''
+    };
+
+    // Elements
+    const steps = [
+      document.getElementById('step1'),
+      document.getElementById('step2'),
+      document.getElementById('step3'),
+      document.getElementById('step4')
+    ];
+    const dots = Array.from(document.querySelectorAll('.progress .dot'));
+    const progressLabel = document.getElementById('progressLabel');
+    const targetButtons = Array.from(document.querySelectorAll('.target-group-switch button'));
+    const needsPrivate = document.getElementById('needsPrivate');
+    const needsBusiness = document.getElementById('needsBusiness');
+    const toStep2Btn = document.getElementById('toStep2');
+    const toStep3Btn = document.getElementById('toStep3');
+    const backToStep1Btn = document.getElementById('backToStep1');
+    const backToStep2Btn = document.getElementById('backToStep2');
+    const submitLeadBtn = document.getElementById('submitLead');
+    const restartBtn = document.getElementById('restart');
+    const partnerLink = document.getElementById('partnerLink');
+    const leadStatus = document.getElementById('leadStatus');
+    const resultList = document.getElementById('resultList');
+
+    const detailTextEl = document.getElementById('detailText');
+    const regionEl = document.getElementById('region');
+    const nameEl = document.getElementById('name');
+    const emailEl = document.getElementById('email');
+    const phoneEl = document.getElementById('phone');
+    const consentPartnerEl = document.getElementById('consentPartner');
+    const consentPrivacyEl = document.getElementById('consentPrivacy');
+
+    // Helpers
+    function showStep(index) {
+      steps.forEach((s, i) => {
+        s.classList.toggle('active', i === index);
+      });
+      dots.forEach((d, i) => {
+        d.classList.toggle('active', i <= index && index < 3);
+      });
+      progressLabel.textContent = index < 3 ? `Schritt ${index + 1} von 4` : 'Fertig';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function updateNeedsView() {
+      if (state.target === 'private') {
+        needsPrivate.style.display = 'grid';
+        needsBusiness.style.display = 'none';
+      } else {
+        needsPrivate.style.display = 'none';
+        needsBusiness.style.display = 'grid';
+      }
+    }
+
+    // Leistungs-Datenbank: pro Bedarf eine Liste konkreter Leistungen/Programme
+    // mit Kurzbeschreibung und Link zur offiziellen Anlaufstelle.
+    // Hier später eigene Partner-/Affiliate-Links eintragen, sobald vorhanden.
+    const needDetails = {
+      pflege: {
+        label: 'Pflege & Gesundheit',
+        items: [
+          { name: 'Pflegegeld', desc: 'Monatliche Geldleistung bei häuslicher Pflege durch Angehörige.', url: 'https://www.pflege.de/pflegekasse-pflegeversicherung/pflegegeld/' },
+          { name: 'Verhinderungspflege', desc: 'Kostenübernahme, wenn die pflegende Person ausfällt.', url: 'https://www.bundesgesundheitsministerium.de/themen/pflege/leistungen/verhinderungspflege.html' },
+          { name: 'Pflegehilfsmittel & Wohnraumanpassung', desc: 'Zuschuss für Hilfsmittel und barrierefreien Umbau.', url: 'https://www.pflege.de/pflegekasse-pflegeversicherung/pflegehilfsmittel/' }
+        ],
+        partnerUrl: 'https://www.pflege.de/'
+      },
+      finanzen: {
+        label: 'Finanzielle Hilfen',
+        items: [
+          { name: 'Bürgergeld', desc: 'Grundsicherung bei Arbeitslosigkeit oder geringem Einkommen.', url: 'https://www.arbeitsagentur.de/buergergeld' },
+          { name: 'Wohngeld', desc: 'Zuschuss zur Miete oder Belastung für Wohneigentum (Antrag beim örtlichen Wohngeldamt, nicht zentral online).', url: 'https://www.bmwsb.bund.de/Webs/BMWSB/DE/themen/bauen-wohnen/wohnraumfoerderung/wohngeld/wohngeld-node.html' },
+          { name: 'Kinderzuschlag', desc: 'Zusätzliche Leistung für Familien mit geringem Einkommen.', url: 'https://www.arbeitsagentur.de/familie-und-kinder/kinderzuschlag' }
+        ],
+        partnerUrl: 'https://www.verbraucherzentrale.de/'
+      },
+      arbeit: {
+        label: 'Arbeit & Weiterbildung',
+        items: [
+          { name: 'Bildungsgutschein', desc: 'Förderung von Umschulung oder Weiterbildung durch die Agentur für Arbeit.', url: 'https://www.arbeitsagentur.de/bildung/bildungsgutschein' },
+          { name: 'Aufstiegs-BAföG', desc: 'Förderung beruflicher Fortbildungen (z. B. Meister, Techniker).', url: 'https://www.aufstiegs-bafoeg.de/' },
+          { name: 'Gründungszuschuss', desc: 'Finanzielle Unterstützung beim Schritt in die Selbstständigkeit.', url: 'https://www.arbeitsagentur.de/gruendungszuschuss' }
+        ],
+        partnerUrl: 'https://www.arbeitsagentur.de/'
+      },
+      familie: {
+        label: 'Familie & Kinder',
+        items: [
+          { name: 'Elterngeld', desc: 'Einkommensersatz während der Elternzeit.', url: 'https://familienportal.de/familienportal/familienleistungen/elterngeld' },
+          { name: 'Kindergeld', desc: 'Monatliche Leistung für jedes Kind.', url: 'https://familienportal.de/familienportal/familienleistungen/kindergeld' },
+          { name: 'Unterhaltsvorschuss', desc: 'Hilfe für Alleinerziehende, wenn Unterhalt ausbleibt.', url: 'https://familienportal.de/familienportal/familienleistungen/unterhaltsvorschuss' }
+        ],
+        partnerUrl: 'https://familienportal.de/'
+      },
+      wohnen: {
+        label: 'Wohnen & Energie',
+        items: [
+          { name: 'Wohngeld', desc: 'Zuschuss zur Miete oder Wohneigentumsbelastung (Antrag beim örtlichen Wohngeldamt, nicht zentral online).', url: 'https://www.bmwsb.bund.de/Webs/BMWSB/DE/themen/bauen-wohnen/wohnraumfoerderung/wohngeld/wohngeld-node.html' },
+          { name: 'Stromspar-Check', desc: 'Kostenlose Energieberatung für einkommensschwache Haushalte, oft inkl. Soforthilfen wie LED-Lampen oder Kühlgerätetausch.', url: 'https://www.stromspar-check.de/' },
+          { name: 'KfW-Förderung energetische Sanierung', desc: 'Zuschuss/Kredit für energieeffizientes Bauen und Sanieren.', url: 'https://www.kfw.de/inlandsfoerderung/Privatpersonen/' }
+        ],
+        partnerUrl: 'https://www.wohngeld.org/'
+      },
+      sonstiges: {
+        label: 'Sonstige Unterstützung',
+        items: [
+          { name: 'Allgemeine Sozialberatung', desc: 'Kostenlose Erstberatung zu Ansprüchen und Anträgen.', url: 'https://www.caritas.de/hilfeundberatung' },
+          { name: 'Schuldnerberatung', desc: 'Unterstützung bei finanziellen Engpässen und Überschuldung.', url: 'https://www.diakonie.de/hilfe-vor-ort/schuldnerberatung' },
+          { name: 'Reiseversicherung (TravelSecure)', desc: 'Falls eine Reise ansteht: Auslandskranken-, Reiserücktritts- oder Reisegepäckversicherung im Vergleich.', url: 'https://www.awin1.com/cread.php?s=3744642&v=106517&q=501266&r=3083133' },
+          { name: 'Reiseversicherung (HelloSafe)', desc: 'Vergleich von über 40 Reiseversicherern, Angebot in wenigen Klicks.', url: 'https://www.awin1.com/cread.php?s=4837775&v=128757&q=610152&r=3083133' },
+          { name: 'Zahnzusatzversicherung', desc: 'Vergleich privater Zahnzusatzversicherungen, z.B. für Zahnersatz oder professionelle Zahnreinigung.', url: 'https://www.awin1.com/cread.php?s=4577512&v=121064&q=587200&r=3083133' }
+        ],
+        partnerUrl: 'https://www.caritas.de/'
+      },
+      foerderung: {
+        label: 'Förderungen & Zuschüsse',
+        items: [
+          { name: 'KfW-Förderkredite', desc: 'Zinsgünstige Kredite für Investitionen und Gründung (Beantragung über die Hausbank).', url: 'https://www.kfw.de/inlandsfoerderung/Unternehmen/Investitionen-und-Wachstum/' },
+          { name: 'Mittelstand-Digital Zentren', desc: 'Kostenlose, neutrale Beratung zur Digitalisierung im Unternehmen (Nachfolgeangebot zu "Digital Jetzt").', url: 'https://www.bundeswirtschaftsministerium.de/Redaktion/DE/Dossier/digital-jetzt.html' },
+          { name: 'EXIST-Gründerstipendium', desc: 'Förderung für technologieorientierte Existenzgründungen.', url: 'https://www.exist.de/' }
+        ],
+        partnerUrl: 'https://www.kfw.de/inlandsfoerderung/Unternehmen/index-2.html'
+      },
+      beratung: {
+        label: 'Beratung & Coaching',
+        items: [
+          { name: 'Förderung unternehmerisches Know-how (BAFA)', desc: 'Zuschuss für Unternehmensberatung, z. B. bei Gründung oder Krise.', url: 'https://www.bafa.de/DE/Wirtschaft/Beratung_Finanzierung/Unternehmensberatung/unternehmensberatung_node.html' },
+          { name: 'IHK-Beratung', desc: 'Kostenlose Erstberatung zu Recht, Steuern und Strategie.', url: 'https://www.ihk.de/' }
+        ],
+        partnerUrl: 'https://www.ihk.de/'
+      },
+      personal: {
+        label: 'Personal & Qualifizierung',
+        items: [
+          { name: 'Weiterbildung Geringqualifizierter (WeGebAU)', desc: 'Förderung der Weiterbildung von Beschäftigten.', url: 'https://www.arbeitsagentur.de/unternehmen/finanziell/foerderung-der-beruflichen-weiterbildung-fuer-arbeitnehmer' },
+          { name: 'Qualifizierungschancengesetz', desc: 'Zuschüsse zu Weiterbildungskosten und Arbeitsentgelt.', url: 'https://www.arbeitsagentur.de/unternehmen/finanziell/qualifizierungschancengesetz' }
+        ],
+        partnerUrl: 'https://www.arbeitsagentur.de/'
+      },
+      energie: {
+        label: 'Energie & Nachhaltigkeit',
+        items: [
+          { name: 'BAFA-Förderung Energieberatung', desc: 'Zuschuss für eine Energieberatung im Unternehmen.', url: 'https://www.bafa.de/DE/Energie/Energieberatung/Energieberatung_node.html' },
+          { name: 'KfW Energieeffizienz in der Wirtschaft', desc: 'Kredite und Zuschüsse für effizientere Anlagen und Prozesse.', url: 'https://www.kfw.de/inlandsfoerderung/Unternehmen/Energie-Umwelt/' }
+        ],
+        partnerUrl: 'https://www.kfw.de/'
+      },
+      sonstiges_b: {
+        label: 'Sonstige Unterstützung',
+        items: [
+          { name: 'Handwerkskammer-Beratung', desc: 'Individuelle Beratung zu Förderungen im Handwerk.', url: 'https://www.zdh.de/handwerksorganisationen/handwerkskammern/' },
+          { name: 'Bürgschaftsbanken', desc: 'Absicherung von Krediten, wenn Sicherheiten fehlen.', url: 'https://www.vdb-info.de/' }
+        ],
+        partnerUrl: 'https://www.handwerkskammer.de/'
+      }
+    };
+
+    function renderResults() {
+      const details = needDetails[state.need];
+      if (!details) {
+        resultList.innerHTML = '<li><span class="badge">Hinweis</span>Keine passende Kategorie gefunden.</li>';
+        partnerLink.href = '#';
+        return;
+      }
+      resultList.innerHTML = details.items.map(item => `
+        <li>
+          <span class="badge">${details.label}</span>
+          <strong>${item.name}</strong> – ${item.desc}
+          <br><a href="${item.url}" target="_blank" rel="noopener">Mehr erfahren</a>
+        </li>
+      `).join('') + `
+        <li><span class="badge">Hinweis</span>Dies ist eine erste Orientierung ohne Anspruchsgarantie. Die genaue Prüfung übernehmen die zuständigen Stellen bzw. unsere Partner.</li>
+      `;
+      partnerLink.href = details.partnerUrl;
+    }
+
+    // Events: Zielgruppe
+    targetButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        targetButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        state.target = btn.dataset.target;
+        state.need = null;
+        toStep2Btn.disabled = true;
+        updateNeedsView();
+      });
+    });
+
+    // Events: Bedarf auswählen
+    function selectNeed(need) {
+      state.need = need;
+      // Visual feedback
+      const allOptions = Array.from(document.querySelectorAll('.option-btn'));
+      allOptions.forEach(b => b.style.borderColor = 'var(--border)');
+      const activeBtn = document.querySelector(`.option-btn[data-need="${need}"]`);
+      if (activeBtn) {
+        activeBtn.style.borderColor = 'var(--primary)';
+      }
+      toStep2Btn.disabled = false;
+    }
+
+    needsPrivate.querySelectorAll('.option-btn').forEach(btn => {
+      btn.addEventListener('click', () => selectNeed(btn.dataset.need));
+    });
+    needsBusiness.querySelectorAll('.option-btn').forEach(btn => {
+      btn.addEventListener('click', () => selectNeed(btn.dataset.need));
+    });
+
+    // Navigation
+    toStep2Btn.addEventListener('click', () => {
+      state.detailText = detailTextEl.value.trim();
+      state.region = regionEl.value.trim();
+      showStep(1);
+    });
+
+    backToStep1Btn.addEventListener('click', () => {
+      showStep(0);
+    });
+
+    toStep3Btn.addEventListener('click', () => {
+      state.detailText = detailTextEl.value.trim();
+      state.region = regionEl.value.trim();
+      showStep(2);
+    });
+
+    backToStep2Btn.addEventListener('click', () => {
+      showStep(1);
+    });
+
+    // Submit Lead (hier kannst du die Daten an deinen Dienst senden)
+    submitLeadBtn.addEventListener('click', () => {
+      state.name = nameEl.value.trim();
+      state.email = emailEl.value.trim();
+      state.phone = phoneEl.value.trim();
+
+      if (!state.name || !state.email) {
+        alert('Bitte Name und E-Mail ausfüllen.');
+        return;
+      }
+      if (!consentPartnerEl.checked || !consentPrivacyEl.checked) {
+        alert('Bitte beide Einwilligungen bestätigen.');
+        return;
+      }
+
+      // Ergebnis sofort anzeigen, damit der Nutzer nicht auf den Versand warten muss
+      renderResults();
+      showStep(3);
+      leadStatus.textContent = 'Anfrage wird übermittelt …';
+      leadStatus.className = 'lead-status';
+
+      // Lead im Hintergrund per E-Mail verschicken (über Formspree, kein eigener Server nötig)
+      submitLeadBtn.disabled = true;
+      fetch('https://formspree.io/f/xnpqlyor', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          typ: state.target === 'private' ? 'Privatperson' : 'Unternehmen',
+          name: state.name,
+          email: state.email,
+          phone: state.phone,
+          region: state.region,
+          bedarf: state.need,
+          detailText: state.detailText
+        })
+      })
+        .then(res => {
+          if (!res.ok) throw new Error('send-lead fehlgeschlagen');
+          leadStatus.textContent = 'Deine Anfrage wurde erfolgreich übermittelt.';
+          leadStatus.className = 'lead-status ok';
+        })
+        .catch(err => {
+          console.error('Lead-Versand fehlgeschlagen:', err);
+          leadStatus.textContent = 'Die Übermittlung hat leider nicht geklappt. Bitte versuche es später erneut oder kontaktiere uns direkt.';
+          leadStatus.className = 'lead-status err';
+        })
+        .finally(() => { submitLeadBtn.disabled = false; });
+    });
+
+    restartBtn.addEventListener('click', () => {
+      // Reset
+      state.need = null;
+      state.detailText = '';
+      state.region = '';
+      state.name = '';
+      state.email = '';
+      state.phone = '';
+      detailTextEl.value = '';
+      regionEl.value = '';
+      nameEl.value = '';
+      emailEl.value = '';
+      phoneEl.value = '';
+      consentPartnerEl.checked = false;
+      consentPrivacyEl.checked = false;
+      toStep2Btn.disabled = true;
+      updateNeedsView();
+      showStep(0);
+    });
+
+    // Init
+    updateNeedsView();
+    showStep(0);
+  </script>
+</body>
+</html>
