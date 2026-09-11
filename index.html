@@ -625,7 +625,7 @@
 
       // Lead im Hintergrund per E-Mail verschicken (über Formspree, kein eigener Server nötig)
       submitLeadBtn.disabled = true;
-      fetch(https://formspree.io/f/xnpqlyor, {
+      fetch('https://formspree.io/f/xnpqlyor', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify({
