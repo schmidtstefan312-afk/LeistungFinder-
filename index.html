@@ -16,22 +16,23 @@
   <meta name="twitter:description" content="Kostenloser Anspruchsfinder: In wenigen Schritten passende Unterstützungsleistungen finden und unverbindlich an Partner vermitteln lassen." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary: #16324f;
-      --primary-dark: #0e2136;
-      --accent: #a9842c;
-      --bg: #f6f5f2;
-      --text: #21262e;
-      --muted: #5a6270;
+      --primary: #0f4c46;
+      --primary-dark: #0a3733;
+      --accent: #e0982e;
+      --accent-dark: #b87a20;
+      --bg: #faf7f2;
+      --text: #1e2624;
+      --muted: #5c6b67;
       --success: #2e6b44;
-      --warning: #8a6d1a;
+      --warning: #b87a20;
       --danger: #a3372f;
       --card: #ffffff;
-      --border: #dcdfe3;
-      --serif: "Source Serif 4", Georgia, "Times New Roman", serif;
-      --sans: "Source Sans 3", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      --border: #dfe3df;
+      --serif: "Fraunces", Georgia, "Times New Roman", serif;
+      --sans: "Work Sans", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     }
     * { box-sizing: border-box; }
     body {
@@ -41,58 +42,47 @@
       color: var(--text);
       line-height: 1.6;
     }
-    header {
+    .hero {
       background: var(--primary);
       color: #fff;
-      padding: 1.5rem 1.25rem;
-      border-bottom: 3px solid var(--accent);
+      padding: 2.25rem 1.25rem 4.5rem;
     }
-    .header-inner {
-      max-width: 980px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      gap: 0.9rem;
+    .hero-inner { max-width: 980px; margin: 0 auto; }
+    .logotype {
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: 1.05rem;
+      letter-spacing: 0.01em;
+      opacity: 0.85;
+      margin-bottom: 1.5rem;
     }
-    .header-mark {
-      flex: none;
-      width: 42px;
-      height: 42px;
-      border: 1px solid rgba(255,255,255,0.4);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .hero h1 {
       font-family: var(--serif);
       font-weight: 600;
+      font-size: 2.1rem;
+      line-height: 1.2;
+      margin: 0 0 0.75rem;
+      max-width: 18ch;
+    }
+    .hero p.lede {
+      max-width: 52ch;
       font-size: 1.05rem;
-      color: var(--accent);
-      background: rgba(255,255,255,0.06);
-    }
-    header h1 { margin: 0 0 0.2rem; font-family: var(--serif); font-size: 1.55rem; font-weight: 600; letter-spacing: 0.01em; }
-    header p { margin: 0; opacity: 0.85; font-size: 0.92rem; }
-    .intro {
-      max-width: 980px;
-      margin: 0 auto;
-      padding: 1.5rem 1rem 0.25rem;
-    }
-    .intro p {
-      max-width: 62ch;
-      color: var(--text);
-      font-size: 1rem;
+      opacity: 0.92;
+      margin: 0 0 1.5rem;
     }
     .trust-points {
       display: flex;
       flex-wrap: wrap;
-      gap: 0 1.75rem;
-      margin: 0.9rem 0 0.25rem;
+      gap: 0.5rem 1.75rem;
+      margin: 0;
       padding: 0;
       list-style: none;
     }
     .trust-points li {
       position: relative;
-      padding-left: 1.1rem;
+      padding-left: 1.05rem;
       font-size: 0.9rem;
-      color: var(--muted);
+      opacity: 0.85;
     }
     .trust-points li::before {
       content: "";
@@ -102,16 +92,63 @@
       width: 6px;
       height: 6px;
       background: var(--accent);
+      border-radius: 50%;
     }
-    .container { max-width: 980px; margin: 0 auto; padding: 1rem 1rem 1.5rem; }
+    .container { max-width: 980px; margin: 0 auto; padding: 0 1rem 1.5rem; }
     .card {
       background: var(--card);
       border: 1px solid var(--border);
-      border-radius: 2px;
+      border-radius: 3px;
       padding: 1.5rem;
       margin-bottom: 1.5rem;
     }
-    .card-wizard { border-left: 3px solid var(--primary); }
+    .card-wizard {
+      margin-top: -3.25rem;
+      border-top: 4px solid var(--accent);
+      box-shadow: 0 12px 28px rgba(15,32,29,0.14);
+    }
+    .step-flow {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem 1rem;
+      margin: 0.5rem 0 0.75rem;
+      padding: 0;
+      list-style: none;
+      counter-reset: none;
+    }
+    .step-flow li {
+      flex: 1 1 160px;
+      position: relative;
+      padding-top: 2.5rem;
+      font-size: 0.92rem;
+      color: var(--text);
+    }
+    .step-flow li::before {
+      content: "";
+      position: absolute;
+      top: 0.95rem;
+      left: 1.9rem;
+      right: -1rem;
+      height: 1px;
+      background: var(--border);
+    }
+    .step-flow li:last-child::before { display: none; }
+    .step-num {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1.9rem;
+      height: 1.9rem;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #fff;
+      font-family: var(--serif);
+      font-weight: 600;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
     .card h2 { margin-top: 0; font-size: 1.2rem; font-family: var(--serif); font-weight: 600; color: var(--primary-dark); }
     .target-group-switch {
       display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem;
@@ -197,24 +234,23 @@
     }
     .muted { color: var(--muted); }
     .footer {
-      border-top: 1px solid var(--border);
-      background: #eeece7;
+      background: var(--primary-dark);
       padding: 1.75rem 1rem;
-      color: var(--muted);
+      color: rgba(255,255,255,0.75);
       font-size: 0.88rem;
     }
-    .footer strong { color: var(--primary-dark); font-family: var(--serif); font-weight: 600; }
-    .footer a { color: var(--primary-dark); text-decoration: none; }
-    .footer a:hover { text-decoration: underline; }
+    .footer strong { color: #fff; font-family: var(--serif); font-weight: 600; }
+    .footer a { color: #fff; text-decoration: underline; text-decoration-color: rgba(255,255,255,0.4); }
+    .footer a:hover { text-decoration-color: #fff; }
     .visit-counter {
       margin-top: 0.75rem;
       padding-top: 0.75rem;
-      border-top: 1px solid var(--border);
+      border-top: 1px solid rgba(255,255,255,0.2);
       font-size: 0.8rem;
-      color: var(--muted);
+      color: rgba(255,255,255,0.6);
       letter-spacing: 0.02em;
     }
-    .visit-counter strong { color: var(--primary-dark); }
+    .visit-counter strong { color: #fff; }
     .lead-status { font-size: 0.85rem; margin: 0.25rem 0 0.75rem 0; min-height: 1.1em; }
     .lead-status.ok { color: var(--success); }
     .lead-status.err { color: var(--danger); }
@@ -238,45 +274,53 @@
       font-style: italic;
     }
     .partner-banners {
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 1rem;
-      justify-content: center;
-      align-items: center;
     }
-    .partner-banners a, .partner-banners iframe {
+    .banner-tile {
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      padding: 0.85rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.6rem;
+      background: #fdfcfa;
+    }
+    .banner-tile-label {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--primary-dark);
+      text-align: center;
+    }
+    .banner-tile a, .banner-tile iframe {
       display: inline-block;
       max-width: 100%;
     }
-    .partner-banners img {
+    .banner-tile img {
       max-width: 100%;
       height: auto;
       border-radius: 2px;
     }
     @media (max-width: 600px) {
-      header h1 { font-size: 1.4rem; }
+      .hero h1 { font-size: 1.6rem; }
       .option-btn { padding: 0.75rem; }
     }
   </style>
 </head>
 <body>
-  <header>
-    <div class="header-inner">
-      <div class="header-mark">AF</div>
-      <div>
-        <h1>Anspruchsfinder</h1>
-        <p>Orientierung zu staatlichen Unterstützungsleistungen – in wenigen Schritten.</p>
-      </div>
+  <div class="hero">
+    <div class="hero-inner">
+      <div class="logotype">Anspruchsfinder</div>
+      <h1>Finde heraus, welche Unterstützung dir zusteht.</h1>
+      <p class="lede">Beantworte ein paar kurze Fragen zu deiner Situation – wir ordnen sie passenden Unterstützungsleistungen zu und zeigen dir, an wen du dich wenden kannst.</p>
+      <ul class="trust-points">
+        <li>Kostenlose Nutzung</li>
+        <li>Keine Registrierung nötig</li>
+        <li>Unabhängige Ersteinschätzung</li>
+      </ul>
     </div>
-  </header>
-
-  <div class="intro">
-    <p>Der Anspruchsfinder ordnet deine Angaben passenden Unterstützungsleistungen zu und zeigt dir, an wen du dich wenden kannst. Die Nutzung ist kostenlos, unabhängig von einer konkreten Behörde und ersetzt keine Rechtsberatung.</p>
-    <ul class="trust-points">
-      <li>Kostenlose Nutzung</li>
-      <li>Keine Registrierung nötig</li>
-      <li>Unabhängige Ersteinschätzung</li>
-    </ul>
   </div>
 
   <div class="container">
@@ -425,75 +469,55 @@
 
     <div class="card">
       <h2>So funktioniert es</h2>
-      <ol>
-        <li>Wähle, für wen du Unterstützung suchst (privat oder Unternehmen).</li>
-        <li>Beschreibe kurz deinen Bedarf.</li>
-        <li>Gib Kontaktdaten und deine Einwilligung zur Partner-Vermittlung.</li>
-        <li>Erhalte unverbindliche Angebote passender Partner.</li>
+      <ol class="step-flow">
+        <li><span class="step-num">1</span>Wählen, für wen du Unterstützung suchst</li>
+        <li><span class="step-num">2</span>Bedarf kurz beschreiben</li>
+        <li><span class="step-num">3</span>Kontaktdaten & Einwilligung geben</li>
+        <li><span class="step-num">4</span>Unverbindliche Angebote erhalten</li>
       </ol>
       <p class="disclaimer">Keine Rechtsberatung. Angaben ohne Gewähr. Stand: 2026.</p>
     </div>
 
     <div class="card">
-      <h2>Empfehlungen unserer Partner</h2>
+      <h2>Das könnte außerdem helfen</h2>
       <p class="ad-label">Anzeige – bei Abschluss über diese Links erhalten wir ggf. eine Vergütung.</p>
       <div class="partner-banners">
 
-        <!-- START ADVERTISER: Burda Vergleicht DE from awin.com -->
-        <a rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=4577504&v=121064&q=587200&r=3083133" target="_blank">
-          <img src="https://www.awin1.com/cshow.php?s=4577504&v=121064&q=587200&r=3083133" border="0" alt="Burda Vergleicht">
-        </a>
-        <!-- END ADVERTISER: Burda Vergleicht DE from awin.com -->
+        <div class="banner-tile">
+          <span class="banner-tile-label">Tarife &amp; Versicherungen vergleichen</span>
+          <!-- START ADVERTISER: Burda Vergleicht DE from awin.com -->
+          <a rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=4577504&v=121064&q=587200&r=3083133" target="_blank">
+            <img src="https://www.awin1.com/cshow.php?s=4577504&v=121064&q=587200&r=3083133" border="0" alt="Burda Vergleicht">
+          </a>
+          <!-- END ADVERTISER: Burda Vergleicht DE from awin.com -->
+        </div>
 
-        <!-- START ADVERTISER: Burda Vergleicht DE from awin.com -->
-        <a rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=4577497&v=121064&q=587200&r=3083133" target="_blank">
-          <img src="https://www.awin1.com/cshow.php?s=4577497&v=121064&q=587200&r=3083133" border="0" alt="Burda Vergleicht">
-        </a>
-        <!-- END ADVERTISER: Burda Vergleicht DE from awin.com -->
+        <div class="banner-tile">
+          <span class="banner-tile-label">Fernreisen entdecken</span>
+          <!-- START ADVERTISER: Explorer Fernreisen DE from awin.com -->
+          <a rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=3353262&v=41168&q=460451&r=3083133" target="_blank">
+            <img src="https://www.awin1.com/cshow.php?s=3353262&v=41168&q=460451&r=3083133" border="0" alt="Explorer Fernreisen">
+          </a>
+          <!-- END ADVERTISER: Explorer Fernreisen DE from awin.com -->
+        </div>
 
-        <!-- START ADVERTISER: Explorer Fernreisen DE from awin.com -->
-        <a rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=3353262&v=41168&q=460451&r=3083133" target="_blank">
-          <img src="https://www.awin1.com/cshow.php?s=3353262&v=41168&q=460451&r=3083133" border="0" alt="Explorer Fernreisen">
-        </a>
-        <!-- END ADVERTISER: Explorer Fernreisen DE from awin.com -->
+        <div class="banner-tile">
+          <span class="banner-tile-label">Reiseversicherung abschließen</span>
+          <!-- START ADVERTISER: TravelSecure DE from awin.com -->
+          <a rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=3744684&v=106517&q=501269&r=3083133" target="_blank">
+            <img src="https://www.awin1.com/cshow.php?s=3744684&v=106517&q=501269&r=3083133" border="0" alt="TravelSecure">
+          </a>
+          <!-- END ADVERTISER: TravelSecure DE from awin.com -->
+        </div>
 
-        <!-- START ADVERTISER: Explorer Fernreisen DE from awin.com -->
-        <a rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=3353263&v=41168&q=460451&r=3083133" target="_blank">
-          <img src="https://www.awin1.com/cshow.php?s=3353263&v=41168&q=460451&r=3083133" border="0" alt="Explorer Fernreisen">
-        </a>
-        <!-- END ADVERTISER: Explorer Fernreisen DE from awin.com -->
-
-        <!-- START ADVERTISER: TravelSecure DE from awin.com -->
-        <a rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=3744684&v=106517&q=501269&r=3083133" target="_blank">
-          <img src="https://www.awin1.com/cshow.php?s=3744684&v=106517&q=501269&r=3083133" border="0" alt="TravelSecure">
-        </a>
-        <!-- END ADVERTISER: TravelSecure DE from awin.com -->
-
-        <!-- START ADVERTISER: TravelSecure DE from awin.com -->
-        <a rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=3744677&v=106517&q=501267&r=3083133" target="_blank">
-          <img src="https://www.awin1.com/cshow.php?s=3744677&v=106517&q=501267&r=3083133" border="0" alt="TravelSecure">
-        </a>
-        <!-- END ADVERTISER: TravelSecure DE from awin.com -->
-
-        <!-- START ADVERTISER: Geblitzt.de from awin.com -->
-        <script language="JavaScript" src="https://www.awin1.com/cawshow.php?v=11466&s=3155391&q=345046&r=3083133"></script>
-        <noscript>
-          <iframe src="https://www.awin1.com/cawshow.php?v=11466&s=3155391&q=345046&r=3083133&iframe=1" width="336" height="280" frameborder="0" border="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
-        </noscript>
-        <!-- END ADVERTISER: Geblitzt.de from awin.com -->
-
-        <!-- START ADVERTISER: Geblitzt.de from awin.com -->
-        <script language="JavaScript" src="https://www.awin1.com/cawshow.php?v=11466&s=3155390&q=345046&r=3083133"></script>
-        <noscript>
-          <iframe src="https://www.awin1.com/cawshow.php?v=11466&s=3155390&q=345046&r=3083133&iframe=1" width="320" height="100" frameborder="0" border="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
-        </noscript>
-        <!-- END ADVERTISER: Geblitzt.de from awin.com -->
-
-        <!-- START ADVERTISER: Geblitzt.de from awin.com -->
-        <a rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=2536978&v=11466&q=345046&r=3083133" target="_blank">
-          <img src="https://www.awin1.com/cshow.php?s=2536978&v=11466&q=345046&r=3083133" border="0" alt="Geblitzt.de">
-        </a>
-        <!-- END ADVERTISER: Geblitzt.de from awin.com -->
+        <div class="banner-tile">
+          <span class="banner-tile-label">Hilfe bei einem Bußgeldbescheid</span>
+          <!-- START ADVERTISER: Geblitzt.de from awin.com -->
+          <a rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=2536978&v=11466&q=345046&r=3083133" target="_blank">
+            <img src="https://www.awin1.com/cshow.php?s=2536978&v=11466&q=345046&r=3083133" border="0" alt="Geblitzt.de">
+          </a>
+          <!-- END ADVERTISER: Geblitzt.de from awin.com -->
+        </div>
 
       </div>
     </div>
