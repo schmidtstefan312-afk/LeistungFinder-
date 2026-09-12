@@ -235,6 +235,31 @@
     .result-meta dd { margin: 0; }
     .result-links { display: flex; gap: 1rem; flex-wrap: wrap; font-size: 0.9rem; }
     .result-list-plain { margin: 0.3rem 0 0; padding-left: 1.2rem; font-size: 0.9rem; }
+    .match-note {
+      font-size: 0.85rem;
+      color: var(--primary-dark);
+      background: #eef6f1;
+      border-left: 3px solid var(--success);
+      padding: 0.4rem 0.6rem;
+      margin: 0.3rem 0 0.7rem;
+    }
+    .match-note-low {
+      background: #fbf3e6;
+      border-left-color: var(--accent);
+      color: var(--muted);
+    }
+    .other-matches {
+      border: 1px dashed var(--border);
+      border-radius: 3px;
+      padding: 0.75rem 1rem;
+    }
+    .other-matches summary {
+      cursor: pointer;
+      font-size: 0.88rem;
+      color: var(--muted);
+      font-weight: 600;
+    }
+    .result-list-plain-cards { list-style: none; margin: 0.9rem 0 0; padding: 0; display: grid; gap: 0.75rem; }
     .result-list-plain li { margin-bottom: 0.3rem; }
     .badge-ad { background: #fbeedd; color: var(--accent-dark); border-color: #f0d6ac; }
     .badge {
@@ -433,11 +458,46 @@
       <!-- Step 2: Details -->
       <div class="step" id="step2">
         <h3>Erzähle kurz von deiner Situation</h3>
-        <label for="detailText">Deine Angaben (freiwillig, aber hilfreich)</label>
-        <textarea id="detailText" rows="4" placeholder="Beschreibe kurz, welche Unterstützung du suchst (z. B. Alter, Haushalt, Besonderheiten)."></textarea>
 
-        <label for="region">Region / Ort (optional)</label>
-        <input type="text" id="region" placeholder="z. B. Bremen, Niedersachsen, bundesweit" />
+        <div id="familyExtra" style="display:none;">
+          <p class="muted" style="margin-top:0;">Mit diesen Angaben können wir passendere Ergebnisse zeigen. Alles optional.</p>
+
+          <label for="familyChildAge">Alter des jüngsten Kindes (in Jahren)</label>
+          <input type="text" id="familyChildAge" inputmode="numeric" placeholder="z. B. 1" />
+
+          <label for="familyStatus">Familienstand</label>
+          <select id="familyStatus">
+            <option value="">Keine Angabe</option>
+            <option value="alleinerziehend">Alleinerziehend</option>
+            <option value="partner">Mit Partner:in</option>
+          </select>
+
+          <label for="familyIncome">Haushaltseinkommen (grobe Einschätzung)</label>
+          <select id="familyIncome">
+            <option value="">Keine Angabe</option>
+            <option value="niedrig">Eher niedrig</option>
+            <option value="mittel">Mittel</option>
+            <option value="hoch">Eher hoch</option>
+          </select>
+
+          <label for="familyBundesland">Bundesland</label>
+          <select id="familyBundesland">
+            <option value="">Keine Angabe / bundesweit</option>
+            <option>Baden-Württemberg</option><option>Bayern</option><option>Berlin</option>
+            <option>Brandenburg</option><option>Bremen</option><option>Hamburg</option>
+            <option>Hessen</option><option>Mecklenburg-Vorpommern</option><option>Niedersachsen</option>
+            <option>Nordrhein-Westfalen</option><option>Rheinland-Pfalz</option><option>Saarland</option>
+            <option>Sachsen</option><option>Sachsen-Anhalt</option><option>Schleswig-Holstein</option><option>Thüringen</option>
+          </select>
+        </div>
+
+        <div id="genericExtra">
+          <label for="detailText">Deine Angaben (freiwillig, aber hilfreich)</label>
+          <textarea id="detailText" rows="4" placeholder="Beschreibe kurz, welche Unterstützung du suchst (z. B. Alter, Haushalt, Besonderheiten)."></textarea>
+
+          <label for="region">Region / Ort (optional)</label>
+          <input type="text" id="region" placeholder="z. B. Bremen, Niedersachsen, bundesweit" />
+        </div>
 
         <div class="nav-buttons">
           <button class="btn btn-secondary" id="backToStep1">Zurück</button>
@@ -649,7 +709,11 @@
       region: '',
       name: '',
       email: '',
-      phone: ''
+      phone: '',
+      familyChildAge: '',
+      familyStatus: '',
+      familyIncome: '',
+      familyBundesland: ''
     };
 
     // Elements
@@ -681,6 +745,12 @@
     const phoneEl = document.getElementById('phone');
     const consentPartnerEl = document.getElementById('consentPartner');
     const consentPrivacyEl = document.getElementById('consentPrivacy');
+    const familyExtraEl = document.getElementById('familyExtra');
+    const genericExtraEl = document.getElementById('genericExtra');
+    const familyChildAgeEl = document.getElementById('familyChildAge');
+    const familyStatusEl = document.getElementById('familyStatus');
+    const familyIncomeEl = document.getElementById('familyIncome');
+    const familyBundeslandEl = document.getElementById('familyBundesland');
 
     // Helpers
     function showStep(index) {
@@ -968,7 +1038,99 @@
       energie: 'Energie & Nachhaltigkeit', sonstiges_b: 'Sonstige Unterstützung'
     };
 
+    function programCardHtml(p, matchNote, relevant) {
+      const noteClass = relevant === false ? 'match-note match-note-low' : 'match-note';
+      return `
+        <li class="result-card">
+          <span class="badge">${categoryLabels[p.category] || ''}</span>${p.affiliate ? '<span class="badge badge-ad">Werbung</span>' : ''}
+          <h4>${p.name}</h4>
+          ${matchNote ? `<p class="${noteClass}">${matchNote}</p>` : ''}
+          <p>${p.description}</p>
+          <dl class="result-meta">
+            <div><dt>Möglicherweise passend, wenn:</dt><dd>${p.eligibility}</dd></div>
+            <div><dt>Höhe/Umfang:</dt><dd>${p.amount}</dd></div>
+            <div><dt>Zuständige Stelle:</dt><dd>${p.authority}</dd></div>
+            <div><dt>Region:</dt><dd>${p.region}</dd></div>
+            <div><dt>Frist:</dt><dd>${p.deadline}</dd></div>
+          </dl>
+          <div class="result-links">
+            <a href="${p.officialUrl}" target="_blank" rel="noopener">Offizielle Informationen</a>
+            <a href="${p.applicationUrl}" target="_blank" rel="noopener">${p.affiliate ? 'Zum Partnerangebot' : 'Zum offiziellen Antrag'}</a>
+          </div>
+        </li>
+      `;
+    }
+
+    // Pilot-Matching für die Kategorie "Familie & Kinder": echte Auswertung der
+    // Angaben aus Schritt 2 statt reiner Kategorie-Anzeige. Bei fehlenden Angaben
+    // wird eine Leistung nicht ausgeschlossen, sondern als "eventuell passend" geführt.
+    function getFamilyMatches() {
+      const ageYears = state.familyChildAge !== '' ? parseFloat(state.familyChildAge.replace(',', '.')) : null;
+      const status = state.familyStatus;
+      const income = state.familyIncome;
+      const base = programs.filter(p => p.category === 'familie');
+      const kinderzuschlag = programs.find(p => p.id === 'kinderzuschlag');
+      if (kinderzuschlag) base.push(kinderzuschlag);
+
+      return base.map(p => {
+        let relevant = true;
+        let reason = 'Kann grundsätzlich passen – ohne weitere Angaben nicht genauer eingrenzbar.';
+        if (p.id === 'elterngeld') {
+          if (ageYears !== null && ageYears > 3) {
+            relevant = false;
+            reason = 'Elterngeld wird in der Regel nur in den ersten Lebensjahren des Kindes gezahlt – bei deiner Altersangabe vermutlich nicht mehr einschlägig.';
+          } else {
+            reason = 'Kann passen, da dein Kind (laut Angabe) noch jung ist. Genaue Bezugsmonate auf der offiziellen Seite prüfen.';
+          }
+        }
+        if (p.id === 'kindergeld') {
+          reason = 'Gilt unabhängig vom Einkommen für (fast) jedes Kind bis zur jeweiligen Altersgrenze.';
+        }
+        if (p.id === 'unterhaltsvorschuss') {
+          if (status === 'partner') {
+            relevant = false;
+            reason = 'Unterhaltsvorschuss ist für Alleinerziehende gedacht – laut deiner Angabe lebt ein:e Partner:in im Haushalt.';
+          } else {
+            reason = 'Kann passen, wenn du alleinerziehend bist und der andere Elternteil keinen oder zu wenig Unterhalt zahlt.';
+          }
+        }
+        if (p.id === 'kinderzuschlag') {
+          if (income === 'mittel' || income === 'hoch') {
+            relevant = false;
+            reason = 'Kinderzuschlag ist für Haushalte mit eher geringem Einkommen gedacht – laut deiner Angabe evtl. nicht einschlägig.';
+          } else {
+            reason = 'Kann passen, wenn dein Einkommen für dich reicht, aber nicht für den Bedarf deiner Kinder.';
+          }
+        }
+        return { program: p, relevant, reason };
+      });
+    }
+
     function renderResults() {
+      if (state.need === 'familie') {
+        const matches = getFamilyMatches();
+        const relevant = matches.filter(m => m.relevant);
+        const others = matches.filter(m => !m.relevant);
+        let html = relevant.map(m => programCardHtml(m.program, m.reason, true)).join('');
+        if (others.length) {
+          html += `
+            <li>
+              <details class="other-matches">
+                <summary>${others.length} weitere Leistung${others.length > 1 ? 'en' : ''} in dieser Kategorie anzeigen (laut deinen Angaben vermutlich weniger passend)</summary>
+                <ul class="result-list-plain-cards">
+                  ${others.map(m => programCardHtml(m.program, m.reason, false)).join('')}
+                </ul>
+              </details>
+            </li>
+          `;
+        }
+        html += `<li><span class="badge">Hinweis</span>Dies ist eine erste Orientierung anhand deiner Angaben, keine Anspruchsgarantie und keine Rechtsberatung. Die verbindliche Prüfung übernimmt die jeweils zuständige Stelle. Stand der Angaben: September 2026.</li>`;
+        resultList.innerHTML = html;
+        partnerLink.style.display = '';
+        partnerLink.href = relevant[0] ? relevant[0].program.applicationUrl : (matches[0] ? matches[0].program.applicationUrl : '#');
+        return;
+      }
+
       const items = programs.filter(p => p.category === state.need && p.active);
       if (!items.length) {
         resultList.innerHTML = `
@@ -986,24 +1148,7 @@
         return;
       }
       partnerLink.style.display = '';
-      resultList.innerHTML = items.map(p => `
-        <li class="result-card">
-          <span class="badge">${categoryLabels[p.category] || ''}</span>${p.affiliate ? '<span class="badge badge-ad">Werbung</span>' : ''}
-          <h4>${p.name}</h4>
-          <p>${p.description}</p>
-          <dl class="result-meta">
-            <div><dt>Möglicherweise passend, wenn:</dt><dd>${p.eligibility}</dd></div>
-            <div><dt>Höhe/Umfang:</dt><dd>${p.amount}</dd></div>
-            <div><dt>Zuständige Stelle:</dt><dd>${p.authority}</dd></div>
-            <div><dt>Region:</dt><dd>${p.region}</dd></div>
-            <div><dt>Frist:</dt><dd>${p.deadline}</dd></div>
-          </dl>
-          <div class="result-links">
-            <a href="${p.officialUrl}" target="_blank" rel="noopener">Offizielle Informationen</a>
-            <a href="${p.applicationUrl}" target="_blank" rel="noopener">${p.affiliate ? 'Zum Partnerangebot' : 'Zum offiziellen Antrag'}</a>
-          </div>
-        </li>
-      `).join('') + `
+      resultList.innerHTML = items.map(p => programCardHtml(p)).join('') + `
         <li><span class="badge">Hinweis</span>Dies ist eine erste Orientierung ohne Anspruchsgarantie und keine Rechtsberatung. Die verbindliche Prüfung übernimmt die jeweils zuständige Stelle. Stand der Angaben: September 2026.</li>
       `;
       const firstOfficial = items[0];
@@ -1033,6 +1178,14 @@
         activeBtn.style.borderColor = 'var(--primary)';
       }
       toStep2Btn.disabled = false;
+      // Für die Familie-Kategorie zeigen wir gezielte Fragen statt des generischen Freitexts
+      if (need === 'familie') {
+        familyExtraEl.style.display = '';
+        genericExtraEl.style.display = 'none';
+      } else {
+        familyExtraEl.style.display = 'none';
+        genericExtraEl.style.display = '';
+      }
     }
 
     needsPrivate.querySelectorAll('.option-btn').forEach(btn => {
@@ -1042,10 +1195,18 @@
       btn.addEventListener('click', () => selectNeed(btn.dataset.need));
     });
 
-    // Navigation
-    toStep2Btn.addEventListener('click', () => {
+    function collectStep2() {
       state.detailText = detailTextEl.value.trim();
       state.region = regionEl.value.trim();
+      state.familyChildAge = familyChildAgeEl.value.trim();
+      state.familyStatus = familyStatusEl.value;
+      state.familyIncome = familyIncomeEl.value;
+      state.familyBundesland = familyBundeslandEl.value;
+    }
+
+    // Navigation
+    toStep2Btn.addEventListener('click', () => {
+      collectStep2();
       showStep(1);
     });
 
@@ -1054,8 +1215,7 @@
     });
 
     toStep3Btn.addEventListener('click', () => {
-      state.detailText = detailTextEl.value.trim();
-      state.region = regionEl.value.trim();
+      collectStep2();
       showStep(2);
     });
 
@@ -1094,9 +1254,12 @@
           name: state.name,
           email: state.email,
           phone: state.phone,
-          region: state.region,
+          region: state.region || state.familyBundesland,
           bedarf: state.need,
-          detailText: state.detailText
+          detailText: state.detailText,
+          familyChildAge: state.familyChildAge,
+          familyStatus: state.familyStatus,
+          familyIncome: state.familyIncome
         })
       })
         .then(res => {
@@ -1120,11 +1283,21 @@
       state.name = '';
       state.email = '';
       state.phone = '';
+      state.familyChildAge = '';
+      state.familyStatus = '';
+      state.familyIncome = '';
+      state.familyBundesland = '';
       detailTextEl.value = '';
       regionEl.value = '';
       nameEl.value = '';
       emailEl.value = '';
       phoneEl.value = '';
+      familyChildAgeEl.value = '';
+      familyStatusEl.value = '';
+      familyIncomeEl.value = '';
+      familyBundeslandEl.value = '';
+      familyExtraEl.style.display = 'none';
+      genericExtraEl.style.display = '';
       consentPartnerEl.checked = false;
       consentPrivacyEl.checked = false;
       toStep2Btn.disabled = true;
