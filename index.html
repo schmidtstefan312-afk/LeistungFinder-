@@ -1,19 +1,18 @@
-<html lang="de">
 <head>
   <meta charset="UTF-8" />
-  <title>Anspruchsfinder – passende Unterstützung finden</title>
+  <title>Leistung-Finder – passende Unterstützung finden</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Kostenloser Anspruchsfinder: In wenigen Schritten passende Unterstützungsleistungen finden und unverbindlich an Partner vermitteln lassen." />
+  <meta name="description" content="Kostenloser Leistung-Finder: In wenigen Schritten passende Unterstützungsleistungen finden und unverbindlich an Partner vermitteln lassen." />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://leistungsfinder.netlify.app/" />
+  <link rel="canonical" href="https://leistung-finder.de/" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Anspruchsfinder – passende Unterstützung finden" />
-  <meta property="og:description" content="Kostenloser Anspruchsfinder: In wenigen Schritten passende Unterstützungsleistungen finden und unverbindlich an Partner vermitteln lassen." />
-  <meta property="og:url" content="https://leistungsfinder.netlify.app/" />
+  <meta property="og:title" content="Leistung-Finder – passende Unterstützung finden" />
+  <meta property="og:description" content="Kostenloser Leistung-Finder: In wenigen Schritten passende Unterstützungsleistungen finden und unverbindlich an Partner vermitteln lassen." />
+  <meta property="og:url" content="https://leistung-finder.de/" />
   <meta property="og:locale" content="de_DE" />
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Anspruchsfinder – passende Unterstützung finden" />
-  <meta name="twitter:description" content="Kostenloser Anspruchsfinder: In wenigen Schritten passende Unterstützungsleistungen finden und unverbindlich an Partner vermitteln lassen." />
+  <meta name="twitter:title" content="Leistung-Finder – passende Unterstützung finden" />
+  <meta name="twitter:description" content="Kostenloser Leistung-Finder: In wenigen Schritten passende Unterstützungsleistungen finden und unverbindlich an Partner vermitteln lassen." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -219,8 +218,22 @@
       font-size: 0.95rem;
     }
     .checkbox-row input { margin-top: 0.25rem; }
-    .result-list { margin: 0; padding-left: 1.1rem; }
-    .result-list li { margin-bottom: 0.4rem; }
+    .result-list { margin: 0; padding-left: 0; list-style: none; }
+    .result-list > li { margin-bottom: 0.75rem; }
+    .result-card {
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      padding: 1rem 1.1rem;
+      background: #fdfcfa;
+    }
+    .result-card h4 { margin: 0.4rem 0 0.3rem; font-family: var(--serif); font-size: 1.05rem; color: var(--primary-dark); }
+    .result-card p { margin: 0 0 0.6rem; font-size: 0.92rem; }
+    .result-meta { margin: 0 0 0.7rem; display: grid; gap: 0.35rem; }
+    .result-meta > div { display: flex; gap: 0.4rem; font-size: 0.85rem; }
+    .result-meta dt { flex: none; width: 11rem; color: var(--muted); font-weight: 600; }
+    .result-meta dd { margin: 0; }
+    .result-links { display: flex; gap: 1rem; flex-wrap: wrap; font-size: 0.9rem; }
+    .badge-ad { background: #fbeedd; color: var(--accent-dark); border-color: #f0d6ac; }
     .badge {
       display: inline-block;
       font-size: 0.78rem;
@@ -312,7 +325,7 @@
 <body>
   <div class="hero">
     <div class="hero-inner">
-      <div class="logotype">Anspruchsfinder</div>
+      <div class="logotype">Leistung-Finder</div>
       <h1>Finde heraus, welche Unterstützung dir zusteht.</h1>
       <p class="lede">Beantworte ein paar kurze Fragen zu deiner Situation – wir ordnen sie passenden Unterstützungsleistungen zu und zeigen dir, an wen du dich wenden kannst.</p>
       <ul class="trust-points">
@@ -415,7 +428,7 @@
       <!-- Step 3: Kontakt & Einwilligung -->
       <div class="step" id="step3">
         <h3>Kontaktdaten für die Vermittlung</h3>
-        <p class="muted">Wir leiten deine Anfrage an passende Partner weiter. Diese kontaktieren dich unverbindlich.</p>
+        <p class="muted">Deine Angaben gehen per E-Mail an den Betreiber. Du wirst bei Bedarf persönlich kontaktiert.</p>
 
         <label for="name">Name</label>
         <input type="text" id="name" placeholder="Vor- und Nachname" />
@@ -429,14 +442,14 @@
         <div class="checkbox-row">
           <input type="checkbox" id="consentPartner" />
           <label for="consentPartner" style="font-weight:400; margin:0;">
-            Ich stimme zu, dass meine Angaben an passende Partner weitergegeben werden, damit diese mich kontaktieren können.
+            Ich stimme zu, dass meine Angaben per E-Mail an den Betreiber von Leistung-Finder übermittelt werden, damit ich zu meiner Anfrage kontaktiert werden kann. Eine Weitergabe an externe Partner erfolgt derzeit nicht automatisiert.
           </label>
         </div>
 
         <div class="checkbox-row">
           <input type="checkbox" id="consentPrivacy" />
           <label for="consentPrivacy" style="font-weight:400; margin:0;">
-            Ich habe die Datenschutzhinweise gelesen und stimme der Verarbeitung meiner Daten zu.
+            Ich habe die <a href="#datenschutz" target="_blank" rel="noopener">Datenschutzhinweise</a> gelesen und stimme der Verarbeitung meiner Daten zu.
           </label>
         </div>
 
@@ -444,18 +457,18 @@
           <button class="btn btn-secondary" id="backToStep2">Zurück</button>
           <button class="btn btn-success" id="submitLead">Anfrage absenden</button>
         </div>
-        <p class="disclaimer">Du kannst die Einwilligung jederzeit widerrufen. Weitere Infos in der Datenschutzerklärung.</p>
+        <p class="disclaimer">Du kannst die Einwilligung jederzeit widerrufen. Weitere Infos in der <a href="#datenschutz" target="_blank" rel="noopener">Datenschutzerklärung</a>.</p>
       </div>
 
       <!-- Step 4: Ergebnis / Weiterleitung -->
       <div class="step" id="step4">
         <div class="success-box">
           <strong>Vielen Dank!</strong>
-          <p>Deine Anfrage wurde erfasst. Wir leiten sie an passende Partner weiter. Du erhältst in der Regel binnen 1–2 Werktagen eine Rückmeldung.</p>
-          <p class="muted">Optional: Du kannst auch direkt zu einem Partner weitergeleitet werden.</p>
+          <p>Deine Anfrage wurde erfasst und per E-Mail an den Betreiber übermittelt. Du wirst bei Bedarf persönlich kontaktiert.</p>
+          <p class="muted">Unten findest du außerdem direkt die zu deiner Auswahl passenden Informationen und Anlaufstellen.</p>
           <p class="lead-status" id="leadStatus"></p>
           <div class="nav-buttons">
-            <a class="btn btn-primary" id="partnerLink" href="#" target="_blank" rel="noopener">Jetzt zu Partner-Angeboten</a>
+            <a class="btn btn-primary" id="partnerLink" href="#" target="_blank" rel="noopener">Jetzt informieren</a>
             <button class="btn btn-secondary" id="restart">Neue Suche starten</button>
           </div>
         </div>
@@ -519,6 +532,52 @@
           <!-- END ADVERTISER: Geblitzt.de from awin.com -->
         </div>
 
+        <div class="banner-tile">
+          <span class="banner-tile-label">Über 40 Reiseversicherer vergleichen</span>
+          <!-- START ADVERTISER: HelloSafe from awin.com -->
+          <a rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=4842582&v=128757&q=610091&r=3083133" target="_blank">
+            <img src="https://www.awin1.com/cshow.php?s=4842582&v=128757&q=610091&r=3083133" border="0" alt="HelloSafe">
+          </a>
+          <!-- END ADVERTISER: HelloSafe from awin.com -->
+        </div>
+
+        <div class="banner-tile">
+          <span class="banner-tile-label">Weitere Vergleichsangebote</span>
+          <!-- START ADVERTISER: Burda Vergleicht DE from awin.com -->
+          <a rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=4550199&v=121064&q=584681&r=3083133" target="_blank">
+            <img src="https://www.awin1.com/cshow.php?s=4550199&v=121064&q=584681&r=3083133" border="0" alt="Burda Vergleicht">
+          </a>
+          <!-- END ADVERTISER: Burda Vergleicht DE from awin.com -->
+        </div>
+
+        <div class="banner-tile">
+          <span class="banner-tile-label">Fernreisen-Angebote entdecken</span>
+          <!-- START ADVERTISER: Explorer Fernreisen DE from awin.com -->
+          <a rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=3353268&v=41168&q=460451&r=3083133" target="_blank">
+            <img src="https://www.awin1.com/cshow.php?s=3353268&v=41168&q=460451&r=3083133" border="0" alt="Explorer Fernreisen">
+          </a>
+          <!-- END ADVERTISER: Explorer Fernreisen DE from awin.com -->
+        </div>
+
+        <div class="banner-tile">
+          <span class="banner-tile-label">Reiseschutz abschließen</span>
+          <!-- START ADVERTISER: TravelSecure DE from awin.com -->
+          <a rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=3744625&v=106517&q=501270&r=3083133" target="_blank">
+            <img src="https://www.awin1.com/cshow.php?s=3744625&v=106517&q=501270&r=3083133" border="0" alt="TravelSecure">
+          </a>
+          <!-- END ADVERTISER: TravelSecure DE from awin.com -->
+        </div>
+
+        <div class="banner-tile">
+          <span class="banner-tile-label">Rechtshilfe bei Bußgeld</span>
+          <!-- START ADVERTISER: Geblitzt.de from awin.com -->
+          <script language="JavaScript" src="https://www.awin1.com/cawshow.php?v=11466&s=2499717&q=345046&r=3083133"></script>
+          <noscript>
+            <iframe src="https://www.awin1.com/cawshow.php?v=11466&s=2499717&q=345046&r=3083133&iframe=1" width="300" height="250" frameborder="0" border="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+          </noscript>
+          <!-- END ADVERTISER: Geblitzt.de from awin.com -->
+        </div>
+
       </div>
     </div>
   </div>
@@ -527,14 +586,14 @@
     <div class="container">
       <p>
         <strong>Impressum</strong><br>
-        Anbieter: Stefan Schmidt, Hannoversche Straße 90, 28309 Bremen, schmidtstefan312@gmail.com, [Telefon optional], [USt-IdNr. falls vorhanden]<br>
-        Verantwortlich gem. § 5 TMG.<br><br>
-        <strong>Datenschutz</strong><br>
-        Wir verarbeiten deine Daten zur Durchführung der Partner-Vermittlung auf Grundlage deiner Einwilligung (Art. 6 Abs. 1 lit. a DSGVO).<br>
-        Du hast das Recht auf Auskunft, Berichtigung, Löschung und Widerspruch. Kontakt: schmidtstefan312@gmail.com.<br>
-        Bei Nutzung von Cookies/Tracking wird hier entsprechend informiert.<br><br>
+        Anbieter: Stefan Schmidt, Hannoversche Straße 90, 28309 Bremen, info@leistung-finder.de<br>
+        Verantwortlich gem. § 5 DDG (Digitale-Dienste-Gesetz, vormals § 5 TMG).<br><br>
+        <strong id="datenschutz">Datenschutz</strong><br>
+        Wenn du das Kontaktformular nutzt, verarbeiten wir deine Angaben auf Grundlage deiner Einwilligung (Art. 6 Abs. 1 lit. a DSGVO), um deine Anfrage zu bearbeiten. Der Versand erfolgt über den Formular-Dienstleister Formspree.<br>
+        Diese Seite bindet zudem folgende externe Dienste ein: Google Fonts (Schriftarten, Google Ireland Ltd.), einen Besucherzähler-Dienst sowie Werbe-/Partnerlinks des Netzwerks Awin. Beim Aufruf dieser Dienste können Daten wie deine IP-Adresse an die jeweiligen Anbieter übertragen werden.<br>
+        Du hast das Recht auf Auskunft, Berichtigung, Löschung und Widerspruch. Kontakt: info@leistung-finder.de.<br><br>
         <strong>Haftungsausschluss</strong><br>
-        Die Inhalte dienen nur der ersten Orientierung. Eine rechtsverbindliche Prüfung erfolgt durch die Partner. Wir übernehmen keine Gewähr für Vollständigkeit und Richtigkeit.<br><br>
+        Leistung-Finder ist keine Behörde und bietet keine Rechtsberatung. Die Inhalte dienen nur der ersten Orientierung und ersetzen keine verbindliche Prüfung durch die zuständige Stelle. Wir übernehmen keine Gewähr für Vollständigkeit und Aktualität.<br><br>
         <a href="#top">Nach oben</a>
       </p>
       <p class="visit-counter" id="visitCounter">
@@ -607,126 +666,299 @@
       }
     }
 
-    // Leistungs-Datenbank: pro Bedarf eine Liste konkreter Leistungen/Programme
-    // mit Kurzbeschreibung und Link zur offiziellen Anlaufstelle.
-    // Hier später eigene Partner-/Affiliate-Links eintragen, sobald vorhanden.
-    const needDetails = {
-      pflege: {
-        label: 'Pflege & Gesundheit',
-        items: [
-          { name: 'Pflegegeld', desc: 'Monatliche Geldleistung bei häuslicher Pflege durch Angehörige.', url: 'https://www.pflege.de/pflegekasse-pflegeversicherung/pflegegeld/' },
-          { name: 'Verhinderungspflege', desc: 'Kostenübernahme, wenn die pflegende Person ausfällt.', url: 'https://www.bundesgesundheitsministerium.de/themen/pflege/leistungen/verhinderungspflege.html' },
-          { name: 'Pflegehilfsmittel & Wohnraumanpassung', desc: 'Zuschuss für Hilfsmittel und barrierefreien Umbau.', url: 'https://www.pflege.de/pflegekasse-pflegeversicherung/pflegehilfsmittel/' }
-        ],
-        partnerUrl: 'https://www.pflege.de/'
-      },
-      finanzen: {
-        label: 'Finanzielle Hilfen',
-        items: [
-          { name: 'Bürgergeld', desc: 'Grundsicherung bei Arbeitslosigkeit oder geringem Einkommen.', url: 'https://www.arbeitsagentur.de/buergergeld' },
-          { name: 'Wohngeld', desc: 'Zuschuss zur Miete oder Belastung für Wohneigentum (Antrag beim örtlichen Wohngeldamt, nicht zentral online).', url: 'https://www.bmwsb.bund.de/Webs/BMWSB/DE/themen/bauen-wohnen/wohnraumfoerderung/wohngeld/wohngeld-node.html' },
-          { name: 'Kinderzuschlag', desc: 'Zusätzliche Leistung für Familien mit geringem Einkommen.', url: 'https://www.arbeitsagentur.de/familie-und-kinder/kinderzuschlag' }
-        ],
-        partnerUrl: 'https://www.verbraucherzentrale.de/'
-      },
-      arbeit: {
-        label: 'Arbeit & Weiterbildung',
-        items: [
-          { name: 'Bildungsgutschein', desc: 'Förderung von Umschulung oder Weiterbildung durch die Agentur für Arbeit.', url: 'https://www.arbeitsagentur.de/bildung/bildungsgutschein' },
-          { name: 'Aufstiegs-BAföG', desc: 'Förderung beruflicher Fortbildungen (z. B. Meister, Techniker).', url: 'https://www.aufstiegs-bafoeg.de/' },
-          { name: 'Gründungszuschuss', desc: 'Finanzielle Unterstützung beim Schritt in die Selbstständigkeit.', url: 'https://www.arbeitsagentur.de/gruendungszuschuss' }
-        ],
-        partnerUrl: 'https://www.arbeitsagentur.de/'
-      },
-      familie: {
-        label: 'Familie & Kinder',
-        items: [
-          { name: 'Elterngeld', desc: 'Einkommensersatz während der Elternzeit.', url: 'https://familienportal.de/familienportal/familienleistungen/elterngeld' },
-          { name: 'Kindergeld', desc: 'Monatliche Leistung für jedes Kind.', url: 'https://familienportal.de/familienportal/familienleistungen/kindergeld' },
-          { name: 'Unterhaltsvorschuss', desc: 'Hilfe für Alleinerziehende, wenn Unterhalt ausbleibt.', url: 'https://familienportal.de/familienportal/familienleistungen/unterhaltsvorschuss' }
-        ],
-        partnerUrl: 'https://familienportal.de/'
-      },
-      wohnen: {
-        label: 'Wohnen & Energie',
-        items: [
-          { name: 'Wohngeld', desc: 'Zuschuss zur Miete oder Wohneigentumsbelastung (Antrag beim örtlichen Wohngeldamt, nicht zentral online).', url: 'https://www.bmwsb.bund.de/Webs/BMWSB/DE/themen/bauen-wohnen/wohnraumfoerderung/wohngeld/wohngeld-node.html' },
-          { name: 'Stromspar-Check', desc: 'Kostenlose Energieberatung für einkommensschwache Haushalte, oft inkl. Soforthilfen wie LED-Lampen oder Kühlgerätetausch.', url: 'https://www.stromspar-check.de/' },
-          { name: 'KfW-Förderung energetische Sanierung', desc: 'Zuschuss/Kredit für energieeffizientes Bauen und Sanieren.', url: 'https://www.kfw.de/inlandsfoerderung/Privatpersonen/' }
-        ],
-        partnerUrl: 'https://www.wohngeld.org/'
-      },
-      sonstiges: {
-        label: 'Sonstige Unterstützung',
-        items: [
-          { name: 'Allgemeine Sozialberatung', desc: 'Kostenlose Erstberatung zu Ansprüchen und Anträgen.', url: 'https://www.caritas.de/hilfeundberatung' },
-          { name: 'Schuldnerberatung', desc: 'Unterstützung bei finanziellen Engpässen und Überschuldung.', url: 'https://www.diakonie.de/hilfe-vor-ort/schuldnerberatung' },
-          { name: 'Reiseversicherung (TravelSecure)', desc: 'Falls eine Reise ansteht: Auslandskranken-, Reiserücktritts- oder Reisegepäckversicherung im Vergleich.', url: 'https://www.awin1.com/cread.php?s=3744642&v=106517&q=501266&r=3083133' },
-          { name: 'Reiseversicherung (HelloSafe)', desc: 'Vergleich von über 40 Reiseversicherern, Angebot in wenigen Klicks.', url: 'https://www.awin1.com/cread.php?s=4837775&v=128757&q=610152&r=3083133' },
-          { name: 'Zahnzusatzversicherung', desc: 'Vergleich privater Zahnzusatzversicherungen, z.B. für Zahnersatz oder professionelle Zahnreinigung.', url: 'https://www.awin1.com/cread.php?s=4577512&v=121064&q=587200&r=3083133' }
-        ],
-        partnerUrl: 'https://www.caritas.de/'
-      },
-      foerderung: {
-        label: 'Förderungen & Zuschüsse',
-        items: [
-          { name: 'KfW-Förderkredite', desc: 'Zinsgünstige Kredite für Investitionen und Gründung (Beantragung über die Hausbank).', url: 'https://www.kfw.de/inlandsfoerderung/Unternehmen/Investitionen-und-Wachstum/' },
-          { name: 'Mittelstand-Digital Zentren', desc: 'Kostenlose, neutrale Beratung zur Digitalisierung im Unternehmen (Nachfolgeangebot zu "Digital Jetzt").', url: 'https://www.bundeswirtschaftsministerium.de/Redaktion/DE/Dossier/digital-jetzt.html' },
-          { name: 'EXIST-Gründerstipendium', desc: 'Förderung für technologieorientierte Existenzgründungen.', url: 'https://www.exist.de/' }
-        ],
-        partnerUrl: 'https://www.kfw.de/inlandsfoerderung/Unternehmen/index-2.html'
-      },
-      beratung: {
-        label: 'Beratung & Coaching',
-        items: [
-          { name: 'Förderung unternehmerisches Know-how (BAFA)', desc: 'Zuschuss für Unternehmensberatung, z. B. bei Gründung oder Krise.', url: 'https://www.bafa.de/DE/Wirtschaft/Beratung_Finanzierung/Unternehmensberatung/unternehmensberatung_node.html' },
-          { name: 'IHK-Beratung', desc: 'Kostenlose Erstberatung zu Recht, Steuern und Strategie.', url: 'https://www.ihk.de/' }
-        ],
-        partnerUrl: 'https://www.ihk.de/'
-      },
-      personal: {
-        label: 'Personal & Qualifizierung',
-        items: [
-          { name: 'Weiterbildung Geringqualifizierter (WeGebAU)', desc: 'Förderung der Weiterbildung von Beschäftigten.', url: 'https://www.arbeitsagentur.de/unternehmen/finanziell/foerderung-der-beruflichen-weiterbildung-fuer-arbeitnehmer' },
-          { name: 'Qualifizierungschancengesetz', desc: 'Zuschüsse zu Weiterbildungskosten und Arbeitsentgelt.', url: 'https://www.arbeitsagentur.de/unternehmen/finanziell/qualifizierungschancengesetz' }
-        ],
-        partnerUrl: 'https://www.arbeitsagentur.de/'
-      },
-      energie: {
-        label: 'Energie & Nachhaltigkeit',
-        items: [
-          { name: 'BAFA-Förderung Energieberatung', desc: 'Zuschuss für eine Energieberatung im Unternehmen.', url: 'https://www.bafa.de/DE/Energie/Energieberatung/Energieberatung_node.html' },
-          { name: 'KfW Energieeffizienz in der Wirtschaft', desc: 'Kredite und Zuschüsse für effizientere Anlagen und Prozesse.', url: 'https://www.kfw.de/inlandsfoerderung/Unternehmen/Energie-Umwelt/' }
-        ],
-        partnerUrl: 'https://www.kfw.de/'
-      },
-      sonstiges_b: {
-        label: 'Sonstige Unterstützung',
-        items: [
-          { name: 'Handwerkskammer-Beratung', desc: 'Individuelle Beratung zu Förderungen im Handwerk.', url: 'https://www.zdh.de/handwerksorganisationen/handwerkskammern/' },
-          { name: 'Bürgschaftsbanken', desc: 'Absicherung von Krediten, wenn Sicherheiten fehlen.', url: 'https://www.vdb-info.de/' }
-        ],
-        partnerUrl: 'https://www.handwerkskammer.de/'
-      }
+    // Leistungs-/Förder-Datenbank: skalierbare Struktur, damit später problemlos
+    // weitere Programme ergänzt werden können. Keine erfundenen Programme, Beträge
+    // oder Voraussetzungen – wo eine Zahl sich jährlich ändern kann, wird bewusst
+    // auf die offizielle Seite verwiesen statt eine Zahl zu raten.
+    const programs = [
+      { id: 'pflegegeld', name: 'Pflegegeld', category: 'pflege', targetGroup: 'privat',
+        description: 'Monatliche Geldleistung, wenn die Pflege zu Hause durch Angehörige oder andere Pflegepersonen erfolgt.',
+        eligibility: 'Anerkannter Pflegegrad (mind. 2) und häusliche Pflege durch Angehörige/Ehrenamtliche.',
+        amount: 'Höhe je nach Pflegegrad – aktueller Betrag auf der offiziellen Seite.',
+        region: 'Deutschland', deadline: 'Keine feste Frist, laufender Antrag möglich',
+        authority: 'Zuständige Pflegekasse', officialUrl: 'https://www.pflege.de/pflegekasse-pflegeversicherung/pflegegeld/',
+        applicationUrl: 'https://www.pflege.de/pflegekasse-pflegeversicherung/pflegegeld/', partnerUrl: null, affiliate: false,
+        lastChecked: '2026-09', active: true },
+      { id: 'verhinderungspflege', name: 'Verhinderungspflege', category: 'pflege', targetGroup: 'privat',
+        description: 'Kostenübernahme für eine Ersatzpflegeperson, wenn die pflegende Person zeitweise ausfällt (z. B. Urlaub, Krankheit).',
+        eligibility: 'Anerkannter Pflegegrad (mind. 2), Pflegeperson pflegt seit mind. 6 Monaten.',
+        amount: 'Jährliches Budget – aktueller Betrag auf der offiziellen Seite.',
+        region: 'Deutschland', deadline: 'Keine feste Frist',
+        authority: 'Zuständige Pflegekasse', officialUrl: 'https://www.bundesgesundheitsministerium.de/themen/pflege/leistungen/verhinderungspflege.html',
+        applicationUrl: 'https://www.bundesgesundheitsministerium.de/themen/pflege/leistungen/verhinderungspflege.html', partnerUrl: null, affiliate: false,
+        lastChecked: '2026-09', active: true },
+      { id: 'pflegehilfsmittel', name: 'Pflegehilfsmittel & Wohnraumanpassung', category: 'pflege', targetGroup: 'privat',
+        description: 'Zuschuss für Pflegehilfsmittel im Alltag und für barrierefreien Umbau der Wohnung.',
+        eligibility: 'Anerkannter Pflegegrad, Bedarf durch Pflegesituation begründet.',
+        amount: 'Zuschuss gedeckelt, Höhe auf der offiziellen Seite.',
+        region: 'Deutschland', deadline: 'Keine feste Frist',
+        authority: 'Zuständige Pflegekasse', officialUrl: 'https://www.pflege.de/pflegekasse-pflegeversicherung/pflegehilfsmittel/',
+        applicationUrl: 'https://www.pflege.de/pflegekasse-pflegeversicherung/pflegehilfsmittel/', partnerUrl: null, affiliate: false,
+        lastChecked: '2026-09', active: true },
+
+      { id: 'buergergeld', name: 'Bürgergeld', category: 'finanzen', targetGroup: 'privat',
+        description: 'Grundsicherung für erwerbsfähige Personen mit geringem Einkommen oder bei Arbeitslosigkeit.',
+        eligibility: 'Erwerbsfähig, mind. 15 Jahre alt, Einkommen/Vermögen reicht nicht zur Existenzsicherung.',
+        amount: 'Regelsatz + Wohnkosten – aktuelle Höhe auf der offiziellen Seite.',
+        region: 'Deutschland', deadline: 'Laufender Antrag möglich',
+        authority: 'Jobcenter', officialUrl: 'https://www.arbeitsagentur.de/buergergeld',
+        applicationUrl: 'https://www.arbeitsagentur.de/buergergeld', partnerUrl: null, affiliate: false,
+        lastChecked: '2026-09', active: true },
+      { id: 'wohngeld', name: 'Wohngeld', category: 'finanzen', targetGroup: 'privat',
+        description: 'Zuschuss zur Miete oder zur Belastung für Wohneigentum für Haushalte mit geringem Einkommen.',
+        eligibility: 'Kein Bezug von Bürgergeld/Grundsicherung, Einkommen und Miete im förderfähigen Rahmen.',
+        amount: 'Abhängig von Einkommen, Miete und Haushaltsgröße – Berechnung bei der Wohngeldbehörde.',
+        region: 'Regional (örtliches Wohngeldamt zuständig)', deadline: 'Laufender Antrag möglich',
+        authority: 'Örtliche Wohngeldbehörde', officialUrl: 'https://www.bmwsb.bund.de/Webs/BMWSB/DE/themen/bauen-wohnen/wohnraumfoerderung/wohngeld/wohngeld-node.html',
+        applicationUrl: 'https://www.bmwsb.bund.de/Webs/BMWSB/DE/themen/bauen-wohnen/wohnraumfoerderung/wohngeld/wohngeld-node.html', partnerUrl: null, affiliate: false,
+        lastChecked: '2026-09', active: true },
+      { id: 'kinderzuschlag', name: 'Kinderzuschlag', category: 'finanzen', targetGroup: 'privat',
+        description: 'Zusätzliche Leistung für Familien, deren Einkommen für sie selbst reicht, aber nicht für die Kinder.',
+        eligibility: 'Kindergeldberechtigt, Mindesteinkommen der Eltern erreicht, aber Bedarf der Kinder ungedeckt.',
+        amount: 'Bis zu einem monatlichen Höchstbetrag pro Kind – aktuelle Höhe auf der offiziellen Seite.',
+        region: 'Deutschland', deadline: 'Laufender Antrag möglich',
+        authority: 'Familienkasse', officialUrl: 'https://familienportal.de/familienportal/familienleistungen/kinderzuschlag',
+        applicationUrl: 'https://www.arbeitsagentur.de/familie-und-kinder/kinderzuschlag', partnerUrl: null, affiliate: false,
+        lastChecked: '2026-09', active: true },
+
+      { id: 'bildungsgutschein', name: 'Bildungsgutschein', category: 'arbeit', targetGroup: 'privat',
+        description: 'Förderung von beruflicher Weiterbildung oder Umschulung durch die Agentur für Arbeit.',
+        eligibility: 'Arbeitslos, von Arbeitslosigkeit bedroht oder Weiterbildung beruflich notwendig; Einzelfallentscheidung.',
+        amount: 'Übernahme der Lehrgangskosten, ggf. weitere Leistungen.',
+        region: 'Deutschland', deadline: 'Vor Maßnahmenbeginn beantragen',
+        authority: 'Agentur für Arbeit / Jobcenter', officialUrl: 'https://www.arbeitsagentur.de/bildung/bildungsgutschein',
+        applicationUrl: 'https://www.arbeitsagentur.de/bildung/bildungsgutschein', partnerUrl: null, affiliate: false,
+        lastChecked: '2026-09', active: true },
+      { id: 'aufstiegs-bafoeg', name: 'Aufstiegs-BAföG', category: 'arbeit', targetGroup: 'privat',
+        description: 'Förderung beruflicher Fortbildungen, z. B. Meister- oder Technikerausbildung.',
+        eligibility: 'Angestrebter Abschluss über einer bereits vorhandenen Erstausbildung.',
+        amount: 'Zuschuss- und Darlehensanteil – Höhe auf der offiziellen Seite.',
+        region: 'Deutschland', deadline: 'Antrag vor bzw. während der Maßnahme',
+        authority: 'Zuständiges Amt für Ausbildungsförderung', officialUrl: 'https://www.aufstiegs-bafoeg.de/',
+        applicationUrl: 'https://www.aufstiegs-bafoeg.de/', partnerUrl: null, affiliate: false,
+        lastChecked: '2026-09', active: true },
+      { id: 'gruendungszuschuss', name: 'Gründungszuschuss', category: 'arbeit', targetGroup: 'privat',
+        description: 'Finanzielle Unterstützung beim Übergang aus der Arbeitslosigkeit in die Selbstständigkeit.',
+        eligibility: 'Restanspruch auf Arbeitslosengeld I, tragfähiges Gründungskonzept.',
+        amount: 'Zeitlich befristet, Höhe orientiert sich am zuletzt bezogenen ALG I.',
+        region: 'Deutschland', deadline: 'Vor Gründung beantragen',
+        authority: 'Agentur für Arbeit', officialUrl: 'https://www.arbeitsagentur.de/gruendungszuschuss',
+        applicationUrl: 'https://www.arbeitsagentur.de/gruendungszuschuss', partnerUrl: null, affiliate: false,
+        lastChecked: '2026-09', active: true },
+
+      { id: 'elterngeld', name: 'Elterngeld', category: 'familie', targetGroup: 'privat',
+        description: 'Einkommensersatz für Eltern, die nach der Geburt ihre Arbeitszeit reduzieren oder pausieren.',
+        eligibility: 'Betreuung des eigenen Kindes, Wohnsitz in Deutschland, max. Arbeitszeit während des Bezugs.',
+        amount: 'Prozentsatz des vorherigen Nettoeinkommens innerhalb einer Mindest-/Höchstgrenze.',
+        region: 'Deutschland', deadline: 'Rückwirkend max. 3 Monate möglich',
+        authority: 'Elterngeldstelle', officialUrl: 'https://familienportal.de/familienportal/familienleistungen/elterngeld',
+        applicationUrl: 'https://familienportal.de/familienportal/familienleistungen/elterngeld', partnerUrl: null, affiliate: false,
+        lastChecked: '2026-09', active: true },
+      { id: 'kindergeld', name: 'Kindergeld', category: 'familie', targetGroup: 'privat',
+        description: 'Monatliche staatliche Leistung für jedes Kind, unabhängig vom Einkommen der Eltern.',
+        eligibility: 'Kind lebt im Haushalt bzw. wird überwiegend unterhalten; Altersgrenzen beachten.',
+        amount: 'Einheitlicher Betrag pro Kind – aktuelle Höhe auf der offiziellen Seite.',
+        region: 'Deutschland', deadline: 'Laufender Antrag möglich',
+        authority: 'Familienkasse', officialUrl: 'https://familienportal.de/familienportal/familienleistungen/kindergeld',
+        applicationUrl: 'https://familienportal.de/familienportal/familienleistungen/kindergeld', partnerUrl: null, affiliate: false,
+        lastChecked: '2026-09', active: true },
+      { id: 'unterhaltsvorschuss', name: 'Unterhaltsvorschuss', category: 'familie', targetGroup: 'privat',
+        description: 'Hilfe für Alleinerziehende, wenn der andere Elternteil keinen oder zu wenig Unterhalt zahlt.',
+        eligibility: 'Alleinerziehend, Kind unter der jeweiligen Altersgrenze, Unterhalt bleibt aus.',
+        amount: 'Gestaffelt nach Alter des Kindes – aktuelle Höhe auf der offiziellen Seite.',
+        region: 'Deutschland', deadline: 'Laufender Antrag möglich',
+        authority: 'Jugendamt', officialUrl: 'https://familienportal.de/familienportal/familienleistungen/unterhaltsvorschuss',
+        applicationUrl: 'https://familienportal.de/familienportal/familienleistungen/unterhaltsvorschuss', partnerUrl: null, affiliate: false,
+        lastChecked: '2026-09', active: true },
+
+      { id: 'wohngeld-wohnen', name: 'Wohngeld', category: 'wohnen', targetGroup: 'privat',
+        description: 'Zuschuss zur Miete oder Belastung für Wohneigentum für Haushalte mit geringem Einkommen.',
+        eligibility: 'Kein Bezug von Bürgergeld/Grundsicherung, Einkommen und Miete im förderfähigen Rahmen.',
+        amount: 'Abhängig von Einkommen, Miete und Haushaltsgröße.',
+        region: 'Regional (örtliches Wohngeldamt zuständig)', deadline: 'Laufender Antrag möglich',
+        authority: 'Örtliche Wohngeldbehörde', officialUrl: 'https://www.bmwsb.bund.de/Webs/BMWSB/DE/themen/bauen-wohnen/wohnraumfoerderung/wohngeld/wohngeld-node.html',
+        applicationUrl: 'https://www.bmwsb.bund.de/Webs/BMWSB/DE/themen/bauen-wohnen/wohnraumfoerderung/wohngeld/wohngeld-node.html', partnerUrl: null, affiliate: false,
+        lastChecked: '2026-09', active: true },
+      { id: 'stromspar-check', name: 'Stromspar-Check', category: 'wohnen', targetGroup: 'privat',
+        description: 'Kostenlose Energieberatung für einkommensschwache Haushalte, oft inkl. Soforthilfen wie LED-Lampen.',
+        eligibility: 'Bezug von Transferleistungen (z. B. Bürgergeld, Wohngeld) oder geringes Einkommen.',
+        amount: 'Beratung kostenlos, Soforthilfen ohne Eigenkosten.',
+        region: 'Regional (je nach Anbieter vor Ort)', deadline: 'Laufend, je nach Verfügbarkeit vor Ort',
+        authority: 'Lokale Stromspar-Check-Anbieter', officialUrl: 'https://www.stromspar-check.de/',
+        applicationUrl: 'https://www.stromspar-check.de/', partnerUrl: null, affiliate: false,
+        lastChecked: '2026-09', active: true },
+      { id: 'kfw-sanierung', name: 'KfW-Förderung energetische Sanierung', category: 'wohnen', targetGroup: 'privat',
+        description: 'Zuschuss oder zinsgünstiger Kredit für energieeffizientes Bauen und Sanieren.',
+        eligibility: 'Vorhaben erfüllt die technischen Mindestanforderungen des jeweiligen KfW-Programms.',
+        amount: 'Je nach Programm Zuschuss- oder Kreditanteil, Details auf der offiziellen Seite.',
+        region: 'Deutschland', deadline: 'Antrag grundsätzlich vor Vorhabensbeginn',
+        authority: 'KfW (Antrag meist über die Hausbank)', officialUrl: 'https://www.kfw.de/inlandsfoerderung/Privatpersonen/',
+        applicationUrl: 'https://www.kfw.de/inlandsfoerderung/Privatpersonen/', partnerUrl: null, affiliate: false,
+        lastChecked: '2026-09', active: true },
+
+      { id: 'sozialberatung', name: 'Allgemeine Sozialberatung', category: 'sonstiges', targetGroup: 'privat',
+        description: 'Kostenlose Erstberatung zu Ansprüchen, Anträgen und der eigenen Situation.',
+        eligibility: 'Grundsätzlich für alle offen, die Beratung suchen.',
+        amount: 'Kostenlos', region: 'Regional (lokale Beratungsstellen)', deadline: 'Laufend',
+        authority: 'Caritas / Wohlfahrtsverbände', officialUrl: 'https://www.caritas.de/hilfeundberatung',
+        applicationUrl: 'https://www.caritas.de/hilfeundberatung', partnerUrl: null, affiliate: false,
+        lastChecked: '2026-09', active: true },
+      { id: 'schuldnerberatung', name: 'Schuldnerberatung', category: 'sonstiges', targetGroup: 'privat',
+        description: 'Unterstützung bei finanziellen Engpässen und Überschuldung.',
+        eligibility: 'Betroffene mit Zahlungsschwierigkeiten oder Überschuldung.',
+        amount: 'Für Ratsuchende meist kostenlos', region: 'Regional', deadline: 'Laufend',
+        authority: 'Diakonie / anerkannte Schuldnerberatungsstellen', officialUrl: 'https://www.diakonie.de/hilfe-vor-ort/schuldnerberatung',
+        applicationUrl: 'https://www.diakonie.de/hilfe-vor-ort/schuldnerberatung', partnerUrl: null, affiliate: false,
+        lastChecked: '2026-09', active: true },
+      { id: 'reiseversicherung-travelsecure', name: 'Reiseversicherung (TravelSecure)', category: 'sonstiges', targetGroup: 'privat',
+        description: 'Vergleich von Auslandskranken-, Reiserücktritts- oder Reisegepäckversicherungen.',
+        eligibility: 'Kein staatliches Programm – privates Vergleichsangebot.',
+        amount: 'Abhängig vom gewählten Tarif', region: 'Deutschland', deadline: 'Nicht zutreffend',
+        authority: 'TravelSecure (privater Anbieter)', officialUrl: 'https://www.awin1.com/cread.php?s=3744642&v=106517&q=501266&r=3083133',
+        applicationUrl: 'https://www.awin1.com/cread.php?s=3744642&v=106517&q=501266&r=3083133', partnerUrl: 'https://www.awin1.com/cread.php?s=3744642&v=106517&q=501266&r=3083133', affiliate: true,
+        lastChecked: '2026-09', active: true },
+      { id: 'reiseversicherung-hellosafe', name: 'Reiseversicherung (HelloSafe)', category: 'sonstiges', targetGroup: 'privat',
+        description: 'Vergleich von über 40 Reiseversicherern.',
+        eligibility: 'Kein staatliches Programm – privates Vergleichsangebot.',
+        amount: 'Abhängig vom gewählten Tarif', region: 'Deutschland', deadline: 'Nicht zutreffend',
+        authority: 'HelloSafe (privater Anbieter)', officialUrl: 'https://www.awin1.com/cread.php?s=4837775&v=128757&q=610152&r=3083133',
+        applicationUrl: 'https://www.awin1.com/cread.php?s=4837775&v=128757&q=610152&r=3083133', partnerUrl: 'https://www.awin1.com/cread.php?s=4837775&v=128757&q=610152&r=3083133', affiliate: true,
+        lastChecked: '2026-09', active: true },
+      { id: 'zahnzusatz', name: 'Zahnzusatzversicherung', category: 'sonstiges', targetGroup: 'privat',
+        description: 'Vergleich privater Zahnzusatzversicherungen, z. B. für Zahnersatz oder professionelle Zahnreinigung.',
+        eligibility: 'Kein staatliches Programm – privates Vergleichsangebot.',
+        amount: 'Abhängig vom gewählten Tarif', region: 'Deutschland', deadline: 'Nicht zutreffend',
+        authority: 'Privater Versicherungsvergleich', officialUrl: 'https://www.awin1.com/cread.php?s=4577512&v=121064&q=587200&r=3083133',
+        applicationUrl: 'https://www.awin1.com/cread.php?s=4577512&v=121064&q=587200&r=3083133', partnerUrl: 'https://www.awin1.com/cread.php?s=4577512&v=121064&q=587200&r=3083133', affiliate: true,
+        lastChecked: '2026-09', active: true },
+
+      { id: 'kfw-kredite', name: 'KfW-Förderkredite', category: 'foerderung', targetGroup: 'unternehmen',
+        description: 'Zinsgünstige Kredite für Investitionen, Wachstum und Gründung.',
+        eligibility: 'Förderfähiges Vorhaben, Antragstellung über die Hausbank.',
+        amount: 'Je nach Programm, Details auf der offiziellen Seite.',
+        region: 'Deutschland', deadline: 'Vor Vorhabensbeginn beantragen',
+        authority: 'KfW (über die Hausbank)', officialUrl: 'https://www.kfw.de/inlandsfoerderung/Unternehmen/Investitionen-und-Wachstum/',
+        applicationUrl: 'https://www.kfw.de/inlandsfoerderung/Unternehmen/Investitionen-und-Wachstum/', partnerUrl: null, affiliate: false,
+        lastChecked: '2026-09', active: true },
+      { id: 'mittelstand-digital', name: 'Mittelstand-Digital Zentren', category: 'foerderung', targetGroup: 'unternehmen',
+        description: 'Kostenlose, neutrale Beratung zur Digitalisierung im Unternehmen (Nachfolgeangebot zu „Digital Jetzt“).',
+        eligibility: 'Kleine und mittlere Unternehmen mit Digitalisierungsvorhaben.',
+        amount: 'Beratung kostenlos', region: 'Deutschland', deadline: 'Laufend',
+        authority: 'Bundesministerium für Wirtschaft', officialUrl: 'https://www.bundeswirtschaftsministerium.de/Redaktion/DE/Dossier/digital-jetzt.html',
+        applicationUrl: 'https://www.bundeswirtschaftsministerium.de/Redaktion/DE/Dossier/digital-jetzt.html', partnerUrl: null, affiliate: false,
+        lastChecked: '2026-09', active: true },
+      { id: 'exist', name: 'EXIST-Gründerstipendium', category: 'foerderung', targetGroup: 'unternehmen',
+        description: 'Förderung für technologieorientierte und wissensbasierte Existenzgründungen aus der Hochschule.',
+        eligibility: 'Gründungsvorhaben mit Hochschulbezug, tragfähiges Konzept.',
+        amount: 'Lebensunterhalt + Sachmittel – Details auf der offiziellen Seite.',
+        region: 'Deutschland', deadline: 'Antrag vor Gründung',
+        authority: 'Projektträger EXIST', officialUrl: 'https://www.exist.de/',
+        applicationUrl: 'https://www.exist.de/', partnerUrl: null, affiliate: false,
+        lastChecked: '2026-09', active: true },
+
+      { id: 'bafa-beratung', name: 'Förderung unternehmerisches Know-how (BAFA)', category: 'beratung', targetGroup: 'unternehmen',
+        description: 'Zuschuss für Unternehmensberatung, z. B. bei Gründung, Nachfolge oder wirtschaftlicher Krise.',
+        eligibility: 'KMU bzw. Gründungsinteressierte, Beratung durch zugelassene Berater.',
+        amount: 'Zuschuss zu den Beratungskosten – Höhe auf der offiziellen Seite.',
+        region: 'Deutschland', deadline: 'Vor Beratungsbeginn beantragen',
+        authority: 'BAFA', officialUrl: 'https://www.bafa.de/DE/Wirtschaft/Beratung_Finanzierung/Unternehmensberatung/unternehmensberatung_node.html',
+        applicationUrl: 'https://www.bafa.de/DE/Wirtschaft/Beratung_Finanzierung/Unternehmensberatung/unternehmensberatung_node.html', partnerUrl: null, affiliate: false,
+        lastChecked: '2026-09', active: true },
+      { id: 'ihk-beratung', name: 'IHK-Beratung', category: 'beratung', targetGroup: 'unternehmen',
+        description: 'Kostenlose Erstberatung zu Recht, Steuern und Unternehmensstrategie.',
+        eligibility: 'Mitgliedsunternehmen der jeweiligen IHK.',
+        amount: 'Erstberatung meist kostenlos', region: 'Regional (je nach IHK)', deadline: 'Laufend',
+        authority: 'Zuständige Industrie- und Handelskammer', officialUrl: 'https://www.ihk.de/',
+        applicationUrl: 'https://www.ihk.de/', partnerUrl: null, affiliate: false,
+        lastChecked: '2026-09', active: true },
+
+      { id: 'wegebau', name: 'Weiterbildung Geringqualifizierter (WeGebAU)', category: 'personal', targetGroup: 'unternehmen',
+        description: 'Förderung der Weiterbildung von Beschäftigten ohne Berufsabschluss oder mit veralteter Qualifikation.',
+        eligibility: 'Beschäftigte ohne verwertbaren Berufsabschluss bzw. mit Qualifizierungsbedarf.',
+        amount: 'Übernahme von Lehrgangs- und ggf. Lohnkosten – Details auf der offiziellen Seite.',
+        region: 'Deutschland', deadline: 'Vor Maßnahmenbeginn beantragen',
+        authority: 'Agentur für Arbeit', officialUrl: 'https://www.arbeitsagentur.de/unternehmen/finanziell/foerderung-der-beruflichen-weiterbildung-fuer-arbeitnehmer',
+        applicationUrl: 'https://www.arbeitsagentur.de/unternehmen/finanziell/foerderung-der-beruflichen-weiterbildung-fuer-arbeitnehmer', partnerUrl: null, affiliate: false,
+        lastChecked: '2026-09', active: true },
+      { id: 'qualichancengesetz', name: 'Qualifizierungschancengesetz', category: 'personal', targetGroup: 'unternehmen',
+        description: 'Zuschüsse zu Weiterbildungskosten und Arbeitsentgelt während der Qualifizierung.',
+        eligibility: 'Beschäftigte, deren Tätigkeit sich z. B. durch Digitalisierung wesentlich verändert.',
+        amount: 'Anteilige Übernahme, gestaffelt nach Betriebsgröße.',
+        region: 'Deutschland', deadline: 'Vor Maßnahmenbeginn beantragen',
+        authority: 'Agentur für Arbeit', officialUrl: 'https://www.arbeitsagentur.de/unternehmen/finanziell/qualifizierungschancengesetz',
+        applicationUrl: 'https://www.arbeitsagentur.de/unternehmen/finanziell/qualifizierungschancengesetz', partnerUrl: null, affiliate: false,
+        lastChecked: '2026-09', active: true },
+
+      { id: 'bafa-energie', name: 'BAFA-Förderung Energieberatung', category: 'energie', targetGroup: 'unternehmen',
+        description: 'Zuschuss für eine unabhängige Energieberatung im Unternehmen.',
+        eligibility: 'KMU mit Interesse an Energieeinsparung.',
+        amount: 'Zuschuss zu den Beratungskosten – Höhe auf der offiziellen Seite.',
+        region: 'Deutschland', deadline: 'Vor Beratungsbeginn beantragen',
+        authority: 'BAFA', officialUrl: 'https://www.bafa.de/DE/Energie/Energieberatung/Energieberatung_node.html',
+        applicationUrl: 'https://www.bafa.de/DE/Energie/Energieberatung/Energieberatung_node.html', partnerUrl: null, affiliate: false,
+        lastChecked: '2026-09', active: true },
+      { id: 'kfw-energieeffizienz', name: 'KfW Energieeffizienz in der Wirtschaft', category: 'energie', targetGroup: 'unternehmen',
+        description: 'Kredite und Zuschüsse für effizientere Anlagen und Prozesse im Unternehmen.',
+        eligibility: 'Vorhaben erfüllt die technischen Anforderungen des jeweiligen Programms.',
+        amount: 'Je nach Programm, Details auf der offiziellen Seite.',
+        region: 'Deutschland', deadline: 'Vor Vorhabensbeginn beantragen',
+        authority: 'KfW', officialUrl: 'https://www.kfw.de/inlandsfoerderung/Unternehmen/Energie-Umwelt/',
+        applicationUrl: 'https://www.kfw.de/inlandsfoerderung/Unternehmen/Energie-Umwelt/', partnerUrl: null, affiliate: false,
+        lastChecked: '2026-09', active: true },
+
+      { id: 'handwerkskammer', name: 'Handwerkskammer-Beratung', category: 'sonstiges_b', targetGroup: 'unternehmen',
+        description: 'Individuelle Beratung zu Förderungen und Zuschüssen im Handwerk.',
+        eligibility: 'Handwerksbetriebe im Kammerbezirk.',
+        amount: 'Erstberatung meist kostenlos', region: 'Regional (je nach Kammer)', deadline: 'Laufend',
+        authority: 'Zuständige Handwerkskammer', officialUrl: 'https://www.zdh.de/handwerksorganisationen/handwerkskammern/',
+        applicationUrl: 'https://www.zdh.de/handwerksorganisationen/handwerkskammern/', partnerUrl: null, affiliate: false,
+        lastChecked: '2026-09', active: true },
+      { id: 'buergschaftsbanken', name: 'Bürgschaftsbanken', category: 'sonstiges_b', targetGroup: 'unternehmen',
+        description: 'Absicherung von Krediten für Unternehmen, wenn eigene Sicherheiten fehlen.',
+        eligibility: 'Kreditwürdiges Vorhaben ohne ausreichende eigene Sicherheiten.',
+        amount: 'Bürgschaft bis zu einem Höchstbetrag, Details auf der offiziellen Seite.',
+        region: 'Regional (je nach Bundesland)', deadline: 'Vor Kreditaufnahme beantragen',
+        authority: 'Zuständige Bürgschaftsbank', officialUrl: 'https://www.vdb-info.de/',
+        applicationUrl: 'https://www.vdb-info.de/', partnerUrl: null, affiliate: false,
+        lastChecked: '2026-09', active: true }
+    ];
+
+    const categoryLabels = {
+      pflege: 'Pflege & Gesundheit', finanzen: 'Finanzielle Hilfen', arbeit: 'Arbeit & Weiterbildung',
+      familie: 'Familie & Kinder', wohnen: 'Wohnen & Energie', sonstiges: 'Sonstige Unterstützung',
+      foerderung: 'Förderungen & Zuschüsse', beratung: 'Beratung & Coaching', personal: 'Personal & Qualifizierung',
+      energie: 'Energie & Nachhaltigkeit', sonstiges_b: 'Sonstige Unterstützung'
     };
 
     function renderResults() {
-      const details = needDetails[state.need];
-      if (!details) {
+      const items = programs.filter(p => p.category === state.need && p.active);
+      if (!items.length) {
         resultList.innerHTML = '<li><span class="badge">Hinweis</span>Keine passende Kategorie gefunden.</li>';
         partnerLink.href = '#';
         return;
       }
-      resultList.innerHTML = details.items.map(item => `
-        <li>
-          <span class="badge">${details.label}</span>
-          <strong>${item.name}</strong> – ${item.desc}
-          <br><a href="${item.url}" target="_blank" rel="noopener">Mehr erfahren</a>
+      resultList.innerHTML = items.map(p => `
+        <li class="result-card">
+          <span class="badge">${categoryLabels[p.category] || ''}</span>${p.affiliate ? '<span class="badge badge-ad">Werbung</span>' : ''}
+          <h4>${p.name}</h4>
+          <p>${p.description}</p>
+          <dl class="result-meta">
+            <div><dt>Möglicherweise passend, wenn:</dt><dd>${p.eligibility}</dd></div>
+            <div><dt>Höhe/Umfang:</dt><dd>${p.amount}</dd></div>
+            <div><dt>Zuständige Stelle:</dt><dd>${p.authority}</dd></div>
+            <div><dt>Region:</dt><dd>${p.region}</dd></div>
+            <div><dt>Frist:</dt><dd>${p.deadline}</dd></div>
+          </dl>
+          <div class="result-links">
+            <a href="${p.officialUrl}" target="_blank" rel="noopener">Offizielle Informationen</a>
+            <a href="${p.applicationUrl}" target="_blank" rel="noopener">${p.affiliate ? 'Zum Partnerangebot' : 'Zum offiziellen Antrag'}</a>
+          </div>
         </li>
       `).join('') + `
-        <li><span class="badge">Hinweis</span>Dies ist eine erste Orientierung ohne Anspruchsgarantie. Die genaue Prüfung übernehmen die zuständigen Stellen bzw. unsere Partner.</li>
+        <li><span class="badge">Hinweis</span>Dies ist eine erste Orientierung ohne Anspruchsgarantie und keine Rechtsberatung. Die verbindliche Prüfung übernimmt die jeweils zuständige Stelle. Stand der Angaben: September 2026.</li>
       `;
-      partnerLink.href = details.partnerUrl;
+      const firstOfficial = items[0];
+      partnerLink.href = firstOfficial ? firstOfficial.applicationUrl : '#';
     }
 
     // Events: Zielgruppe
