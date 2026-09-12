@@ -6,14 +6,35 @@
   <meta name="description" content="Kostenloser Leistung-Finder: In wenigen Schritten passende Unterstützungsleistungen finden und unverbindlich an Partner vermitteln lassen." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://leistung-finder.de/" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Leistung-Finder – passende Unterstützung finden" />
   <meta property="og:description" content="Kostenloser Leistung-Finder: In wenigen Schritten passende Unterstützungsleistungen finden und unverbindlich an Partner vermitteln lassen." />
   <meta property="og:url" content="https://leistung-finder.de/" />
   <meta property="og:locale" content="de_DE" />
-  <meta name="twitter:card" content="summary" />
+  <meta property="og:image" content="https://leistung-finder.de/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Leistung-Finder – passende Unterstützung finden" />
   <meta name="twitter:description" content="Kostenloser Leistung-Finder: In wenigen Schritten passende Unterstützungsleistungen finden und unverbindlich an Partner vermitteln lassen." />
+  <meta name="twitter:image" content="https://leistung-finder.de/og-image.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Leistung-Finder",
+    "url": "https://leistung-finder.de/",
+    "description": "Kostenloser Leistung-Finder: In wenigen Schritten passende Unterstützungsleistungen finden und unverbindlich an Partner vermitteln lassen.",
+    "inLanguage": "de-DE",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Leistung-Finder",
+      "url": "https://leistung-finder.de/",
+      "email": "info@leistung-finder.de"
+    }
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -260,6 +281,23 @@
       font-weight: 600;
     }
     .result-list-plain-cards { list-style: none; margin: 0.9rem 0 0; padding: 0; display: grid; gap: 0.75rem; }
+    .overview-group { margin-top: 1.5rem; }
+    .overview-group:first-of-type { margin-top: 0.75rem; }
+    .overview-list { display: grid; gap: 0.6rem; }
+    .overview-item {
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      padding: 0.7rem 0.9rem;
+      background: #fdfcfa;
+    }
+    .overview-item summary {
+      cursor: pointer;
+      font-weight: 600;
+      font-family: var(--serif);
+      color: var(--primary-dark);
+    }
+    .overview-item p { margin: 0.6rem 0; font-size: 0.9rem; }
+    .overview-item .result-meta { margin-bottom: 0.6rem; }
     .result-list-plain li { margin-bottom: 0.3rem; }
     .badge-ad { background: #fbeedd; color: var(--accent-dark); border-color: #f0d6ac; }
     .badge {
@@ -458,12 +496,13 @@
       <!-- Step 2: Details -->
       <div class="step" id="step2">
         <h3>Erzähle kurz von deiner Situation</h3>
+        <p class="muted" style="margin-top:0;">Mit diesen Angaben können wir passendere Ergebnisse zeigen. Alles optional.</p>
 
-        <div id="familyExtra" style="display:none;">
-          <p class="muted" style="margin-top:0;">Mit diesen Angaben können wir passendere Ergebnisse zeigen. Alles optional.</p>
-
-          <label for="familyChildAge">Alter des jüngsten Kindes (in Jahren)</label>
-          <input type="text" id="familyChildAge" inputmode="numeric" placeholder="z. B. 1" />
+        <div id="privateExtra" style="display:none;">
+          <div id="familyChildAgeRow" style="display:none;">
+            <label for="familyChildAge">Alter des jüngsten Kindes (in Jahren)</label>
+            <input type="text" id="familyChildAge" inputmode="numeric" placeholder="z. B. 1" />
+          </div>
 
           <label for="familyStatus">Familienstand</label>
           <select id="familyStatus">
@@ -480,6 +519,15 @@
             <option value="hoch">Eher hoch</option>
           </select>
 
+          <label for="employmentStatus">Beschäftigungsstatus</label>
+          <select id="employmentStatus">
+            <option value="">Keine Angabe</option>
+            <option value="erwerbstaetig">Erwerbstätig</option>
+            <option value="arbeitslos">Arbeitslos / arbeitsuchend</option>
+            <option value="ausbildung">In Ausbildung / Studium</option>
+            <option value="rente">Rente / Ruhestand</option>
+          </select>
+
           <label for="familyBundesland">Bundesland</label>
           <select id="familyBundesland">
             <option value="">Keine Angabe / bundesweit</option>
@@ -491,13 +539,45 @@
           </select>
         </div>
 
-        <div id="genericExtra">
-          <label for="detailText">Deine Angaben (freiwillig, aber hilfreich)</label>
-          <textarea id="detailText" rows="4" placeholder="Beschreibe kurz, welche Unterstützung du suchst (z. B. Alter, Haushalt, Besonderheiten)."></textarea>
+        <div id="businessExtra" style="display:none;">
+          <label for="bizPhase">Unternehmensphase</label>
+          <select id="bizPhase">
+            <option value="">Keine Angabe</option>
+            <option value="gruendung">In Gründung / Gründungsvorhaben</option>
+            <option value="bestehend">Bestehendes Unternehmen</option>
+          </select>
 
-          <label for="region">Region / Ort (optional)</label>
-          <input type="text" id="region" placeholder="z. B. Bremen, Niedersachsen, bundesweit" />
+          <label for="bizSize">Unternehmensgröße (grob)</label>
+          <select id="bizSize">
+            <option value="">Keine Angabe</option>
+            <option value="solo">Solo-Selbstständig</option>
+            <option value="klein">Klein (2–9 Beschäftigte)</option>
+            <option value="mittel">Mittel (10–249 Beschäftigte)</option>
+            <option value="gross">Groß (250+ Beschäftigte)</option>
+          </select>
+
+          <label for="bizFocus">Schwerpunkt des Vorhabens</label>
+          <select id="bizFocus">
+            <option value="">Keine Angabe</option>
+            <option value="digitalisierung">Digitalisierung</option>
+            <option value="energie">Energie / Nachhaltigkeit</option>
+            <option value="personal">Personal / Weiterbildung</option>
+            <option value="sonstiges">Sonstiges</option>
+          </select>
+
+          <label for="bizBundesland">Bundesland</label>
+          <select id="bizBundesland">
+            <option value="">Keine Angabe / bundesweit</option>
+            <option>Baden-Württemberg</option><option>Bayern</option><option>Berlin</option>
+            <option>Brandenburg</option><option>Bremen</option><option>Hamburg</option>
+            <option>Hessen</option><option>Mecklenburg-Vorpommern</option><option>Niedersachsen</option>
+            <option>Nordrhein-Westfalen</option><option>Rheinland-Pfalz</option><option>Saarland</option>
+            <option>Sachsen</option><option>Sachsen-Anhalt</option><option>Schleswig-Holstein</option><option>Thüringen</option>
+          </select>
         </div>
+
+        <label for="detailText">Weitere Angaben (freiwillig)</label>
+        <textarea id="detailText" rows="3" placeholder="Möchtest du noch etwas ergänzen, das für deine Situation wichtig ist?"></textarea>
 
         <div class="nav-buttons">
           <button class="btn btn-secondary" id="backToStep1">Zurück</button>
@@ -571,6 +651,12 @@
       <p class="disclaimer">Keine Rechtsberatung. Angaben ohne Gewähr. Stand: 2026.</p>
     </div>
 
+    <div class="card">
+      <h2>Alle Förderungen &amp; Leistungen im Überblick</h2>
+      <p class="muted" style="margin-top:-0.3rem;">Lieber direkt stöbern statt den Fragebogen auszufüllen? Hier findest du alle hinterlegten Leistungen nach Kategorie sortiert.</p>
+      <div id="allProgramsOverview"></div>
+    </div>
+
     <div class="card partner-section">
       <h2 class="partner-heading">Partnerangebote</h2>
       <p class="ad-label">Anzeige – bei Abschluss über diese Links erhalten wir ggf. eine Vergütung. Diese Angebote stammen von unabhängigen Partnern, nicht von Behörden.</p>
@@ -611,7 +697,12 @@
       familyChildAge: '',
       familyStatus: '',
       familyIncome: '',
-      familyBundesland: ''
+      employmentStatus: '',
+      familyBundesland: '',
+      bizPhase: '',
+      bizSize: '',
+      bizFocus: '',
+      bizBundesland: ''
     };
 
     // Elements
@@ -637,18 +728,23 @@
     const resultList = document.getElementById('resultList');
 
     const detailTextEl = document.getElementById('detailText');
-    const regionEl = document.getElementById('region');
     const nameEl = document.getElementById('name');
     const emailEl = document.getElementById('email');
     const phoneEl = document.getElementById('phone');
     const consentPartnerEl = document.getElementById('consentPartner');
     const consentPrivacyEl = document.getElementById('consentPrivacy');
-    const familyExtraEl = document.getElementById('familyExtra');
-    const genericExtraEl = document.getElementById('genericExtra');
+    const privateExtraEl = document.getElementById('privateExtra');
+    const businessExtraEl = document.getElementById('businessExtra');
+    const familyChildAgeRowEl = document.getElementById('familyChildAgeRow');
     const familyChildAgeEl = document.getElementById('familyChildAge');
     const familyStatusEl = document.getElementById('familyStatus');
     const familyIncomeEl = document.getElementById('familyIncome');
+    const employmentStatusEl = document.getElementById('employmentStatus');
     const familyBundeslandEl = document.getElementById('familyBundesland');
+    const bizPhaseEl = document.getElementById('bizPhase');
+    const bizSizeEl = document.getElementById('bizSize');
+    const bizFocusEl = document.getElementById('bizFocus');
+    const bizBundeslandEl = document.getElementById('bizBundesland');
 
     // Helpers
     function showStep(index) {
@@ -960,6 +1056,41 @@
         url: 'https://www.awin1.com/cread.php?s=4031567&v=20202&q=528960&r=3083133', img: 'https://www.awin1.com/cshow.php?s=4031567&v=20202&q=528960&r=3083133' }
     ];
 
+    function renderAllProgramsOverview() {
+      const root = document.getElementById('allProgramsOverview');
+      if (!root) return;
+      const order = [];
+      const byCategory = {};
+      programs.filter(p => p.active).forEach(p => {
+        if (!byCategory[p.category]) { byCategory[p.category] = []; order.push(p.category); }
+        byCategory[p.category].push(p);
+      });
+      root.innerHTML = order.map(cat => `
+        <div class="overview-group">
+          <h3 class="partner-group-title">${categoryLabels[cat] || cat}</h3>
+          <div class="overview-list">
+            ${byCategory[cat].map(p => `
+              <details class="overview-item">
+                <summary>${p.name}</summary>
+                <p>${p.description}</p>
+                <dl class="result-meta">
+                  <div><dt>Möglicherweise passend, wenn:</dt><dd>${p.eligibility}</dd></div>
+                  <div><dt>Höhe/Umfang:</dt><dd>${p.amount}</dd></div>
+                  <div><dt>Zuständige Stelle:</dt><dd>${p.authority}</dd></div>
+                  <div><dt>Region:</dt><dd>${p.region}</dd></div>
+                  <div><dt>Frist:</dt><dd>${p.deadline}</dd></div>
+                </dl>
+                <div class="result-links">
+                  <a href="${p.officialUrl}" target="_blank" rel="noopener">Offizielle Informationen</a>
+                  <a href="${p.applicationUrl}" target="_blank" rel="noopener">${p.affiliate ? 'Zum Partnerangebot' : 'Zum offiziellen Antrag'}</a>
+                </div>
+              </details>
+            `).join('')}
+          </div>
+        </div>
+      `).join('');
+    }
+
     function renderPartnerOffers() {
       const groups = [];
       const byCategory = {};
@@ -1017,75 +1148,112 @@
     // Pilot-Matching für die Kategorie "Familie & Kinder": echte Auswertung der
     // Angaben aus Schritt 2 statt reiner Kategorie-Anzeige. Bei fehlenden Angaben
     // wird eine Leistung nicht ausgeschlossen, sondern als "eventuell passend" geführt.
-    function getFamilyMatches() {
-      const ageYears = state.familyChildAge !== '' ? parseFloat(state.familyChildAge.replace(',', '.')) : null;
-      const status = state.familyStatus;
-      const income = state.familyIncome;
-      const base = programs.filter(p => p.category === 'familie');
-      const kinderzuschlag = programs.find(p => p.id === 'kinderzuschlag');
-      if (kinderzuschlag) base.push(kinderzuschlag);
+    // Matching-Regeln je Programm-ID. Programme ohne eigene Regel gelten als
+    // grundsätzlich passend und werden ohne Zusatz-Begründung gezeigt (ehrlicher
+    // als eine Regel zu erfinden, wo keine verlässliche Abgrenzung möglich ist).
+    const matchRules = {
+      // Familie & Kinder
+      elterngeld: s => {
+        const age = s.familyChildAge !== '' ? parseFloat(String(s.familyChildAge).replace(',', '.')) : null;
+        if (age !== null && age > 3) return { relevant: false, reason: 'Elterngeld wird in der Regel nur in den ersten Lebensjahren des Kindes gezahlt – bei deiner Altersangabe vermutlich nicht mehr einschlägig.' };
+        return { relevant: true, reason: 'Kann passen, da dein Kind (laut Angabe) noch jung ist. Genaue Bezugsmonate auf der offiziellen Seite prüfen.' };
+      },
+      kindergeld: s => ({ relevant: true, reason: 'Gilt unabhängig vom Einkommen für (fast) jedes Kind bis zur jeweiligen Altersgrenze.' }),
+      unterhaltsvorschuss: s => {
+        if (s.familyStatus === 'partner') return { relevant: false, reason: 'Unterhaltsvorschuss ist für Alleinerziehende gedacht – laut deiner Angabe lebt ein:e Partner:in im Haushalt.' };
+        return { relevant: true, reason: 'Kann passen, wenn du alleinerziehend bist und der andere Elternteil keinen oder zu wenig Unterhalt zahlt.' };
+      },
+      kinderzuschlag: s => {
+        if (s.familyIncome === 'mittel' || s.familyIncome === 'hoch') return { relevant: false, reason: 'Kinderzuschlag ist für Haushalte mit eher geringem Einkommen gedacht – laut deiner Angabe evtl. nicht einschlägig.' };
+        return { relevant: true, reason: 'Kann passen, wenn dein Einkommen für dich reicht, aber nicht für den Bedarf deiner Kinder.' };
+      },
+      // Finanzielle Hilfen
+      buergergeld: s => {
+        if (s.employmentStatus === 'erwerbstaetig' || s.employmentStatus === 'rente') return { relevant: false, reason: 'Bürgergeld richtet sich an Erwerbsfähige ohne ausreichendes Einkommen – laut deiner Angabe evtl. nicht einschlägig.' };
+        return { relevant: true, reason: 'Kann passen, wenn dein Einkommen aktuell nicht für den Lebensunterhalt reicht.' };
+      },
+      wohngeld: s => {
+        if (s.familyIncome === 'hoch') return { relevant: false, reason: 'Wohngeld ist für Haushalte mit geringerem Einkommen gedacht – laut deiner Angabe evtl. nicht einschlägig.' };
+        return { relevant: true, reason: 'Kann passen, wenn deine Miete im Verhältnis zu deinem Einkommen hoch ist.' };
+      },
+      'wohngeld-wohnen': s => {
+        if (s.familyIncome === 'hoch') return { relevant: false, reason: 'Wohngeld ist für Haushalte mit geringerem Einkommen gedacht – laut deiner Angabe evtl. nicht einschlägig.' };
+        return { relevant: true, reason: 'Kann passen, wenn deine Miete im Verhältnis zu deinem Einkommen hoch ist.' };
+      },
+      // Arbeit & Weiterbildung
+      bildungsgutschein: s => {
+        if (s.employmentStatus === 'erwerbstaetig') return { relevant: false, reason: 'Der Bildungsgutschein wird meist bei Arbeitslosigkeit oder drohender Arbeitslosigkeit ausgestellt.' };
+        return { relevant: true, reason: 'Kann passen, wenn du arbeitslos bist oder eine berufliche Weiterbildung ansteht.' };
+      },
+      'aufstiegs-bafoeg': s => {
+        if (s.employmentStatus === 'arbeitslos') return { relevant: false, reason: 'Aufstiegs-BAföG setzt in der Regel eine laufende oder geplante Fortbildung neben bzw. nach der Erstausbildung voraus.' };
+        return { relevant: true, reason: 'Kann passen, wenn du eine berufliche Aufstiegsfortbildung (z. B. Meister) planst.' };
+      },
+      gruendungszuschuss: s => {
+        if (s.employmentStatus && s.employmentStatus !== 'arbeitslos') return { relevant: false, reason: 'Der Gründungszuschuss setzt einen Restanspruch auf Arbeitslosengeld I voraus.' };
+        return { relevant: true, reason: 'Kann passen, wenn du aus der Arbeitslosigkeit heraus ein Unternehmen gründen möchtest.' };
+      },
+      // Wohnen & Energie (privat)
+      'stromspar-check': s => {
+        if (s.familyIncome === 'hoch' || s.familyIncome === 'mittel') return { relevant: false, reason: 'Der Stromspar-Check richtet sich an Haushalte mit eher geringem Einkommen.' };
+        return { relevant: true, reason: 'Kann passen, wenn dein Haushaltseinkommen eher gering ist.' };
+      },
+      // Sonstige Unterstützung (privat)
+      schuldnerberatung: s => {
+        if (s.familyIncome === 'hoch') return { relevant: false, reason: 'Schuldnerberatung richtet sich an Menschen mit finanziellen Engpässen.' };
+        return { relevant: true, reason: 'Kann passen, wenn du finanzielle Engpässe oder Überschuldung hast.' };
+      },
+      // Förderungen & Zuschüsse (Unternehmen)
+      exist: s => {
+        if (s.bizPhase === 'bestehend') return { relevant: false, reason: 'EXIST richtet sich an Gründungsvorhaben aus der Hochschule, nicht an bereits bestehende Unternehmen.' };
+        return { relevant: true, reason: 'Kann passen, wenn du gerade ein technologie- oder wissensbasiertes Unternehmen gründest.' };
+      },
+      'mittelstand-digital': s => {
+        if (s.bizFocus && s.bizFocus !== 'digitalisierung') return { relevant: false, reason: 'Dieses Angebot ist auf Digitalisierungsvorhaben zugeschnitten.' };
+        return { relevant: true, reason: 'Kann passen, wenn Digitalisierung ein Thema für dein Unternehmen ist.' };
+      },
+      // Personal & Qualifizierung
+      wegebau: s => {
+        if (s.bizPhase === 'gruendung') return { relevant: false, reason: 'Setzt bereits Beschäftigte im Unternehmen voraus.' };
+        return { relevant: true, reason: 'Kann passen, wenn du Beschäftigte ohne Berufsabschluss weiterbilden möchtest.' };
+      },
+      qualichancengesetz: s => {
+        if (s.bizPhase === 'gruendung') return { relevant: false, reason: 'Setzt bereits Beschäftigte im Unternehmen voraus.' };
+        return { relevant: true, reason: 'Kann passen, wenn sich Tätigkeiten deiner Beschäftigten z. B. durch Digitalisierung wesentlich verändern.' };
+      },
+      // Energie & Nachhaltigkeit (Unternehmen)
+      'bafa-energie': s => {
+        if (s.bizFocus && s.bizFocus !== 'energie') return { relevant: false, reason: 'Dieses Angebot ist auf Energieberatung zugeschnitten.' };
+        return { relevant: true, reason: 'Kann passen, wenn Energieeinsparung ein Thema für dein Unternehmen ist.' };
+      },
+      'kfw-energieeffizienz': s => {
+        if (s.bizFocus && s.bizFocus !== 'energie') return { relevant: false, reason: 'Dieses Angebot ist auf Energieeffizienz-Vorhaben zugeschnitten.' };
+        return { relevant: true, reason: 'Kann passen, wenn du in effizientere Anlagen oder Prozesse investieren möchtest.' };
+      },
+      // Sonstige Unterstützung (Unternehmen)
+      buergschaftsbanken: s => {
+        if (s.bizSize === 'gross') return { relevant: false, reason: 'Bürgschaftsbanken richten sich vor allem an kleine und mittlere Unternehmen.' };
+        return { relevant: true, reason: 'Kann passen, wenn dir für einen Kredit eigene Sicherheiten fehlen.' };
+      }
+    };
 
+    function getCategoryMatches(category) {
+      let base = programs.filter(p => p.category === category && p.active);
+      if (category === 'familie') {
+        const kz = programs.find(p => p.id === 'kinderzuschlag' && p.active);
+        if (kz) base = base.concat([kz]);
+      }
       return base.map(p => {
-        let relevant = true;
-        let reason = 'Kann grundsätzlich passen – ohne weitere Angaben nicht genauer eingrenzbar.';
-        if (p.id === 'elterngeld') {
-          if (ageYears !== null && ageYears > 3) {
-            relevant = false;
-            reason = 'Elterngeld wird in der Regel nur in den ersten Lebensjahren des Kindes gezahlt – bei deiner Altersangabe vermutlich nicht mehr einschlägig.';
-          } else {
-            reason = 'Kann passen, da dein Kind (laut Angabe) noch jung ist. Genaue Bezugsmonate auf der offiziellen Seite prüfen.';
-          }
-        }
-        if (p.id === 'kindergeld') {
-          reason = 'Gilt unabhängig vom Einkommen für (fast) jedes Kind bis zur jeweiligen Altersgrenze.';
-        }
-        if (p.id === 'unterhaltsvorschuss') {
-          if (status === 'partner') {
-            relevant = false;
-            reason = 'Unterhaltsvorschuss ist für Alleinerziehende gedacht – laut deiner Angabe lebt ein:e Partner:in im Haushalt.';
-          } else {
-            reason = 'Kann passen, wenn du alleinerziehend bist und der andere Elternteil keinen oder zu wenig Unterhalt zahlt.';
-          }
-        }
-        if (p.id === 'kinderzuschlag') {
-          if (income === 'mittel' || income === 'hoch') {
-            relevant = false;
-            reason = 'Kinderzuschlag ist für Haushalte mit eher geringem Einkommen gedacht – laut deiner Angabe evtl. nicht einschlägig.';
-          } else {
-            reason = 'Kann passen, wenn dein Einkommen für dich reicht, aber nicht für den Bedarf deiner Kinder.';
-          }
-        }
-        return { program: p, relevant, reason };
+        const rule = matchRules[p.id];
+        if (!rule) return { program: p, relevant: true, reason: null };
+        const result = rule(state);
+        return { program: p, relevant: result.relevant, reason: result.reason };
       });
     }
 
     function renderResults() {
-      if (state.need === 'familie') {
-        const matches = getFamilyMatches();
-        const relevant = matches.filter(m => m.relevant);
-        const others = matches.filter(m => !m.relevant);
-        let html = relevant.map(m => programCardHtml(m.program, m.reason, true)).join('');
-        if (others.length) {
-          html += `
-            <li>
-              <details class="other-matches">
-                <summary>${others.length} weitere Leistung${others.length > 1 ? 'en' : ''} in dieser Kategorie anzeigen (laut deinen Angaben vermutlich weniger passend)</summary>
-                <ul class="result-list-plain-cards">
-                  ${others.map(m => programCardHtml(m.program, m.reason, false)).join('')}
-                </ul>
-              </details>
-            </li>
-          `;
-        }
-        html += `<li><span class="badge">Hinweis</span>Dies ist eine erste Orientierung anhand deiner Angaben, keine Anspruchsgarantie und keine Rechtsberatung. Die verbindliche Prüfung übernimmt die jeweils zuständige Stelle. Stand der Angaben: September 2026.</li>`;
-        resultList.innerHTML = html;
-        partnerLink.style.display = '';
-        partnerLink.href = relevant[0] ? relevant[0].program.applicationUrl : (matches[0] ? matches[0].program.applicationUrl : '#');
-        return;
-      }
-
-      const items = programs.filter(p => p.category === state.need && p.active);
-      if (!items.length) {
+      const matches = getCategoryMatches(state.need);
+      if (!matches.length) {
         resultList.innerHTML = `
           <li class="result-card">
             <h4>Aktuell keine passende Leistung gefunden</h4>
@@ -1100,13 +1268,28 @@
         partnerLink.style.display = 'none';
         return;
       }
+      let relevant = matches.filter(m => m.relevant);
+      let others = matches.filter(m => !m.relevant);
+      if (!relevant.length) { relevant = matches; others = []; } // nie alles ausblenden
+      let html = relevant.map(m => programCardHtml(m.program, m.reason, m.relevant)).join('');
+      if (others.length) {
+        html += `
+          <li>
+            <details class="other-matches">
+              <summary>${others.length} weitere Leistung${others.length > 1 ? 'en' : ''} in dieser Kategorie anzeigen (laut deinen Angaben vermutlich weniger passend)</summary>
+              <ul class="result-list-plain-cards">
+                ${others.map(m => programCardHtml(m.program, m.reason, false)).join('')}
+              </ul>
+            </details>
+          </li>
+        `;
+      }
+      html += `<li><span class="badge">Hinweis</span>Dies ist eine erste Orientierung anhand deiner Angaben, keine Anspruchsgarantie und keine Rechtsberatung. Die verbindliche Prüfung übernimmt die jeweils zuständige Stelle. Stand der Angaben: September 2026.</li>`;
+      resultList.innerHTML = html;
       partnerLink.style.display = '';
-      resultList.innerHTML = items.map(p => programCardHtml(p)).join('') + `
-        <li><span class="badge">Hinweis</span>Dies ist eine erste Orientierung ohne Anspruchsgarantie und keine Rechtsberatung. Die verbindliche Prüfung übernimmt die jeweils zuständige Stelle. Stand der Angaben: September 2026.</li>
-      `;
-      const firstOfficial = items[0];
-      partnerLink.href = firstOfficial ? firstOfficial.applicationUrl : '#';
+      partnerLink.href = relevant[0].program.applicationUrl;
     }
+
 
     // Events: Zielgruppe
     targetButtons.forEach(btn => {
@@ -1116,6 +1299,8 @@
         state.target = btn.dataset.target;
         state.need = null;
         toStep2Btn.disabled = true;
+        privateExtraEl.style.display = 'none';
+        businessExtraEl.style.display = 'none';
         updateNeedsView();
       });
     });
@@ -1131,13 +1316,14 @@
         activeBtn.style.borderColor = 'var(--primary)';
       }
       toStep2Btn.disabled = false;
-      // Für die Familie-Kategorie zeigen wir gezielte Fragen statt des generischen Freitexts
-      if (need === 'familie') {
-        familyExtraEl.style.display = '';
-        genericExtraEl.style.display = 'none';
+      // Passende Zusatzfragen je nach Zielgruppe zeigen
+      if (state.target === 'private') {
+        privateExtraEl.style.display = '';
+        businessExtraEl.style.display = 'none';
+        familyChildAgeRowEl.style.display = (need === 'familie') ? '' : 'none';
       } else {
-        familyExtraEl.style.display = 'none';
-        genericExtraEl.style.display = '';
+        privateExtraEl.style.display = 'none';
+        businessExtraEl.style.display = '';
       }
     }
 
@@ -1150,11 +1336,16 @@
 
     function collectStep2() {
       state.detailText = detailTextEl.value.trim();
-      state.region = regionEl.value.trim();
       state.familyChildAge = familyChildAgeEl.value.trim();
       state.familyStatus = familyStatusEl.value;
       state.familyIncome = familyIncomeEl.value;
+      state.employmentStatus = employmentStatusEl.value;
       state.familyBundesland = familyBundeslandEl.value;
+      state.bizPhase = bizPhaseEl.value;
+      state.bizSize = bizSizeEl.value;
+      state.bizFocus = bizFocusEl.value;
+      state.bizBundesland = bizBundeslandEl.value;
+      state.region = state.target === 'private' ? state.familyBundesland : state.bizBundesland;
     }
 
     // Navigation
@@ -1207,12 +1398,16 @@
           name: state.name,
           email: state.email,
           phone: state.phone,
-          region: state.region || state.familyBundesland,
+          region: state.region,
           bedarf: state.need,
           detailText: state.detailText,
           familyChildAge: state.familyChildAge,
           familyStatus: state.familyStatus,
-          familyIncome: state.familyIncome
+          familyIncome: state.familyIncome,
+          employmentStatus: state.employmentStatus,
+          bizPhase: state.bizPhase,
+          bizSize: state.bizSize,
+          bizFocus: state.bizFocus
         })
       })
         .then(res => {
@@ -1239,18 +1434,27 @@
       state.familyChildAge = '';
       state.familyStatus = '';
       state.familyIncome = '';
+      state.employmentStatus = '';
       state.familyBundesland = '';
+      state.bizPhase = '';
+      state.bizSize = '';
+      state.bizFocus = '';
+      state.bizBundesland = '';
       detailTextEl.value = '';
-      regionEl.value = '';
       nameEl.value = '';
       emailEl.value = '';
       phoneEl.value = '';
       familyChildAgeEl.value = '';
       familyStatusEl.value = '';
       familyIncomeEl.value = '';
+      employmentStatusEl.value = '';
       familyBundeslandEl.value = '';
-      familyExtraEl.style.display = 'none';
-      genericExtraEl.style.display = '';
+      bizPhaseEl.value = '';
+      bizSizeEl.value = '';
+      bizFocusEl.value = '';
+      bizBundeslandEl.value = '';
+      privateExtraEl.style.display = 'none';
+      businessExtraEl.style.display = 'none';
       consentPartnerEl.checked = false;
       consentPrivacyEl.checked = false;
       toStep2Btn.disabled = true;
@@ -1262,6 +1466,7 @@
     updateNeedsView();
     showStep(0);
     renderPartnerOffers();
+    renderAllProgramsOverview();
   </script>
 </body>
 </html>
