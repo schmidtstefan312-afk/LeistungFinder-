@@ -1,8 +1,5 @@
 <html lang="de">
-<head><script src="https://webchatagent.com/widget/web-chat-agent.js" async></script>
-<web-chat-agent
-  chatbot-id="96a32c92-3fcb-44a7-a225-70cb18d22588"
-></web-chat-agent>
+<head>
   <meta charset="UTF-8" />
   <title>Leistung-Finder – passende Unterstützung finden</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -828,8 +825,8 @@
         eligibility: 'Erwerbsfähig, mind. 15 Jahre alt, Einkommen/Vermögen reicht nicht zur Existenzsicherung.',
         amount: 'Regelsatz + Wohnkosten – aktuelle Höhe auf der offiziellen Seite.',
         region: 'Deutschland', deadline: 'Laufender Antrag möglich',
-        authority: 'Jobcenter', officialUrl: 'https://www.arbeitsagentur.de/buergergeld',
-        applicationUrl: 'https://www.arbeitsagentur.de/buergergeld', partnerUrl: null, affiliate: false,
+        authority: 'Jobcenter', officialUrl: 'https://www.arbeitsagentur.de/arbeitslos-arbeit-finden/buergergeld',
+        applicationUrl: 'https://www.arbeitsagentur.de/arbeitslos-arbeit-finden/buergergeld/buergergeld-beantragen', partnerUrl: null, affiliate: false,
         lastChecked: '2026-09', active: true },
       { id: 'wohngeld', name: 'Wohngeld', category: 'finanzen', targetGroup: 'privat',
         description: 'Zuschuss zur Miete oder zur Belastung für Wohneigentum für Haushalte mit geringem Einkommen.',
@@ -971,8 +968,8 @@
         description: 'Kostenlose, neutrale Beratung zur Digitalisierung im Unternehmen (Nachfolgeangebot zu „Digital Jetzt“).',
         eligibility: 'Kleine und mittlere Unternehmen mit Digitalisierungsvorhaben.',
         amount: 'Beratung kostenlos', region: 'Deutschland', deadline: 'Laufend',
-        authority: 'Bundesministerium für Wirtschaft', officialUrl: 'https://www.bundeswirtschaftsministerium.de/Redaktion/DE/Dossier/digital-jetzt.html',
-        applicationUrl: 'https://www.bundeswirtschaftsministerium.de/Redaktion/DE/Dossier/digital-jetzt.html', partnerUrl: null, affiliate: false,
+        authority: 'Netzwerk Mittelstand-Digital', officialUrl: 'https://www.mittelstand-digital.de/',
+        applicationUrl: 'https://www.mittelstand-digital.de/', partnerUrl: null, affiliate: false,
         lastChecked: '2026-09', active: true },
       { id: 'exist', name: 'EXIST-Gründerstipendium', category: 'foerderung', targetGroup: 'unternehmen',
         description: 'Förderung für technologieorientierte und wissensbasierte Existenzgründungen aus der Hochschule.',
@@ -1509,5 +1506,14 @@
     renderPartnerOffers();
     renderAllProgramsOverview();
   </script>
+
+  <!-- Chatbot: bewusst hier am Ende von <body> platziert statt am Anfang von <head>.
+       Vorher stand das Snippet vor <meta charset>, wodurch <web-chat-agent> als
+       ungültiges Head-Element den Browser-Parser zwingt, <head> sofort zu schließen –
+       Title, Meta-Description, Canonical, OG-Tags, JSON-LD und der komplette <style>-Block
+       landeten dadurch faktisch im <body>. Funktionalität des Chatbots bleibt unverändert,
+       nur die Position wurde korrigiert. -->
+  <script src="https://webchatagent.com/widget/web-chat-agent.js" async></script>
+  <web-chat-agent chatbot-id="96a32c92-3fcb-44a7-a225-70cb18d22588"></web-chat-agent>
 </body>
 </html>
