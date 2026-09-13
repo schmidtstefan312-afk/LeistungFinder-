@@ -346,10 +346,23 @@
       padding: 0.9rem 1.1rem;
       border-radius: 2px;
     }
-    .partner-section { border-top: 3px solid var(--border); padding-top: 1.75rem; }
+    .partner-section { border-top: 3px solid var(--border); padding-top: 0; }
     .partner-heading {
-      font-size: 1.5rem !important;
-      margin-bottom: 0.3rem !important;
+      background: var(--primary);
+      color: #fff !important;
+      font-size: 1.4rem !important;
+      font-weight: 700;
+      margin: -1.5rem -1.5rem 1.25rem !important;
+      padding: 1rem 1.5rem;
+      border-left: 6px solid var(--accent);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .partner-heading::before {
+      content: "★";
+      color: var(--accent);
+      font-size: 1.1rem;
     }
     .partner-group { margin-top: 1.75rem; }
     .partner-group:first-of-type { margin-top: 1.25rem; }
@@ -609,7 +622,7 @@
         <div class="checkbox-row">
           <input type="checkbox" id="consentPrivacy" />
           <label for="consentPrivacy" style="font-weight:400; margin:0;">
-            Ich habe die <a href="#datenschutz" target="_blank" rel="noopener">Datenschutzhinweise</a> gelesen und stimme der Verarbeitung meiner Daten zu.
+            Ich habe die <a href="datenschutz.html" target="_blank" rel="noopener">Datenschutzhinweise</a> gelesen und stimme der Verarbeitung meiner Daten zu.
           </label>
         </div>
 
@@ -617,7 +630,7 @@
           <button class="btn btn-secondary" id="backToStep2">Zurück</button>
           <button class="btn btn-success" id="submitLead">Anfrage absenden</button>
         </div>
-        <p class="disclaimer">Du kannst die Einwilligung jederzeit widerrufen. Weitere Infos in der <a href="#datenschutz" target="_blank" rel="noopener">Datenschutzerklärung</a>.</p>
+        <p class="disclaimer">Du kannst die Einwilligung jederzeit widerrufen. Weitere Infos in der <a href="datenschutz.html" target="_blank" rel="noopener">Datenschutzerklärung</a>.</p>
       </div>
 
       <!-- Step 4: Ergebnis / Weiterleitung -->
@@ -666,14 +679,15 @@
 
   <footer class="footer">
     <div class="container">
+      <p style="margin-bottom:1rem;">
+        <a href="impressum.html">Impressum</a> &nbsp;·&nbsp; <a href="datenschutz.html">Datenschutzerklärung</a>
+      </p>
       <p>
-        <strong>Impressum</strong><br>
+        <strong>Impressum (Kurzfassung)</strong><br>
         Anbieter: Stefan Schmidt, Hannoversche Straße 90, 28309 Bremen, info@leistung-finder.de<br>
-        Verantwortlich gem. § 5 DDG (Digitale-Dienste-Gesetz, vormals § 5 TMG).<br><br>
-        <strong id="datenschutz">Datenschutz</strong><br>
-        Wenn du das Kontaktformular nutzt, verarbeiten wir deine Angaben auf Grundlage deiner Einwilligung (Art. 6 Abs. 1 lit. a DSGVO), um deine Anfrage zu bearbeiten. Der Versand erfolgt über den Formular-Dienstleister Formspree.<br>
-        Diese Seite bindet zudem folgende externe Dienste ein: Google Fonts (Schriftarten, Google Ireland Ltd.), einen Besucherzähler-Dienst sowie Werbe-/Partnerlinks des Netzwerks Awin. Beim Aufruf dieser Dienste können Daten wie deine IP-Adresse an die jeweiligen Anbieter übertragen werden.<br>
-        Du hast das Recht auf Auskunft, Berichtigung, Löschung und Widerspruch. Kontakt: info@leistung-finder.de.<br><br>
+        Verantwortlich gem. § 5 DDG (Digitale-Dienste-Gesetz, vormals § 5 TMG). Vollständiges <a href="impressum.html">Impressum hier</a>.<br><br>
+        <strong id="datenschutz">Datenschutz (Kurzfassung)</strong><br>
+        Wenn du das Kontaktformular nutzt, verarbeiten wir deine Angaben auf Grundlage deiner Einwilligung (Art. 6 Abs. 1 lit. a DSGVO), um deine Anfrage zu bearbeiten. Ausführliche Informationen zu allen eingebundenen Diensten findest du in der <a href="datenschutz.html">vollständigen Datenschutzerklärung</a>.<br><br>
         <strong>Haftungsausschluss</strong><br>
         Leistung-Finder ist keine Behörde und bietet keine Rechtsberatung. Die Inhalte dienen nur der ersten Orientierung und ersetzen keine verbindliche Prüfung durch die zuständige Stelle. Wir übernehmen keine Gewähr für Vollständigkeit und Aktualität.<br><br>
         <a href="#top">Nach oben</a>
@@ -782,12 +796,12 @@
         applicationUrl: 'https://www.pflege.de/pflegekasse-pflegeversicherung/pflegegeld/', partnerUrl: null, affiliate: false,
         lastChecked: '2026-09', active: true },
       { id: 'verhinderungspflege', name: 'Verhinderungspflege', category: 'pflege', targetGroup: 'privat',
-        description: 'Kostenübernahme für eine Ersatzpflegeperson, wenn die pflegende Person zeitweise ausfällt (z. B. Urlaub, Krankheit).',
-        eligibility: 'Anerkannter Pflegegrad (mind. 2), Pflegeperson pflegt seit mind. 6 Monaten.',
-        amount: 'Jährliches Budget – aktueller Betrag auf der offiziellen Seite.',
-        region: 'Deutschland', deadline: 'Keine feste Frist',
-        authority: 'Zuständige Pflegekasse', officialUrl: 'https://www.bundesgesundheitsministerium.de/themen/pflege/leistungen/verhinderungspflege.html',
-        applicationUrl: 'https://www.bundesgesundheitsministerium.de/themen/pflege/leistungen/verhinderungspflege.html', partnerUrl: null, affiliate: false,
+        description: 'Kostenübernahme für eine Ersatzpflegeperson, wenn die pflegende Person zeitweise ausfällt (z. B. Urlaub, Krankheit), für bis zu 8 Wochen je Kalenderjahr.',
+        eligibility: 'Anerkannter Pflegegrad (mind. 2), Pflege findet überwiegend zuhause statt. Seit Juli 2025 keine Mindest-Vorpflegezeit mehr nötig.',
+        amount: 'Gemeinsamer Jahresbetrag mit der Kurzzeitpflege, 2026 bis zu 3.539 € im Kalenderjahr – aktuelle Höhe auf der offiziellen Seite.',
+        region: 'Deutschland', deadline: 'Kostenerstattung bis Ende des Folgejahres beantragen',
+        authority: 'Zuständige Pflegekasse', officialUrl: 'https://www.bundesgesundheitsministerium.de/verhinderungspflege',
+        applicationUrl: 'https://www.bundesgesundheitsministerium.de/verhinderungspflege', partnerUrl: null, affiliate: false,
         lastChecked: '2026-09', active: true },
       { id: 'pflegehilfsmittel', name: 'Pflegehilfsmittel & Wohnraumanpassung', category: 'pflege', targetGroup: 'privat',
         description: 'Zuschuss für Pflegehilfsmittel im Alltag und für barrierefreien Umbau der Wohnung.',
@@ -796,6 +810,14 @@
         region: 'Deutschland', deadline: 'Keine feste Frist',
         authority: 'Zuständige Pflegekasse', officialUrl: 'https://www.pflege.de/pflegekasse-pflegeversicherung/pflegehilfsmittel/',
         applicationUrl: 'https://www.pflege.de/pflegekasse-pflegeversicherung/pflegehilfsmittel/', partnerUrl: null, affiliate: false,
+        lastChecked: '2026-09', active: true },
+      { id: 'grundsicherung-alter', name: 'Grundsicherung im Alter und bei Erwerbsminderung', category: 'finanzen', targetGroup: 'privat',
+        description: 'Existenzsichernde Leistung für Menschen, die die Regelaltersgrenze erreicht haben oder dauerhaft voll erwerbsgemindert sind und deren Einkommen/Vermögen nicht ausreicht.',
+        eligibility: 'Regelaltersgrenze erreicht oder dauerhaft voll erwerbsgemindert, Einkommen und Vermögen reichen nicht zum Lebensunterhalt.',
+        amount: 'Regelsatz + angemessene Wohnkosten – aktuelle Höhe auf der offiziellen Seite.',
+        region: 'Deutschland', deadline: 'Laufender Antrag möglich',
+        authority: 'Örtliches Sozialamt', officialUrl: 'https://www.bmas.de/DE/Soziales/Sozialhilfe/Grundsicherung/grundsicherung-im-alter-und-bei-erwerbsminderung.html',
+        applicationUrl: 'https://www.bmas.de/DE/Soziales/Sozialhilfe/Grundsicherung/grundsicherung-im-alter-und-bei-erwerbsminderung.html', partnerUrl: null, affiliate: false,
         lastChecked: '2026-09', active: true },
 
       { id: 'buergergeld', name: 'Bürgergeld', category: 'finanzen', targetGroup: 'privat',
@@ -811,8 +833,8 @@
         eligibility: 'Kein Bezug von Bürgergeld/Grundsicherung, Einkommen und Miete im förderfähigen Rahmen.',
         amount: 'Abhängig von Einkommen, Miete und Haushaltsgröße – Berechnung bei der Wohngeldbehörde.',
         region: 'Regional (örtliches Wohngeldamt zuständig)', deadline: 'Laufender Antrag möglich',
-        authority: 'Örtliche Wohngeldbehörde', officialUrl: 'https://www.bmwsb.bund.de/Webs/BMWSB/DE/themen/bauen-wohnen/wohnraumfoerderung/wohngeld/wohngeld-node.html',
-        applicationUrl: 'https://www.bmwsb.bund.de/Webs/BMWSB/DE/themen/bauen-wohnen/wohnraumfoerderung/wohngeld/wohngeld-node.html', partnerUrl: null, affiliate: false,
+        authority: 'Örtliche Wohngeldbehörde', officialUrl: 'https://www.bmwsb.bund.de/DE/wohnen/wohngeld/wohngeld_node.html',
+        applicationUrl: 'https://www.bmwsb.bund.de/DE/wohnen/wohngeld/wohngeld_node.html', partnerUrl: null, affiliate: false,
         lastChecked: '2026-09', active: true },
       { id: 'kinderzuschlag', name: 'Kinderzuschlag', category: 'finanzen', targetGroup: 'privat',
         description: 'Zusätzliche Leistung für Familien, deren Einkommen für sie selbst reicht, aber nicht für die Kinder.',
@@ -878,8 +900,8 @@
         eligibility: 'Kein Bezug von Bürgergeld/Grundsicherung, Einkommen und Miete im förderfähigen Rahmen.',
         amount: 'Abhängig von Einkommen, Miete und Haushaltsgröße.',
         region: 'Regional (örtliches Wohngeldamt zuständig)', deadline: 'Laufender Antrag möglich',
-        authority: 'Örtliche Wohngeldbehörde', officialUrl: 'https://www.bmwsb.bund.de/Webs/BMWSB/DE/themen/bauen-wohnen/wohnraumfoerderung/wohngeld/wohngeld-node.html',
-        applicationUrl: 'https://www.bmwsb.bund.de/Webs/BMWSB/DE/themen/bauen-wohnen/wohnraumfoerderung/wohngeld/wohngeld-node.html', partnerUrl: null, affiliate: false,
+        authority: 'Örtliche Wohngeldbehörde', officialUrl: 'https://www.bmwsb.bund.de/DE/wohnen/wohngeld/wohngeld_node.html',
+        applicationUrl: 'https://www.bmwsb.bund.de/DE/wohnen/wohngeld/wohngeld_node.html', partnerUrl: null, affiliate: false,
         lastChecked: '2026-09', active: true },
       { id: 'stromspar-check', name: 'Stromspar-Check', category: 'wohnen', targetGroup: 'privat',
         description: 'Kostenlose Energieberatung für einkommensschwache Haushalte, oft inkl. Soforthilfen wie LED-Lampen.',
@@ -990,14 +1012,22 @@
         authority: 'Agentur für Arbeit', officialUrl: 'https://www.arbeitsagentur.de/unternehmen/finanziell/qualifizierungschancengesetz',
         applicationUrl: 'https://www.arbeitsagentur.de/unternehmen/finanziell/qualifizierungschancengesetz', partnerUrl: null, affiliate: false,
         lastChecked: '2026-09', active: true },
+      { id: 'kurzarbeitergeld', name: 'Kurzarbeitergeld', category: 'personal', targetGroup: 'unternehmen',
+        description: 'Lohnersatzleistung für Beschäftigte bei vorübergehendem, erheblichem Arbeitsausfall, um Kündigungen zu vermeiden.',
+        eligibility: 'Erheblicher, vorübergehender Arbeitsausfall (z. B. Auftragsmangel), mind. ein Drittel der Beschäftigten betroffen, Anzeige bei der Agentur für Arbeit.',
+        amount: 'Prozentsatz des ausgefallenen Nettoentgelts – aktuelle Höhe auf der offiziellen Seite.',
+        region: 'Deutschland', deadline: 'Anzeige vor Beginn der Kurzarbeit erforderlich',
+        authority: 'Agentur für Arbeit', officialUrl: 'https://www.arbeitsagentur.de/unternehmen/finanziell/kurzarbeitergeld-arbeitsausfall-antrag',
+        applicationUrl: 'https://www.arbeitsagentur.de/unternehmen/finanziell/kurzarbeitergeld-arbeitsausfall-antrag', partnerUrl: null, affiliate: false,
+        lastChecked: '2026-09', active: true },
 
       { id: 'bafa-energie', name: 'BAFA-Förderung Energieberatung', category: 'energie', targetGroup: 'unternehmen',
         description: 'Zuschuss für eine unabhängige Energieberatung im Unternehmen.',
         eligibility: 'KMU mit Interesse an Energieeinsparung.',
         amount: 'Zuschuss zu den Beratungskosten – Höhe auf der offiziellen Seite.',
         region: 'Deutschland', deadline: 'Vor Beratungsbeginn beantragen',
-        authority: 'BAFA', officialUrl: 'https://www.bafa.de/DE/Energie/Energieberatung/Energieberatung_node.html',
-        applicationUrl: 'https://www.bafa.de/DE/Energie/Energieberatung/Energieberatung_node.html', partnerUrl: null, affiliate: false,
+        authority: 'BAFA', officialUrl: 'https://www.bafa.de/DE/Energie/Energieberatung/energieberatung_node.html',
+        applicationUrl: 'https://www.bafa.de/DE/Energie/Energieberatung/energieberatung_node.html', partnerUrl: null, affiliate: false,
         lastChecked: '2026-09', active: true },
       { id: 'kfw-energieeffizienz', name: 'KfW Energieeffizienz in der Wirtschaft', category: 'energie', targetGroup: 'unternehmen',
         description: 'Kredite und Zuschüsse für effizientere Anlagen und Prozesse im Unternehmen.',
@@ -1180,6 +1210,10 @@
         if (s.familyIncome === 'hoch') return { relevant: false, reason: 'Wohngeld ist für Haushalte mit geringerem Einkommen gedacht – laut deiner Angabe evtl. nicht einschlägig.' };
         return { relevant: true, reason: 'Kann passen, wenn deine Miete im Verhältnis zu deinem Einkommen hoch ist.' };
       },
+      'grundsicherung-alter': s => {
+        if (s.employmentStatus && s.employmentStatus !== 'rente') return { relevant: false, reason: 'Diese Leistung richtet sich an Menschen im Rentenalter oder mit dauerhafter voller Erwerbsminderung.' };
+        return { relevant: true, reason: 'Kann passen, wenn du im Rentenalter bist oder dauerhaft voll erwerbsgemindert und dein Einkommen nicht reicht.' };
+      },
       // Arbeit & Weiterbildung
       bildungsgutschein: s => {
         if (s.employmentStatus === 'erwerbstaetig') return { relevant: false, reason: 'Der Bildungsgutschein wird meist bei Arbeitslosigkeit oder drohender Arbeitslosigkeit ausgestellt.' };
@@ -1220,6 +1254,10 @@
       qualichancengesetz: s => {
         if (s.bizPhase === 'gruendung') return { relevant: false, reason: 'Setzt bereits Beschäftigte im Unternehmen voraus.' };
         return { relevant: true, reason: 'Kann passen, wenn sich Tätigkeiten deiner Beschäftigten z. B. durch Digitalisierung wesentlich verändern.' };
+      },
+      kurzarbeitergeld: s => {
+        if (s.bizPhase === 'gruendung') return { relevant: false, reason: 'Setzt ein bestehendes Unternehmen mit Beschäftigten voraus.' };
+        return { relevant: true, reason: 'Kann passen, wenn dein Unternehmen vorübergehend erheblich weniger Arbeit hat und du Kündigungen vermeiden möchtest.' };
       },
       // Energie & Nachhaltigkeit (Unternehmen)
       'bafa-energie': s => {
