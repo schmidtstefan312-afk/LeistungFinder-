@@ -611,14 +611,6 @@
       font-size: 1.1rem;
     }
 
-    .partner-group {
-      margin-top: 1.75rem;
-    }
-
-    .partner-group:first-of-type {
-      margin-top: 1.25rem;
-    }
-
     .partner-group-title {
       font-family: var(--serif);
       font-weight: 600;
@@ -633,44 +625,175 @@
     .ad-label {
       font-size: 0.78rem;
       color: var(--muted);
-      margin: -0.4rem 0 0.9rem;
+      margin: -0.4rem 0 1.5rem;
       font-style: italic;
     }
 
-    .partner-banners {
+    .partner-intro {
+      margin: -0.5rem 0 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+      max-width: 62ch;
+    }
+
+    .partner-category {
+      margin-top: 2.25rem;
+    }
+
+    .partner-category:first-of-type {
+      margin-top: 0;
+    }
+
+    .partner-category-header {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .partner-category-icon {
+      width: 1.9rem;
+      height: 1.9rem;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--serif);
+      font-weight: 600;
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+
+    .partner-category-title {
+      font-family: var(--serif);
+      font-weight: 600;
+      font-size: 1.08rem;
+      color: var(--primary-dark);
+      margin: 0;
+    }
+
+    .partner-category-desc {
+      margin: 0 0 1rem 2.55rem;
+      font-size: 0.86rem;
+      color: var(--muted);
+      max-width: 56ch;
+    }
+
+    .partner-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
       gap: 1rem;
     }
 
-    .banner-tile {
+    .partner-card {
+      position: relative;
       border: 1px solid var(--border);
-      border-radius: 2px;
-      padding: 0.85rem;
+      border-radius: 4px;
+      background: #fff;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      gap: 0.6rem;
-      background: #fdfcfa;
+      overflow: hidden;
+      transition: box-shadow 0.15s ease, border-color 0.15s ease;
     }
 
-    .banner-tile-label {
-      font-size: 0.82rem;
-      font-weight: 600;
-      color: var(--primary-dark);
-      text-align: center;
+    .partner-card:hover {
+      border-color: var(--primary);
+      box-shadow: 0 6px 16px rgba(15,32,29,0.10);
     }
 
-    .banner-tile a,
-    .banner-tile iframe {
-      display: inline-block;
-      max-width: 100%;
-    }
-
-    .banner-tile img {
-      max-width: 100%;
-      height: auto;
+    .partner-card-badge {
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
+      font-size: 0.65rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      background: rgba(255,255,255,0.92);
+      color: var(--muted);
+      border: 1px solid var(--border);
+      padding: 0.15rem 0.4rem;
       border-radius: 2px;
+      z-index: 1;
+    }
+
+    .partner-card-media {
+      height: 112px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fdfcfa;
+      border-bottom: 1px solid var(--border);
+      padding: 0.75rem;
+    }
+
+    .partner-card-media img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    .partner-iframe-wrap iframe {
+      max-width: 100%;
+      border: 0;
+    }
+
+    .partner-card-body {
+      padding: 0.75rem 0.9rem 0.9rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+      flex: 1;
+    }
+
+    .partner-card-label {
+      font-size: 0.87rem;
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.35;
+    }
+
+    .partner-card-cta {
+      margin-top: auto;
+      align-self: flex-start;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-decoration: none;
+      padding: 0.4rem 0.75rem;
+      border: 1px solid var(--primary);
+      border-radius: 2px;
+    }
+
+    .partner-card-cta:hover {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .partner-more {
+      margin-top: 0.9rem;
+      border: 1px dashed var(--border);
+      border-radius: 3px;
+      padding: 0.6rem 0.9rem;
+    }
+
+    .partner-more summary {
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--muted);
+    }
+
+    .partner-more[open] summary {
+      color: var(--primary-dark);
+      margin-bottom: 0.75rem;
+    }
+
+    .partner-more-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1rem;
     }
 
     @media (max-width: 600px) {
@@ -1182,6 +1305,10 @@
       <p class="ad-label">
         Anzeige – bei Abschluss über diese Links erhalten wir ggf. eine Vergütung.
         Diese Angebote stammen von unabhängigen Partnern, nicht von Behörden.
+      </p>
+
+      <p class="partner-intro">
+        Ergänzend zu den staatlichen Leistungen oben haben wir ausgewählte private Angebote nach Themenbereich sortiert – von Versicherungen über Software bis zu Reiseangeboten.
       </p>
 
       <div id="partnerGroups"></div>
@@ -2279,6 +2406,41 @@
     ];
 
 
+    const partnerCategoryMeta = {
+
+      'Reisen & Reiseversicherung': {
+        icon: 'R',
+        desc: 'Absicherung und ergänzende Angebote rund um Reisen ins Ausland.'
+      },
+
+      'Versicherungen & Tarife vergleichen': {
+        icon: 'V',
+        desc: 'Unabhängige Vergleichsportale für Versicherungen, Tarife und Verträge.'
+      },
+
+      'Verkehrsrecht & Bußgeld': {
+        icon: '§',
+        desc: 'Rechtliche Unterstützung bei Bußgeldbescheiden und im Verkehrsrecht.'
+      },
+
+      'Software & Tools': {
+        icon: 'S',
+        desc: 'Software für Dokumente, Dateiformate und digitale Anwendungen.'
+      },
+
+      'Sparen & Gewinnspiele': {
+        icon: '€',
+        desc: 'Sparmöglichkeiten, Aktionen und Gutscheine für den Alltag.'
+      },
+
+      'Technik & Zubehör': {
+        icon: 'T',
+        desc: 'Geräte und Zubehör für Haushalt, Technik und Energieversorgung.'
+      }
+
+    };
+
+
     const categoryLabels = {
 
       pflege: 'Pflege & Gesundheit',
@@ -2416,6 +2578,79 @@
     }
 
 
+    const PARTNER_VISIBLE_COUNT = 4;
+
+
+    function partnerCardHtml(o) {
+
+      if (o.rawHtml) {
+
+        return `
+
+          <div class="partner-card">
+
+            <span class="partner-card-badge">
+              Anzeige
+            </span>
+
+            <div class="partner-card-media partner-iframe-wrap">
+              ${o.rawHtml}
+            </div>
+
+            <div class="partner-card-body">
+
+              <div class="partner-card-label">
+                ${o.label}
+              </div>
+
+            </div>
+
+          </div>
+
+        `;
+
+      }
+
+      return `
+
+        <div class="partner-card">
+
+          <span class="partner-card-badge">
+            Anzeige
+          </span>
+
+          <div class="partner-card-media">
+            <img
+              src="${o.img}"
+              alt="${o.alt}"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="partner-card-body">
+
+            <div class="partner-card-label">
+              ${o.label}
+            </div>
+
+            <a
+              class="partner-card-cta"
+              rel="sponsored noopener"
+              href="${o.url}"
+              target="_blank"
+            >
+              Angebot ansehen
+            </a>
+
+          </div>
+
+        </div>
+
+      `;
+
+    }
+
+
     function renderPartnerOffers() {
 
       const groups = [];
@@ -2440,51 +2675,73 @@
       if (!root) return;
 
 
-      root.innerHTML = groups.map(cat => `
+      root.innerHTML = groups.map(cat => {
 
-        <div class="partner-group">
+        const items =
+          byCategory[cat];
 
-          <h3 class="partner-group-title">
-            ${cat}
-          </h3>
+        const meta =
+          partnerCategoryMeta[cat] ||
+          { icon: '★', desc: '' };
 
-          <div class="partner-banners">
+        const visible =
+          items.slice(0, PARTNER_VISIBLE_COUNT);
 
-            ${byCategory[cat].map(o => `
+        const rest =
+          items.slice(PARTNER_VISIBLE_COUNT);
 
-              <div class="banner-tile">
+        return `
 
-                <span class="banner-tile-label">
-                  ${o.label}
-                </span>
+          <div class="partner-category">
 
-                ${
-                  o.rawHtml
-                    ? o.rawHtml
-                    : `
-                      <a
-                        rel="sponsored noopener"
-                        href="${o.url}"
-                        target="_blank"
-                      >
-                        <img
-                          src="${o.img}"
-                          alt="${o.alt}"
-                          border="0"
-                        >
-                      </a>
-                    `
-                }
+            <div class="partner-category-header">
 
-              </div>
+              <span class="partner-category-icon">
+                ${meta.icon}
+              </span>
 
-            `).join('')}
+              <h3 class="partner-category-title">
+                ${cat}
+              </h3>
+
+            </div>
+
+            ${
+              meta.desc
+                ? `<p class="partner-category-desc">${meta.desc}</p>`
+                : ''
+            }
+
+            <div class="partner-grid">
+              ${visible.map(partnerCardHtml).join('')}
+            </div>
+
+            ${
+              rest.length
+                ? `
+                  <details class="partner-more">
+
+                    <summary>
+                      ${rest.length}
+                      weitere${rest.length > 1 ? '' : 's'}
+                      Angebot${rest.length > 1 ? 'e' : ''}
+                      in dieser Kategorie anzeigen
+                    </summary>
+
+                    <div class="partner-more-grid">
+                      ${rest.map(partnerCardHtml).join('')}
+                    </div>
+
+                  </details>
+                `
+                : ''
+            }
 
           </div>
 
-        </div>
+        `;
 
-      `).join('');
+      }).join('');
 
     }
 
@@ -3393,296 +3650,4 @@
 
     toStep2Btn.addEventListener(
       'click',
-      () => {
-
-        collectStep2();
-        showStep(1);
-
-      }
-    );
-
-
-    backToStep1Btn.addEventListener(
-      'click',
-      () => {
-
-        showStep(0);
-
-      }
-    );
-
-
-    toStep3Btn.addEventListener(
-      'click',
-      () => {
-
-        collectStep2();
-        showStep(2);
-
-      }
-    );
-
-
-    backToStep2Btn.addEventListener(
-      'click',
-      () => {
-
-        showStep(1);
-
-      }
-    );
-
-
-    /* FORMULAR */
-
-    submitLeadBtn.addEventListener(
-      'click',
-      () => {
-
-        state.name =
-          nameEl.value.trim();
-
-        state.email =
-          emailEl.value.trim();
-
-        state.phone =
-          phoneEl.value.trim();
-
-
-        if (
-          !state.name ||
-          !state.email
-        ) {
-
-          alert(
-            'Bitte Name und E-Mail ausfüllen.'
-          );
-
-          return;
-
-        }
-
-
-        if (
-          !consentPartnerEl.checked ||
-          !consentPrivacyEl.checked
-        ) {
-
-          alert(
-            'Bitte beide Einwilligungen bestätigen.'
-          );
-
-          return;
-
-        }
-
-
-        renderResults();
-
-        showStep(3);
-
-        leadStatus.textContent =
-          'Anfrage wird übermittelt …';
-
-        leadStatus.className =
-          'lead-status';
-
-
-        submitLeadBtn.disabled =
-          true;
-
-
-        fetch(
-          'https://formspree.io/f/xnpqlyor',
-          {
-            method: 'POST',
-
-            headers: {
-              'Content-Type':
-                'application/json',
-
-              'Accept':
-                'application/json'
-            },
-
-            body:
-              JSON.stringify({
-
-                typ:
-                  state.target === 'private'
-                    ? 'Privatperson'
-                    : 'Unternehmen',
-
-                name:
-                  state.name,
-
-                email:
-                  state.email,
-
-                phone:
-                  state.phone,
-
-                region:
-                  state.region,
-
-                bedarf:
-                  state.need,
-
-                detailText:
-                  state.detailText,
-
-                familyChildAge:
-                  state.familyChildAge,
-
-                familyStatus:
-                  state.familyStatus,
-
-                familyIncome:
-                  state.familyIncome,
-
-                employmentStatus:
-                  state.employmentStatus,
-
-                bizPhase:
-                  state.bizPhase,
-
-                bizSize:
-                  state.bizSize,
-
-                bizFocus:
-                  state.bizFocus
-
-              })
-
-          }
-        )
-
-        .then(res => {
-
-          if (!res.ok) {
-            throw new Error(
-              'send-lead fehlgeschlagen'
-            );
-          }
-
-          leadStatus.textContent =
-            'Deine Anfrage wurde erfolgreich übermittelt.';
-
-          leadStatus.className =
-            'lead-status ok';
-
-        })
-
-        .catch(err => {
-
-          console.error(
-            'Lead-Versand fehlgeschlagen:',
-            err
-          );
-
-          leadStatus.textContent =
-            'Die Übermittlung hat leider nicht geklappt. Bitte versuche es später erneut oder kontaktiere uns direkt.';
-
-          leadStatus.className =
-            'lead-status err';
-
-        })
-
-        .finally(() => {
-
-          submitLeadBtn.disabled =
-            false;
-
-        });
-
-      }
-    );
-
-
-    /* NEUE SUCHE */
-
-    restartBtn.addEventListener(
-      'click',
-      () => {
-
-        state.need = null;
-        state.detailText = '';
-        state.region = '';
-        state.name = '';
-        state.email = '';
-        state.phone = '';
-        state.familyChildAge = '';
-        state.familyStatus = '';
-        state.familyIncome = '';
-        state.employmentStatus = '';
-        state.familyBundesland = '';
-        state.bizPhase = '';
-        state.bizSize = '';
-        state.bizFocus = '';
-        state.bizBundesland = '';
-
-        detailTextEl.value = '';
-        nameEl.value = '';
-        emailEl.value = '';
-        phoneEl.value = '';
-
-        familyChildAgeEl.value = '';
-        familyStatusEl.value = '';
-        familyIncomeEl.value = '';
-        employmentStatusEl.value = '';
-        familyBundeslandEl.value = '';
-
-        bizPhaseEl.value = '';
-        bizSizeEl.value = '';
-        bizFocusEl.value = '';
-        bizBundeslandEl.value = '';
-
-        privateExtraEl.style.display =
-          'none';
-
-        businessExtraEl.style.display =
-          'none';
-
-        consentPartnerEl.checked =
-          false;
-
-        consentPrivacyEl.checked =
-          false;
-
-        toStep2Btn.disabled =
-          true;
-
-        updateNeedsView();
-
-        showStep(0);
-
-      }
-    );
-
-
-    /* START */
-
-    updateNeedsView();
-
-    showStep(0);
-
-    renderPartnerOffers();
-
-    renderAllProgramsOverview();
-
-  </script>
-
-
-  <!-- CHATBOT -->
-
-  <script
-    src="https://webchatagent.com/widget/web-chat-agent.js"
-    async
-  ></script>
-
-  <web-chat-agent
-    chatbot-id="96a32c92-3fcb-44a7-a225-70cb18d22588"
-  ></web-chat-agent>
-
-</body>
-</html>
+    
