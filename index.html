@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
@@ -7,6 +8,7 @@
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://leistung-finder.de/" />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Leistung-Finder – passende Unterstützung finden" />
   <meta property="og:description" content="Kostenloser Leistung-Finder: In wenigen Schritten passende Unterstützungsleistungen finden und unverbindlich an Partner vermitteln lassen." />
@@ -15,10 +17,12 @@
   <meta property="og:image" content="https://leistung-finder.de/og-image.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
+
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Leistung-Finder – passende Unterstützung finden" />
   <meta name="twitter:description" content="Kostenloser Leistung-Finder: In wenigen Schritten passende Unterstützungsleistungen finden und unverbindlich an Partner vermitteln lassen." />
   <meta name="twitter:image" content="https://leistung-finder.de/og-image.png" />
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -35,9 +39,11 @@
     }
   }
   </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
   <style>
     :root {
       --primary: #0f4c46;
@@ -55,7 +61,9 @@
       --serif: "Fraunces", Georgia, "Times New Roman", serif;
       --sans: "Work Sans", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     }
+
     * { box-sizing: border-box; }
+
     body {
       margin: 0;
       font-family: var(--sans);
@@ -63,12 +71,18 @@
       color: var(--text);
       line-height: 1.6;
     }
+
     .hero {
       background: var(--primary);
       color: #fff;
       padding: 2.25rem 1.25rem 4.5rem;
     }
-    .hero-inner { max-width: 980px; margin: 0 auto; }
+
+    .hero-inner {
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
     .logotype {
       font-family: var(--serif);
       font-weight: 500;
@@ -77,6 +91,7 @@
       opacity: 0.85;
       margin-bottom: 1.5rem;
     }
+
     .hero h1 {
       font-family: var(--serif);
       font-weight: 600;
@@ -85,12 +100,14 @@
       margin: 0 0 0.75rem;
       max-width: 18ch;
     }
+
     .hero p.lede {
       max-width: 52ch;
       font-size: 1.05rem;
       opacity: 0.92;
       margin: 0 0 1.5rem;
     }
+
     .trust-points {
       display: flex;
       flex-wrap: wrap;
@@ -99,12 +116,14 @@
       padding: 0;
       list-style: none;
     }
+
     .trust-points li {
       position: relative;
       padding-left: 1.05rem;
       font-size: 0.9rem;
       opacity: 0.85;
     }
+
     .trust-points li::before {
       content: "";
       position: absolute;
@@ -115,7 +134,13 @@
       background: var(--accent);
       border-radius: 50%;
     }
-    .container { max-width: 980px; margin: 0 auto; padding: 0 1rem 1.5rem; }
+
+    .container {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 0 1rem 1.5rem;
+    }
+
     .card {
       background: var(--card);
       border: 1px solid var(--border);
@@ -123,11 +148,13 @@
       padding: 1.5rem;
       margin-bottom: 1.5rem;
     }
+
     .card-wizard {
       margin-top: -3.25rem;
       border-top: 4px solid var(--accent);
       box-shadow: 0 12px 28px rgba(15,32,29,0.14);
     }
+
     .step-flow {
       display: flex;
       flex-wrap: wrap;
@@ -135,8 +162,8 @@
       margin: 0.5rem 0 0.75rem;
       padding: 0;
       list-style: none;
-      counter-reset: none;
     }
+
     .step-flow li {
       flex: 1 1 160px;
       position: relative;
@@ -144,6 +171,7 @@
       font-size: 0.92rem;
       color: var(--text);
     }
+
     .step-flow li::before {
       content: "";
       position: absolute;
@@ -153,7 +181,11 @@
       height: 1px;
       background: var(--border);
     }
-    .step-flow li:last-child::before { display: none; }
+
+    .step-flow li:last-child::before {
+      display: none;
+    }
+
     .step-num {
       position: absolute;
       top: 0;
@@ -170,10 +202,22 @@
       align-items: center;
       justify-content: center;
     }
-    .card h2 { margin-top: 0; font-size: 1.2rem; font-family: var(--serif); font-weight: 600; color: var(--primary-dark); }
-    .target-group-switch {
-      display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem;
+
+    .card h2 {
+      margin-top: 0;
+      font-size: 1.2rem;
+      font-family: var(--serif);
+      font-weight: 600;
+      color: var(--primary-dark);
     }
+
+    .target-group-switch {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+    }
+
     .target-group-switch button {
       border: 1px solid var(--border);
       background: #fff;
@@ -182,14 +226,22 @@
       cursor: pointer;
       font-weight: 600;
     }
+
     .target-group-switch button.active {
       background: var(--primary);
       color: #fff;
       border-color: var(--primary);
     }
+
     .step { display: none; }
     .step.active { display: block; }
-    .options { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.75rem; }
+
+    .options {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0.75rem;
+    }
+
     .option-btn {
       border: 1px solid var(--border);
       background: #fff;
@@ -199,10 +251,28 @@
       text-align: left;
       transition: border-color 0.15s ease, box-shadow 0.15s ease;
     }
-    .option-btn:hover { border-color: var(--primary); box-shadow: 0 2px 8px rgba(26,54,93,0.10); }
-    .option-btn strong { display: block; margin-bottom: 0.25rem; }
-    .option-btn small { color: var(--muted); }
-    .nav-buttons { display: flex; gap: 0.5rem; margin-top: 1rem; flex-wrap: wrap; }
+
+    .option-btn:hover {
+      border-color: var(--primary);
+      box-shadow: 0 2px 8px rgba(26,54,93,0.10);
+    }
+
+    .option-btn strong {
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+
+    .option-btn small {
+      color: var(--muted);
+    }
+
+    .nav-buttons {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 1rem;
+      flex-wrap: wrap;
+    }
+
     .btn {
       border: 1px solid transparent;
       padding: 0.65rem 1.1rem;
@@ -211,22 +281,63 @@
       font-weight: 700;
       letter-spacing: 0.01em;
     }
-    .btn-primary { background: var(--primary); color: #fff; }
-    .btn-secondary { background: #eef1f5; color: var(--primary-dark); border: 1px solid var(--border); }
-    .btn-success { background: var(--success); color: #fff; }
-    .btn-warning { background: var(--warning); color: #fff; }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .btn-secondary {
+      background: #eef1f5;
+      color: var(--primary-dark);
+      border: 1px solid var(--border);
+    }
+
+    .btn-success {
+      background: var(--success);
+      color: #fff;
+    }
+
+    .btn-warning {
+      background: var(--warning);
+      color: #fff;
+    }
+
     .progress {
-      display: flex; gap: 0.25rem; margin: 1rem 0;
+      display: flex;
+      gap: 0.25rem;
+      margin: 1rem 0;
     }
+
     .progress .dot {
-      height: 6px; flex: 1; border-radius: 1px; background: var(--border);
+      height: 6px;
+      flex: 1;
+      border-radius: 1px;
+      background: var(--border);
     }
-    .progress .dot.active { background: var(--primary); }
+
+    .progress .dot.active {
+      background: var(--primary);
+    }
+
     .progress-label {
-      margin: -0.5rem 0 1rem 0; font-size: 0.85rem; color: var(--muted); text-align: right;
+      margin: -0.5rem 0 1rem 0;
+      font-size: 0.85rem;
+      color: var(--muted);
+      text-align: right;
     }
-    label { display: block; margin-bottom: 0.35rem; font-weight: 600; }
-    input[type="text"], input[type="email"], input[type="tel"], textarea, select {
+
+    label {
+      display: block;
+      margin-bottom: 0.35rem;
+      font-weight: 600;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    textarea,
+    select {
       width: 100%;
       padding: 0.65rem 0.75rem;
       border: 1px solid var(--border);
@@ -235,27 +346,84 @@
       margin-bottom: 0.75rem;
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
     }
+
     .checkbox-row {
-      display: flex; align-items: flex-start; gap: 0.5rem; margin: 0.5rem 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      margin: 0.5rem 0;
       font-size: 0.95rem;
     }
-    .checkbox-row input { margin-top: 0.25rem; }
-    .result-list { margin: 0; padding-left: 0; list-style: none; }
-    .result-list > li { margin-bottom: 0.75rem; }
+
+    .checkbox-row input {
+      margin-top: 0.25rem;
+    }
+
+    .result-list {
+      margin: 0;
+      padding-left: 0;
+      list-style: none;
+    }
+
+    .result-list > li {
+      margin-bottom: 0.75rem;
+    }
+
     .result-card {
       border: 1px solid var(--border);
       border-radius: 3px;
       padding: 1rem 1.1rem;
       background: #fdfcfa;
     }
-    .result-card h4 { margin: 0.4rem 0 0.3rem; font-family: var(--serif); font-size: 1.05rem; color: var(--primary-dark); }
-    .result-card p { margin: 0 0 0.6rem; font-size: 0.92rem; }
-    .result-meta { margin: 0 0 0.7rem; display: grid; gap: 0.35rem; }
-    .result-meta > div { display: flex; gap: 0.4rem; font-size: 0.85rem; }
-    .result-meta dt { flex: none; width: 11rem; color: var(--muted); font-weight: 600; }
-    .result-meta dd { margin: 0; }
-    .result-links { display: flex; gap: 1rem; flex-wrap: wrap; font-size: 0.9rem; }
-    .result-list-plain { margin: 0.3rem 0 0; padding-left: 1.2rem; font-size: 0.9rem; }
+
+    .result-card h4 {
+      margin: 0.4rem 0 0.3rem;
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      color: var(--primary-dark);
+    }
+
+    .result-card p {
+      margin: 0 0 0.6rem;
+      font-size: 0.92rem;
+    }
+
+    .result-meta {
+      margin: 0 0 0.7rem;
+      display: grid;
+      gap: 0.35rem;
+    }
+
+    .result-meta > div {
+      display: flex;
+      gap: 0.4rem;
+      font-size: 0.85rem;
+    }
+
+    .result-meta dt {
+      flex: none;
+      width: 11rem;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .result-meta dd {
+      margin: 0;
+    }
+
+    .result-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      font-size: 0.9rem;
+    }
+
+    .result-list-plain {
+      margin: 0.3rem 0 0;
+      padding-left: 1.2rem;
+      font-size: 0.9rem;
+    }
+
     .match-note {
       font-size: 0.85rem;
       color: var(--primary-dark);
@@ -264,42 +432,80 @@
       padding: 0.4rem 0.6rem;
       margin: 0.3rem 0 0.7rem;
     }
+
     .match-note-low {
       background: #fbf3e6;
       border-left-color: var(--accent);
       color: var(--muted);
     }
+
     .other-matches {
       border: 1px dashed var(--border);
       border-radius: 3px;
       padding: 0.75rem 1rem;
     }
+
     .other-matches summary {
       cursor: pointer;
       font-size: 0.88rem;
       color: var(--muted);
       font-weight: 600;
     }
-    .result-list-plain-cards { list-style: none; margin: 0.9rem 0 0; padding: 0; display: grid; gap: 0.75rem; }
-    .overview-group { margin-top: 1.5rem; }
-    .overview-group:first-of-type { margin-top: 0.75rem; }
-    .overview-list { display: grid; gap: 0.6rem; }
+
+    .result-list-plain-cards {
+      list-style: none;
+      margin: 0.9rem 0 0;
+      padding: 0;
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    .overview-group {
+      margin-top: 1.5rem;
+    }
+
+    .overview-group:first-of-type {
+      margin-top: 0.75rem;
+    }
+
+    .overview-list {
+      display: grid;
+      gap: 0.6rem;
+    }
+
     .overview-item {
       border: 1px solid var(--border);
       border-radius: 3px;
       padding: 0.7rem 0.9rem;
       background: #fdfcfa;
     }
+
     .overview-item summary {
       cursor: pointer;
       font-weight: 600;
       font-family: var(--serif);
       color: var(--primary-dark);
     }
-    .overview-item p { margin: 0.6rem 0; font-size: 0.9rem; }
-    .overview-item .result-meta { margin-bottom: 0.6rem; }
-    .result-list-plain li { margin-bottom: 0.3rem; }
-    .badge-ad { background: #fbeedd; color: var(--accent-dark); border-color: #f0d6ac; }
+
+    .overview-item p {
+      margin: 0.6rem 0;
+      font-size: 0.9rem;
+    }
+
+    .overview-item .result-meta {
+      margin-bottom: 0.6rem;
+    }
+
+    .result-list-plain li {
+      margin-bottom: 0.3rem;
+    }
+
+    .badge-ad {
+      background: #fbeedd;
+      color: var(--accent-dark);
+      border-color: #f0d6ac;
+    }
+
     .badge {
       display: inline-block;
       font-size: 0.78rem;
@@ -311,16 +517,34 @@
       margin-right: 0.4rem;
       font-weight: 600;
     }
-    .muted { color: var(--muted); }
+
+    .muted {
+      color: var(--muted);
+    }
+
     .footer {
       background: var(--primary-dark);
       padding: 1.75rem 1rem;
       color: rgba(255,255,255,0.75);
       font-size: 0.88rem;
     }
-    .footer strong { color: #fff; font-family: var(--serif); font-weight: 600; }
-    .footer a { color: #fff; text-decoration: underline; text-decoration-color: rgba(255,255,255,0.4); }
-    .footer a:hover { text-decoration-color: #fff; }
+
+    .footer strong {
+      color: #fff;
+      font-family: var(--serif);
+      font-weight: 600;
+    }
+
+    .footer a {
+      color: #fff;
+      text-decoration: underline;
+      text-decoration-color: rgba(255,255,255,0.4);
+    }
+
+    .footer a:hover {
+      text-decoration-color: #fff;
+    }
+
     .visit-counter {
       margin-top: 0.75rem;
       padding-top: 0.75rem;
@@ -329,15 +553,31 @@
       color: rgba(255,255,255,0.6);
       letter-spacing: 0.02em;
     }
-    .visit-counter strong { color: #fff; }
-    .lead-status { font-size: 0.85rem; margin: 0.25rem 0 0.75rem 0; min-height: 1.1em; }
-    .lead-status.ok { color: var(--success); }
-    .lead-status.err { color: var(--danger); }
+
+    .visit-counter strong {
+      color: #fff;
+    }
+
+    .lead-status {
+      font-size: 0.85rem;
+      margin: 0.25rem 0 0.75rem 0;
+      min-height: 1.1em;
+    }
+
+    .lead-status.ok {
+      color: var(--success);
+    }
+
+    .lead-status.err {
+      color: var(--danger);
+    }
+
     .disclaimer {
       font-size: 0.85rem;
       color: var(--muted);
       margin-top: 0.5rem;
     }
+
     .success-box {
       border: 1px solid #bcd0c0;
       border-left: 4px solid var(--success);
@@ -346,7 +586,12 @@
       padding: 0.9rem 1.1rem;
       border-radius: 2px;
     }
-    .partner-section { border-top: 3px solid var(--border); padding-top: 0; }
+
+    .partner-section {
+      border-top: 3px solid var(--border);
+      padding-top: 0;
+    }
+
     .partner-heading {
       background: var(--primary);
       color: #fff !important;
@@ -359,13 +604,21 @@
       align-items: center;
       gap: 0.5rem;
     }
+
     .partner-heading::before {
       content: "★";
       color: var(--accent);
       font-size: 1.1rem;
     }
-    .partner-group { margin-top: 1.75rem; }
-    .partner-group:first-of-type { margin-top: 1.25rem; }
+
+    .partner-group {
+      margin-top: 1.75rem;
+    }
+
+    .partner-group:first-of-type {
+      margin-top: 1.25rem;
+    }
+
     .partner-group-title {
       font-family: var(--serif);
       font-weight: 600;
@@ -376,17 +629,20 @@
       border-bottom: 2px solid var(--accent);
       display: inline-block;
     }
+
     .ad-label {
       font-size: 0.78rem;
       color: var(--muted);
       margin: -0.4rem 0 0.9rem;
       font-style: italic;
     }
+
     .partner-banners {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 1rem;
     }
+
     .banner-tile {
       border: 1px solid var(--border);
       border-radius: 2px;
@@ -397,33 +653,59 @@
       gap: 0.6rem;
       background: #fdfcfa;
     }
+
     .banner-tile-label {
       font-size: 0.82rem;
       font-weight: 600;
       color: var(--primary-dark);
       text-align: center;
     }
-    .banner-tile a, .banner-tile iframe {
+
+    .banner-tile a,
+    .banner-tile iframe {
       display: inline-block;
       max-width: 100%;
     }
+
     .banner-tile img {
       max-width: 100%;
       height: auto;
       border-radius: 2px;
     }
+
     @media (max-width: 600px) {
-      .hero h1 { font-size: 1.6rem; }
-      .option-btn { padding: 0.75rem; }
+      .hero h1 {
+        font-size: 1.6rem;
+      }
+
+      .option-btn {
+        padding: 0.75rem;
+      }
+
+      .result-meta > div {
+        display: block;
+      }
+
+      .result-meta dt {
+        width: auto;
+        margin-bottom: 0.15rem;
+      }
     }
   </style>
 </head>
-<body>
+
+<body id="top">
+
   <div class="hero">
     <div class="hero-inner">
       <div class="logotype">Leistung-Finder</div>
+
       <h1>Finde heraus, welche Unterstützung dir zusteht.</h1>
-      <p class="lede">Beantworte ein paar kurze Fragen zu deiner Situation – wir ordnen sie passenden Unterstützungsleistungen zu und zeigen dir, an wen du dich wenden kannst.</p>
+
+      <p class="lede">
+        Beantworte ein paar kurze Fragen zu deiner Situation – wir ordnen sie passenden Unterstützungsleistungen zu und zeigen dir, an wen du dich wenden kannst.
+      </p>
+
       <ul class="trust-points">
         <li>Kostenlose Nutzung</li>
         <li>Keine Registrierung nötig</li>
@@ -433,11 +715,19 @@
   </div>
 
   <div class="container">
+
     <div class="card card-wizard">
+
       <h2>Für wen suchst du passende Unterstützung?</h2>
+
       <div class="target-group-switch">
-        <button class="active" data-target="private">Privatpersonen / Familien</button>
-        <button data-target="business">Unternehmen / Selbstständige</button>
+        <button class="active" data-target="private">
+          Privatpersonen / Familien
+        </button>
+
+        <button data-target="business">
+          Unternehmen / Selbstständige
+        </button>
       </div>
 
       <div class="progress" id="progressBar">
@@ -446,85 +736,128 @@
         <div class="dot"></div>
         <div class="dot"></div>
       </div>
-      <p class="progress-label" id="progressLabel">Schritt 1 von 4</p>
 
-      <!-- Step 1: Zielgruppe bereits gewählt, jetzt Bedarf -->
+      <p class="progress-label" id="progressLabel">
+        Schritt 1 von 4
+      </p>
+
+      <!-- SCHRITT 1 -->
+
       <div class="step active" id="step1">
+
         <h3>Welcher Bedarf passt am besten?</h3>
+
         <div class="options" id="needsPrivate">
+
           <button class="option-btn" data-need="pflege">
             <strong>Pflege & Gesundheit</strong>
             <small>Pflegedienste, Hilfsmittel, Beratung</small>
           </button>
+
           <button class="option-btn" data-need="finanzen">
             <strong>Finanzielle Hilfen</strong>
             <small>Zuschüsse, Darlehen, Sozialleistungen</small>
           </button>
+
           <button class="option-btn" data-need="arbeit">
             <strong>Arbeit & Weiterbildung</strong>
             <small>Jobs, Umschulung, Förderungen</small>
           </button>
+
           <button class="option-btn" data-need="familie">
             <strong>Familie & Kinder</strong>
             <small>Elterngeld, Kita, Unterhalt</small>
           </button>
+
           <button class="option-btn" data-need="wohnen">
             <strong>Wohnen & Energie</strong>
             <small>Wohngeld, Heizkosten, Umbau</small>
           </button>
+
           <button class="option-btn" data-need="sonstiges">
             <strong>Sonstiges</strong>
             <small>Andere Unterstützung</small>
           </button>
+
         </div>
+
         <div class="options" id="needsBusiness" style="display:none;">
+
           <button class="option-btn" data-need="foerderung">
             <strong>Förderungen & Zuschüsse</strong>
             <small>Investitionen, Digitalisierung, Gründung</small>
           </button>
+
           <button class="option-btn" data-need="beratung">
             <strong>Beratung & Coaching</strong>
             <small>Recht, Steuern, Strategie</small>
           </button>
+
           <button class="option-btn" data-need="personal">
             <strong>Personal & Qualifizierung</strong>
             <small>Weiterbildung, Förderungen</small>
           </button>
+
           <button class="option-btn" data-need="energie">
             <strong>Energie & Nachhaltigkeit</strong>
             <small>Effizienz, Umstellung, Zuschüsse</small>
           </button>
+
           <button class="option-btn" data-need="sonstiges_b">
             <strong>Sonstiges</strong>
             <small>Andere Unterstützung</small>
           </button>
+
         </div>
+
         <div class="nav-buttons">
           <button class="btn btn-secondary" disabled>Zurück</button>
           <button class="btn btn-primary" id="toStep2" disabled>Weiter</button>
         </div>
-        <p class="disclaimer">Hinweis: Dies ist eine erste Orientierung. Eine rechtsverbindliche Prüfung erfolgt durch die Partner.</p>
+
+        <p class="disclaimer">
+          Hinweis: Dies ist eine erste Orientierung. Eine rechtsverbindliche Prüfung erfolgt durch die jeweils zuständige Stelle.
+        </p>
+
       </div>
 
-      <!-- Step 2: Details -->
+      <!-- SCHRITT 2 -->
+
       <div class="step" id="step2">
+
         <h3>Erzähle kurz von deiner Situation</h3>
-        <p class="muted" style="margin-top:0;">Mit diesen Angaben können wir passendere Ergebnisse zeigen. Alles optional.</p>
+
+        <p class="muted" style="margin-top:0;">
+          Mit diesen Angaben können wir passendere Ergebnisse zeigen. Alles optional.
+        </p>
 
         <div id="privateExtra" style="display:none;">
+
           <div id="familyChildAgeRow" style="display:none;">
-            <label for="familyChildAge">Alter des jüngsten Kindes (in Jahren)</label>
-            <input type="text" id="familyChildAge" inputmode="numeric" placeholder="z. B. 1" />
+            <label for="familyChildAge">
+              Alter des jüngsten Kindes (in Jahren)
+            </label>
+
+            <input
+              type="text"
+              id="familyChildAge"
+              inputmode="numeric"
+              placeholder="z. B. 1"
+            />
           </div>
 
           <label for="familyStatus">Familienstand</label>
+
           <select id="familyStatus">
             <option value="">Keine Angabe</option>
             <option value="alleinerziehend">Alleinerziehend</option>
             <option value="partner">Mit Partner:in</option>
           </select>
 
-          <label for="familyIncome">Haushaltseinkommen (grobe Einschätzung)</label>
+          <label for="familyIncome">
+            Haushaltseinkommen (grobe Einschätzung)
+          </label>
+
           <select id="familyIncome">
             <option value="">Keine Angabe</option>
             <option value="niedrig">Eher niedrig</option>
@@ -532,7 +865,10 @@
             <option value="hoch">Eher hoch</option>
           </select>
 
-          <label for="employmentStatus">Beschäftigungsstatus</label>
+          <label for="employmentStatus">
+            Beschäftigungsstatus
+          </label>
+
           <select id="employmentStatus">
             <option value="">Keine Angabe</option>
             <option value="erwerbstaetig">Erwerbstätig</option>
@@ -542,18 +878,33 @@
           </select>
 
           <label for="familyBundesland">Bundesland</label>
+
           <select id="familyBundesland">
             <option value="">Keine Angabe / bundesweit</option>
-            <option>Baden-Württemberg</option><option>Bayern</option><option>Berlin</option>
-            <option>Brandenburg</option><option>Bremen</option><option>Hamburg</option>
-            <option>Hessen</option><option>Mecklenburg-Vorpommern</option><option>Niedersachsen</option>
-            <option>Nordrhein-Westfalen</option><option>Rheinland-Pfalz</option><option>Saarland</option>
-            <option>Sachsen</option><option>Sachsen-Anhalt</option><option>Schleswig-Holstein</option><option>Thüringen</option>
+            <option>Baden-Württemberg</option>
+            <option>Bayern</option>
+            <option>Berlin</option>
+            <option>Brandenburg</option>
+            <option>Bremen</option>
+            <option>Hamburg</option>
+            <option>Hessen</option>
+            <option>Mecklenburg-Vorpommern</option>
+            <option>Niedersachsen</option>
+            <option>Nordrhein-Westfalen</option>
+            <option>Rheinland-Pfalz</option>
+            <option>Saarland</option>
+            <option>Sachsen</option>
+            <option>Sachsen-Anhalt</option>
+            <option>Schleswig-Holstein</option>
+            <option>Thüringen</option>
           </select>
+
         </div>
 
         <div id="businessExtra" style="display:none;">
+
           <label for="bizPhase">Unternehmensphase</label>
+
           <select id="bizPhase">
             <option value="">Keine Angabe</option>
             <option value="gruendung">In Gründung / Gründungsvorhaben</option>
@@ -561,6 +912,7 @@
           </select>
 
           <label for="bizSize">Unternehmensgröße (grob)</label>
+
           <select id="bizSize">
             <option value="">Keine Angabe</option>
             <option value="solo">Solo-Selbstständig</option>
@@ -569,7 +921,10 @@
             <option value="gross">Groß (250+ Beschäftigte)</option>
           </select>
 
-          <label for="bizFocus">Schwerpunkt des Vorhabens</label>
+          <label for="bizFocus">
+            Schwerpunkt des Vorhabens
+          </label>
+
           <select id="bizFocus">
             <option value="">Keine Angabe</option>
             <option value="digitalisierung">Digitalisierung</option>
@@ -579,129 +934,352 @@
           </select>
 
           <label for="bizBundesland">Bundesland</label>
+
           <select id="bizBundesland">
             <option value="">Keine Angabe / bundesweit</option>
-            <option>Baden-Württemberg</option><option>Bayern</option><option>Berlin</option>
-            <option>Brandenburg</option><option>Bremen</option><option>Hamburg</option>
-            <option>Hessen</option><option>Mecklenburg-Vorpommern</option><option>Niedersachsen</option>
-            <option>Nordrhein-Westfalen</option><option>Rheinland-Pfalz</option><option>Saarland</option>
-            <option>Sachsen</option><option>Sachsen-Anhalt</option><option>Schleswig-Holstein</option><option>Thüringen</option>
+            <option>Baden-Württemberg</option>
+            <option>Bayern</option>
+            <option>Berlin</option>
+            <option>Brandenburg</option>
+            <option>Bremen</option>
+            <option>Hamburg</option>
+            <option>Hessen</option>
+            <option>Mecklenburg-Vorpommern</option>
+            <option>Niedersachsen</option>
+            <option>Nordrhein-Westfalen</option>
+            <option>Rheinland-Pfalz</option>
+            <option>Saarland</option>
+            <option>Sachsen</option>
+            <option>Sachsen-Anhalt</option>
+            <option>Schleswig-Holstein</option>
+            <option>Thüringen</option>
           </select>
+
         </div>
 
-        <label for="detailText">Weitere Angaben (freiwillig)</label>
-        <textarea id="detailText" rows="3" placeholder="Möchtest du noch etwas ergänzen, das für deine Situation wichtig ist?"></textarea>
+        <label for="detailText">
+          Weitere Angaben (freiwillig)
+        </label>
+
+        <textarea
+          id="detailText"
+          rows="3"
+          placeholder="Möchtest du noch etwas ergänzen, das für deine Situation wichtig ist?"
+        ></textarea>
 
         <div class="nav-buttons">
-          <button class="btn btn-secondary" id="backToStep1">Zurück</button>
-          <button class="btn btn-primary" id="toStep3">Weiter</button>
+          <button class="btn btn-secondary" id="backToStep1">
+            Zurück
+          </button>
+
+          <button class="btn btn-primary" id="toStep3">
+            Weiter
+          </button>
         </div>
+
       </div>
 
-      <!-- Step 3: Kontakt & Einwilligung -->
+      <!-- SCHRITT 3 -->
+
       <div class="step" id="step3">
+
         <h3>Kontaktdaten für die Vermittlung</h3>
-        <p class="muted">Deine Angaben gehen per E-Mail an den Betreiber. Du wirst bei Bedarf persönlich kontaktiert.</p>
+
+        <p class="muted">
+          Deine Angaben gehen per E-Mail an den Betreiber. Du wirst bei Bedarf persönlich kontaktiert.
+        </p>
 
         <label for="name">Name</label>
-        <input type="text" id="name" placeholder="Vor- und Nachname" />
+
+        <input
+          type="text"
+          id="name"
+          placeholder="Vor- und Nachname"
+        />
 
         <label for="email">E-Mail</label>
-        <input type="email" id="email" placeholder="deine@adresse.de" />
+
+        <input
+          type="email"
+          id="email"
+          placeholder="deine@adresse.de"
+        />
 
         <label for="phone">Telefon (optional)</label>
-        <input type="tel" id="phone" placeholder="+49 ..." />
+
+        <input
+          type="tel"
+          id="phone"
+          placeholder="+49 ..."
+        />
 
         <div class="checkbox-row">
+
           <input type="checkbox" id="consentPartner" />
-          <label for="consentPartner" style="font-weight:400; margin:0;">
+
+          <label
+            for="consentPartner"
+            style="font-weight:400; margin:0;"
+          >
             Ich stimme zu, dass meine Angaben per E-Mail an den Betreiber von Leistung-Finder übermittelt werden, damit ich zu meiner Anfrage kontaktiert werden kann. Eine Weitergabe an externe Partner erfolgt derzeit nicht automatisiert.
           </label>
+
         </div>
 
         <div class="checkbox-row">
+
           <input type="checkbox" id="consentPrivacy" />
-          <label for="consentPrivacy" style="font-weight:400; margin:0;">
-            Ich habe die <a href="datenschutz.html" target="_blank" rel="noopener">Datenschutzhinweise</a> gelesen und stimme der Verarbeitung meiner Daten zu.
+
+          <label
+            for="consentPrivacy"
+            style="font-weight:400; margin:0;"
+          >
+            Ich habe die
+            <a href="datenschutz.html" target="_blank" rel="noopener">
+              Datenschutzhinweise
+            </a>
+            gelesen und stimme der Verarbeitung meiner Daten zu.
           </label>
+
         </div>
 
         <div class="nav-buttons">
-          <button class="btn btn-secondary" id="backToStep2">Zurück</button>
-          <button class="btn btn-success" id="submitLead">Anfrage absenden</button>
+
+          <button class="btn btn-secondary" id="backToStep2">
+            Zurück
+          </button>
+
+          <button class="btn btn-success" id="submitLead">
+            Anfrage absenden
+          </button>
+
         </div>
-        <p class="disclaimer">Du kannst die Einwilligung jederzeit widerrufen. Weitere Infos in der <a href="datenschutz.html" target="_blank" rel="noopener">Datenschutzerklärung</a>.</p>
+
+        <p class="disclaimer">
+          Du kannst die Einwilligung jederzeit widerrufen.
+          Weitere Infos in der
+          <a href="datenschutz.html" target="_blank" rel="noopener">
+            Datenschutzerklärung
+          </a>.
+        </p>
+
       </div>
 
-      <!-- Step 4: Ergebnis / Weiterleitung -->
+      <!-- SCHRITT 4 -->
+
       <div class="step" id="step4">
+
         <div class="success-box">
+
           <strong>Vielen Dank!</strong>
-          <p>Deine Anfrage wurde erfasst und per E-Mail an den Betreiber übermittelt. Du wirst bei Bedarf persönlich kontaktiert.</p>
-          <p class="muted">Unten findest du außerdem direkt die zu deiner Auswahl passenden Informationen und Anlaufstellen.</p>
+
+          <p>
+            Deine Anfrage wurde erfasst und per E-Mail an den Betreiber übermittelt.
+            Du wirst bei Bedarf persönlich kontaktiert.
+          </p>
+
+          <p class="muted">
+            Unten findest du außerdem direkt die zu deiner Auswahl passenden Informationen und Anlaufstellen.
+          </p>
+
           <p class="lead-status" id="leadStatus"></p>
+
           <div class="nav-buttons">
-            <a class="btn btn-primary" id="partnerLink" href="#" target="_blank" rel="noopener">Jetzt informieren</a>
-            <button class="btn btn-secondary" id="restart">Neue Suche starten</button>
+
+            <a
+              class="btn btn-primary"
+              id="partnerLink"
+              href="#"
+              target="_blank"
+              rel="noopener"
+            >
+              Jetzt informieren
+            </a>
+
+            <button class="btn btn-secondary" id="restart">
+              Neue Suche starten
+            </button>
+
           </div>
+
         </div>
 
         <h3>Das könnte für dich passen</h3>
+
         <ul class="result-list" id="resultList">
-          <li><span class="badge">Info</span> Hier erscheinen passende Leistungen basierend auf deiner Auswahl.</li>
+          <li>
+            <span class="badge">Info</span>
+            Hier erscheinen passende Leistungen basierend auf deiner Auswahl.
+          </li>
         </ul>
+
       </div>
+
     </div>
 
+    <!-- SO FUNKTIONIERT ES -->
+
     <div class="card">
+
       <h2>So funktioniert es</h2>
+
       <ol class="step-flow">
-        <li><span class="step-num">1</span>Wählen, für wen du Unterstützung suchst</li>
-        <li><span class="step-num">2</span>Bedarf kurz beschreiben</li>
-        <li><span class="step-num">3</span>Kontaktdaten & Einwilligung geben</li>
-        <li><span class="step-num">4</span>Unverbindliche Angebote erhalten</li>
+
+        <li>
+          <span class="step-num">1</span>
+          Wählen, für wen du Unterstützung suchst
+        </li>
+
+        <li>
+          <span class="step-num">2</span>
+          Bedarf kurz beschreiben
+        </li>
+
+        <li>
+          <span class="step-num">3</span>
+          Kontaktdaten & Einwilligung geben
+        </li>
+
+        <li>
+          <span class="step-num">4</span>
+          Unverbindliche Informationen erhalten
+        </li>
+
       </ol>
-      <p class="disclaimer">Keine Rechtsberatung. Angaben ohne Gewähr. Stand: 2026.</p>
+
+      <p class="disclaimer">
+        Keine Rechtsberatung. Angaben ohne Gewähr. Stand: 2026.
+      </p>
+
     </div>
 
+    <!-- ÜBERSICHT -->
+
     <div class="card">
+
       <h2>Alle Förderungen &amp; Leistungen im Überblick</h2>
-      <p class="muted" style="margin-top:-0.3rem;">Lieber direkt stöbern statt den Fragebogen auszufüllen? Hier findest du alle hinterlegten Leistungen nach Kategorie sortiert.</p>
+
+      <p
+        class="muted"
+        style="margin-top:-0.3rem;"
+      >
+        Lieber direkt stöbern statt den Fragebogen auszufüllen?
+        Hier findest du alle hinterlegten Leistungen nach Kategorie sortiert.
+      </p>
+
       <div id="allProgramsOverview"></div>
+
     </div>
+
+    <!-- PARTNER -->
 
     <div class="card partner-section">
-      <h2 class="partner-heading">Partnerangebote</h2>
-      <p class="ad-label">Anzeige – bei Abschluss über diese Links erhalten wir ggf. eine Vergütung. Diese Angebote stammen von unabhängigen Partnern, nicht von Behörden.</p>
+
+      <h2 class="partner-heading">
+        Partnerangebote
+      </h2>
+
+      <p class="ad-label">
+        Anzeige – bei Abschluss über diese Links erhalten wir ggf. eine Vergütung.
+        Diese Angebote stammen von unabhängigen Partnern, nicht von Behörden.
+      </p>
+
       <div id="partnerGroups"></div>
+
     </div>
+
   </div>
 
+  <!-- FOOTER -->
+
   <footer class="footer">
+
     <div class="container">
+
       <p style="margin-bottom:1rem;">
-        <a href="impressum.html">Impressum</a> &nbsp;·&nbsp; <a href="datenschutz.html">Datenschutzerklärung</a>
+
+        <a href="impressum.html">
+          Impressum
+        </a>
+
+        &nbsp;·&nbsp;
+
+        <a href="datenschutz.html">
+          Datenschutzerklärung
+        </a>
+
       </p>
+
       <p>
+
         <strong>Impressum (Kurzfassung)</strong><br>
-        Anbieter: Stefan Schmidt, Hannoversche Straße 90, 28309 Bremen, info@leistung-finder.de<br>
-        Verantwortlich gem. § 5 DDG (Digitale-Dienste-Gesetz, vormals § 5 TMG). Vollständiges <a href="impressum.html">Impressum hier</a>.<br><br>
-        <strong id="datenschutz">Datenschutz (Kurzfassung)</strong><br>
-        Wenn du das Kontaktformular nutzt, verarbeiten wir deine Angaben auf Grundlage deiner Einwilligung (Art. 6 Abs. 1 lit. a DSGVO), um deine Anfrage zu bearbeiten. Ausführliche Informationen zu allen eingebundenen Diensten findest du in der <a href="datenschutz.html">vollständigen Datenschutzerklärung</a>.<br><br>
+
+        Anbieter: Stefan Schmidt, Hannoversche Straße 90, 28309 Bremen,
+        info@leistung-finder.de<br>
+
+        Verantwortlich gem. § 5 DDG (Digitale-Dienste-Gesetz).
+        Vollständiges
+        <a href="impressum.html">
+          Impressum hier
+        </a>.
+
+        <br><br>
+
+        <strong>Datenschutz (Kurzfassung)</strong><br>
+
+        Wenn du das Kontaktformular nutzt, verarbeiten wir deine Angaben
+        auf Grundlage deiner Einwilligung (Art. 6 Abs. 1 lit. a DSGVO),
+        um deine Anfrage zu bearbeiten.
+        Ausführliche Informationen zu allen eingebundenen Diensten findest du
+        in der
+        <a href="datenschutz.html">
+          vollständigen Datenschutzerklärung
+        </a>.
+
+        <br><br>
+
         <strong>Haftungsausschluss</strong><br>
-        Leistung-Finder ist keine Behörde und bietet keine Rechtsberatung. Die Inhalte dienen nur der ersten Orientierung und ersetzen keine verbindliche Prüfung durch die zuständige Stelle. Wir übernehmen keine Gewähr für Vollständigkeit und Aktualität.<br><br>
-        <a href="#top">Nach oben</a>
+
+        Leistung-Finder ist keine Behörde und bietet keine Rechtsberatung.
+        Die Inhalte dienen nur der ersten Orientierung und ersetzen keine
+        verbindliche Prüfung durch die zuständige Stelle.
+        Wir übernehmen keine Gewähr für Vollständigkeit und Aktualität.
+
+        <br><br>
+
+        <a href="#top">
+          Nach oben
+        </a>
+
       </p>
+
       <p class="visit-counter" id="visitCounter">
-        Besucher seit Start: <img src="https://visitor-badge.laobi.icu/badge?page_id=leistungsfinder.stefanschmidt&text=&style=flat-square" alt="Besucherzähler" style="vertical-align: middle; height: 1.1em;">
+
+        Besucher seit Start:
+
+        <img
+          src="https://visitor-badge.laobi.icu/badge?page_id=leistungsfinder.stefanschmidt&text=&style=flat-square"
+          alt="Besucherzähler"
+          style="vertical-align: middle; height: 1.1em;"
+        >
+
       </p>
+
     </div>
+
   </footer>
 
+
   <script>
-    // State
+
+    /* =========================================================
+       LEISTUNG-FINDER
+       Leistungs- und Förderungsdatenbank
+       Stand: September 2026
+       ========================================================= */
+
     const state = {
-      target: 'private', // 'private' | 'business'
+      target: 'private',
       need: null,
       detailText: '',
       region: '',
@@ -719,829 +1297,2392 @@
       bizBundesland: ''
     };
 
-    // Elements
+
     const steps = [
       document.getElementById('step1'),
       document.getElementById('step2'),
       document.getElementById('step3'),
       document.getElementById('step4')
     ];
-    const dots = Array.from(document.querySelectorAll('.progress .dot'));
-    const progressLabel = document.getElementById('progressLabel');
-    const targetButtons = Array.from(document.querySelectorAll('.target-group-switch button'));
-    const needsPrivate = document.getElementById('needsPrivate');
-    const needsBusiness = document.getElementById('needsBusiness');
-    const toStep2Btn = document.getElementById('toStep2');
-    const toStep3Btn = document.getElementById('toStep3');
-    const backToStep1Btn = document.getElementById('backToStep1');
-    const backToStep2Btn = document.getElementById('backToStep2');
-    const submitLeadBtn = document.getElementById('submitLead');
-    const restartBtn = document.getElementById('restart');
-    const partnerLink = document.getElementById('partnerLink');
-    const leadStatus = document.getElementById('leadStatus');
-    const resultList = document.getElementById('resultList');
 
-    const detailTextEl = document.getElementById('detailText');
-    const nameEl = document.getElementById('name');
-    const emailEl = document.getElementById('email');
-    const phoneEl = document.getElementById('phone');
-    const consentPartnerEl = document.getElementById('consentPartner');
-    const consentPrivacyEl = document.getElementById('consentPrivacy');
-    const privateExtraEl = document.getElementById('privateExtra');
-    const businessExtraEl = document.getElementById('businessExtra');
-    const familyChildAgeRowEl = document.getElementById('familyChildAgeRow');
-    const familyChildAgeEl = document.getElementById('familyChildAge');
-    const familyStatusEl = document.getElementById('familyStatus');
-    const familyIncomeEl = document.getElementById('familyIncome');
-    const employmentStatusEl = document.getElementById('employmentStatus');
-    const familyBundeslandEl = document.getElementById('familyBundesland');
-    const bizPhaseEl = document.getElementById('bizPhase');
-    const bizSizeEl = document.getElementById('bizSize');
-    const bizFocusEl = document.getElementById('bizFocus');
-    const bizBundeslandEl = document.getElementById('bizBundesland');
+    const dots =
+      Array.from(document.querySelectorAll('.progress .dot'));
 
-    // Helpers
+    const progressLabel =
+      document.getElementById('progressLabel');
+
+    const targetButtons =
+      Array.from(document.querySelectorAll('.target-group-switch button'));
+
+    const needsPrivate =
+      document.getElementById('needsPrivate');
+
+    const needsBusiness =
+      document.getElementById('needsBusiness');
+
+    const toStep2Btn =
+      document.getElementById('toStep2');
+
+    const toStep3Btn =
+      document.getElementById('toStep3');
+
+    const backToStep1Btn =
+      document.getElementById('backToStep1');
+
+    const backToStep2Btn =
+      document.getElementById('backToStep2');
+
+    const submitLeadBtn =
+      document.getElementById('submitLead');
+
+    const restartBtn =
+      document.getElementById('restart');
+
+    const partnerLink =
+      document.getElementById('partnerLink');
+
+    const leadStatus =
+      document.getElementById('leadStatus');
+
+    const resultList =
+      document.getElementById('resultList');
+
+    const detailTextEl =
+      document.getElementById('detailText');
+
+    const nameEl =
+      document.getElementById('name');
+
+    const emailEl =
+      document.getElementById('email');
+
+    const phoneEl =
+      document.getElementById('phone');
+
+    const consentPartnerEl =
+      document.getElementById('consentPartner');
+
+    const consentPrivacyEl =
+      document.getElementById('consentPrivacy');
+
+    const privateExtraEl =
+      document.getElementById('privateExtra');
+
+    const businessExtraEl =
+      document.getElementById('businessExtra');
+
+    const familyChildAgeRowEl =
+      document.getElementById('familyChildAgeRow');
+
+    const familyChildAgeEl =
+      document.getElementById('familyChildAge');
+
+    const familyStatusEl =
+      document.getElementById('familyStatus');
+
+    const familyIncomeEl =
+      document.getElementById('familyIncome');
+
+    const employmentStatusEl =
+      document.getElementById('employmentStatus');
+
+    const familyBundeslandEl =
+      document.getElementById('familyBundesland');
+
+    const bizPhaseEl =
+      document.getElementById('bizPhase');
+
+    const bizSizeEl =
+      document.getElementById('bizSize');
+
+    const bizFocusEl =
+      document.getElementById('bizFocus');
+
+    const bizBundeslandEl =
+      document.getElementById('bizBundesland');
+
+
     function showStep(index) {
+
       steps.forEach((s, i) => {
         s.classList.toggle('active', i === index);
       });
+
       dots.forEach((d, i) => {
-        d.classList.toggle('active', i <= index && index < 3);
+        d.classList.toggle(
+          'active',
+          i <= index && index < 3
+        );
       });
-      progressLabel.textContent = index < 3 ? `Schritt ${index + 1} von 4` : 'Fertig';
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+
+      progressLabel.textContent =
+        index < 3
+          ? `Schritt ${index + 1} von 4`
+          : 'Fertig';
+
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+
     }
+
 
     function updateNeedsView() {
+
       if (state.target === 'private') {
+
         needsPrivate.style.display = 'grid';
         needsBusiness.style.display = 'none';
+
       } else {
+
         needsPrivate.style.display = 'none';
         needsBusiness.style.display = 'grid';
+
       }
+
     }
 
-    // Leistungs-/Förder-Datenbank: skalierbare Struktur, damit später problemlos
-    // weitere Programme ergänzt werden können. Keine erfundenen Programme, Beträge
-    // oder Voraussetzungen – wo eine Zahl sich jährlich ändern kann, wird bewusst
-    // auf die offizielle Seite verwiesen statt eine Zahl zu raten.
-    // Stand der Link-Prüfung: September 2026 – alle Links unten wurden einzeln
-    // per HTTP-Abruf verifiziert (keine 404/Weiterleitungsfehler mehr).
+
+    /*
+      Offizielle Leistungsdaten.
+      Es werden keine festen Beträge verwendet,
+      wenn sich diese regelmäßig ändern können.
+    */
+
     const programs = [
-      { id: 'pflegegeld', name: 'Pflegegeld', category: 'pflege', targetGroup: 'privat',
+
+      {
+        id: 'pflegegeld',
+        name: 'Pflegegeld',
+        category: 'pflege',
+        targetGroup: 'privat',
         description: 'Monatliche Geldleistung, wenn die Pflege zu Hause durch Angehörige oder andere Pflegepersonen erfolgt.',
-        eligibility: 'Anerkannter Pflegegrad (mind. 2) und häusliche Pflege durch Angehörige/Ehrenamtliche.',
+        eligibility: 'Anerkannter Pflegegrad (mind. 2) und häusliche Pflege durch Angehörige oder andere private Pflegepersonen.',
         amount: 'Höhe je nach Pflegegrad – aktueller Betrag auf der offiziellen Seite.',
-        region: 'Deutschland', deadline: 'Keine feste Frist, laufender Antrag möglich',
-        authority: 'Zuständige Pflegekasse', officialUrl: 'https://www.bundesgesundheitsministerium.de/pflegegeld',
-        applicationUrl: 'https://www.bundesgesundheitsministerium.de/pflegegeld', partnerUrl: null, affiliate: false,
-        lastChecked: '2026-09', active: true },
-      { id: 'verhinderungspflege', name: 'Verhinderungspflege', category: 'pflege', targetGroup: 'privat',
-        description: 'Kostenübernahme für eine Ersatzpflegeperson, wenn die pflegende Person zeitweise ausfällt (z. B. Urlaub, Krankheit), für bis zu 8 Wochen je Kalenderjahr.',
-        eligibility: 'Anerkannter Pflegegrad (mind. 2), Pflege findet überwiegend zuhause statt. Seit Juli 2025 keine Mindest-Vorpflegezeit mehr nötig.',
-        amount: 'Gemeinsamer Jahresbetrag mit der Kurzzeitpflege, 2026 bis zu 3.539 € im Kalenderjahr – aktuelle Höhe auf der offiziellen Seite.',
-        region: 'Deutschland', deadline: 'Kostenerstattung bis Ende des Folgejahres beantragen',
-        authority: 'Zuständige Pflegekasse', officialUrl: 'https://www.bundesgesundheitsministerium.de/verhinderungspflege',
-        applicationUrl: 'https://www.bundesgesundheitsministerium.de/verhinderungspflege', partnerUrl: null, affiliate: false,
-        lastChecked: '2026-09', active: true },
-      { id: 'pflegehilfsmittel', name: 'Pflegehilfsmittel & Wohnraumanpassung', category: 'pflege', targetGroup: 'privat',
-        description: 'Zuschuss für Pflegehilfsmittel im Alltag und für barrierefreien Umbau der Wohnung.',
-        eligibility: 'Anerkannter Pflegegrad, Bedarf durch Pflegesituation begründet.',
-        amount: 'Zuschuss gedeckelt, Höhe auf der offiziellen Seite.',
-        region: 'Deutschland', deadline: 'Keine feste Frist',
-        authority: 'Zuständige Pflegekasse', officialUrl: 'https://www.bundesgesundheitsministerium.de/pflege-zu-hause/pflegehilfsmittel',
-        applicationUrl: 'https://www.bundesgesundheitsministerium.de/pflege-zu-hause/pflegehilfsmittel', partnerUrl: null, affiliate: false,
-        lastChecked: '2026-09', active: true },
-      { id: 'grundsicherung-alter', name: 'Grundsicherung im Alter und bei Erwerbsminderung', category: 'finanzen', targetGroup: 'privat',
-        description: 'Existenzsichernde Leistung für Menschen, die die Regelaltersgrenze erreicht haben oder dauerhaft voll erwerbsgemindert sind und deren Einkommen/Vermögen nicht ausreicht.',
-        eligibility: 'Regelaltersgrenze erreicht oder dauerhaft voll erwerbsgemindert, Einkommen und Vermögen reichen nicht zum Lebensunterhalt.',
-        amount: 'Regelsatz + angemessene Wohnkosten – aktuelle Höhe auf der offiziellen Seite.',
-        region: 'Deutschland', deadline: 'Laufender Antrag möglich',
-        authority: 'Örtliches Sozialamt', officialUrl: 'https://www.bmas.de/DE/Soziales/Sozialhilfe/Grundsicherung-im-Alter-und-bei-Erwerbsminderung/grundsicherung-im-alter-und-bei-erwerbsminderung.html',
-        applicationUrl: 'https://www.bmas.de/DE/Soziales/Sozialhilfe/Grundsicherung-im-Alter-und-bei-Erwerbsminderung/grundsicherung-im-alter-und-bei-erwerbsminderung.html', partnerUrl: null, affiliate: false,
-        lastChecked: '2026-09', active: true },
+        region: 'Deutschland',
+        deadline: 'Laufender Antrag möglich',
+        authority: 'Zuständige Pflegekasse',
+        officialUrl: 'https://www.bundesgesundheitsministerium.de/pflegegeld',
+        applicationUrl: 'https://www.bundesgesundheitsministerium.de/pflegegeld',
+        partnerUrl: null,
+        affiliate: false,
+        lastChecked: '2026-09',
+        active: true
+      },
 
-      { id: 'buergergeld', name: 'Bürgergeld', category: 'finanzen', targetGroup: 'privat',
-        description: 'Grundsicherung für erwerbsfähige Personen mit geringem Einkommen oder bei Arbeitslosigkeit.',
-        eligibility: 'Erwerbsfähig, mind. 15 Jahre alt, Einkommen/Vermögen reicht nicht zur Existenzsicherung.',
-        amount: 'Regelsatz + Wohnkosten – aktuelle Höhe auf der offiziellen Seite.',
-        region: 'Deutschland', deadline: 'Laufender Antrag möglich',
-        authority: 'Jobcenter', officialUrl: 'https://www.arbeitsagentur.de/arbeitslos-arbeit-finden/buergergeld',
-        applicationUrl: 'https://www.arbeitsagentur.de/arbeitslos-arbeit-finden/buergergeld/buergergeld-beantragen', partnerUrl: null, affiliate: false,
-        lastChecked: '2026-09', active: true },
-      { id: 'wohngeld', name: 'Wohngeld', category: 'finanzen', targetGroup: 'privat',
-        description: 'Zuschuss zur Miete oder zur Belastung für Wohneigentum für Haushalte mit geringem Einkommen.',
-        eligibility: 'Kein Bezug von Bürgergeld/Grundsicherung, Einkommen und Miete im förderfähigen Rahmen.',
-        amount: 'Abhängig von Einkommen, Miete und Haushaltsgröße – Berechnung bei der Wohngeldbehörde.',
-        region: 'Regional (örtliches Wohngeldamt zuständig)', deadline: 'Laufender Antrag möglich',
-        authority: 'Örtliche Wohngeldbehörde', officialUrl: 'https://www.bmwsb.bund.de/DE/wohnen/wohngeld/wohngeld_node.html',
-        applicationUrl: 'https://www.bmwsb.bund.de/DE/wohnen/wohngeld/wohngeld_node.html', partnerUrl: null, affiliate: false,
-        lastChecked: '2026-09', active: true },
-      { id: 'kinderzuschlag', name: 'Kinderzuschlag', category: 'finanzen', targetGroup: 'privat',
-        description: 'Zusätzliche Leistung für Familien, deren Einkommen für sie selbst reicht, aber nicht für die Kinder.',
-        eligibility: 'Kindergeldberechtigt, Mindesteinkommen der Eltern erreicht, aber Bedarf der Kinder ungedeckt.',
-        amount: 'Bis zu einem monatlichen Höchstbetrag pro Kind – aktuelle Höhe auf der offiziellen Seite.',
-        region: 'Deutschland', deadline: 'Laufender Antrag möglich',
-        authority: 'Familienkasse', officialUrl: 'https://familienportal.de/familienportal/familienleistungen/kinderzuschlag',
-        applicationUrl: 'https://www.arbeitsagentur.de/familie-und-kinder/kinderzuschlag-verstehen/kinderzuschlag-anspruch-hoehe-dauer', partnerUrl: null, affiliate: false,
-        lastChecked: '2026-09', active: true },
+      {
+        id: 'verhinderungspflege',
+        name: 'Verhinderungspflege',
+        category: 'pflege',
+        targetGroup: 'privat',
+        description: 'Kostenübernahme für eine Ersatzpflegeperson, wenn die pflegende Person zeitweise ausfällt, zum Beispiel wegen Urlaub oder Krankheit.',
+        eligibility: 'Anerkannter Pflegegrad (mind. 2) und Pflege im häuslichen Umfeld. Seit Juli 2025 ist keine sechsmonatige Vorpflegezeit mehr erforderlich.',
+        amount: 'Gemeinsamer Jahresbetrag mit der Kurzzeitpflege, 2026 bis zu 3.539 € im Kalenderjahr.',
+        region: 'Deutschland',
+        deadline: 'Kostenerstattung grundsätzlich bis Ende des Folgejahres beantragen',
+        authority: 'Zuständige Pflegekasse',
+        officialUrl: 'https://www.bundesgesundheitsministerium.de/verhinderungspflege',
+        applicationUrl: 'https://www.bundesgesundheitsministerium.de/verhinderungspflege',
+        partnerUrl: null,
+        affiliate: false,
+        lastChecked: '2026-09',
+        active: true
+      },
 
-      { id: 'bildungsgutschein', name: 'Bildungsgutschein', category: 'arbeit', targetGroup: 'privat',
-        description: 'Förderung von beruflicher Weiterbildung oder Umschulung durch die Agentur für Arbeit.',
-        eligibility: 'Arbeitslos, von Arbeitslosigkeit bedroht oder Weiterbildung beruflich notwendig; Einzelfallentscheidung.',
-        amount: 'Übernahme der Lehrgangskosten, ggf. weitere Leistungen.',
-        region: 'Deutschland', deadline: 'Vor Maßnahmenbeginn beantragen',
-        authority: 'Agentur für Arbeit / Jobcenter', officialUrl: 'https://www.arbeitsagentur.de/karriere-und-weiterbildung/bildungsgutschein',
-        applicationUrl: 'https://www.arbeitsagentur.de/karriere-und-weiterbildung/bildungsgutschein', partnerUrl: null, affiliate: false,
-        lastChecked: '2026-09', active: true },
-      { id: 'aufstiegs-bafoeg', name: 'Aufstiegs-BAföG', category: 'arbeit', targetGroup: 'privat',
-        description: 'Förderung beruflicher Fortbildungen, z. B. Meister- oder Technikerausbildung.',
-        eligibility: 'Angestrebter Abschluss über einer bereits vorhandenen Erstausbildung.',
-        amount: 'Zuschuss- und Darlehensanteil – Höhe auf der offiziellen Seite.',
-        region: 'Deutschland', deadline: 'Antrag vor bzw. während der Maßnahme',
-        authority: 'Zuständiges Amt für Ausbildungsförderung', officialUrl: 'https://www.aufstiegs-bafoeg.de/',
-        applicationUrl: 'https://www.aufstiegs-bafoeg.de/', partnerUrl: null, affiliate: false,
-        lastChecked: '2026-09', active: true },
-      { id: 'gruendungszuschuss', name: 'Gründungszuschuss', category: 'arbeit', targetGroup: 'privat',
-        description: 'Finanzielle Unterstützung beim Übergang aus der Arbeitslosigkeit in die Selbstständigkeit.',
-        eligibility: 'Restanspruch auf Arbeitslosengeld I, tragfähiges Gründungskonzept.',
-        amount: 'Zeitlich befristet, Höhe orientiert sich am zuletzt bezogenen ALG I.',
-        region: 'Deutschland', deadline: 'Vor Gründung beantragen',
-        authority: 'Agentur für Arbeit', officialUrl: 'https://www.arbeitsagentur.de/arbeitslos-arbeit-finden/arbeitslosengeld/gruendungszuschuss-beantragen',
-        applicationUrl: 'https://www.arbeitsagentur.de/arbeitslos-arbeit-finden/arbeitslosengeld/gruendungszuschuss-beantragen', partnerUrl: null, affiliate: false,
-        lastChecked: '2026-09', active: true },
+      {
+        id: 'pflegehilfsmittel',
+        name: 'Pflegehilfsmittel & Wohnraumanpassung',
+        category: 'pflege',
+        targetGroup: 'privat',
+        description: 'Unterstützung für Pflegehilfsmittel und Maßnahmen zur Verbesserung des Wohnumfelds.',
+        eligibility: 'Anerkannter Pflegegrad und pflegebedingter Bedarf.',
+        amount: 'Zuschüsse und Leistungen je nach Maßnahme und Voraussetzungen.',
+        region: 'Deutschland',
+        deadline: 'Je nach Leistung',
+        authority: 'Zuständige Pflegekasse',
+        officialUrl: 'https://www.bundesgesundheitsministerium.de/pflege-zu-hause/pflegehilfsmittel',
+        applicationUrl: 'https://www.bundesgesundheitsministerium.de/pflege-zu-hause/pflegehilfsmittel',
+        partnerUrl: null,
+        affiliate: false,
+        lastChecked: '2026-09',
+        active: true
+      },
 
-      { id: 'elterngeld', name: 'Elterngeld', category: 'familie', targetGroup: 'privat',
-        description: 'Einkommensersatz für Eltern, die nach der Geburt ihre Arbeitszeit reduzieren oder pausieren.',
-        eligibility: 'Betreuung des eigenen Kindes, Wohnsitz in Deutschland, max. Arbeitszeit während des Bezugs.',
-        amount: 'Prozentsatz des vorherigen Nettoeinkommens innerhalb einer Mindest-/Höchstgrenze.',
-        region: 'Deutschland', deadline: 'Rückwirkend max. 3 Monate möglich',
-        authority: 'Elterngeldstelle', officialUrl: 'https://familienportal.de/familienportal/familienleistungen/elterngeld',
-        applicationUrl: 'https://familienportal.de/familienportal/familienleistungen/elterngeld', partnerUrl: null, affiliate: false,
-        lastChecked: '2026-09', active: true },
-      { id: 'kindergeld', name: 'Kindergeld', category: 'familie', targetGroup: 'privat',
-        description: 'Monatliche staatliche Leistung für jedes Kind, unabhängig vom Einkommen der Eltern.',
-        eligibility: 'Kind lebt im Haushalt bzw. wird überwiegend unterhalten; Altersgrenzen beachten.',
-        amount: 'Einheitlicher Betrag pro Kind – aktuelle Höhe auf der offiziellen Seite.',
-        region: 'Deutschland', deadline: 'Laufender Antrag möglich',
-        authority: 'Familienkasse', officialUrl: 'https://familienportal.de/familienportal/familienleistungen/kindergeld',
-        applicationUrl: 'https://familienportal.de/familienportal/familienleistungen/kindergeld', partnerUrl: null, affiliate: false,
-        lastChecked: '2026-09', active: true },
-      { id: 'unterhaltsvorschuss', name: 'Unterhaltsvorschuss', category: 'familie', targetGroup: 'privat',
-        description: 'Hilfe für Alleinerziehende, wenn der andere Elternteil keinen oder zu wenig Unterhalt zahlt.',
-        eligibility: 'Alleinerziehend, Kind unter der jeweiligen Altersgrenze, Unterhalt bleibt aus.',
-        amount: 'Gestaffelt nach Alter des Kindes – aktuelle Höhe auf der offiziellen Seite.',
-        region: 'Deutschland', deadline: 'Laufender Antrag möglich',
-        authority: 'Jugendamt', officialUrl: 'https://familienportal.de/familienportal/familienleistungen/unterhaltsvorschuss',
-        applicationUrl: 'https://familienportal.de/familienportal/familienleistungen/unterhaltsvorschuss', partnerUrl: null, affiliate: false,
-        lastChecked: '2026-09', active: true },
+      {
+        id: 'grundsicherung-alter',
+        name: 'Grundsicherung im Alter und bei Erwerbsminderung',
+        category: 'finanzen',
+        targetGroup: 'privat',
+        description: 'Existenzsichernde Leistung für Menschen im Rentenalter oder bei dauerhafter voller Erwerbsminderung, wenn Einkommen und Vermögen nicht ausreichen.',
+        eligibility: 'Regelaltersgrenze erreicht oder dauerhaft voll erwerbsgemindert; Einkommen und Vermögen reichen nicht für den Lebensunterhalt.',
+        amount: 'Regelbedarf sowie angemessene Kosten für Unterkunft und Heizung.',
+        region: 'Deutschland',
+        deadline: 'Laufender Antrag möglich',
+        authority: 'Örtliches Sozialamt',
+        officialUrl: 'https://www.bmas.de/DE/Soziales/Sozialhilfe/Grundsicherung-im-Alter-und-bei-Erwerbsminderung/grundsicherung-im-alter-und-bei-erwerbsminderung.html',
+        applicationUrl: 'https://www.bmas.de/DE/Soziales/Sozialhilfe/Grundsicherung-im-Alter-und-bei-Erwerbsminderung/grundsicherung-im-alter-und-bei-erwerbsminderung.html',
+        partnerUrl: null,
+        affiliate: false,
+        lastChecked: '2026-09',
+        active: true
+      },
 
-      { id: 'wohngeld-wohnen', name: 'Wohngeld', category: 'wohnen', targetGroup: 'privat',
-        description: 'Zuschuss zur Miete oder Belastung für Wohneigentum für Haushalte mit geringem Einkommen.',
-        eligibility: 'Kein Bezug von Bürgergeld/Grundsicherung, Einkommen und Miete im förderfähigen Rahmen.',
-        amount: 'Abhängig von Einkommen, Miete und Haushaltsgröße.',
-        region: 'Regional (örtliches Wohngeldamt zuständig)', deadline: 'Laufender Antrag möglich',
-        authority: 'Örtliche Wohngeldbehörde', officialUrl: 'https://www.bmwsb.bund.de/DE/wohnen/wohngeld/wohngeld_node.html',
-        applicationUrl: 'https://www.bmwsb.bund.de/DE/wohnen/wohngeld/wohngeld_node.html', partnerUrl: null, affiliate: false,
-        lastChecked: '2026-09', active: true },
-      { id: 'stromspar-check', name: 'Stromspar-Check', category: 'wohnen', targetGroup: 'privat',
-        description: 'Kostenlose Energieberatung für einkommensschwache Haushalte, oft inkl. Soforthilfen wie LED-Lampen.',
-        eligibility: 'Bezug von Transferleistungen (z. B. Bürgergeld, Wohngeld) oder geringes Einkommen.',
-        amount: 'Beratung kostenlos, Soforthilfen ohne Eigenkosten.',
-        region: 'Regional (je nach Anbieter vor Ort)', deadline: 'Laufend, je nach Verfügbarkeit vor Ort',
-        authority: 'Lokale Stromspar-Check-Anbieter', officialUrl: 'https://www.stromspar-check.de/',
-        applicationUrl: 'https://www.stromspar-check.de/', partnerUrl: null, affiliate: false,
-        lastChecked: '2026-09', active: true },
-      { id: 'kfw-sanierung', name: 'KfW-Förderung energetische Sanierung', category: 'wohnen', targetGroup: 'privat',
-        description: 'Zuschuss oder zinsgünstiger Kredit für energieeffizientes Bauen und Sanieren.',
-        eligibility: 'Vorhaben erfüllt die technischen Mindestanforderungen des jeweiligen KfW-Programms.',
-        amount: 'Je nach Programm Zuschuss- oder Kreditanteil, Details auf der offiziellen Seite.',
-        region: 'Deutschland', deadline: 'Antrag grundsätzlich vor Vorhabensbeginn',
-        authority: 'KfW (Antrag meist über die Hausbank)', officialUrl: 'https://www.kfw.de/inlandsfoerderung/Privatpersonen/',
-        applicationUrl: 'https://www.kfw.de/inlandsfoerderung/Privatpersonen/', partnerUrl: null, affiliate: false,
-        lastChecked: '2026-09', active: true },
+      {
+        id: 'grundsicherungsgeld',
+        name: 'Grundsicherungsgeld',
+        category: 'finanzen',
+        targetGroup: 'privat',
+        description: 'Grundsicherung für erwerbsfähige Menschen, wenn das eigene Einkommen und Vermögen nicht ausreichen, um den Lebensunterhalt zu sichern.',
+        eligibility: 'Erwerbsfähig, mindestens 15 Jahre alt und grundsätzlich in der Lage, mindestens drei Stunden täglich zu arbeiten; Einkommen und Vermögen reichen nicht aus.',
+        amount: 'Regelbedarf sowie angemessene Kosten für Unterkunft und Heizung – aktuelle Werte auf der offiziellen Seite.',
+        region: 'Deutschland',
+        deadline: 'Laufender Antrag möglich',
+        authority: 'Jobcenter',
+        officialUrl: 'https://www.arbeitsagentur.de/grundsicherung/finanziell-absichern/voraussetzungen-einkommen-vermoegen',
+        applicationUrl: 'https://www.arbeitsagentur.de/grundsicherung/grundsicherungsgeld-beantragen',
+        partnerUrl: null,
+        affiliate: false,
+        lastChecked: '2026-09',
+        active: true
+      },
 
-      { id: 'sozialberatung', name: 'Allgemeine Sozialberatung', category: 'sonstiges', targetGroup: 'privat',
-        description: 'Kostenlose Erstberatung zu Ansprüchen, Anträgen und der eigenen Situation.',
-        eligibility: 'Grundsätzlich für alle offen, die Beratung suchen.',
-        amount: 'Kostenlos', region: 'Regional (lokale Beratungsstellen)', deadline: 'Laufend',
-        authority: 'Caritas / Wohlfahrtsverbände', officialUrl: 'https://www.caritas.de/hilfeundberatung',
-        applicationUrl: 'https://www.caritas.de/hilfeundberatung', partnerUrl: null, affiliate: false,
-        lastChecked: '2026-09', active: true },
-      { id: 'schuldnerberatung', name: 'Schuldnerberatung', category: 'sonstiges', targetGroup: 'privat',
-        description: 'Unterstützung bei finanziellen Engpässen und Überschuldung.',
-        eligibility: 'Betroffene mit Zahlungsschwierigkeiten oder Überschuldung.',
-        amount: 'Für Ratsuchende meist kostenlos', region: 'Regional', deadline: 'Laufend',
-        authority: 'Diakonie / anerkannte Schuldnerberatungsstellen', officialUrl: 'https://www.diakonie.de/wissen-kompakt-schuldnerberatung',
-        applicationUrl: 'https://www.diakonie.de/wissen-kompakt-schuldnerberatung', partnerUrl: null, affiliate: false,
-        lastChecked: '2026-09', active: true },
-      { id: 'reiseversicherung-travelsecure', name: 'Reiseversicherung (TravelSecure)', category: 'sonstiges', targetGroup: 'privat',
-        description: 'Vergleich von Auslandskranken-, Reiserücktritts- oder Reisegepäckversicherungen.',
-        eligibility: 'Kein staatliches Programm – privates Vergleichsangebot.',
-        amount: 'Abhängig vom gewählten Tarif', region: 'Deutschland', deadline: 'Nicht zutreffend',
-        authority: 'TravelSecure (privater Anbieter)', officialUrl: 'https://www.awin1.com/cread.php?s=3744642&v=106517&q=501266&r=3083133',
-        applicationUrl: 'https://www.awin1.com/cread.php?s=3744642&v=106517&q=501266&r=3083133', partnerUrl: 'https://www.awin1.com/cread.php?s=3744642&v=106517&q=501266&r=3083133', affiliate: true,
-        lastChecked: '2026-09', active: true },
-      { id: 'reiseversicherung-hellosafe', name: 'Reiseversicherung (HelloSafe)', category: 'sonstiges', targetGroup: 'privat',
-        description: 'Vergleich von über 40 Reiseversicherern.',
-        eligibility: 'Kein staatliches Programm – privates Vergleichsangebot.',
-        amount: 'Abhängig vom gewählten Tarif', region: 'Deutschland', deadline: 'Nicht zutreffend',
-        authority: 'HelloSafe (privater Anbieter)', officialUrl: 'https://www.awin1.com/cread.php?s=4837775&v=128757&q=610152&r=3083133',
-        applicationUrl: 'https://www.awin1.com/cread.php?s=4837775&v=128757&q=610152&r=3083133', partnerUrl: 'https://www.awin1.com/cread.php?s=4837775&v=128757&q=610152&r=3083133', affiliate: true,
-        lastChecked: '2026-09', active: true },
-      { id: 'zahnzusatz', name: 'Zahnzusatzversicherung', category: 'sonstiges', targetGroup: 'privat',
-        description: 'Vergleich privater Zahnzusatzversicherungen, z. B. für Zahnersatz oder professionelle Zahnreinigung.',
-        eligibility: 'Kein staatliches Programm – privates Vergleichsangebot.',
-        amount: 'Abhängig vom gewählten Tarif', region: 'Deutschland', deadline: 'Nicht zutreffend',
-        authority: 'Privater Versicherungsvergleich', officialUrl: 'https://www.awin1.com/cread.php?s=4577512&v=121064&q=587200&r=3083133',
-        applicationUrl: 'https://www.awin1.com/cread.php?s=4577512&v=121064&q=587200&r=3083133', partnerUrl: 'https://www.awin1.com/cread.php?s=4577512&v=121064&q=587200&r=3083133', affiliate: true,
-        lastChecked: '2026-09', active: true },
+      {
+        id: 'wohngeld',
+        name: 'Wohngeld',
+        category: 'finanzen',
+        targetGroup: 'privat',
+        description: 'Zuschuss zur Miete oder zur Belastung für selbst genutztes Wohneigentum bei geringem Einkommen.',
+        eligibility: 'Einkommen und Wohnkosten müssen innerhalb der gesetzlichen Voraussetzungen liegen. Andere existenzsichernde Leistungen können den Wohngeldanspruch ausschließen.',
+        amount: 'Abhängig von Einkommen, Miete bzw. Belastung und Haushaltsgröße.',
+        region: 'Regional',
+        deadline: 'Laufender Antrag möglich',
+        authority: 'Örtliche Wohngeldbehörde',
+        officialUrl: 'https://www.bmwsb.bund.de/DE/wohnen/wohngeld/wohngeld_node.html',
+        applicationUrl: 'https://www.bmwsb.bund.de/DE/wohnen/wohngeld/wohngeld_node.html',
+        partnerUrl: null,
+        affiliate: false,
+        lastChecked: '2026-09',
+        active: true
+      },
 
-      { id: 'kfw-kredite', name: 'KfW-Förderkredite', category: 'foerderung', targetGroup: 'unternehmen',
-        description: 'Zinsgünstige Kredite für Investitionen, Wachstum und Gründung.',
-        eligibility: 'Förderfähiges Vorhaben, Antragstellung über die Hausbank.',
-        amount: 'Je nach Programm, Details auf der offiziellen Seite.',
-        region: 'Deutschland', deadline: 'Vor Vorhabensbeginn beantragen',
-        authority: 'KfW (über die Hausbank)', officialUrl: 'https://www.kfw.de/inlandsfoerderung/Unternehmen/Investitionen-und-Wachstum/',
-        applicationUrl: 'https://www.kfw.de/inlandsfoerderung/Unternehmen/Investitionen-und-Wachstum/', partnerUrl: null, affiliate: false,
-        lastChecked: '2026-09', active: true },
-      { id: 'mittelstand-digital', name: 'Mittelstand-Digital Zentren', category: 'foerderung', targetGroup: 'unternehmen',
-        description: 'Kostenlose, neutrale Beratung zur Digitalisierung im Unternehmen (Nachfolgeangebot zu „Digital Jetzt").',
-        eligibility: 'Kleine und mittlere Unternehmen mit Digitalisierungsvorhaben.',
-        amount: 'Beratung kostenlos', region: 'Deutschland', deadline: 'Laufend',
-        authority: 'Netzwerk Mittelstand-Digital', officialUrl: 'https://www.mittelstand-digital.de/',
-        applicationUrl: 'https://www.mittelstand-digital.de/', partnerUrl: null, affiliate: false,
-        lastChecked: '2026-09', active: true },
-      { id: 'exist', name: 'EXIST-Gründerstipendium', category: 'foerderung', targetGroup: 'unternehmen',
-        description: 'Förderung für technologieorientierte und wissensbasierte Existenzgründungen aus der Hochschule.',
-        eligibility: 'Gründungsvorhaben mit Hochschulbezug, tragfähiges Konzept.',
-        amount: 'Lebensunterhalt + Sachmittel – Details auf der offiziellen Seite.',
-        region: 'Deutschland', deadline: 'Antrag vor Gründung',
-        authority: 'Projektträger EXIST', officialUrl: 'https://www.exist.de/',
-        applicationUrl: 'https://www.exist.de/', partnerUrl: null, affiliate: false,
-        lastChecked: '2026-09', active: true },
+      {
+        id: 'kinderzuschlag',
+        name: 'Kinderzuschlag',
+        category: 'finanzen',
+        targetGroup: 'privat',
+        description: 'Zusätzliche Leistung für Familien mit Kindern, deren Einkommen für den eigenen Lebensunterhalt ausreicht, aber nicht vollständig für den Bedarf der Kinder.',
+        eligibility: 'Kindergeldberechtigung und weitere gesetzliche Voraussetzungen, insbesondere ausreichendes Mindesteinkommen der Eltern.',
+        amount: 'Höhe abhängig von den persönlichen Verhältnissen.',
+        region: 'Deutschland',
+        deadline: 'Laufender Antrag möglich',
+        authority: 'Familienkasse',
+        officialUrl: 'https://familienportal.de/familienportal/familienleistungen/kinderzuschlag',
+        applicationUrl: 'https://www.arbeitsagentur.de/familie-und-kinder/kinderzuschlag-verstehen/kinderzuschlag-anspruch-hoehe-dauer',
+        partnerUrl: null,
+        affiliate: false,
+        lastChecked: '2026-09',
+        active: true
+      },
 
-      { id: 'bafa-beratung', name: 'Förderung unternehmerisches Know-how (BAFA)', category: 'beratung', targetGroup: 'unternehmen',
-        description: 'Zuschuss für Unternehmensberatung, z. B. bei Gründung, Nachfolge oder wirtschaftlicher Krise.',
-        eligibility: 'KMU bzw. Gründungsinteressierte, Beratung durch zugelassene Berater.',
-        amount: 'Zuschuss zu den Beratungskosten – Höhe auf der offiziellen Seite.',
-        region: 'Deutschland', deadline: 'Vor Beratungsbeginn beantragen',
-        authority: 'BAFA', officialUrl: 'https://www.bafa.de/DE/Wirtschaft/Beratung_Finanzierung/Unternehmensberatung/unternehmensberatung_node.html',
-        applicationUrl: 'https://www.bafa.de/DE/Wirtschaft/Beratung_Finanzierung/Unternehmensberatung/unternehmensberatung_node.html', partnerUrl: null, affiliate: false,
-        lastChecked: '2026-09', active: true },
-      { id: 'ihk-beratung', name: 'IHK-Beratung', category: 'beratung', targetGroup: 'unternehmen',
-        description: 'Kostenlose Erstberatung zu Recht, Steuern und Unternehmensstrategie.',
-        eligibility: 'Mitgliedsunternehmen der jeweiligen IHK.',
-        amount: 'Erstberatung meist kostenlos', region: 'Regional (je nach IHK)', deadline: 'Laufend',
-        authority: 'Zuständige Industrie- und Handelskammer', officialUrl: 'https://www.ihk.de/',
-        applicationUrl: 'https://www.ihk.de/', partnerUrl: null, affiliate: false,
-        lastChecked: '2026-09', active: true },
+      {
+        id: 'bildungsgutschein',
+        name: 'Bildungsgutschein',
+        category: 'arbeit',
+        targetGroup: 'privat',
+        description: 'Förderung einer beruflichen Weiterbildung oder Umschulung durch die Agentur für Arbeit oder das Jobcenter.',
+        eligibility: 'Zum Beispiel Arbeitslosigkeit, drohende Arbeitslosigkeit oder beruflicher Weiterbildungsbedarf; Einzelfallentscheidung.',
+        amount: 'Übernahme förderfähiger Lehrgangskosten und gegebenenfalls weiterer Kosten.',
+        region: 'Deutschland',
+        deadline: 'Vor Beginn der Maßnahme klären',
+        authority: 'Agentur für Arbeit / Jobcenter',
+        officialUrl: 'https://www.arbeitsagentur.de/karriere-und-weiterbildung/bildungsgutschein',
+        applicationUrl: 'https://www.arbeitsagentur.de/karriere-und-weiterbildung/bildungsgutschein',
+        partnerUrl: null,
+        affiliate: false,
+        lastChecked: '2026-09',
+        active: true
+      },
 
-      { id: 'wegebau', name: 'Weiterbildung Geringqualifizierter (WeGebAU)', category: 'personal', targetGroup: 'unternehmen',
-        description: 'Förderung der Weiterbildung von Beschäftigten ohne Berufsabschluss oder mit veralteter Qualifikation.',
-        eligibility: 'Beschäftigte ohne verwertbaren Berufsabschluss bzw. mit Qualifizierungsbedarf.',
-        amount: 'Übernahme von Lehrgangs- und ggf. Lohnkosten – Details auf der offiziellen Seite.',
-        region: 'Deutschland', deadline: 'Vor Maßnahmenbeginn beantragen',
-        authority: 'Agentur für Arbeit', officialUrl: 'https://www.arbeitsagentur.de/unternehmen/finanziell/foerderung-von-weiterbildung',
-        applicationUrl: 'https://www.arbeitsagentur.de/unternehmen/finanziell/foerderung-von-weiterbildung', partnerUrl: null, affiliate: false,
-        lastChecked: '2026-09', active: true },
-      { id: 'qualichancengesetz', name: 'Qualifizierungschancengesetz', category: 'personal', targetGroup: 'unternehmen',
-        description: 'Zuschüsse zu Weiterbildungskosten und Arbeitsentgelt während der Qualifizierung.',
-        eligibility: 'Beschäftigte, deren Tätigkeit sich z. B. durch Digitalisierung wesentlich verändert.',
-        amount: 'Anteilige Übernahme, gestaffelt nach Betriebsgröße.',
-        region: 'Deutschland', deadline: 'Vor Maßnahmenbeginn beantragen',
-        authority: 'Agentur für Arbeit', officialUrl: 'https://www.arbeitsagentur.de/unternehmen/finanziell/foerderung-von-weiterbildung',
-        applicationUrl: 'https://www.arbeitsagentur.de/unternehmen/finanziell/foerderung-von-weiterbildung', partnerUrl: null, affiliate: false,
-        lastChecked: '2026-09', active: true },
-      { id: 'kurzarbeitergeld', name: 'Kurzarbeitergeld', category: 'personal', targetGroup: 'unternehmen',
-        description: 'Lohnersatzleistung für Beschäftigte bei vorübergehendem, erheblichem Arbeitsausfall, um Kündigungen zu vermeiden.',
-        eligibility: 'Erheblicher, vorübergehender Arbeitsausfall (z. B. Auftragsmangel), mind. ein Drittel der Beschäftigten betroffen, Anzeige bei der Agentur für Arbeit.',
-        amount: 'Prozentsatz des ausgefallenen Nettoentgelts – aktuelle Höhe auf der offiziellen Seite.',
-        region: 'Deutschland', deadline: 'Anzeige vor Beginn der Kurzarbeit erforderlich',
-        authority: 'Agentur für Arbeit', officialUrl: 'https://www.arbeitsagentur.de/unternehmen/finanziell/kurzarbeitergeldformen',
-        applicationUrl: 'https://www.arbeitsagentur.de/unternehmen/finanziell/kurzarbeitergeldformen', partnerUrl: null, affiliate: false,
-        lastChecked: '2026-09', active: true },
+      {
+        id: 'aufstiegs-bafoeg',
+        name: 'Aufstiegs-BAföG',
+        category: 'arbeit',
+        targetGroup: 'privat',
+        description: 'Förderung beruflicher Aufstiegsfortbildungen, beispielsweise für Meister, Fachwirte oder vergleichbare Qualifikationen.',
+        eligibility: 'Teilnahme an einer förderfähigen beruflichen Aufstiegsfortbildung.',
+        amount: 'Zuschuss- und Darlehensanteile je nach Förderbestandteil.',
+        region: 'Deutschland',
+        deadline: 'Antrag rechtzeitig vor bzw. während der Maßnahme stellen.',
+        authority: 'Zuständige Förderstelle',
+        officialUrl: 'https://www.aufstiegs-bafoeg.de/',
+        applicationUrl: 'https://www.aufstiegs-bafoeg.de/',
+        partnerUrl: null,
+        affiliate: false,
+        lastChecked: '2026-09',
+        active: true
+      },
 
-      { id: 'bafa-energie', name: 'BAFA-Förderung Energieberatung', category: 'energie', targetGroup: 'unternehmen',
-        description: 'Zuschuss für eine unabhängige Energieberatung im Unternehmen.',
-        eligibility: 'KMU mit Interesse an Energieeinsparung.',
-        amount: 'Zuschuss zu den Beratungskosten – Höhe auf der offiziellen Seite.',
-        region: 'Deutschland', deadline: 'Vor Beratungsbeginn beantragen',
-        authority: 'BAFA', officialUrl: 'https://www.bafa.de/DE/Energie/Energieberatung/energieberatung_node.html',
-        applicationUrl: 'https://www.bafa.de/DE/Energie/Energieberatung/energieberatung_node.html', partnerUrl: null, affiliate: false,
-        lastChecked: '2026-09', active: true },
-      { id: 'kfw-energieeffizienz', name: 'KfW Energieeffizienz in der Wirtschaft', category: 'energie', targetGroup: 'unternehmen',
-        description: 'Kredite und Zuschüsse für effizientere Anlagen und Prozesse im Unternehmen.',
-        eligibility: 'Vorhaben erfüllt die technischen Anforderungen des jeweiligen Programms.',
-        amount: 'Je nach Programm, Details auf der offiziellen Seite.',
-        region: 'Deutschland', deadline: 'Vor Vorhabensbeginn beantragen',
-        authority: 'KfW', officialUrl: 'https://www.kfw.de/inlandsfoerderung/Unternehmen/Energie-und-Umwelt/',
-        applicationUrl: 'https://www.kfw.de/inlandsfoerderung/Unternehmen/Energie-und-Umwelt/', partnerUrl: null, affiliate: false,
-        lastChecked: '2026-09', active: true },
+      {
+        id: 'gruendungszuschuss',
+        name: 'Gründungszuschuss',
+        category: 'arbeit',
+        targetGroup: 'privat',
+        description: 'Unterstützung beim Übergang aus der Arbeitslosigkeit in eine hauptberufliche Selbstständigkeit.',
+        eligibility: 'Unter anderem Arbeitslosengeld-I-Bezug mit ausreichendem Restanspruch und tragfähiges Gründungsvorhaben.',
+        amount: 'Zeitlich befristete Unterstützung; Höhe richtet sich unter anderem nach dem bisherigen Arbeitslosengeld.',
+        region: 'Deutschland',
+        deadline: 'Vor Aufnahme der Selbstständigkeit beantragen.',
+        authority: 'Agentur für Arbeit',
+        officialUrl: 'https://www.arbeitsagentur.de/arbeitslos-arbeit-finden/arbeitslosengeld/gruendungszuschuss-beantragen',
+        applicationUrl: 'https://www.arbeitsagentur.de/arbeitslos-arbeit-finden/arbeitslosengeld/gruendungszuschuss-beantragen',
+        partnerUrl: null,
+        affiliate: false,
+        lastChecked: '2026-09',
+        active: true
+      },
 
-      { id: 'handwerkskammer', name: 'Handwerkskammer-Beratung', category: 'sonstiges_b', targetGroup: 'unternehmen',
-        description: 'Individuelle Beratung zu Förderungen und Zuschüssen im Handwerk.',
-        eligibility: 'Handwerksbetriebe im Kammerbezirk.',
-        amount: 'Erstberatung meist kostenlos', region: 'Regional (je nach Kammer)', deadline: 'Laufend',
-        authority: 'Zuständige Handwerkskammer', officialUrl: 'https://www.zdh.de/handwerksorganisationen/handwerkskammern/',
-        applicationUrl: 'https://www.zdh.de/handwerksorganisationen/handwerkskammern/', partnerUrl: null, affiliate: false,
-        lastChecked: '2026-09', active: true },
-      { id: 'buergschaftsbanken', name: 'Bürgschaftsbanken', category: 'sonstiges_b', targetGroup: 'unternehmen',
-        description: 'Absicherung von Krediten für Unternehmen, wenn eigene Sicherheiten fehlen.',
-        eligibility: 'Kreditwürdiges Vorhaben ohne ausreichende eigene Sicherheiten.',
-        amount: 'Bürgschaft bis zu einem Höchstbetrag, Details auf der offiziellen Seite.',
-        region: 'Regional (je nach Bundesland)', deadline: 'Vor Kreditaufnahme beantragen',
-        authority: 'Zuständige Bürgschaftsbank', officialUrl: 'https://www.vdb-info.de/',
-        applicationUrl: 'https://www.vdb-info.de/', partnerUrl: null, affiliate: false,
-        lastChecked: '2026-09', active: true }
+      {
+        id: 'elterngeld',
+        name: 'Elterngeld',
+        category: 'familie',
+        targetGroup: 'privat',
+        description: 'Einkommensersatz für Eltern, die ihr Kind betreuen und ihre Erwerbstätigkeit reduzieren oder unterbrechen.',
+        eligibility: 'Betreuung des eigenen Kindes, gemeinsamer Haushalt mit dem Kind und Einhaltung der gesetzlichen Voraussetzungen.',
+        amount: 'Abhängig vom vorherigen Einkommen und der gewählten Leistungsart.',
+        region: 'Deutschland',
+        deadline: 'Grundsätzlich innerhalb der ersten drei Lebensmonate rückwirkend beantragen.',
+        authority: 'Elterngeldstelle',
+        officialUrl: 'https://familienportal.de/familienportal/familienleistungen/elterngeld',
+        applicationUrl: 'https://familienportal.de/familienportal/familienleistungen/elterngeld',
+        partnerUrl: null,
+        affiliate: false,
+        lastChecked: '2026-09',
+        active: true
+      },
+
+      {
+        id: 'kindergeld',
+        name: 'Kindergeld',
+        category: 'familie',
+        targetGroup: 'privat',
+        description: 'Monatliche staatliche Familienleistung für Kinder. Die konkrete Anspruchsdauer richtet sich unter anderem nach Alter, Ausbildung und weiteren Voraussetzungen.',
+        eligibility: 'Kindergeldberechtigung und Erfüllung der jeweiligen gesetzlichen Voraussetzungen.',
+        amount: 'Aktuelle Höhe und Altersgrenzen auf der offiziellen Seite.',
+        region: 'Deutschland',
+        deadline: 'Laufender Antrag möglich',
+        authority: 'Familienkasse',
+        officialUrl: 'https://familienportal.de/familienportal/familienleistungen/kindergeld',
+        applicationUrl: 'https://familienportal.de/familienportal/familienleistungen/kindergeld',
+        partnerUrl: null,
+        affiliate: false,
+        lastChecked: '2026-09',
+        active: true
+      },
+
+      {
+        id: 'unterhaltsvorschuss',
+        name: 'Unterhaltsvorschuss',
+        category: 'familie',
+        targetGroup: 'privat',
+        description: 'Unterstützung für Alleinerziehende, wenn der andere Elternteil keinen oder zu wenig Unterhalt zahlt.',
+        eligibility: 'Alleinerziehende Betreuung des Kindes und weitere gesetzliche Voraussetzungen.',
+        amount: 'Abhängig vom Alter des Kindes und den gesetzlichen Vorgaben.',
+        region: 'Deutschland',
+        deadline: 'Laufender Antrag möglich',
+        authority: 'Jugendamt',
+        officialUrl: 'https://familienportal.de/familienportal/familienleistungen/unterhaltsvorschuss',
+        applicationUrl: 'https://familienportal.de/familienportal/familienleistungen/unterhaltsvorschuss',
+        partnerUrl: null,
+        affiliate: false,
+        lastChecked: '2026-09',
+        active: true
+      },
+
+      {
+        id: 'wohngeld-wohnen',
+        name: 'Wohngeld',
+        category: 'wohnen',
+        targetGroup: 'privat',
+        description: 'Zuschuss zur Miete oder Belastung für selbst genutztes Wohneigentum bei geringem Einkommen.',
+        eligibility: 'Einkommen und Wohnkosten müssen innerhalb der gesetzlichen Voraussetzungen liegen.',
+        amount: 'Abhängig von Einkommen, Wohnkosten und Haushaltsgröße.',
+        region: 'Regional',
+        deadline: 'Laufender Antrag möglich',
+        authority: 'Örtliche Wohngeldbehörde',
+        officialUrl: 'https://www.bmwsb.bund.de/DE/wohnen/wohngeld/wohngeld_node.html',
+        applicationUrl: 'https://www.bmwsb.bund.de/DE/wohnen/wohngeld/wohngeld_node.html',
+        partnerUrl: null,
+        affiliate: false,
+        lastChecked: '2026-09',
+        active: true
+      },
+
+      {
+        id: 'stromspar-check',
+        name: 'Stromspar-Check',
+        category: 'wohnen',
+        targetGroup: 'privat',
+        description: 'Kostenlose Energieberatung für Haushalte mit geringem Einkommen, teilweise verbunden mit kostenlosen Soforthilfen zum Energiesparen.',
+        eligibility: 'Je nach Angebot unter anderem Bezug bestimmter Sozialleistungen oder geringes Einkommen.',
+        amount: 'Beratung kostenlos; mögliche Soforthilfen abhängig vom lokalen Angebot.',
+        region: 'Regional',
+        deadline: 'Laufend, je nach Verfügbarkeit vor Ort',
+        authority: 'Lokale Stromspar-Check-Anbieter',
+        officialUrl: 'https://www.stromspar-check.de/',
+        applicationUrl: 'https://www.stromspar-check.de/',
+        partnerUrl: null,
+        affiliate: false,
+        lastChecked: '2026-09',
+        active: true
+      },
+
+      {
+        id: 'kfw-sanierung',
+        name: 'KfW-Förderung energetische Sanierung',
+        category: 'wohnen',
+        targetGroup: 'privat',
+        description: 'Förderprogramme für energieeffizientes Bauen und Sanieren.',
+        eligibility: 'Abhängig vom jeweiligen KfW-Programm und den technischen Voraussetzungen.',
+        amount: 'Je nach Programm Zuschuss oder Förderkredit.',
+        region: 'Deutschland',
+        deadline: 'Bei vielen Programmen vor Vorhabensbeginn beantragen.',
+        authority: 'KfW / Finanzierungspartner',
+        officialUrl: 'https://www.kfw.de/inlandsfoerderung/Privatpersonen/',
+        applicationUrl: 'https://www.kfw.de/inlandsfoerderung/Privatpersonen/',
+        partnerUrl: null,
+        affiliate: false,
+        lastChecked: '2026-09',
+        active: true
+      },
+
+      {
+        id: 'sozialberatung',
+        name: 'Allgemeine Sozialberatung',
+        category: 'sonstiges',
+        targetGroup: 'privat',
+        description: 'Erstberatung zu sozialen Fragen, Anträgen und möglichen Hilfen.',
+        eligibility: 'Grundsätzlich für Menschen mit Beratungsbedarf.',
+        amount: 'Je nach Beratungsstelle kostenlos.',
+        region: 'Regional',
+        deadline: 'Laufend',
+        authority: 'Wohlfahrtsverbände und Beratungsstellen',
+        officialUrl: 'https://www.caritas.de/hilfeundberatung',
+        applicationUrl: 'https://www.caritas.de/hilfeundberatung',
+        partnerUrl: null,
+        affiliate: false,
+        lastChecked: '2026-09',
+        active: true
+      },
+
+      {
+        id: 'schuldnerberatung',
+        name: 'Schuldnerberatung',
+        category: 'sonstiges',
+        targetGroup: 'privat',
+        description: 'Unterstützung bei finanziellen Problemen, Schulden und Überschuldung.',
+        eligibility: 'Menschen mit finanziellen Schwierigkeiten oder Überschuldung.',
+        amount: 'Bei anerkannten Beratungsstellen häufig kostenlos.',
+        region: 'Regional',
+        deadline: 'Laufend',
+        authority: 'Anerkannte Schuldnerberatungsstellen',
+        officialUrl: 'https://www.diakonie.de/wissen-kompakt-schuldnerberatung',
+        applicationUrl: 'https://www.diakonie.de/wissen-kompakt-schuldnerberatung',
+        partnerUrl: null,
+        affiliate: false,
+        lastChecked: '2026-09',
+        active: true
+      },
+
+      /* PRIVATE PARTNERANGEBOTE */
+
+      {
+        id: 'reiseversicherung-travelsecure',
+        name: 'Reiseversicherung (TravelSecure)',
+        category: 'sonstiges',
+        targetGroup: 'privat',
+        description: 'Privates Vergleichsangebot für Reiseversicherungen.',
+        eligibility: 'Kein staatliches Programm – privates Partnerangebot.',
+        amount: 'Abhängig vom gewählten Tarif.',
+        region: 'Deutschland',
+        deadline: 'Nicht zutreffend',
+        authority: 'TravelSecure / privater Anbieter',
+        officialUrl: 'https://www.awin1.com/cread.php?s=3744642&v=106517&q=501266&r=3083133',
+        applicationUrl: 'https://www.awin1.com/cread.php?s=3744642&v=106517&q=501266&r=3083133',
+        partnerUrl: 'https://www.awin1.com/cread.php?s=3744642&v=106517&q=501266&r=3083133',
+        affiliate: true,
+        lastChecked: '2026-09',
+        active: true
+      },
+
+      {
+        id: 'reiseversicherung-hellosafe',
+        name: 'Reiseversicherung (HelloSafe)',
+        category: 'sonstiges',
+        targetGroup: 'privat',
+        description: 'Privater Vergleich von Reiseversicherungen.',
+        eligibility: 'Kein staatliches Programm – privates Partnerangebot.',
+        amount: 'Abhängig vom gewählten Tarif.',
+        region: 'Deutschland',
+        deadline: 'Nicht zutreffend',
+        authority: 'HelloSafe / privater Anbieter',
+        officialUrl: 'https://www.awin1.com/cread.php?s=4837775&v=128757&q=610152&r=3083133',
+        applicationUrl: 'https://www.awin1.com/cread.php?s=4837775&v=128757&q=610152&r=3083133',
+        partnerUrl: 'https://www.awin1.com/cread.php?s=4837775&v=128757&q=610152&r=3083133',
+        affiliate: true,
+        lastChecked: '2026-09',
+        active: true
+      },
+
+      {
+        id: 'zahnzusatz',
+        name: 'Zahnzusatzversicherung',
+        category: 'sonstiges',
+        targetGroup: 'privat',
+        description: 'Privater Vergleich von Zahnzusatzversicherungen.',
+        eligibility: 'Kein staatliches Programm – privates Partnerangebot.',
+        amount: 'Abhängig vom gewählten Tarif.',
+        region: 'Deutschland',
+        deadline: 'Nicht zutreffend',
+        authority: 'Privater Versicherungsvergleich',
+        officialUrl: 'https://www.awin1.com/cread.php?s=4577512&v=121064&q=587200&r=3083133',
+        applicationUrl: 'https://www.awin1.com/cread.php?s=4577512&v=121064&q=587200&r=3083133',
+        partnerUrl: 'https://www.awin1.com/cread.php?s=4577512&v=121064&q=587200&r=3083133',
+        affiliate: true,
+        lastChecked: '2026-09',
+        active: true
+      },
+
+      /* UNTERNEHMEN */
+
+      {
+        id: 'kfw-kredite',
+        name: 'KfW-Förderkredite',
+        category: 'foerderung',
+        targetGroup: 'unternehmen',
+        description: 'Förderkredite für Investitionen, Wachstum und Gründung.',
+        eligibility: 'Förderfähiges Vorhaben und Antragstellung über einen Finanzierungspartner.',
+        amount: 'Je nach Programm.',
+        region: 'Deutschland',
+        deadline: 'Vor Vorhabensbeginn beachten.',
+        authority: 'KfW / Finanzierungspartner',
+        officialUrl: 'https://www.kfw.de/inlandsfoerderung/Unternehmen/Investitionen-und-Wachstum/',
+        applicationUrl: 'https://www.kfw.de/inlandsfoerderung/Unternehmen/Investitionen-und-Wachstum/',
+        partnerUrl: null,
+        affiliate: false,
+        lastChecked: '2026-09',
+        active: true
+      },
+
+      {
+        id: 'mittelstand-digital',
+        name: 'Mittelstand-Digital Zentren',
+        category: 'foerderung',
+        targetGroup: 'unternehmen',
+        description: 'Kostenlose und neutrale Unterstützung bei Digitalisierungsvorhaben.',
+        eligibility: 'Insbesondere kleine und mittlere Unternehmen.',
+        amount: 'Beratung und verschiedene Unterstützungsangebote kostenlos.',
+        region: 'Deutschland',
+        deadline: 'Laufend',
+        authority: 'Mittelstand-Digital',
+        officialUrl: 'https://www.mittelstand-digital.de/',
+        applicationUrl: 'https://www.mittelstand-digital.de/',
+        partnerUrl: null,
+        affiliate: false,
+        lastChecked: '2026-09',
+        active: true
+      },
+
+      {
+        id: 'exist',
+        name: 'EXIST-Gründerstipendium',
+        category: 'foerderung',
+        targetGroup: 'unternehmen',
+        description: 'Förderung technologieorientierter und wissensbasierter Gründungsvorhaben aus Hochschulen und Forschungseinrichtungen.',
+        eligibility: 'Gründungsvorhaben mit entsprechendem Hochschul- oder Forschungsbezug.',
+        amount: 'Unterstützung für Lebensunterhalt und Sachmittel nach Programmvorgaben.',
+        region: 'Deutschland',
+        deadline: 'Vor beziehungsweise im Rahmen der Gründung.',
+        authority: 'EXIST / zuständiger Projektträger',
+        officialUrl: 'https://www.exist.de/',
+        applicationUrl: 'https://www.exist.de/',
+        partnerUrl: null,
+        affiliate: false,
+        lastChecked: '2026-09',
+        active: true
+      },
+
+      {
+        id: 'bafa-beratung',
+        name: 'BAFA-Unternehmensberatung',
+        category: 'beratung',
+        targetGroup: 'unternehmen',
+        description: 'Förderung bestimmter Unternehmensberatungen für kleine und mittlere Unternehmen nach den jeweils geltenden Richtlinien.',
+        eligibility: 'Abhängig von Programm, Unternehmensgröße, Beratung und weiteren Voraussetzungen.',
+        amount: 'Zuschuss zu förderfähigen Beratungskosten nach Programmvorgaben.',
+        region: 'Deutschland',
+        deadline: 'Vor Beginn der Beratung prüfen.',
+        authority: 'BAFA',
+        officialUrl: 'https://www.bafa.de/DE/Wirtschaft/Beratung_Finanzierung/Unternehmensberatung/unternehmensberatung_node.html',
+        applicationUrl: 'https://www.bafa.de/DE/Wirtschaft/Beratung_Finanzierung/Unternehmensberatung/unternehmensberatung_node.html',
+        partnerUrl: null,
+        affiliate: false,
+        lastChecked: '2026-09',
+        active: true
+      },
+
+      {
+        id: 'ihk-beratung',
+        name: 'IHK-Beratung',
+        category: 'beratung',
+        targetGroup: 'unternehmen',
+        description: 'Erstberatung und Informationen zu vielen unternehmerischen Fragen.',
+        eligibility: 'Abhängig vom Angebot der zuständigen Industrie- und Handelskammer.',
+        amount: 'Viele Erstberatungen kostenlos.',
+        region: 'Regional',
+        deadline: 'Laufend',
+        authority: 'Zuständige Industrie- und Handelskammer',
+        officialUrl: 'https://www.ihk.de/',
+        applicationUrl: 'https://www.ihk.de/',
+        partnerUrl: null,
+        affiliate: false,
+        lastChecked: '2026-09',
+        active: true
+      },
+
+      {
+        id: 'wegebau',
+        name: 'Förderung der Weiterbildung von Beschäftigten',
+        category: 'personal',
+        targetGroup: 'unternehmen',
+        description: 'Förderung beruflicher Weiterbildung von Beschäftigten. Die frühere Bezeichnung WeGebAU wird heute nicht mehr als eigenständiger aktueller Programmname verwendet.',
+        eligibility: 'Abhängig von Beschäftigten, Weiterbildung, Betriebsgröße und weiteren Voraussetzungen.',
+        amount: 'Je nach Voraussetzungen können Weiterbildungskosten und unter Umständen Arbeitsentgelt gefördert werden.',
+        region: 'Deutschland',
+        deadline: 'Vor Maßnahmenbeginn mit der Agentur für Arbeit klären.',
+        authority: 'Agentur für Arbeit',
+        officialUrl: 'https://www.arbeitsagentur.de/unternehmen/finanziell/foerderung-von-weiterbildung',
+        applicationUrl: 'https://www.arbeitsagentur.de/unternehmen/finanziell/foerderung-von-weiterbildung',
+        partnerUrl: null,
+        affiliate: false,
+        lastChecked: '2026-09',
+        active: true
+      },
+
+      {
+        id: 'qualichancengesetz',
+        name: 'Weiterbildungsförderung für Beschäftigte',
+        category: 'personal',
+        targetGroup: 'unternehmen',
+        description: 'Fördermöglichkeiten für berufliche Weiterbildung von Beschäftigten.',
+        eligibility: 'Abhängig von Beschäftigten, Weiterbildung, Betriebsgröße und weiteren Voraussetzungen.',
+        amount: 'Förderhöhe abhängig von den individuellen Voraussetzungen.',
+        region: 'Deutschland',
+        deadline: 'Vor Maßnahmenbeginn klären.',
+        authority: 'Agentur für Arbeit',
+        officialUrl: 'https://www.arbeitsagentur.de/unternehmen/finanziell/foerderung-von-weiterbildung',
+        applicationUrl: 'https://www.arbeitsagentur.de/unternehmen/finanziell/foerderung-von-weiterbildung',
+        partnerUrl: null,
+        affiliate: false,
+        lastChecked: '2026-09',
+        active: true
+      },
+
+      {
+        id: 'kurzarbeitergeld',
+        name: 'Kurzarbeitergeld',
+        category: 'personal',
+        targetGroup: 'unternehmen',
+        description: 'Entgeltersatzleistung bei erheblichem vorübergehendem Arbeitsausfall, um Beschäftigung zu sichern.',
+        eligibility: 'Gesetzliche Voraussetzungen für Kurzarbeit und Anzeige bei der Agentur für Arbeit.',
+        amount: 'Abhängig vom ausgefallenen Nettoentgelt und den persönlichen Voraussetzungen.',
+        region: 'Deutschland',
+        deadline: 'Anzeige und Antrag rechtzeitig vor bzw. im Zusammenhang mit Beginn der Kurzarbeit.',
+        authority: 'Agentur für Arbeit',
+        officialUrl: 'https://www.arbeitsagentur.de/unternehmen/finanziell/kurzarbeitergeld',
+        applicationUrl: 'https://www.arbeitsagentur.de/unternehmen/finanziell/kurzarbeitergeld',
+        partnerUrl: null,
+        affiliate: false,
+        lastChecked: '2026-09',
+        active: true
+      },
+
+      {
+        id: 'bafa-energie',
+        name: 'BAFA-Energieberatung',
+        category: 'energie',
+        targetGroup: 'unternehmen',
+        description: 'Fördermöglichkeiten für bestimmte Energieberatungen und Energieeffizienzmaßnahmen.',
+        eligibility: 'Abhängig vom jeweiligen Förderprogramm und den geltenden Voraussetzungen.',
+        amount: 'Förderung abhängig vom jeweiligen Programm.',
+        region: 'Deutschland',
+        deadline: 'Vor Beauftragung beziehungsweise Beginn prüfen.',
+        authority: 'BAFA',
+        officialUrl: 'https://www.bafa.de/',
+        applicationUrl: 'https://www.bafa.de/',
+        partnerUrl: null,
+        affiliate: false,
+        lastChecked: '2026-09',
+        active: true
+      },
+
+      {
+        id: 'kfw-energieeffizienz',
+        name: 'KfW Energie und Umwelt',
+        category: 'energie',
+        targetGroup: 'unternehmen',
+        description: 'Förderangebote für Energieeffizienz, erneuerbare Energien und weitere Umweltvorhaben.',
+        eligibility: 'Abhängig vom jeweiligen KfW-Programm.',
+        amount: 'Je nach Programm Kredit oder Zuschuss.',
+        region: 'Deutschland',
+        deadline: 'Vor Vorhabensbeginn prüfen.',
+        authority: 'KfW / Finanzierungspartner',
+        officialUrl: 'https://www.kfw.de/inlandsfoerderung/Unternehmen/Energie-und-Umwelt/',
+        applicationUrl: 'https://www.kfw.de/inlandsfoerderung/Unternehmen/Energie-und-Umwelt/',
+        partnerUrl: null,
+        affiliate: false,
+        lastChecked: '2026-09',
+        active: true
+      },
+
+      {
+        id: 'handwerkskammer',
+        name: 'Handwerkskammer-Beratung',
+        category: 'sonstiges_b',
+        targetGroup: 'unternehmen',
+        description: 'Beratung und Unterstützung für Handwerksbetriebe, unter anderem zu Förderungen und Unternehmensfragen.',
+        eligibility: 'Handwerksbetriebe im jeweiligen Kammerbezirk.',
+        amount: 'Je nach Angebot.',
+        region: 'Regional',
+        deadline: 'Laufend',
+        authority: 'Zuständige Handwerkskammer',
+        officialUrl: 'https://www.zdh.de/handwerksorganisationen/handwerkskammern/',
+        applicationUrl: 'https://www.zdh.de/handwerksorganisationen/handwerkskammern/',
+        partnerUrl: null,
+        affiliate: false,
+        lastChecked: '2026-09',
+        active: true
+      },
+
+      {
+        id: 'buergschaftsbanken',
+        name: 'Bürgschaftsbanken',
+        category: 'sonstiges_b',
+        targetGroup: 'unternehmen',
+        description: 'Bürgschaften können Unternehmen bei der Finanzierung unterstützen, wenn eigene Sicherheiten nicht ausreichen.',
+        eligibility: 'Abhängig vom Vorhaben, Unternehmen und der jeweiligen Bürgschaftsbank.',
+        amount: 'Abhängig vom jeweiligen Programm und Bundesland.',
+        region: 'Regional',
+        deadline: 'Vor Finanzierung prüfen.',
+        authority: 'Zuständige Bürgschaftsbank',
+        officialUrl: 'https://www.vdb-info.de/',
+        applicationUrl: 'https://www.vdb-info.de/',
+        partnerUrl: null,
+        affiliate: false,
+        lastChecked: '2026-09',
+        active: true
+      }
+
     ];
 
-    // Partnerangebote: zentrale Datenliste, damit neue Partner künftig nur ein
-    // neuer Eintrag sind (kein manuelles HTML mehr pro Banner). Reihenfolge der
-    // Kategorien entspricht der Reihenfolge des ersten Vorkommens in der Liste.
+
+    /*
+      PARTNERANGEBOTE
+    */
+
     const partnerOffers = [
-      { category: 'Reisen & Reiseversicherung', label: 'Fernreisen entdecken', alt: 'Explorer Fernreisen',
-        url: 'https://www.awin1.com/cread.php?s=3353262&v=41168&q=460451&r=3083133', img: 'https://www.awin1.com/cshow.php?s=3353262&v=41168&q=460451&r=3083133' },
-      { category: 'Reisen & Reiseversicherung', label: 'Reiseversicherung abschließen', alt: 'TravelSecure',
-        url: 'https://www.awin1.com/cread.php?s=3744684&v=106517&q=501269&r=3083133', img: 'https://www.awin1.com/cshow.php?s=3744684&v=106517&q=501269&r=3083133' },
-      { category: 'Reisen & Reiseversicherung', label: 'Über 40 Reiseversicherer vergleichen', alt: 'HelloSafe',
-        url: 'https://www.awin1.com/cread.php?s=4842582&v=128757&q=610091&r=3083133', img: 'https://www.awin1.com/cshow.php?s=4842582&v=128757&q=610091&r=3083133' },
-      { category: 'Reisen & Reiseversicherung', label: 'eSIM für deine nächste Reise', alt: 'Simbye',
-        url: 'https://www.awin1.com/cread.php?s=4757596&v=107814&q=509921&r=3083133', img: 'https://www.awin1.com/cshow.php?s=4757596&v=107814&q=509921&r=3083133' },
 
-      { category: 'Versicherungen & Tarife vergleichen', label: 'Tarife & Versicherungen vergleichen', alt: 'Burda Vergleicht',
-        url: 'https://www.awin1.com/cread.php?s=4577506&v=121064&q=587200&r=3083133', img: 'https://www.awin1.com/cshow.php?s=4577506&v=121064&q=587200&r=3083133' },
-      { category: 'Versicherungen & Tarife vergleichen', label: 'Weitere Vergleichsangebote', alt: 'Burda Vergleicht',
-        url: 'https://www.awin1.com/cread.php?s=4550235&v=121064&q=584681&r=3083133', img: 'https://www.awin1.com/cshow.php?s=4550235&v=121064&q=584681&r=3083133' },
-      { category: 'Versicherungen & Tarife vergleichen', label: 'Weitere Tarifvergleiche', alt: 'Burda Vergleicht',
-        rawHtml: '<iframe src="https://www.awin1.com/cawshow.php?v=121064&s=4566961&q=586062&r=3083133&iframe=1" style="width:100%;max-width:320px;aspect-ratio:970/250;border:0;" scrolling="no" title="Burda Vergleicht"></iframe>' },
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Fernreisen entdecken',
+        alt: 'Explorer Fernreisen',
+        url: 'https://www.awin1.com/cread.php?s=3353262&v=41168&q=460451&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3353262&v=41168&q=460451&r=3083133'
+      },
 
-      { category: 'Verkehrsrecht & Bußgeld', label: 'Hilfe bei einem Bußgeldbescheid', alt: 'Geblitzt.de',
-        url: 'https://www.awin1.com/cread.php?s=2536978&v=11466&q=345046&r=3083133', img: 'https://www.awin1.com/cshow.php?s=2536978&v=11466&q=345046&r=3083133' },
-      { category: 'Verkehrsrecht & Bußgeld', label: 'Rechtshilfe bei Bußgeld', alt: 'Geblitzt.de',
-        url: 'https://www.awin1.com/cread.php?s=2499717&v=11466&q=345046&r=3083133', img: 'https://www.awin1.com/cshow.php?s=2499717&v=11466&q=345046&r=3083133' },
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Reiseversicherung abschließen',
+        alt: 'TravelSecure',
+        url: 'https://www.awin1.com/cread.php?s=3744684&v=106517&q=501269&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3744684&v=106517&q=501269&r=3083133'
+      },
 
-      { category: 'Software & Tools', label: 'PDF-Tools & Dateiformate', alt: 'Wondershare',
-        url: 'https://www.awin1.com/cread.php?s=4031562&v=20202&q=528960&r=3083133', img: 'https://www.awin1.com/cshow.php?s=4031562&v=20202&q=528960&r=3083133' },
-      { category: 'Software & Tools', label: 'Video- & Kreativ-Software', alt: 'Wondershare',
-        url: 'https://www.awin1.com/cread.php?s=4804334&v=20202&q=607168&r=3083133', img: 'https://www.awin1.com/cshow.php?s=4804334&v=20202&q=607168&r=3083133' },
-      { category: 'Software & Tools', label: 'Dateien konvertieren & bearbeiten', alt: 'Wondershare',
-        url: 'https://www.awin1.com/cread.php?s=2897435&v=20202&q=414420&r=3083133', img: 'https://www.awin1.com/cshow.php?s=2897435&v=20202&q=414420&r=3083133' },
-      { category: 'Software & Tools', label: 'Wondershare Software-Angebote', alt: 'Wondershare',
-        url: 'https://www.awin1.com/cread.php?s=4796285&v=20202&q=596831&r=3083133', img: 'https://www.awin1.com/cshow.php?s=4796285&v=20202&q=596831&r=3083133' },
-      { category: 'Software & Tools', label: 'Weitere Wondershare-Tools', alt: 'Wondershare',
-        url: 'https://www.awin1.com/cread.php?s=4688680&v=20202&q=596830&r=3083133', img: 'https://www.awin1.com/cshow.php?s=4688680&v=20202&q=596830&r=3083133' },
-      { category: 'Software & Tools', label: 'Wondershare Sonderangebote', alt: 'Wondershare',
-        url: 'https://www.awin1.com/cread.php?s=4688555&v=20202&q=596822&r=3083133', img: 'https://www.awin1.com/cshow.php?s=4688555&v=20202&q=596822&r=3083133' },
-      { category: 'Software & Tools', label: 'Aktuelle Wondershare-Aktion', alt: 'Wondershare',
-        url: 'https://www.awin1.com/cread.php?s=4771269&v=20202&q=601333&r=3083133', img: 'https://www.awin1.com/cshow.php?s=4771269&v=20202&q=601333&r=3083133' },
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Über 40 Reiseversicherer vergleichen',
+        alt: 'HelloSafe',
+        url: 'https://www.awin1.com/cread.php?s=4842582&v=128757&q=610091&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4842582&v=128757&q=610091&r=3083133'
+      },
 
-      { category: 'Sparen & Gewinnspiele', label: 'Sparmöglichkeiten & Aktionen', alt: 'Einfach-Sparsam',
-        url: 'https://www.awin1.com/cread.php?s=4653754&v=113830&q=593749&r=3083133', img: 'https://www.awin1.com/cshow.php?s=4653754&v=113830&q=593749&r=3083133' },
-      { category: 'Sparen & Gewinnspiele', label: 'Gutscheine & Rabattaktionen', alt: 'Einfach-Sparsam',
-        url: 'https://www.awin1.com/cread.php?s=3854816&v=113830&q=511182&r=3083133', img: 'https://www.awin1.com/cshow.php?s=3854816&v=113830&q=511182&r=3083133' },
-      { category: 'Sparen & Gewinnspiele', label: 'Gewinnspiele entdecken', alt: 'Einfach-Sparsam',
-        url: 'https://www.awin1.com/cread.php?s=3859529&v=113830&q=511737&r=3083133', img: 'https://www.awin1.com/cshow.php?s=3859529&v=113830&q=511737&r=3083133' },
-      { category: 'Sparen & Gewinnspiele', label: 'Produktproben & Geld-zurück-Aktionen', alt: 'Einfach-Sparsam',
-        url: 'https://www.awin1.com/cread.php?s=3964546&v=113830&q=512206&r=3083133', img: 'https://www.awin1.com/cshow.php?s=3964546&v=113830&q=512206&r=3083133' },
-      { category: 'Sparen & Gewinnspiele', label: 'Weitere Sparaktionen', alt: 'Einfach-Sparsam',
-        url: 'https://www.awin1.com/cread.php?s=3964547&v=113830&q=511738&r=3083133', img: 'https://www.awin1.com/cshow.php?s=3964547&v=113830&q=511738&r=3083133' },
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'eSIM für deine nächste Reise',
+        alt: 'Simbye',
+        url: 'https://www.awin1.com/cread.php?s=4757596&v=107814&q=509921&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4757596&v=107814&q=509921&r=3083133'
+      },
 
-      { category: 'Technik & Zubehör', label: 'Bastel- & Beschriftungsgeräte', alt: 'HTVRont',
-        url: 'https://www.awin1.com/cread.php?s=4862005&v=68106&q=523805&r=3083133', img: 'https://www.awin1.com/cshow.php?s=4862005&v=68106&q=523805&r=3083133' },
-      { category: 'Technik & Zubehör', label: 'Solar & tragbare Stromversorgung', alt: 'Yose Power',
-        url: 'https://www.awin1.com/cread.php?s=4509341&v=113164&q=514452&r=3083133', img: 'https://www.awin1.com/cshow.php?s=4509341&v=113164&q=514452&r=3083133' }
+      {
+        category: 'Versicherungen & Tarife vergleichen',
+        label: 'Tarife & Versicherungen vergleichen',
+        alt: 'Burda Vergleicht',
+        url: 'https://www.awin1.com/cread.php?s=4577506&v=121064&q=587200&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4577506&v=121064&q=587200&r=3083133'
+      },
+
+      {
+        category: 'Versicherungen & Tarife vergleichen',
+        label: 'Weitere Vergleichsangebote',
+        alt: 'Burda Vergleicht',
+        url: 'https://www.awin1.com/cread.php?s=4550235&v=121064&q=584681&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4550235&v=121064&q=584681&r=3083133'
+      },
+
+      {
+        category: 'Versicherungen & Tarife vergleichen',
+        label: 'Weitere Tarifvergleiche',
+        alt: 'Burda Vergleicht',
+        rawHtml: '<iframe src="https://www.awin1.com/cawshow.php?v=121064&s=4566961&q=586062&r=3083133&iframe=1" style="width:100%;max-width:320px;aspect-ratio:970/250;border:0;" scrolling="no" title="Burda Vergleicht"></iframe>'
+      },
+
+      {
+        category: 'Verkehrsrecht & Bußgeld',
+        label: 'Hilfe bei einem Bußgeldbescheid',
+        alt: 'Geblitzt.de',
+        url: 'https://www.awin1.com/cread.php?s=2536978&v=11466&q=345046&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=2536978&v=11466&q=345046&r=3083133'
+      },
+
+      {
+        category: 'Verkehrsrecht & Bußgeld',
+        label: 'Rechtshilfe bei Bußgeld',
+        alt: 'Geblitzt.de',
+        url: 'https://www.awin1.com/cread.php?s=2499717&v=11466&q=345046&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=2499717&v=11466&q=345046&r=3083133'
+      },
+
+      {
+        category: 'Software & Tools',
+        label: 'PDF-Tools & Dateiformate',
+        alt: 'Wondershare',
+        url: 'https://www.awin1.com/cread.php?s=4031562&v=20202&q=528960&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4031562&v=20202&q=528960&r=3083133'
+      },
+
+      {
+        category: 'Software & Tools',
+        label: 'Video- & Kreativ-Software',
+        alt: 'Wondershare',
+        url: 'https://www.awin1.com/cread.php?s=4804334&v=20202&q=607168&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4804334&v=20202&q=607168&r=3083133'
+      },
+
+      {
+        category: 'Software & Tools',
+        label: 'Dateien konvertieren & bearbeiten',
+        alt: 'Wondershare',
+        url: 'https://www.awin1.com/cread.php?s=2897435&v=20202&q=414420&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=2897435&v=20202&q=414420&r=3083133'
+      },
+
+      {
+        category: 'Software & Tools',
+        label: 'Wondershare Software-Angebote',
+        alt: 'Wondershare',
+        url: 'https://www.awin1.com/cread.php?s=4796285&v=20202&q=596831&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4796285&v=20202&q=596831&r=3083133'
+      },
+
+      {
+        category: 'Software & Tools',
+        label: 'Weitere Wondershare-Tools',
+        alt: 'Wondershare',
+        url: 'https://www.awin1.com/cread.php?s=4688680&v=20202&q=596830&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4688680&v=20202&q=596830&r=3083133'
+      },
+
+      {
+        category: 'Software & Tools',
+        label: 'Wondershare Sonderangebote',
+        alt: 'Wondershare',
+        url: 'https://www.awin1.com/cread.php?s=4688555&v=20202&q=596822&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4688555&v=20202&q=596822&r=3083133'
+      },
+
+      {
+        category: 'Software & Tools',
+        label: 'Aktuelle Wondershare-Aktion',
+        alt: 'Wondershare',
+        url: 'https://www.awin1.com/cread.php?s=4771269&v=20202&q=601333&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4771269&v=20202&q=601333&r=3083133'
+      },
+
+      {
+        category: 'Sparen & Gewinnspiele',
+        label: 'Sparmöglichkeiten & Aktionen',
+        alt: 'Einfach-Sparsam',
+        url: 'https://www.awin1.com/cread.php?s=4653754&v=113830&q=593749&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4653754&v=113830&q=593749&r=3083133'
+      },
+
+      {
+        category: 'Sparen & Gewinnspiele',
+        label: 'Gutscheine & Rabattaktionen',
+        alt: 'Einfach-Sparsam',
+        url: 'https://www.awin1.com/cread.php?s=3854816&v=113830&q=511182&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3854816&v=113830&q=511182&r=3083133'
+      },
+
+      {
+        category: 'Sparen & Gewinnspiele',
+        label: 'Gewinnspiele entdecken',
+        alt: 'Einfach-Sparsam',
+        url: 'https://www.awin1.com/cread.php?s=3859529&v=113830&q=511737&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3859529&v=113830&q=511737&r=3083133'
+      },
+
+      {
+        category: 'Sparen & Gewinnspiele',
+        label: 'Produktproben & Geld-zurück-Aktionen',
+        alt: 'Einfach-Sparsam',
+        url: 'https://www.awin1.com/cread.php?s=3964546&v=113830&q=512206&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3964546&v=113830&q=512206&r=3083133'
+      },
+
+      {
+        category: 'Sparen & Gewinnspiele',
+        label: 'Weitere Sparaktionen',
+        alt: 'Einfach-Sparsam',
+        url: 'https://www.awin1.com/cread.php?s=3964547&v=113830&q=511738&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3964547&v=113830&q=511738&r=3083133'
+      },
+
+      {
+        category: 'Technik & Zubehör',
+        label: 'Bastel- & Beschriftungsgeräte',
+        alt: 'HTVRont',
+        url: 'https://www.awin1.com/cread.php?s=4862005&v=68106&q=523805&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4862005&v=68106&q=523805&r=3083133'
+      },
+
+      {
+        category: 'Technik & Zubehör',
+        label: 'Solar & tragbare Stromversorgung',
+        alt: 'Yose Power',
+        url: 'https://www.awin1.com/cread.php?s=4509341&v=113164&q=514452&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4509341&v=113164&q=514452&r=3083133'
+      }
+
     ];
 
-    function renderAllProgramsOverview() {
-      const root = document.getElementById('allProgramsOverview');
-      if (!root) return;
-      const order = [];
-      const byCategory = {};
-      programs.filter(p => p.active).forEach(p => {
-        if (!byCategory[p.category]) { byCategory[p.category] = []; order.push(p.category); }
-        byCategory[p.category].push(p);
-      });
-      root.innerHTML = order.map(cat => `
-        <div class="overview-group">
-          <h3 class="partner-group-title">${categoryLabels[cat] || cat}</h3>
-          <div class="overview-list">
-            ${byCategory[cat].map(p => `
-              <details class="overview-item">
-                <summary>${p.name}</summary>
-                <p>${p.description}</p>
-                <dl class="result-meta">
-                  <div><dt>Möglicherweise passend, wenn:</dt><dd>${p.eligibility}</dd></div>
-                  <div><dt>Höhe/Umfang:</dt><dd>${p.amount}</dd></div>
-                  <div><dt>Zuständige Stelle:</dt><dd>${p.authority}</dd></div>
-                  <div><dt>Region:</dt><dd>${p.region}</dd></div>
-                  <div><dt>Frist:</dt><dd>${p.deadline}</dd></div>
-                </dl>
-                <div class="result-links">
-                  <a href="${p.officialUrl}" target="_blank" rel="noopener">Offizielle Informationen</a>
-                  <a href="${p.applicationUrl}" target="_blank" rel="noopener">${p.affiliate ? 'Zum Partnerangebot' : 'Zum offiziellen Antrag'}</a>
-                </div>
-              </details>
-            `).join('')}
-          </div>
-        </div>
-      `).join('');
-    }
-
-    function renderPartnerOffers() {
-      const groups = [];
-      const byCategory = {};
-      partnerOffers.forEach(o => {
-        if (!byCategory[o.category]) { byCategory[o.category] = []; groups.push(o.category); }
-        byCategory[o.category].push(o);
-      });
-      const root = document.getElementById('partnerGroups');
-      if (!root) return;
-      root.innerHTML = groups.map(cat => `
-        <div class="partner-group">
-          <h3 class="partner-group-title">${cat}</h3>
-          <div class="partner-banners">
-            ${byCategory[cat].map(o => `
-              <div class="banner-tile">
-                <span class="banner-tile-label">${o.label}</span>
-                ${o.rawHtml ? o.rawHtml : `<a rel="sponsored noopener" href="${o.url}" target="_blank"><img src="${o.img}" border="0" alt="${o.alt}"></a>`}
-              </div>
-            `).join('')}
-          </div>
-        </div>
-      `).join('');
-    }
 
     const categoryLabels = {
-      pflege: 'Pflege & Gesundheit', finanzen: 'Finanzielle Hilfen', arbeit: 'Arbeit & Weiterbildung',
-      familie: 'Familie & Kinder', wohnen: 'Wohnen & Energie', sonstiges: 'Sonstige Unterstützung',
-      foerderung: 'Förderungen & Zuschüsse', beratung: 'Beratung & Coaching', personal: 'Personal & Qualifizierung',
-      energie: 'Energie & Nachhaltigkeit', sonstiges_b: 'Sonstige Unterstützung'
+
+      pflege: 'Pflege & Gesundheit',
+
+      finanzen: 'Finanzielle Hilfen',
+
+      arbeit: 'Arbeit & Weiterbildung',
+
+      familie: 'Familie & Kinder',
+
+      wohnen: 'Wohnen & Energie',
+
+      sonstiges: 'Sonstige Unterstützung',
+
+      foerderung: 'Förderungen & Zuschüsse',
+
+      beratung: 'Beratung & Coaching',
+
+      personal: 'Personal & Qualifizierung',
+
+      energie: 'Energie & Nachhaltigkeit',
+
+      sonstiges_b: 'Sonstige Unterstützung'
+
     };
 
-    function programCardHtml(p, matchNote, relevant) {
-      const noteClass = relevant === false ? 'match-note match-note-low' : 'match-note';
-      return `
-        <li class="result-card">
-          <span class="badge">${categoryLabels[p.category] || ''}</span>${p.affiliate ? '<span class="badge badge-ad">Werbung</span>' : ''}
-          <h4>${p.name}</h4>
-          ${matchNote ? `<p class="${noteClass}">${matchNote}</p>` : ''}
-          <p>${p.description}</p>
-          <dl class="result-meta">
-            <div><dt>Möglicherweise passend, wenn:</dt><dd>${p.eligibility}</dd></div>
-            <div><dt>Höhe/Umfang:</dt><dd>${p.amount}</dd></div>
-            <div><dt>Zuständige Stelle:</dt><dd>${p.authority}</dd></div>
-            <div><dt>Region:</dt><dd>${p.region}</dd></div>
-            <div><dt>Frist:</dt><dd>${p.deadline}</dd></div>
-          </dl>
-          <div class="result-links">
-            <a href="${p.officialUrl}" target="_blank" rel="noopener">Offizielle Informationen</a>
-            <a href="${p.applicationUrl}" target="_blank" rel="noopener">${p.affiliate ? 'Zum Partnerangebot' : 'Zum offiziellen Antrag'}</a>
+
+    function renderAllProgramsOverview() {
+
+      const root =
+        document.getElementById('allProgramsOverview');
+
+      if (!root) return;
+
+      const order = [];
+      const byCategory = {};
+
+      programs
+        .filter(p => p.active)
+        .forEach(p => {
+
+          if (!byCategory[p.category]) {
+
+            byCategory[p.category] = [];
+            order.push(p.category);
+
+          }
+
+          byCategory[p.category].push(p);
+
+        });
+
+
+      root.innerHTML = order.map(cat => `
+
+        <div class="overview-group">
+
+          <h3 class="partner-group-title">
+            ${categoryLabels[cat] || cat}
+          </h3>
+
+          <div class="overview-list">
+
+            ${byCategory[cat].map(p => `
+
+              <details class="overview-item">
+
+                <summary>
+                  ${p.name}
+                </summary>
+
+                <p>
+                  ${p.description}
+                </p>
+
+                <dl class="result-meta">
+
+                  <div>
+                    <dt>Möglicherweise passend, wenn:</dt>
+                    <dd>${p.eligibility}</dd>
+                  </div>
+
+                  <div>
+                    <dt>Höhe/Umfang:</dt>
+                    <dd>${p.amount}</dd>
+                  </div>
+
+                  <div>
+                    <dt>Zuständige Stelle:</dt>
+                    <dd>${p.authority}</dd>
+                  </div>
+
+                  <div>
+                    <dt>Region:</dt>
+                    <dd>${p.region}</dd>
+                  </div>
+
+                  <div>
+                    <dt>Frist:</dt>
+                    <dd>${p.deadline}</dd>
+                  </div>
+
+                </dl>
+
+                <div class="result-links">
+
+                  <a
+                    href="${p.officialUrl}"
+                    target="_blank"
+                    rel="${p.affiliate ? 'sponsored noopener' : 'noopener'}"
+                  >
+                    ${p.affiliate ? 'Partnerangebot' : 'Offizielle Informationen'}
+                  </a>
+
+                  <a
+                    href="${p.applicationUrl}"
+                    target="_blank"
+                    rel="${p.affiliate ? 'sponsored noopener' : 'noopener'}"
+                  >
+                    ${p.affiliate ? 'Zum Partnerangebot' : 'Zum offiziellen Angebot'}
+                  </a>
+
+                </div>
+
+              </details>
+
+            `).join('')}
+
           </div>
-        </li>
-      `;
+
+        </div>
+
+      `).join('');
+
     }
 
-    // Pilot-Matching für die Kategorie "Familie & Kinder": echte Auswertung der
-    // Angaben aus Schritt 2 statt reiner Kategorie-Anzeige. Bei fehlenden Angaben
-    // wird eine Leistung nicht ausgeschlossen, sondern als "eventuell passend" geführt.
-    // Matching-Regeln je Programm-ID. Programme ohne eigene Regel gelten als
-    // grundsätzlich passend und werden ohne Zusatz-Begründung gezeigt (ehrlicher
-    // als eine Regel zu erfinden, wo keine verlässliche Abgrenzung möglich ist).
+
+    function renderPartnerOffers() {
+
+      const groups = [];
+      const byCategory = {};
+
+      partnerOffers.forEach(o => {
+
+        if (!byCategory[o.category]) {
+
+          byCategory[o.category] = [];
+          groups.push(o.category);
+
+        }
+
+        byCategory[o.category].push(o);
+
+      });
+
+      const root =
+        document.getElementById('partnerGroups');
+
+      if (!root) return;
+
+
+      root.innerHTML = groups.map(cat => `
+
+        <div class="partner-group">
+
+          <h3 class="partner-group-title">
+            ${cat}
+          </h3>
+
+          <div class="partner-banners">
+
+            ${byCategory[cat].map(o => `
+
+              <div class="banner-tile">
+
+                <span class="banner-tile-label">
+                  ${o.label}
+                </span>
+
+                ${
+                  o.rawHtml
+                    ? o.rawHtml
+                    : `
+                      <a
+                        rel="sponsored noopener"
+                        href="${o.url}"
+                        target="_blank"
+                      >
+                        <img
+                          src="${o.img}"
+                          alt="${o.alt}"
+                          border="0"
+                        >
+                      </a>
+                    `
+                }
+
+              </div>
+
+            `).join('')}
+
+          </div>
+
+        </div>
+
+      `).join('');
+
+    }
+
+
+    /*
+      MATCHING
+    */
+
     const matchRules = {
-      // Familie & Kinder
+
       elterngeld: s => {
-        const age = s.familyChildAge !== '' ? parseFloat(String(s.familyChildAge).replace(',', '.')) : null;
-        if (age !== null && age > 3) return { relevant: false, reason: 'Elterngeld wird in der Regel nur in den ersten Lebensjahren des Kindes gezahlt – bei deiner Altersangabe vermutlich nicht mehr einschlägig.' };
-        return { relevant: true, reason: 'Kann passen, da dein Kind (laut Angabe) noch jung ist. Genaue Bezugsmonate auf der offiziellen Seite prüfen.' };
+
+        const age =
+          s.familyChildAge !== ''
+            ? parseFloat(
+                String(s.familyChildAge).replace(',', '.')
+              )
+            : null;
+
+        if (age !== null && age > 3) {
+
+          return {
+            relevant: false,
+            reason: 'Elterngeld wird grundsätzlich in der frühen Zeit nach der Geburt bezogen. Bei deiner Altersangabe ist ein Anspruch vermutlich nicht mehr gegeben.'
+          };
+
+        }
+
+        return {
+          relevant: true,
+          reason: 'Kann passen, wenn dein Kind noch in der relevanten Bezugszeit ist. Die genaue Anspruchsdauer bitte auf der offiziellen Seite prüfen.'
+        };
+
       },
-      kindergeld: s => ({ relevant: true, reason: 'Gilt unabhängig vom Einkommen für (fast) jedes Kind bis zur jeweiligen Altersgrenze.' }),
+
+
+      kindergeld: s => ({
+        relevant: true,
+        reason: 'Kann passen, sofern die gesetzlichen Voraussetzungen für Kindergeld erfüllt sind.'
+      }),
+
+
       unterhaltsvorschuss: s => {
-        if (s.familyStatus === 'partner') return { relevant: false, reason: 'Unterhaltsvorschuss ist für Alleinerziehende gedacht – laut deiner Angabe lebt ein:e Partner:in im Haushalt.' };
-        return { relevant: true, reason: 'Kann passen, wenn du alleinerziehend bist und der andere Elternteil keinen oder zu wenig Unterhalt zahlt.' };
+
+        if (s.familyStatus === 'partner') {
+
+          return {
+            relevant: false,
+            reason: 'Unterhaltsvorschuss ist grundsätzlich für Alleinerziehende vorgesehen.'
+          };
+
+        }
+
+        return {
+          relevant: true,
+          reason: 'Kann passen, wenn du alleinerziehend bist und der andere Elternteil keinen oder zu wenig Unterhalt zahlt.'
+        };
+
       },
+
+
       kinderzuschlag: s => {
-        if (s.familyIncome === 'mittel' || s.familyIncome === 'hoch') return { relevant: false, reason: 'Kinderzuschlag ist für Haushalte mit eher geringem Einkommen gedacht – laut deiner Angabe evtl. nicht einschlägig.' };
-        return { relevant: true, reason: 'Kann passen, wenn dein Einkommen für dich reicht, aber nicht für den Bedarf deiner Kinder.' };
+
+        if (
+          s.familyIncome === 'mittel' ||
+          s.familyIncome === 'hoch'
+        ) {
+
+          return {
+            relevant: false,
+            reason: 'Kinderzuschlag richtet sich insbesondere an Familien mit Einkommen, das für die Eltern reicht, aber für den vollständigen Bedarf der Kinder nicht ausreicht.'
+          };
+
+        }
+
+        return {
+          relevant: true,
+          reason: 'Kann passen, wenn dein Einkommen für dich reicht, aber der Bedarf deiner Kinder nicht vollständig gedeckt ist.'
+        };
+
       },
-      // Finanzielle Hilfen
-      buergergeld: s => {
-        if (s.employmentStatus === 'erwerbstaetig' || s.employmentStatus === 'rente') return { relevant: false, reason: 'Bürgergeld richtet sich an Erwerbsfähige ohne ausreichendes Einkommen – laut deiner Angabe evtl. nicht einschlägig.' };
-        return { relevant: true, reason: 'Kann passen, wenn dein Einkommen aktuell nicht für den Lebensunterhalt reicht.' };
+
+
+      grundsicherungsgeld: s => {
+
+        if (s.employmentStatus === 'rente') {
+
+          return {
+            relevant: false,
+            reason: 'Grundsicherungsgeld richtet sich an erwerbsfähige Menschen. Für Menschen im Rentenalter oder bei dauerhafter voller Erwerbsminderung kommt eine andere Grundsicherungsleistung in Betracht.'
+          };
+
+        }
+
+        return {
+          relevant: true,
+          reason: 'Kann passen, wenn du erwerbsfähig bist und dein Einkommen beziehungsweise Vermögen nicht für den Lebensunterhalt reicht.'
+        };
+
       },
+
+
       wohngeld: s => {
-        if (s.familyIncome === 'hoch') return { relevant: false, reason: 'Wohngeld ist für Haushalte mit geringerem Einkommen gedacht – laut deiner Angabe evtl. nicht einschlägig.' };
-        return { relevant: true, reason: 'Kann passen, wenn deine Miete im Verhältnis zu deinem Einkommen hoch ist.' };
+
+        if (s.familyIncome === 'hoch') {
+
+          return {
+            relevant: false,
+            reason: 'Wohngeld ist für Haushalte mit geringerem Einkommen vorgesehen.'
+          };
+
+        }
+
+        return {
+          relevant: true,
+          reason: 'Kann passen, wenn dein Einkommen und deine Wohnkosten die gesetzlichen Voraussetzungen erfüllen.'
+        };
+
       },
+
+
       'wohngeld-wohnen': s => {
-        if (s.familyIncome === 'hoch') return { relevant: false, reason: 'Wohngeld ist für Haushalte mit geringerem Einkommen gedacht – laut deiner Angabe evtl. nicht einschlägig.' };
-        return { relevant: true, reason: 'Kann passen, wenn deine Miete im Verhältnis zu deinem Einkommen hoch ist.' };
+
+        if (s.familyIncome === 'hoch') {
+
+          return {
+            relevant: false,
+            reason: 'Wohngeld ist für Haushalte mit geringerem Einkommen vorgesehen.'
+          };
+
+        }
+
+        return {
+          relevant: true,
+          reason: 'Kann passen, wenn dein Einkommen und deine Wohnkosten die gesetzlichen Voraussetzungen erfüllen.'
+        };
+
       },
+
+
       'grundsicherung-alter': s => {
-        if (s.employmentStatus && s.employmentStatus !== 'rente') return { relevant: false, reason: 'Diese Leistung richtet sich an Menschen im Rentenalter oder mit dauerhafter voller Erwerbsminderung.' };
-        return { relevant: true, reason: 'Kann passen, wenn du im Rentenalter bist oder dauerhaft voll erwerbsgemindert und dein Einkommen nicht reicht.' };
+
+        if (
+          s.employmentStatus &&
+          s.employmentStatus !== 'rente'
+        ) {
+
+          return {
+            relevant: false,
+            reason: 'Diese Leistung richtet sich insbesondere an Menschen im Rentenalter oder mit dauerhafter voller Erwerbsminderung.'
+          };
+
+        }
+
+        return {
+          relevant: true,
+          reason: 'Kann passen, wenn du im Rentenalter bist oder dauerhaft voll erwerbsgemindert bist und dein Einkommen nicht reicht.'
+        };
+
       },
-      // Arbeit & Weiterbildung
+
+
       bildungsgutschein: s => {
-        if (s.employmentStatus === 'erwerbstaetig') return { relevant: false, reason: 'Der Bildungsgutschein wird meist bei Arbeitslosigkeit oder drohender Arbeitslosigkeit ausgestellt.' };
-        return { relevant: true, reason: 'Kann passen, wenn du arbeitslos bist oder eine berufliche Weiterbildung ansteht.' };
+
+        if (s.employmentStatus === 'erwerbstaetig') {
+
+          return {
+            relevant: false,
+            reason: 'Ein Bildungsgutschein kommt insbesondere bei Arbeitslosigkeit, drohender Arbeitslosigkeit oder anderem beruflichem Weiterbildungsbedarf in Betracht.'
+          };
+
+        }
+
+        return {
+          relevant: true,
+          reason: 'Kann passen, wenn du arbeitslos bist, von Arbeitslosigkeit bedroht bist oder eine geförderte berufliche Weiterbildung benötigst.'
+        };
+
       },
+
+
       'aufstiegs-bafoeg': s => {
-        if (s.employmentStatus === 'arbeitslos') return { relevant: false, reason: 'Aufstiegs-BAföG setzt in der Regel eine laufende oder geplante Fortbildung neben bzw. nach der Erstausbildung voraus.' };
-        return { relevant: true, reason: 'Kann passen, wenn du eine berufliche Aufstiegsfortbildung (z. B. Meister) planst.' };
+
+        if (s.employmentStatus === 'arbeitslos') {
+
+          return {
+            relevant: false,
+            reason: 'Aufstiegs-BAföG betrifft berufliche Aufstiegsfortbildungen und hängt nicht allein vom Arbeitslosenstatus ab.'
+          };
+
+        }
+
+        return {
+          relevant: true,
+          reason: 'Kann passen, wenn du eine berufliche Aufstiegsfortbildung planst.'
+        };
+
       },
+
+
       gruendungszuschuss: s => {
-        if (s.employmentStatus && s.employmentStatus !== 'arbeitslos') return { relevant: false, reason: 'Der Gründungszuschuss setzt einen Restanspruch auf Arbeitslosengeld I voraus.' };
-        return { relevant: true, reason: 'Kann passen, wenn du aus der Arbeitslosigkeit heraus ein Unternehmen gründen möchtest.' };
+
+        if (
+          s.employmentStatus &&
+          s.employmentStatus !== 'arbeitslos'
+        ) {
+
+          return {
+            relevant: false,
+            reason: 'Der Gründungszuschuss setzt unter anderem einen entsprechenden Anspruch auf Arbeitslosengeld und die weiteren gesetzlichen Voraussetzungen voraus.'
+          };
+
+        }
+
+        return {
+          relevant: true,
+          reason: 'Kann passen, wenn du aus der Arbeitslosigkeit heraus eine hauptberufliche Selbstständigkeit aufnehmen möchtest.'
+        };
+
       },
-      // Wohnen & Energie (privat)
+
+
       'stromspar-check': s => {
-        if (s.familyIncome === 'hoch' || s.familyIncome === 'mittel') return { relevant: false, reason: 'Der Stromspar-Check richtet sich an Haushalte mit eher geringem Einkommen.' };
-        return { relevant: true, reason: 'Kann passen, wenn dein Haushaltseinkommen eher gering ist.' };
+
+        if (
+          s.familyIncome === 'hoch' ||
+          s.familyIncome === 'mittel'
+        ) {
+
+          return {
+            relevant: false,
+            reason: 'Der Stromspar-Check richtet sich insbesondere an Haushalte mit geringem Einkommen.'
+          };
+
+        }
+
+        return {
+          relevant: true,
+          reason: 'Kann passen, wenn dein Haushaltseinkommen eher gering ist.'
+        };
+
       },
-      // Sonstige Unterstützung (privat)
+
+
       schuldnerberatung: s => {
-        if (s.familyIncome === 'hoch') return { relevant: false, reason: 'Schuldnerberatung richtet sich an Menschen mit finanziellen Engpässen.' };
-        return { relevant: true, reason: 'Kann passen, wenn du finanzielle Engpässe oder Überschuldung hast.' };
+
+        if (s.familyIncome === 'hoch') {
+
+          return {
+            relevant: false,
+            reason: 'Schuldnerberatung ist vor allem bei finanziellen Schwierigkeiten oder Überschuldung relevant.'
+          };
+
+        }
+
+        return {
+          relevant: true,
+          reason: 'Kann passen, wenn du finanzielle Schwierigkeiten oder Schulden hast.'
+        };
+
       },
-      // Förderungen & Zuschüsse (Unternehmen)
+
+
       exist: s => {
-        if (s.bizPhase === 'bestehend') return { relevant: false, reason: 'EXIST richtet sich an Gründungsvorhaben aus der Hochschule, nicht an bereits bestehende Unternehmen.' };
-        return { relevant: true, reason: 'Kann passen, wenn du gerade ein technologie- oder wissensbasiertes Unternehmen gründest.' };
+
+        if (s.bizPhase === 'bestehend') {
+
+          return {
+            relevant: false,
+            reason: 'EXIST richtet sich insbesondere an bestimmte technologie- und wissensbasierte Gründungsvorhaben.'
+          };
+
+        }
+
+        return {
+          relevant: true,
+          reason: 'Kann passen, wenn du ein technologie- oder wissensbasiertes Gründungsvorhaben mit entsprechendem Hochschul- oder Forschungsbezug planst.'
+        };
+
       },
+
+
       'mittelstand-digital': s => {
-        if (s.bizFocus && s.bizFocus !== 'digitalisierung') return { relevant: false, reason: 'Dieses Angebot ist auf Digitalisierungsvorhaben zugeschnitten.' };
-        return { relevant: true, reason: 'Kann passen, wenn Digitalisierung ein Thema für dein Unternehmen ist.' };
+
+        if (
+          s.bizFocus &&
+          s.bizFocus !== 'digitalisierung'
+        ) {
+
+          return {
+            relevant: false,
+            reason: 'Dieses Angebot ist insbesondere auf Digitalisierung ausgerichtet.'
+          };
+
+        }
+
+        return {
+          relevant: true,
+          reason: 'Kann passen, wenn Digitalisierung ein Thema für dein Unternehmen ist.'
+        };
+
       },
-      // Personal & Qualifizierung
+
+
       wegebau: s => {
-        if (s.bizPhase === 'gruendung') return { relevant: false, reason: 'Setzt bereits Beschäftigte im Unternehmen voraus.' };
-        return { relevant: true, reason: 'Kann passen, wenn du Beschäftigte ohne Berufsabschluss weiterbilden möchtest.' };
+
+        if (s.bizPhase === 'gruendung') {
+
+          return {
+            relevant: false,
+            reason: 'Die Förderung der Weiterbildung von Beschäftigten setzt grundsätzlich Beschäftigte voraus.'
+          };
+
+        }
+
+        return {
+          relevant: true,
+          reason: 'Kann passen, wenn du Beschäftigte beruflich weiterbilden möchtest.'
+        };
+
       },
+
+
       qualichancengesetz: s => {
-        if (s.bizPhase === 'gruendung') return { relevant: false, reason: 'Setzt bereits Beschäftigte im Unternehmen voraus.' };
-        return { relevant: true, reason: 'Kann passen, wenn sich Tätigkeiten deiner Beschäftigten z. B. durch Digitalisierung wesentlich verändern.' };
+
+        if (s.bizPhase === 'gruendung') {
+
+          return {
+            relevant: false,
+            reason: 'Die Beschäftigtenförderung setzt grundsätzlich bereits Beschäftigte im Unternehmen voraus.'
+          };
+
+        }
+
+        return {
+          relevant: true,
+          reason: 'Kann passen, wenn du Beschäftigte weiterqualifizieren möchtest.'
+        };
+
       },
+
+
       kurzarbeitergeld: s => {
-        if (s.bizPhase === 'gruendung') return { relevant: false, reason: 'Setzt ein bestehendes Unternehmen mit Beschäftigten voraus.' };
-        return { relevant: true, reason: 'Kann passen, wenn dein Unternehmen vorübergehend erheblich weniger Arbeit hat und du Kündigungen vermeiden möchtest.' };
+
+        if (s.bizPhase === 'gruendung') {
+
+          return {
+            relevant: false,
+            reason: 'Kurzarbeitergeld setzt ein bestehendes Unternehmen und die weiteren gesetzlichen Voraussetzungen für Kurzarbeit voraus.'
+          };
+
+        }
+
+        return {
+          relevant: true,
+          reason: 'Kann passen, wenn dein Unternehmen vorübergehend erheblichen Arbeitsausfall hat.'
+        };
+
       },
-      // Energie & Nachhaltigkeit (Unternehmen)
+
+
       'bafa-energie': s => {
-        if (s.bizFocus && s.bizFocus !== 'energie') return { relevant: false, reason: 'Dieses Angebot ist auf Energieberatung zugeschnitten.' };
-        return { relevant: true, reason: 'Kann passen, wenn Energieeinsparung ein Thema für dein Unternehmen ist.' };
+
+        if (
+          s.bizFocus &&
+          s.bizFocus !== 'energie'
+        ) {
+
+          return {
+            relevant: false,
+            reason: 'Dieses Angebot betrifft insbesondere Energieberatung und Energieeffizienz.'
+          };
+
+        }
+
+        return {
+          relevant: true,
+          reason: 'Kann passen, wenn Energieeffizienz oder Energieberatung für dein Unternehmen relevant ist.'
+        };
+
       },
+
+
       'kfw-energieeffizienz': s => {
-        if (s.bizFocus && s.bizFocus !== 'energie') return { relevant: false, reason: 'Dieses Angebot ist auf Energieeffizienz-Vorhaben zugeschnitten.' };
-        return { relevant: true, reason: 'Kann passen, wenn du in effizientere Anlagen oder Prozesse investieren möchtest.' };
+
+        if (
+          s.bizFocus &&
+          s.bizFocus !== 'energie'
+        ) {
+
+          return {
+            relevant: false,
+            reason: 'Dieses Angebot ist insbesondere auf Energie- und Umweltvorhaben ausgerichtet.'
+          };
+
+        }
+
+        return {
+          relevant: true,
+          reason: 'Kann passen, wenn du in Energieeffizienz oder Umweltmaßnahmen investieren möchtest.'
+        };
+
       },
-      // Sonstige Unterstützung (Unternehmen)
+
+
       buergschaftsbanken: s => {
-        if (s.bizSize === 'gross') return { relevant: false, reason: 'Bürgschaftsbanken richten sich vor allem an kleine und mittlere Unternehmen.' };
-        return { relevant: true, reason: 'Kann passen, wenn dir für einen Kredit eigene Sicherheiten fehlen.' };
+
+        if (s.bizSize === 'gross') {
+
+          return {
+            relevant: false,
+            reason: 'Bürgschaftsbanken unterstützen insbesondere kleine und mittlere Unternehmen; die konkrete Zuständigkeit muss regional geprüft werden.'
+          };
+
+        }
+
+        return {
+          relevant: true,
+          reason: 'Kann passen, wenn für eine Finanzierung nicht genügend eigene Sicherheiten vorhanden sind.'
+        };
+
       }
+
     };
+
 
     function getCategoryMatches(category) {
-      let base = programs.filter(p => p.category === category && p.active);
+
+      let base =
+        programs.filter(
+          p =>
+            p.category === category &&
+            p.active
+        );
+
+
       if (category === 'familie') {
-        const kz = programs.find(p => p.id === 'kinderzuschlag' && p.active);
-        if (kz) base = base.concat([kz]);
+
+        const kz =
+          programs.find(
+            p =>
+              p.id === 'kinderzuschlag' &&
+              p.active
+          );
+
+        if (kz) {
+          base = base.concat([kz]);
+        }
+
       }
+
+
       return base.map(p => {
-        const rule = matchRules[p.id];
-        if (!rule) return { program: p, relevant: true, reason: null };
-        const result = rule(state);
-        return { program: p, relevant: result.relevant, reason: result.reason };
+
+        const rule =
+          matchRules[p.id];
+
+        if (!rule) {
+
+          return {
+            program: p,
+            relevant: true,
+            reason: null
+          };
+
+        }
+
+        const result =
+          rule(state);
+
+        return {
+          program: p,
+          relevant: result.relevant,
+          reason: result.reason
+        };
+
       });
+
     }
+
+
+    function programCardHtml(
+      p,
+      matchNote,
+      relevant
+    ) {
+
+      const noteClass =
+        relevant === false
+          ? 'match-note match-note-low'
+          : 'match-note';
+
+
+      return `
+
+        <li class="result-card">
+
+          <span class="badge">
+            ${categoryLabels[p.category] || ''}
+          </span>
+
+          ${
+            p.affiliate
+              ? '<span class="badge badge-ad">Partnerangebot</span>'
+              : ''
+          }
+
+          <h4>
+            ${p.name}
+          </h4>
+
+          ${
+            matchNote
+              ? `
+                <p class="${noteClass}">
+                  ${matchNote}
+                </p>
+              `
+              : ''
+          }
+
+          <p>
+            ${p.description}
+          </p>
+
+          <dl class="result-meta">
+
+            <div>
+              <dt>Möglicherweise passend, wenn:</dt>
+              <dd>${p.eligibility}</dd>
+            </div>
+
+            <div>
+              <dt>Höhe/Umfang:</dt>
+              <dd>${p.amount}</dd>
+            </div>
+
+            <div>
+              <dt>Zuständige Stelle:</dt>
+              <dd>${p.authority}</dd>
+            </div>
+
+            <div>
+              <dt>Region:</dt>
+              <dd>${p.region}</dd>
+            </div>
+
+            <div>
+              <dt>Frist:</dt>
+              <dd>${p.deadline}</dd>
+            </div>
+
+          </dl>
+
+          <div class="result-links">
+
+            <a
+              href="${p.officialUrl}"
+              target="_blank"
+              rel="${p.affiliate ? 'sponsored noopener' : 'noopener'}"
+            >
+              ${p.affiliate ? 'Partnerangebot' : 'Offizielle Informationen'}
+            </a>
+
+            <a
+              href="${p.applicationUrl}"
+              target="_blank"
+              rel="${p.affiliate ? 'sponsored noopener' : 'noopener'}"
+            >
+              ${p.affiliate ? 'Zum Partnerangebot' : 'Zum offiziellen Angebot'}
+            </a>
+
+          </div>
+
+        </li>
+
+      `;
+
+    }
+
 
     function renderResults() {
-      const matches = getCategoryMatches(state.need);
+
+      const matches =
+        getCategoryMatches(state.need);
+
+
       if (!matches.length) {
+
         resultList.innerHTML = `
+
           <li class="result-card">
-            <h4>Aktuell keine passende Leistung gefunden</h4>
-            <p>Für deine Auswahl liegt uns noch keine konkrete Leistung vor. Das kann daran liegen, dass diese Kategorie noch im Aufbau ist.</p>
-            <p class="muted">Du kannst stattdessen:</p>
+
+            <h4>
+              Aktuell keine passende Leistung gefunden
+            </h4>
+
+            <p>
+              Für deine Auswahl liegt uns noch keine konkrete Leistung vor.
+            </p>
+
+            <p class="muted">
+              Du kannst stattdessen:
+            </p>
+
             <ul class="result-list-plain">
-              <li>eine andere Kategorie auswählen und "Neue Suche starten"</li>
-              <li>uns über das Formular deine Situation schildern – wir schauen uns das persönlich an</li>
+
+              <li>
+                eine andere Kategorie auswählen
+              </li>
+
+              <li>
+                deine Situation über das Formular schildern
+              </li>
+
             </ul>
+
           </li>
+
         `;
+
         partnerLink.style.display = 'none';
+
         return;
+
       }
-      let relevant = matches.filter(m => m.relevant);
-      let others = matches.filter(m => !m.relevant);
-      if (!relevant.length) { relevant = matches; others = []; } // nie alles ausblenden
-      let html = relevant.map(m => programCardHtml(m.program, m.reason, m.relevant)).join('');
+
+
+      let relevant =
+        matches.filter(
+          m => m.relevant
+        );
+
+      let others =
+        matches.filter(
+          m => !m.relevant
+        );
+
+
+      if (!relevant.length) {
+
+        relevant = matches;
+        others = [];
+
+      }
+
+
+      let html =
+        relevant
+          .map(
+            m =>
+              programCardHtml(
+                m.program,
+                m.reason,
+                m.relevant
+              )
+          )
+          .join('');
+
+
       if (others.length) {
+
         html += `
+
           <li>
+
             <details class="other-matches">
-              <summary>${others.length} weitere Leistung${others.length > 1 ? 'en' : ''} in dieser Kategorie anzeigen (laut deinen Angaben vermutlich weniger passend)</summary>
+
+              <summary>
+                ${others.length}
+                weitere Leistung${others.length > 1 ? 'en' : ''}
+                in dieser Kategorie anzeigen
+              </summary>
+
               <ul class="result-list-plain-cards">
-                ${others.map(m => programCardHtml(m.program, m.reason, false)).join('')}
+
+                ${others
+                  .map(
+                    m =>
+                      programCardHtml(
+                        m.program,
+                        m.reason,
+                        false
+                      )
+                  )
+                  .join('')}
+
               </ul>
+
             </details>
+
           </li>
+
         `;
+
       }
-      html += `<li><span class="badge">Hinweis</span>Dies ist eine erste Orientierung anhand deiner Angaben, keine Anspruchsgarantie und keine Rechtsberatung. Die verbindliche Prüfung übernimmt die jeweils zuständige Stelle. Stand der Angaben: September 2026.</li>`;
-      resultList.innerHTML = html;
-      partnerLink.style.display = '';
-      partnerLink.href = relevant[0].program.applicationUrl;
+
+
+      html += `
+
+        <li>
+
+          <span class="badge">
+            Hinweis
+          </span>
+
+          Dies ist eine erste Orientierung anhand deiner Angaben,
+          keine Anspruchsgarantie und keine Rechtsberatung.
+          Die verbindliche Prüfung übernimmt die jeweils zuständige Stelle.
+          Stand der Angaben: September 2026.
+
+        </li>
+
+      `;
+
+
+      resultList.innerHTML =
+        html;
+
+
+      partnerLink.style.display =
+        '';
+
+
+      partnerLink.href =
+        relevant[0].program.applicationUrl;
+
     }
 
 
-    // Events: Zielgruppe
+    /* ZIELGRUPPE */
+
     targetButtons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        targetButtons.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        state.target = btn.dataset.target;
-        state.need = null;
-        toStep2Btn.disabled = true;
-        privateExtraEl.style.display = 'none';
-        businessExtraEl.style.display = 'none';
-        updateNeedsView();
-      });
+
+      btn.addEventListener(
+        'click',
+        () => {
+
+          targetButtons.forEach(
+            b =>
+              b.classList.remove('active')
+          );
+
+          btn.classList.add('active');
+
+          state.target =
+            btn.dataset.target;
+
+          state.need = null;
+
+          toStep2Btn.disabled =
+            true;
+
+          privateExtraEl.style.display =
+            'none';
+
+          businessExtraEl.style.display =
+            'none';
+
+          updateNeedsView();
+
+        }
+      );
+
     });
 
-    // Events: Bedarf auswählen
+
+    /* BEDARF */
+
     function selectNeed(need) {
-      state.need = need;
-      // Visual feedback
-      const allOptions = Array.from(document.querySelectorAll('.option-btn'));
-      allOptions.forEach(b => b.style.borderColor = 'var(--border)');
-      const activeBtn = document.querySelector(`.option-btn[data-need="${need}"]`);
+
+      state.need =
+        need;
+
+
+      const allOptions =
+        Array.from(
+          document.querySelectorAll(
+            '.option-btn'
+          )
+        );
+
+
+      allOptions.forEach(
+        b =>
+          b.style.borderColor =
+            'var(--border)'
+      );
+
+
+      const activeBtn =
+        document.querySelector(
+          `.option-btn[data-need="${need}"]`
+        );
+
+
       if (activeBtn) {
-        activeBtn.style.borderColor = 'var(--primary)';
+
+        activeBtn.style.borderColor =
+          'var(--primary)';
+
       }
-      toStep2Btn.disabled = false;
-      // Passende Zusatzfragen je nach Zielgruppe zeigen
+
+
+      toStep2Btn.disabled =
+        false;
+
+
       if (state.target === 'private') {
-        privateExtraEl.style.display = '';
-        businessExtraEl.style.display = 'none';
-        familyChildAgeRowEl.style.display = (need === 'familie') ? '' : 'none';
+
+        privateExtraEl.style.display =
+          '';
+
+        businessExtraEl.style.display =
+          'none';
+
+        familyChildAgeRowEl.style.display =
+          need === 'familie'
+            ? ''
+            : 'none';
+
       } else {
-        privateExtraEl.style.display = 'none';
-        businessExtraEl.style.display = '';
+
+        privateExtraEl.style.display =
+          'none';
+
+        businessExtraEl.style.display =
+          '';
+
       }
+
     }
 
-    needsPrivate.querySelectorAll('.option-btn').forEach(btn => {
-      btn.addEventListener('click', () => selectNeed(btn.dataset.need));
-    });
-    needsBusiness.querySelectorAll('.option-btn').forEach(btn => {
-      btn.addEventListener('click', () => selectNeed(btn.dataset.need));
-    });
+
+    needsPrivate
+      .querySelectorAll('.option-btn')
+      .forEach(btn => {
+
+        btn.addEventListener(
+          'click',
+          () =>
+            selectNeed(
+              btn.dataset.need
+            )
+        );
+
+      });
+
+
+    needsBusiness
+      .querySelectorAll('.option-btn')
+      .forEach(btn => {
+
+        btn.addEventListener(
+          'click',
+          () =>
+            selectNeed(
+              btn.dataset.need
+            )
+        );
+
+      });
+
 
     function collectStep2() {
-      state.detailText = detailTextEl.value.trim();
-      state.familyChildAge = familyChildAgeEl.value.trim();
-      state.familyStatus = familyStatusEl.value;
-      state.familyIncome = familyIncomeEl.value;
-      state.employmentStatus = employmentStatusEl.value;
-      state.familyBundesland = familyBundeslandEl.value;
-      state.bizPhase = bizPhaseEl.value;
-      state.bizSize = bizSizeEl.value;
-      state.bizFocus = bizFocusEl.value;
-      state.bizBundesland = bizBundeslandEl.value;
-      state.region = state.target === 'private' ? state.familyBundesland : state.bizBundesland;
+
+      state.detailText =
+        detailTextEl.value.trim();
+
+      state.familyChildAge =
+        familyChildAgeEl.value.trim();
+
+      state.familyStatus =
+        familyStatusEl.value;
+
+      state.familyIncome =
+        familyIncomeEl.value;
+
+      state.employmentStatus =
+        employmentStatusEl.value;
+
+      state.familyBundesland =
+        familyBundeslandEl.value;
+
+      state.bizPhase =
+        bizPhaseEl.value;
+
+      state.bizSize =
+        bizSizeEl.value;
+
+      state.bizFocus =
+        bizFocusEl.value;
+
+      state.bizBundesland =
+        bizBundeslandEl.value;
+
+      state.region =
+        state.target === 'private'
+          ? state.familyBundesland
+          : state.bizBundesland;
+
     }
 
-    // Navigation
-    toStep2Btn.addEventListener('click', () => {
-      collectStep2();
-      showStep(1);
-    });
 
-    backToStep1Btn.addEventListener('click', () => {
-      showStep(0);
-    });
+    /* NAVIGATION */
 
-    toStep3Btn.addEventListener('click', () => {
-      collectStep2();
-      showStep(2);
-    });
+    toStep2Btn.addEventListener(
+      'click',
+      () => {
 
-    backToStep2Btn.addEventListener('click', () => {
-      showStep(1);
-    });
+        collectStep2();
+        showStep(1);
 
-    // Submit Lead (hier kannst du die Daten an deinen Dienst senden)
-    submitLeadBtn.addEventListener('click', () => {
-      state.name = nameEl.value.trim();
-      state.email = emailEl.value.trim();
-      state.phone = phoneEl.value.trim();
-
-      if (!state.name || !state.email) {
-        alert('Bitte Name und E-Mail ausfüllen.');
-        return;
       }
-      if (!consentPartnerEl.checked || !consentPrivacyEl.checked) {
-        alert('Bitte beide Einwilligungen bestätigen.');
-        return;
+    );
+
+
+    backToStep1Btn.addEventListener(
+      'click',
+      () => {
+
+        showStep(0);
+
       }
+    );
 
-      // Ergebnis sofort anzeigen, damit der Nutzer nicht auf den Versand warten muss
-      renderResults();
-      showStep(3);
-      leadStatus.textContent = 'Anfrage wird übermittelt …';
-      leadStatus.className = 'lead-status';
 
-      // Lead im Hintergrund per E-Mail verschicken (über Formspree, kein eigener Server nötig)
-      submitLeadBtn.disabled = true;
-      fetch('https://formspree.io/f/xnpqlyor', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify({
-          typ: state.target === 'private' ? 'Privatperson' : 'Unternehmen',
-          name: state.name,
-          email: state.email,
-          phone: state.phone,
-          region: state.region,
-          bedarf: state.need,
-          detailText: state.detailText,
-          familyChildAge: state.familyChildAge,
-          familyStatus: state.familyStatus,
-          familyIncome: state.familyIncome,
-          employmentStatus: state.employmentStatus,
-          bizPhase: state.bizPhase,
-          bizSize: state.bizSize,
-          bizFocus: state.bizFocus
-        })
-      })
+    toStep3Btn.addEventListener(
+      'click',
+      () => {
+
+        collectStep2();
+        showStep(2);
+
+      }
+    );
+
+
+    backToStep2Btn.addEventListener(
+      'click',
+      () => {
+
+        showStep(1);
+
+      }
+    );
+
+
+    /* FORMULAR */
+
+    submitLeadBtn.addEventListener(
+      'click',
+      () => {
+
+        state.name =
+          nameEl.value.trim();
+
+        state.email =
+          emailEl.value.trim();
+
+        state.phone =
+          phoneEl.value.trim();
+
+
+        if (
+          !state.name ||
+          !state.email
+        ) {
+
+          alert(
+            'Bitte Name und E-Mail ausfüllen.'
+          );
+
+          return;
+
+        }
+
+
+        if (
+          !consentPartnerEl.checked ||
+          !consentPrivacyEl.checked
+        ) {
+
+          alert(
+            'Bitte beide Einwilligungen bestätigen.'
+          );
+
+          return;
+
+        }
+
+
+        renderResults();
+
+        showStep(3);
+
+        leadStatus.textContent =
+          'Anfrage wird übermittelt …';
+
+        leadStatus.className =
+          'lead-status';
+
+
+        submitLeadBtn.disabled =
+          true;
+
+
+        fetch(
+          'https://formspree.io/f/xnpqlyor',
+          {
+            method: 'POST',
+
+            headers: {
+              'Content-Type':
+                'application/json',
+
+              'Accept':
+                'application/json'
+            },
+
+            body:
+              JSON.stringify({
+
+                typ:
+                  state.target === 'private'
+                    ? 'Privatperson'
+                    : 'Unternehmen',
+
+                name:
+                  state.name,
+
+                email:
+                  state.email,
+
+                phone:
+                  state.phone,
+
+                region:
+                  state.region,
+
+                bedarf:
+                  state.need,
+
+                detailText:
+                  state.detailText,
+
+                familyChildAge:
+                  state.familyChildAge,
+
+                familyStatus:
+                  state.familyStatus,
+
+                familyIncome:
+                  state.familyIncome,
+
+                employmentStatus:
+                  state.employmentStatus,
+
+                bizPhase:
+                  state.bizPhase,
+
+                bizSize:
+                  state.bizSize,
+
+                bizFocus:
+                  state.bizFocus
+
+              })
+
+          }
+        )
+
         .then(res => {
-          if (!res.ok) throw new Error('send-lead fehlgeschlagen');
-          leadStatus.textContent = 'Deine Anfrage wurde erfolgreich übermittelt.';
-          leadStatus.className = 'lead-status ok';
+
+          if (!res.ok) {
+            throw new Error(
+              'send-lead fehlgeschlagen'
+            );
+          }
+
+          leadStatus.textContent =
+            'Deine Anfrage wurde erfolgreich übermittelt.';
+
+          leadStatus.className =
+            'lead-status ok';
+
         })
+
         .catch(err => {
-          console.error('Lead-Versand fehlgeschlagen:', err);
-          leadStatus.textContent = 'Die Übermittlung hat leider nicht geklappt. Bitte versuche es später erneut oder kontaktiere uns direkt.';
-          leadStatus.className = 'lead-status err';
+
+          console.error(
+            'Lead-Versand fehlgeschlagen:',
+            err
+          );
+
+          leadStatus.textContent =
+            'Die Übermittlung hat leider nicht geklappt. Bitte versuche es später erneut oder kontaktiere uns direkt.';
+
+          leadStatus.className =
+            'lead-status err';
+
         })
-        .finally(() => { submitLeadBtn.disabled = false; });
-    });
 
-    restartBtn.addEventListener('click', () => {
-      // Reset
-      state.need = null;
-      state.detailText = '';
-      state.region = '';
-      state.name = '';
-      state.email = '';
-      state.phone = '';
-      state.familyChildAge = '';
-      state.familyStatus = '';
-      state.familyIncome = '';
-      state.employmentStatus = '';
-      state.familyBundesland = '';
-      state.bizPhase = '';
-      state.bizSize = '';
-      state.bizFocus = '';
-      state.bizBundesland = '';
-      detailTextEl.value = '';
-      nameEl.value = '';
-      emailEl.value = '';
-      phoneEl.value = '';
-      familyChildAgeEl.value = '';
-      familyStatusEl.value = '';
-      familyIncomeEl.value = '';
-      employmentStatusEl.value = '';
-      familyBundeslandEl.value = '';
-      bizPhaseEl.value = '';
-      bizSizeEl.value = '';
-      bizFocusEl.value = '';
-      bizBundeslandEl.value = '';
-      privateExtraEl.style.display = 'none';
-      businessExtraEl.style.display = 'none';
-      consentPartnerEl.checked = false;
-      consentPrivacyEl.checked = false;
-      toStep2Btn.disabled = true;
-      updateNeedsView();
-      showStep(0);
-    });
+        .finally(() => {
 
-    // Init
+          submitLeadBtn.disabled =
+            false;
+
+        });
+
+      }
+    );
+
+
+    /* NEUE SUCHE */
+
+    restartBtn.addEventListener(
+      'click',
+      () => {
+
+        state.need = null;
+        state.detailText = '';
+        state.region = '';
+        state.name = '';
+        state.email = '';
+        state.phone = '';
+        state.familyChildAge = '';
+        state.familyStatus = '';
+        state.familyIncome = '';
+        state.employmentStatus = '';
+        state.familyBundesland = '';
+        state.bizPhase = '';
+        state.bizSize = '';
+        state.bizFocus = '';
+        state.bizBundesland = '';
+
+        detailTextEl.value = '';
+        nameEl.value = '';
+        emailEl.value = '';
+        phoneEl.value = '';
+
+        familyChildAgeEl.value = '';
+        familyStatusEl.value = '';
+        familyIncomeEl.value = '';
+        employmentStatusEl.value = '';
+        familyBundeslandEl.value = '';
+
+        bizPhaseEl.value = '';
+        bizSizeEl.value = '';
+        bizFocusEl.value = '';
+        bizBundeslandEl.value = '';
+
+        privateExtraEl.style.display =
+          'none';
+
+        businessExtraEl.style.display =
+          'none';
+
+        consentPartnerEl.checked =
+          false;
+
+        consentPrivacyEl.checked =
+          false;
+
+        toStep2Btn.disabled =
+          true;
+
+        updateNeedsView();
+
+        showStep(0);
+
+      }
+    );
+
+
+    /* START */
+
     updateNeedsView();
+
     showStep(0);
+
     renderPartnerOffers();
+
     renderAllProgramsOverview();
+
   </script>
 
-  <!-- Chatbot: bewusst hier am Ende von <body> platziert statt am Anfang von <head>.
-       Vorher stand das Snippet vor <meta charset>, wodurch <web-chat-agent> als
-       ungültiges Head-Element den Browser-Parser zwingt, <head> sofort zu schließen –
-       Title, Meta-Description, Canonical, OG-Tags, JSON-LD und der komplette <style>-Block
-       landeten dadurch faktisch im <body>. Funktionalität des Chatbots bleibt unverändert,
-       nur die Position wurde korrigiert. -->
-  <script src="https://webchatagent.com/widget/web-chat-agent.js" async></script>
-  <web-chat-agent chatbot-id="96a32c92-3fcb-44a7-a225-70cb18d22588"></web-chat-agent>
+
+  <!-- CHATBOT -->
+
+  <script
+    src="https://webchatagent.com/widget/web-chat-agent.js"
+    async
+  ></script>
+
+  <web-chat-agent
+    chatbot-id="96a32c92-3fcb-44a7-a225-70cb18d22588"
+  ></web-chat-agent>
+
 </body>
 </html>
