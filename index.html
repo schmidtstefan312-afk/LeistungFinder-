@@ -637,11 +637,33 @@
     }
 
     .partner-category {
-      margin-top: 2.25rem;
+      margin-top: 0.9rem;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 0.85rem 1rem;
     }
 
     .partner-category:first-of-type {
       margin-top: 0;
+    }
+
+    .partner-category-summary {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      cursor: pointer;
+    }
+
+    .partner-category-count {
+      margin-left: auto;
+      font-size: 0.8rem;
+      color: var(--muted);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .partner-category .partner-grid {
+      margin-top: 1rem;
     }
 
     .partner-category-header {
@@ -818,8 +840,7 @@
 </head>
 
 <body id="top">
-<script src="https://webchatagent.com/widget/web-chat-agent.js" async></script>
-<web-chat-agent chatbot-id="552ab83a-7701-47fc-aed8-0c6ef5177179"></web-chat-agent>
+
   <div class="hero">
     <div class="hero-inner">
       <div class="logotype">Leistung-Finder</div>
@@ -2402,6 +2423,70 @@
         alt: 'Yose Power',
         url: 'https://www.awin1.com/cread.php?s=4509341&v=113164&q=514452&r=3083133',
         img: 'https://www.awin1.com/cshow.php?s=4509341&v=113164&q=514452&r=3083133'
+      },
+
+      {
+        category: 'Mobilität & E-Scooter',
+        label: 'E-Scooter mit Wechsel-Akku-System',
+        alt: 'Streetbooster',
+        url: 'https://www.awin1.com/cread.php?s=4891782&v=116553&q=519289&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4891782&v=116553&q=519289&r=3083133'
+      },
+
+      {
+        category: 'Mobilität & E-Scooter',
+        label: 'E-Scooter & Zubehör',
+        alt: 'Pure Electric',
+        url: 'https://www.awin1.com/cread.php?s=4799989&v=116603&q=521125&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4799989&v=116603&q=521125&r=3083133'
+      },
+
+      {
+        category: 'Energie & Nachhaltigkeit',
+        label: 'Netzunabhängige Solarlösungen',
+        alt: 'Plan-B Net Zero Energy',
+        url: 'https://www.awin1.com/cread.php?s=4875949&v=115491&q=613599&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4875949&v=115491&q=613599&r=3083133'
+      },
+
+      {
+        category: 'Freizeit & Erlebnisse',
+        label: 'Stadtrallyes & Erlebnistouren',
+        alt: 'City Game DACH',
+        url: 'https://www.awin1.com/cread.php?s=4854290&v=122746&q=611396&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4854290&v=122746&q=611396&r=3083133'
+      },
+
+      {
+        category: 'Mode & Accessoires',
+        label: 'Taschen & Lederaccessoires',
+        alt: 'Bree',
+        url: 'https://www.awin1.com/cread.php?s=4849069&v=121290&q=610941&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4849069&v=121290&q=610941&r=3083133'
+      },
+
+      {
+        category: 'Sparen & Gewinnspiele',
+        label: 'Aktuelle Gewinnspiele',
+        alt: 'BurdaDirect Gewinnspiele',
+        url: 'https://www.awin1.com/cread.php?s=4783036&v=14349&q=376815&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4783036&v=14349&q=376815&r=3083133'
+      },
+
+      {
+        category: 'Software & Tools',
+        label: 'Infografiken & Präsentationen erstellen',
+        alt: 'Piktochart',
+        url: 'https://www.awin1.com/cread.php?s=4381644&v=36542&q=570563&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4381644&v=36542&q=570563&r=3083133'
+      },
+
+      {
+        category: 'Verschiedenes',
+        label: 'Cannabis-Samen online bestellen',
+        alt: 'Blimburn Seeds',
+        url: 'https://www.awin1.com/cread.php?s=4672879&v=117497&q=528359&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4672879&v=117497&q=528359&r=3083133'
       }
 
     ];
@@ -2437,6 +2522,31 @@
       'Technik & Zubehör': {
         icon: 'T',
         desc: 'Geräte und Zubehör für Haushalt, Technik und Energieversorgung.'
+      },
+
+      'Mobilität & E-Scooter': {
+        icon: 'M',
+        desc: 'Elektromobilität und Zubehör für den Alltag.'
+      },
+
+      'Energie & Nachhaltigkeit': {
+        icon: 'E',
+        desc: 'Lösungen für netzunabhängige und nachhaltige Energieversorgung.'
+      },
+
+      'Freizeit & Erlebnisse': {
+        icon: 'F',
+        desc: 'Ausflüge, Touren und Erlebnisangebote für die Freizeit.'
+      },
+
+      'Mode & Accessoires': {
+        icon: 'M',
+        desc: 'Taschen, Accessoires und weitere Mode-Angebote.'
+      },
+
+      'Verschiedenes': {
+        icon: '＋',
+        desc: 'Weitere Partnerangebote außerhalb der oberen Kategorien.'
       }
 
     };
@@ -2685,17 +2795,11 @@
           partnerCategoryMeta[cat] ||
           { icon: '★', desc: '' };
 
-        const visible =
-          items.slice(0, PARTNER_VISIBLE_COUNT);
-
-        const rest =
-          items.slice(PARTNER_VISIBLE_COUNT);
-
         return `
 
-          <div class="partner-category">
+          <details class="partner-category">
 
-            <div class="partner-category-header">
+            <summary class="partner-category-summary">
 
               <span class="partner-category-icon">
                 ${meta.icon}
@@ -2705,7 +2809,11 @@
                 ${cat}
               </h3>
 
-            </div>
+              <span class="partner-category-count">
+                ${items.length} Angebot${items.length > 1 ? 'e' : ''}
+              </span>
+
+            </summary>
 
             ${
               meta.desc
@@ -2714,31 +2822,10 @@
             }
 
             <div class="partner-grid">
-              ${visible.map(partnerCardHtml).join('')}
+              ${items.map(partnerCardHtml).join('')}
             </div>
 
-            ${
-              rest.length
-                ? `
-                  <details class="partner-more">
-
-                    <summary>
-                      ${rest.length}
-                      weitere${rest.length > 1 ? '' : 's'}
-                      Angebot${rest.length > 1 ? 'e' : ''}
-                      in dieser Kategorie anzeigen
-                    </summary>
-
-                    <div class="partner-more-grid">
-                      ${rest.map(partnerCardHtml).join('')}
-                    </div>
-
-                  </details>
-                `
-                : ''
-            }
-
-          </div>
+          </details>
 
         `;
 
@@ -3463,192 +3550,4 @@
         html;
 
 
-      partnerLink.style.display =
-        '';
-
-
-      partnerLink.href =
-        relevant[0].program.applicationUrl;
-
-    }
-
-
-    /* ZIELGRUPPE */
-
-    targetButtons.forEach(btn => {
-
-      btn.addEventListener(
-        'click',
-        () => {
-
-          targetButtons.forEach(
-            b =>
-              b.classList.remove('active')
-          );
-
-          btn.classList.add('active');
-
-          state.target =
-            btn.dataset.target;
-
-          state.need = null;
-
-          toStep2Btn.disabled =
-            true;
-
-          privateExtraEl.style.display =
-            'none';
-
-          businessExtraEl.style.display =
-            'none';
-
-          updateNeedsView();
-
-        }
-      );
-
-    });
-
-
-    /* BEDARF */
-
-    function selectNeed(need) {
-
-      state.need =
-        need;
-
-
-      const allOptions =
-        Array.from(
-          document.querySelectorAll(
-            '.option-btn'
-          )
-        );
-
-
-      allOptions.forEach(
-        b =>
-          b.style.borderColor =
-            'var(--border)'
-      );
-
-
-      const activeBtn =
-        document.querySelector(
-          `.option-btn[data-need="${need}"]`
-        );
-
-
-      if (activeBtn) {
-
-        activeBtn.style.borderColor =
-          'var(--primary)';
-
-      }
-
-
-      toStep2Btn.disabled =
-        false;
-
-
-      if (state.target === 'private') {
-
-        privateExtraEl.style.display =
-          '';
-
-        businessExtraEl.style.display =
-          'none';
-
-        familyChildAgeRowEl.style.display =
-          need === 'familie'
-            ? ''
-            : 'none';
-
-      } else {
-
-        privateExtraEl.style.display =
-          'none';
-
-        businessExtraEl.style.display =
-          '';
-
-      }
-
-    }
-
-
-    needsPrivate
-      .querySelectorAll('.option-btn')
-      .forEach(btn => {
-
-        btn.addEventListener(
-          'click',
-          () =>
-            selectNeed(
-              btn.dataset.need
-            )
-        );
-
-      });
-
-
-    needsBusiness
-      .querySelectorAll('.option-btn')
-      .forEach(btn => {
-
-        btn.addEventListener(
-          'click',
-          () =>
-            selectNeed(
-              btn.dataset.need
-            )
-        );
-
-      });
-
-
-    function collectStep2() {
-
-      state.detailText =
-        detailTextEl.value.trim();
-
-      state.familyChildAge =
-        familyChildAgeEl.value.trim();
-
-      state.familyStatus =
-        familyStatusEl.value;
-
-      state.familyIncome =
-        familyIncomeEl.value;
-
-      state.employmentStatus =
-        employmentStatusEl.value;
-
-      state.familyBundesland =
-        familyBundeslandEl.value;
-
-      state.bizPhase =
-        bizPhaseEl.value;
-
-      state.bizSize =
-        bizSizeEl.value;
-
-      state.bizFocus =
-        bizFocusEl.value;
-
-      state.bizBundesland =
-        bizBundeslandEl.value;
-
-      state.region =
-        state.target === 'private'
-          ? state.familyBundesland
-          : state.bizBundesland;
-
-    }
-
-
-    /* NAVIGATION */
-
-    toStep2Btn.addEventListener(
-      'click',
-    
+      partnerLink.style.displ
