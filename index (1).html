@@ -687,6 +687,14 @@
       gap: 1rem;
     }
 
+    .partner-brand-group {
+      margin-top: 1.5rem;
+    }
+
+    .partner-brand-group:first-of-type {
+      margin-top: 0;
+    }
+
     .partner-card {
       position: relative;
       border: 1px solid var(--border);
@@ -853,7 +861,7 @@
         </button>
       </div>
 
-      <div class="progress" id="progressBar">
+      <div class="progress" id="progressBar" role="progressbar" aria-label="Fortschritt">
         <div class="dot active"></div>
         <div class="dot"></div>
         <div class="dot"></div>
@@ -961,10 +969,7 @@
               Alter des jüngsten Kindes (in Jahren)
             </label>
 
-            <input
-              type="text"
-              id="familyChildAge"
-              inputmode="numeric"
+            <input type="number" id="familyChildAge" min="0" max="120"
               placeholder="z. B. 1"
             />
           </div>
@@ -1112,7 +1117,7 @@
           Deine Angaben gehen per E-Mail an den Betreiber. Du wirst bei Bedarf persönlich kontaktiert.
         </p>
 
-        <label for="name">Name</label>
+        <label for="name">Name <span aria-hidden="true">*</span></label>
 
         <input
           type="text"
@@ -1120,7 +1125,7 @@
           placeholder="Vor- und Nachname"
         />
 
-        <label for="email">E-Mail</label>
+        <label for="email">E-Mail <span aria-hidden="true">*</span></label>
 
         <input
           type="email"
@@ -2401,7 +2406,3204 @@
         alt: 'Yose Power',
         url: 'https://www.awin1.com/cread.php?s=4509341&v=113164&q=514452&r=3083133',
         img: 'https://www.awin1.com/cshow.php?s=4509341&v=113164&q=514452&r=3083133'
-      }
+      },
+
+      // --- Zusätzliche Partnerangebote (Awin-Import) ---
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'BestFewo – Angebot 1',
+        alt: 'BestFewo',
+        url: 'https://www.awin1.com/cread.php?s=4806883&v=9142&q=607313&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4806883&v=9142&q=607313&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'BestFewo – Angebot 2',
+        alt: 'BestFewo',
+        url: 'https://www.awin1.com/cread.php?s=4806861&v=9142&q=607311&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4806861&v=9142&q=607311&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'BestFewo – Angebot 3',
+        alt: 'BestFewo',
+        url: 'https://www.awin1.com/cread.php?s=4806868&v=9142&q=607312&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4806868&v=9142&q=607312&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'BestFewo – Angebot 4',
+        alt: 'BestFewo',
+        url: 'https://www.awin1.com/cread.php?s=4806841&v=9142&q=607309&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4806841&v=9142&q=607309&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'BestFewo – Angebot 5',
+        alt: 'BestFewo',
+        url: 'https://www.awin1.com/cread.php?s=4806851&v=9142&q=607310&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4806851&v=9142&q=607310&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Explorer Travel – Angebot 1',
+        alt: 'Explorer Travel',
+        url: 'https://www.awin1.com/cread.php?s=3353262&v=41168&q=460451&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3353262&v=41168&q=460451&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Explorer Travel – Angebot 2',
+        alt: 'Explorer Travel',
+        url: 'https://www.awin1.com/cread.php?s=3369512&v=41168&q=462356&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3369512&v=41168&q=462356&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Explorer Travel – Angebot 3',
+        alt: 'Explorer Travel',
+        url: 'https://www.awin1.com/cread.php?s=3369503&v=41168&q=462352&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3369503&v=41168&q=462352&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Explorer Travel – Angebot 4',
+        alt: 'Explorer Travel',
+        url: 'https://www.awin1.com/cread.php?s=3369471&v=41168&q=462348&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3369471&v=41168&q=462348&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Explorer Travel – Angebot 5',
+        alt: 'Explorer Travel',
+        url: 'https://www.awin1.com/cread.php?s=3369468&v=41168&q=462348&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3369468&v=41168&q=462348&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Explorer Travel – Angebot 6',
+        alt: 'Explorer Travel',
+        url: 'https://www.awin1.com/cread.php?s=3369464&v=41168&q=462347&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3369464&v=41168&q=462347&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Explorer Travel – Angebot 7',
+        alt: 'Explorer Travel',
+        url: 'https://www.awin1.com/cread.php?s=3353271&v=41168&q=460452&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3353271&v=41168&q=460452&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Explorer Travel – Angebot 8',
+        alt: 'Explorer Travel',
+        url: 'https://www.awin1.com/cread.php?s=3353268&v=41168&q=460451&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3353268&v=41168&q=460451&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Explorer Travel – Angebot 9',
+        alt: 'Explorer Travel',
+        url: 'https://www.awin1.com/cread.php?s=3369718&v=41168&q=462378&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3369718&v=41168&q=462378&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Explorer Travel – Angebot 10',
+        alt: 'Explorer Travel',
+        url: 'https://www.awin1.com/cread.php?s=3369638&v=41168&q=462375&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3369638&v=41168&q=462375&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Explorer Travel – Angebot 11',
+        alt: 'Explorer Travel',
+        url: 'https://www.awin1.com/cread.php?s=3369621&v=41168&q=462372&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3369621&v=41168&q=462372&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Explorer Travel – Angebot 12',
+        alt: 'Explorer Travel',
+        url: 'https://www.awin1.com/cread.php?s=3369612&v=41168&q=462370&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3369612&v=41168&q=462370&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Explorer Travel – Angebot 13',
+        alt: 'Explorer Travel',
+        url: 'https://www.awin1.com/cread.php?s=3369607&v=41168&q=462370&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3369607&v=41168&q=462370&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Explorer Travel – Angebot 14',
+        alt: 'Explorer Travel',
+        url: 'https://www.awin1.com/cread.php?s=3369552&v=41168&q=462361&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3369552&v=41168&q=462361&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Explorer Travel – Angebot 15',
+        alt: 'Explorer Travel',
+        url: 'https://www.awin1.com/cread.php?s=3369518&v=41168&q=462358&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3369518&v=41168&q=462358&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Ferienwohnungen – Angebot 1',
+        alt: 'Ferienwohnungen',
+        url: 'https://www.awin1.com/cread.php?s=4742803&v=99579&q=601657&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4742803&v=99579&q=601657&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Ferienwohnungen – Angebot 2',
+        alt: 'Ferienwohnungen',
+        url: 'https://www.awin1.com/cread.php?s=3796472&v=99579&q=497805&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3796472&v=99579&q=497805&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Ferienwohnungen – Angebot 3',
+        alt: 'Ferienwohnungen',
+        url: 'https://www.awin1.com/cread.php?s=3796484&v=99579&q=497805&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3796484&v=99579&q=497805&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Ferienwohnungen – Angebot 4',
+        alt: 'Ferienwohnungen',
+        url: 'https://www.awin1.com/cread.php?s=3713452&v=99579&q=497805&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3713452&v=99579&q=497805&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Ferienwohnungen – Angebot 5',
+        alt: 'Ferienwohnungen',
+        url: 'https://www.awin1.com/cread.php?s=3713372&v=99579&q=497805&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3713372&v=99579&q=497805&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Ferienwohnungen – Angebot 6',
+        alt: 'Ferienwohnungen',
+        url: 'https://www.awin1.com/cread.php?s=3713452&v=99579&q=497805&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3713452&v=99579&q=497805&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Holidu – Angebot 1',
+        alt: 'Holidu',
+        url: 'https://www.awin1.com/cread.php?s=4742978&v=31473&q=601673&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4742978&v=31473&q=601673&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Holidu – Angebot 2',
+        alt: 'Holidu',
+        url: 'https://www.awin1.com/cread.php?s=4742990&v=31473&q=601674&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4742990&v=31473&q=601674&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Holidu – Angebot 3',
+        alt: 'Holidu',
+        url: 'https://www.awin1.com/cread.php?s=4742959&v=31473&q=601671&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4742959&v=31473&q=601671&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Holidu – Angebot 4',
+        alt: 'Holidu',
+        url: 'https://www.awin1.com/cread.php?s=4742958&v=31473&q=601670&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4742958&v=31473&q=601670&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Holidu – Angebot 5',
+        alt: 'Holidu',
+        url: 'https://www.awin1.com/cread.php?s=4742964&v=31473&q=601672&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4742964&v=31473&q=601672&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Holidu – Angebot 6',
+        alt: 'Holidu',
+        url: 'https://www.awin1.com/cread.php?s=4742960&v=31473&q=601672&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4742960&v=31473&q=601672&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Holidu – Angebot 7',
+        alt: 'Holidu',
+        url: 'https://www.awin1.com/cread.php?s=4721714&v=31473&q=599897&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4721714&v=31473&q=599897&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Holidu – Angebot 8',
+        alt: 'Holidu',
+        url: 'https://www.awin1.com/cread.php?s=3483836&v=31473&q=474545&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3483836&v=31473&q=474545&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Holidu – Angebot 9',
+        alt: 'Holidu',
+        url: 'https://www.awin1.com/cread.php?s=3483889&v=31473&q=474550&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3483889&v=31473&q=474550&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Holidu – Angebot 10',
+        alt: 'Holidu',
+        url: 'https://www.awin1.com/cread.php?s=3483934&v=31473&q=474552&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3483934&v=31473&q=474552&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Holidu – Angebot 11',
+        alt: 'Holidu',
+        url: 'https://www.awin1.com/cread.php?s=3688317&v=31473&q=495043&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3688317&v=31473&q=495043&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Holidu – Angebot 12',
+        alt: 'Holidu',
+        url: 'https://www.awin1.com/cread.php?s=3688314&v=31473&q=495043&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3688314&v=31473&q=495043&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Holidu – Angebot 13',
+        alt: 'Holidu',
+        url: 'https://www.awin1.com/cread.php?s=3483911&v=31473&q=474550&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3483911&v=31473&q=474550&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Holidu – Angebot 14',
+        alt: 'Holidu',
+        url: 'https://www.awin1.com/cread.php?s=3483917&v=31473&q=474550&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3483917&v=31473&q=474550&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Holidu – Angebot 15',
+        alt: 'Holidu',
+        url: 'https://www.awin1.com/cread.php?s=3483921&v=31473&q=474550&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3483921&v=31473&q=474550&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Holidu – Angebot 16',
+        alt: 'Holidu',
+        url: 'https://www.awin1.com/cread.php?s=3483923&v=31473&q=474550&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3483923&v=31473&q=474550&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Holidu – Angebot 17',
+        alt: 'Holidu',
+        url: 'https://www.awin1.com/cread.php?s=3483875&v=31473&q=474549&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3483875&v=31473&q=474549&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Holidu – Angebot 18',
+        alt: 'Holidu',
+        url: 'https://www.awin1.com/cread.php?s=3483880&v=31473&q=453806&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3483880&v=31473&q=453806&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Holidu – Angebot 19',
+        alt: 'Holidu',
+        url: 'https://www.awin1.com/cread.php?s=3483898&v=31473&q=474550&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3483898&v=31473&q=474550&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Holidu – Angebot 20',
+        alt: 'Holidu',
+        url: 'https://www.awin1.com/cread.php?s=3483907&v=31473&q=474550&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3483907&v=31473&q=474550&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Holidu – Angebot 21',
+        alt: 'Holidu',
+        url: 'https://www.awin1.com/cread.php?s=3483871&v=31473&q=474549&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3483871&v=31473&q=474549&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Holidu – Angebot 22',
+        alt: 'Holidu',
+        url: 'https://www.awin1.com/cread.php?s=3483857&v=31473&q=474547&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3483857&v=31473&q=474547&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Holidu – Angebot 23',
+        alt: 'Holidu',
+        url: 'https://www.awin1.com/cread.php?s=3483831&v=31473&q=474544&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3483831&v=31473&q=474544&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Holidu – Angebot 24',
+        alt: 'Holidu',
+        url: 'https://www.awin1.com/cread.php?s=3483952&v=31473&q=474553&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3483952&v=31473&q=474553&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Holidu – Angebot 25',
+        alt: 'Holidu',
+        url: 'https://www.awin1.com/cread.php?s=3483943&v=31473&q=474552&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3483943&v=31473&q=474552&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Holidu – Angebot 26',
+        alt: 'Holidu',
+        url: 'https://www.awin1.com/cread.php?s=3483827&v=31473&q=474544&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3483827&v=31473&q=474544&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Holidu – Angebot 27',
+        alt: 'Holidu',
+        url: 'https://www.awin1.com/cread.php?s=3483848&v=31473&q=474546&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3483848&v=31473&q=474546&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Holidu – Angebot 28',
+        alt: 'Holidu',
+        url: 'https://www.awin1.com/cread.php?s=3483866&v=31473&q=474548&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3483866&v=31473&q=474548&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Holidu – Angebot 29',
+        alt: 'Holidu',
+        url: 'https://www.awin1.com/cread.php?s=3483862&v=31473&q=474548&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3483862&v=31473&q=474548&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Holidu – Angebot 30',
+        alt: 'Holidu',
+        url: 'https://www.awin1.com/cread.php?s=3483892&v=31473&q=474550&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3483892&v=31473&q=474550&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Holidu – Angebot 31',
+        alt: 'Holidu',
+        url: 'https://www.awin1.com/cread.php?s=3483926&v=31473&q=474551&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3483926&v=31473&q=474551&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Simbye – Angebot 1',
+        alt: 'Simbye',
+        url: 'https://www.awin1.com/cread.php?s=4856682&v=107814&q=509921&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4856682&v=107814&q=509921&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Simbye – Angebot 2',
+        alt: 'Simbye',
+        url: 'https://www.awin1.com/cread.php?s=4757595&v=107814&q=509921&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4757595&v=107814&q=509921&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Simbye – Angebot 3',
+        alt: 'Simbye',
+        url: 'https://www.awin1.com/cread.php?s=3788951&v=107814&q=505212&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3788951&v=107814&q=505212&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Simbye – Angebot 4',
+        alt: 'Simbye',
+        url: 'https://www.awin1.com/cread.php?s=3788951&v=107814&q=505212&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3788951&v=107814&q=505212&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'TravelSecure – Angebot 1',
+        alt: 'TravelSecure',
+        url: 'https://www.awin1.com/cread.php?s=3744490&v=106517&q=501261&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3744490&v=106517&q=501261&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'TravelSecure – Angebot 2',
+        alt: 'TravelSecure',
+        url: 'https://www.awin1.com/cread.php?s=3744465&v=106517&q=501261&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3744465&v=106517&q=501261&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'TravelSecure – Angebot 3',
+        alt: 'TravelSecure',
+        url: 'https://www.awin1.com/cread.php?s=3744561&v=106517&q=501268&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3744561&v=106517&q=501268&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Traverseon – Angebot 1',
+        alt: 'Traverseon',
+        url: 'https://www.awin1.com/cread.php?s=4839584&v=124816&q=610344&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4839584&v=124816&q=610344&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Traverseon – Angebot 2',
+        alt: 'Traverseon',
+        url: 'https://www.awin1.com/cread.php?s=4839589&v=124816&q=610344&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4839589&v=124816&q=610344&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Traverseon – Angebot 3',
+        alt: 'Traverseon',
+        url: 'https://www.awin1.com/cread.php?s=4818967&v=124816&q=608379&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4818967&v=124816&q=608379&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Traverseon – Angebot 4',
+        alt: 'Traverseon',
+        url: 'https://www.awin1.com/cread.php?s=4818970&v=124816&q=608379&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4818970&v=124816&q=608379&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Traverseon – Angebot 5',
+        alt: 'Traverseon',
+        url: 'https://www.awin1.com/cread.php?s=4818971&v=124816&q=608379&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4818971&v=124816&q=608379&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Traverseon – Angebot 6',
+        alt: 'Traverseon',
+        url: 'https://www.awin1.com/cread.php?s=4818972&v=124816&q=608379&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4818972&v=124816&q=608379&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Traverseon – Angebot 7',
+        alt: 'Traverseon',
+        url: 'https://www.awin1.com/cread.php?s=4818640&v=124816&q=608343&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4818640&v=124816&q=608343&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Traverseon – Angebot 8',
+        alt: 'Traverseon',
+        url: 'https://www.awin1.com/cread.php?s=4818739&v=124816&q=608343&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4818739&v=124816&q=608343&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Traverseon – Angebot 9',
+        alt: 'Traverseon',
+        url: 'https://www.awin1.com/cread.php?s=4818740&v=124816&q=608343&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4818740&v=124816&q=608343&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Traverseon – Angebot 10',
+        alt: 'Traverseon',
+        url: 'https://www.awin1.com/cread.php?s=4818740&v=124816&q=608343&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4818740&v=124816&q=608343&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Traverseon – Angebot 11',
+        alt: 'Traverseon',
+        url: 'https://www.awin1.com/cread.php?s=4803581&v=124816&q=607088&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4803581&v=124816&q=607088&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Traverseon – Angebot 12',
+        alt: 'Traverseon',
+        url: 'https://www.awin1.com/cread.php?s=4803599&v=124816&q=607088&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4803599&v=124816&q=607088&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Traverseon – Angebot 13',
+        alt: 'Traverseon',
+        url: 'https://www.awin1.com/cread.php?s=4771311&v=124816&q=604359&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4771311&v=124816&q=604359&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Traverseon – Angebot 14',
+        alt: 'Traverseon',
+        url: 'https://www.awin1.com/cread.php?s=4748127&v=124816&q=602540&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4748127&v=124816&q=602540&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Traverseon – Angebot 15',
+        alt: 'Traverseon',
+        url: 'https://www.awin1.com/cread.php?s=4724166&v=124816&q=600109&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4724166&v=124816&q=600109&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Traverseon – Angebot 16',
+        alt: 'Traverseon',
+        url: 'https://www.awin1.com/cread.php?s=4725399&v=124816&q=600218&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4725399&v=124816&q=600218&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Traverseon – Angebot 17',
+        alt: 'Traverseon',
+        url: 'https://www.awin1.com/cread.php?s=4724166&v=124816&q=600109&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4724166&v=124816&q=600109&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Traverseon – Angebot 18',
+        alt: 'Traverseon',
+        url: 'https://www.awin1.com/cread.php?s=4724121&v=124816&q=600015&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4724121&v=124816&q=600015&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Traverseon – Angebot 19',
+        alt: 'Traverseon',
+        url: 'https://www.awin1.com/cread.php?s=4724131&v=124816&q=600107&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4724131&v=124816&q=600107&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Traverseon – Angebot 20',
+        alt: 'Traverseon',
+        url: 'https://www.awin1.com/cread.php?s=4724058&v=124816&q=600102&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4724058&v=124816&q=600102&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Traverseon – Angebot 21',
+        alt: 'Traverseon',
+        url: 'https://www.awin1.com/cread.php?s=4724088&v=124816&q=600017&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4724088&v=124816&q=600017&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Traverseon – Angebot 22',
+        alt: 'Traverseon',
+        url: 'https://www.awin1.com/cread.php?s=4724100&v=124816&q=600106&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4724100&v=124816&q=600106&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Traverseon – Angebot 23',
+        alt: 'Traverseon',
+        url: 'https://www.awin1.com/cread.php?s=4724109&v=124816&q=600106&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4724109&v=124816&q=600106&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Traverseon – Angebot 24',
+        alt: 'Traverseon',
+        url: 'https://www.awin1.com/cread.php?s=4724018&v=124816&q=600100&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4724018&v=124816&q=600100&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Traverseon – Angebot 25',
+        alt: 'Traverseon',
+        url: 'https://www.awin1.com/cread.php?s=4724037&v=124816&q=600101&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4724037&v=124816&q=600101&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Traverseon – Angebot 26',
+        alt: 'Traverseon',
+        url: 'https://www.awin1.com/cread.php?s=4723974&v=124816&q=600093&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4723974&v=124816&q=600093&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Traverseon – Angebot 27',
+        alt: 'Traverseon',
+        url: 'https://www.awin1.com/cread.php?s=4723986&v=124816&q=600014&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4723986&v=124816&q=600014&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Traverseon – Angebot 28',
+        alt: 'Traverseon',
+        url: 'https://www.awin1.com/cread.php?s=4723998&v=124816&q=600097&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4723998&v=124816&q=600097&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Traverseon – Angebot 29',
+        alt: 'Traverseon',
+        url: 'https://www.awin1.com/cread.php?s=4722734&v=124816&q=600014&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4722734&v=124816&q=600014&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Traverseon – Angebot 30',
+        alt: 'Traverseon',
+        url: 'https://www.awin1.com/cread.php?s=4722735&v=124816&q=600015&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4722735&v=124816&q=600015&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Traverseon – Angebot 31',
+        alt: 'Traverseon',
+        url: 'https://www.awin1.com/cread.php?s=4722790&v=124816&q=600022&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4722790&v=124816&q=600022&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Traverseon – Angebot 32',
+        alt: 'Traverseon',
+        url: 'https://www.awin1.com/cread.php?s=4722822&v=124816&q=600024&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4722822&v=124816&q=600024&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Traverseon – Angebot 33',
+        alt: 'Traverseon',
+        url: 'https://www.awin1.com/cread.php?s=4723667&v=124816&q=600065&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4723667&v=124816&q=600065&r=3083133'
+      },
+
+      {
+        category: 'Reisen & Reiseversicherung',
+        label: 'Traverseon – Angebot 34',
+        alt: 'Traverseon',
+        url: 'https://www.awin1.com/cread.php?s=4723949&v=124816&q=600091&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4723949&v=124816&q=600091&r=3083133'
+      },
+
+      {
+        category: 'Versicherungen & Tarife vergleichen',
+        label: 'Burda Vergleicht – Angebot 1',
+        alt: 'Burda Vergleicht',
+        rawHtml: '<iframe src="https://www.awin1.com/cawshow.php?v=121064&s=4668161&q=587200&r=3083133&iframe=1" style="width:100%;max-width:600px;aspect-ratio:600/600;border:0;" scrolling="no" title="Burda Vergleicht"></iframe>'
+      },
+
+      {
+        category: 'Versicherungen & Tarife vergleichen',
+        label: 'Burda Vergleicht – Angebot 2',
+        alt: 'Burda Vergleicht',
+        url: 'https://www.awin1.com/cread.php?s=4577531&v=121064&q=587200&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4577531&v=121064&q=587200&r=3083133'
+      },
+
+      {
+        category: 'Versicherungen & Tarife vergleichen',
+        label: 'Burda Vergleicht – Angebot 3',
+        alt: 'Burda Vergleicht',
+        url: 'https://www.awin1.com/cread.php?s=4550235&v=121064&q=584681&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4550235&v=121064&q=584681&r=3083133'
+      },
+
+      {
+        category: 'Versicherungen & Tarife vergleichen',
+        label: 'Burda Vergleicht – Angebot 4',
+        alt: 'Burda Vergleicht',
+        url: 'https://www.awin1.com/cread.php?s=4550243&v=121064&q=584749&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4550243&v=121064&q=584749&r=3083133'
+      },
+
+      {
+        category: 'Versicherungen & Tarife vergleichen',
+        label: 'Burda Vergleicht – Angebot 5',
+        alt: 'Burda Vergleicht',
+        rawHtml: '<iframe src="https://www.awin1.com/cawshow.php?v=121064&s=4563409&q=586062&r=3083133&iframe=1" style="width:100%;max-width:970px;aspect-ratio:970/250;border:0;" scrolling="no" title="Burda Vergleicht"></iframe>'
+      },
+
+      {
+        category: 'Versicherungen & Tarife vergleichen',
+        label: 'Burda Vergleicht – Angebot 6',
+        alt: 'Burda Vergleicht',
+        rawHtml: '<iframe src="https://www.awin1.com/cawshow.php?v=121064&s=4566958&q=586062&r=3083133&iframe=1" style="width:100%;max-width:970px;aspect-ratio:970/250;border:0;" scrolling="no" title="Burda Vergleicht"></iframe>'
+      },
+
+      {
+        category: 'Versicherungen & Tarife vergleichen',
+        label: 'Burda Vergleicht – Angebot 7',
+        alt: 'Burda Vergleicht',
+        rawHtml: '<iframe src="https://www.awin1.com/cawshow.php?v=121064&s=4566959&q=586062&r=3083133&iframe=1" style="width:100%;max-width:970px;aspect-ratio:970/250;border:0;" scrolling="no" title="Burda Vergleicht"></iframe>'
+      },
+
+      {
+        category: 'Versicherungen & Tarife vergleichen',
+        label: 'Burda Vergleicht – Angebot 8',
+        alt: 'Burda Vergleicht',
+        rawHtml: '<iframe src="https://www.awin1.com/cawshow.php?v=121064&s=4566960&q=586062&r=3083133&iframe=1" style="width:100%;max-width:970px;aspect-ratio:970/250;border:0;" scrolling="no" title="Burda Vergleicht"></iframe>'
+      },
+
+      {
+        category: 'Versicherungen & Tarife vergleichen',
+        label: 'Burda Vergleicht – Angebot 9',
+        alt: 'Burda Vergleicht',
+        rawHtml: '<iframe src="https://www.awin1.com/cawshow.php?v=121064&s=4566961&q=586062&r=3083133&iframe=1" style="width:100%;max-width:970px;aspect-ratio:970/250;border:0;" scrolling="no" title="Burda Vergleicht"></iframe>'
+      },
+
+      {
+        category: 'Versicherungen & Tarife vergleichen',
+        label: 'Burda Vergleicht – Angebot 10',
+        alt: 'Burda Vergleicht',
+        rawHtml: '<iframe src="https://www.awin1.com/cawshow.php?v=121064&s=4566962&q=586062&r=3083133&iframe=1" style="width:100%;max-width:970px;aspect-ratio:970/250;border:0;" scrolling="no" title="Burda Vergleicht"></iframe>'
+      },
+
+      {
+        category: 'Versicherungen & Tarife vergleichen',
+        label: 'Burda Vergleicht – Angebot 11',
+        alt: 'Burda Vergleicht',
+        rawHtml: '<iframe src="https://www.awin1.com/cawshow.php?v=121064&s=4566963&q=586062&r=3083133&iframe=1" style="width:100%;max-width:970px;aspect-ratio:970/250;border:0;" scrolling="no" title="Burda Vergleicht"></iframe>'
+      },
+
+      {
+        category: 'Versicherungen & Tarife vergleichen',
+        label: 'Burda Vergleicht – Angebot 12',
+        alt: 'Burda Vergleicht',
+        rawHtml: '<iframe src="https://www.awin1.com/cawshow.php?v=121064&s=4566964&q=586062&r=3083133&iframe=1" style="width:100%;max-width:970px;aspect-ratio:970/250;border:0;" scrolling="no" title="Burda Vergleicht"></iframe>'
+      },
+
+      {
+        category: 'Versicherungen & Tarife vergleichen',
+        label: 'Burda Vergleicht – Angebot 13',
+        alt: 'Burda Vergleicht',
+        rawHtml: '<iframe src="https://www.awin1.com/cawshow.php?v=121064&s=4566965&q=586062&r=3083133&iframe=1" style="width:100%;max-width:970px;aspect-ratio:970/250;border:0;" scrolling="no" title="Burda Vergleicht"></iframe>'
+      },
+
+      {
+        category: 'Versicherungen & Tarife vergleichen',
+        label: 'Burda Vergleicht – Angebot 14',
+        alt: 'Burda Vergleicht',
+        url: 'https://www.awin1.com/cread.php?s=4550238&v=121064&q=584681&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4550238&v=121064&q=584681&r=3083133'
+      },
+
+      {
+        category: 'Versicherungen & Tarife vergleichen',
+        label: 'Burda Vergleicht – Angebot 15',
+        alt: 'Burda Vergleicht',
+        url: 'https://www.awin1.com/cread.php?s=4550237&v=121064&q=584681&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4550237&v=121064&q=584681&r=3083133'
+      },
+
+      {
+        category: 'Versicherungen & Tarife vergleichen',
+        label: 'Burda Vergleicht – Angebot 16',
+        alt: 'Burda Vergleicht',
+        url: 'https://www.awin1.com/cread.php?s=4550231&v=121064&q=584681&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4550231&v=121064&q=584681&r=3083133'
+      },
+
+      {
+        category: 'Versicherungen & Tarife vergleichen',
+        label: 'Burda Vergleicht – Angebot 17',
+        alt: 'Burda Vergleicht',
+        url: 'https://www.awin1.com/cread.php?s=4550232&v=121064&q=584681&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4550232&v=121064&q=584681&r=3083133'
+      },
+
+      {
+        category: 'Versicherungen & Tarife vergleichen',
+        label: 'andsafe – Angebot 1',
+        alt: 'andsafe',
+        url: 'https://www.awin1.com/cread.php?s=3150514&v=24639&q=418001&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3150514&v=24639&q=418001&r=3083133'
+      },
+
+      {
+        category: 'Versicherungen & Tarife vergleichen',
+        label: 'andsafe – Angebot 2',
+        alt: 'andsafe',
+        url: 'https://www.awin1.com/cread.php?s=3150494&v=24639&q=418001&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3150494&v=24639&q=418001&r=3083133'
+      },
+
+      {
+        category: 'Versicherungen & Tarife vergleichen',
+        label: 'andsafe – Angebot 3',
+        alt: 'andsafe',
+        url: 'https://www.awin1.com/cread.php?s=3150489&v=24639&q=418001&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3150489&v=24639&q=418001&r=3083133'
+      },
+
+      {
+        category: 'Versicherungen & Tarife vergleichen',
+        label: 'andsafe – Angebot 4',
+        alt: 'andsafe',
+        url: 'https://www.awin1.com/cread.php?s=3334085&v=24639&q=418001&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3334085&v=24639&q=418001&r=3083133'
+      },
+
+      {
+        category: 'Versicherungen & Tarife vergleichen',
+        label: 'andsafe – Angebot 5',
+        alt: 'andsafe',
+        url: 'https://www.awin1.com/cread.php?s=3334036&v=24639&q=418001&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3334036&v=24639&q=418001&r=3083133'
+      },
+
+      {
+        category: 'Versicherungen & Tarife vergleichen',
+        label: 'andsafe – Angebot 6',
+        alt: 'andsafe',
+        url: 'https://www.awin1.com/cread.php?s=3334051&v=24639&q=418001&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3334051&v=24639&q=418001&r=3083133'
+      },
+
+      {
+        category: 'Versicherungen & Tarife vergleichen',
+        label: 'andsafe – Angebot 7',
+        alt: 'andsafe',
+        url: 'https://www.awin1.com/cread.php?s=3334085&v=24639&q=418001&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3334085&v=24639&q=418001&r=3083133'
+      },
+
+      {
+        category: 'Versicherungen & Tarife vergleichen',
+        label: 'andsafe – Angebot 8',
+        alt: 'andsafe',
+        url: 'https://www.awin1.com/cread.php?s=3334026&v=24639&q=418001&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3334026&v=24639&q=418001&r=3083133'
+      },
+
+      {
+        category: 'Versicherungen & Tarife vergleichen',
+        label: 'andsafe – Angebot 9',
+        alt: 'andsafe',
+        url: 'https://www.awin1.com/cread.php?s=3063303&v=24639&q=418001&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3063303&v=24639&q=418001&r=3083133'
+      },
+
+      {
+        category: 'Versicherungen & Tarife vergleichen',
+        label: 'andsafe – Angebot 10',
+        alt: 'andsafe',
+        url: 'https://www.awin1.com/cread.php?s=3063297&v=24639&q=418001&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3063297&v=24639&q=418001&r=3083133'
+      },
+
+      {
+        category: 'Versicherungen & Tarife vergleichen',
+        label: 'andsafe – Angebot 11',
+        alt: 'andsafe',
+        url: 'https://www.awin1.com/cread.php?s=3063276&v=24639&q=418001&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3063276&v=24639&q=418001&r=3083133'
+      },
+
+      {
+        category: 'Versicherungen & Tarife vergleichen',
+        label: 'andsafe – Angebot 12',
+        alt: 'andsafe',
+        url: 'https://www.awin1.com/cread.php?s=3015681&v=24639&q=418001&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3015681&v=24639&q=418001&r=3083133'
+      },
+
+      {
+        category: 'Versicherungen & Tarife vergleichen',
+        label: 'andsafe – Angebot 13',
+        alt: 'andsafe',
+        url: 'https://www.awin1.com/cread.php?s=3141702&v=24639&q=418001&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3141702&v=24639&q=418001&r=3083133'
+      },
+
+      {
+        category: 'Versicherungen & Tarife vergleichen',
+        label: 'andsafe – Angebot 14',
+        alt: 'andsafe',
+        url: 'https://www.awin1.com/cread.php?s=3141703&v=24639&q=418001&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3141703&v=24639&q=418001&r=3083133'
+      },
+
+      {
+        category: 'Versicherungen & Tarife vergleichen',
+        label: 'andsafe – Angebot 15',
+        alt: 'andsafe',
+        url: 'https://www.awin1.com/cread.php?s=3042716&v=24639&q=418001&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3042716&v=24639&q=418001&r=3083133'
+      },
+
+      {
+        category: 'Versicherungen & Tarife vergleichen',
+        label: 'andsafe – Angebot 16',
+        alt: 'andsafe',
+        url: 'https://www.awin1.com/cread.php?s=3042712&v=24639&q=418001&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3042712&v=24639&q=418001&r=3083133'
+      },
+
+      {
+        category: 'Versicherungen & Tarife vergleichen',
+        label: 'andsafe – Angebot 17',
+        alt: 'andsafe',
+        url: 'https://www.awin1.com/cread.php?s=3191877&v=24639&q=418001&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3191877&v=24639&q=418001&r=3083133'
+      },
+
+      {
+        category: 'Versicherungen & Tarife vergleichen',
+        label: 'andsafe – Angebot 18',
+        alt: 'andsafe',
+        url: 'https://www.awin1.com/cread.php?s=3042710&v=24639&q=418001&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3042710&v=24639&q=418001&r=3083133'
+      },
+
+      {
+        category: 'Versicherungen & Tarife vergleichen',
+        label: 'andsafe – Angebot 19',
+        alt: 'andsafe',
+        url: 'https://www.awin1.com/cread.php?s=2935182&v=24639&q=418001&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=2935182&v=24639&q=418001&r=3083133'
+      },
+
+      {
+        category: 'Versicherungen & Tarife vergleichen',
+        label: 'andsafe – Angebot 20',
+        alt: 'andsafe',
+        url: 'https://www.awin1.com/cread.php?s=2935188&v=24639&q=418001&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=2935188&v=24639&q=418001&r=3083133'
+      },
+
+      {
+        category: 'Versicherungen & Tarife vergleichen',
+        label: 'andsafe – Angebot 21',
+        alt: 'andsafe',
+        url: 'https://www.awin1.com/cread.php?s=3042726&v=24639&q=418001&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3042726&v=24639&q=418001&r=3083133'
+      },
+
+      {
+        category: 'Versicherungen & Tarife vergleichen',
+        label: 'andsafe – Angebot 22',
+        alt: 'andsafe',
+        url: 'https://www.awin1.com/cread.php?s=3042717&v=24639&q=418001&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3042717&v=24639&q=418001&r=3083133'
+      },
+
+      {
+        category: 'Versicherungen & Tarife vergleichen',
+        label: 'andsafe – Angebot 23',
+        alt: 'andsafe',
+        url: 'https://www.awin1.com/cread.php?s=2935208&v=24639&q=418001&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=2935208&v=24639&q=418001&r=3083133'
+      },
+
+      {
+        category: 'Versicherungen & Tarife vergleichen',
+        label: 'andsafe – Angebot 24',
+        alt: 'andsafe',
+        url: 'https://www.awin1.com/cread.php?s=2935219&v=24639&q=418001&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=2935219&v=24639&q=418001&r=3083133'
+      },
+
+      {
+        category: 'Versicherungen & Tarife vergleichen',
+        label: 'andsafe – Angebot 25',
+        alt: 'andsafe',
+        url: 'https://www.awin1.com/cread.php?s=2935164&v=24639&q=418001&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=2935164&v=24639&q=418001&r=3083133'
+      },
+
+      {
+        category: 'Versicherungen & Tarife vergleichen',
+        label: 'andsafe – Angebot 26',
+        alt: 'andsafe',
+        url: 'https://www.awin1.com/cread.php?s=3042485&v=24639&q=418001&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3042485&v=24639&q=418001&r=3083133'
+      },
+
+      {
+        category: 'Versicherungen & Tarife vergleichen',
+        label: 'andsafe – Angebot 27',
+        alt: 'andsafe',
+        url: 'https://www.awin1.com/cread.php?s=2935201&v=24639&q=418001&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=2935201&v=24639&q=418001&r=3083133'
+      },
+
+      {
+        category: 'Versicherungen & Tarife vergleichen',
+        label: 'andsafe – Angebot 28',
+        alt: 'andsafe',
+        url: 'https://www.awin1.com/cread.php?s=2935169&v=24639&q=418001&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=2935169&v=24639&q=418001&r=3083133'
+      },
+
+      {
+        category: 'Verkehrsrecht & Bußgeld',
+        label: 'Geblitzt.de – Angebot 1',
+        alt: 'Geblitzt.de',
+        rawHtml: '<iframe src="https://www.awin1.com/cawshow.php?v=11466&s=3155387&q=345046&r=3083133&iframe=1" style="width:100%;max-width:300px;aspect-ratio:300/250;border:0;" scrolling="no" title="Geblitzt.de"></iframe>'
+      },
+
+      {
+        category: 'Verkehrsrecht & Bußgeld',
+        label: 'Geblitzt.de – Angebot 2',
+        alt: 'Geblitzt.de',
+        rawHtml: '<iframe src="https://www.awin1.com/cawshow.php?v=11466&s=2499717&q=345046&r=3083133&iframe=1" style="width:100%;max-width:300px;aspect-ratio:300/250;border:0;" scrolling="no" title="Geblitzt.de"></iframe>'
+      },
+
+      {
+        category: 'Verkehrsrecht & Bußgeld',
+        label: 'Geblitzt.de – Angebot 3',
+        alt: 'Geblitzt.de',
+        rawHtml: '<iframe src="https://www.awin1.com/cawshow.php?v=11466&s=2542294&q=345046&r=3083133&iframe=1" style="width:100%;max-width:336px;aspect-ratio:336/280;border:0;" scrolling="no" title="Geblitzt.de"></iframe>'
+      },
+
+      {
+        category: 'Verkehrsrecht & Bußgeld',
+        label: 'Geblitzt.de – Angebot 4',
+        alt: 'Geblitzt.de',
+        url: 'https://www.awin1.com/cread.php?s=2506501&v=11466&q=345046&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=2506501&v=11466&q=345046&r=3083133'
+      },
+
+      {
+        category: 'Verkehrsrecht & Bußgeld',
+        label: 'Geblitzt.de – Angebot 5',
+        alt: 'Geblitzt.de',
+        url: 'https://www.awin1.com/cread.php?s=2506502&v=11466&q=345046&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=2506502&v=11466&q=345046&r=3083133'
+      },
+
+      {
+        category: 'Software & Tools',
+        label: 'BlazeVideo – Angebot 1',
+        alt: 'BlazeVideo',
+        url: 'https://www.awin1.com/cread.php?s=3671431&v=25962&q=493480&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3671431&v=25962&q=493480&r=3083133'
+      },
+
+      {
+        category: 'Software & Tools',
+        label: 'BlazeVideo – Angebot 2',
+        alt: 'BlazeVideo',
+        url: 'https://www.awin1.com/cread.php?s=3639083&v=25962&q=490116&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3639083&v=25962&q=490116&r=3083133'
+      },
+
+      {
+        category: 'Software & Tools',
+        label: 'BlazeVideo – Angebot 3',
+        alt: 'BlazeVideo',
+        url: 'https://www.awin1.com/cread.php?s=3652899&v=25962&q=491999&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3652899&v=25962&q=491999&r=3083133'
+      },
+
+      {
+        category: 'Software & Tools',
+        label: 'BlazeVideo – Angebot 4',
+        alt: 'BlazeVideo',
+        url: 'https://www.awin1.com/cread.php?s=3652900&v=25962&q=491999&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3652900&v=25962&q=491999&r=3083133'
+      },
+
+      {
+        category: 'Software & Tools',
+        label: 'BlazeVideo – Angebot 5',
+        alt: 'BlazeVideo',
+        url: 'https://www.awin1.com/cread.php?s=3652900&v=25962&q=491999&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3652900&v=25962&q=491999&r=3083133'
+      },
+
+      {
+        category: 'Software & Tools',
+        label: 'BlazeVideo – Angebot 6',
+        alt: 'BlazeVideo',
+        url: 'https://www.awin1.com/cread.php?s=3393213&v=25962&q=465319&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3393213&v=25962&q=465319&r=3083133'
+      },
+
+      {
+        category: 'Software & Tools',
+        label: 'BlazeVideo – Angebot 7',
+        alt: 'BlazeVideo',
+        url: 'https://www.awin1.com/cread.php?s=2986513&v=25962&q=423037&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=2986513&v=25962&q=423037&r=3083133'
+      },
+
+      {
+        category: 'Software & Tools',
+        label: 'BlazeVideo – Angebot 8',
+        alt: 'BlazeVideo',
+        url: 'https://www.awin1.com/cread.php?s=2987296&v=25962&q=423138&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=2987296&v=25962&q=423138&r=3083133'
+      },
+
+      {
+        category: 'Software & Tools',
+        label: 'BlazeVideo – Angebot 9',
+        alt: 'BlazeVideo',
+        url: 'https://www.awin1.com/cread.php?s=2987542&v=25962&q=423037&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=2987542&v=25962&q=423037&r=3083133'
+      },
+
+      {
+        category: 'Software & Tools',
+        label: 'Piktochart – Angebot 1',
+        alt: 'Piktochart',
+        url: 'https://www.awin1.com/cread.php?s=4381651&v=36542&q=570564&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4381651&v=36542&q=570564&r=3083133'
+      },
+
+      {
+        category: 'Software & Tools',
+        label: 'Piktochart – Angebot 2',
+        alt: 'Piktochart',
+        url: 'https://www.awin1.com/cread.php?s=4381650&v=36542&q=570570&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4381650&v=36542&q=570570&r=3083133'
+      },
+
+      {
+        category: 'Software & Tools',
+        label: 'Piktochart – Angebot 3',
+        alt: 'Piktochart',
+        url: 'https://www.awin1.com/cread.php?s=4381649&v=36542&q=570567&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4381649&v=36542&q=570567&r=3083133'
+      },
+
+      {
+        category: 'Software & Tools',
+        label: 'Piktochart – Angebot 4',
+        alt: 'Piktochart',
+        url: 'https://www.awin1.com/cread.php?s=4381648&v=36542&q=570572&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4381648&v=36542&q=570572&r=3083133'
+      },
+
+      {
+        category: 'Software & Tools',
+        label: 'Piktochart – Angebot 5',
+        alt: 'Piktochart',
+        url: 'https://www.awin1.com/cread.php?s=4381647&v=36542&q=570571&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4381647&v=36542&q=570571&r=3083133'
+      },
+
+      {
+        category: 'Software & Tools',
+        label: 'Piktochart – Angebot 6',
+        alt: 'Piktochart',
+        url: 'https://www.awin1.com/cread.php?s=4381646&v=36542&q=570570&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4381646&v=36542&q=570570&r=3083133'
+      },
+
+      {
+        category: 'Software & Tools',
+        label: 'Piktochart – Angebot 7',
+        alt: 'Piktochart',
+        url: 'https://www.awin1.com/cread.php?s=4381645&v=36542&q=570565&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4381645&v=36542&q=570565&r=3083133'
+      },
+
+      {
+        category: 'Software & Tools',
+        label: 'Piktochart – Angebot 8',
+        alt: 'Piktochart',
+        url: 'https://www.awin1.com/cread.php?s=4381644&v=36542&q=570563&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4381644&v=36542&q=570563&r=3083133'
+      },
+
+      {
+        category: 'Software & Tools',
+        label: 'Wondershare – Angebot 1',
+        alt: 'Wondershare',
+        url: 'https://www.awin1.com/cread.php?s=4031562&v=20202&q=528960&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4031562&v=20202&q=528960&r=3083133'
+      },
+
+      {
+        category: 'Software & Tools',
+        label: 'Wondershare – Angebot 2',
+        alt: 'Wondershare',
+        url: 'https://www.awin1.com/cread.php?s=4807398&v=20202&q=601333&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4807398&v=20202&q=601333&r=3083133'
+      },
+
+      {
+        category: 'Software & Tools',
+        label: 'Wondershare – Angebot 3',
+        alt: 'Wondershare',
+        url: 'https://www.awin1.com/cread.php?s=4804334&v=20202&q=607168&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4804334&v=20202&q=607168&r=3083133'
+      },
+
+      {
+        category: 'Software & Tools',
+        label: 'Wondershare – Angebot 4',
+        alt: 'Wondershare',
+        url: 'https://www.awin1.com/cread.php?s=4796285&v=20202&q=596831&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4796285&v=20202&q=596831&r=3083133'
+      },
+
+      {
+        category: 'Software & Tools',
+        label: 'Wondershare – Angebot 5',
+        alt: 'Wondershare',
+        url: 'https://www.awin1.com/cread.php?s=4771267&v=20202&q=601333&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4771267&v=20202&q=601333&r=3083133'
+      },
+
+      {
+        category: 'Software & Tools',
+        label: 'Wondershare – Angebot 6',
+        alt: 'Wondershare',
+        url: 'https://www.awin1.com/cread.php?s=4604477&v=20202&q=401675&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4604477&v=20202&q=401675&r=3083133'
+      },
+
+      {
+        category: 'Software & Tools',
+        label: 'Wondershare – Angebot 7',
+        alt: 'Wondershare',
+        url: 'https://www.awin1.com/cread.php?s=4595588&v=20202&q=401675&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4595588&v=20202&q=401675&r=3083133'
+      },
+
+      {
+        category: 'Software & Tools',
+        label: 'Wondershare – Angebot 8',
+        alt: 'Wondershare',
+        url: 'https://www.awin1.com/cread.php?s=4688554&v=20202&q=596822&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4688554&v=20202&q=596822&r=3083133'
+      },
+
+      {
+        category: 'Software & Tools',
+        label: 'Wondershare – Angebot 9',
+        alt: 'Wondershare',
+        url: 'https://www.awin1.com/cread.php?s=4688681&v=20202&q=596830&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4688681&v=20202&q=596830&r=3083133'
+      },
+
+      {
+        category: 'Software & Tools',
+        label: 'Wondershare – Angebot 10',
+        alt: 'Wondershare',
+        url: 'https://www.awin1.com/cread.php?s=4688695&v=20202&q=596831&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4688695&v=20202&q=596831&r=3083133'
+      },
+
+      {
+        category: 'Software & Tools',
+        label: 'Wondershare – Angebot 11',
+        alt: 'Wondershare',
+        url: 'https://www.awin1.com/cread.php?s=4452594&v=20202&q=575225&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4452594&v=20202&q=575225&r=3083133'
+      },
+
+      {
+        category: 'Software & Tools',
+        label: 'Wondershare – Angebot 12',
+        alt: 'Wondershare',
+        url: 'https://www.awin1.com/cread.php?s=3880667&v=20202&q=414421&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3880667&v=20202&q=414421&r=3083133'
+      },
+
+      {
+        category: 'Software & Tools',
+        label: 'Wondershare – Angebot 13',
+        alt: 'Wondershare',
+        url: 'https://www.awin1.com/cread.php?s=3810698&v=20202&q=398411&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3810698&v=20202&q=398411&r=3083133'
+      },
+
+      {
+        category: 'Software & Tools',
+        label: 'Wondershare – Angebot 14',
+        alt: 'Wondershare',
+        url: 'https://www.awin1.com/cread.php?s=3859020&v=20202&q=412980&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3859020&v=20202&q=412980&r=3083133'
+      },
+
+      {
+        category: 'Software & Tools',
+        label: 'Wondershare – Angebot 15',
+        alt: 'Wondershare',
+        url: 'https://www.awin1.com/cread.php?s=3724294&v=20202&q=412980&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3724294&v=20202&q=412980&r=3083133'
+      },
+
+      {
+        category: 'Software & Tools',
+        label: 'Wondershare – Angebot 16',
+        alt: 'Wondershare',
+        url: 'https://www.awin1.com/cread.php?s=3697774&v=20202&q=411866&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3697774&v=20202&q=411866&r=3083133'
+      },
+
+      {
+        category: 'Software & Tools',
+        label: 'Wondershare – Angebot 17',
+        alt: 'Wondershare',
+        url: 'https://www.awin1.com/cread.php?s=3489600&v=20202&q=414421&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3489600&v=20202&q=414421&r=3083133'
+      },
+
+      {
+        category: 'Software & Tools',
+        label: 'Wondershare – Angebot 18',
+        alt: 'Wondershare',
+        url: 'https://www.awin1.com/cread.php?s=3425380&v=20202&q=397632&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3425380&v=20202&q=397632&r=3083133'
+      },
+
+      {
+        category: 'Software & Tools',
+        label: 'Wondershare – Angebot 19',
+        alt: 'Wondershare',
+        url: 'https://www.awin1.com/cread.php?s=3418132&v=20202&q=397632&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3418132&v=20202&q=397632&r=3083133'
+      },
+
+      {
+        category: 'Software & Tools',
+        label: 'Wondershare – Angebot 20',
+        alt: 'Wondershare',
+        url: 'https://www.awin1.com/cread.php?s=3413929&v=20202&q=414420&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3413929&v=20202&q=414420&r=3083133'
+      },
+
+      {
+        category: 'Software & Tools',
+        label: 'Wondershare – Angebot 21',
+        alt: 'Wondershare',
+        url: 'https://www.awin1.com/cread.php?s=3393066&v=20202&q=414421&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3393066&v=20202&q=414421&r=3083133'
+      },
+
+      {
+        category: 'Software & Tools',
+        label: 'Wondershare – Angebot 22',
+        alt: 'Wondershare',
+        url: 'https://www.awin1.com/cread.php?s=2937902&v=20202&q=414420&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=2937902&v=20202&q=414420&r=3083133'
+      },
+
+      {
+        category: 'Software & Tools',
+        label: 'Wondershare – Angebot 23',
+        alt: 'Wondershare',
+        url: 'https://www.awin1.com/cread.php?s=2944292&v=20202&q=414420&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=2944292&v=20202&q=414420&r=3083133'
+      },
+
+      {
+        category: 'Software & Tools',
+        label: 'Wondershare – Angebot 24',
+        alt: 'Wondershare',
+        url: 'https://www.awin1.com/cread.php?s=2897437&v=20202&q=414420&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=2897437&v=20202&q=414420&r=3083133'
+      },
+
+      {
+        category: 'Software & Tools',
+        label: 'Wondershare – Angebot 25',
+        alt: 'Wondershare',
+        url: 'https://www.awin1.com/cread.php?s=2909702&v=20202&q=414421&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=2909702&v=20202&q=414421&r=3083133'
+      },
+
+      {
+        category: 'Software & Tools',
+        label: 'Wondershare – Angebot 26',
+        alt: 'Wondershare',
+        url: 'https://www.awin1.com/cread.php?s=2930202&v=20202&q=414420&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=2930202&v=20202&q=414420&r=3083133'
+      },
+
+      {
+        category: 'Software & Tools',
+        label: 'Wondershare – Angebot 27',
+        alt: 'Wondershare',
+        url: 'https://www.awin1.com/cread.php?s=2718694&v=20202&q=397632&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=2718694&v=20202&q=397632&r=3083133'
+      },
+
+      {
+        category: 'Software & Tools',
+        label: 'Wondershare – Angebot 28',
+        alt: 'Wondershare',
+        url: 'https://www.awin1.com/cread.php?s=2718698&v=20202&q=397632&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=2718698&v=20202&q=397632&r=3083133'
+      },
+
+      {
+        category: 'Software & Tools',
+        label: 'Wondershare – Angebot 29',
+        alt: 'Wondershare',
+        url: 'https://www.awin1.com/cread.php?s=2718702&v=20202&q=397632&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=2718702&v=20202&q=397632&r=3083133'
+      },
+
+      {
+        category: 'Software & Tools',
+        label: 'Wondershare – Angebot 30',
+        alt: 'Wondershare',
+        url: 'https://www.awin1.com/cread.php?s=2718706&v=20202&q=397632&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=2718706&v=20202&q=397632&r=3083133'
+      },
+
+      {
+        category: 'Software & Tools',
+        label: 'Wondershare – Angebot 31',
+        alt: 'Wondershare',
+        url: 'https://www.awin1.com/cread.php?s=2718709&v=20202&q=397632&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=2718709&v=20202&q=397632&r=3083133'
+      },
+
+      {
+        category: 'Software & Tools',
+        label: 'sevdesk – Angebot 1',
+        alt: 'sevdesk',
+        url: 'https://www.awin1.com/cread.php?s=3612078&v=15944&q=361517&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3612078&v=15944&q=361517&r=3083133'
+      },
+
+      {
+        category: 'Software & Tools',
+        label: 'sevdesk – Angebot 2',
+        alt: 'sevdesk',
+        url: 'https://www.awin1.com/cread.php?s=2804915&v=15944&q=361517&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=2804915&v=15944&q=361517&r=3083133'
+      },
+
+      {
+        category: 'Software & Tools',
+        label: 'sevdesk – Angebot 3',
+        alt: 'sevdesk',
+        url: 'https://www.awin1.com/cread.php?s=2804925&v=15944&q=361517&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=2804925&v=15944&q=361517&r=3083133'
+      },
+
+      {
+        category: 'Sparen & Gewinnspiele',
+        label: 'BurdaDirect Gewinnspiele – Angebot 1',
+        alt: 'BurdaDirect Gewinnspiele',
+        url: 'https://www.awin1.com/cread.php?s=4783036&v=14349&q=376815&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4783036&v=14349&q=376815&r=3083133'
+      },
+
+      {
+        category: 'Sparen & Gewinnspiele',
+        label: 'BurdaDirect Gewinnspiele – Angebot 2',
+        alt: 'BurdaDirect Gewinnspiele',
+        url: 'https://www.awin1.com/cread.php?s=3290114&v=14349&q=376815&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3290114&v=14349&q=376815&r=3083133'
+      },
+
+      {
+        category: 'Sparen & Gewinnspiele',
+        label: 'BurdaDirect Gewinnspiele – Angebot 3',
+        alt: 'BurdaDirect Gewinnspiele',
+        url: 'https://www.awin1.com/cread.php?s=3255569&v=14349&q=376815&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3255569&v=14349&q=376815&r=3083133'
+      },
+
+      {
+        category: 'Sparen & Gewinnspiele',
+        label: 'BurdaDirect Gewinnspiele – Angebot 4',
+        alt: 'BurdaDirect Gewinnspiele',
+        url: 'https://www.awin1.com/cread.php?s=3292986&v=14349&q=376815&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3292986&v=14349&q=376815&r=3083133'
+      },
+
+      {
+        category: 'Sparen & Gewinnspiele',
+        label: 'BurdaDirect Gewinnspiele – Angebot 5',
+        alt: 'BurdaDirect Gewinnspiele',
+        url: 'https://www.awin1.com/cread.php?s=3292791&v=14349&q=376815&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3292791&v=14349&q=376815&r=3083133'
+      },
+
+      {
+        category: 'Sparen & Gewinnspiele',
+        label: 'Einfach-Sparsam – Angebot 1',
+        alt: 'Einfach-Sparsam',
+        url: 'https://www.awin1.com/cread.php?s=4653754&v=113830&q=593749&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4653754&v=113830&q=593749&r=3083133'
+      },
+
+      {
+        category: 'Sparen & Gewinnspiele',
+        label: 'Einfach-Sparsam – Angebot 2',
+        alt: 'Einfach-Sparsam',
+        url: 'https://www.awin1.com/cread.php?s=3859536&v=113830&q=511737&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3859536&v=113830&q=511737&r=3083133'
+      },
+
+      {
+        category: 'Sparen & Gewinnspiele',
+        label: 'Einfach-Sparsam – Angebot 3',
+        alt: 'Einfach-Sparsam',
+        url: 'https://www.awin1.com/cread.php?s=3854823&v=113830&q=511182&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3854823&v=113830&q=511182&r=3083133'
+      },
+
+      {
+        category: 'Sparen & Gewinnspiele',
+        label: 'Einfach-Sparsam – Angebot 4',
+        alt: 'Einfach-Sparsam',
+        url: 'https://www.awin1.com/cread.php?s=3854816&v=113830&q=511182&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3854816&v=113830&q=511182&r=3083133'
+      },
+
+      {
+        category: 'Sparen & Gewinnspiele',
+        label: 'Einfach-Sparsam – Angebot 5',
+        alt: 'Einfach-Sparsam',
+        url: 'https://www.awin1.com/cread.php?s=4653752&v=113830&q=593749&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4653752&v=113830&q=593749&r=3083133'
+      },
+
+      {
+        category: 'Sparen & Gewinnspiele',
+        label: 'Einfach-Sparsam – Angebot 6',
+        alt: 'Einfach-Sparsam',
+        url: 'https://www.awin1.com/cread.php?s=3964548&v=113830&q=511738&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3964548&v=113830&q=511738&r=3083133'
+      },
+
+      {
+        category: 'Sparen & Gewinnspiele',
+        label: 'Einfach-Sparsam – Angebot 7',
+        alt: 'Einfach-Sparsam',
+        url: 'https://www.awin1.com/cread.php?s=3964546&v=113830&q=512206&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3964546&v=113830&q=512206&r=3083133'
+      },
+
+      {
+        category: 'Sparen & Gewinnspiele',
+        label: 'Einfach-Sparsam – Angebot 8',
+        alt: 'Einfach-Sparsam',
+        url: 'https://www.awin1.com/cread.php?s=3964538&v=113830&q=511737&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3964538&v=113830&q=511737&r=3083133'
+      },
+
+      {
+        category: 'Sparen & Gewinnspiele',
+        label: 'Einfach-Sparsam – Angebot 9',
+        alt: 'Einfach-Sparsam',
+        url: 'https://www.awin1.com/cread.php?s=3964536&v=113830&q=511737&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3964536&v=113830&q=511737&r=3083133'
+      },
+
+      {
+        category: 'Sparen & Gewinnspiele',
+        label: 'Einfach-Sparsam – Angebot 10',
+        alt: 'Einfach-Sparsam',
+        url: 'https://www.awin1.com/cread.php?s=3901662&v=113830&q=511738&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3901662&v=113830&q=511738&r=3083133'
+      },
+
+      {
+        category: 'Sparen & Gewinnspiele',
+        label: 'PREISVERGLEICH.de – Angebot 1',
+        alt: 'PREISVERGLEICH.de',
+        url: 'https://www.awin1.com/cread.php?s=3860209&v=9354&q=511918&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3860209&v=9354&q=511918&r=3083133'
+      },
+
+      {
+        category: 'Sparen & Gewinnspiele',
+        label: 'PREISVERGLEICH.de – Angebot 2',
+        alt: 'PREISVERGLEICH.de',
+        url: 'https://www.awin1.com/cread.php?s=3860207&v=9354&q=511916&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3860207&v=9354&q=511916&r=3083133'
+      },
+
+      {
+        category: 'Sparen & Gewinnspiele',
+        label: 'PREISVERGLEICH.de – Angebot 3',
+        alt: 'PREISVERGLEICH.de',
+        url: 'https://www.awin1.com/cread.php?s=3860239&v=9354&q=511916&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3860239&v=9354&q=511916&r=3083133'
+      },
+
+      {
+        category: 'Sparen & Gewinnspiele',
+        label: 'PREISVERGLEICH.de – Angebot 4',
+        alt: 'PREISVERGLEICH.de',
+        url: 'https://www.awin1.com/cread.php?s=2685050&v=9354&q=351342&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=2685050&v=9354&q=351342&r=3083133'
+      },
+
+      {
+        category: 'Technik & Zubehör',
+        label: 'HTVRont – Angebot 1',
+        alt: 'HTVRont',
+        url: 'https://www.awin1.com/cread.php?s=4856358&v=68106&q=523805&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4856358&v=68106&q=523805&r=3083133'
+      },
+
+      {
+        category: 'Technik & Zubehör',
+        label: 'HTVRont – Angebot 2',
+        alt: 'HTVRont',
+        url: 'https://www.awin1.com/cread.php?s=4856375&v=68106&q=523805&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4856375&v=68106&q=523805&r=3083133'
+      },
+
+      {
+        category: 'Technik & Zubehör',
+        label: 'HTVRont – Angebot 3',
+        alt: 'HTVRont',
+        url: 'https://www.awin1.com/cread.php?s=4856376&v=68106&q=523805&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4856376&v=68106&q=523805&r=3083133'
+      },
+
+      {
+        category: 'Technik & Zubehör',
+        label: 'HTVRont – Angebot 4',
+        alt: 'HTVRont',
+        url: 'https://www.awin1.com/cread.php?s=4856295&v=68106&q=523805&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4856295&v=68106&q=523805&r=3083133'
+      },
+
+      {
+        category: 'Technik & Zubehör',
+        label: 'HTVRont – Angebot 5',
+        alt: 'HTVRont',
+        url: 'https://www.awin1.com/cread.php?s=4856356&v=68106&q=523805&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4856356&v=68106&q=523805&r=3083133'
+      },
+
+      {
+        category: 'Technik & Zubehör',
+        label: 'HTVRont – Angebot 6',
+        alt: 'HTVRont',
+        url: 'https://www.awin1.com/cread.php?s=4856356&v=68106&q=523805&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4856356&v=68106&q=523805&r=3083133'
+      },
+
+      {
+        category: 'Technik & Zubehör',
+        label: 'HTVRont – Angebot 7',
+        alt: 'HTVRont',
+        url: 'https://www.awin1.com/cread.php?s=4851291&v=68106&q=523805&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4851291&v=68106&q=523805&r=3083133'
+      },
+
+      {
+        category: 'Technik & Zubehör',
+        label: 'HTVRont – Angebot 8',
+        alt: 'HTVRont',
+        url: 'https://www.awin1.com/cread.php?s=4821755&v=68106&q=523805&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4821755&v=68106&q=523805&r=3083133'
+      },
+
+      {
+        category: 'Technik & Zubehör',
+        label: 'HTVRont – Angebot 9',
+        alt: 'HTVRont',
+        url: 'https://www.awin1.com/cread.php?s=4821737&v=68106&q=523805&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4821737&v=68106&q=523805&r=3083133'
+      },
+
+      {
+        category: 'Technik & Zubehör',
+        label: 'HTVRont – Angebot 10',
+        alt: 'HTVRont',
+        url: 'https://www.awin1.com/cread.php?s=4821691&v=68106&q=523805&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4821691&v=68106&q=523805&r=3083133'
+      },
+
+      {
+        category: 'Technik & Zubehör',
+        label: 'HTVRont – Angebot 11',
+        alt: 'HTVRont',
+        url: 'https://www.awin1.com/cread.php?s=4821692&v=68106&q=523805&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4821692&v=68106&q=523805&r=3083133'
+      },
+
+      {
+        category: 'Technik & Zubehör',
+        label: 'HTVRont – Angebot 12',
+        alt: 'HTVRont',
+        url: 'https://www.awin1.com/cread.php?s=4821600&v=68106&q=523805&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4821600&v=68106&q=523805&r=3083133'
+      },
+
+      {
+        category: 'Technik & Zubehör',
+        label: 'HTVRont – Angebot 13',
+        alt: 'HTVRont',
+        url: 'https://www.awin1.com/cread.php?s=4821613&v=68106&q=523805&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4821613&v=68106&q=523805&r=3083133'
+      },
+
+      {
+        category: 'Technik & Zubehör',
+        label: 'HTVRont – Angebot 14',
+        alt: 'HTVRont',
+        url: 'https://www.awin1.com/cread.php?s=4821633&v=68106&q=523805&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4821633&v=68106&q=523805&r=3083133'
+      },
+
+      {
+        category: 'Technik & Zubehör',
+        label: 'HTVRont – Angebot 15',
+        alt: 'HTVRont',
+        url: 'https://www.awin1.com/cread.php?s=4821677&v=68106&q=523805&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4821677&v=68106&q=523805&r=3083133'
+      },
+
+      {
+        category: 'Technik & Zubehör',
+        label: 'HTVRont – Angebot 16',
+        alt: 'HTVRont',
+        url: 'https://www.awin1.com/cread.php?s=4821561&v=68106&q=523805&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4821561&v=68106&q=523805&r=3083133'
+      },
+
+      {
+        category: 'Technik & Zubehör',
+        label: 'HTVRont – Angebot 17',
+        alt: 'HTVRont',
+        url: 'https://www.awin1.com/cread.php?s=4821601&v=68106&q=523805&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4821601&v=68106&q=523805&r=3083133'
+      },
+
+      {
+        category: 'Technik & Zubehör',
+        label: 'HTVRont – Angebot 18',
+        alt: 'HTVRont',
+        url: 'https://www.awin1.com/cread.php?s=4819105&v=68106&q=523805&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4819105&v=68106&q=523805&r=3083133'
+      },
+
+      {
+        category: 'Technik & Zubehör',
+        label: 'HTVRont – Angebot 19',
+        alt: 'HTVRont',
+        url: 'https://www.awin1.com/cread.php?s=4821536&v=68106&q=523805&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4821536&v=68106&q=523805&r=3083133'
+      },
+
+      {
+        category: 'Technik & Zubehör',
+        label: 'HTVRont – Angebot 20',
+        alt: 'HTVRont',
+        url: 'https://www.awin1.com/cread.php?s=4821543&v=68106&q=523805&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4821543&v=68106&q=523805&r=3083133'
+      },
+
+      {
+        category: 'Technik & Zubehör',
+        label: 'HTVRont – Angebot 21',
+        alt: 'HTVRont',
+        url: 'https://www.awin1.com/cread.php?s=4819111&v=68106&q=523805&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4819111&v=68106&q=523805&r=3083133'
+      },
+
+      {
+        category: 'Technik & Zubehör',
+        label: 'HTVRont – Angebot 22',
+        alt: 'HTVRont',
+        url: 'https://www.awin1.com/cread.php?s=4819195&v=68106&q=523805&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4819195&v=68106&q=523805&r=3083133'
+      },
+
+      {
+        category: 'Technik & Zubehör',
+        label: 'HTVRont – Angebot 23',
+        alt: 'HTVRont',
+        url: 'https://www.awin1.com/cread.php?s=4669120&v=68106&q=523805&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4669120&v=68106&q=523805&r=3083133'
+      },
+
+      {
+        category: 'Technik & Zubehör',
+        label: 'HTVRont – Angebot 24',
+        alt: 'HTVRont',
+        url: 'https://www.awin1.com/cread.php?s=4351855&v=68106&q=523805&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4351855&v=68106&q=523805&r=3083133'
+      },
+
+      {
+        category: 'Technik & Zubehör',
+        label: 'HTVRont – Angebot 25',
+        alt: 'HTVRont',
+        url: 'https://www.awin1.com/cread.php?s=4026381&v=68106&q=523805&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4026381&v=68106&q=523805&r=3083133'
+      },
+
+      {
+        category: 'Technik & Zubehör',
+        label: 'HTVRont – Angebot 26',
+        alt: 'HTVRont',
+        url: 'https://www.awin1.com/cread.php?s=3987160&v=68106&q=523805&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3987160&v=68106&q=523805&r=3083133'
+      },
+
+      {
+        category: 'Technik & Zubehör',
+        label: 'HTVRont – Angebot 27',
+        alt: 'HTVRont',
+        url: 'https://www.awin1.com/cread.php?s=3987090&v=68106&q=523805&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3987090&v=68106&q=523805&r=3083133'
+      },
+
+      {
+        category: 'Technik & Zubehör',
+        label: 'HTVRont – Angebot 28',
+        alt: 'HTVRont',
+        url: 'https://www.awin1.com/cread.php?s=3987090&v=68106&q=523805&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3987090&v=68106&q=523805&r=3083133'
+      },
+
+      {
+        category: 'Technik & Zubehör',
+        label: 'HTVRont – Angebot 29',
+        alt: 'HTVRont',
+        url: 'https://www.awin1.com/cread.php?s=3987139&v=68106&q=523805&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3987139&v=68106&q=523805&r=3083133'
+      },
+
+      {
+        category: 'Technik & Zubehör',
+        label: 'HTVRont – Angebot 30',
+        alt: 'HTVRont',
+        url: 'https://www.awin1.com/cread.php?s=3987139&v=68106&q=523805&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3987139&v=68106&q=523805&r=3083133'
+      },
+
+      {
+        category: 'Technik & Zubehör',
+        label: 'HTVRont – Angebot 31',
+        alt: 'HTVRont',
+        url: 'https://www.awin1.com/cread.php?s=3987128&v=68106&q=523805&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3987128&v=68106&q=523805&r=3083133'
+      },
+
+      {
+        category: 'Technik & Zubehör',
+        label: 'HTVRont – Angebot 32',
+        alt: 'HTVRont',
+        url: 'https://www.awin1.com/cread.php?s=3987129&v=68106&q=523805&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3987129&v=68106&q=523805&r=3083133'
+      },
+
+      {
+        category: 'Technik & Zubehör',
+        label: 'HTVRont – Angebot 33',
+        alt: 'HTVRont',
+        url: 'https://www.awin1.com/cread.php?s=3987127&v=68106&q=523805&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3987127&v=68106&q=523805&r=3083133'
+      },
+
+      {
+        category: 'Technik & Zubehör',
+        label: 'HTVRont – Angebot 34',
+        alt: 'HTVRont',
+        url: 'https://www.awin1.com/cread.php?s=3987070&v=68106&q=523805&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3987070&v=68106&q=523805&r=3083133'
+      },
+
+      {
+        category: 'Technik & Zubehör',
+        label: 'HTVRont – Angebot 35',
+        alt: 'HTVRont',
+        url: 'https://www.awin1.com/cread.php?s=3987117&v=68106&q=523805&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3987117&v=68106&q=523805&r=3083133'
+      },
+
+      {
+        category: 'Technik & Zubehör',
+        label: 'HTVRont – Angebot 36',
+        alt: 'HTVRont',
+        url: 'https://www.awin1.com/cread.php?s=3987113&v=68106&q=523805&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3987113&v=68106&q=523805&r=3083133'
+      },
+
+      {
+        category: 'Technik & Zubehör',
+        label: 'HTVRont – Angebot 37',
+        alt: 'HTVRont',
+        url: 'https://www.awin1.com/cread.php?s=3987112&v=68106&q=523805&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3987112&v=68106&q=523805&r=3083133'
+      },
+
+      {
+        category: 'Technik & Zubehör',
+        label: 'HTVRont – Angebot 38',
+        alt: 'HTVRont',
+        url: 'https://www.awin1.com/cread.php?s=3987110&v=68106&q=523805&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3987110&v=68106&q=523805&r=3083133'
+      },
+
+      {
+        category: 'Technik & Zubehör',
+        label: 'HTVRont – Angebot 39',
+        alt: 'HTVRont',
+        url: 'https://www.awin1.com/cread.php?s=3987109&v=68106&q=523805&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3987109&v=68106&q=523805&r=3083133'
+      },
+
+      {
+        category: 'Technik & Zubehör',
+        label: 'HTVRont – Angebot 40',
+        alt: 'HTVRont',
+        url: 'https://www.awin1.com/cread.php?s=3987101&v=68106&q=523805&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3987101&v=68106&q=523805&r=3083133'
+      },
+
+      {
+        category: 'Technik & Zubehör',
+        label: 'HTVRont – Angebot 41',
+        alt: 'HTVRont',
+        url: 'https://www.awin1.com/cread.php?s=3987097&v=68106&q=523805&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3987097&v=68106&q=523805&r=3083133'
+      },
+
+      {
+        category: 'Technik & Zubehör',
+        label: 'HTVRont – Angebot 42',
+        alt: 'HTVRont',
+        url: 'https://www.awin1.com/cread.php?s=3987060&v=68106&q=523805&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3987060&v=68106&q=523805&r=3083133'
+      },
+
+      {
+        category: 'Technik & Zubehör',
+        label: 'HTVRont – Angebot 43',
+        alt: 'HTVRont',
+        url: 'https://www.awin1.com/cread.php?s=3987059&v=68106&q=523805&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3987059&v=68106&q=523805&r=3083133'
+      },
+
+      {
+        category: 'Technik & Zubehör',
+        label: 'HTVRont – Angebot 44',
+        alt: 'HTVRont',
+        url: 'https://www.awin1.com/cread.php?s=3987058&v=68106&q=523805&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3987058&v=68106&q=523805&r=3083133'
+      },
+
+      {
+        category: 'Technik & Zubehör',
+        label: 'HTVRont – Angebot 45',
+        alt: 'HTVRont',
+        url: 'https://www.awin1.com/cread.php?s=3987057&v=68106&q=523805&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3987057&v=68106&q=523805&r=3083133'
+      },
+
+      {
+        category: 'Technik & Zubehör',
+        label: 'HTVRont – Angebot 46',
+        alt: 'HTVRont',
+        url: 'https://www.awin1.com/cread.php?s=3987052&v=68106&q=523805&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3987052&v=68106&q=523805&r=3083133'
+      },
+
+      {
+        category: 'Technik & Zubehör',
+        label: 'HTVRont – Angebot 47',
+        alt: 'HTVRont',
+        url: 'https://www.awin1.com/cread.php?s=3987085&v=68106&q=523805&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3987085&v=68106&q=523805&r=3083133'
+      },
+
+      {
+        category: 'Technik & Zubehör',
+        label: 'HTVRont – Angebot 48',
+        alt: 'HTVRont',
+        url: 'https://www.awin1.com/cread.php?s=3987030&v=68106&q=523805&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3987030&v=68106&q=523805&r=3083133'
+      },
+
+      {
+        category: 'Technik & Zubehör',
+        label: 'HTVRont – Angebot 49',
+        alt: 'HTVRont',
+        url: 'https://www.awin1.com/cread.php?s=3987028&v=68106&q=523805&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3987028&v=68106&q=523805&r=3083133'
+      },
+
+      {
+        category: 'Technik & Zubehör',
+        label: 'HTVRont – Angebot 50',
+        alt: 'HTVRont',
+        url: 'https://www.awin1.com/cread.php?s=3986996&v=68106&q=523806&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3986996&v=68106&q=523806&r=3083133'
+      },
+
+      {
+        category: 'Technik & Zubehör',
+        label: 'PLAN-B NET ZERO ENERGY – Angebot 1',
+        alt: 'PLAN-B NET ZERO ENERGY',
+        url: 'https://www.awin1.com/cread.php?s=4875877&v=115491&q=613599&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4875877&v=115491&q=613599&r=3083133'
+      },
+
+      {
+        category: 'Technik & Zubehör',
+        label: 'PLAN-B NET ZERO ENERGY – Angebot 2',
+        alt: 'PLAN-B NET ZERO ENERGY',
+        url: 'https://www.awin1.com/cread.php?s=4875893&v=115491&q=613599&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4875893&v=115491&q=613599&r=3083133'
+      },
+
+      {
+        category: 'Technik & Zubehör',
+        label: 'PLAN-B NET ZERO ENERGY – Angebot 3',
+        alt: 'PLAN-B NET ZERO ENERGY',
+        url: 'https://www.awin1.com/cread.php?s=4875898&v=115491&q=613599&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4875898&v=115491&q=613599&r=3083133'
+      },
+
+      {
+        category: 'Technik & Zubehör',
+        label: 'PLAN-B NET ZERO ENERGY – Angebot 4',
+        alt: 'PLAN-B NET ZERO ENERGY',
+        url: 'https://www.awin1.com/cread.php?s=4875901&v=115491&q=613599&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4875901&v=115491&q=613599&r=3083133'
+      },
+
+      {
+        category: 'Technik & Zubehör',
+        label: 'PLAN-B NET ZERO ENERGY – Angebot 5',
+        alt: 'PLAN-B NET ZERO ENERGY',
+        url: 'https://www.awin1.com/cread.php?s=4807866&v=115491&q=607410&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4807866&v=115491&q=607410&r=3083133'
+      },
+
+      {
+        category: 'Technik & Zubehör',
+        label: 'Yose Power – Angebot 1',
+        alt: 'Yose Power',
+        url: 'https://www.awin1.com/cread.php?s=4509337&v=113164&q=514452&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4509337&v=113164&q=514452&r=3083133'
+      },
+
+      {
+        category: 'Technik & Zubehör',
+        label: 'Yose Power – Angebot 2',
+        alt: 'Yose Power',
+        url: 'https://www.awin1.com/cread.php?s=4509341&v=113164&q=514452&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4509341&v=113164&q=514452&r=3083133'
+      },
+
+      {
+        category: 'Technik & Zubehör',
+        label: 'Yose Power – Angebot 3',
+        alt: 'Yose Power',
+        url: 'https://www.awin1.com/cread.php?s=3885290&v=113164&q=514452&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3885290&v=113164&q=514452&r=3083133'
+      },
+
+      {
+        category: 'Mobilität & Elektrofahrzeuge',
+        label: 'Pure Electric – Angebot 1',
+        alt: 'Pure Electric',
+        url: 'https://www.awin1.com/cread.php?s=4880844&v=116603&q=521125&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4880844&v=116603&q=521125&r=3083133'
+      },
+
+      {
+        category: 'Mobilität & Elektrofahrzeuge',
+        label: 'Pure Electric – Angebot 2',
+        alt: 'Pure Electric',
+        url: 'https://www.awin1.com/cread.php?s=4880841&v=116603&q=521125&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4880841&v=116603&q=521125&r=3083133'
+      },
+
+      {
+        category: 'Mobilität & Elektrofahrzeuge',
+        label: 'Pure Electric – Angebot 3',
+        alt: 'Pure Electric',
+        url: 'https://www.awin1.com/cread.php?s=4799992&v=116603&q=521125&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4799992&v=116603&q=521125&r=3083133'
+      },
+
+      {
+        category: 'Mobilität & Elektrofahrzeuge',
+        label: 'Pure Electric – Angebot 4',
+        alt: 'Pure Electric',
+        url: 'https://www.awin1.com/cread.php?s=4403808&v=116603&q=521125&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4403808&v=116603&q=521125&r=3083133'
+      },
+
+      {
+        category: 'Mobilität & Elektrofahrzeuge',
+        label: 'Pure Electric – Angebot 5',
+        alt: 'Pure Electric',
+        url: 'https://www.awin1.com/cread.php?s=3960704&v=116603&q=521125&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3960704&v=116603&q=521125&r=3083133'
+      },
+
+      {
+        category: 'Mobilität & Elektrofahrzeuge',
+        label: 'STREETBOOSTER – Angebot 1',
+        alt: 'STREETBOOSTER',
+        url: 'https://www.awin1.com/cread.php?s=4891772&v=116553&q=519289&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4891772&v=116553&q=519289&r=3083133'
+      },
+
+      {
+        category: 'Mobilität & Elektrofahrzeuge',
+        label: 'STREETBOOSTER – Angebot 2',
+        alt: 'STREETBOOSTER',
+        url: 'https://www.awin1.com/cread.php?s=4891771&v=116553&q=519289&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4891771&v=116553&q=519289&r=3083133'
+      },
+
+      {
+        category: 'Mobilität & Elektrofahrzeuge',
+        label: 'STREETBOOSTER – Angebot 3',
+        alt: 'STREETBOOSTER',
+        url: 'https://www.awin1.com/cread.php?s=4891770&v=116553&q=519289&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4891770&v=116553&q=519289&r=3083133'
+      },
+
+      {
+        category: 'Mobilität & Elektrofahrzeuge',
+        label: 'STREETBOOSTER – Angebot 4',
+        alt: 'STREETBOOSTER',
+        url: 'https://www.awin1.com/cread.php?s=4891768&v=116553&q=519289&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4891768&v=116553&q=519289&r=3083133'
+      },
+
+      {
+        category: 'Mobilität & Elektrofahrzeuge',
+        label: 'STREETBOOSTER – Angebot 5',
+        alt: 'STREETBOOSTER',
+        url: 'https://www.awin1.com/cread.php?s=4880831&v=116553&q=519289&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4880831&v=116553&q=519289&r=3083133'
+      },
+
+      {
+        category: 'Mobilität & Elektrofahrzeuge',
+        label: 'STREETBOOSTER – Angebot 6',
+        alt: 'STREETBOOSTER',
+        url: 'https://www.awin1.com/cread.php?s=4806614&v=116553&q=519289&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4806614&v=116553&q=519289&r=3083133'
+      },
+
+      {
+        category: 'Mobilität & Elektrofahrzeuge',
+        label: 'STREETBOOSTER – Angebot 7',
+        alt: 'STREETBOOSTER',
+        url: 'https://www.awin1.com/cread.php?s=4772335&v=116553&q=519289&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4772335&v=116553&q=519289&r=3083133'
+      },
+
+      {
+        category: 'Mobilität & Elektrofahrzeuge',
+        label: 'STREETBOOSTER – Angebot 8',
+        alt: 'STREETBOOSTER',
+        url: 'https://www.awin1.com/cread.php?s=4773475&v=116553&q=519289&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4773475&v=116553&q=519289&r=3083133'
+      },
+
+      {
+        category: 'Mobilität & Elektrofahrzeuge',
+        label: 'STREETBOOSTER – Angebot 9',
+        alt: 'STREETBOOSTER',
+        url: 'https://www.awin1.com/cread.php?s=4773480&v=116553&q=519289&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4773480&v=116553&q=519289&r=3083133'
+      },
+
+      {
+        category: 'Mobilität & Elektrofahrzeuge',
+        label: 'STREETBOOSTER – Angebot 10',
+        alt: 'STREETBOOSTER',
+        url: 'https://www.awin1.com/cread.php?s=4704613&v=116553&q=519289&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4704613&v=116553&q=519289&r=3083133'
+      },
+
+      {
+        category: 'Mobilität & Elektrofahrzeuge',
+        label: 'STREETBOOSTER – Angebot 11',
+        alt: 'STREETBOOSTER',
+        url: 'https://www.awin1.com/cread.php?s=4716477&v=116553&q=519289&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4716477&v=116553&q=519289&r=3083133'
+      },
+
+      {
+        category: 'Mobilität & Elektrofahrzeuge',
+        label: 'STREETBOOSTER – Angebot 12',
+        alt: 'STREETBOOSTER',
+        url: 'https://www.awin1.com/cread.php?s=4716488&v=116553&q=519289&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4716488&v=116553&q=519289&r=3083133'
+      },
+
+      {
+        category: 'Mobilität & Elektrofahrzeuge',
+        label: 'STREETBOOSTER – Angebot 13',
+        alt: 'STREETBOOSTER',
+        url: 'https://www.awin1.com/cread.php?s=4669598&v=116553&q=519289&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4669598&v=116553&q=519289&r=3083133'
+      },
+
+      {
+        category: 'Mobilität & Elektrofahrzeuge',
+        label: 'STREETBOOSTER – Angebot 14',
+        alt: 'STREETBOOSTER',
+        url: 'https://www.awin1.com/cread.php?s=4669601&v=116553&q=519289&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4669601&v=116553&q=519289&r=3083133'
+      },
+
+      {
+        category: 'Mobilität & Elektrofahrzeuge',
+        label: 'STREETBOOSTER – Angebot 15',
+        alt: 'STREETBOOSTER',
+        url: 'https://www.awin1.com/cread.php?s=4669602&v=116553&q=519289&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4669602&v=116553&q=519289&r=3083133'
+      },
+
+      {
+        category: 'Mobilität & Elektrofahrzeuge',
+        label: 'STREETBOOSTER – Angebot 16',
+        alt: 'STREETBOOSTER',
+        url: 'https://www.awin1.com/cread.php?s=4669603&v=116553&q=519289&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4669603&v=116553&q=519289&r=3083133'
+      },
+
+      {
+        category: 'Mobilität & Elektrofahrzeuge',
+        label: 'STREETBOOSTER – Angebot 17',
+        alt: 'STREETBOOSTER',
+        url: 'https://www.awin1.com/cread.php?s=4669604&v=116553&q=519289&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4669604&v=116553&q=519289&r=3083133'
+      },
+
+      {
+        category: 'Mobilität & Elektrofahrzeuge',
+        label: 'STREETBOOSTER – Angebot 18',
+        alt: 'STREETBOOSTER',
+        url: 'https://www.awin1.com/cread.php?s=4669605&v=116553&q=519289&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4669605&v=116553&q=519289&r=3083133'
+      },
+
+      {
+        category: 'Mobilität & Elektrofahrzeuge',
+        label: 'STREETBOOSTER – Angebot 19',
+        alt: 'STREETBOOSTER',
+        url: 'https://www.awin1.com/cread.php?s=4533806&v=116553&q=582868&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4533806&v=116553&q=582868&r=3083133'
+      },
+
+      {
+        category: 'Mobilität & Elektrofahrzeuge',
+        label: 'STREETBOOSTER – Angebot 20',
+        alt: 'STREETBOOSTER',
+        url: 'https://www.awin1.com/cread.php?s=4533807&v=116553&q=582868&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4533807&v=116553&q=582868&r=3083133'
+      },
+
+      {
+        category: 'Mobilität & Elektrofahrzeuge',
+        label: 'STREETBOOSTER – Angebot 21',
+        alt: 'STREETBOOSTER',
+        url: 'https://www.awin1.com/cread.php?s=4533808&v=116553&q=582868&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4533808&v=116553&q=582868&r=3083133'
+      },
+
+      {
+        category: 'Mobilität & Elektrofahrzeuge',
+        label: 'STREETBOOSTER – Angebot 22',
+        alt: 'STREETBOOSTER',
+        url: 'https://www.awin1.com/cread.php?s=4533813&v=116553&q=582868&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4533813&v=116553&q=582868&r=3083133'
+      },
+
+      {
+        category: 'Mobilität & Elektrofahrzeuge',
+        label: 'STREETBOOSTER – Angebot 23',
+        alt: 'STREETBOOSTER',
+        url: 'https://www.awin1.com/cread.php?s=4533937&v=116553&q=582868&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4533937&v=116553&q=582868&r=3083133'
+      },
+
+      {
+        category: 'Mobilität & Elektrofahrzeuge',
+        label: 'STREETBOOSTER – Angebot 24',
+        alt: 'STREETBOOSTER',
+        url: 'https://www.awin1.com/cread.php?s=4533939&v=116553&q=582868&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4533939&v=116553&q=582868&r=3083133'
+      },
+
+      {
+        category: 'Mobilität & Elektrofahrzeuge',
+        label: 'STREETBOOSTER – Angebot 25',
+        alt: 'STREETBOOSTER',
+        url: 'https://www.awin1.com/cread.php?s=4533951&v=116553&q=582868&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4533951&v=116553&q=582868&r=3083133'
+      },
+
+      {
+        category: 'Mobilität & Elektrofahrzeuge',
+        label: 'STREETBOOSTER – Angebot 26',
+        alt: 'STREETBOOSTER',
+        url: 'https://www.awin1.com/cread.php?s=4533961&v=116553&q=582868&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4533961&v=116553&q=582868&r=3083133'
+      },
+
+      {
+        category: 'Mobilität & Elektrofahrzeuge',
+        label: 'STREETBOOSTER – Angebot 27',
+        alt: 'STREETBOOSTER',
+        url: 'https://www.awin1.com/cread.php?s=4532440&v=116553&q=582868&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4532440&v=116553&q=582868&r=3083133'
+      },
+
+      {
+        category: 'Mobilität & Elektrofahrzeuge',
+        label: 'STREETBOOSTER – Angebot 28',
+        alt: 'STREETBOOSTER',
+        url: 'https://www.awin1.com/cread.php?s=4533778&v=116553&q=582868&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4533778&v=116553&q=582868&r=3083133'
+      },
+
+      {
+        category: 'Mobilität & Elektrofahrzeuge',
+        label: 'STREETBOOSTER – Angebot 29',
+        alt: 'STREETBOOSTER',
+        url: 'https://www.awin1.com/cread.php?s=4349527&v=116553&q=519289&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4349527&v=116553&q=519289&r=3083133'
+      },
+
+      {
+        category: 'Mobilität & Elektrofahrzeuge',
+        label: 'STREETBOOSTER – Angebot 30',
+        alt: 'STREETBOOSTER',
+        url: 'https://www.awin1.com/cread.php?s=4349519&v=116553&q=519289&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4349519&v=116553&q=519289&r=3083133'
+      },
+
+      {
+        category: 'Mobilität & Elektrofahrzeuge',
+        label: 'STREETBOOSTER – Angebot 31',
+        alt: 'STREETBOOSTER',
+        url: 'https://www.awin1.com/cread.php?s=4349493&v=116553&q=519289&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4349493&v=116553&q=519289&r=3083133'
+      },
+
+      {
+        category: 'Mobilität & Elektrofahrzeuge',
+        label: 'STREETBOOSTER – Angebot 32',
+        alt: 'STREETBOOSTER',
+        url: 'https://www.awin1.com/cread.php?s=4349482&v=116553&q=519289&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4349482&v=116553&q=519289&r=3083133'
+      },
+
+      {
+        category: 'Mobilität & Elektrofahrzeuge',
+        label: 'STREETBOOSTER – Angebot 33',
+        alt: 'STREETBOOSTER',
+        url: 'https://www.awin1.com/cread.php?s=4306112&v=116553&q=519289&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4306112&v=116553&q=519289&r=3083133'
+      },
+
+      {
+        category: 'Mobilität & Elektrofahrzeuge',
+        label: 'STREETBOOSTER – Angebot 34',
+        alt: 'STREETBOOSTER',
+        url: 'https://www.awin1.com/cread.php?s=4306887&v=116553&q=519289&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4306887&v=116553&q=519289&r=3083133'
+      },
+
+      {
+        category: 'Mobilität & Elektrofahrzeuge',
+        label: 'STREETBOOSTER – Angebot 35',
+        alt: 'STREETBOOSTER',
+        url: 'https://www.awin1.com/cread.php?s=4306893&v=116553&q=519289&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4306893&v=116553&q=519289&r=3083133'
+      },
+
+      {
+        category: 'Mobilität & Elektrofahrzeuge',
+        label: 'STREETBOOSTER – Angebot 36',
+        alt: 'STREETBOOSTER',
+        url: 'https://www.awin1.com/cread.php?s=4349531&v=116553&q=519289&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4349531&v=116553&q=519289&r=3083133'
+      },
+
+      {
+        category: 'Mobilität & Elektrofahrzeuge',
+        label: 'STREETBOOSTER – Angebot 37',
+        alt: 'STREETBOOSTER',
+        url: 'https://www.awin1.com/cread.php?s=3960618&v=116553&q=519289&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3960618&v=116553&q=519289&r=3083133'
+      },
+
+      {
+        category: 'Mobilität & Elektrofahrzeuge',
+        label: 'STREETBOOSTER – Angebot 38',
+        alt: 'STREETBOOSTER',
+        url: 'https://www.awin1.com/cread.php?s=3960615&v=116553&q=519289&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3960615&v=116553&q=519289&r=3083133'
+      },
+
+      {
+        category: 'Mobilität & Elektrofahrzeuge',
+        label: 'STREETBOOSTER – Angebot 39',
+        alt: 'STREETBOOSTER',
+        url: 'https://www.awin1.com/cread.php?s=3960604&v=116553&q=519289&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3960604&v=116553&q=519289&r=3083133'
+      },
+
+      {
+        category: 'Mode & Accessoires',
+        label: 'Bree – Angebot 1',
+        alt: 'Bree',
+        url: 'https://www.awin1.com/cread.php?s=4847782&v=121290&q=610941&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4847782&v=121290&q=610941&r=3083133'
+      },
+
+      {
+        category: 'Mode & Accessoires',
+        label: 'Bree – Angebot 2',
+        alt: 'Bree',
+        url: 'https://www.awin1.com/cread.php?s=4847783&v=121290&q=610941&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4847783&v=121290&q=610941&r=3083133'
+      },
+
+      {
+        category: 'Mode & Accessoires',
+        label: 'Bree – Angebot 3',
+        alt: 'Bree',
+        url: 'https://www.awin1.com/cread.php?s=4847907&v=121290&q=610969&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4847907&v=121290&q=610969&r=3083133'
+      },
+
+      {
+        category: 'Mode & Accessoires',
+        label: 'Bree – Angebot 4',
+        alt: 'Bree',
+        url: 'https://www.awin1.com/cread.php?s=4849070&v=121290&q=610941&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4849070&v=121290&q=610941&r=3083133'
+      },
+
+      {
+        category: 'Mode & Accessoires',
+        label: 'Bree – Angebot 5',
+        alt: 'Bree',
+        url: 'https://www.awin1.com/cread.php?s=4849069&v=121290&q=610941&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4849069&v=121290&q=610941&r=3083133'
+      },
+
+      {
+        category: 'Mode & Accessoires',
+        label: 'Bree – Angebot 6',
+        alt: 'Bree',
+        url: 'https://www.awin1.com/cread.php?s=4847654&v=121290&q=610931&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4847654&v=121290&q=610931&r=3083133'
+      },
+
+      {
+        category: 'Mode & Accessoires',
+        label: 'Bree – Angebot 7',
+        alt: 'Bree',
+        url: 'https://www.awin1.com/cread.php?s=4847729&v=121290&q=610931&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4847729&v=121290&q=610931&r=3083133'
+      },
+
+      {
+        category: 'Mode & Accessoires',
+        label: 'Bree – Angebot 8',
+        alt: 'Bree',
+        url: 'https://www.awin1.com/cread.php?s=4847737&v=121290&q=610931&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4847737&v=121290&q=610931&r=3083133'
+      },
+
+      {
+        category: 'Mode & Accessoires',
+        label: 'Bree – Angebot 9',
+        alt: 'Bree',
+        url: 'https://www.awin1.com/cread.php?s=4847746&v=121290&q=610931&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4847746&v=121290&q=610931&r=3083133'
+      },
+
+      {
+        category: 'Mode & Accessoires',
+        label: 'Bree – Angebot 10',
+        alt: 'Bree',
+        url: 'https://www.awin1.com/cread.php?s=4847781&v=121290&q=610941&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4847781&v=121290&q=610941&r=3083133'
+      },
+
+      {
+        category: 'Mode & Accessoires',
+        label: 'Bree – Angebot 11',
+        alt: 'Bree',
+        url: 'https://www.awin1.com/cread.php?s=4847754&v=121290&q=610931&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4847754&v=121290&q=610931&r=3083133'
+      },
+
+      {
+        category: 'Mode & Accessoires',
+        label: 'Bree – Angebot 12',
+        alt: 'Bree',
+        url: 'https://www.awin1.com/cread.php?s=4847755&v=121290&q=610931&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4847755&v=121290&q=610931&r=3083133'
+      },
+
+      {
+        category: 'Mode & Accessoires',
+        label: 'Bree – Angebot 13',
+        alt: 'Bree',
+        url: 'https://www.awin1.com/cread.php?s=4776445&v=121290&q=604877&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4776445&v=121290&q=604877&r=3083133'
+      },
+
+      {
+        category: 'Mode & Accessoires',
+        label: 'Bree – Angebot 14',
+        alt: 'Bree',
+        url: 'https://www.awin1.com/cread.php?s=4776444&v=121290&q=604877&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4776444&v=121290&q=604877&r=3083133'
+      },
+
+      {
+        category: 'Mode & Accessoires',
+        label: 'Bree – Angebot 15',
+        alt: 'Bree',
+        url: 'https://www.awin1.com/cread.php?s=4776443&v=121290&q=604877&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4776443&v=121290&q=604877&r=3083133'
+      },
+
+      {
+        category: 'Mode & Accessoires',
+        label: 'Bree – Angebot 16',
+        alt: 'Bree',
+        url: 'https://www.awin1.com/cread.php?s=4776442&v=121290&q=604877&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4776442&v=121290&q=604877&r=3083133'
+      },
+
+      {
+        category: 'Mode & Accessoires',
+        label: 'Bree – Angebot 17',
+        alt: 'Bree',
+        url: 'https://www.awin1.com/cread.php?s=4776447&v=121290&q=604877&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4776447&v=121290&q=604877&r=3083133'
+      },
+
+      {
+        category: 'Mode & Accessoires',
+        label: 'Bree – Angebot 18',
+        alt: 'Bree',
+        url: 'https://www.awin1.com/cread.php?s=4776446&v=121290&q=604877&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4776446&v=121290&q=604877&r=3083133'
+      },
+
+      {
+        category: 'Mode & Accessoires',
+        label: 'Bree – Angebot 19',
+        alt: 'Bree',
+        url: 'https://www.awin1.com/cread.php?s=4776449&v=121290&q=604877&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4776449&v=121290&q=604877&r=3083133'
+      },
+
+      {
+        category: 'Mode & Accessoires',
+        label: 'Bree – Angebot 20',
+        alt: 'Bree',
+        url: 'https://www.awin1.com/cread.php?s=4776453&v=121290&q=604877&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4776453&v=121290&q=604877&r=3083133'
+      },
+
+      {
+        category: 'Mode & Accessoires',
+        label: 'Bree – Angebot 21',
+        alt: 'Bree',
+        url: 'https://www.awin1.com/cread.php?s=4776452&v=121290&q=604877&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4776452&v=121290&q=604877&r=3083133'
+      },
+
+      {
+        category: 'Mode & Accessoires',
+        label: 'Bree – Angebot 22',
+        alt: 'Bree',
+        url: 'https://www.awin1.com/cread.php?s=4776451&v=121290&q=604877&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4776451&v=121290&q=604877&r=3083133'
+      },
+
+      {
+        category: 'Mode & Accessoires',
+        label: 'Bree – Angebot 23',
+        alt: 'Bree',
+        url: 'https://www.awin1.com/cread.php?s=4776441&v=121290&q=604877&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4776441&v=121290&q=604877&r=3083133'
+      },
+
+      {
+        category: 'Mode & Accessoires',
+        label: 'Bree – Angebot 24',
+        alt: 'Bree',
+        url: 'https://www.awin1.com/cread.php?s=4776440&v=121290&q=604877&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4776440&v=121290&q=604877&r=3083133'
+      },
+
+      {
+        category: 'Mode & Accessoires',
+        label: 'Bree – Angebot 25',
+        alt: 'Bree',
+        url: 'https://www.awin1.com/cread.php?s=4701642&v=121290&q=598268&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4701642&v=121290&q=598268&r=3083133'
+      },
+
+      {
+        category: 'Mode & Accessoires',
+        label: 'Bree – Angebot 26',
+        alt: 'Bree',
+        url: 'https://www.awin1.com/cread.php?s=4588260&v=121290&q=588072&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4588260&v=121290&q=588072&r=3083133'
+      },
+
+      {
+        category: 'Freizeit & Erlebnisse',
+        label: 'City Game – Angebot 1',
+        alt: 'City Game',
+        url: 'https://www.awin1.com/cread.php?s=4854254&v=122746&q=611396&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4854254&v=122746&q=611396&r=3083133'
+      },
+
+      {
+        category: 'Freizeit & Erlebnisse',
+        label: 'City Game – Angebot 2',
+        alt: 'City Game',
+        url: 'https://www.awin1.com/cread.php?s=4854246&v=122746&q=611396&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4854246&v=122746&q=611396&r=3083133'
+      },
+
+      {
+        category: 'Freizeit & Erlebnisse',
+        label: 'City Game – Angebot 3',
+        alt: 'City Game',
+        url: 'https://www.awin1.com/cread.php?s=4853387&v=122746&q=611345&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4853387&v=122746&q=611345&r=3083133'
+      },
+
+      {
+        category: 'Freizeit & Erlebnisse',
+        label: 'City Game – Angebot 4',
+        alt: 'City Game',
+        url: 'https://www.awin1.com/cread.php?s=4853386&v=122746&q=611345&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4853386&v=122746&q=611345&r=3083133'
+      },
+
+      {
+        category: 'Freizeit & Erlebnisse',
+        label: 'City Game – Angebot 5',
+        alt: 'City Game',
+        url: 'https://www.awin1.com/cread.php?s=4853387&v=122746&q=611345&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4853387&v=122746&q=611345&r=3083133'
+      },
+
+      {
+        category: 'Freizeit & Erlebnisse',
+        label: 'City Game – Angebot 6',
+        alt: 'City Game',
+        url: 'https://www.awin1.com/cread.php?s=4851910&v=122746&q=593964&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4851910&v=122746&q=593964&r=3083133'
+      },
+
+      {
+        category: 'Freizeit & Erlebnisse',
+        label: 'City Game – Angebot 7',
+        alt: 'City Game',
+        url: 'https://www.awin1.com/cread.php?s=4656249&v=122746&q=593961&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4656249&v=122746&q=593961&r=3083133'
+      },
+
+      {
+        category: 'Freizeit & Erlebnisse',
+        label: 'City Game – Angebot 8',
+        alt: 'City Game',
+        url: 'https://www.awin1.com/cread.php?s=4635939&v=122746&q=592343&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4635939&v=122746&q=592343&r=3083133'
+      },
+
+      {
+        category: 'Freizeit & Erlebnisse',
+        label: 'Samboat – Angebot 1',
+        alt: 'Samboat',
+        url: 'https://www.awin1.com/cread.php?s=3430082&v=29451&q=469305&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3430082&v=29451&q=469305&r=3083133'
+      },
+
+      {
+        category: 'Freizeit & Erlebnisse',
+        label: 'Samboat – Angebot 2',
+        alt: 'Samboat',
+        url: 'https://www.awin1.com/cread.php?s=3352768&v=29451&q=460358&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3352768&v=29451&q=460358&r=3083133'
+      },
+
+      {
+        category: 'Freizeit & Erlebnisse',
+        label: 'Samboat – Angebot 3',
+        alt: 'Samboat',
+        url: 'https://www.awin1.com/cread.php?s=3133986&v=29451&q=436638&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3133986&v=29451&q=436638&r=3083133'
+      },
+
+      {
+        category: 'Freizeit & Erlebnisse',
+        label: 'Samboat – Angebot 4',
+        alt: 'Samboat',
+        url: 'https://www.awin1.com/cread.php?s=3352478&v=29451&q=460358&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3352478&v=29451&q=460358&r=3083133'
+      },
+
+      {
+        category: 'Freizeit & Erlebnisse',
+        label: 'Samboat – Angebot 5',
+        alt: 'Samboat',
+        url: 'https://www.awin1.com/cread.php?s=3133436&v=29451&q=436596&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3133436&v=29451&q=436596&r=3083133'
+      },
+
+      {
+        category: 'Freizeit & Erlebnisse',
+        label: 'Samboat – Angebot 6',
+        alt: 'Samboat',
+        url: 'https://www.awin1.com/cread.php?s=3133982&v=29451&q=436638&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3133982&v=29451&q=436638&r=3083133'
+      },
+
+      {
+        category: 'Bildung & Sprachen',
+        label: 'Linguation – Angebot 1',
+        alt: 'Linguation',
+        url: 'https://www.awin1.com/cread.php?s=4019666&v=55905&q=527931&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4019666&v=55905&q=527931&r=3083133'
+      },
+
+      {
+        category: 'Bildung & Sprachen',
+        label: 'Linguation – Angebot 2',
+        alt: 'Linguation',
+        url: 'https://www.awin1.com/cread.php?s=4019662&v=55905&q=527931&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4019662&v=55905&q=527931&r=3083133'
+      },
+
+      {
+        category: 'Bildung & Sprachen',
+        label: 'Linguatv – Angebot 1',
+        alt: 'Linguatv',
+        url: 'https://www.awin1.com/cread.php?s=2570720&v=17492&q=382046&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=2570720&v=17492&q=382046&r=3083133'
+      },
+
+      {
+        category: 'Bildung & Sprachen',
+        label: 'Linguatv – Angebot 2',
+        alt: 'Linguatv',
+        url: 'https://www.awin1.com/cread.php?s=2570713&v=17492&q=382046&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=2570713&v=17492&q=382046&r=3083133'
+      },
+
+      {
+        category: 'Bildung & Sprachen',
+        label: 'Linguatv – Angebot 3',
+        alt: 'Linguatv',
+        url: 'https://www.awin1.com/cread.php?s=2535077&v=17492&q=378552&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=2535077&v=17492&q=378552&r=3083133'
+      },
+
+      {
+        category: 'Bildung & Sprachen',
+        label: 'Linguatv – Angebot 4',
+        alt: 'Linguatv',
+        url: 'https://www.awin1.com/cread.php?s=2535059&v=17492&q=378550&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=2535059&v=17492&q=378550&r=3083133'
+      },
+
+      {
+        category: 'Bildung & Sprachen',
+        label: 'Linguatv – Angebot 5',
+        alt: 'Linguatv',
+        url: 'https://www.awin1.com/cread.php?s=2535070&v=17492&q=378551&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=2535070&v=17492&q=378551&r=3083133'
+      },
+
+      {
+        category: 'Bildung & Sprachen',
+        label: 'Linguatv – Angebot 6',
+        alt: 'Linguatv',
+        url: 'https://www.awin1.com/cread.php?s=2535040&v=17492&q=378548&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=2535040&v=17492&q=378548&r=3083133'
+      },
+
+      {
+        category: 'Bildung & Sprachen',
+        label: 'Linguatv – Angebot 7',
+        alt: 'Linguatv',
+        url: 'https://www.awin1.com/cread.php?s=2535029&v=17492&q=378547&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=2535029&v=17492&q=378547&r=3083133'
+      },
+
+      {
+        category: 'Bildung & Sprachen',
+        label: 'Linguatv – Angebot 8',
+        alt: 'Linguatv',
+        url: 'https://www.awin1.com/cread.php?s=2534572&v=17492&q=378509&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=2534572&v=17492&q=378509&r=3083133'
+      },
+
+      {
+        category: 'Gesundheit & Ernährung',
+        label: 'Nutrientify – Angebot 1',
+        alt: 'Nutrientify',
+        url: 'https://www.awin1.com/cread.php?s=4732711&v=125708&q=600797&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4732711&v=125708&q=600797&r=3083133'
+      },
+
+      {
+        category: 'Gesundheit & Ernährung',
+        label: 'WeightWorld – Angebot 1',
+        alt: 'WeightWorld',
+        url: 'https://www.awin1.com/cread.php?s=3657646&v=22720&q=492447&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3657646&v=22720&q=492447&r=3083133'
+      },
+
+      {
+        category: 'Gesundheit & Ernährung',
+        label: 'WeightWorld – Angebot 2',
+        alt: 'WeightWorld',
+        url: 'https://www.awin1.com/cread.php?s=3657646&v=22720&q=492447&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3657646&v=22720&q=492447&r=3083133'
+      },
+
+      {
+        category: 'Gesundheit & Ernährung',
+        label: 'WeightWorld – Angebot 3',
+        alt: 'WeightWorld',
+        url: 'https://www.awin1.com/cread.php?s=3657646&v=22720&q=492447&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3657646&v=22720&q=492447&r=3083133'
+      },
+
+      {
+        category: 'Gesundheit & Ernährung',
+        label: 'braingood – Angebot 1',
+        alt: 'braingood',
+        url: 'https://www.awin1.com/cread.php?s=4860002&v=127589&q=611970&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4860002&v=127589&q=611970&r=3083133'
+      },
+
+      {
+        category: 'Gesundheit & Ernährung',
+        label: 'braingood – Angebot 2',
+        alt: 'braingood',
+        url: 'https://www.awin1.com/cread.php?s=4859999&v=127589&q=611970&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4859999&v=127589&q=611970&r=3083133'
+      },
+
+      {
+        category: 'Gesundheit & Ernährung',
+        label: 'braingood – Angebot 3',
+        alt: 'braingood',
+        url: 'https://www.awin1.com/cread.php?s=4859877&v=127589&q=611955&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4859877&v=127589&q=611955&r=3083133'
+      },
+
+      {
+        category: 'Gesundheit & Ernährung',
+        label: 'braingood – Angebot 4',
+        alt: 'braingood',
+        url: 'https://www.awin1.com/cread.php?s=4859878&v=127589&q=611955&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4859878&v=127589&q=611955&r=3083133'
+      },
+
+      {
+        category: 'Gesundheit & Ernährung',
+        label: 'braingood – Angebot 5',
+        alt: 'braingood',
+        url: 'https://www.awin1.com/cread.php?s=4859955&v=127589&q=611955&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4859955&v=127589&q=611955&r=3083133'
+      },
+
+      {
+        category: 'Gesundheit & Ernährung',
+        label: 'braingood – Angebot 6',
+        alt: 'braingood',
+        url: 'https://www.awin1.com/cread.php?s=4859958&v=127589&q=611970&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4859958&v=127589&q=611970&r=3083133'
+      },
+
+      {
+        category: 'Arbeit & Jobs',
+        label: 'Jobstoday World – Angebot 1',
+        alt: 'Jobstoday World',
+        url: 'https://www.awin1.com/cread.php?s=4898546&v=115232&q=615679&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4898546&v=115232&q=615679&r=3083133'
+      },
+
+      {
+        category: 'Arbeit & Jobs',
+        label: 'Jobstoday World – Angebot 2',
+        alt: 'Jobstoday World',
+        url: 'https://www.awin1.com/cread.php?s=4898541&v=115232&q=615679&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4898541&v=115232&q=615679&r=3083133'
+      },
+
+      {
+        category: 'Arbeit & Jobs',
+        label: 'Jobstoday World – Angebot 3',
+        alt: 'Jobstoday World',
+        url: 'https://www.awin1.com/cread.php?s=4898531&v=115232&q=615675&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4898531&v=115232&q=615675&r=3083133'
+      },
+
+      {
+        category: 'Arbeit & Jobs',
+        label: 'Jobstoday World – Angebot 4',
+        alt: 'Jobstoday World',
+        url: 'https://www.awin1.com/cread.php?s=4898518&v=115232&q=615673&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4898518&v=115232&q=615673&r=3083133'
+      },
+
+      {
+        category: 'Arbeit & Jobs',
+        label: 'Jobstoday World – Angebot 5',
+        alt: 'Jobstoday World',
+        url: 'https://www.awin1.com/cread.php?s=4353673&v=115232&q=567353&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4353673&v=115232&q=567353&r=3083133'
+      },
+
+      {
+        category: 'Mobilfunk & Internet',
+        label: 'Lyca Mobile – Angebot 1',
+        alt: 'Lyca Mobile',
+        url: 'https://www.awin1.com/cread.php?s=4725160&v=118789&q=583911&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4725160&v=118789&q=583911&r=3083133'
+      },
+
+      {
+        category: 'Mobilfunk & Internet',
+        label: 'Lyca Mobile – Angebot 2',
+        alt: 'Lyca Mobile',
+        url: 'https://www.awin1.com/cread.php?s=4725159&v=118789&q=583910&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4725159&v=118789&q=583910&r=3083133'
+      },
+
+      {
+        category: 'Mobilfunk & Internet',
+        label: 'Lyca Mobile – Angebot 3',
+        alt: 'Lyca Mobile',
+        url: 'https://www.awin1.com/cread.php?s=4696075&v=118789&q=597703&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4696075&v=118789&q=597703&r=3083133'
+      },
+
+      {
+        category: 'Mobilfunk & Internet',
+        label: 'Lyca Mobile – Angebot 4',
+        alt: 'Lyca Mobile',
+        url: 'https://www.awin1.com/cread.php?s=4542028&v=118789&q=583913&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4542028&v=118789&q=583913&r=3083133'
+      },
+
+      {
+        category: 'Mobilfunk & Internet',
+        label: 'Lyca Mobile – Angebot 5',
+        alt: 'Lyca Mobile',
+        url: 'https://www.awin1.com/cread.php?s=4542039&v=118789&q=583911&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4542039&v=118789&q=583911&r=3083133'
+      },
+
+      {
+        category: 'Finanzen & Geldanlage',
+        label: 'CapTrader – Angebot 1',
+        alt: 'CapTrader',
+        url: 'https://www.awin1.com/cread.php?s=3198671&v=11795&q=430740&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3198671&v=11795&q=430740&r=3083133'
+      },
+
+      {
+        category: 'Finanzen & Geldanlage',
+        label: 'CapTrader – Angebot 2',
+        alt: 'CapTrader',
+        url: 'https://www.awin1.com/cread.php?s=3066106&v=11795&q=430656&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3066106&v=11795&q=430656&r=3083133'
+      },
+
+      {
+        category: 'Finanzen & Geldanlage',
+        label: 'CapTrader – Angebot 3',
+        alt: 'CapTrader',
+        url: 'https://www.awin1.com/cread.php?s=3198690&v=11795&q=430740&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3198690&v=11795&q=430740&r=3083133'
+      },
+
+      {
+        category: 'Finanzen & Geldanlage',
+        label: 'CapTrader – Angebot 4',
+        alt: 'CapTrader',
+        url: 'https://www.awin1.com/cread.php?s=3066490&v=11795&q=430738&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3066490&v=11795&q=430738&r=3083133'
+      },
+
+      {
+        category: 'Finanzen & Geldanlage',
+        label: 'CapTrader – Angebot 5',
+        alt: 'CapTrader',
+        url: 'https://www.awin1.com/cread.php?s=3066480&v=11795&q=430737&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=3066480&v=11795&q=430737&r=3083133'
+      },
+
+      {
+        category: 'Sonstige Angebote',
+        label: 'Blimburn Seeds – Angebot 1',
+        alt: 'Blimburn Seeds',
+        url: 'https://www.awin1.com/cread.php?s=4801289&v=117497&q=528359&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4801289&v=117497&q=528359&r=3083133'
+      },
+
+      {
+        category: 'Sonstige Angebote',
+        label: 'Blimburn Seeds – Angebot 2',
+        alt: 'Blimburn Seeds',
+        url: 'https://www.awin1.com/cread.php?s=4761298&v=117497&q=528359&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4761298&v=117497&q=528359&r=3083133'
+      },
+
+      {
+        category: 'Sonstige Angebote',
+        label: 'Blimburn Seeds – Angebot 3',
+        alt: 'Blimburn Seeds',
+        url: 'https://www.awin1.com/cread.php?s=4761298&v=117497&q=528359&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4761298&v=117497&q=528359&r=3083133'
+      },
+
+      {
+        category: 'Sonstige Angebote',
+        label: 'Blimburn Seeds – Angebot 4',
+        alt: 'Blimburn Seeds',
+        url: 'https://www.awin1.com/cread.php?s=4672879&v=117497&q=528359&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4672879&v=117497&q=528359&r=3083133'
+      },
+
+      {
+        category: 'Sonstige Angebote',
+        label: 'Blimburn Seeds – Angebot 5',
+        alt: 'Blimburn Seeds',
+        url: 'https://www.awin1.com/cread.php?s=4759392&v=117497&q=528359&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4759392&v=117497&q=528359&r=3083133'
+      },
+
+      {
+        category: 'Sonstige Angebote',
+        label: 'Blimburn Seeds – Angebot 6',
+        alt: 'Blimburn Seeds',
+        url: 'https://www.awin1.com/cread.php?s=4666173&v=117497&q=528359&r=3083133',
+        img: 'https://www.awin1.com/cshow.php?s=4666173&v=117497&q=528359&r=3083133'
+      },
 
     ];
 
@@ -2436,6 +5638,51 @@
       'Technik & Zubehör': {
         icon: 'T',
         desc: 'Geräte und Zubehör für Haushalt, Technik und Energieversorgung.'
+      },
+
+      'Mobilität & Elektrofahrzeuge': {
+        icon: 'E',
+        desc: 'E-Bikes, E-Scooter und andere elektrische Mobilitätslösungen.'
+      },
+
+      'Mode & Accessoires': {
+        icon: 'A',
+        desc: 'Taschen, Accessoires und Lifestyle-Produkte.'
+      },
+
+      'Freizeit & Erlebnisse': {
+        icon: 'F',
+        desc: 'Erlebnisangebote, Touren und Freizeitaktivitäten.'
+      },
+
+      'Bildung & Sprachen': {
+        icon: 'B',
+        desc: 'Sprachkurse, Übersetzungen und Weiterbildungsangebote.'
+      },
+
+      'Gesundheit & Ernährung': {
+        icon: 'G',
+        desc: 'Nahrungsergänzung und Produkte rund um Gesundheit.'
+      },
+
+      'Arbeit & Jobs': {
+        icon: 'J',
+        desc: 'Jobbörsen und Vermittlungsangebote.'
+      },
+
+      'Mobilfunk & Internet': {
+        icon: 'M',
+        desc: 'Tarife für Mobilfunk und mobiles Internet.'
+      },
+
+      'Finanzen & Geldanlage': {
+        icon: 'K',
+        desc: 'Angebote rund um Geldanlage und Wertpapierhandel.'
+      },
+
+      'Sonstige Angebote': {
+        icon: '\u2605',
+        desc: 'Weitere Partnerangebote außerhalb der Hauptkategorien.'
       }
 
     };
@@ -2684,11 +5931,75 @@
           partnerCategoryMeta[cat] ||
           { icon: '★', desc: '' };
 
-        const visible =
-          items.slice(0, PARTNER_VISIBLE_COUNT);
+        // innerhalb der Kategorie zusätzlich nach Partner gruppieren
+        const partnerNames = [];
+        const byPartner = {};
 
-        const rest =
-          items.slice(PARTNER_VISIBLE_COUNT);
+        items.forEach(o => {
+
+          const partnerKey =
+            o.alt || 'Weitere Partner';
+
+          if (!byPartner[partnerKey]) {
+
+            byPartner[partnerKey] = [];
+            partnerNames.push(partnerKey);
+
+          }
+
+          byPartner[partnerKey].push(o);
+
+        });
+
+        const partnerBlocksHtml = partnerNames.map(partnerName => {
+
+          const partnerItems =
+            byPartner[partnerName];
+
+          const visible =
+            partnerItems.slice(0, PARTNER_VISIBLE_COUNT);
+
+          const rest =
+            partnerItems.slice(PARTNER_VISIBLE_COUNT);
+
+          return `
+
+            <div class="partner-brand-group">
+
+              <h4 class="partner-group-title">
+                ${partnerName}
+              </h4>
+
+              <div class="partner-grid">
+                ${visible.map(partnerCardHtml).join('')}
+              </div>
+
+              ${
+                rest.length
+                  ? `
+                    <details class="partner-more">
+
+                      <summary>
+                        ${rest.length}
+                        weitere${rest.length > 1 ? '' : 's'}
+                        Angebot${rest.length > 1 ? 'e' : ''}
+                        von ${partnerName} anzeigen
+                      </summary>
+
+                      <div class="partner-more-grid">
+                        ${rest.map(partnerCardHtml).join('')}
+                      </div>
+
+                    </details>
+                  `
+                  : ''
+              }
+
+            </div>
+
+          `;
+
+        }).join('');
 
         return `
 
@@ -2712,30 +6023,7 @@
                 : ''
             }
 
-            <div class="partner-grid">
-              ${visible.map(partnerCardHtml).join('')}
-            </div>
-
-            ${
-              rest.length
-                ? `
-                  <details class="partner-more">
-
-                    <summary>
-                      ${rest.length}
-                      weitere${rest.length > 1 ? '' : 's'}
-                      Angebot${rest.length > 1 ? 'e' : ''}
-                      in dieser Kategorie anzeigen
-                    </summary>
-
-                    <div class="partner-more-grid">
-                      ${rest.map(partnerCardHtml).join('')}
-                    </div>
-
-                  </details>
-                `
-                : ''
-            }
+            ${partnerBlocksHtml}
 
           </div>
 
