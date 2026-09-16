@@ -1,4 +1,5 @@
+
 User-agent: *
 Allow: /
 
-Sitemap: https://leistungsfinder.netlify.app/sitemap.xml
+Sitemap: https://leistung-finder.de/sitemap.xml
