@@ -687,6 +687,61 @@
       gap: 1rem;
     }
 
+    .partner-tile-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+    }
+
+    .partner-tile {
+      display: block;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      background: #fff;
+      padding: 1rem 1.1rem;
+      text-decoration: none;
+      color: inherit;
+      transition: box-shadow 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+    }
+
+    .partner-tile:hover {
+      border-color: var(--primary);
+      box-shadow: 0 6px 16px rgba(15,32,29,0.10);
+      transform: translateY(-1px);
+    }
+
+    .partner-tile-header {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .partner-tile-title {
+      font-family: var(--serif);
+      font-weight: 600;
+      font-size: 1.02rem;
+      color: var(--primary-dark);
+      margin: 0;
+      flex: 1;
+    }
+
+    .partner-tile-desc {
+      margin: 0 0 0.6rem 2.55rem;
+      font-size: 0.84rem;
+      color: var(--muted);
+      max-width: 56ch;
+    }
+
+    .partner-tile-count {
+      margin: 0 0 0 2.55rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--accent-dark);
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+
     .partner-brand-group {
       margin-top: 1.5rem;
     }
@@ -842,6 +897,12 @@
         <li>Keine Registrierung nötig</li>
         <li>Unabhängige Ersteinschätzung</li>
       </ul>
+
+      <nav aria-label="Direktlinks zu Leistungsseiten" style="margin-top:1.5rem;display:flex;flex-wrap:wrap;gap:0.5rem;">
+        <a href="/leistungen/wohngeld/" style="color:#fff;background:rgba(255,255,255,0.14);border:1px solid rgba(255,255,255,0.35);border-radius:2px;padding:0.4rem 0.8rem;font-size:0.85rem;text-decoration:none;">Wohngeld im Detail</a>
+        <a href="/leistungen/buergergeld/" style="color:#fff;background:rgba(255,255,255,0.14);border:1px solid rgba(255,255,255,0.35);border-radius:2px;padding:0.4rem 0.8rem;font-size:0.85rem;text-decoration:none;">Bürgergeld im Detail</a>
+        <a href="/leistungen/pflegegeld/" style="color:#fff;background:rgba(255,255,255,0.14);border:1px solid rgba(255,255,255,0.35);border-radius:2px;padding:0.4rem 0.8rem;font-size:0.85rem;text-decoration:none;">Pflegegeld im Detail</a>
+      </nav>
     </div>
   </div>
 
@@ -2225,6 +2286,7 @@
 
     const partnerOffers = [
 
+
       {
         category: 'Reisen & Reiseversicherung',
         label: 'Fernreisen entdecken',
@@ -2408,7 +2470,7 @@
         img: 'https://www.awin1.com/cshow.php?s=4509341&v=113164&q=514452&r=3083133'
       },
 
-      // --- Zusätzliche Partnerangebote (Awin-Import) ---
+      
 
       {
         category: 'Reisen & Reiseversicherung',
@@ -2448,14 +2510,6 @@
         alt: 'BestFewo',
         url: 'https://www.awin1.com/cread.php?s=4806851&v=9142&q=607310&r=3083133',
         img: 'https://www.awin1.com/cshow.php?s=4806851&v=9142&q=607310&r=3083133'
-      },
-
-      {
-        category: 'Reisen & Reiseversicherung',
-        label: 'Explorer Travel – Angebot 1',
-        alt: 'Explorer Travel',
-        url: 'https://www.awin1.com/cread.php?s=3353262&v=41168&q=460451&r=3083133',
-        img: 'https://www.awin1.com/cshow.php?s=3353262&v=41168&q=460451&r=3083133'
       },
 
       {
@@ -2608,14 +2662,6 @@
         alt: 'Ferienwohnungen',
         url: 'https://www.awin1.com/cread.php?s=3713372&v=99579&q=497805&r=3083133',
         img: 'https://www.awin1.com/cshow.php?s=3713372&v=99579&q=497805&r=3083133'
-      },
-
-      {
-        category: 'Reisen & Reiseversicherung',
-        label: 'Ferienwohnungen – Angebot 6',
-        alt: 'Ferienwohnungen',
-        url: 'https://www.awin1.com/cread.php?s=3713452&v=99579&q=497805&r=3083133',
-        img: 'https://www.awin1.com/cshow.php?s=3713452&v=99579&q=497805&r=3083133'
       },
 
       {
@@ -2892,14 +2938,6 @@
 
       {
         category: 'Reisen & Reiseversicherung',
-        label: 'Simbye – Angebot 4',
-        alt: 'Simbye',
-        url: 'https://www.awin1.com/cread.php?s=3788951&v=107814&q=505212&r=3083133',
-        img: 'https://www.awin1.com/cshow.php?s=3788951&v=107814&q=505212&r=3083133'
-      },
-
-      {
-        category: 'Reisen & Reiseversicherung',
         label: 'TravelSecure – Angebot 1',
         alt: 'TravelSecure',
         url: 'https://www.awin1.com/cread.php?s=3744490&v=106517&q=501261&r=3083133',
@@ -2996,14 +3034,6 @@
 
       {
         category: 'Reisen & Reiseversicherung',
-        label: 'Traverseon – Angebot 10',
-        alt: 'Traverseon',
-        url: 'https://www.awin1.com/cread.php?s=4818740&v=124816&q=608343&r=3083133',
-        img: 'https://www.awin1.com/cshow.php?s=4818740&v=124816&q=608343&r=3083133'
-      },
-
-      {
-        category: 'Reisen & Reiseversicherung',
         label: 'Traverseon – Angebot 11',
         alt: 'Traverseon',
         url: 'https://www.awin1.com/cread.php?s=4803581&v=124816&q=607088&r=3083133',
@@ -3048,14 +3078,6 @@
         alt: 'Traverseon',
         url: 'https://www.awin1.com/cread.php?s=4725399&v=124816&q=600218&r=3083133',
         img: 'https://www.awin1.com/cshow.php?s=4725399&v=124816&q=600218&r=3083133'
-      },
-
-      {
-        category: 'Reisen & Reiseversicherung',
-        label: 'Traverseon – Angebot 17',
-        alt: 'Traverseon',
-        url: 'https://www.awin1.com/cread.php?s=4724166&v=124816&q=600109&r=3083133',
-        img: 'https://www.awin1.com/cshow.php?s=4724166&v=124816&q=600109&r=3083133'
       },
 
       {
@@ -3211,14 +3233,6 @@
 
       {
         category: 'Versicherungen & Tarife vergleichen',
-        label: 'Burda Vergleicht – Angebot 3',
-        alt: 'Burda Vergleicht',
-        url: 'https://www.awin1.com/cread.php?s=4550235&v=121064&q=584681&r=3083133',
-        img: 'https://www.awin1.com/cshow.php?s=4550235&v=121064&q=584681&r=3083133'
-      },
-
-      {
-        category: 'Versicherungen & Tarife vergleichen',
         label: 'Burda Vergleicht – Angebot 4',
         alt: 'Burda Vergleicht',
         url: 'https://www.awin1.com/cread.php?s=4550243&v=121064&q=584749&r=3083133',
@@ -3366,14 +3380,6 @@
         alt: 'andsafe',
         url: 'https://www.awin1.com/cread.php?s=3334051&v=24639&q=418001&r=3083133',
         img: 'https://www.awin1.com/cshow.php?s=3334051&v=24639&q=418001&r=3083133'
-      },
-
-      {
-        category: 'Versicherungen & Tarife vergleichen',
-        label: 'andsafe – Angebot 7',
-        alt: 'andsafe',
-        url: 'https://www.awin1.com/cread.php?s=3334085&v=24639&q=418001&r=3083133',
-        img: 'https://www.awin1.com/cshow.php?s=3334085&v=24639&q=418001&r=3083133'
       },
 
       {
@@ -3615,14 +3621,6 @@
 
       {
         category: 'Software & Tools',
-        label: 'BlazeVideo – Angebot 5',
-        alt: 'BlazeVideo',
-        url: 'https://www.awin1.com/cread.php?s=3652900&v=25962&q=491999&r=3083133',
-        img: 'https://www.awin1.com/cshow.php?s=3652900&v=25962&q=491999&r=3083133'
-      },
-
-      {
-        category: 'Software & Tools',
         label: 'BlazeVideo – Angebot 6',
         alt: 'BlazeVideo',
         url: 'https://www.awin1.com/cread.php?s=3393213&v=25962&q=465319&r=3083133',
@@ -3719,34 +3717,10 @@
 
       {
         category: 'Software & Tools',
-        label: 'Wondershare – Angebot 1',
-        alt: 'Wondershare',
-        url: 'https://www.awin1.com/cread.php?s=4031562&v=20202&q=528960&r=3083133',
-        img: 'https://www.awin1.com/cshow.php?s=4031562&v=20202&q=528960&r=3083133'
-      },
-
-      {
-        category: 'Software & Tools',
         label: 'Wondershare – Angebot 2',
         alt: 'Wondershare',
         url: 'https://www.awin1.com/cread.php?s=4807398&v=20202&q=601333&r=3083133',
         img: 'https://www.awin1.com/cshow.php?s=4807398&v=20202&q=601333&r=3083133'
-      },
-
-      {
-        category: 'Software & Tools',
-        label: 'Wondershare – Angebot 3',
-        alt: 'Wondershare',
-        url: 'https://www.awin1.com/cread.php?s=4804334&v=20202&q=607168&r=3083133',
-        img: 'https://www.awin1.com/cshow.php?s=4804334&v=20202&q=607168&r=3083133'
-      },
-
-      {
-        category: 'Software & Tools',
-        label: 'Wondershare – Angebot 4',
-        alt: 'Wondershare',
-        url: 'https://www.awin1.com/cread.php?s=4796285&v=20202&q=596831&r=3083133',
-        img: 'https://www.awin1.com/cshow.php?s=4796285&v=20202&q=596831&r=3083133'
       },
 
       {
@@ -4031,14 +4005,6 @@
 
       {
         category: 'Sparen & Gewinnspiele',
-        label: 'Einfach-Sparsam – Angebot 1',
-        alt: 'Einfach-Sparsam',
-        url: 'https://www.awin1.com/cread.php?s=4653754&v=113830&q=593749&r=3083133',
-        img: 'https://www.awin1.com/cshow.php?s=4653754&v=113830&q=593749&r=3083133'
-      },
-
-      {
-        category: 'Sparen & Gewinnspiele',
         label: 'Einfach-Sparsam – Angebot 2',
         alt: 'Einfach-Sparsam',
         url: 'https://www.awin1.com/cread.php?s=3859536&v=113830&q=511737&r=3083133',
@@ -4055,14 +4021,6 @@
 
       {
         category: 'Sparen & Gewinnspiele',
-        label: 'Einfach-Sparsam – Angebot 4',
-        alt: 'Einfach-Sparsam',
-        url: 'https://www.awin1.com/cread.php?s=3854816&v=113830&q=511182&r=3083133',
-        img: 'https://www.awin1.com/cshow.php?s=3854816&v=113830&q=511182&r=3083133'
-      },
-
-      {
-        category: 'Sparen & Gewinnspiele',
         label: 'Einfach-Sparsam – Angebot 5',
         alt: 'Einfach-Sparsam',
         url: 'https://www.awin1.com/cread.php?s=4653752&v=113830&q=593749&r=3083133',
@@ -4075,14 +4033,6 @@
         alt: 'Einfach-Sparsam',
         url: 'https://www.awin1.com/cread.php?s=3964548&v=113830&q=511738&r=3083133',
         img: 'https://www.awin1.com/cshow.php?s=3964548&v=113830&q=511738&r=3083133'
-      },
-
-      {
-        category: 'Sparen & Gewinnspiele',
-        label: 'Einfach-Sparsam – Angebot 7',
-        alt: 'Einfach-Sparsam',
-        url: 'https://www.awin1.com/cread.php?s=3964546&v=113830&q=512206&r=3083133',
-        img: 'https://www.awin1.com/cshow.php?s=3964546&v=113830&q=512206&r=3083133'
       },
 
       {
@@ -4176,14 +4126,6 @@
       {
         category: 'Technik & Zubehör',
         label: 'HTVRont – Angebot 5',
-        alt: 'HTVRont',
-        url: 'https://www.awin1.com/cread.php?s=4856356&v=68106&q=523805&r=3083133',
-        img: 'https://www.awin1.com/cshow.php?s=4856356&v=68106&q=523805&r=3083133'
-      },
-
-      {
-        category: 'Technik & Zubehör',
-        label: 'HTVRont – Angebot 6',
         alt: 'HTVRont',
         url: 'https://www.awin1.com/cread.php?s=4856356&v=68106&q=523805&r=3083133',
         img: 'https://www.awin1.com/cshow.php?s=4856356&v=68106&q=523805&r=3083133'
@@ -4359,23 +4301,7 @@
 
       {
         category: 'Technik & Zubehör',
-        label: 'HTVRont – Angebot 28',
-        alt: 'HTVRont',
-        url: 'https://www.awin1.com/cread.php?s=3987090&v=68106&q=523805&r=3083133',
-        img: 'https://www.awin1.com/cshow.php?s=3987090&v=68106&q=523805&r=3083133'
-      },
-
-      {
-        category: 'Technik & Zubehör',
         label: 'HTVRont – Angebot 29',
-        alt: 'HTVRont',
-        url: 'https://www.awin1.com/cread.php?s=3987139&v=68106&q=523805&r=3083133',
-        img: 'https://www.awin1.com/cshow.php?s=3987139&v=68106&q=523805&r=3083133'
-      },
-
-      {
-        category: 'Technik & Zubehör',
-        label: 'HTVRont – Angebot 30',
         alt: 'HTVRont',
         url: 'https://www.awin1.com/cread.php?s=3987139&v=68106&q=523805&r=3083133',
         img: 'https://www.awin1.com/cshow.php?s=3987139&v=68106&q=523805&r=3083133'
@@ -4587,14 +4513,6 @@
         alt: 'Yose Power',
         url: 'https://www.awin1.com/cread.php?s=4509337&v=113164&q=514452&r=3083133',
         img: 'https://www.awin1.com/cshow.php?s=4509337&v=113164&q=514452&r=3083133'
-      },
-
-      {
-        category: 'Technik & Zubehör',
-        label: 'Yose Power – Angebot 2',
-        alt: 'Yose Power',
-        url: 'https://www.awin1.com/cread.php?s=4509341&v=113164&q=514452&r=3083133',
-        img: 'https://www.awin1.com/cshow.php?s=4509341&v=113164&q=514452&r=3083133'
       },
 
       {
@@ -5199,14 +5117,6 @@
 
       {
         category: 'Freizeit & Erlebnisse',
-        label: 'City Game – Angebot 5',
-        alt: 'City Game',
-        url: 'https://www.awin1.com/cread.php?s=4853387&v=122746&q=611345&r=3083133',
-        img: 'https://www.awin1.com/cshow.php?s=4853387&v=122746&q=611345&r=3083133'
-      },
-
-      {
-        category: 'Freizeit & Erlebnisse',
         label: 'City Game – Angebot 6',
         alt: 'City Game',
         url: 'https://www.awin1.com/cread.php?s=4851910&v=122746&q=593964&r=3083133',
@@ -5368,22 +5278,6 @@
       {
         category: 'Gesundheit & Ernährung',
         label: 'WeightWorld – Angebot 1',
-        alt: 'WeightWorld',
-        url: 'https://www.awin1.com/cread.php?s=3657646&v=22720&q=492447&r=3083133',
-        img: 'https://www.awin1.com/cshow.php?s=3657646&v=22720&q=492447&r=3083133'
-      },
-
-      {
-        category: 'Gesundheit & Ernährung',
-        label: 'WeightWorld – Angebot 2',
-        alt: 'WeightWorld',
-        url: 'https://www.awin1.com/cread.php?s=3657646&v=22720&q=492447&r=3083133',
-        img: 'https://www.awin1.com/cshow.php?s=3657646&v=22720&q=492447&r=3083133'
-      },
-
-      {
-        category: 'Gesundheit & Ernährung',
-        label: 'WeightWorld – Angebot 3',
         alt: 'WeightWorld',
         url: 'https://www.awin1.com/cread.php?s=3657646&v=22720&q=492447&r=3083133',
         img: 'https://www.awin1.com/cshow.php?s=3657646&v=22720&q=492447&r=3083133'
@@ -5575,14 +5469,6 @@
 
       {
         category: 'Sonstige Angebote',
-        label: 'Blimburn Seeds – Angebot 3',
-        alt: 'Blimburn Seeds',
-        url: 'https://www.awin1.com/cread.php?s=4761298&v=117497&q=528359&r=3083133',
-        img: 'https://www.awin1.com/cshow.php?s=4761298&v=117497&q=528359&r=3083133'
-      },
-
-      {
-        category: 'Sonstige Angebote',
         label: 'Blimburn Seeds – Angebot 4',
         alt: 'Blimburn Seeds',
         url: 'https://www.awin1.com/cread.php?s=4672879&v=117497&q=528359&r=3083133',
@@ -5604,6 +5490,7 @@
         url: 'https://www.awin1.com/cread.php?s=4666173&v=117497&q=528359&r=3083133',
         img: 'https://www.awin1.com/cshow.php?s=4666173&v=117497&q=528359&r=3083133'
       },
+
 
     ];
 
@@ -5898,6 +5785,24 @@
     }
 
 
+    const partnerCategorySlug = {
+      'Reisen & Reiseversicherung': 'reisen',
+      'Versicherungen & Tarife vergleichen': 'versicherungen',
+      'Verkehrsrecht & Bußgeld': 'verkehrsrecht',
+      'Software & Tools': 'software',
+      'Sparen & Gewinnspiele': 'sparen',
+      'Technik & Zubehör': 'technik',
+      'Mobilität & Elektrofahrzeuge': 'mobilitaet',
+      'Mode & Accessoires': 'mode',
+      'Freizeit & Erlebnisse': 'freizeit',
+      'Bildung & Sprachen': 'bildung',
+      'Gesundheit & Ernährung': 'gesundheit',
+      'Arbeit & Jobs': 'arbeit',
+      'Mobilfunk & Internet': 'mobilfunk',
+      'Finanzen & Geldanlage': 'finanzen',
+      'Sonstige Angebote': 'sonstige'
+    };
+
     function renderPartnerOffers() {
 
       const groups = [];
@@ -5921,8 +5826,7 @@
 
       if (!root) return;
 
-
-      root.innerHTML = groups.map(cat => {
+      const tilesHtml = groups.map(cat => {
 
         const items =
           byCategory[cat];
@@ -5931,87 +5835,21 @@
           partnerCategoryMeta[cat] ||
           { icon: '★', desc: '' };
 
-        // innerhalb der Kategorie zusätzlich nach Partner gruppieren
-        const partnerNames = [];
-        const byPartner = {};
-
-        items.forEach(o => {
-
-          const partnerKey =
-            o.alt || 'Weitere Partner';
-
-          if (!byPartner[partnerKey]) {
-
-            byPartner[partnerKey] = [];
-            partnerNames.push(partnerKey);
-
-          }
-
-          byPartner[partnerKey].push(o);
-
-        });
-
-        const partnerBlocksHtml = partnerNames.map(partnerName => {
-
-          const partnerItems =
-            byPartner[partnerName];
-
-          const visible =
-            partnerItems.slice(0, PARTNER_VISIBLE_COUNT);
-
-          const rest =
-            partnerItems.slice(PARTNER_VISIBLE_COUNT);
-
-          return `
-
-            <div class="partner-brand-group">
-
-              <h4 class="partner-group-title">
-                ${partnerName}
-              </h4>
-
-              <div class="partner-grid">
-                ${visible.map(partnerCardHtml).join('')}
-              </div>
-
-              ${
-                rest.length
-                  ? `
-                    <details class="partner-more">
-
-                      <summary>
-                        ${rest.length}
-                        weitere${rest.length > 1 ? '' : 's'}
-                        Angebot${rest.length > 1 ? 'e' : ''}
-                        von ${partnerName} anzeigen
-                      </summary>
-
-                      <div class="partner-more-grid">
-                        ${rest.map(partnerCardHtml).join('')}
-                      </div>
-
-                    </details>
-                  `
-                  : ''
-              }
-
-            </div>
-
-          `;
-
-        }).join('');
+        const slug =
+          partnerCategorySlug[cat] ||
+          cat.toLowerCase().replace(/[^a-z0-9]+/g, '-');
 
         return `
 
-          <div class="partner-category">
+          <a class="partner-tile" href="/partner/${slug}/">
 
-            <div class="partner-category-header">
+            <div class="partner-tile-header">
 
               <span class="partner-category-icon">
                 ${meta.icon}
               </span>
 
-              <h3 class="partner-category-title">
+              <h3 class="partner-tile-title">
                 ${cat}
               </h3>
 
@@ -6019,17 +5857,25 @@
 
             ${
               meta.desc
-                ? `<p class="partner-category-desc">${meta.desc}</p>`
+                ? `<p class="partner-tile-desc">${meta.desc}</p>`
                 : ''
             }
 
-            ${partnerBlocksHtml}
+            <p class="partner-tile-count">
+              ${items.length} Angebot${items.length === 1 ? '' : 'e'} ansehen
+            </p>
 
-          </div>
+          </a>
 
         `;
 
       }).join('');
+
+      root.innerHTML = `
+        <div class="partner-tile-grid">
+          ${tilesHtml}
+        </div>
+      `;
 
     }
 
