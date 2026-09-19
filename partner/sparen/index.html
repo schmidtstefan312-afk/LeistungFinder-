@@ -1,1 +1,362 @@
 
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sparen &amp; Gewinnspiele – Partnerangebote | Leistung-Finder</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Sparmöglichkeiten, Aktionen und Gutscheine für den Alltag. Unabhängige Partnerangebote, keine staatliche Leistung." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://leistung-finder.de/partner/sparen/" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Sparen &amp; Gewinnspiele – Partnerangebote | Leistung-Finder" />
+  <meta property="og:description" content="Sparmöglichkeiten, Aktionen und Gutscheine für den Alltag. Unabhängige Partnerangebote, keine staatliche Leistung." />
+  <meta property="og:url" content="https://leistung-finder.de/partner/sparen/" />
+  <meta property="og:locale" content="de_DE" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+:root {
+  --primary: #0f4c46;
+  --primary-dark: #0a3733;
+  --accent: #e0982e;
+  --accent-dark: #b87a20;
+  --bg: #faf7f2;
+  --text: #1e2624;
+  --muted: #5c6b67;
+  --card: #ffffff;
+  --border: #dfe3df;
+  --serif: "Fraunces", Georgia, "Times New Roman", serif;
+  --sans: "Work Sans", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font-family: var(--sans); background: var(--bg); color: var(--text); line-height: 1.6; }
+.hero { background: var(--primary); color: #fff; padding: 2.25rem 1.25rem 3rem; }
+.hero-inner { max-width: 860px; margin: 0 auto; }
+.logotype { font-family: var(--serif); font-weight: 500; font-size: 1.05rem; letter-spacing: 0.01em; opacity: 0.85; margin-bottom: 1.25rem; }
+.breadcrumb { font-size: 0.85rem; opacity: 0.8; margin-bottom: 1rem; }
+.breadcrumb a { color: #fff; }
+.hero h1 { font-family: var(--serif); font-weight: 600; font-size: 1.9rem; line-height: 1.25; margin: 0 0 0.75rem; }
+.hero p.lede { max-width: 62ch; font-size: 1.02rem; opacity: 0.92; margin: 0; }
+.container { max-width: 860px; margin: 0 auto; padding: 0 1rem 2.5rem; }
+.ad-label { font-size: 0.85rem; color: var(--muted); margin: 1.5rem 0 0; font-style: italic; }
+.partner-intro { margin: 0.35rem 0 0; color: var(--muted); font-size: 0.92rem; max-width: 62ch; }
+.partner-group-title { font-family: var(--serif); font-weight: 600; font-size: 1.05rem; color: var(--primary-dark); margin: 0 0 0.75rem; padding-bottom: 0.4rem; border-bottom: 2px solid var(--accent); display: inline-block; }
+.partner-brand-group { margin-top: 2rem; }
+.partner-brand-group:first-of-type { margin-top: 1.5rem; }
+.partner-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1rem; }
+.partner-card { position: relative; border: 1px solid var(--border); border-radius: 4px; background: #fff; display: flex; flex-direction: column; overflow: hidden; transition: box-shadow 0.15s ease, border-color 0.15s ease; }
+.partner-card:hover { border-color: var(--primary); box-shadow: 0 6px 16px rgba(15,32,29,0.10); }
+.partner-card-badge { position: absolute; top: 0.5rem; right: 0.5rem; font-size: 0.65rem; letter-spacing: 0.04em; text-transform: uppercase; background: rgba(255,255,255,0.92); color: var(--muted); border: 1px solid var(--border); padding: 0.15rem 0.4rem; border-radius: 2px; z-index: 1; }
+.partner-card-media { height: 112px; display: flex; align-items: center; justify-content: center; background: #fdfcfa; border-bottom: 1px solid var(--border); padding: 0.75rem; }
+.partner-card-media img { max-width: 100%; max-height: 100%; object-fit: contain; }
+.partner-iframe-wrap iframe { max-width: 100%; border: 0; }
+.partner-card-body { padding: 0.75rem 0.9rem 0.9rem; display: flex; flex-direction: column; gap: 0.55rem; flex: 1; }
+.partner-card-label { font-size: 0.87rem; font-weight: 600; color: var(--text); line-height: 1.35; }
+.partner-card-cta { margin-top: auto; align-self: flex-start; font-size: 0.8rem; font-weight: 700; color: var(--primary); text-decoration: none; padding: 0.4rem 0.75rem; border: 1px solid var(--primary); border-radius: 2px; }
+.partner-card-cta:hover { background: var(--primary); color: #fff; }
+.partner-more { margin-top: 0.9rem; border: 1px dashed var(--border); border-radius: 3px; padding: 0.6rem 0.9rem; }
+.partner-more summary { cursor: pointer; font-size: 0.85rem; font-weight: 600; color: var(--muted); }
+.partner-more[open] summary { color: var(--primary-dark); margin-bottom: 0.75rem; }
+.partner-more-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1rem; }
+.btn { display: inline-block; border: 1px solid transparent; padding: 0.7rem 1.2rem; border-radius: 2px; cursor: pointer; font-weight: 700; letter-spacing: 0.01em; text-decoration: none; margin-top: 0.75rem; }
+.btn-secondary { background: #eef1f5; color: var(--primary-dark); border: 1px solid var(--border); }
+.related { margin-top: 2rem; }
+.related a { display: inline-block; margin: 0.25rem 0.5rem 0.25rem 0; padding: 0.4rem 0.75rem; border: 1px solid var(--border); border-radius: 2px; color: var(--primary-dark); text-decoration: none; font-size: 0.9rem; }
+.related a:hover { border-color: var(--primary); }
+.source-note { font-size: 0.82rem; color: var(--muted); margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1rem; }
+footer.site-footer { text-align: center; font-size: 0.85rem; color: var(--muted); padding: 1.5rem 1rem 2.5rem; }
+footer.site-footer a { color: var(--muted); }
+</style>
+</head>
+<body>
+
+  <div class="hero">
+    <div class="hero-inner">
+      <div class="logotype">Leistung-Finder</div>
+      <div class="breadcrumb"><a href="/">Leistung-Finder</a> &rsaquo; <a href="/#top">Partnerangebote</a> &rsaquo; Sparen &amp; Gewinnspiele</div>
+      <h1>Sparen &amp; Gewinnspiele</h1>
+      <p class="lede">Sparmöglichkeiten, Aktionen und Gutscheine für den Alltag.</p>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <p class="ad-label">
+      Anzeige – bei Abschluss über diese Links erhalten wir ggf. eine Vergütung.
+      Diese Angebote stammen von unabhängigen Partnern, nicht von Behörden.
+    </p>
+    <p class="partner-intro">
+      Alle Partnerangebote aus dem Bereich „Sparen &amp; Gewinnspiele" auf einen Blick, sortiert nach Anbieter.
+    </p>
+
+    
+          <div class="partner-brand-group">
+            <h4 class="partner-group-title">Einfach-Sparsam</h4>
+            <div class="partner-grid">
+              
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=4653754&amp;v=113830&amp;q=593749&amp;r=3083133" alt="Einfach-Sparsam" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Sparmöglichkeiten &amp; Aktionen</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=4653754&amp;v=113830&amp;q=593749&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=3854816&amp;v=113830&amp;q=511182&amp;r=3083133" alt="Einfach-Sparsam" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Gutscheine &amp; Rabattaktionen</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=3854816&amp;v=113830&amp;q=511182&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=3859529&amp;v=113830&amp;q=511737&amp;r=3083133" alt="Einfach-Sparsam" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Gewinnspiele entdecken</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=3859529&amp;v=113830&amp;q=511737&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=3964546&amp;v=113830&amp;q=512206&amp;r=3083133" alt="Einfach-Sparsam" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Produktproben &amp; Geld-zurück-Aktionen</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=3964546&amp;v=113830&amp;q=512206&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+            </div>
+            
+            <details class="partner-more">
+              <summary>8 weitere Angebote von Einfach-Sparsam anzeigen</summary>
+              <div class="partner-more-grid">
+                
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=3964547&amp;v=113830&amp;q=511738&amp;r=3083133" alt="Einfach-Sparsam" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Weitere Sparaktionen</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=3964547&amp;v=113830&amp;q=511738&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=3859536&amp;v=113830&amp;q=511737&amp;r=3083133" alt="Einfach-Sparsam" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Einfach-Sparsam – Angebot 2</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=3859536&amp;v=113830&amp;q=511737&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=3854823&amp;v=113830&amp;q=511182&amp;r=3083133" alt="Einfach-Sparsam" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Einfach-Sparsam – Angebot 3</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=3854823&amp;v=113830&amp;q=511182&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=4653752&amp;v=113830&amp;q=593749&amp;r=3083133" alt="Einfach-Sparsam" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Einfach-Sparsam – Angebot 5</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=4653752&amp;v=113830&amp;q=593749&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=3964548&amp;v=113830&amp;q=511738&amp;r=3083133" alt="Einfach-Sparsam" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Einfach-Sparsam – Angebot 6</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=3964548&amp;v=113830&amp;q=511738&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=3964538&amp;v=113830&amp;q=511737&amp;r=3083133" alt="Einfach-Sparsam" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Einfach-Sparsam – Angebot 8</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=3964538&amp;v=113830&amp;q=511737&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=3964536&amp;v=113830&amp;q=511737&amp;r=3083133" alt="Einfach-Sparsam" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Einfach-Sparsam – Angebot 9</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=3964536&amp;v=113830&amp;q=511737&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=3901662&amp;v=113830&amp;q=511738&amp;r=3083133" alt="Einfach-Sparsam" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Einfach-Sparsam – Angebot 10</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=3901662&amp;v=113830&amp;q=511738&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+              </div>
+            </details>
+          </div>
+          <div class="partner-brand-group">
+            <h4 class="partner-group-title">BurdaDirect Gewinnspiele</h4>
+            <div class="partner-grid">
+              
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=4783036&amp;v=14349&amp;q=376815&amp;r=3083133" alt="BurdaDirect Gewinnspiele" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">BurdaDirect Gewinnspiele – Angebot 1</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=4783036&amp;v=14349&amp;q=376815&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=3290114&amp;v=14349&amp;q=376815&amp;r=3083133" alt="BurdaDirect Gewinnspiele" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">BurdaDirect Gewinnspiele – Angebot 2</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=3290114&amp;v=14349&amp;q=376815&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=3255569&amp;v=14349&amp;q=376815&amp;r=3083133" alt="BurdaDirect Gewinnspiele" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">BurdaDirect Gewinnspiele – Angebot 3</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=3255569&amp;v=14349&amp;q=376815&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=3292986&amp;v=14349&amp;q=376815&amp;r=3083133" alt="BurdaDirect Gewinnspiele" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">BurdaDirect Gewinnspiele – Angebot 4</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=3292986&amp;v=14349&amp;q=376815&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+            </div>
+            
+            <details class="partner-more">
+              <summary>1 weiteres Angebot von BurdaDirect Gewinnspiele anzeigen</summary>
+              <div class="partner-more-grid">
+                
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=3292791&amp;v=14349&amp;q=376815&amp;r=3083133" alt="BurdaDirect Gewinnspiele" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">BurdaDirect Gewinnspiele – Angebot 5</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=3292791&amp;v=14349&amp;q=376815&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+              </div>
+            </details>
+          </div>
+          <div class="partner-brand-group">
+            <h4 class="partner-group-title">PREISVERGLEICH.de</h4>
+            <div class="partner-grid">
+              
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=3860209&amp;v=9354&amp;q=511918&amp;r=3083133" alt="PREISVERGLEICH.de" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">PREISVERGLEICH.de – Angebot 1</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=3860209&amp;v=9354&amp;q=511918&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=3860207&amp;v=9354&amp;q=511916&amp;r=3083133" alt="PREISVERGLEICH.de" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">PREISVERGLEICH.de – Angebot 2</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=3860207&amp;v=9354&amp;q=511916&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=3860239&amp;v=9354&amp;q=511916&amp;r=3083133" alt="PREISVERGLEICH.de" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">PREISVERGLEICH.de – Angebot 3</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=3860239&amp;v=9354&amp;q=511916&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=2685050&amp;v=9354&amp;q=351342&amp;r=3083133" alt="PREISVERGLEICH.de" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">PREISVERGLEICH.de – Angebot 4</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=2685050&amp;v=9354&amp;q=351342&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+            </div>
+            
+          </div>
+
+    <div class="related">
+      <h2 style="font-family:var(--serif);font-size:1.05rem;color:var(--primary-dark);">Weitere Bereiche</h2>
+      <a href="/#top">Alle Partner-Kategorien im Überblick</a>
+      <a href="/#top">Zurück zum Leistung-Finder</a>
+    </div>
+
+    <p style="margin-top:2rem;">
+      <a href="/#top" class="btn btn-secondary">&larr; Zurück zum Leistung-Finder</a>
+    </p>
+
+    <div class="source-note">
+      Werbekennzeichnung: Diese Seite enthält Partner-/Affiliate-Links. Leistung-Finder erhält ggf. eine Vergütung, wenn du über diese Links ein Angebot abschließt. Auswahl und Reihenfolge stellen keine Empfehlung oder Bewertung einzelner Anbieter dar.
+    </div>
+
+  </div>
+  <footer class="site-footer">
+    <a href="/#top">Leistung-Finder.de</a> &middot; <a href="/impressum.html">Impressum</a> &middot; <a href="/datenschutz.html">Datenschutz</a>
+  </footer>
+
+</body>
+</html>
