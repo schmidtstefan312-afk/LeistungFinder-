@@ -1,1 +1,194 @@
 
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <title>Einloggen | Leistung-Finder</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, follow" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <style>
+    :root {
+      --primary: #0f4c46;
+      --primary-dark: #0a3733;
+      --accent: #e0982e;
+      --bg: #faf7f2;
+      --text: #1e2624;
+      --muted: #5c6b67;
+      --border: #dfe3df;
+      --error: #b3261e;
+      --serif: "Fraunces", Georgia, serif;
+      --sans: "Work Sans", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: var(--sans);
+      background: var(--bg);
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 1.5rem;
+    }
+    .card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 2rem 1.75rem;
+      max-width: 400px;
+      width: 100%;
+      box-shadow: 0 6px 24px rgba(15,32,29,0.08);
+    }
+    .logotype {
+      font-family: var(--serif);
+      font-weight: 600;
+      font-size: 1.15rem;
+      color: var(--primary-dark);
+      margin-bottom: 1.5rem;
+    }
+    h1 {
+      font-family: var(--serif);
+      font-weight: 600;
+      font-size: 1.5rem;
+      margin: 0 0 0.4rem;
+      color: var(--primary-dark);
+    }
+    p.lede {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin: 0 0 1.5rem;
+    }
+    label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 0.35rem;
+      color: var(--text);
+    }
+    input {
+      width: 100%;
+      padding: 0.65rem 0.8rem;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      font-size: 0.95rem;
+      font-family: var(--sans);
+      margin-bottom: 1.1rem;
+    }
+    input:focus {
+      outline: none;
+      border-color: var(--primary);
+    }
+    button {
+      width: 100%;
+      padding: 0.75rem;
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: var(--sans);
+    }
+    button:hover { background: var(--primary-dark); }
+    button:disabled { opacity: 0.6; cursor: default; }
+    .msg {
+      margin-top: 1rem;
+      font-size: 0.88rem;
+      padding: 0.7rem 0.9rem;
+      border-radius: 4px;
+      display: none;
+    }
+    .msg.error { background: #fdecea; color: var(--error); display: block; }
+    .msg.success { background: #e8f5e9; color: #1b5e20; display: block; }
+    .switch {
+      margin-top: 1.3rem;
+      font-size: 0.88rem;
+      color: var(--muted);
+      text-align: center;
+    }
+    .switch a { color: var(--primary); font-weight: 600; text-decoration: none; }
+    .switch a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <div class="logotype">Leistung-Finder</div>
+    <h1>Einloggen</h1>
+    <p class="lede">Schön, dich wiederzusehen.</p>
+
+    <form id="loginForm">
+      <label for="email">E-Mail-Adresse</label>
+      <input type="email" id="email" required autocomplete="email" />
+
+      <label for="password">Passwort</label>
+      <input type="password" id="password" required autocomplete="current-password" />
+
+      <button type="submit" id="submitBtn">Einloggen</button>
+    </form>
+
+    <div class="msg" id="msgBox"></div>
+
+    <div class="switch">
+      Noch kein Konto? <a href="/mitglieder/registrieren.html">Jetzt kostenlos registrieren</a>
+    </div>
+  </div>
+
+  <script>
+    const SUPABASE_URL = "https://rnnmdlibekqhqrxqqrws.supabase.co";
+    const SUPABASE_KEY = "sb_publishable_PXFh4qggQUq3Eb4AGbPpPg_05HIlS1x";
+    const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+    const form = document.getElementById("loginForm");
+    const msgBox = document.getElementById("msgBox");
+    const submitBtn = document.getElementById("submitBtn");
+
+    function showMsg(text, type) {
+      msgBox.textContent = text;
+      msgBox.className = "msg " + type;
+    }
+
+    // Wenn schon eingeloggt, direkt weiterleiten
+    client.auth.getSession().then(({ data }) => {
+      if (data.session) {
+        window.location.href = "/mitglieder/mitglieder.html";
+      }
+    });
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Bitte warten...";
+
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value;
+
+      const { data, error } = await client.auth.signInWithPassword({ email, password });
+
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Einloggen";
+
+      if (error) {
+        showMsg("Fehler: " + error.message, "error");
+        return;
+      }
+
+      showMsg("Erfolgreich eingeloggt, du wirst weitergeleitet...", "success");
+      setTimeout(() => {
+        window.location.href = "/mitglieder/mitglieder.html";
+      }, 800);
+    });
+  </script>
+
+</body>
+</html>
