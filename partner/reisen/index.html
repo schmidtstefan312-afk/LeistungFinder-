@@ -18,3 +18,1165 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+:root {
+  --primary: #0f4c46;
+  --primary-dark: #0a3733;
+  --accent: #e0982e;
+  --accent-dark: #b87a20;
+  --bg: #faf7f2;
+  --text: #1e2624;
+  --muted: #5c6b67;
+  --card: #ffffff;
+  --border: #dfe3df;
+  --serif: "Fraunces", Georgia, "Times New Roman", serif;
+  --sans: "Work Sans", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font-family: var(--sans); background: var(--bg); color: var(--text); line-height: 1.6; }
+.hero { background: var(--primary); color: #fff; padding: 2.25rem 1.25rem 3rem; }
+.hero-inner { max-width: 860px; margin: 0 auto; }
+.logotype { font-family: var(--serif); font-weight: 500; font-size: 1.05rem; letter-spacing: 0.01em; opacity: 0.85; margin-bottom: 1.25rem; }
+.breadcrumb { font-size: 0.85rem; opacity: 0.8; margin-bottom: 1rem; }
+.breadcrumb a { color: #fff; }
+.hero h1 { font-family: var(--serif); font-weight: 600; font-size: 1.9rem; line-height: 1.25; margin: 0 0 0.75rem; }
+.hero p.lede { max-width: 62ch; font-size: 1.02rem; opacity: 0.92; margin: 0; }
+.container { max-width: 860px; margin: 0 auto; padding: 0 1rem 2.5rem; }
+.ad-label { font-size: 0.85rem; color: var(--muted); margin: 1.5rem 0 0; font-style: italic; }
+.partner-intro { margin: 0.35rem 0 0; color: var(--muted); font-size: 0.92rem; max-width: 62ch; }
+.partner-group-title { font-family: var(--serif); font-weight: 600; font-size: 1.05rem; color: var(--primary-dark); margin: 0 0 0.75rem; padding-bottom: 0.4rem; border-bottom: 2px solid var(--accent); display: inline-block; }
+.partner-brand-group { margin-top: 2rem; }
+.partner-brand-group:first-of-type { margin-top: 1.5rem; }
+.partner-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1rem; }
+.partner-card { position: relative; border: 1px solid var(--border); border-radius: 4px; background: #fff; display: flex; flex-direction: column; overflow: hidden; transition: box-shadow 0.15s ease, border-color 0.15s ease; }
+.partner-card:hover { border-color: var(--primary); box-shadow: 0 6px 16px rgba(15,32,29,0.10); }
+.partner-card-badge { position: absolute; top: 0.5rem; right: 0.5rem; font-size: 0.65rem; letter-spacing: 0.04em; text-transform: uppercase; background: rgba(255,255,255,0.92); color: var(--muted); border: 1px solid var(--border); padding: 0.15rem 0.4rem; border-radius: 2px; z-index: 1; }
+.partner-card-media { height: 112px; display: flex; align-items: center; justify-content: center; background: #fdfcfa; border-bottom: 1px solid var(--border); padding: 0.75rem; }
+.partner-card-media img { max-width: 100%; max-height: 100%; object-fit: contain; }
+.partner-iframe-wrap iframe { max-width: 100%; border: 0; }
+.partner-card-body { padding: 0.75rem 0.9rem 0.9rem; display: flex; flex-direction: column; gap: 0.55rem; flex: 1; }
+.partner-card-label { font-size: 0.87rem; font-weight: 600; color: var(--text); line-height: 1.35; }
+.partner-card-cta { margin-top: auto; align-self: flex-start; font-size: 0.8rem; font-weight: 700; color: var(--primary); text-decoration: none; padding: 0.4rem 0.75rem; border: 1px solid var(--primary); border-radius: 2px; }
+.partner-card-cta:hover { background: var(--primary); color: #fff; }
+.partner-more { margin-top: 0.9rem; border: 1px dashed var(--border); border-radius: 3px; padding: 0.6rem 0.9rem; }
+.partner-more summary { cursor: pointer; font-size: 0.85rem; font-weight: 600; color: var(--muted); }
+.partner-more[open] summary { color: var(--primary-dark); margin-bottom: 0.75rem; }
+.partner-more-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1rem; }
+.btn { display: inline-block; border: 1px solid transparent; padding: 0.7rem 1.2rem; border-radius: 2px; cursor: pointer; font-weight: 700; letter-spacing: 0.01em; text-decoration: none; margin-top: 0.75rem; }
+.btn-secondary { background: #eef1f5; color: var(--primary-dark); border: 1px solid var(--border); }
+.related { margin-top: 2rem; }
+.related a { display: inline-block; margin: 0.25rem 0.5rem 0.25rem 0; padding: 0.4rem 0.75rem; border: 1px solid var(--border); border-radius: 2px; color: var(--primary-dark); text-decoration: none; font-size: 0.9rem; }
+.related a:hover { border-color: var(--primary); }
+.source-note { font-size: 0.82rem; color: var(--muted); margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1rem; }
+footer.site-footer { text-align: center; font-size: 0.85rem; color: var(--muted); padding: 1.5rem 1rem 2.5rem; }
+footer.site-footer a { color: var(--muted); }
+</style>
+</head>
+<body>
+
+  <div class="hero">
+    <div class="hero-inner">
+      <div class="logotype">Leistung-Finder</div>
+      <div class="breadcrumb"><a href="/">Leistung-Finder</a> &rsaquo; <a href="/#top">Partnerangebote</a> &rsaquo; Reisen &amp; Reiseversicherung</div>
+      <h1>Reisen &amp; Reiseversicherung</h1>
+      <p class="lede">Absicherung und ergänzende Angebote rund um Reisen ins Ausland.</p>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <p class="ad-label">
+      Anzeige – bei Abschluss über diese Links erhalten wir ggf. eine Vergütung.
+      Diese Angebote stammen von unabhängigen Partnern, nicht von Behörden.
+    </p>
+    <p class="partner-intro">
+      Alle Partnerangebote aus dem Bereich „Reisen &amp; Reiseversicherung" auf einen Blick, sortiert nach Anbieter.
+    </p>
+
+    
+          <div class="partner-brand-group">
+            <h4 class="partner-group-title">Explorer Fernreisen</h4>
+            <div class="partner-grid">
+              
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=3353262&amp;v=41168&amp;q=460451&amp;r=3083133" alt="Explorer Fernreisen" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Fernreisen entdecken</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=3353262&amp;v=41168&amp;q=460451&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+            </div>
+            
+          </div>
+          <div class="partner-brand-group">
+            <h4 class="partner-group-title">TravelSecure</h4>
+            <div class="partner-grid">
+              
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=3744684&amp;v=106517&amp;q=501269&amp;r=3083133" alt="TravelSecure" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Reiseversicherung abschließen</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=3744684&amp;v=106517&amp;q=501269&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=3744490&amp;v=106517&amp;q=501261&amp;r=3083133" alt="TravelSecure" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">TravelSecure – Angebot 1</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=3744490&amp;v=106517&amp;q=501261&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=3744465&amp;v=106517&amp;q=501261&amp;r=3083133" alt="TravelSecure" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">TravelSecure – Angebot 2</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=3744465&amp;v=106517&amp;q=501261&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=3744561&amp;v=106517&amp;q=501268&amp;r=3083133" alt="TravelSecure" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">TravelSecure – Angebot 3</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=3744561&amp;v=106517&amp;q=501268&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+            </div>
+            
+          </div>
+          <div class="partner-brand-group">
+            <h4 class="partner-group-title">HelloSafe</h4>
+            <div class="partner-grid">
+              
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=4842582&amp;v=128757&amp;q=610091&amp;r=3083133" alt="HelloSafe" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Über 40 Reiseversicherer vergleichen</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=4842582&amp;v=128757&amp;q=610091&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+            </div>
+            
+          </div>
+          <div class="partner-brand-group">
+            <h4 class="partner-group-title">Simbye</h4>
+            <div class="partner-grid">
+              
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=4757596&amp;v=107814&amp;q=509921&amp;r=3083133" alt="Simbye" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">eSIM für deine nächste Reise</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=4757596&amp;v=107814&amp;q=509921&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=4856682&amp;v=107814&amp;q=509921&amp;r=3083133" alt="Simbye" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Simbye – Angebot 1</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=4856682&amp;v=107814&amp;q=509921&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=4757595&amp;v=107814&amp;q=509921&amp;r=3083133" alt="Simbye" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Simbye – Angebot 2</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=4757595&amp;v=107814&amp;q=509921&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=3788951&amp;v=107814&amp;q=505212&amp;r=3083133" alt="Simbye" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Simbye – Angebot 3</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=3788951&amp;v=107814&amp;q=505212&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+            </div>
+            
+          </div>
+          <div class="partner-brand-group">
+            <h4 class="partner-group-title">BestFewo</h4>
+            <div class="partner-grid">
+              
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=4806883&amp;v=9142&amp;q=607313&amp;r=3083133" alt="BestFewo" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">BestFewo – Angebot 1</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=4806883&amp;v=9142&amp;q=607313&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=4806861&amp;v=9142&amp;q=607311&amp;r=3083133" alt="BestFewo" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">BestFewo – Angebot 2</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=4806861&amp;v=9142&amp;q=607311&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=4806868&amp;v=9142&amp;q=607312&amp;r=3083133" alt="BestFewo" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">BestFewo – Angebot 3</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=4806868&amp;v=9142&amp;q=607312&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=4806841&amp;v=9142&amp;q=607309&amp;r=3083133" alt="BestFewo" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">BestFewo – Angebot 4</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=4806841&amp;v=9142&amp;q=607309&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+            </div>
+            
+            <details class="partner-more">
+              <summary>1 weiteres Angebot von BestFewo anzeigen</summary>
+              <div class="partner-more-grid">
+                
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=4806851&amp;v=9142&amp;q=607310&amp;r=3083133" alt="BestFewo" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">BestFewo – Angebot 5</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=4806851&amp;v=9142&amp;q=607310&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+              </div>
+            </details>
+          </div>
+          <div class="partner-brand-group">
+            <h4 class="partner-group-title">Explorer Travel</h4>
+            <div class="partner-grid">
+              
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=3369512&amp;v=41168&amp;q=462356&amp;r=3083133" alt="Explorer Travel" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Explorer Travel – Angebot 2</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=3369512&amp;v=41168&amp;q=462356&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=3369503&amp;v=41168&amp;q=462352&amp;r=3083133" alt="Explorer Travel" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Explorer Travel – Angebot 3</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=3369503&amp;v=41168&amp;q=462352&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=3369471&amp;v=41168&amp;q=462348&amp;r=3083133" alt="Explorer Travel" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Explorer Travel – Angebot 4</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=3369471&amp;v=41168&amp;q=462348&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=3369468&amp;v=41168&amp;q=462348&amp;r=3083133" alt="Explorer Travel" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Explorer Travel – Angebot 5</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=3369468&amp;v=41168&amp;q=462348&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+            </div>
+            
+            <details class="partner-more">
+              <summary>10 weitere Angebote von Explorer Travel anzeigen</summary>
+              <div class="partner-more-grid">
+                
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=3369464&amp;v=41168&amp;q=462347&amp;r=3083133" alt="Explorer Travel" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Explorer Travel – Angebot 6</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=3369464&amp;v=41168&amp;q=462347&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=3353271&amp;v=41168&amp;q=460452&amp;r=3083133" alt="Explorer Travel" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Explorer Travel – Angebot 7</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=3353271&amp;v=41168&amp;q=460452&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=3353268&amp;v=41168&amp;q=460451&amp;r=3083133" alt="Explorer Travel" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Explorer Travel – Angebot 8</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=3353268&amp;v=41168&amp;q=460451&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=3369718&amp;v=41168&amp;q=462378&amp;r=3083133" alt="Explorer Travel" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Explorer Travel – Angebot 9</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=3369718&amp;v=41168&amp;q=462378&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=3369638&amp;v=41168&amp;q=462375&amp;r=3083133" alt="Explorer Travel" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Explorer Travel – Angebot 10</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=3369638&amp;v=41168&amp;q=462375&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=3369621&amp;v=41168&amp;q=462372&amp;r=3083133" alt="Explorer Travel" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Explorer Travel – Angebot 11</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=3369621&amp;v=41168&amp;q=462372&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=3369612&amp;v=41168&amp;q=462370&amp;r=3083133" alt="Explorer Travel" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Explorer Travel – Angebot 12</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=3369612&amp;v=41168&amp;q=462370&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=3369607&amp;v=41168&amp;q=462370&amp;r=3083133" alt="Explorer Travel" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Explorer Travel – Angebot 13</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=3369607&amp;v=41168&amp;q=462370&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=3369552&amp;v=41168&amp;q=462361&amp;r=3083133" alt="Explorer Travel" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Explorer Travel – Angebot 14</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=3369552&amp;v=41168&amp;q=462361&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=3369518&amp;v=41168&amp;q=462358&amp;r=3083133" alt="Explorer Travel" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Explorer Travel – Angebot 15</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=3369518&amp;v=41168&amp;q=462358&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+              </div>
+            </details>
+          </div>
+          <div class="partner-brand-group">
+            <h4 class="partner-group-title">Ferienwohnungen</h4>
+            <div class="partner-grid">
+              
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=4742803&amp;v=99579&amp;q=601657&amp;r=3083133" alt="Ferienwohnungen" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Ferienwohnungen – Angebot 1</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=4742803&amp;v=99579&amp;q=601657&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=3796472&amp;v=99579&amp;q=497805&amp;r=3083133" alt="Ferienwohnungen" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Ferienwohnungen – Angebot 2</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=3796472&amp;v=99579&amp;q=497805&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=3796484&amp;v=99579&amp;q=497805&amp;r=3083133" alt="Ferienwohnungen" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Ferienwohnungen – Angebot 3</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=3796484&amp;v=99579&amp;q=497805&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=3713452&amp;v=99579&amp;q=497805&amp;r=3083133" alt="Ferienwohnungen" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Ferienwohnungen – Angebot 4</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=3713452&amp;v=99579&amp;q=497805&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+            </div>
+            
+            <details class="partner-more">
+              <summary>1 weiteres Angebot von Ferienwohnungen anzeigen</summary>
+              <div class="partner-more-grid">
+                
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=3713372&amp;v=99579&amp;q=497805&amp;r=3083133" alt="Ferienwohnungen" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Ferienwohnungen – Angebot 5</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=3713372&amp;v=99579&amp;q=497805&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+              </div>
+            </details>
+          </div>
+          <div class="partner-brand-group">
+            <h4 class="partner-group-title">Holidu</h4>
+            <div class="partner-grid">
+              
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=4742978&amp;v=31473&amp;q=601673&amp;r=3083133" alt="Holidu" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Holidu – Angebot 1</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=4742978&amp;v=31473&amp;q=601673&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=4742990&amp;v=31473&amp;q=601674&amp;r=3083133" alt="Holidu" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Holidu – Angebot 2</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=4742990&amp;v=31473&amp;q=601674&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=4742959&amp;v=31473&amp;q=601671&amp;r=3083133" alt="Holidu" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Holidu – Angebot 3</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=4742959&amp;v=31473&amp;q=601671&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=4742958&amp;v=31473&amp;q=601670&amp;r=3083133" alt="Holidu" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Holidu – Angebot 4</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=4742958&amp;v=31473&amp;q=601670&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+            </div>
+            
+            <details class="partner-more">
+              <summary>27 weitere Angebote von Holidu anzeigen</summary>
+              <div class="partner-more-grid">
+                
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=4742964&amp;v=31473&amp;q=601672&amp;r=3083133" alt="Holidu" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Holidu – Angebot 5</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=4742964&amp;v=31473&amp;q=601672&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=4742960&amp;v=31473&amp;q=601672&amp;r=3083133" alt="Holidu" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Holidu – Angebot 6</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=4742960&amp;v=31473&amp;q=601672&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=4721714&amp;v=31473&amp;q=599897&amp;r=3083133" alt="Holidu" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Holidu – Angebot 7</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=4721714&amp;v=31473&amp;q=599897&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=3483836&amp;v=31473&amp;q=474545&amp;r=3083133" alt="Holidu" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Holidu – Angebot 8</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=3483836&amp;v=31473&amp;q=474545&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=3483889&amp;v=31473&amp;q=474550&amp;r=3083133" alt="Holidu" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Holidu – Angebot 9</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=3483889&amp;v=31473&amp;q=474550&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=3483934&amp;v=31473&amp;q=474552&amp;r=3083133" alt="Holidu" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Holidu – Angebot 10</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=3483934&amp;v=31473&amp;q=474552&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=3688317&amp;v=31473&amp;q=495043&amp;r=3083133" alt="Holidu" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Holidu – Angebot 11</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=3688317&amp;v=31473&amp;q=495043&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=3688314&amp;v=31473&amp;q=495043&amp;r=3083133" alt="Holidu" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Holidu – Angebot 12</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=3688314&amp;v=31473&amp;q=495043&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=3483911&amp;v=31473&amp;q=474550&amp;r=3083133" alt="Holidu" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Holidu – Angebot 13</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=3483911&amp;v=31473&amp;q=474550&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=3483917&amp;v=31473&amp;q=474550&amp;r=3083133" alt="Holidu" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Holidu – Angebot 14</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=3483917&amp;v=31473&amp;q=474550&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=3483921&amp;v=31473&amp;q=474550&amp;r=3083133" alt="Holidu" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Holidu – Angebot 15</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=3483921&amp;v=31473&amp;q=474550&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=3483923&amp;v=31473&amp;q=474550&amp;r=3083133" alt="Holidu" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Holidu – Angebot 16</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=3483923&amp;v=31473&amp;q=474550&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=3483875&amp;v=31473&amp;q=474549&amp;r=3083133" alt="Holidu" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Holidu – Angebot 17</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=3483875&amp;v=31473&amp;q=474549&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=3483880&amp;v=31473&amp;q=453806&amp;r=3083133" alt="Holidu" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Holidu – Angebot 18</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=3483880&amp;v=31473&amp;q=453806&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=3483898&amp;v=31473&amp;q=474550&amp;r=3083133" alt="Holidu" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Holidu – Angebot 19</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=3483898&amp;v=31473&amp;q=474550&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=3483907&amp;v=31473&amp;q=474550&amp;r=3083133" alt="Holidu" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Holidu – Angebot 20</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=3483907&amp;v=31473&amp;q=474550&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=3483871&amp;v=31473&amp;q=474549&amp;r=3083133" alt="Holidu" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Holidu – Angebot 21</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=3483871&amp;v=31473&amp;q=474549&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=3483857&amp;v=31473&amp;q=474547&amp;r=3083133" alt="Holidu" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Holidu – Angebot 22</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=3483857&amp;v=31473&amp;q=474547&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=3483831&amp;v=31473&amp;q=474544&amp;r=3083133" alt="Holidu" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Holidu – Angebot 23</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=3483831&amp;v=31473&amp;q=474544&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=3483952&amp;v=31473&amp;q=474553&amp;r=3083133" alt="Holidu" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Holidu – Angebot 24</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=3483952&amp;v=31473&amp;q=474553&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=3483943&amp;v=31473&amp;q=474552&amp;r=3083133" alt="Holidu" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Holidu – Angebot 25</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=3483943&amp;v=31473&amp;q=474552&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=3483827&amp;v=31473&amp;q=474544&amp;r=3083133" alt="Holidu" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Holidu – Angebot 26</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=3483827&amp;v=31473&amp;q=474544&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=3483848&amp;v=31473&amp;q=474546&amp;r=3083133" alt="Holidu" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Holidu – Angebot 27</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=3483848&amp;v=31473&amp;q=474546&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=3483866&amp;v=31473&amp;q=474548&amp;r=3083133" alt="Holidu" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Holidu – Angebot 28</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=3483866&amp;v=31473&amp;q=474548&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=3483862&amp;v=31473&amp;q=474548&amp;r=3083133" alt="Holidu" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Holidu – Angebot 29</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=3483862&amp;v=31473&amp;q=474548&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=3483892&amp;v=31473&amp;q=474550&amp;r=3083133" alt="Holidu" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Holidu – Angebot 30</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=3483892&amp;v=31473&amp;q=474550&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=3483926&amp;v=31473&amp;q=474551&amp;r=3083133" alt="Holidu" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Holidu – Angebot 31</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=3483926&amp;v=31473&amp;q=474551&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+              </div>
+            </details>
+          </div>
+          <div class="partner-brand-group">
+            <h4 class="partner-group-title">Traverseon</h4>
+            <div class="partner-grid">
+              
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=4839584&amp;v=124816&amp;q=610344&amp;r=3083133" alt="Traverseon" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Traverseon – Angebot 1</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=4839584&amp;v=124816&amp;q=610344&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=4839589&amp;v=124816&amp;q=610344&amp;r=3083133" alt="Traverseon" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Traverseon – Angebot 2</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=4839589&amp;v=124816&amp;q=610344&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=4818967&amp;v=124816&amp;q=608379&amp;r=3083133" alt="Traverseon" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Traverseon – Angebot 3</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=4818967&amp;v=124816&amp;q=608379&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=4818970&amp;v=124816&amp;q=608379&amp;r=3083133" alt="Traverseon" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Traverseon – Angebot 4</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=4818970&amp;v=124816&amp;q=608379&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+            </div>
+            
+            <details class="partner-more">
+              <summary>28 weitere Angebote von Traverseon anzeigen</summary>
+              <div class="partner-more-grid">
+                
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=4818971&amp;v=124816&amp;q=608379&amp;r=3083133" alt="Traverseon" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Traverseon – Angebot 5</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=4818971&amp;v=124816&amp;q=608379&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=4818972&amp;v=124816&amp;q=608379&amp;r=3083133" alt="Traverseon" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Traverseon – Angebot 6</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=4818972&amp;v=124816&amp;q=608379&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=4818640&amp;v=124816&amp;q=608343&amp;r=3083133" alt="Traverseon" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Traverseon – Angebot 7</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=4818640&amp;v=124816&amp;q=608343&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=4818739&amp;v=124816&amp;q=608343&amp;r=3083133" alt="Traverseon" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Traverseon – Angebot 8</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=4818739&amp;v=124816&amp;q=608343&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=4818740&amp;v=124816&amp;q=608343&amp;r=3083133" alt="Traverseon" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Traverseon – Angebot 9</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=4818740&amp;v=124816&amp;q=608343&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=4803581&amp;v=124816&amp;q=607088&amp;r=3083133" alt="Traverseon" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Traverseon – Angebot 11</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=4803581&amp;v=124816&amp;q=607088&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=4803599&amp;v=124816&amp;q=607088&amp;r=3083133" alt="Traverseon" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Traverseon – Angebot 12</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=4803599&amp;v=124816&amp;q=607088&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=4771311&amp;v=124816&amp;q=604359&amp;r=3083133" alt="Traverseon" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Traverseon – Angebot 13</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=4771311&amp;v=124816&amp;q=604359&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=4748127&amp;v=124816&amp;q=602540&amp;r=3083133" alt="Traverseon" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Traverseon – Angebot 14</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=4748127&amp;v=124816&amp;q=602540&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=4724166&amp;v=124816&amp;q=600109&amp;r=3083133" alt="Traverseon" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Traverseon – Angebot 15</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=4724166&amp;v=124816&amp;q=600109&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=4725399&amp;v=124816&amp;q=600218&amp;r=3083133" alt="Traverseon" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Traverseon – Angebot 16</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=4725399&amp;v=124816&amp;q=600218&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=4724121&amp;v=124816&amp;q=600015&amp;r=3083133" alt="Traverseon" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Traverseon – Angebot 18</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=4724121&amp;v=124816&amp;q=600015&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=4724131&amp;v=124816&amp;q=600107&amp;r=3083133" alt="Traverseon" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Traverseon – Angebot 19</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=4724131&amp;v=124816&amp;q=600107&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=4724058&amp;v=124816&amp;q=600102&amp;r=3083133" alt="Traverseon" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Traverseon – Angebot 20</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=4724058&amp;v=124816&amp;q=600102&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=4724088&amp;v=124816&amp;q=600017&amp;r=3083133" alt="Traverseon" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Traverseon – Angebot 21</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=4724088&amp;v=124816&amp;q=600017&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=4724100&amp;v=124816&amp;q=600106&amp;r=3083133" alt="Traverseon" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Traverseon – Angebot 22</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=4724100&amp;v=124816&amp;q=600106&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=4724109&amp;v=124816&amp;q=600106&amp;r=3083133" alt="Traverseon" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Traverseon – Angebot 23</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=4724109&amp;v=124816&amp;q=600106&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=4724018&amp;v=124816&amp;q=600100&amp;r=3083133" alt="Traverseon" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Traverseon – Angebot 24</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=4724018&amp;v=124816&amp;q=600100&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=4724037&amp;v=124816&amp;q=600101&amp;r=3083133" alt="Traverseon" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Traverseon – Angebot 25</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=4724037&amp;v=124816&amp;q=600101&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=4723974&amp;v=124816&amp;q=600093&amp;r=3083133" alt="Traverseon" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Traverseon – Angebot 26</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=4723974&amp;v=124816&amp;q=600093&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=4723986&amp;v=124816&amp;q=600014&amp;r=3083133" alt="Traverseon" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Traverseon – Angebot 27</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=4723986&amp;v=124816&amp;q=600014&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=4723998&amp;v=124816&amp;q=600097&amp;r=3083133" alt="Traverseon" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Traverseon – Angebot 28</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=4723998&amp;v=124816&amp;q=600097&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=4722734&amp;v=124816&amp;q=600014&amp;r=3083133" alt="Traverseon" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Traverseon – Angebot 29</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=4722734&amp;v=124816&amp;q=600014&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=4722735&amp;v=124816&amp;q=600015&amp;r=3083133" alt="Traverseon" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Traverseon – Angebot 30</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=4722735&amp;v=124816&amp;q=600015&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=4722790&amp;v=124816&amp;q=600022&amp;r=3083133" alt="Traverseon" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Traverseon – Angebot 31</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=4722790&amp;v=124816&amp;q=600022&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=4722822&amp;v=124816&amp;q=600024&amp;r=3083133" alt="Traverseon" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Traverseon – Angebot 32</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=4722822&amp;v=124816&amp;q=600024&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=4723667&amp;v=124816&amp;q=600065&amp;r=3083133" alt="Traverseon" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Traverseon – Angebot 33</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=4723667&amp;v=124816&amp;q=600065&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+          <div class="partner-card">
+            <span class="partner-card-badge">Anzeige</span>
+            <div class="partner-card-media">
+              <img src="https://www.awin1.com/cshow.php?s=4723949&amp;v=124816&amp;q=600091&amp;r=3083133" alt="Traverseon" loading="lazy">
+            </div>
+            <div class="partner-card-body">
+              <div class="partner-card-label">Traverseon – Angebot 34</div>
+              <a class="partner-card-cta" rel="sponsored noopener" href="https://www.awin1.com/cread.php?s=4723949&amp;v=124816&amp;q=600091&amp;r=3083133" target="_blank">Angebot ansehen</a>
+            </div>
+          </div>
+              </div>
+            </details>
+          </div>
+
+    <div class="related">
+      <h2 style="font-family:var(--serif);font-size:1.05rem;color:var(--primary-dark);">Weitere Bereiche</h2>
+      <a href="/#top">Alle Partner-Kategorien im Überblick</a>
+      <a href="/#top">Zurück zum Leistung-Finder</a>
+    </div>
+
+    <p style="margin-top:2rem;">
+      <a href="/#top" class="btn btn-secondary">&larr; Zurück zum Leistung-Finder</a>
+    </p>
+
+    <div class="source-note">
+      Werbekennzeichnung: Diese Seite enthält Partner-/Affiliate-Links. Leistung-Finder erhält ggf. eine Vergütung, wenn du über diese Links ein Angebot abschließt. Auswahl und Reihenfolge stellen keine Empfehlung oder Bewertung einzelner Anbieter dar.
+    </div>
+
+  </div>
+
+  <footer class="site-footer">
+    <a href="/#top">Leistung-Finder.de</a> &middot; <a href="/impressum.html">Impressum</a> &middot; <a href="/datenschutz.html">Datenschutz</a>
+  </footer>
+
+</body>
+</html>
