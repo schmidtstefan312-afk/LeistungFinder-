@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -140,7 +139,7 @@
     <div class="msg" id="msgBox"></div>
 
     <div class="switch">
-      Noch kein Konto? <a href="/mitglieder/registrieren.html">Jetzt kostenlos registrieren</a>
+      Noch kein Konto? <a href="/Mitglieder/registrieren.html">Jetzt kostenlos registrieren</a>
     </div>
   </div>
 
@@ -161,7 +160,7 @@
     // Wenn schon eingeloggt, direkt weiterleiten
     client.auth.getSession().then(({ data }) => {
       if (data.session) {
-        window.location.href = "/mitglieder/mitglieder.html";
+        window.location.href = "/Mitglieder/mitglieder.html";
       }
     });
 
@@ -185,7 +184,7 @@
 
       showMsg("Erfolgreich eingeloggt, du wirst weitergeleitet...", "success");
       setTimeout(() => {
-        window.location.href = "/mitglieder/mitglieder.html";
+        window.location.href = "/Mitglieder/mitglieder.html";
       }, 800);
     });
   </script>
