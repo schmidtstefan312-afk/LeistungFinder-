@@ -2,9 +2,9 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
-  <title>Mein Leistung-Finder</title>
+  <title>Einloggen | Leistung-Finder</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="robots" content="noindex, nofollow" />
+  <meta name="robots" content="noindex, follow" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,6 +22,7 @@
       --text: #1e2624;
       --muted: #5c6b67;
       --border: #dfe3df;
+      --error: #b3261e;
       --serif: "Fraunces", Georgia, serif;
       --sans: "Work Sans", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     }
@@ -31,79 +32,114 @@
       font-family: var(--sans);
       background: var(--bg);
       color: var(--text);
-    }
-    .hero {
-      background: var(--primary);
-      color: #fff;
-      padding: 1.75rem 1.25rem;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-    }
-    .logotype {
-      font-family: var(--serif);
-      font-weight: 600;
-      font-size: 1.15rem;
-    }
-    #logoutBtn {
-      background: rgba(255,255,255,0.15);
-      border: 1px solid rgba(255,255,255,0.4);
-      color: #fff;
-      padding: 0.45rem 0.9rem;
-      border-radius: 4px;
-      font-family: var(--sans);
-      font-size: 0.85rem;
-      cursor: pointer;
-    }
-    #logoutBtn:hover { background: rgba(255,255,255,0.25); }
-    .container {
-      max-width: 640px;
-      margin: 0 auto;
-      padding: 2rem 1.25rem;
-    }
-    h1 {
-      font-family: var(--serif);
-      font-weight: 600;
-      font-size: 1.6rem;
-      color: var(--primary-dark);
-      margin: 0 0 0.5rem;
-    }
-    p.lede {
-      color: var(--muted);
-      margin: 0 0 1.5rem;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 1.5rem;
     }
     .card {
       background: #fff;
       border: 1px solid var(--border);
       border-radius: 6px;
-      padding: 1.5rem;
-      margin-bottom: 1rem;
+      padding: 2rem 1.75rem;
+      max-width: 400px;
+      width: 100%;
+      box-shadow: 0 6px 24px rgba(15,32,29,0.08);
     }
-    #loading {
-      text-align: center;
-      padding: 3rem 1rem;
+    .logotype {
+      font-family: var(--serif);
+      font-weight: 600;
+      font-size: 1.15rem;
+      color: var(--primary-dark);
+      margin-bottom: 1.5rem;
+    }
+    h1 {
+      font-family: var(--serif);
+      font-weight: 600;
+      font-size: 1.5rem;
+      margin: 0 0 0.4rem;
+      color: var(--primary-dark);
+    }
+    p.lede {
       color: var(--muted);
+      font-size: 0.92rem;
+      margin: 0 0 1.5rem;
     }
-    #content { display: none; }
+    label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 0.35rem;
+      color: var(--text);
+    }
+    input {
+      width: 100%;
+      padding: 0.65rem 0.8rem;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      font-size: 0.95rem;
+      font-family: var(--sans);
+      margin-bottom: 1.1rem;
+    }
+    input:focus {
+      outline: none;
+      border-color: var(--primary);
+    }
+    button {
+      width: 100%;
+      padding: 0.75rem;
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: var(--sans);
+    }
+    button:hover { background: var(--primary-dark); }
+    button:disabled { opacity: 0.6; cursor: default; }
+    .msg {
+      margin-top: 1rem;
+      font-size: 0.88rem;
+      padding: 0.7rem 0.9rem;
+      border-radius: 4px;
+      display: none;
+    }
+    .msg.error { background: #fdecea; color: var(--error); display: block; }
+    .msg.success { background: #e8f5e9; color: #1b5e20; display: block; }
+    .switch {
+      margin-top: 1.3rem;
+      font-size: 0.88rem;
+      color: var(--muted);
+      text-align: center;
+    }
+    .switch a { color: var(--primary); font-weight: 600; text-decoration: none; }
+    .switch a:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
 
-  <div id="loading">Wird geladen...</div>
+  <div class="card">
+    <div class="logotype">Leistung-Finder</div>
+    <h1>Einloggen</h1>
+    <p class="lede">Schön, dich wiederzusehen.</p>
 
-  <div id="content">
-    <div class="hero">
-      <div class="logotype">Leistung-Finder</div>
-      <button id="logoutBtn">Ausloggen</button>
-    </div>
+    <form id="loginForm">
+      <label for="email">E-Mail-Adresse</label>
+      <input type="email" id="email" required autocomplete="email" />
 
-    <div class="container">
-      <h1>Willkommen zurück!</h1>
-      <p class="lede" id="userEmail"></p>
+      <label for="password">Passwort</label>
+      <input type="password" id="password" required autocomplete="current-password" />
 
-      <div class="card">
-        <p>Hier entsteht bald dein persönlicher Bereich mit deinen gespeicherten Anträgen und Ergebnissen.</p>
-      </div>
+      <button type="submit" id="submitBtn">Einloggen</button>
+    </form>
+
+    <div class="msg" id="msgBox"></div>
+
+    <div class="switch">
+      Noch kein Konto? <a href="/mitglieder/registrieren.html">Jetzt kostenlos registrieren</a>
     </div>
   </div>
 
@@ -112,25 +148,44 @@
     const SUPABASE_KEY = "sb_publishable_PXFh4qggQUq3Eb4AGbPpPg_05HIlS1x";
     const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
-    async function checkSession() {
-      const { data } = await client.auth.getSession();
+    const form = document.getElementById("loginForm");
+    const msgBox = document.getElementById("msgBox");
+    const submitBtn = document.getElementById("submitBtn");
 
-      if (!data.session) {
-        window.location.href = "/Mitglieder/login.html";
+    function showMsg(text, type) {
+      msgBox.textContent = text;
+      msgBox.className = "msg " + type;
+    }
+
+    // Wenn schon eingeloggt, direkt weiterleiten
+    client.auth.getSession().then(({ data }) => {
+      if (data.session) {
+        window.location.href = "/mitglieder/mitglieder.html";
+      }
+    });
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Bitte warten...";
+
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value;
+
+      const { data, error } = await client.auth.signInWithPassword({ email, password });
+
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Einloggen";
+
+      if (error) {
+        showMsg("Fehler: " + error.message, "error");
         return;
       }
 
-      document.getElementById("userEmail").textContent =
-        "Eingeloggt als: " + data.session.user.email;
-      document.getElementById("loading").style.display = "none";
-      document.getElementById("content").style.display = "block";
-    }
-
-    checkSession();
-
-    document.getElementById("logoutBtn").addEventListener("click", async () => {
-      await client.auth.signOut();
-      window.location.href = "/Mitglieder/login.html";
+      showMsg("Erfolgreich eingeloggt, du wirst weitergeleitet...", "success");
+      setTimeout(() => {
+        window.location.href = "/mitglieder/mitglieder.html";
+      }, 800);
     });
   </script>
 
