@@ -160,7 +160,7 @@
     // Wenn schon eingeloggt, direkt weiterleiten
     client.auth.getSession().then(({ data }) => {
       if (data.session) {
-        window.location.href = "/mitglieder/mitglieder.html";
+        window.location.href = "/";
       }
     });
 
@@ -184,7 +184,7 @@
 
       showMsg("Erfolgreich eingeloggt, du wirst weitergeleitet...", "success");
       setTimeout(() => {
-        window.location.href = "/mitglieder/mitglieder.html";
+        window.location.href = "/";
       }, 800);
     });
   </script>
