@@ -186,12 +186,88 @@
       color: var(--primary);
       font-weight: 700;
     }
+
+    .antraege-section {
+      margin-top: 2.5rem;
+    }
+
+    .antraege-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+    }
+
+    .antrag-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1.1rem 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .antrag-card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+
+    .antrag-card h3 {
+      font-family: var(--serif);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--primary-dark);
+      margin: 0;
+    }
+
+    .antrag-card p {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin: 0;
+      flex: 1;
+    }
+
+    .antrag-badge {
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 0.15rem 0.5rem;
+      border-radius: 3px;
+      white-space: nowrap;
+    }
+
+    .antrag-badge-download {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .antrag-badge-info {
+      background: #eef1f5;
+      color: var(--primary-dark);
+      border: 1px solid var(--border);
+    }
+
+    .antrag-btn {
+      align-self: flex-start;
+      margin-top: 0.3rem;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-decoration: none;
+      border: 1px solid var(--primary);
+      border-radius: 4px;
+      padding: 0.4rem 0.75rem;
+    }
+
+    .antrag-btn:hover {
+      background: var(--primary);
+      color: #fff;
+    }
   </style>
 </head>
 <body>
 
   <div id="loading">Wird geladen...</div>
-
   <div id="content">
     <div class="hero">
       <div class="logotype">Leistung-Finder</div>
@@ -533,6 +609,55 @@
       </div>
     </div>
 
+    <div class="antraege-section">
+      <h2 class="deals-heading">&#128190; Anträge zum Download</h2>
+      <p class="deals-intro">Exklusiv für registrierte Mitglieder: die wichtigsten Antragsformulare direkt verlinkt.</p>
+      <p class="ad-label">Alle Links führen zu offiziellen Stellen (Bundesagentur für Arbeit, Behördensuche des Bundes). Wohngeld, Pflegegeld und Grundsicherung im Alter werden örtlich verwaltet – bitte nutze ausschließlich die offizielle Behördensuche, nicht kostenpflichtige Drittanbieter-Seiten.</p>
+      <div class="antraege-grid">
+        
+        <div class="antrag-card">
+          <div class="antrag-card-top">
+            <h3>Bürgergeld / Grundsicherungsgeld – Hauptantrag</h3>
+            <span class="antrag-badge antrag-badge-download">PDF-Download</span>
+          </div>
+          <p>Offizieller Antrag der Bundesagentur für Arbeit (SGB II), als PDF zum Ausdrucken und Ausfüllen.</p>
+          <a class="antrag-btn" href="https://www.arbeitsagentur.de/datei/antrag-sgb2_ba042689.pdf" target="_blank" rel="noopener">PDF herunterladen &rarr;</a>
+        </div>
+        <div class="antrag-card">
+          <div class="antrag-card-top">
+            <h3>Kinderzuschlag – Antrag</h3>
+            <span class="antrag-badge antrag-badge-download">PDF-Download</span>
+          </div>
+          <p>Offizieller Antrag (KiZ 1) der Familienkasse, als PDF zum Ausdrucken und Ausfüllen.</p>
+          <a class="antrag-btn" href="https://www.arbeitsagentur.de/datei/kiz1-antrag_ba013094.pdf" target="_blank" rel="noopener">PDF herunterladen &rarr;</a>
+        </div>
+        <div class="antrag-card">
+          <div class="antrag-card-top">
+            <h3>Wohngeld</h3>
+            <span class="antrag-badge antrag-badge-info">Offizielle Anlaufstelle</span>
+          </div>
+          <p>Wohngeld wird örtlich verwaltet – das passende Formular findest du über die offizielle Behördensuche des Bundes.</p>
+          <a class="antrag-btn" href="https://verwaltung.bund.de/leistungsverzeichnis?tab=leistungen&amp;suche=Wohngeld" target="_blank" rel="noopener">Zuständige Wohngeldstelle finden &rarr;</a>
+        </div>
+        <div class="antrag-card">
+          <div class="antrag-card-top">
+            <h3>Pflegegeld</h3>
+            <span class="antrag-badge antrag-badge-info">Offizielle Anlaufstelle</span>
+          </div>
+          <p>Pflegegeld beantragst du direkt bei deiner Pflegekasse (i.d.R. bei deiner Krankenkasse) – dort erhältst du das passende Formular.</p>
+          <a class="antrag-btn" href="https://www.bundesgesundheitsministerium.de/themen/pflege/online-ratgeber-pflege/antragstellung.html" target="_blank" rel="noopener">Infos zur Antragstellung &rarr;</a>
+        </div>
+        <div class="antrag-card">
+          <div class="antrag-card-top">
+            <h3>Grundsicherung im Alter und bei Erwerbsminderung</h3>
+            <span class="antrag-badge antrag-badge-info">Offizielle Anlaufstelle</span>
+          </div>
+          <p>Diese Leistung beantragst du beim Sozialamt deiner Stadt oder Gemeinde – die zuständige Stelle findest du über die Behördensuche.</p>
+          <a class="antrag-btn" href="https://verwaltung.bund.de/leistungsverzeichnis?tab=leistungen&amp;suche=Grundsicherung" target="_blank" rel="noopener">Zuständiges Sozialamt finden &rarr;</a>
+        </div>
+      </div>
+    </div>
+
       </div>
     </div>
   </div>
@@ -541,7 +666,6 @@
     const SUPABASE_URL = "https://rnnmdlibekqhqrxqqrws.supabase.co";
     const SUPABASE_KEY = "sb_publishable_PXFh4qggQUq3Eb4AGbPpPg_05HIlS1x";
     const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
-
     async function checkSession() {
       const { data } = await client.auth.getSession();
 
@@ -563,5 +687,6 @@
       window.location.href = "/mitglieder/login.html";
     });
   </script>
+
 </body>
 </html>
