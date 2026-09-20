@@ -85,6 +85,107 @@
       color: var(--muted);
     }
     #content { display: none; }
+
+    .ad-label {
+      font-size: 0.8rem;
+      color: var(--muted);
+      font-style: italic;
+      margin: 0.5rem 0 1.25rem;
+    }
+
+    .deals-section {
+      margin-top: 2rem;
+    }
+
+    .deals-heading {
+      font-family: var(--serif);
+      font-weight: 600;
+      font-size: 1.35rem;
+      color: var(--accent);
+      margin: 0 0 0.35rem;
+    }
+
+    .deals-intro {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin: 0 0 0.5rem;
+    }
+
+    .deals-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+    }
+
+    .deal-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1.1rem 1.2rem;
+    }
+    .deal-card-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 0.5rem;
+      margin-bottom: 0.7rem;
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 0.4rem;
+    }
+
+    .deal-card-header h3 {
+      font-family: var(--serif);
+      font-size: 1.02rem;
+      font-weight: 600;
+      color: var(--primary-dark);
+      margin: 0;
+    }
+
+    .deal-cat {
+      font-size: 0.72rem;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .deal-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .deal-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+      padding: 0.55rem 0.7rem;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text);
+      font-size: 0.87rem;
+      transition: border-color 0.15s ease, background 0.15s ease;
+    }
+
+    .deal-link:hover {
+      border-color: var(--primary);
+      background: #f6faf9;
+    }
+
+    .deal-code {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: #fff;
+      background: var(--accent);
+      padding: 0.15rem 0.4rem;
+      border-radius: 3px;
+      white-space: nowrap;
+    }
+
+    .deal-arrow {
+      color: var(--primary);
+      font-weight: 700;
+    }
   </style>
 </head>
 <body>
@@ -103,6 +204,335 @@
 
       <div class="card">
         <p>Hier entsteht bald dein persönlicher Bereich mit deinen gespeicherten Anträgen und Ergebnissen.</p>
+
+    <div class="deals-section">
+      <h2 class="deals-heading">&#9733; Spezial-Aktionsangebote</h2>
+      <p class="deals-intro">Exklusiv für registrierte Mitglieder: aktuelle Rabatte und Aktionen unserer Partner.</p>
+      <p class="ad-label">Anzeige – bei Abschluss über diese Links erhalten wir ggf. eine Vergütung. Diese Angebote stammen von unabhängigen Partnern, nicht von Behörden.</p>
+      <div class="deals-grid">
+        
+        <div class="deal-card">
+          <div class="deal-card-header">
+            <h3>Jobstoday</h3>
+            <span class="deal-cat">Arbeit &amp; Jobs</span>
+          </div>
+          <div class="deal-links">
+            
+            <a class="deal-link" href="https://www.awin1.com/cread.php?awinmid=115232&amp;awinaffid=3083133&amp;ued=https%3A%2F%2Fjobstoday.world%2Fen%2Fpricing&amp;platform=ma" target="_blank" rel="sponsored noopener">
+              <span>Preise &amp; Angebot ansehen</span>
+              
+              <span class="deal-arrow">&rarr;</span>
+            </a>
+          </div>
+        </div>
+        <div class="deal-card">
+          <div class="deal-card-header">
+            <h3>sevDesk</h3>
+            <span class="deal-cat">Software &amp; Tools</span>
+          </div>
+          <div class="deal-links">
+            
+            <a class="deal-link" href="https://www.awin1.com/cread.php?awinmid=15944&amp;awinaffid=3083133&amp;ued=https%3A%2F%2Fsevdesk.de%2Flp-neukundenangebot%2F%3Faffcode%3Dnka&amp;platform=ma" target="_blank" rel="sponsored noopener">
+              <span>Neukundenangebot</span>
+              
+              <span class="deal-arrow">&rarr;</span>
+            </a>
+            <a class="deal-link" href="https://www.awin1.com/cread.php?awinmid=15944&amp;awinaffid=3083133&amp;ued=https%3A%2F%2Fsevdesk.de%2Fkostenlose-tools%2F&amp;platform=ma" target="_blank" rel="sponsored noopener">
+              <span>Kostenlose Tools</span>
+              
+              <span class="deal-arrow">&rarr;</span>
+            </a>
+            <a class="deal-link" href="https://www.awin1.com/cread.php?awinmid=15944&amp;awinaffid=3083133&amp;ued=https%3A%2F%2Fsevdesk.de%2Feigenbeleg-generator%2F&amp;platform=ma" target="_blank" rel="sponsored noopener">
+              <span>Eigenbeleg-Generator (kostenlos)</span>
+              
+              <span class="deal-arrow">&rarr;</span>
+            </a>
+            <a class="deal-link" href="https://www.awin1.com/cread.php?awinmid=15944&amp;awinaffid=3083133&amp;ued=https%3A%2F%2Fsevdesk.de%2Fe-rechnung-viewer%2F&amp;platform=ma" target="_blank" rel="sponsored noopener">
+              <span>E-Rechnung-Viewer (kostenlos)</span>
+              
+              <span class="deal-arrow">&rarr;</span>
+            </a>
+            <a class="deal-link" href="https://www.awin1.com/cread.php?awinmid=15944&amp;awinaffid=3083133&amp;ued=https%3A%2F%2Fsevdesk.de%2Fe-rechnungsgenerator%2F&amp;platform=ma" target="_blank" rel="sponsored noopener">
+              <span>E-Rechnungsgenerator (kostenlos)</span>
+              
+              <span class="deal-arrow">&rarr;</span>
+            </a>
+          </div>
+        </div>
+        <div class="deal-card">
+          <div class="deal-card-header">
+            <h3>Simbye (eSIM)</h3>
+            <span class="deal-cat">Mobilfunk &amp; Reisen</span>
+          </div>
+          <div class="deal-links">
+            
+            <a class="deal-link" href="https://www.awin1.com/cread.php?awinmid=107814&amp;awinaffid=3083133&amp;ued=https%3A%2F%2Fsimbye.com%2Ffr&amp;platform=ma" target="_blank" rel="sponsored noopener">
+              <span>eSIM-Angebote ansehen</span>
+              
+              <span class="deal-arrow">&rarr;</span>
+            </a>
+            <a class="deal-link" href="https://www.awin1.com/cread.php?awinmid=107814&amp;awinaffid=3083133&amp;ued=https%3A%2F%2Fsimbye.com&amp;platform=ma" target="_blank" rel="sponsored noopener">
+              <span>eSIM-Angebote ansehen</span>
+              
+              <span class="deal-arrow">&rarr;</span>
+            </a>
+            <a class="deal-link" href="https://www.awin1.com/cread.php?awinmid=107814&amp;awinaffid=3083133&amp;ued=https%3A%2F%2Fsimbye.com%2Fdiscount%2FESIM15&amp;platform=ma" target="_blank" rel="sponsored noopener">
+              <span>Mit Code ESIM15 sparen</span>
+              <span class="deal-code">Code: ESIM15</span>
+              <span class="deal-arrow">&rarr;</span>
+            </a>
+            <a class="deal-link" href="https://www.awin1.com/cread.php?awinmid=107814&amp;awinaffid=3083133&amp;campaign=Turkey&amp;ued=https%3A%2F%2Fsimbye.com%2Fdiscount%2FTUR15%3Fredirect%3D%252Fproducts%252Fturkey-mobile-internet-esim-travel&amp;platform=ma" target="_blank" rel="sponsored noopener">
+              <span>Türkei-eSIM mit Code TUR15</span>
+              <span class="deal-code">Code: TUR15</span>
+              <span class="deal-arrow">&rarr;</span>
+            </a>
+          </div>
+        </div>
+        <div class="deal-card">
+          <div class="deal-card-header">
+            <h3>HTVRONT</h3>
+            <span class="deal-cat">Technik &amp; Zubehör</span>
+          </div>
+          <div class="deal-links">
+            
+            <a class="deal-link" href="https://www.awin1.com/cread.php?awinmid=68106&amp;awinaffid=3083133&amp;ued=https%3A%2F%2Feu.htvront.com%2Fproducts%2Fauto-heat-press-a100&amp;platform=ma" target="_blank" rel="sponsored noopener">
+              <span>Auto Heat Press A100</span>
+              
+              <span class="deal-arrow">&rarr;</span>
+            </a>
+            <a class="deal-link" href="https://www.awin1.com/cread.php?awinmid=68106&amp;awinaffid=3083133&amp;ued=https%3A%2F%2Feu.htvront.com%2Fproducts%2Fauto-tumbler-heat-press&amp;platform=ma" target="_blank" rel="sponsored noopener">
+              <span>Auto Tumbler Heat Press</span>
+              
+              <span class="deal-arrow">&rarr;</span>
+            </a>
+            <a class="deal-link" href="https://www.awin1.com/cread.php?awinmid=68106&amp;awinaffid=3083133&amp;ued=https%3A%2F%2Feu.htvront.com%2Fproducts%2Fauto-heat-press-auto-2%3Fvariant%3D48814763147512&amp;platform=ma" target="_blank" rel="sponsored noopener">
+              <span>Auto Heat Press Auto 2</span>
+              
+              <span class="deal-arrow">&rarr;</span>
+            </a>
+            <a class="deal-link" href="https://www.awin1.com/cread.php?awinmid=68106&amp;awinaffid=3083133&amp;ued=https%3A%2F%2Feu.htvront.com%2Fproducts%2Fauto-heat-press&amp;platform=ma" target="_blank" rel="sponsored noopener">
+              <span>Auto Heat Press</span>
+              
+              <span class="deal-arrow">&rarr;</span>
+            </a>
+            <a class="deal-link" href="https://www.awin1.com/cread.php?awinmid=68106&amp;awinaffid=3083133&amp;ued=https%3A%2F%2Fwww.htvront.com%2Fproducts%2Fhtvront-a200-auto-tumbler-heat-press%3F_pos%3D3%26_psq%3DA200%26_psid%3D19e110837%26_ss%3De%26variant%3D41385773695109&amp;platform=ma" target="_blank" rel="sponsored noopener">
+              <span>A200 Auto Tumbler Heat Press</span>
+              
+              <span class="deal-arrow">&rarr;</span>
+            </a>
+            <a class="deal-link" href="https://www.awin1.com/cread.php?awinmid=68106&amp;awinaffid=3083133&amp;ued=https%3A%2F%2Feu.htvront.com%2Fproducts%2Fmanual-heat-press-h10-v2&amp;platform=ma" target="_blank" rel="sponsored noopener">
+              <span>Manual Heat Press H10 V2</span>
+              
+              <span class="deal-arrow">&rarr;</span>
+            </a>
+          </div>
+        </div>
+        <div class="deal-card">
+          <div class="deal-card-header">
+            <h3>Blimburn Seeds</h3>
+            <span class="deal-cat">Garten &amp; Freizeit</span>
+          </div>
+          <div class="deal-links">
+            
+            <a class="deal-link" href="https://www.awin1.com/cread.php?awinmid=117497&amp;awinaffid=3083133&amp;ued=https%3A%2F%2Fblimburnseeds.de%2Fpromos-and-deals%2F&amp;platform=ma" target="_blank" rel="sponsored noopener">
+              <span>Aktuelle Promos &amp; Deals</span>
+              
+              <span class="deal-arrow">&rarr;</span>
+            </a>
+            <a class="deal-link" href="https://www.awin1.com/cread.php?awinmid=117497&amp;awinaffid=3083133&amp;ued=https%3A%2F%2Fblimburnseeds.de%2F&amp;platform=ma" target="_blank" rel="sponsored noopener">
+              <span>Shop ansehen</span>
+              
+              <span class="deal-arrow">&rarr;</span>
+            </a>
+          </div>
+        </div>
+        <div class="deal-card">
+          <div class="deal-card-header">
+            <h3>BrainGood</h3>
+            <span class="deal-cat">Gesundheit</span>
+          </div>
+          <div class="deal-links">
+            
+            <a class="deal-link" href="https://www.awin1.com/cread.php?awinmid=127589&amp;awinaffid=3083133&amp;campaign=vouchers+2026&amp;ued=https%3A%2F%2Fbraingood.eu%2F&amp;platform=ma" target="_blank" rel="sponsored noopener">
+              <span>Angebot ansehen</span>
+              
+              <span class="deal-arrow">&rarr;</span>
+            </a>
+            <a class="deal-link" href="https://www.awin1.com/cread.php?awinmid=127589&amp;awinaffid=3083133&amp;ued=https%3A%2F%2Fbraingood.eu%2F&amp;platform=ma" target="_blank" rel="sponsored noopener">
+              <span>Angebot ansehen</span>
+              
+              <span class="deal-arrow">&rarr;</span>
+            </a>
+          </div>
+        </div>
+        <div class="deal-card">
+          <div class="deal-card-header">
+            <h3>Burda Vergleicht – Zahnvorsorge</h3>
+            <span class="deal-cat">Versicherungen</span>
+          </div>
+          <div class="deal-links">
+            
+            <a class="deal-link" href="https://www.awin1.com/cread.php?awinmid=121064&amp;awinaffid=3083133&amp;campaign=zahn-vorsorge-wochen+2026&amp;ued=https%3A%2F%2Fkampagnen.burda-vergleicht.de%2Fhigh-level-leadgenerierung-ergo-zahn_384.html%3FidPartner%3D12%26idCampaignAd%3D0%26subId%3D%26subIdentifier%3D%21%21%21awc%21%21%21&amp;platform=ma" target="_blank" rel="sponsored noopener">
+              <span>Zahnvorsorge-Wochen: Vergleich starten</span>
+              
+              <span class="deal-arrow">&rarr;</span>
+            </a>
+          </div>
+        </div>
+        <div class="deal-card">
+          <div class="deal-card-header">
+            <h3>Citygame</h3>
+            <span class="deal-cat">Freizeit &amp; Erlebnisse</span>
+          </div>
+          <div class="deal-links">
+            
+            <a class="deal-link" href="https://www.awin1.com/cread.php?awinmid=122746&amp;awinaffid=3083133&amp;ued=https%3A%2F%2Fcitygame.com%2F&amp;platform=ma" target="_blank" rel="sponsored noopener">
+              <span>Citygame ansehen</span>
+              
+              <span class="deal-arrow">&rarr;</span>
+            </a>
+          </div>
+        </div>
+        <div class="deal-card">
+          <div class="deal-card-header">
+            <h3>Lycamobile</h3>
+            <span class="deal-cat">Mobilfunk &amp; Internet</span>
+          </div>
+          <div class="deal-links">
+            
+            <a class="deal-link" href="https://www.awin1.com/cread.php?awinmid=118789&amp;awinaffid=3083133&amp;ued=https%3A%2F%2Fwww.lycamobile.de%2Fde%2Ftarif-details%2Finternational-plus-m%2F&amp;platform=ma" target="_blank" rel="sponsored noopener">
+              <span>Tarif International Plus M</span>
+              
+              <span class="deal-arrow">&rarr;</span>
+            </a>
+            <a class="deal-link" href="https://www.awin1.com/cread.php?awinmid=118789&amp;awinaffid=3083133&amp;ued=https%3A%2F%2Fwww.lycamobile.de%2Fde%2Finternational-plus-l-boost-esim-default%2F&amp;platform=ma" target="_blank" rel="sponsored noopener">
+              <span>Tarif International Plus L (eSIM)</span>
+              
+              <span class="deal-arrow">&rarr;</span>
+            </a>
+          </div>
+        </div>
+        <div class="deal-card">
+          <div class="deal-card-header">
+            <h3>Traverseon</h3>
+            <span class="deal-cat">Reisen</span>
+          </div>
+          <div class="deal-links">
+            
+            <a class="deal-link" href="https://www.awin1.com/cread.php?awinmid=124816&amp;awinaffid=3083133&amp;ued=https%3A%2F%2Ftraverseon.com%2F&amp;platform=ma" target="_blank" rel="sponsored noopener">
+              <span>Angebot ansehen</span>
+              
+              <span class="deal-arrow">&rarr;</span>
+            </a>
+          </div>
+        </div>
+        <div class="deal-card">
+          <div class="deal-card-header">
+            <h3>Piktochart</h3>
+            <span class="deal-cat">Software &amp; Tools</span>
+          </div>
+          <div class="deal-links">
+            
+            <a class="deal-link" href="https://www.awin1.com/cread.php?awinmid=36542&amp;awinaffid=3083133&amp;ued=https%3A%2F%2Fpiktochart.com&amp;platform=ma" target="_blank" rel="sponsored noopener">
+              <span>Piktochart ansehen</span>
+              
+              <span class="deal-arrow">&rarr;</span>
+            </a>
+          </div>
+        </div>
+        <div class="deal-card">
+          <div class="deal-card-header">
+            <h3>Gewinnspiel: E-Bike</h3>
+            <span class="deal-cat">Sparen &amp; Gewinnspiele</span>
+          </div>
+          <div class="deal-links">
+            
+            <a class="deal-link" href="https://www.awin1.com/cread.php?awinmid=14349&amp;awinaffid=3083133&amp;campaign=E-Bike+Gewinnspiel&amp;ued=https%3A%2F%2Febike.gewinnspiel-gratis.com%2Fcampaign_580.html%3FcoyoteAffiliTokenId%3D46728946%26subIdentifier%3D%21%21%21awc%21%21%21&amp;platform=ma" target="_blank" rel="sponsored noopener">
+              <span>Jetzt am E-Bike-Gewinnspiel teilnehmen</span>
+              
+              <span class="deal-arrow">&rarr;</span>
+            </a>
+          </div>
+        </div>
+        <div class="deal-card">
+          <div class="deal-card-header">
+            <h3>Gewinnspiel: Sommerreise</h3>
+            <span class="deal-cat">Sparen &amp; Gewinnspiele</span>
+          </div>
+          <div class="deal-links">
+            
+            <a class="deal-link" href="https://www.awin1.com/cread.php?awinmid=14349&amp;awinaffid=3083133&amp;campaign=Sommerreise-Gewinnspiel&amp;ued=https%3A%2F%2Fsommer.gewinnspiel-gratis.com%2Fcampaign_384.html%3FcoyoteAffiliTokenId%3D46728298%26subIdentifier%3D%21%21%21awc%21%21%21&amp;platform=ma" target="_blank" rel="sponsored noopener">
+              <span>Jetzt am Sommerreise-Gewinnspiel teilnehmen</span>
+              
+              <span class="deal-arrow">&rarr;</span>
+            </a>
+          </div>
+        </div>
+        <div class="deal-card">
+          <div class="deal-card-header">
+            <h3>Gewinnspiel: Smartphone</h3>
+            <span class="deal-cat">Sparen &amp; Gewinnspiele</span>
+          </div>
+          <div class="deal-links">
+            
+            <a class="deal-link" href="https://www.awin1.com/cread.php?awinmid=14349&amp;awinaffid=3083133&amp;campaign=Smartphone+Gewinnspiel&amp;ued=https%3A%2F%2Fsmartphone.gewinnspiel-gratis.com%2Fcampaign_576.html%3FcoyoteAffiliTokenId%3D46729272%26subIdentifier%3D%21%21%21awc%21%21%21&amp;platform=ma" target="_blank" rel="sponsored noopener">
+              <span>Jetzt am Smartphone-Gewinnspiel teilnehmen</span>
+              
+              <span class="deal-arrow">&rarr;</span>
+            </a>
+          </div>
+        </div>
+        <div class="deal-card">
+          <div class="deal-card-header">
+            <h3>BlazeVideo</h3>
+            <span class="deal-cat">Technik &amp; Zubehör</span>
+          </div>
+          <div class="deal-links">
+            
+            <a class="deal-link" href="https://www.awin1.com/cread.php?awinmid=25962&amp;awinaffid=3083133&amp;ued=https%3A%2F%2Fwww.blazevideos.de%2Fcollections%2Fwireless-wlan-kameras-kostenlose-lieferung-1-jahr-gearantie&amp;platform=ma" target="_blank" rel="sponsored noopener">
+              <span>WLAN-Kameras (kostenlose Lieferung, 1 Jahr Garantie)</span>
+              
+              <span class="deal-arrow">&rarr;</span>
+            </a>
+            <a class="deal-link" href="https://www.awin1.com/cread.php?awinmid=25962&amp;awinaffid=3083133&amp;ued=https%3A%2F%2Fwww.blazevideos.de%2Fcollections%2F4g-lte-wildkamera&amp;platform=ma" target="_blank" rel="sponsored noopener">
+              <span>4G/LTE-Wildkameras</span>
+              
+              <span class="deal-arrow">&rarr;</span>
+            </a>
+            <a class="deal-link" href="https://www.awin1.com/cread.php?awinmid=25962&amp;awinaffid=3083133&amp;campaign=Kostenlose+Lieferung+und+5%25+Rabatt+Wildkamera++BLAZES&amp;ued=https%3A%2F%2Fwww.blazevideos.de%2F&amp;platform=ma" target="_blank" rel="sponsored noopener">
+              <span>Kostenlose Lieferung + 5% Rabatt</span>
+              
+              <span class="deal-arrow">&rarr;</span>
+            </a>
+            <a class="deal-link" href="https://www.awin1.com/cread.php?awinmid=25962&amp;awinaffid=3083133&amp;campaign=BVDE8&amp;ued=https%3A%2F%2Fwww.blazevideos.de%2Fcollections%2Fblazevideo-wildkamera-angebote-gutscheine-deal&amp;platform=ma" target="_blank" rel="sponsored noopener">
+              <span>Aktuelle Wildkamera-Deals (Code BVDE8)</span>
+              
+              <span class="deal-arrow">&rarr;</span>
+            </a>
+          </div>
+        </div>
+        <div class="deal-card">
+          <div class="deal-card-header">
+            <h3>Linguation</h3>
+            <span class="deal-cat">Bildung &amp; Sprachen</span>
+          </div>
+          <div class="deal-links">
+            
+            <a class="deal-link" href="https://www.awin1.com/cread.php?awinmid=55905&amp;awinaffid=3083133&amp;ued=https%3A%2F%2Fwww.linguation.com%2Fen%2F&amp;platform=ma" target="_blank" rel="sponsored noopener">
+              <span>Übersetzung anfragen</span>
+              
+              <span class="deal-arrow">&rarr;</span>
+            </a>
+            <a class="deal-link" href="https://www.awin1.com/cread.php?awinmid=55905&amp;awinaffid=3083133&amp;ued=https%3A%2F%2Fwww.linguation.com&amp;platform=ma" target="_blank" rel="sponsored noopener">
+              <span>Übersetzung anfragen</span>
+              
+              <span class="deal-arrow">&rarr;</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
       </div>
     </div>
   </div>
@@ -133,6 +563,5 @@
       window.location.href = "/mitglieder/login.html";
     });
   </script>
-
 </body>
 </html>
