@@ -270,6 +270,7 @@
   <div id="loading">Wird geladen...</div>
   <div id="content">
     <div class="hero">
+      <a href="/" style="color:#fff;text-decoration:none;font-size:0.82rem;opacity:0.85;margin-right:0.75rem;">&larr; Zur Startseite</a>
       <div class="logotype">Leistung-Finder</div>
       <button id="logoutBtn">Ausloggen</button>
     </div>
@@ -666,6 +667,7 @@
     const SUPABASE_URL = "https://rnnmdlibekqhqrxqqrws.supabase.co";
     const SUPABASE_KEY = "sb_publishable_PXFh4qggQUq3Eb4AGbPpPg_05HIlS1x";
     const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
     async function checkSession() {
       const { data } = await client.auth.getSession();
 
