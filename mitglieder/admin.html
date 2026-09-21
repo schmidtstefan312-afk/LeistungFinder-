@@ -1,1 +1,332 @@
 
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin – Aktionen verwalten | Leistung-Finder</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <style>
+    :root {
+      --primary: #0f4c46;
+      --primary-dark: #0a3733;
+      --accent: #e0982e;
+      --bg: #faf7f2;
+      --text: #1e2624;
+      --muted: #5c6b67;
+      --border: #dfe3df;
+      --error: #b3261e;
+      --serif: "Fraunces", Georgia, serif;
+      --sans: "Work Sans", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: var(--sans);
+      background: var(--bg);
+      color: var(--text);
+    }
+    .hero {
+      background: var(--primary);
+      color: #fff;
+      padding: 1.5rem 1.25rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logotype {
+      font-family: var(--serif);
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+    .hero a {
+      color: #fff;
+      font-size: 0.82rem;
+      opacity: 0.85;
+      text-decoration: none;
+    }
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 1.75rem 1.1rem 3rem;
+    }
+    h1 {
+      font-family: var(--serif);
+      font-weight: 600;
+      font-size: 1.4rem;
+      color: var(--primary-dark);
+      margin: 0 0 1.25rem;
+    }
+    h2 {
+      font-family: var(--serif);
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: var(--primary-dark);
+      margin: 2rem 0 0.75rem;
+    }
+    .card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1.25rem;
+    }
+    label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 600;
+      margin: 0.7rem 0 0.3rem;
+    }
+    label:first-child { margin-top: 0; }
+    input, select {
+      width: 100%;
+      padding: 0.55rem 0.7rem;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      font-size: 0.9rem;
+      font-family: var(--sans);
+    }
+    button {
+      margin-top: 1rem;
+      padding: 0.65rem 1.2rem;
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      cursor: pointer;
+      font-family: var(--sans);
+    }
+    button:hover { background: var(--primary-dark); }
+    .msg {
+      margin-top: 0.75rem;
+      font-size: 0.85rem;
+      padding: 0.6rem 0.8rem;
+      border-radius: 4px;
+      display: none;
+    }
+    .msg.error { background: #fdecea; color: var(--error); display: block; }
+    .msg.success { background: #e8f5e9; color: #1b5e20; display: block; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.82rem;
+      margin-top: 0.5rem;
+    }
+    th, td {
+      text-align: left;
+      padding: 0.5rem 0.4rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    th { color: var(--muted); font-weight: 600; font-size: 0.75rem; text-transform: uppercase; }
+    .row-inactive { opacity: 0.5; }
+    .btn-small {
+      margin: 0 0.2rem 0 0;
+      padding: 0.3rem 0.55rem;
+      font-size: 0.75rem;
+      border-radius: 3px;
+    }
+    .btn-toggle { background: #eef1f5; color: var(--primary-dark); }
+    .btn-delete { background: var(--error); }
+    #loading { text-align: center; padding: 3rem 1rem; color: var(--muted); }
+    #deniedBox { text-align: center; padding: 3rem 1rem; display: none; }
+    #content { display: none; }
+    .wrap-url { word-break: break-all; max-width: 160px; }
+  </style>
+</head>
+<body>
+  <div id="loading">Wird geladen...</div>
+
+  <div id="deniedBox">
+    <p>Kein Zugriff – diese Seite ist nur für den Admin sichtbar.</p>
+    <a href="/">Zurück zur Startseite</a>
+  </div>
+
+  <div id="content">
+    <div class="hero">
+      <a href="/mitglieder/mitglieder.html">&larr; Zur Mitgliederseite</a>
+      <div class="logotype">Admin</div>
+      <button id="logoutBtn" style="margin:0;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.4);padding:0.4rem 0.8rem;">Ausloggen</button>
+    </div>
+
+    <div class="container">
+      <h1>Aktionen verwalten</h1>
+
+      <div class="card">
+        <h2 style="margin-top:0;">Neue Aktion hinzufügen</h2>
+        <form id="addForm">
+          <label for="partner_name">Partner-Name</label>
+          <input type="text" id="partner_name" required />
+
+          <label for="category">Kategorie</label>
+          <select id="category" required>
+            <option value="Reisen & Reiseversicherung">Reisen & Reiseversicherung</option>
+            <option value="Versicherungen & Tarife vergleichen">Versicherungen & Tarife vergleichen</option>
+            <option value="Verkehrsrecht & Bußgeld">Verkehrsrecht & Bußgeld</option>
+            <option value="Software & Tools">Software & Tools</option>
+            <option value="Sparen & Gewinnspiele">Sparen & Gewinnspiele</option>
+            <option value="Technik & Zubehör">Technik & Zubehör</option>
+            <option value="Mobilität & Elektrofahrzeuge">Mobilität & Elektrofahrzeuge</option>
+            <option value="Mode & Accessoires">Mode & Accessoires</option>
+            <option value="Freizeit & Erlebnisse">Freizeit & Erlebnisse</option>
+            <option value="Bildung & Sprachen">Bildung & Sprachen</option>
+            <option value="Gesundheit & Ernährung">Gesundheit & Ernährung</option>
+            <option value="Arbeit & Jobs">Arbeit & Jobs</option>
+            <option value="Mobilfunk & Internet">Mobilfunk & Internet</option>
+            <option value="Finanzen & Geldanlage">Finanzen & Geldanlage</option>
+            <option value="Sonstige Angebote">Sonstige Angebote</option>
+          </select>
+          <label for="label">Beschreibung / Angebotstext</label>
+          <input type="text" id="label" required placeholder="z.B. Neukundenangebot" />
+
+          <label for="code">Rabattcode (optional)</label>
+          <input type="text" id="code" placeholder="z.B. SOMMER15" />
+
+          <label for="url">Link zum Angebot</label>
+          <input type="url" id="url" required placeholder="https://..." />
+
+          <label for="ablaufdatum">Ablaufdatum (optional – leer = läuft nicht ab)</label>
+          <input type="date" id="ablaufdatum" />
+
+          <button type="submit">Aktion speichern</button>
+          <div class="msg" id="addMsg"></div>
+        </form>
+      </div>
+
+      <h2>Bestehende Aktionen (<span id="countLabel">0</span>)</h2>
+      <div class="card">
+        <table>
+          <thead>
+            <tr>
+              <th>Partner</th>
+              <th>Beschreibung</th>
+              <th>Ablauf</th>
+              <th>Status</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="tableBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const SUPABASE_URL = "https://rnnmdlibekqhqrxqqrws.supabase.co";
+    const SUPABASE_KEY = "sb_publishable_PXFh4qggQUq3Eb4AGbPpPg_05HIlS1x";
+    const ADMIN_EMAIL = "schmidtstefan312@gmail.com";
+    const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+    function escapeHtml(str) {
+      const div = document.createElement('div');
+      div.textContent = str || '';
+      return div.innerHTML;
+    }
+
+    async function checkAccess() {
+      const { data } = await client.auth.getSession();
+
+      if (!data.session) {
+        window.location.href = "/mitglieder/login.html";
+        return;
+      }
+
+      if (data.session.user.email !== ADMIN_EMAIL) {
+        document.getElementById("loading").style.display = "none";
+        document.getElementById("deniedBox").style.display = "block";
+        return;
+      }
+
+      document.getElementById("loading").style.display = "none";
+      document.getElementById("content").style.display = "block";
+      loadTable();
+    }
+
+    async function loadTable() {
+      const { data: rows, error } = await client
+        .from("aktionen")
+        .select("*")
+        .order("partner_name", { ascending: true });
+
+      const tbody = document.getElementById("tableBody");
+      document.getElementById("countLabel").textContent = rows ? rows.length : 0;
+
+      if (error || !rows) {
+        tbody.innerHTML = '<tr><td colspan="5">Fehler beim Laden.</td></tr>';
+        return;
+      }
+
+      tbody.innerHTML = rows.map(r => `
+        <tr class="${r.aktiv ? '' : 'row-inactive'}">
+          <td>${escapeHtml(r.partner_name)}<br><span style="color:var(--muted);font-size:0.72rem;">${escapeHtml(r.category)}</span></td>
+          <td>${escapeHtml(r.label)}${r.code ? '<br><b>Code: ' + escapeHtml(r.code) + '</b>' : ''}</td>
+          <td>${r.ablaufdatum ? escapeHtml(r.ablaufdatum) : '–'}</td>
+          <td>${r.aktiv ? 'Aktiv' : 'Inaktiv'}</td>
+          <td style="white-space:nowrap;">
+            <button class="btn-small btn-toggle" onclick="toggleAktiv(${r.id}, ${r.aktiv})">${r.aktiv ? 'Deaktivieren' : 'Aktivieren'}</button>
+            <button class="btn-small btn-delete" onclick="deleteRow(${r.id})">Löschen</button>
+          </td>
+        </tr>`).join('');
+    }
+
+    async function toggleAktiv(id, current) {
+      await client.from("aktionen").update({ aktiv: !current }).eq("id", id);
+      loadTable();
+    }
+
+    async function deleteRow(id) {
+      if (!confirm("Diese Aktion wirklich endgültig löschen?")) return;
+      await client.from("aktionen").delete().eq("id", id);
+      loadTable();
+    }
+
+    window.toggleAktiv = toggleAktiv;
+    window.deleteRow = deleteRow;
+
+    checkAccess();
+
+    document.getElementById("logoutBtn").addEventListener("click", async () => {
+      await client.auth.signOut();
+      window.location.href = "/mitglieder/login.html";
+    });
+
+    document.getElementById("addForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const msgBox = document.getElementById("addMsg");
+
+      const payload = {
+        partner_name: document.getElementById("partner_name").value.trim(),
+        category: document.getElementById("category").value,
+        label: document.getElementById("label").value.trim(),
+        code: document.getElementById("code").value.trim() || null,
+        url: document.getElementById("url").value.trim(),
+        ablaufdatum: document.getElementById("ablaufdatum").value || null,
+      };
+
+      const { error } = await client.from("aktionen").insert(payload);
+
+      if (error) {
+        msgBox.textContent = "Fehler: " + error.message;
+        msgBox.className = "msg error";
+        return;
+      }
+
+      msgBox.textContent = "Aktion gespeichert!";
+      msgBox.className = "msg success";
+      document.getElementById("addForm").reset();
+      loadTable();
+    });
+  </script>
+
+</body>
+</html>
