@@ -45,18 +45,18 @@
 
   <style>
     :root {
-      --primary: #0f4c46;
-      --primary-dark: #0a3733;
-      --accent: #e0982e;
-      --accent-dark: #b87a20;
-      --bg: #faf7f2;
-      --text: #1e2624;
-      --muted: #5c6b67;
+      --primary: #0d3934;
+      --primary-dark: #082621;
+      --accent: #ad7f42;
+      --accent-dark: #8a6533;
+      --bg: #f5f2ea;
+      --text: #1b201e;
+      --muted: #5c655f;
       --success: #2e6b44;
-      --warning: #b87a20;
+      --warning: #ad7f42;
       --danger: #a3372f;
       --card: #ffffff;
-      --border: #dfe3df;
+      --border: #e2ded2;
       --serif: "Fraunces", Georgia, "Times New Roman", serif;
       --sans: "Work Sans", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     }
@@ -72,9 +72,9 @@
     }
 
     .hero {
-      background: var(--primary);
+      background: linear-gradient(160deg, var(--primary) 0%, var(--primary-dark) 100%);
       color: #fff;
-      padding: 2.25rem 1.25rem 4.5rem;
+      padding: 2.5rem 1.25rem 4.75rem;
     }
 
     .hero-inner {
@@ -86,17 +86,18 @@
       font-family: var(--serif);
       font-weight: 500;
       font-size: 1.05rem;
-      letter-spacing: 0.01em;
-      opacity: 0.85;
+      letter-spacing: 0.02em;
+      opacity: 0.8;
       margin-bottom: 1.5rem;
     }
 
     .hero h1 {
       font-family: var(--serif);
       font-weight: 600;
-      font-size: 2.1rem;
-      line-height: 1.2;
-      margin: 0 0 0.75rem;
+      font-size: 2.15rem;
+      line-height: 1.18;
+      letter-spacing: -0.01em;
+      margin: 0 0 0.85rem;
       max-width: 18ch;
     }
 
@@ -122,6 +123,7 @@
       font-size: 0.9rem;
       opacity: 0.85;
     }
+
     .trust-points li::before {
       content: "";
       position: absolute;
@@ -149,8 +151,8 @@
 
     .card-wizard {
       margin-top: -3.25rem;
-      border-top: 4px solid var(--accent);
-      box-shadow: 0 12px 28px rgba(15,32,29,0.14);
+      border-top: 3px solid var(--accent);
+      box-shadow: 0 6px 20px rgba(8,38,33,0.12);
     }
 
     .step-flow {
@@ -183,7 +185,6 @@
     .step-flow li:last-child::before {
       display: none;
     }
-
     .step-num {
       position: absolute;
       top: 0;
@@ -252,7 +253,7 @@
 
     .option-btn:hover {
       border-color: var(--primary);
-      box-shadow: 0 2px 8px rgba(26,54,93,0.10);
+      box-shadow: 0 2px 8px rgba(8,38,33,0.12);
     }
 
     .option-btn strong {
@@ -286,7 +287,7 @@
     }
 
     .btn-secondary {
-      background: #eef1f5;
+      background: #ece7da;
       color: var(--primary-dark);
       border: 1px solid var(--border);
     }
@@ -330,7 +331,6 @@
       margin-bottom: 0.35rem;
       font-weight: 600;
     }
-
     input[type="text"],
     input[type="email"],
     input[type="tel"],
@@ -352,6 +352,7 @@
       margin: 0.5rem 0;
       font-size: 0.95rem;
     }
+
     .checkbox-row input {
       margin-top: 0.25rem;
     }
@@ -372,6 +373,7 @@
       padding: 1rem 1.1rem;
       background: #fdfcfa;
     }
+
     .result-card h4 {
       margin: 0.4rem 0 0.3rem;
       font-family: var(--serif);
@@ -413,6 +415,7 @@
       flex-wrap: wrap;
       font-size: 0.9rem;
     }
+
     .result-list-plain {
       margin: 0.3rem 0 0;
       padding-left: 1.2rem;
@@ -433,6 +436,7 @@
       border-left-color: var(--accent);
       color: var(--muted);
     }
+
     .other-matches {
       border: 1px dashed var(--border);
       border-radius: 3px;
@@ -453,6 +457,7 @@
       display: grid;
       gap: 0.75rem;
     }
+
     .overview-group {
       margin-top: 1.5rem;
     }
@@ -472,7 +477,6 @@
       padding: 0.7rem 0.9rem;
       background: #fdfcfa;
     }
-
     .overview-item summary {
       cursor: pointer;
       font-weight: 600;
@@ -504,7 +508,7 @@
       font-size: 0.78rem;
       padding: 0.2rem 0.55rem;
       border-radius: 2px;
-      background: #eef1f5;
+      background: #ece7da;
       color: var(--primary-dark);
       border: 1px solid var(--border);
       margin-right: 0.4rem;
@@ -514,7 +518,6 @@
     .muted {
       color: var(--muted);
     }
-
     .footer {
       background: var(--primary-dark);
       padding: 1.75rem 1rem;
@@ -556,7 +559,6 @@
       margin: 0.25rem 0 0.75rem 0;
       min-height: 1.1em;
     }
-
     .lead-status.ok {
       color: var(--success);
     }
@@ -699,7 +701,7 @@
 
     .partner-tile:hover {
       border-color: var(--primary);
-      box-shadow: 0 6px 16px rgba(15,32,29,0.10);
+      box-shadow: 0 6px 16px rgba(8,38,33,0.12);
       transform: translateY(-1px);
     }
 
@@ -725,6 +727,7 @@
       color: var(--muted);
       max-width: 56ch;
     }
+
     .partner-tile-count {
       margin: 0 0 0 2.55rem;
       font-size: 0.78rem;
@@ -755,7 +758,7 @@
 
     .partner-card:hover {
       border-color: var(--primary);
-      box-shadow: 0 6px 16px rgba(15,32,29,0.10);
+      box-shadow: 0 6px 16px rgba(8,38,33,0.12);
     }
 
     .partner-card-badge {
@@ -808,6 +811,7 @@
       color: var(--text);
       line-height: 1.35;
     }
+
     .partner-card-cta {
       margin-top: auto;
       align-self: flex-start;
@@ -849,6 +853,7 @@
       grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
       gap: 1rem;
     }
+
     @media (max-width: 600px) {
       .hero h1 {
         font-size: 1.6rem;
@@ -869,6 +874,7 @@
     }
   </style>
 </head>
+
 <body id="top">
 
   <div class="hero">
@@ -888,7 +894,6 @@
       <p id="registerTeaser" style="color:#fff;opacity:0.85;font-size:0.85rem;margin:0 0 0.5rem;">
         Kostenlos registrieren und exklusive Vorteile freischalten: Partner-Aktionen mit Rabattcode &amp; Antragsformulare direkt zum Download.
       </p>
-
       <h1>Finde heraus, welche Unterstützung dir zusteht.</h1>
 
       <p class="lede">
@@ -910,6 +915,7 @@
   </div>
 
   <div class="container">
+
     <div id="memberBenefitsBox" class="card" style="display:none;border:2px solid var(--accent);background:#fffaf0;">
       <h2 style="font-family:var(--serif);font-weight:600;font-size:1.15rem;color:var(--primary-dark);margin:0 0 0.5rem;">&#9733; Deine Mitglieder-Vorteile</h2>
       <p style="color:var(--muted);font-size:0.92rem;margin:0 0 0.85rem;">Schön, dass du eingeloggt bist! Hier geht's direkt zu deinen exklusiven Extras:</p>
@@ -951,6 +957,7 @@
         <h3>Welcher Bedarf passt am besten?</h3>
 
         <div class="options" id="needsPrivate">
+
           <button class="option-btn" data-need="pflege">
             <strong>Pflege & Gesundheit</strong>
             <small>Pflegedienste, Hilfsmittel, Beratung</small>
@@ -970,7 +977,6 @@
             <strong>Familie & Kinder</strong>
             <small>Elterngeld, Kita, Unterhalt</small>
           </button>
-
           <button class="option-btn" data-need="wohnen">
             <strong>Wohnen & Energie</strong>
             <small>Wohngeld, Heizkosten, Umbau</small>
@@ -1034,6 +1040,7 @@
         </p>
 
         <div id="privateExtra" style="display:none;">
+
           <div id="familyChildAgeRow" style="display:none;">
             <label for="familyChildAge">
               Alter des jüngsten Kindes (in Jahren)
@@ -1074,7 +1081,6 @@
             <option value="ausbildung">In Ausbildung / Studium</option>
             <option value="rente">Rente / Ruhestand</option>
           </select>
-
           <label for="familyBundesland">Bundesland</label>
 
           <select id="familyBundesland">
@@ -1096,6 +1102,7 @@
             <option>Schleswig-Holstein</option>
             <option>Thüringen</option>
           </select>
+
         </div>
 
         <div id="businessExtra" style="display:none;">
@@ -1157,7 +1164,6 @@
         <label for="detailText">
           Weitere Angaben (freiwillig)
         </label>
-
         <textarea
           id="detailText"
           rows="3"
@@ -1179,6 +1185,7 @@
       <!-- SCHRITT 3 -->
 
       <div class="step" id="step3">
+
         <h3>Kontaktdaten für die Vermittlung</h3>
 
         <p class="muted">
@@ -1219,7 +1226,6 @@
           >
             Ich stimme zu, dass meine Angaben per E-Mail an den Betreiber von Leistung-Finder übermittelt werden, damit ich zu meiner Anfrage kontaktiert werden kann. Eine Weitergabe an externe Partner erfolgt derzeit nicht automatisiert.
           </label>
-
         </div>
 
         <div class="checkbox-row">
@@ -1240,7 +1246,6 @@
         </div>
 
         <div class="nav-buttons">
-
           <button class="btn btn-secondary" id="backToStep2">
             Zurück
           </button>
@@ -1262,6 +1267,7 @@
       </div>
 
       <!-- SCHRITT 4 -->
+
       <div class="step" id="step4">
 
         <div class="success-box">
@@ -1324,6 +1330,7 @@
           <span class="step-num">1</span>
           Wählen, für wen du Unterstützung suchst
         </li>
+
         <li>
           <span class="step-num">2</span>
           Bedarf kurz beschreiben
@@ -1344,6 +1351,7 @@
       <p class="disclaimer">
         Keine Rechtsberatung. Angaben ohne Gewähr. Stand: 2026.
       </p>
+
     </div>
 
     <!-- ÜBERSICHT -->
@@ -1363,7 +1371,6 @@
       <div id="allProgramsOverview"></div>
 
     </div>
-
     <!-- PARTNER -->
 
     <div class="card partner-section">
@@ -1384,7 +1391,6 @@
       <div id="partnerGroups"></div>
 
     </div>
-
   </div>
 
   <!-- FOOTER -->
@@ -1427,6 +1433,7 @@
         <br><br>
 
         <strong>Datenschutz (Kurzfassung)</strong><br>
+
         Wenn du das Kontaktformular nutzt, verarbeiten wir deine Angaben
         auf Grundlage deiner Einwilligung (Art. 6 Abs. 1 lit. a DSGVO),
         um deine Anfrage zu bearbeiten.
@@ -1446,7 +1453,6 @@
         Wir übernehmen keine Gewähr für Vollständigkeit und Aktualität.
 
         <br><br>
-
         <a href="#top">
           Nach oben
         </a>
@@ -1468,6 +1474,7 @@
     </div>
 
   </footer>
+
 
   <script>
 
@@ -1509,6 +1516,7 @@
 
     const progressLabel =
       document.getElementById('progressLabel');
+
     const targetButtons =
       Array.from(document.querySelectorAll('.target-group-switch button'));
 
@@ -1529,6 +1537,7 @@
 
     const backToStep2Btn =
       document.getElementById('backToStep2');
+
     const submitLeadBtn =
       document.getElementById('submitLead');
 
@@ -1549,6 +1558,7 @@
 
     const nameEl =
       document.getElementById('name');
+
     const emailEl =
       document.getElementById('email');
 
@@ -1569,6 +1579,7 @@
 
     const familyChildAgeRowEl =
       document.getElementById('familyChildAgeRow');
+
     const familyChildAgeEl =
       document.getElementById('familyChildAge');
 
@@ -1589,6 +1600,7 @@
 
     const bizSizeEl =
       document.getElementById('bizSize');
+
     const bizFocusEl =
       document.getElementById('bizFocus');
 
@@ -1608,7 +1620,6 @@
           i <= index && index < 3
         );
       });
-
       progressLabel.textContent =
         index < 3
           ? `Schritt ${index + 1} von 4`
@@ -1630,6 +1641,7 @@
         needsBusiness.style.display = 'none';
 
       } else {
+
         needsPrivate.style.display = 'none';
         needsBusiness.style.display = 'grid';
 
@@ -1797,6 +1809,7 @@
         lastChecked: '2026-09',
         active: true
       },
+
       {
         id: 'aufstiegs-bafoeg',
         name: 'Aufstiegs-BAföG',
@@ -2026,7 +2039,6 @@
         lastChecked: '2026-09',
         active: true
       },
-
       {
         id: 'zahnzusatz',
         name: 'Zahnzusatzversicherung',
@@ -2047,7 +2059,6 @@
       },
 
       /* UNTERNEHMEN */
-
       {
         id: 'kfw-kredite',
         name: 'KfW-Förderkredite',
@@ -2237,6 +2248,7 @@
         lastChecked: '2026-09',
         active: true
       },
+
       {
         id: 'handwerkskammer',
         name: 'Handwerkskammer-Beratung',
@@ -2276,7 +2288,6 @@
       }
 
     ];
-
 
     /*
       PARTNERANGEBOTE
@@ -2403,7 +2414,6 @@
         url: 'https://www.awin1.com/cread.php?s=4688555&v=20202&q=596822&r=3083133',
         img: 'https://www.awin1.com/cshow.php?s=4688555&v=20202&q=596822&r=3083133'
       },
-
       {
         category: 'Software & Tools',
         label: 'Aktuelle Wondershare-Aktion',
@@ -2467,6 +2477,7 @@
         url: 'https://www.awin1.com/cread.php?s=4509341&v=113164&q=514452&r=3083133',
         img: 'https://www.awin1.com/cshow.php?s=4509341&v=113164&q=514452&r=3083133'
       },
+
       
 
       {
@@ -2508,6 +2519,7 @@
         url: 'https://www.awin1.com/cread.php?s=4806851&v=9142&q=607310&r=3083133',
         img: 'https://www.awin1.com/cshow.php?s=4806851&v=9142&q=607310&r=3083133'
       },
+
       {
         category: 'Reisen & Reiseversicherung',
         label: 'Explorer Travel – Angebot 2',
@@ -2611,7 +2623,6 @@
         url: 'https://www.awin1.com/cread.php?s=3369552&v=41168&q=462361&r=3083133',
         img: 'https://www.awin1.com/cshow.php?s=3369552&v=41168&q=462361&r=3083133'
       },
-
       {
         category: 'Reisen & Reiseversicherung',
         label: 'Explorer Travel – Angebot 15',
@@ -2675,6 +2686,7 @@
         url: 'https://www.awin1.com/cread.php?s=4742990&v=31473&q=601674&r=3083133',
         img: 'https://www.awin1.com/cshow.php?s=4742990&v=31473&q=601674&r=3083133'
       },
+
       {
         category: 'Reisen & Reiseversicherung',
         label: 'Holidu – Angebot 3',
@@ -2778,7 +2790,6 @@
         url: 'https://www.awin1.com/cread.php?s=3483921&v=31473&q=474550&r=3083133',
         img: 'https://www.awin1.com/cshow.php?s=3483921&v=31473&q=474550&r=3083133'
       },
-
       {
         category: 'Reisen & Reiseversicherung',
         label: 'Holidu – Angebot 16',
@@ -2842,6 +2853,7 @@
         url: 'https://www.awin1.com/cread.php?s=3483831&v=31473&q=474544&r=3083133',
         img: 'https://www.awin1.com/cshow.php?s=3483831&v=31473&q=474544&r=3083133'
       },
+
       {
         category: 'Reisen & Reiseversicherung',
         label: 'Holidu – Angebot 24',
@@ -2945,7 +2957,6 @@
         url: 'https://www.awin1.com/cread.php?s=3744465&v=106517&q=501261&r=3083133',
         img: 'https://www.awin1.com/cshow.php?s=3744465&v=106517&q=501261&r=3083133'
       },
-
       {
         category: 'Reisen & Reiseversicherung',
         label: 'TravelSecure – Angebot 3',
@@ -3009,6 +3020,7 @@
         url: 'https://www.awin1.com/cread.php?s=4724166&v=124816&q=600109&r=3083133',
         img: 'https://www.awin1.com/cshow.php?s=4724166&v=124816&q=600109&r=3083133'
       },
+
       {
         category: 'Reisen & Reiseversicherung',
         label: 'Traverseon – Angebot 16',
@@ -3112,7 +3124,6 @@
         url: 'https://www.awin1.com/cread.php?s=4722734&v=124816&q=600014&r=3083133',
         img: 'https://www.awin1.com/cshow.php?s=4722734&v=124816&q=600014&r=3083133'
       },
-
       {
         category: 'Reisen & Reiseversicherung',
         label: 'Traverseon – Angebot 30',
@@ -3175,7 +3186,6 @@
         url: 'https://www.awin1.com/cread.php?s=4550243&v=121064&q=584749&r=3083133',
         img: 'https://www.awin1.com/cshow.php?s=4550243&v=121064&q=584749&r=3083133'
       },
-
       {
         category: 'Versicherungen & Tarife vergleichen',
         label: 'Burda Vergleicht – Angebot 5',
@@ -3196,7 +3206,6 @@
         alt: 'Burda Vergleicht',
         rawHtml: '<iframe src="https://www.awin1.com/cawshow.php?v=121064&s=4566959&q=586062&r=3083133&iframe=1" style="width:100%;max-width:970px;aspect-ratio:970/250;border:0;" scrolling="no" title="Burda Vergleicht"></iframe>'
       },
-
       {
         category: 'Versicherungen & Tarife vergleichen',
         label: 'Burda Vergleicht – Angebot 8',
@@ -3217,7 +3226,6 @@
         alt: 'Burda Vergleicht',
         rawHtml: '<iframe src="https://www.awin1.com/cawshow.php?v=121064&s=4566962&q=586062&r=3083133&iframe=1" style="width:100%;max-width:970px;aspect-ratio:970/250;border:0;" scrolling="no" title="Burda Vergleicht"></iframe>'
       },
-
       {
         category: 'Versicherungen & Tarife vergleichen',
         label: 'Burda Vergleicht – Angebot 11',
@@ -3238,7 +3246,6 @@
         alt: 'Burda Vergleicht',
         rawHtml: '<iframe src="https://www.awin1.com/cawshow.php?v=121064&s=4566965&q=586062&r=3083133&iframe=1" style="width:100%;max-width:970px;aspect-ratio:970/250;border:0;" scrolling="no" title="Burda Vergleicht"></iframe>'
       },
-
       {
         category: 'Versicherungen & Tarife vergleichen',
         label: 'Burda Vergleicht – Angebot 14',
@@ -3302,6 +3309,7 @@
         url: 'https://www.awin1.com/cread.php?s=3334085&v=24639&q=418001&r=3083133',
         img: 'https://www.awin1.com/cshow.php?s=3334085&v=24639&q=418001&r=3083133'
       },
+
       {
         category: 'Versicherungen & Tarife vergleichen',
         label: 'andsafe – Angebot 5',
@@ -3405,7 +3413,6 @@
         url: 'https://www.awin1.com/cread.php?s=3042710&v=24639&q=418001&r=3083133',
         img: 'https://www.awin1.com/cshow.php?s=3042710&v=24639&q=418001&r=3083133'
       },
-
       {
         category: 'Versicherungen & Tarife vergleichen',
         label: 'andsafe – Angebot 19',
@@ -3469,6 +3476,7 @@
         url: 'https://www.awin1.com/cread.php?s=3042485&v=24639&q=418001&r=3083133',
         img: 'https://www.awin1.com/cshow.php?s=3042485&v=24639&q=418001&r=3083133'
       },
+
       {
         category: 'Versicherungen & Tarife vergleichen',
         label: 'andsafe – Angebot 27',
@@ -3593,7 +3601,6 @@
         url: 'https://www.awin1.com/cread.php?s=4381651&v=36542&q=570564&r=3083133',
         img: 'https://www.awin1.com/cshow.php?s=4381651&v=36542&q=570564&r=3083133'
       },
-
       {
         category: 'Software & Tools',
         label: 'Piktochart – Angebot 2',
@@ -3657,6 +3664,7 @@
         url: 'https://www.awin1.com/cread.php?s=4807398&v=20202&q=601333&r=3083133',
         img: 'https://www.awin1.com/cshow.php?s=4807398&v=20202&q=601333&r=3083133'
       },
+
       {
         category: 'Software & Tools',
         label: 'Wondershare – Angebot 5',
@@ -3760,7 +3768,6 @@
         url: 'https://www.awin1.com/cread.php?s=3489600&v=20202&q=414421&r=3083133',
         img: 'https://www.awin1.com/cshow.php?s=3489600&v=20202&q=414421&r=3083133'
       },
-
       {
         category: 'Software & Tools',
         label: 'Wondershare – Angebot 18',
@@ -3824,6 +3831,7 @@
         url: 'https://www.awin1.com/cread.php?s=2909702&v=20202&q=414421&r=3083133',
         img: 'https://www.awin1.com/cshow.php?s=2909702&v=20202&q=414421&r=3083133'
       },
+
       {
         category: 'Software & Tools',
         label: 'Wondershare – Angebot 26',
@@ -3927,7 +3935,6 @@
         url: 'https://www.awin1.com/cread.php?s=3292986&v=14349&q=376815&r=3083133',
         img: 'https://www.awin1.com/cshow.php?s=3292986&v=14349&q=376815&r=3083133'
       },
-
       {
         category: 'Sparen & Gewinnspiele',
         label: 'BurdaDirect Gewinnspiele – Angebot 5',
@@ -3991,6 +3998,7 @@
         url: 'https://www.awin1.com/cread.php?s=3901662&v=113830&q=511738&r=3083133',
         img: 'https://www.awin1.com/cshow.php?s=3901662&v=113830&q=511738&r=3083133'
       },
+
       {
         category: 'Sparen & Gewinnspiele',
         label: 'PREISVERGLEICH.de – Angebot 1',
@@ -4115,7 +4123,6 @@
         url: 'https://www.awin1.com/cread.php?s=4821601&v=68106&q=523805&r=3083133',
         img: 'https://www.awin1.com/cshow.php?s=4821601&v=68106&q=523805&r=3083133'
       },
-
       {
         category: 'Technik & Zubehör',
         label: 'HTVRont – Angebot 18',
@@ -4179,6 +4186,7 @@
         url: 'https://www.awin1.com/cread.php?s=4026381&v=68106&q=523805&r=3083133',
         img: 'https://www.awin1.com/cshow.php?s=4026381&v=68106&q=523805&r=3083133'
       },
+
       {
         category: 'Technik & Zubehör',
         label: 'HTVRont – Angebot 26',
@@ -4282,7 +4290,6 @@
         url: 'https://www.awin1.com/cread.php?s=3987101&v=68106&q=523805&r=3083133',
         img: 'https://www.awin1.com/cshow.php?s=3987101&v=68106&q=523805&r=3083133'
       },
-
       {
         category: 'Technik & Zubehör',
         label: 'HTVRont – Angebot 41',
@@ -4346,6 +4353,7 @@
         url: 'https://www.awin1.com/cread.php?s=3987030&v=68106&q=523805&r=3083133',
         img: 'https://www.awin1.com/cshow.php?s=3987030&v=68106&q=523805&r=3083133'
       },
+
       {
         category: 'Technik & Zubehör',
         label: 'HTVRont – Angebot 49',
@@ -4449,7 +4457,6 @@
         url: 'https://www.awin1.com/cread.php?s=4403808&v=116603&q=521125&r=3083133',
         img: 'https://www.awin1.com/cshow.php?s=4403808&v=116603&q=521125&r=3083133'
       },
-
       {
         category: 'Mobilität & Elektrofahrzeuge',
         label: 'Pure Electric – Angebot 5',
@@ -4513,6 +4520,7 @@
         url: 'https://www.awin1.com/cread.php?s=4772335&v=116553&q=519289&r=3083133',
         img: 'https://www.awin1.com/cshow.php?s=4772335&v=116553&q=519289&r=3083133'
       },
+
       {
         category: 'Mobilität & Elektrofahrzeuge',
         label: 'STREETBOOSTER – Angebot 8',
@@ -4616,7 +4624,6 @@
         url: 'https://www.awin1.com/cread.php?s=4533807&v=116553&q=582868&r=3083133',
         img: 'https://www.awin1.com/cshow.php?s=4533807&v=116553&q=582868&r=3083133'
       },
-
       {
         category: 'Mobilität & Elektrofahrzeuge',
         label: 'STREETBOOSTER – Angebot 21',
@@ -4680,6 +4687,7 @@
         url: 'https://www.awin1.com/cread.php?s=4533778&v=116553&q=582868&r=3083133',
         img: 'https://www.awin1.com/cshow.php?s=4533778&v=116553&q=582868&r=3083133'
       },
+
       {
         category: 'Mobilität & Elektrofahrzeuge',
         label: 'STREETBOOSTER – Angebot 29',
@@ -4783,7 +4791,6 @@
         url: 'https://www.awin1.com/cread.php?s=4847783&v=121290&q=610941&r=3083133',
         img: 'https://www.awin1.com/cshow.php?s=4847783&v=121290&q=610941&r=3083133'
       },
-
       {
         category: 'Mode & Accessoires',
         label: 'Bree – Angebot 3',
@@ -4847,6 +4854,7 @@
         url: 'https://www.awin1.com/cread.php?s=4847781&v=121290&q=610941&r=3083133',
         img: 'https://www.awin1.com/cshow.php?s=4847781&v=121290&q=610941&r=3083133'
       },
+
       {
         category: 'Mode & Accessoires',
         label: 'Bree – Angebot 11',
@@ -4950,7 +4958,6 @@
         url: 'https://www.awin1.com/cread.php?s=4776441&v=121290&q=604877&r=3083133',
         img: 'https://www.awin1.com/cshow.php?s=4776441&v=121290&q=604877&r=3083133'
       },
-
       {
         category: 'Mode & Accessoires',
         label: 'Bree – Angebot 24',
@@ -5014,6 +5021,7 @@
         url: 'https://www.awin1.com/cread.php?s=4851910&v=122746&q=593964&r=3083133',
         img: 'https://www.awin1.com/cshow.php?s=4851910&v=122746&q=593964&r=3083133'
       },
+
       {
         category: 'Freizeit & Erlebnisse',
         label: 'City Game – Angebot 7',
@@ -5117,7 +5125,6 @@
         url: 'https://www.awin1.com/cread.php?s=2535077&v=17492&q=378552&r=3083133',
         img: 'https://www.awin1.com/cshow.php?s=2535077&v=17492&q=378552&r=3083133'
       },
-
       {
         category: 'Bildung & Sprachen',
         label: 'Linguatv – Angebot 4',
@@ -5243,7 +5250,6 @@
         url: 'https://www.awin1.com/cread.php?s=4696075&v=118789&q=597703&r=3083133',
         img: 'https://www.awin1.com/cshow.php?s=4696075&v=118789&q=597703&r=3083133'
       },
-
       {
         category: 'Mobilfunk & Internet',
         label: 'Lyca Mobile – Angebot 4',
@@ -5307,6 +5313,7 @@
         url: 'https://www.awin1.com/cread.php?s=4801289&v=117497&q=528359&r=3083133',
         img: 'https://www.awin1.com/cshow.php?s=4801289&v=117497&q=528359&r=3083133'
       },
+
       {
         category: 'Sonstige Angebote',
         label: 'Blimburn Seeds – Angebot 2',
@@ -5768,6 +5775,7 @@
         icon: '€',
         desc: 'Sparmöglichkeiten, Aktionen und Gutscheine für den Alltag.'
       },
+
       'Technik & Zubehör': {
         icon: 'T',
         desc: 'Geräte und Zubehör für Haushalt, Technik und Energieversorgung.'
@@ -5787,7 +5795,6 @@
         icon: 'F',
         desc: 'Erlebnisangebote, Touren und Freizeitaktivitäten.'
       },
-
       'Bildung & Sprachen': {
         icon: 'B',
         desc: 'Sprachkurse, Übersetzungen und Weiterbildungsangebote.'
@@ -5830,6 +5837,7 @@
       arbeit: 'Arbeit & Weiterbildung',
 
       familie: 'Familie & Kinder',
+
       wohnen: 'Wohnen & Energie',
 
       sonstiges: 'Sonstige Unterstützung',
@@ -5871,6 +5879,7 @@
           byCategory[p.category].push(p);
 
         });
+
 
       root.innerHTML = order.map(cat => `
 
@@ -5932,7 +5941,6 @@
                   >
                     ${p.affiliate ? 'Partnerangebot' : 'Offizielle Informationen'}
                   </a>
-
                   <a
                     href="${p.applicationUrl}"
                     target="_blank"
@@ -5955,6 +5963,7 @@
 
     }
 
+
     const PARTNER_VISIBLE_COUNT = 4;
 
 
@@ -5973,7 +5982,6 @@
             <div class="partner-card-media partner-iframe-wrap">
               ${o.rawHtml}
             </div>
-
             <div class="partner-card-body">
 
               <div class="partner-card-label">
@@ -5995,6 +6003,7 @@
           <span class="partner-card-badge">
             Anzeige
           </span>
+
           <div class="partner-card-media">
             <img
               src="${o.img}"
@@ -6056,7 +6065,6 @@
 
           byCategory[o.category] = [];
           groups.push(o.category);
-
         }
 
         byCategory[o.category].push(o);
@@ -6121,6 +6129,7 @@
 
     }
 
+
     /*
       MATCHING
     */
@@ -6160,7 +6169,6 @@
 
 
       unterhaltsvorschuss: s => {
-
         if (s.familyStatus === 'partner') {
 
           return {
@@ -6203,6 +6211,7 @@
       grundsicherungsgeld: s => {
 
         if (s.employmentStatus === 'rente') {
+
           return {
             relevant: false,
             reason: 'Grundsicherungsgeld richtet sich an erwerbsfähige Menschen. Für Menschen im Rentenalter oder bei dauerhafter voller Erwerbsminderung kommt eine andere Grundsicherungsleistung in Betracht.'
@@ -6286,6 +6295,7 @@
             relevant: false,
             reason: 'Ein Bildungsgutschein kommt insbesondere bei Arbeitslosigkeit, drohender Arbeitslosigkeit oder anderem beruflichem Weiterbildungsbedarf in Betracht.'
           };
+
         }
 
         return {
@@ -6306,6 +6316,7 @@
           };
 
         }
+
         return {
           relevant: true,
           reason: 'Kann passen, wenn du eine berufliche Aufstiegsfortbildung planst.'
@@ -6325,7 +6336,6 @@
             relevant: false,
             reason: 'Der Gründungszuschuss setzt unter anderem einen entsprechenden Anspruch auf Arbeitslosengeld und die weiteren gesetzlichen Voraussetzungen voraus.'
           };
-
         }
 
         return {
@@ -6347,6 +6357,7 @@
             relevant: false,
             reason: 'Der Stromspar-Check richtet sich insbesondere an Haushalte mit geringem Einkommen.'
           };
+
         }
 
         return {
@@ -6367,6 +6378,7 @@
           };
 
         }
+
         return {
           relevant: true,
           reason: 'Kann passen, wenn du finanzielle Schwierigkeiten oder Schulden hast.'
@@ -6407,7 +6419,6 @@
           };
 
         }
-
         return {
           relevant: true,
           reason: 'Kann passen, wenn Digitalisierung ein Thema für dein Unternehmen ist.'
@@ -6450,6 +6461,7 @@
           relevant: true,
           reason: 'Kann passen, wenn du Beschäftigte weiterqualifizieren möchtest.'
         };
+
       },
 
 
@@ -6471,6 +6483,7 @@
 
       },
 
+
       'bafa-energie': s => {
 
         if (
@@ -6489,7 +6502,6 @@
           relevant: true,
           reason: 'Kann passen, wenn Energieeffizienz oder Energieberatung für dein Unternehmen relevant ist.'
         };
-
       },
 
 
@@ -6511,6 +6523,7 @@
           relevant: true,
           reason: 'Kann passen, wenn du in Energieeffizienz oder Umweltmaßnahmen investieren möchtest.'
         };
+
       },
 
 
@@ -6531,6 +6544,7 @@
         };
 
       }
+
     };
 
 
@@ -6572,6 +6586,7 @@
             relevant: true,
             reason: null
           };
+
         }
 
         const result =
@@ -6613,6 +6628,7 @@
               ? '<span class="badge badge-ad">Partnerangebot</span>'
               : ''
           }
+
           <h4>
             ${p.name}
           </h4>
@@ -6632,7 +6648,6 @@
           </p>
 
           <dl class="result-meta">
-
             <div>
               <dt>Möglicherweise passend, wenn:</dt>
               <dd>${p.eligibility}</dd>
@@ -6696,6 +6711,7 @@
       if (!matches.length) {
 
         resultList.innerHTML = `
+
           <li class="result-card">
 
             <h4>
@@ -6715,7 +6731,6 @@
               <li>
                 eine andere Kategorie auswählen
               </li>
-
               <li>
                 deine Situation über das Formular schildern
               </li>
@@ -6737,6 +6752,7 @@
         matches.filter(
           m => m.relevant
         );
+
       let others =
         matches.filter(
           m => !m.relevant
@@ -6777,7 +6793,6 @@
                 weitere Leistung${others.length > 1 ? 'en' : ''}
                 in dieser Kategorie anzeigen
               </summary>
-
               <ul class="result-list-plain-cards">
 
                 ${others
@@ -6798,7 +6813,6 @@
           </li>
 
         `;
-
       }
 
 
@@ -6818,7 +6832,6 @@
         </li>
 
       `;
-
 
       resultList.innerHTML =
         html;
@@ -6841,6 +6854,7 @@
       btn.addEventListener(
         'click',
         () => {
+
           targetButtons.forEach(
             b =>
               b.classList.remove('active')
@@ -6861,6 +6875,7 @@
 
           businessExtraEl.style.display =
             'none';
+
           updateNeedsView();
 
         }
@@ -6902,6 +6917,7 @@
 
         activeBtn.style.borderColor =
           'var(--primary)';
+
       }
 
 
@@ -6921,7 +6937,6 @@
           need === 'familie'
             ? ''
             : 'none';
-
       } else {
 
         privateExtraEl.style.display =
@@ -6983,7 +6998,6 @@
 
       state.familyBundesland =
         familyBundeslandEl.value;
-
       state.bizPhase =
         bizPhaseEl.value;
 
@@ -7005,6 +7019,7 @@
 
 
     /* NAVIGATION */
+
     toStep2Btn.addEventListener(
       'click',
       () => {
@@ -7065,6 +7080,7 @@
           !state.name ||
           !state.email
         ) {
+
           alert(
             'Bitte Name und E-Mail ausfüllen.'
           );
@@ -7084,7 +7100,6 @@
           );
 
           return;
-
         }
 
 
@@ -7126,7 +7141,6 @@
 
                 name:
                   state.name,
-
                 email:
                   state.email,
 
@@ -7147,7 +7161,6 @@
 
                 familyStatus:
                   state.familyStatus,
-
                 familyIncome:
                   state.familyIncome,
 
@@ -7169,6 +7182,7 @@
         )
 
         .then(res => {
+
           if (!res.ok) {
             throw new Error(
               'send-lead fehlgeschlagen'
@@ -7189,6 +7203,7 @@
             'Lead-Versand fehlgeschlagen:',
             err
           );
+
           leadStatus.textContent =
             'Die Übermittlung hat leider nicht geklappt. Bitte versuche es später erneut oder kontaktiere uns direkt.';
 
@@ -7209,6 +7224,7 @@
 
 
     /* NEUE SUCHE */
+
     restartBtn.addEventListener(
       'click',
       () => {
@@ -7228,7 +7244,6 @@
         state.bizSize = '';
         state.bizFocus = '';
         state.bizBundesland = '';
-
         detailTextEl.value = '';
         nameEl.value = '';
         emailEl.value = '';
@@ -7250,6 +7265,7 @@
 
         businessExtraEl.style.display =
           'none';
+
         consentPartnerEl.checked =
           false;
 
@@ -7270,6 +7286,7 @@
     /* START */
 
     updateNeedsView();
+
     showStep(0);
 
     renderPartnerOffers();
