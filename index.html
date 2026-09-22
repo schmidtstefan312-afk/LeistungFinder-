@@ -1705,7 +1705,7 @@
         deadline: 'Kostenerstattung grundsätzlich bis Ende des Folgejahres beantragen',
         authority: 'Zuständige Pflegekasse',
         officialUrl: 'https://www.bundesgesundheitsministerium.de/verhinderungspflege',
-        applicationUrl: 'https://www.bundesgesundheitsministerium.de/presse/pressemitteilungen/das-aendert-sich-zum-1-juli-in-der-pflege',
+        applicationUrl: 'https://www.bundesgesundheitsministerium.de/verhinderungspflege',
         partnerUrl: null,
         affiliate: false,
         lastChecked: '2026-09',
@@ -1819,7 +1819,7 @@
         deadline: 'Vor Beginn der Maßnahme klären',
         authority: 'Agentur für Arbeit / Jobcenter',
         officialUrl: 'https://www.arbeitsagentur.de/karriere-und-weiterbildung/bildungsgutschein',
-        applicationUrl: 'https://www.arbeitsagentur.de/eservices',
+        applicationUrl: 'https://www.arbeitsagentur.de/karriere-und-weiterbildung/bildungsgutschein',
         partnerUrl: null,
         affiliate: false,
         lastChecked: '2026-09',
@@ -1838,7 +1838,7 @@
         deadline: 'Antrag rechtzeitig vor bzw. während der Maßnahme stellen.',
         authority: 'Zuständige Förderstelle',
         officialUrl: 'https://www.aufstiegs-bafoeg.de/',
-        applicationUrl: 'https://www.aufstiegs-bafoeg.de/aufstiegsbafoeg/de/ihr-weg-zur-foerderung/antragsformulare/antragsformulare_node.html',
+        applicationUrl: 'https://www.aufstiegs-bafoeg.de/aufstiegsbafoeg/de/ihr-weg-zur-foerderung/antrag-stellen/antrag-stellen_node.html',
         partnerUrl: null,
         affiliate: false,
         lastChecked: '2026-09',
@@ -1857,7 +1857,7 @@
         deadline: 'Vor Aufnahme der Selbstständigkeit beantragen.',
         authority: 'Agentur für Arbeit',
         officialUrl: 'https://www.arbeitsagentur.de/arbeitslos-arbeit-finden/arbeitslosengeld/gruendungszuschuss-beantragen',
-        applicationUrl: 'https://www.arbeitsagentur.de/arbeitslos-arbeit-finden/arbeitslosengeld',
+        applicationUrl: 'https://www.arbeitsagentur.de/arbeitslos-arbeit-finden/arbeitslosengeld/gruendungszuschuss-beantragen',
         partnerUrl: null,
         affiliate: false,
         lastChecked: '2026-09',
@@ -1952,7 +1952,7 @@
         deadline: 'Laufend, je nach Verfügbarkeit vor Ort',
         authority: 'Lokale Stromspar-Check-Anbieter',
         officialUrl: 'https://www.stromspar-check.de/',
-        applicationUrl: 'https://www.stromspar-check.de/so-funktionierts/',
+        applicationUrl: 'https://www.stromspar-check.de/',
         partnerUrl: null,
         affiliate: false,
         lastChecked: '2026-09',
@@ -1971,7 +1971,7 @@
         deadline: 'Bei vielen Programmen vor Vorhabensbeginn beantragen.',
         authority: 'KfW / Finanzierungspartner',
         officialUrl: 'https://www.kfw.de/inlandsfoerderung/Privatpersonen/',
-        applicationUrl: 'https://www.kfw.de/inlandsfoerderung/Privatpersonen/Bestehende-Immobilie/',
+        applicationUrl: 'https://www.kfw.de/inlandsfoerderung/Privatpersonen/Bestandsimmobilie/',
         partnerUrl: null,
         affiliate: false,
         lastChecked: '2026-09',
@@ -1990,7 +1990,7 @@
         deadline: 'Laufend',
         authority: 'Wohlfahrtsverbände und Beratungsstellen',
         officialUrl: 'https://www.caritas.de/hilfeundberatung',
-        applicationUrl: 'https://www.caritas.de/hilfeundberatung/ratgeber',
+        applicationUrl: 'https://www.caritas.de/hilfeundberatung',
         partnerUrl: null,
         affiliate: false,
         lastChecked: '2026-09',
@@ -2009,7 +2009,7 @@
         deadline: 'Laufend',
         authority: 'Anerkannte Schuldnerberatungsstellen',
         officialUrl: 'https://www.diakonie.de/wissen-kompakt-schuldnerberatung',
-        applicationUrl: 'https://www.diakonie.de/hilfe',
+        applicationUrl: 'https://www.diakonie.de/wissen-kompakt-schuldnerberatung',
         partnerUrl: null,
         affiliate: false,
         lastChecked: '2026-09',
@@ -5974,23 +5974,16 @@
                 </dl>
 
                 <div class="result-links">
-
-                  <a
-                    href="${p.officialUrl}"
-                    target="_blank"
-                    rel="${p.affiliate ? 'sponsored noopener' : 'noopener'}"
-                  >
-                    ${p.affiliate ? 'Partnerangebot' : 'Offizielle Informationen'}
-                  </a>
-
-                  <a
-                    href="${p.applicationUrl}"
-                    target="_blank"
-                    rel="${p.affiliate ? 'sponsored noopener' : 'noopener'}"
-                  >
-                    ${p.affiliate ? 'Zum Partnerangebot' : 'Zum offiziellen Angebot'}
-                  </a>
-
+                  ${p.affiliate
+                    ? `<a href="${p.officialUrl}" target="_blank" rel="sponsored noopener">Partnerangebot</a>
+                       ${p.applicationUrl && p.applicationUrl !== p.officialUrl
+                         ? `<a href="${p.applicationUrl}" target="_blank" rel="sponsored noopener">Zum Partnerangebot</a>`
+                         : ''}`
+                    : (p.officialUrl === p.applicationUrl
+                        ? `<a href="${p.officialUrl}" target="_blank" rel="noopener">Offizielle Informationen &amp; Antrag</a>`
+                        : `<a href="${p.officialUrl}" target="_blank" rel="noopener">Erklärung / Infos</a>
+                           <a href="${p.applicationUrl}" target="_blank" rel="noopener">Antrag / Formulare</a>`)
+                  }
                 </div>
 
               </details>
@@ -6725,23 +6718,16 @@
           </dl>
 
           <div class="result-links">
-
-            <a
-              href="${p.officialUrl}"
-              target="_blank"
-              rel="${p.affiliate ? 'sponsored noopener' : 'noopener'}"
-            >
-              ${p.affiliate ? 'Partnerangebot' : 'Offizielle Informationen'}
-            </a>
-
-            <a
-              href="${p.applicationUrl}"
-              target="_blank"
-              rel="${p.affiliate ? 'sponsored noopener' : 'noopener'}"
-            >
-              ${p.affiliate ? 'Zum Partnerangebot' : 'Zum offiziellen Angebot'}
-            </a>
-
+            ${p.affiliate
+              ? `<a href="${p.officialUrl}" target="_blank" rel="sponsored noopener">Partnerangebot</a>
+                 ${p.applicationUrl && p.applicationUrl !== p.officialUrl
+                   ? `<a href="${p.applicationUrl}" target="_blank" rel="sponsored noopener">Zum Partnerangebot</a>`
+                   : ''}`
+              : (p.officialUrl === p.applicationUrl
+                  ? `<a href="${p.officialUrl}" target="_blank" rel="noopener">Offizielle Informationen &amp; Antrag</a>`
+                  : `<a href="${p.officialUrl}" target="_blank" rel="noopener">Erklärung / Infos</a>
+                     <a href="${p.applicationUrl}" target="_blank" rel="noopener">Antrag / Formulare</a>`)
+            }
           </div>
 
         </li>
