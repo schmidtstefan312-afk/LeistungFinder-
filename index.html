@@ -5973,18 +5973,24 @@
 
                 </dl>
 
-                <div class="result-links">
-                  ${p.affiliate
-                    ? `<a href="${p.officialUrl}" target="_blank" rel="sponsored noopener">Partnerangebot</a>
-                       ${p.applicationUrl && p.applicationUrl !== p.officialUrl
-                         ? `<a href="${p.applicationUrl}" target="_blank" rel="sponsored noopener">Zum Partnerangebot</a>`
-                         : ''}`
-                    : (p.officialUrl === p.applicationUrl
-                        ? `<a href="${p.officialUrl}" target="_blank" rel="noopener">Offizielle Informationen &amp; Antrag</a>`
-                        : `<a href="${p.officialUrl}" target="_blank" rel="noopener">Erklärung / Infos</a>
-                           <a href="${p.applicationUrl}" target="_blank" rel="noopener">Antrag / Formulare</a>`)
-                  }
-                </div>
+          <div class="result-links">
+            ${(() => {
+              if (p.affiliate) {
+                let html = `<a href="${p.officialUrl}" target="_blank" rel="sponsored noopener">Partnerangebot</a>`;
+                if (p.applicationUrl && p.applicationUrl !== p.officialUrl) {
+                  html += `<a href="${p.applicationUrl}" target="_blank" rel="sponsored noopener">Zum Partnerangebot</a>`;
+                }
+                return html;
+              }
+              if (!p.applicationUrl || p.applicationUrl === p.officialUrl) {
+                return `<a href="${p.officialUrl}" target="_blank" rel="noopener">Offizielle Informationen</a>`;
+              }
+              const realFormIds = ['grundsicherungsgeld', 'aufstiegs-bafoeg'];
+              const secondLabel = realFormIds.includes(p.id) ? 'Antrag / Formulare' : 'So beantragen Sie';
+              return `<a href="${p.officialUrl}" target="_blank" rel="noopener">Offizielle Informationen</a>` +
+                     `<a href="${p.applicationUrl}" target="_blank" rel="noopener">${secondLabel}</a>`;
+            })()}
+          </div>
 
               </details>
 
@@ -6718,16 +6724,22 @@
           </dl>
 
           <div class="result-links">
-            ${p.affiliate
-              ? `<a href="${p.officialUrl}" target="_blank" rel="sponsored noopener">Partnerangebot</a>
-                 ${p.applicationUrl && p.applicationUrl !== p.officialUrl
-                   ? `<a href="${p.applicationUrl}" target="_blank" rel="sponsored noopener">Zum Partnerangebot</a>`
-                   : ''}`
-              : (p.officialUrl === p.applicationUrl
-                  ? `<a href="${p.officialUrl}" target="_blank" rel="noopener">Offizielle Informationen &amp; Antrag</a>`
-                  : `<a href="${p.officialUrl}" target="_blank" rel="noopener">Erklärung / Infos</a>
-                     <a href="${p.applicationUrl}" target="_blank" rel="noopener">Antrag / Formulare</a>`)
-            }
+            ${(() => {
+              if (p.affiliate) {
+                let html = `<a href="${p.officialUrl}" target="_blank" rel="sponsored noopener">Partnerangebot</a>`;
+                if (p.applicationUrl && p.applicationUrl !== p.officialUrl) {
+                  html += `<a href="${p.applicationUrl}" target="_blank" rel="sponsored noopener">Zum Partnerangebot</a>`;
+                }
+                return html;
+              }
+              if (!p.applicationUrl || p.applicationUrl === p.officialUrl) {
+                return `<a href="${p.officialUrl}" target="_blank" rel="noopener">Offizielle Informationen</a>`;
+              }
+              const realFormIds = ['grundsicherungsgeld', 'aufstiegs-bafoeg'];
+              const secondLabel = realFormIds.includes(p.id) ? 'Antrag / Formulare' : 'So beantragen Sie';
+              return `<a href="${p.officialUrl}" target="_blank" rel="noopener">Offizielle Informationen</a>` +
+                     `<a href="${p.applicationUrl}" target="_blank" rel="noopener">${secondLabel}</a>`;
+            })()}
           </div>
 
         </li>
