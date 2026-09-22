@@ -39,6 +39,7 @@
     }
   }
   </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -185,6 +186,7 @@
     .step-flow li:last-child::before {
       display: none;
     }
+
     .step-num {
       position: absolute;
       top: 0;
@@ -331,6 +333,7 @@
       margin-bottom: 0.35rem;
       font-weight: 600;
     }
+
     input[type="text"],
     input[type="email"],
     input[type="tel"],
@@ -477,6 +480,7 @@
       padding: 0.7rem 0.9rem;
       background: #fdfcfa;
     }
+
     .overview-item summary {
       cursor: pointer;
       font-weight: 600;
@@ -518,6 +522,7 @@
     .muted {
       color: var(--muted);
     }
+
     .footer {
       background: var(--primary-dark);
       padding: 1.75rem 1rem;
@@ -559,6 +564,7 @@
       margin: 0.25rem 0 0.75rem 0;
       min-height: 1.1em;
     }
+
     .lead-status.ok {
       color: var(--success);
     }
@@ -894,6 +900,7 @@
       <p id="registerTeaser" style="color:#fff;opacity:0.85;font-size:0.85rem;margin:0 0 0.5rem;">
         Kostenlos registrieren und exklusive Vorteile freischalten: Partner-Aktionen mit Rabattcode &amp; Antragsformulare direkt zum Download.
       </p>
+
       <h1>Finde heraus, welche Unterstützung dir zusteht.</h1>
 
       <p class="lede">
@@ -977,6 +984,7 @@
             <strong>Familie & Kinder</strong>
             <small>Elterngeld, Kita, Unterhalt</small>
           </button>
+
           <button class="option-btn" data-need="wohnen">
             <strong>Wohnen & Energie</strong>
             <small>Wohngeld, Heizkosten, Umbau</small>
@@ -1081,6 +1089,7 @@
             <option value="ausbildung">In Ausbildung / Studium</option>
             <option value="rente">Rente / Ruhestand</option>
           </select>
+
           <label for="familyBundesland">Bundesland</label>
 
           <select id="familyBundesland">
@@ -1164,6 +1173,7 @@
         <label for="detailText">
           Weitere Angaben (freiwillig)
         </label>
+
         <textarea
           id="detailText"
           rows="3"
@@ -1226,6 +1236,7 @@
           >
             Ich stimme zu, dass meine Angaben per E-Mail an den Betreiber von Leistung-Finder übermittelt werden, damit ich zu meiner Anfrage kontaktiert werden kann. Eine Weitergabe an externe Partner erfolgt derzeit nicht automatisiert.
           </label>
+
         </div>
 
         <div class="checkbox-row">
@@ -1246,6 +1257,7 @@
         </div>
 
         <div class="nav-buttons">
+
           <button class="btn btn-secondary" id="backToStep2">
             Zurück
           </button>
@@ -1371,6 +1383,7 @@
       <div id="allProgramsOverview"></div>
 
     </div>
+
     <!-- PARTNER -->
 
     <div class="card partner-section">
@@ -1391,6 +1404,7 @@
       <div id="partnerGroups"></div>
 
     </div>
+
   </div>
 
   <!-- FOOTER -->
@@ -1453,6 +1467,7 @@
         Wir übernehmen keine Gewähr für Vollständigkeit und Aktualität.
 
         <br><br>
+
         <a href="#top">
           Nach oben
         </a>
@@ -1620,6 +1635,7 @@
           i <= index && index < 3
         );
       });
+
       progressLabel.textContent =
         index < 3
           ? `Schritt ${index + 1} von 4`
@@ -1726,8 +1742,8 @@
         region: 'Deutschland',
         deadline: 'Laufender Antrag möglich',
         authority: 'Örtliches Sozialamt',
-        officialUrl: 'https://www.bmas.de/DE/Soziales/Sozialhilfe/Grundsicherung-im-Alter-und-bei-Erwerbsminderung/grundsicherung-im-alter-und-bei-erwerbsminderung.html',
-        applicationUrl: 'https://www.bmas.de/DE/Soziales/Sozialhilfe/Grundsicherung-im-Alter-und-bei-Erwerbsminderung/grundsicherung-im-alter-und-bei-erwerbsminderung.html',
+        officialUrl: 'https://www.bmas.de/DE/Soziales/Sozialhilfe/Leistungen-fuer-den-Lebensunterhalt/leistungen-fuer-den-lebensunterhalt.html',
+        applicationUrl: 'https://www.bmas.de/DE/Soziales/Sozialhilfe/Leistungen-fuer-den-Lebensunterhalt/leistungen-fuer-den-lebensunterhalt.html',
         partnerUrl: null,
         affiliate: false,
         lastChecked: '2026-09',
@@ -1764,8 +1780,8 @@
         region: 'Regional',
         deadline: 'Laufender Antrag möglich',
         authority: 'Örtliche Wohngeldbehörde',
-        officialUrl: 'https://www.bmwsb.bund.de/DE/wohnen/wohngeld/wohngeld_node.html',
-        applicationUrl: 'https://www.bmwsb.bund.de/DE/wohnen/wohngeld/wohngeld_node.html',
+        officialUrl: 'https://www.bmwsb.bund.de/DE/wohnen/wohngeld/wohngeld_verteiler.html',
+        applicationUrl: 'https://www.bmwsb.bund.de/DE/wohnen/wohngeld/wohngeld_verteiler.html',
         partnerUrl: null,
         affiliate: false,
         lastChecked: '2026-09',
@@ -1916,8 +1932,8 @@
         region: 'Regional',
         deadline: 'Laufender Antrag möglich',
         authority: 'Örtliche Wohngeldbehörde',
-        officialUrl: 'https://www.bmwsb.bund.de/DE/wohnen/wohngeld/wohngeld_node.html',
-        applicationUrl: 'https://www.bmwsb.bund.de/DE/wohnen/wohngeld/wohngeld_node.html',
+        officialUrl: 'https://www.bmwsb.bund.de/DE/wohnen/wohngeld/wohngeld_verteiler.html',
+        applicationUrl: 'https://www.bmwsb.bund.de/DE/wohnen/wohngeld/wohngeld_verteiler.html',
         partnerUrl: null,
         affiliate: false,
         lastChecked: '2026-09',
@@ -2039,6 +2055,7 @@
         lastChecked: '2026-09',
         active: true
       },
+
       {
         id: 'zahnzusatz',
         name: 'Zahnzusatzversicherung',
@@ -2059,6 +2076,7 @@
       },
 
       /* UNTERNEHMEN */
+
       {
         id: 'kfw-kredite',
         name: 'KfW-Förderkredite',
@@ -2222,8 +2240,8 @@
         region: 'Deutschland',
         deadline: 'Vor Beauftragung beziehungsweise Beginn prüfen.',
         authority: 'BAFA',
-        officialUrl: 'https://www.bafa.de/',
-        applicationUrl: 'https://www.bafa.de/',
+        officialUrl: 'https://www.bafa.de/DE/Energie/Energieberatung/energieberatung_node.html',
+        applicationUrl: 'https://www.bafa.de/DE/Energie/Energieberatung/energieberatung_node.html',
         partnerUrl: null,
         affiliate: false,
         lastChecked: '2026-09',
@@ -2260,8 +2278,8 @@
         region: 'Regional',
         deadline: 'Laufend',
         authority: 'Zuständige Handwerkskammer',
-        officialUrl: 'https://www.zdh.de/handwerksorganisationen/handwerkskammern/',
-        applicationUrl: 'https://www.zdh.de/handwerksorganisationen/handwerkskammern/',
+        officialUrl: 'https://www.zdh.de/ueber-uns/organisationen-des-handwerks/handwerkskammern/',
+        applicationUrl: 'https://www.zdh.de/ueber-uns/organisationen-des-handwerks/handwerkskammern/',
         partnerUrl: null,
         affiliate: false,
         lastChecked: '2026-09',
@@ -2279,8 +2297,8 @@
         region: 'Regional',
         deadline: 'Vor Finanzierung prüfen.',
         authority: 'Zuständige Bürgschaftsbank',
-        officialUrl: 'https://www.vdb-info.de/',
-        applicationUrl: 'https://www.vdb-info.de/',
+        officialUrl: 'https://vdb.ermoeglicher.de/de/',
+        applicationUrl: 'https://vdb.ermoeglicher.de/de/',
         partnerUrl: null,
         affiliate: false,
         lastChecked: '2026-09',
@@ -2288,6 +2306,7 @@
       }
 
     ];
+
 
     /*
       PARTNERANGEBOTE
@@ -2414,6 +2433,7 @@
         url: 'https://www.awin1.com/cread.php?s=4688555&v=20202&q=596822&r=3083133',
         img: 'https://www.awin1.com/cshow.php?s=4688555&v=20202&q=596822&r=3083133'
       },
+
       {
         category: 'Software & Tools',
         label: 'Aktuelle Wondershare-Aktion',
@@ -2623,6 +2643,7 @@
         url: 'https://www.awin1.com/cread.php?s=3369552&v=41168&q=462361&r=3083133',
         img: 'https://www.awin1.com/cshow.php?s=3369552&v=41168&q=462361&r=3083133'
       },
+
       {
         category: 'Reisen & Reiseversicherung',
         label: 'Explorer Travel – Angebot 15',
@@ -2790,6 +2811,7 @@
         url: 'https://www.awin1.com/cread.php?s=3483921&v=31473&q=474550&r=3083133',
         img: 'https://www.awin1.com/cshow.php?s=3483921&v=31473&q=474550&r=3083133'
       },
+
       {
         category: 'Reisen & Reiseversicherung',
         label: 'Holidu – Angebot 16',
@@ -2957,6 +2979,7 @@
         url: 'https://www.awin1.com/cread.php?s=3744465&v=106517&q=501261&r=3083133',
         img: 'https://www.awin1.com/cshow.php?s=3744465&v=106517&q=501261&r=3083133'
       },
+
       {
         category: 'Reisen & Reiseversicherung',
         label: 'TravelSecure – Angebot 3',
@@ -3124,6 +3147,7 @@
         url: 'https://www.awin1.com/cread.php?s=4722734&v=124816&q=600014&r=3083133',
         img: 'https://www.awin1.com/cshow.php?s=4722734&v=124816&q=600014&r=3083133'
       },
+
       {
         category: 'Reisen & Reiseversicherung',
         label: 'Traverseon – Angebot 30',
@@ -3186,6 +3210,7 @@
         url: 'https://www.awin1.com/cread.php?s=4550243&v=121064&q=584749&r=3083133',
         img: 'https://www.awin1.com/cshow.php?s=4550243&v=121064&q=584749&r=3083133'
       },
+
       {
         category: 'Versicherungen & Tarife vergleichen',
         label: 'Burda Vergleicht – Angebot 5',
@@ -3206,6 +3231,7 @@
         alt: 'Burda Vergleicht',
         rawHtml: '<iframe src="https://www.awin1.com/cawshow.php?v=121064&s=4566959&q=586062&r=3083133&iframe=1" style="width:100%;max-width:970px;aspect-ratio:970/250;border:0;" scrolling="no" title="Burda Vergleicht"></iframe>'
       },
+
       {
         category: 'Versicherungen & Tarife vergleichen',
         label: 'Burda Vergleicht – Angebot 8',
@@ -3226,6 +3252,7 @@
         alt: 'Burda Vergleicht',
         rawHtml: '<iframe src="https://www.awin1.com/cawshow.php?v=121064&s=4566962&q=586062&r=3083133&iframe=1" style="width:100%;max-width:970px;aspect-ratio:970/250;border:0;" scrolling="no" title="Burda Vergleicht"></iframe>'
       },
+
       {
         category: 'Versicherungen & Tarife vergleichen',
         label: 'Burda Vergleicht – Angebot 11',
@@ -3246,6 +3273,7 @@
         alt: 'Burda Vergleicht',
         rawHtml: '<iframe src="https://www.awin1.com/cawshow.php?v=121064&s=4566965&q=586062&r=3083133&iframe=1" style="width:100%;max-width:970px;aspect-ratio:970/250;border:0;" scrolling="no" title="Burda Vergleicht"></iframe>'
       },
+
       {
         category: 'Versicherungen & Tarife vergleichen',
         label: 'Burda Vergleicht – Angebot 14',
@@ -3413,6 +3441,7 @@
         url: 'https://www.awin1.com/cread.php?s=3042710&v=24639&q=418001&r=3083133',
         img: 'https://www.awin1.com/cshow.php?s=3042710&v=24639&q=418001&r=3083133'
       },
+
       {
         category: 'Versicherungen & Tarife vergleichen',
         label: 'andsafe – Angebot 19',
@@ -3601,6 +3630,7 @@
         url: 'https://www.awin1.com/cread.php?s=4381651&v=36542&q=570564&r=3083133',
         img: 'https://www.awin1.com/cshow.php?s=4381651&v=36542&q=570564&r=3083133'
       },
+
       {
         category: 'Software & Tools',
         label: 'Piktochart – Angebot 2',
@@ -3768,6 +3798,7 @@
         url: 'https://www.awin1.com/cread.php?s=3489600&v=20202&q=414421&r=3083133',
         img: 'https://www.awin1.com/cshow.php?s=3489600&v=20202&q=414421&r=3083133'
       },
+
       {
         category: 'Software & Tools',
         label: 'Wondershare – Angebot 18',
@@ -3935,6 +3966,7 @@
         url: 'https://www.awin1.com/cread.php?s=3292986&v=14349&q=376815&r=3083133',
         img: 'https://www.awin1.com/cshow.php?s=3292986&v=14349&q=376815&r=3083133'
       },
+
       {
         category: 'Sparen & Gewinnspiele',
         label: 'BurdaDirect Gewinnspiele – Angebot 5',
@@ -4123,6 +4155,7 @@
         url: 'https://www.awin1.com/cread.php?s=4821601&v=68106&q=523805&r=3083133',
         img: 'https://www.awin1.com/cshow.php?s=4821601&v=68106&q=523805&r=3083133'
       },
+
       {
         category: 'Technik & Zubehör',
         label: 'HTVRont – Angebot 18',
@@ -4290,6 +4323,7 @@
         url: 'https://www.awin1.com/cread.php?s=3987101&v=68106&q=523805&r=3083133',
         img: 'https://www.awin1.com/cshow.php?s=3987101&v=68106&q=523805&r=3083133'
       },
+
       {
         category: 'Technik & Zubehör',
         label: 'HTVRont – Angebot 41',
@@ -4457,6 +4491,7 @@
         url: 'https://www.awin1.com/cread.php?s=4403808&v=116603&q=521125&r=3083133',
         img: 'https://www.awin1.com/cshow.php?s=4403808&v=116603&q=521125&r=3083133'
       },
+
       {
         category: 'Mobilität & Elektrofahrzeuge',
         label: 'Pure Electric – Angebot 5',
@@ -4624,6 +4659,7 @@
         url: 'https://www.awin1.com/cread.php?s=4533807&v=116553&q=582868&r=3083133',
         img: 'https://www.awin1.com/cshow.php?s=4533807&v=116553&q=582868&r=3083133'
       },
+
       {
         category: 'Mobilität & Elektrofahrzeuge',
         label: 'STREETBOOSTER – Angebot 21',
@@ -4791,6 +4827,7 @@
         url: 'https://www.awin1.com/cread.php?s=4847783&v=121290&q=610941&r=3083133',
         img: 'https://www.awin1.com/cshow.php?s=4847783&v=121290&q=610941&r=3083133'
       },
+
       {
         category: 'Mode & Accessoires',
         label: 'Bree – Angebot 3',
@@ -4958,6 +4995,7 @@
         url: 'https://www.awin1.com/cread.php?s=4776441&v=121290&q=604877&r=3083133',
         img: 'https://www.awin1.com/cshow.php?s=4776441&v=121290&q=604877&r=3083133'
       },
+
       {
         category: 'Mode & Accessoires',
         label: 'Bree – Angebot 24',
@@ -5125,6 +5163,7 @@
         url: 'https://www.awin1.com/cread.php?s=2535077&v=17492&q=378552&r=3083133',
         img: 'https://www.awin1.com/cshow.php?s=2535077&v=17492&q=378552&r=3083133'
       },
+
       {
         category: 'Bildung & Sprachen',
         label: 'Linguatv – Angebot 4',
@@ -5250,6 +5289,7 @@
         url: 'https://www.awin1.com/cread.php?s=4696075&v=118789&q=597703&r=3083133',
         img: 'https://www.awin1.com/cshow.php?s=4696075&v=118789&q=597703&r=3083133'
       },
+
       {
         category: 'Mobilfunk & Internet',
         label: 'Lyca Mobile – Angebot 4',
@@ -5795,6 +5835,7 @@
         icon: 'F',
         desc: 'Erlebnisangebote, Touren und Freizeitaktivitäten.'
       },
+
       'Bildung & Sprachen': {
         icon: 'B',
         desc: 'Sprachkurse, Übersetzungen und Weiterbildungsangebote.'
@@ -5941,6 +5982,7 @@
                   >
                     ${p.affiliate ? 'Partnerangebot' : 'Offizielle Informationen'}
                   </a>
+
                   <a
                     href="${p.applicationUrl}"
                     target="_blank"
@@ -5982,6 +6024,7 @@
             <div class="partner-card-media partner-iframe-wrap">
               ${o.rawHtml}
             </div>
+
             <div class="partner-card-body">
 
               <div class="partner-card-label">
@@ -6065,6 +6108,7 @@
 
           byCategory[o.category] = [];
           groups.push(o.category);
+
         }
 
         byCategory[o.category].push(o);
@@ -6169,6 +6213,7 @@
 
 
       unterhaltsvorschuss: s => {
+
         if (s.familyStatus === 'partner') {
 
           return {
@@ -6336,6 +6381,7 @@
             relevant: false,
             reason: 'Der Gründungszuschuss setzt unter anderem einen entsprechenden Anspruch auf Arbeitslosengeld und die weiteren gesetzlichen Voraussetzungen voraus.'
           };
+
         }
 
         return {
@@ -6419,6 +6465,7 @@
           };
 
         }
+
         return {
           relevant: true,
           reason: 'Kann passen, wenn Digitalisierung ein Thema für dein Unternehmen ist.'
@@ -6502,6 +6549,7 @@
           relevant: true,
           reason: 'Kann passen, wenn Energieeffizienz oder Energieberatung für dein Unternehmen relevant ist.'
         };
+
       },
 
 
@@ -6648,6 +6696,7 @@
           </p>
 
           <dl class="result-meta">
+
             <div>
               <dt>Möglicherweise passend, wenn:</dt>
               <dd>${p.eligibility}</dd>
@@ -6731,6 +6780,7 @@
               <li>
                 eine andere Kategorie auswählen
               </li>
+
               <li>
                 deine Situation über das Formular schildern
               </li>
@@ -6793,6 +6843,7 @@
                 weitere Leistung${others.length > 1 ? 'en' : ''}
                 in dieser Kategorie anzeigen
               </summary>
+
               <ul class="result-list-plain-cards">
 
                 ${others
@@ -6813,6 +6864,7 @@
           </li>
 
         `;
+
       }
 
 
@@ -6832,6 +6884,7 @@
         </li>
 
       `;
+
 
       resultList.innerHTML =
         html;
@@ -6937,6 +6990,7 @@
           need === 'familie'
             ? ''
             : 'none';
+
       } else {
 
         privateExtraEl.style.display =
@@ -6979,6 +7033,7 @@
 
       });
 
+
     function collectStep2() {
 
       state.detailText =
@@ -6998,6 +7053,7 @@
 
       state.familyBundesland =
         familyBundeslandEl.value;
+
       state.bizPhase =
         bizPhaseEl.value;
 
@@ -7040,6 +7096,7 @@
       }
     );
 
+
     toStep3Btn.addEventListener(
       'click',
       () => {
@@ -7059,6 +7116,7 @@
 
       }
     );
+
 
     /* FORMULAR */
 
@@ -7100,6 +7158,7 @@
           );
 
           return;
+
         }
 
 
@@ -7141,6 +7200,7 @@
 
                 name:
                   state.name,
+
                 email:
                   state.email,
 
@@ -7161,6 +7221,7 @@
 
                 familyStatus:
                   state.familyStatus,
+
                 familyIncome:
                   state.familyIncome,
 
@@ -7244,6 +7305,7 @@
         state.bizSize = '';
         state.bizFocus = '';
         state.bizBundesland = '';
+
         detailTextEl.value = '';
         nameEl.value = '';
         emailEl.value = '';
