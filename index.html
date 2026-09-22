@@ -1686,7 +1686,7 @@
         deadline: 'Laufender Antrag möglich',
         authority: 'Zuständige Pflegekasse',
         officialUrl: 'https://www.bundesgesundheitsministerium.de/pflegegeld',
-        applicationUrl: 'https://www.bundesgesundheitsministerium.de/pflege-zu-hause',
+        applicationUrl: 'https://www.bundesgesundheitsministerium.de/pflegegeld',
         partnerUrl: null,
         affiliate: false,
         lastChecked: '2026-09',
@@ -1724,7 +1724,7 @@
         deadline: 'Je nach Leistung',
         authority: 'Zuständige Pflegekasse',
         officialUrl: 'https://www.bundesgesundheitsministerium.de/pflege-zu-hause/pflegehilfsmittel',
-        applicationUrl: 'https://www.bundesgesundheitsministerium.de/pflege-zu-hause/zuschuesse-zur-wohnungsanpassung.html',
+        applicationUrl: 'https://www.bundesgesundheitsministerium.de/pflege-zu-hause/pflegehilfsmittel',
         partnerUrl: null,
         affiliate: false,
         lastChecked: '2026-09',
@@ -1743,7 +1743,7 @@
         deadline: 'Laufender Antrag möglich',
         authority: 'Örtliches Sozialamt',
         officialUrl: 'https://www.bmas.de/DE/Soziales/Rente-und-Altersvorsorge/Fakten-zur-Rente/Grundsicherung-im-Alter/grundsicherung-im-alter.html',
-        applicationUrl: 'https://www.bmas.de/DE/Soziales/Sozialhilfe/Fragen-und-Antworten-Sozialhilfe/fragen-und-antworten-sozialhilfe.html',
+        applicationUrl: 'https://www.bmas.de/DE/Soziales/Rente-und-Altersvorsorge/Fakten-zur-Rente/Grundsicherung-im-Alter/grundsicherung-im-alter.html',
         partnerUrl: null,
         affiliate: false,
         lastChecked: '2026-09',
@@ -1781,7 +1781,7 @@
         deadline: 'Laufender Antrag möglich',
         authority: 'Örtliche Wohngeldbehörde',
         officialUrl: 'https://www.bmwsb.bund.de/DE/wohnen/wohngeld/wohngeld_verteiler.html',
-        applicationUrl: 'https://verwaltung.bund.de/',
+        applicationUrl: 'https://www.bmwsb.bund.de/DE/wohnen/wohngeld/wohngeld_verteiler.html',
         partnerUrl: null,
         affiliate: false,
         lastChecked: '2026-09',
@@ -1800,7 +1800,7 @@
         deadline: 'Laufender Antrag möglich',
         authority: 'Familienkasse',
         officialUrl: 'https://familienportal.de/familienportal/familienleistungen/kinderzuschlag',
-        applicationUrl: 'https://www.arbeitsagentur.de/familie-und-kinder/kinderzuschlag-verstehen/kinderzuschlag-anspruch-hoehe-dauer',
+        applicationUrl: 'https://familienportal.de/familienportal/familienleistungen/kinderzuschlag',
         partnerUrl: null,
         affiliate: false,
         lastChecked: '2026-09',
@@ -1876,7 +1876,7 @@
         deadline: 'Grundsätzlich innerhalb der ersten drei Lebensmonate rückwirkend beantragen.',
         authority: 'Elterngeldstelle',
         officialUrl: 'https://familienportal.de/familienportal/familienleistungen/elterngeld',
-        applicationUrl: 'https://familienportal.de/familienportal/familienleistungen/elterngeld/faq/wie-viel-elterngeld-kann-ich-bekommen--124616',
+        applicationUrl: 'https://familienportal.de/familienportal/familienleistungen/elterngeld',
         partnerUrl: null,
         affiliate: false,
         lastChecked: '2026-09',
@@ -1895,7 +1895,7 @@
         deadline: 'Laufender Antrag möglich',
         authority: 'Familienkasse',
         officialUrl: 'https://familienportal.de/familienportal/familienleistungen/kindergeld',
-        applicationUrl: 'https://www.arbeitsagentur.de/familie-und-kinder/kindergeld-anspruch-hoehe-dauer',
+        applicationUrl: 'https://familienportal.de/familienportal/familienleistungen/kindergeld',
         partnerUrl: null,
         affiliate: false,
         lastChecked: '2026-09',
@@ -1914,7 +1914,7 @@
         deadline: 'Laufender Antrag möglich',
         authority: 'Jugendamt',
         officialUrl: 'https://familienportal.de/familienportal/familienleistungen/unterhaltsvorschuss',
-        applicationUrl: 'https://familienportal.de/familienportal/familienleistungen/unterhaltsvorschuss/wie-kann-ich-unterhaltsvorschuss-beantragen--125266',
+        applicationUrl: 'https://familienportal.de/familienportal/familienleistungen/unterhaltsvorschuss',
         partnerUrl: null,
         affiliate: false,
         lastChecked: '2026-09',
@@ -1933,7 +1933,7 @@
         deadline: 'Laufender Antrag möglich',
         authority: 'Örtliche Wohngeldbehörde',
         officialUrl: 'https://www.bmwsb.bund.de/DE/wohnen/wohngeld/wohngeld_verteiler.html',
-        applicationUrl: 'https://verwaltung.bund.de/',
+        applicationUrl: 'https://www.bmwsb.bund.de/DE/wohnen/wohngeld/wohngeld_verteiler.html',
         partnerUrl: null,
         affiliate: false,
         lastChecked: '2026-09',
@@ -1971,7 +1971,7 @@
         deadline: 'Bei vielen Programmen vor Vorhabensbeginn beantragen.',
         authority: 'KfW / Finanzierungspartner',
         officialUrl: 'https://www.kfw.de/inlandsfoerderung/Privatpersonen/',
-        applicationUrl: 'https://www.kfw.de/inlandsfoerderung/Privatpersonen/Bestandsimmobilie/',
+        applicationUrl: 'https://www.kfw.de/inlandsfoerderung/Privatpersonen/',
         partnerUrl: null,
         affiliate: false,
         lastChecked: '2026-09',
@@ -5985,10 +5985,8 @@
               if (!p.applicationUrl || p.applicationUrl === p.officialUrl) {
                 return `<a href="${p.officialUrl}" target="_blank" rel="noopener">Offizielle Informationen</a>`;
               }
-              const realFormIds = ['grundsicherungsgeld', 'aufstiegs-bafoeg'];
-              const secondLabel = realFormIds.includes(p.id) ? 'Antrag / Formulare' : 'So beantragen Sie';
               return `<a href="${p.officialUrl}" target="_blank" rel="noopener">Offizielle Informationen</a>` +
-                     `<a href="${p.applicationUrl}" target="_blank" rel="noopener">${secondLabel}</a>`;
+                     `<a href="${p.applicationUrl}" target="_blank" rel="noopener">Antrag / Formulare</a>`;
             })()}
           </div>
 
@@ -6735,10 +6733,8 @@
               if (!p.applicationUrl || p.applicationUrl === p.officialUrl) {
                 return `<a href="${p.officialUrl}" target="_blank" rel="noopener">Offizielle Informationen</a>`;
               }
-              const realFormIds = ['grundsicherungsgeld', 'aufstiegs-bafoeg'];
-              const secondLabel = realFormIds.includes(p.id) ? 'Antrag / Formulare' : 'So beantragen Sie';
               return `<a href="${p.officialUrl}" target="_blank" rel="noopener">Offizielle Informationen</a>` +
-                     `<a href="${p.applicationUrl}" target="_blank" rel="noopener">${secondLabel}</a>`;
+                     `<a href="${p.applicationUrl}" target="_blank" rel="noopener">Antrag / Formulare</a>`;
             })()}
           </div>
 
