@@ -7,303 +7,119 @@
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: #f4f6f8;
+      font-family: system-ui, -apple-system, sans-serif;
+      background: #f8f9fa;
       color: #1a1a1a;
       line-height: 1.6;
+      padding: 2rem;
     }
-    a { text-decoration: none; color: inherit; }
-
-    /* Header / Navigation */
-    header {
-      background: #fff;
-      border-bottom: 1px solid #e5e7eb;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-    .nav {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 1rem 1.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .logo {
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: #0b5cab;
-    }
-    .nav-links {
-      display: flex;
-      gap: 1.75rem;
-      list-style: none;
-    }
-    .nav-links a {
-      font-weight: 500;
-      color: #374151;
-      transition: color 0.2s;
-    }
-    .nav-links a:hover {
-      color: #0b5cab;
-    }
-
-    /* Hero */
-    .hero {
-      background: linear-gradient(135deg, #0b5cab 0%, #094a8f 100%);
-      color: #fff;
-      padding: 4.5rem 1.5rem;
+    h1 {
       text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2rem;
     }
-    .hero h1 {
-      font-size: 2.6rem;
-      margin-bottom: 0.75rem;
-      font-weight: 700;
-    }
-    .hero p {
-      font-size: 1.15rem;
-      opacity: 0.9;
-      max-width: 600px;
-      margin: 0 auto 1.75rem;
-    }
-    .hero .btn {
-      display: inline-block;
-      background: #fff;
-      color: #0b5cab;
-      padding: 0.8rem 1.8rem;
-      border-radius: 8px;
-      font-weight: 600;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .hero .btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-    }
-
-    /* Sections */
-    .section {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 3.5rem 1.5rem;
-    }
-    .section-title {
-      font-size: 1.75rem;
-      margin-bottom: 0.5rem;
-      text-align: center;
-    }
-    .section-subtitle {
-      text-align: center;
-      color: #6b7280;
-      margin-bottom: 2.5rem;
-    }
-
-    /* Grid */
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.75rem;
+      gap: 1.5rem;
+      max-width: 1100px;
+      margin: 0 auto;
     }
-
-    /* Cards */
     .card {
       background: #fff;
-      border-radius: 14px;
+      border-radius: 12px;
       padding: 1.75rem;
-      box-shadow: 0 4px 18px rgba(0,0,0,0.06);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
       transition: transform 0.2s, box-shadow 0.2s;
-      border: 1px solid #f0f0f0;
     }
     .card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 28px rgba(0,0,0,0.1);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 28px rgba(0,0,0,0.12);
+    }
+    .card h2 {
+      font-size: 1.35rem;
+      margin-bottom: 0.5rem;
+    }
+    .card p {
+      color: #555;
+      margin-bottom: 1.25rem;
+      font-size: 0.95rem;
     }
     .tag {
       display: inline-block;
       background: #e8f4fd;
       color: #0b5cab;
-      font-size: 0.78rem;
-      font-weight: 600;
-      padding: 0.25rem 0.7rem;
+      font-size: 0.8rem;
+      padding: 0.2rem 0.65rem;
       border-radius: 999px;
-      margin-bottom: 0.85rem;
+      margin-bottom: 0.75rem;
     }
-    .card h3 {
-      font-size: 1.25rem;
-      margin-bottom: 0.5rem;
-    }
-    .card p {
-      color: #4b5563;
-      font-size: 0.95rem;
-      margin-bottom: 1.4rem;
-    }
-    .btn {
+    a.btn {
       display: inline-block;
       background: #0b5cab;
       color: #fff;
-      padding: 0.55rem 1.15rem;
+      text-decoration: none;
+      padding: 0.6rem 1.2rem;
       border-radius: 8px;
       font-weight: 500;
       font-size: 0.9rem;
-      transition: background 0.2s;
     }
-    .btn:hover {
+    a.btn:hover {
       background: #094a8f;
     }
-
-    /* Partner special */
-    .partner-card {
-      border-top: 4px solid #0b5cab;
-    }
-
-    /* Footer */
-    footer {
-      background: #1f2937;
-      color: #d1d5db;
-      padding: 3rem 1.5rem;
-      margin-top: 2rem;
-    }
-    .footer-content {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2rem;
-    }
-    .footer-content h4 {
-      color: #fff;
-      margin-bottom: 1rem;
-      font-size: 1.05rem;
-    }
-    .footer-content a {
-      display: block;
-      color: #9ca3af;
-      margin-bottom: 0.4rem;
-      font-size: 0.9rem;
-    }
-    .footer-content a:hover {
-      color: #fff;
-    }
-    .footer-bottom {
-      max-width: 1200px;
-      margin: 2rem auto 0;
-      padding-top: 1.5rem;
-      border-top: 1px solid #374151;
-      text-align: center;
-      font-size: 0.85rem;
-      color: #9ca3af;
-    }
-
-    @media (max-width: 640px) {
-      .hero h1 { font-size: 2rem; }
-      .nav-links { display: none; }
+    .section-title {
+      max-width: 1100px;
+      margin: 3rem auto 1.25rem;
+      font-size: 1.5rem;
     }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
-  <header>
-    <nav class="nav">
-      <div class="logo">Dein Projekt</div>
-      <ul class="nav-links">
-        <li><a href="#bereiche">Bereiche</a></li>
-        <li><a href="#partner">Partner</a></li>
-        <li><a href="#kontakt">Kontakt</a></li>
-      </ul>
-    </nav>
-  </header>
+  <h1>Willkommen</h1>
 
-  <!-- Hero -->
-  <section class="hero">
-    <h1>Willkommen</h1>
-    <p>Hier findest du alle wichtigen Bereiche und unsere Partner auf einen Blick.</p>
-    <a href="#partner" class="btn">Zu den Partnern</a>
-  </section>
-
-  <!-- Bereiche (Beispiel – durch deine echten ersetzen) -->
-  <section class="section" id="bereiche">
-    <h2 class="section-title">Unsere Bereiche</h2>
-    <p class="section-subtitle">Die wichtigsten Themen und Angebote</p>
-
-    <div class="grid">
-      <div class="card">
-        <span class="tag">Bereich</span>
-        <h3>Bereich 1</h3>
-        <p>Kurze Beschreibung des ersten Bereichs. Hier kannst du deinen echten Inhalt einfügen.</p>
-        <a href="#" class="btn">Mehr erfahren</a>
-      </div>
-
-      <div class="card">
-        <span class="tag">Bereich</span>
-        <h3>Bereich 2</h3>
-        <p>Kurze Beschreibung des zweiten Bereichs. Hier kannst du deinen echten Inhalt einfügen.</p>
-        <a href="#" class="btn">Mehr erfahren</a>
-      </div>
-
-      <div class="card">
-        <span class="tag">Bereich</span>
-        <h3>Bereich 3</h3>
-        <p>Kurze Beschreibung des dritten Bereichs. Hier kannst du deinen echten Inhalt einfügen.</p>
-        <a href="#" class="btn">Mehr erfahren</a>
-      </div>
+  <div class="grid">
+    <!-- Beispiel-Karten (die kannst du durch deine bestehenden ersetzen) -->
+    <div class="card">
+      <span class="tag">Bereich</span>
+      <h2>Beispiel 1</h2>
+      <p>Beschreibung des ersten Bereichs.</p>
+      <a class="btn" href="#">Ansehen</a>
     </div>
-  </section>
 
-  <!-- Partner -->
-  <section class="section" id="partner">
-    <h2 class="section-title">Unsere Partner</h2>
-    <p class="section-subtitle">Gemeinsam stark – unsere aktuellen Partner</p>
-
-    <div class="grid">
-      <div class="card partner-card">
-        <span class="tag">Partner</span>
-        <h3>Bree</h3>
-        <p>Fintech-Partner – moderne Finanzlösungen und Cash-Advance-Services.</p>
-        <a href="partner/bree/" class="btn">Zur Partnerseite</a>
-      </div>
-
-      <div class="card partner-card">
-        <span class="tag">Partner</span>
-        <h3>Worldjob</h3>
-        <p>Partner im Bereich Jobvermittlung und Personalberatung.</p>
-        <a href="partner/worldjob/" class="btn">Zur Partnerseite</a>
-      </div>
-
-      <div class="card partner-card">
-        <span class="tag">Partner</span>
-        <h3>Traverseon</h3>
-        <p>Partner für Outdoor- und Camping-Ausrüstung – leicht, praktisch und einsatzbereit.</p>
-        <a href="partner/traverseon/" class="btn">Zur Partnerseite</a>
-      </div>
+    <div class="card">
+      <span class="tag">Bereich</span>
+      <h2>Beispiel 2</h2>
+      <p>Beschreibung des zweiten Bereichs.</p>
+      <a class="btn" href="#">Ansehen</a>
     </div>
-  </section>
+  </div>
 
-  <!-- Footer -->
-  <footer id="kontakt">
-    <div class="footer-content">
-      <div>
-        <h4>Über uns</h4>
-        <a href="#">Unternehmen</a>
-        <a href="#">Team</a>
-        <a href="#">Karriere</a>
-      </div>
-      <div>
-        <h4>Partner</h4>
-        <a href="partner/bree/">Bree</a>
-        <a href="partner/worldjob/">Worldjob</a>
-        <a href="partner/traverseon/">Traverseon</a>
-      </div>
-      <div>
-        <h4>Kontakt</h4>
-        <a href="mailto:info@example.com">info@example.com</a>
-        <a href="tel:+49000000000">+49 000 000000</a>
-      </div>
+  <!-- Partner-Bereich -->
+  <h2 class="section-title">Partner</h2>
+
+  <div class="grid">
+    <div class="card">
+      <span class="tag">Partner</span>
+      <h2>Bree</h2>
+      <p>Fintech-Partner – moderne Finanzlösungen und Cash-Advance-Services.</p>
+      <a class="btn" href="partner/bree/">Zur Partnerseite</a>
     </div>
-    <div class="footer-bottom">
-      © 2026 Dein Projekt. Alle Rechte vorbehalten.
+
+    <div class="card">
+      <span class="tag">Partner</span>
+      <h2>Worldjob</h2>
+      <p>Partner im Bereich Jobvermittlung und Personalberatung.</p>
+      <a class="btn" href="partner/worldjob/">Zur Partnerseite</a>
     </div>
-  </footer>
+
+    <div class="card">
+      <span class="tag">Partner</span>
+      <h2>Traverseon</h2>
+      <p>Partner für Outdoor- und Camping-Ausrüstung – leicht, praktisch und einsatzbereit.</p>
+      <a class="btn" href="partner/traverseon/">Zur Partnerseite</a>
+    </div>
+  </div>
 
 </body>
 </html>
