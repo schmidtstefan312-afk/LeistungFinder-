@@ -1,84 +1,192 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <title>Technik & Zubehör – Partnerangebote | Leistung-Finder</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Geräte und Zubehör für Haushalt, Technik und Energie." />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://leistung-finder.de/partner/technik/" />
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Mobilität – Partnerangebote | Leistung-Finder</title>
+  <meta name="description" content="Angebote rund um elektrische Mobilität, E-Scooter und moderne Fortbewegung.">
+  <link rel="canonical" href="https://leistung-finder.de/partner/mobilitaet/">
+
   <style>
-    :root {
-      --primary: #0d3934; --primary-dark: #082621; --accent: #ad7f42; --accent-dark: #8a6533;
-      --bg: #f5f2ea; --text: #1b201e; --muted: #5c655f; --card: #ffffff; --border: #e2ded2;
-      --serif: "Fraunces", Georgia, serif; --sans: "Work Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    :root{
+      --primary:#0f4c46;
+      --accent:#e0982e;
+      --bg:#f7f7f4;
+      --card:#ffffff;
+      --text:#17302d;
+      --muted:#63716e;
+      --border:#e5e8e6;
     }
-    * { box-sizing: border-box; }
-    body { margin: 0; font-family: var(--sans); background: var(--bg); color: var(--text); line-height: 1.6; }
-    .hero { background: linear-gradient(160deg, var(--primary) 0%, var(--primary-dark) 100%); color: #fff; padding: 2rem 1.25rem 3rem; }
-    .hero-inner { max-width: 720px; margin: 0 auto; }
-    .breadcrumb { font-size: 0.85rem; opacity: 0.85; margin-bottom: 1rem; }
-    .breadcrumb a { color: #fff; text-decoration: none; }
-    .logotype { font-family: var(--serif); font-weight: 500; font-size: 1rem; opacity: 0.8; margin-bottom: 0.75rem; }
-    .hero h1 { font-family: var(--serif); font-weight: 600; font-size: 1.85rem; margin: 0 0 0.5rem; }
-    .hero p.lede { max-width: 52ch; opacity: 0.92; margin: 0; }
-    .container { max-width: 720px; margin: 0 auto; padding: 0 1.25rem 2.5rem; }
-    .card { background: var(--card); border: 1px solid var(--border); border-radius: 3px; padding: 1.5rem; margin-top: -2rem; box-shadow: 0 6px 20px rgba(8,38,33,.1); }
-    .ad-label { font-size: 0.78rem; color: var(--muted); font-style: italic; margin: 0 0 1.25rem; }
-    .partner-list { list-style: none; margin: 0; padding: 0; }
-    .partner-list li { border-bottom: 1px solid var(--border); padding: 1rem 0; }
-    .partner-list li:last-child { border-bottom: none; }
-    .partner-list a { display: block; text-decoration: none; color: inherit; }
-    .partner-list a:hover .name { color: var(--accent-dark); }
-    .name { font-family: var(--serif); font-weight: 600; font-size: 1.1rem; color: var(--primary-dark); margin: 0 0 0.25rem; }
-    .desc { font-size: 0.9rem; color: var(--muted); margin: 0 0 0.5rem; }
-    .go { font-size: 0.85rem; font-weight: 700; color: var(--accent-dark); }
-    .footer { background: var(--primary-dark); padding: 1.5rem 1.25rem; color: rgba(255,255,255,.7); font-size: 0.85rem; text-align: center; }
-    .footer a { color: #fff; }
+
+    *{box-sizing:border-box}
+
+    body{
+      margin:0;
+      font-family:Arial,Helvetica,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    .hero{
+      background:var(--primary);
+      color:#fff;
+      padding:32px 20px 42px;
+    }
+
+    .hero-inner{
+      max-width:900px;
+      margin:0 auto;
+    }
+
+    .breadcrumb{
+      font-size:14px;
+      margin-bottom:28px;
+      opacity:.9;
+    }
+
+    .breadcrumb a{
+      color:#fff;
+      text-decoration:none;
+    }
+
+    .logotype{
+      font-weight:700;
+      font-size:18px;
+      margin-bottom:12px;
+    }
+
+    h1{
+      margin:0 0 10px;
+      font-size:clamp(30px,5vw,46px);
+      line-height:1.15;
+    }
+
+    .lede{
+      margin:0;
+      max-width:700px;
+      font-size:18px;
+      opacity:.95;
+    }
+
+    .container{
+      max-width:900px;
+      margin:0 auto;
+      padding:28px 20px 50px;
+    }
+
+    .card{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:24px;
+      box-shadow:0 4px 18px rgba(0,0,0,.04);
+    }
+
+    .ad-label{
+      margin:0 0 22px;
+      font-size:13px;
+      color:var(--muted);
+    }
+
+    .partner-list{
+      list-style:none;
+      padding:0;
+      margin:0;
+    }
+
+    .partner-list li{
+      margin:0;
+      border-bottom:1px solid var(--border);
+    }
+
+    .partner-list li:last-child{
+      border-bottom:0;
+    }
+
+    .partner-list a{
+      display:block;
+      padding:20px 4px;
+      color:var(--text);
+      text-decoration:none;
+    }
+
+    .partner-list a:hover{
+      color:var(--primary);
+    }
+
+    .name{
+      font-size:20px;
+      font-weight:700;
+      margin-bottom:4px;
+    }
+
+    .desc{
+      color:var(--muted);
+      margin-bottom:8px;
+    }
+
+    .go{
+      color:var(--primary);
+      font-weight:700;
+    }
+
+    .footer{
+      max-width:900px;
+      margin:0 auto;
+      padding:0 20px 35px;
+      text-align:center;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    .footer a{
+      color:var(--primary);
+    }
   </style>
 </head>
+
 <body>
+
   <div class="hero">
     <div class="hero-inner">
-      <div class="breadcrumb"><a href="/">Leistung-Finder</a> › Partnerangebote › Technik & Zubehör</div>
+      <div class="breadcrumb">
+        <a href="/">Leistung-Finder</a> › Partnerangebote › Mobilität
+      </div>
+
       <div class="logotype">Leistung-Finder</div>
-      <h1>Technik & Zubehör</h1>
-      <p class="lede">Geräte und Zubehör für Haushalt, Technik und Energie.</p>
+
+      <h1>Mobilität</h1>
+
+      <p class="lede">
+        Angebote rund um elektrische Mobilität, E-Scooter und moderne Fortbewegung.
+      </p>
     </div>
   </div>
+
   <div class="container">
     <div class="card">
-      <p class="ad-label">Anzeige – bei Abschluss über diese Links erhalten wir ggf. eine Vergütung. Diese Angebote stammen von unabhängigen Partnern, nicht von Behörden.</p>
+
+      <p class="ad-label">
+        Anzeige – bei Abschluss über diese Links erhalten wir ggf. eine Vergütung.
+        Diese Angebote stammen von unabhängigen Partnern, nicht von Behörden.
+      </p>
+
       <ul class="partner-list">
+
         <li>
-          <a href="/partner/htvront/">
-            <div class="name">HTVRont</div>
-            <div class="desc">Technik und Zubehör</div>
+          <a href="/partner/pure-electric-de/">
+            <div class="name">Pure Electric</div>
+            <div class="desc">Elektrische Mobilität und E-Scooter</div>
             <div class="go">Zur Partnerseite →</div>
           </a>
         </li>
+
         <li>
-          <a href="/partner/yose-power-de">
-            <div class="name">Yose Power</div>
-            <div class="desc">Energie und Power-Lösungen</div>
-            <div class="go">Zur Partnerseite →</div>
-          </a>
-        </li>
-        <li>
-          <a href="/partner/plan-b-zero-net-energy/">
-            <div class="name">Plan B Zero Net Energy</div>
-            <div class="desc">Energieeffizienz</div>
-            <div class="go">Zur Partnerseite →</div>
-          </a>
-        </li>
-        <li>
-          <a href="/partner/mvv-energie-de/">
-            <div class="name">MVV Energie</div>
-            <div class="desc">Energieangebote</div>
+          <a href="/partner/streetbooster-de/">
+            <div class="name">STREETBOOSTER</div>
+            <div class="desc">E-Scooter und elektrische Mobilität</div>
             <div class="go">Zur Partnerseite →</div>
           </a>
         </li>
@@ -86,9 +194,14 @@
       </ul>
     </div>
   </div>
+
   <div class="footer">
-    <a href="/impressum.html">Impressum</a> &nbsp;·&nbsp; <a href="/datenschutz.html">Datenschutz</a>
-    <br>Leistung-Finder ist keine Behörde und bietet keine Rechtsberatung.
+    <a href="/impressum.html">Impressum</a>
+    &nbsp;·&nbsp;
+    <a href="/datenschutz.html">Datenschutz</a>
+    <br>
+    Leistung-Finder ist keine Behörde und bietet keine Rechtsberatung.
   </div>
+
 </body>
 </html>
