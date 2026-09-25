@@ -2304,7 +2304,7 @@
   category: 'Alle Partner',
   label: 'Alle 39 Partner im Überblick',
   alt: 'Alle Partner',
-  url: '/partner/39partner/',
+  url: '/partner/',
   img: '' // oder ein Bild, falls du möchtest
 },
 
@@ -6054,7 +6054,7 @@
 
 
     const partnerCategorySlug = {
-      'Alle Partner': '39partner',
+      'Alle Partner': '',
       'Reisen & Reiseversicherung': 'reisen',
       'Versicherungen & Tarife vergleichen': 'versicherungen',
       'Verkehrsrecht & Bußgeld': 'verkehrsrecht',
@@ -6107,9 +6107,11 @@
           partnerCategorySlug[cat] ||
           cat.toLowerCase().replace(/[^a-z0-9]+/g, '-');
 
+        const href = cat === 'Alle Partner' ? '/partner/' : `/partner/${slug}/`;
+
         return `
 
-          <a class="partner-tile" href="/partner/${slug}/">
+          <a class="partner-tile" href="${href}">
 
             <div class="partner-tile-header">
 
