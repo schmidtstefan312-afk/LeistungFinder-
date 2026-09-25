@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -11,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
   <style>
     :root {
       --primary: #0d3934;
@@ -25,20 +25,64 @@
       --serif: "Fraunces", Georgia, serif;
       --sans: "Work Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
     }
+
     * { box-sizing: border-box; }
-    body { margin: 0; font-family: var(--sans); background: var(--bg); color: var(--text); line-height: 1.6; }
+
+    body {
+      margin: 0;
+      font-family: var(--sans);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
     .hero {
       background: linear-gradient(160deg, var(--primary) 0%, var(--primary-dark) 100%);
       color: #fff;
       padding: 2rem 1.25rem 3rem;
     }
-    .hero-inner { max-width: 760px; margin: 0 auto; }
-    .back-link { color: #fff; opacity: .85; font-size: .85rem; text-decoration: none; }
+
+    .hero-inner {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .back-link {
+      color: #fff;
+      opacity: .85;
+      font-size: .85rem;
+      text-decoration: none;
+    }
+
     .back-link:hover { opacity: 1; }
-    .logotype { font-family: var(--serif); font-weight: 500; font-size: 1rem; opacity: .8; margin: .75rem 0 1.25rem; }
-    .hero h1 { font-family: var(--serif); font-weight: 600; font-size: 1.9rem; margin: 0 0 .5rem; }
-    .hero p.lede { max-width: 52ch; opacity: .92; margin: 0; }
-    .container { max-width: 760px; margin: 0 auto; padding: 0 1.25rem 2rem; }
+
+    .logotype {
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: 1rem;
+      opacity: .8;
+      margin: .75rem 0 1.25rem;
+    }
+
+    .hero h1 {
+      font-family: var(--serif);
+      font-weight: 600;
+      font-size: 1.9rem;
+      margin: 0 0 .5rem;
+    }
+
+    .hero p.lede {
+      max-width: 52ch;
+      opacity: .92;
+      margin: 0;
+    }
+
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 1.25rem 2rem;
+    }
+
     .card {
       background: var(--card);
       border: 1px solid var(--border);
@@ -47,13 +91,29 @@
       margin-top: -2.25rem;
       box-shadow: 0 6px 20px rgba(8,38,33,.1);
     }
-    .ad-label { font-size: .78rem; color: var(--muted); font-style: italic; margin: 0 0 1.25rem; }
-    .partner-list { list-style: none; margin: 0; padding: 0; }
+
+    .ad-label {
+      font-size: .78rem;
+      color: var(--muted);
+      font-style: italic;
+      margin: 0 0 1.25rem;
+    }
+
+    .partner-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
     .partner-list li {
       border-bottom: 1px solid var(--border);
       padding: .7rem 0;
     }
-    .partner-list li:last-child { border-bottom: none; }
+
+    .partner-list li:last-child {
+      border-bottom: none;
+    }
+
     .partner-list a {
       color: var(--primary-dark);
       text-decoration: none;
@@ -61,7 +121,12 @@
       font-size: 1.02rem;
       display: block;
     }
-    .partner-list a:hover { color: var(--accent-dark); text-decoration: underline; }
+
+    .partner-list a:hover {
+      color: var(--accent-dark);
+      text-decoration: underline;
+    }
+
     .partner-list small {
       display: block;
       color: var(--muted);
@@ -69,6 +134,7 @@
       font-size: .82rem;
       margin-top: .15rem;
     }
+
     .footer {
       background: var(--primary-dark);
       padding: 1.5rem 1.25rem;
@@ -76,25 +142,37 @@
       font-size: .85rem;
       text-align: center;
     }
-    .footer a { color: #fff; }
+
+    .footer a {
+      color: #fff;
+    }
   </style>
 </head>
+
 <body>
 
 <div class="hero">
   <div class="hero-inner">
-    <a class="back-link" href="/">&larr; Zur&uuml;ck zum Leistung-Finder</a>
-    <div class="logotype">Leistung-Finder &middot; Partnerangebote</div>
-    <h1>Alle 39 Partner im &Uuml;berblick</h1>
-    <p class="lede">Hier findest du alle hinterlegten Partnerangebote einzeln untereinander. Klicke auf einen Eintrag, um zum jeweiligen Angebot zu gelangen.</p>
+    <a class="back-link" href="/">&larr; Zurück zum Leistung-Finder</a>
+    <div class="logotype">Leistung-Finder · Partnerangebote</div>
+    <h1>Alle 39 Partner im Überblick</h1>
+    <p class="lede">
+      Hier findest du alle hinterlegten Partnerangebote einzeln untereinander.
+      Klicke auf einen Eintrag, um zum jeweiligen Angebot zu gelangen.
+    </p>
   </div>
 </div>
 
 <div class="container">
   <div class="card">
-    <p class="ad-label">Anzeige &ndash; bei Abschluss &uuml;ber diese Links erhalten wir ggf. eine Verg&uuml;tung. Diese Angebote stammen von unabh&auml;ngigen Partnern, nicht von Beh&ouml;rden.</p>
+
+    <p class="ad-label">
+      Anzeige – bei Abschluss über diese Links erhalten wir ggf. eine Vergütung.
+      Diese Angebote stammen von unabhängigen Partnern, nicht von Behörden.
+    </p>
 
     <ul class="partner-list">
+
       <li><a href="/partner/100percentpure-de-at/">100% Pure <small>Partnerangebot</small></a></li>
       <li><a href="/partner/andsafe-de/">andsafe <small>Partnerangebot</small></a></li>
       <li><a href="/partner/bestfewo-de/">BestFewo <small>Partnerangebot</small></a></li>
@@ -134,15 +212,17 @@
       <li><a href="/partner/waipu-tv-de/">waipu.tv <small>Partnerangebot</small></a></li>
       <li><a href="/partner/weightworld-de-j93e5/">WeightWorld <small>Partnerangebot</small></a></li>
       <li><a href="/partner/wondershare-de/">Wondershare <small>Partnerangebot</small></a></li>
-      <li><a href="/partner/worldjob/">Worldjob / Jobstoday World <small>Partnerangebot</small></a></li>
       <li><a href="/partner/yose-power-de">Yose Power <small>Partnerangebot</small></a></li>
+
     </ul>
   </div>
 </div>
 
 <div class="footer">
-  <a href="/impressum.html">Impressum</a> &nbsp;&middot;&nbsp; <a href="/datenschutz.html">Datenschutz</a>
-  <br>Leistung-Finder ist keine Beh&ouml;rde und bietet keine Rechtsberatung.
+  <a href="/impressum.html">Impressum</a> &nbsp;·&nbsp;
+  <a href="/datenschutz.html">Datenschutz</a>
+  <br>
+  Leistung-Finder ist keine Behörde und bietet keine Rechtsberatung.
 </div>
 
 </body>
