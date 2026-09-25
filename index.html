@@ -2304,7 +2304,7 @@
   category: 'Alle Partner',
   label: 'Alle 39 Partner im Überblick',
   alt: 'Alle Partner',
-  url: '/partner.html',
+  url: '/partner/39partner/',
   img: '' // oder ein Bild, falls du möchtest
 },
 
@@ -5763,6 +5763,11 @@
 
     const partnerCategoryMeta = {
 
+      'Alle Partner': {
+        icon: '★',
+        desc: 'Alle 39 Partnerangebote auf einen Blick – einzeln untereinander.'
+      },
+
       'Reisen & Reiseversicherung': {
         icon: 'R',
         desc: 'Absicherung und ergänzende Angebote rund um Reisen ins Ausland.'
@@ -6049,6 +6054,7 @@
 
 
     const partnerCategorySlug = {
+      'Alle Partner': '39partner',
       'Reisen & Reiseversicherung': 'reisen',
       'Versicherungen & Tarife vergleichen': 'versicherungen',
       'Verkehrsrecht & Bußgeld': 'verkehrsrecht',
@@ -6124,7 +6130,7 @@
             }
 
             <p class="partner-tile-count">
-              ${items.length} Angebot${items.length === 1 ? '' : 'e'} ansehen
+              ${cat === 'Alle Partner' ? '39 Partner im Überblick' : (items.length + ' Angebot' + (items.length === 1 ? '' : 'e') + ' ansehen')}
             </p>
 
           </a>
