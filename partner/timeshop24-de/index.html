@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <title>Timeshop24 – Katalog | Leistung-Finder</title>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 <meta name="description" content="Timeshop24: Uhren und Schmuck online kaufen, mit wechselnden Aktionen. Alle Angebote im Überblick, Partnerangebot von Leistung-Finder." />
 <meta name="robots" content="index, follow" />
 <link rel="canonical" href="https://leistung-finder.de/partner/timeshop24-de/" />
@@ -29,27 +29,71 @@
   .card{background:var(--card);border:1px solid var(--border);border-radius:3px;padding:1.5rem;margin-top:-2.25rem;box-shadow:0 6px 20px rgba(8,38,33,.1);}
   .ad-label{font-size:.78rem;color:var(--muted);font-style:italic;margin:0 0 1.25rem;}
   .cta{display:inline-block;background:var(--accent);color:#fff;font-weight:700;padding:.75rem 1.4rem;border-radius:2px;text-decoration:none;margin:.5rem 0 1.5rem;}
-  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;}
+  .badge{display:inline-block;font-size:.68rem;padding:.12rem .4rem;border-radius:2px;background:#fbeedd;color:var(--accent-dark);border:1px solid #f0d6ac;margin-bottom:1rem;}
+  .footer{background:var(--primary-dark);padding:1.5rem 1.25rem;color:rgba(255,255,255,.7);font-size:.85rem;text-align:center;}
+  .footer a{color:#fff;}
+
+  /* Grid – Desktop */
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(160px,1fr));
+    gap:1rem;
+  }
   .offer{
     border:1px solid var(--border);
     border-radius:4px;
     background:#fdfcfa;
-    overflow:hidden;
-    text-align:center;
-    height:220px;
+    height:180px;
     display:flex;
     align-items:center;
     justify-content:center;
-    padding:8px;
+    padding:10px;
+    overflow:hidden;
+    contain:layout style paint;
+    transform:translateZ(0);
   }
-  .offer iframe{
+  .offer a{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:100%;
+    height:100%;
+  }
+  .offer img{
     max-width:100%;
-    max-height:200px;
-    border:0;
+    max-height:160px;
+    width:auto;
+    height:auto;
+    object-fit:contain;
+    display:block;
   }
-  .badge{display:inline-block;font-size:.68rem;padding:.12rem .4rem;border-radius:2px;background:#fbeedd;color:var(--accent-dark);border:1px solid #f0d6ac;margin-bottom:1rem;}
-  .footer{background:var(--primary-dark);padding:1.5rem 1.25rem;color:rgba(255,255,255,.7);font-size:.85rem;text-align:center;}
-  .footer a{color:#fff;}
+
+  /* Mobile Optimierung – weniger Spalten + größere feste Boxen */
+  @media (max-width: 600px) {
+    .grid{
+      grid-template-columns:repeat(2, 1fr);
+      gap:0.75rem;
+    }
+    .offer{
+      height:160px;
+      padding:8px;
+    }
+    .offer img{
+      max-height:140px;
+    }
+    .card{padding:1rem;}
+    .hero{padding:1.5rem 1rem 2.5rem;}
+    .hero h1{font-size:1.6rem;}
+  }
+
+  @media (max-width: 380px) {
+    .grid{
+      grid-template-columns:1fr;
+    }
+    .offer{
+      height:200px;
+    }
+  }
 </style>
 </head>
 <body>
@@ -67,46 +111,46 @@
     <a class="cta" rel="sponsored noopener" target="_blank" href="https://www.awin1.com/cread.php?s=4838332&v=14609&q=607109&r=3083133">Zum Timeshop24-Partnerprogramm</a>
     <span class="badge">Alle aktuellen Angebote</span>
     <div class="grid">
-      <div class="offer"><iframe src="https://www.awin1.com/cawshow.php?v=14609&s=4838332&q=607109&r=3083133&iframe=1" width="180" height="180" frameborder="0" scrolling="no" title="Timeshop24"></iframe></div>
-      <div class="offer"><iframe src="https://www.awin1.com/cawshow.php?v=14609&s=4838339&q=607109&r=3083133&iframe=1" width="180" height="180" frameborder="0" scrolling="no" title="Timeshop24"></iframe></div>
-      <div class="offer"><iframe src="https://www.awin1.com/cawshow.php?v=14609&s=4817154&q=607109&r=3083133&iframe=1" width="180" height="180" frameborder="0" scrolling="no" title="Timeshop24"></iframe></div>
-      <div class="offer"><iframe src="https://www.awin1.com/cawshow.php?v=14609&s=4817172&q=607109&r=3083133&iframe=1" width="180" height="180" frameborder="0" scrolling="no" title="Timeshop24"></iframe></div>
-      <div class="offer"><iframe src="https://www.awin1.com/cawshow.php?v=14609&s=4817204&q=607109&r=3083133&iframe=1" width="180" height="180" frameborder="0" scrolling="no" title="Timeshop24"></iframe></div>
-      <div class="offer"><iframe src="https://www.awin1.com/cawshow.php?v=14609&s=4817215&q=607109&r=3083133&iframe=1" width="180" height="180" frameborder="0" scrolling="no" title="Timeshop24"></iframe></div>
-      <div class="offer"><iframe src="https://www.awin1.com/cawshow.php?v=14609&s=4816920&q=607109&r=3083133&iframe=1" width="180" height="180" frameborder="0" scrolling="no" title="Timeshop24"></iframe></div>
-      <div class="offer"><iframe src="https://www.awin1.com/cawshow.php?v=14609&s=4816935&q=607109&r=3083133&iframe=1" width="180" height="180" frameborder="0" scrolling="no" title="Timeshop24"></iframe></div>
-      <div class="offer"><iframe src="https://www.awin1.com/cawshow.php?v=14609&s=4816968&q=607109&r=3083133&iframe=1" width="180" height="180" frameborder="0" scrolling="no" title="Timeshop24"></iframe></div>
-      <div class="offer"><iframe src="https://www.awin1.com/cawshow.php?v=14609&s=4817018&q=607109&r=3083133&iframe=1" width="180" height="180" frameborder="0" scrolling="no" title="Timeshop24"></iframe></div>
-      <div class="offer"><iframe src="https://www.awin1.com/cawshow.php?v=14609&s=4817054&q=607109&r=3083133&iframe=1" width="180" height="180" frameborder="0" scrolling="no" title="Timeshop24"></iframe></div>
-      <div class="offer"><iframe src="https://www.awin1.com/cawshow.php?v=14609&s=4817076&q=607109&r=3083133&iframe=1" width="180" height="180" frameborder="0" scrolling="no" title="Timeshop24"></iframe></div>
-      <div class="offer"><iframe src="https://www.awin1.com/cawshow.php?v=14609&s=4816359&q=607109&r=3083133&iframe=1" width="180" height="180" frameborder="0" scrolling="no" title="Timeshop24"></iframe></div>
-      <div class="offer"><iframe src="https://www.awin1.com/cawshow.php?v=14609&s=4816366&q=607109&r=3083133&iframe=1" width="180" height="180" frameborder="0" scrolling="no" title="Timeshop24"></iframe></div>
-      <div class="offer"><iframe src="https://www.awin1.com/cawshow.php?v=14609&s=4816700&q=607109&r=3083133&iframe=1" width="180" height="180" frameborder="0" scrolling="no" title="Timeshop24"></iframe></div>
-      <div class="offer"><iframe src="https://www.awin1.com/cawshow.php?v=14609&s=4816709&q=607109&r=3083133&iframe=1" width="180" height="180" frameborder="0" scrolling="no" title="Timeshop24"></iframe></div>
-      <div class="offer"><iframe src="https://www.awin1.com/cawshow.php?v=14609&s=4816307&q=607109&r=3083133&iframe=1" width="180" height="180" frameborder="0" scrolling="no" title="Timeshop24"></iframe></div>
-      <div class="offer"><iframe src="https://www.awin1.com/cawshow.php?v=14609&s=4816073&q=607109&r=3083133&iframe=1" width="180" height="180" frameborder="0" scrolling="no" title="Timeshop24"></iframe></div>
-      <div class="offer"><iframe src="https://www.awin1.com/cawshow.php?v=14609&s=4816092&q=607109&r=3083133&iframe=1" width="180" height="180" frameborder="0" scrolling="no" title="Timeshop24"></iframe></div>
-      <div class="offer"><iframe src="https://www.awin1.com/cawshow.php?v=14609&s=4816169&q=607109&r=3083133&iframe=1" width="180" height="180" frameborder="0" scrolling="no" title="Timeshop24"></iframe></div>
-      <div class="offer"><iframe src="https://www.awin1.com/cawshow.php?v=14609&s=4816202&q=607109&r=3083133&iframe=1" width="180" height="180" frameborder="0" scrolling="no" title="Timeshop24"></iframe></div>
-      <div class="offer"><iframe src="https://www.awin1.com/cawshow.php?v=14609&s=4816235&q=607109&r=3083133&iframe=1" width="180" height="180" frameborder="0" scrolling="no" title="Timeshop24"></iframe></div>
-      <div class="offer"><iframe src="https://www.awin1.com/cawshow.php?v=14609&s=4816242&q=607109&r=3083133&iframe=1" width="180" height="180" frameborder="0" scrolling="no" title="Timeshop24"></iframe></div>
-      <div class="offer"><iframe src="https://www.awin1.com/cawshow.php?v=14609&s=4816257&q=607109&r=3083133&iframe=1" width="180" height="180" frameborder="0" scrolling="no" title="Timeshop24"></iframe></div>
-      <div class="offer"><iframe src="https://www.awin1.com/cawshow.php?v=14609&s=4816290&q=607109&r=3083133&iframe=1" width="180" height="180" frameborder="0" scrolling="no" title="Timeshop24"></iframe></div>
-      <div class="offer"><iframe src="https://www.awin1.com/cawshow.php?v=14609&s=4815248&q=607109&r=3083133&iframe=1" width="180" height="180" frameborder="0" scrolling="no" title="Timeshop24"></iframe></div>
-      <div class="offer"><iframe src="https://www.awin1.com/cawshow.php?v=14609&s=4815312&q=607109&r=3083133&iframe=1" width="180" height="180" frameborder="0" scrolling="no" title="Timeshop24"></iframe></div>
-      <div class="offer"><iframe src="https://www.awin1.com/cawshow.php?v=14609&s=4815440&q=607109&r=3083133&iframe=1" width="180" height="180" frameborder="0" scrolling="no" title="Timeshop24"></iframe></div>
-      <div class="offer"><iframe src="https://www.awin1.com/cawshow.php?v=14609&s=4815507&q=607109&r=3083133&iframe=1" width="180" height="180" frameborder="0" scrolling="no" title="Timeshop24"></iframe></div>
-      <div class="offer"><iframe src="https://www.awin1.com/cawshow.php?v=14609&s=4815601&q=607109&r=3083133&iframe=1" width="180" height="180" frameborder="0" scrolling="no" title="Timeshop24"></iframe></div>
-      <div class="offer"><iframe src="https://www.awin1.com/cawshow.php?v=14609&s=4815645&q=607109&r=3083133&iframe=1" width="180" height="180" frameborder="0" scrolling="no" title="Timeshop24"></iframe></div>
-      <div class="offer"><iframe src="https://www.awin1.com/cawshow.php?v=14609&s=4815653&q=607109&r=3083133&iframe=1" width="180" height="180" frameborder="0" scrolling="no" title="Timeshop24"></iframe></div>
-      <div class="offer"><iframe src="https://www.awin1.com/cawshow.php?v=14609&s=4815698&q=607109&r=3083133&iframe=1" width="180" height="180" frameborder="0" scrolling="no" title="Timeshop24"></iframe></div>
-      <div class="offer"><iframe src="https://www.awin1.com/cawshow.php?v=14609&s=4814026&q=607109&r=3083133&iframe=1" width="180" height="180" frameborder="0" scrolling="no" title="Timeshop24"></iframe></div>
-      <div class="offer"><iframe src="https://www.awin1.com/cawshow.php?v=14609&s=4814038&q=607109&r=3083133&iframe=1" width="180" height="180" frameborder="0" scrolling="no" title="Timeshop24"></iframe></div>
-      <div class="offer"><iframe src="https://www.awin1.com/cawshow.php?v=14609&s=4814895&q=607109&r=3083133&iframe=1" width="180" height="180" frameborder="0" scrolling="no" title="Timeshop24"></iframe></div>
-      <div class="offer"><iframe src="https://www.awin1.com/cawshow.php?v=14609&s=4814945&q=607109&r=3083133&iframe=1" width="180" height="180" frameborder="0" scrolling="no" title="Timeshop24"></iframe></div>
-      <div class="offer"><iframe src="https://www.awin1.com/cawshow.php?v=14609&s=4815020&q=607109&r=3083133&iframe=1" width="180" height="180" frameborder="0" scrolling="no" title="Timeshop24"></iframe></div>
-      <div class="offer"><iframe src="https://www.awin1.com/cawshow.php?v=14609&s=4815052&q=607109&r=3083133&iframe=1" width="180" height="180" frameborder="0" scrolling="no" title="Timeshop24"></iframe></div>
-      <div class="offer"><iframe src="https://www.awin1.com/cawshow.php?v=14609&s=4815134&q=607109&r=3083133&iframe=1" width="180" height="180" frameborder="0" scrolling="no" title="Timeshop24"></iframe></div>
+      <div class="offer"><a rel="sponsored noopener" target="_blank" href="https://www.awin1.com/cread.php?s=4838332&v=14609&q=607109&r=3083133"><img loading="lazy" alt="Timeshop24" width="160" height="160" src="https://www.awin1.com/cshow.php?s=4838332&v=14609&q=607109&r=3083133"></a></div>
+      <div class="offer"><a rel="sponsored noopener" target="_blank" href="https://www.awin1.com/cread.php?s=4838339&v=14609&q=607109&r=3083133"><img loading="lazy" alt="Timeshop24" width="160" height="160" src="https://www.awin1.com/cshow.php?s=4838339&v=14609&q=607109&r=3083133"></a></div>
+      <div class="offer"><a rel="sponsored noopener" target="_blank" href="https://www.awin1.com/cread.php?s=4817154&v=14609&q=607109&r=3083133"><img loading="lazy" alt="Timeshop24" width="160" height="160" src="https://www.awin1.com/cshow.php?s=4817154&v=14609&q=607109&r=3083133"></a></div>
+      <div class="offer"><a rel="sponsored noopener" target="_blank" href="https://www.awin1.com/cread.php?s=4817172&v=14609&q=607109&r=3083133"><img loading="lazy" alt="Timeshop24" width="160" height="160" src="https://www.awin1.com/cshow.php?s=4817172&v=14609&q=607109&r=3083133"></a></div>
+      <div class="offer"><a rel="sponsored noopener" target="_blank" href="https://www.awin1.com/cread.php?s=4817204&v=14609&q=607109&r=3083133"><img loading="lazy" alt="Timeshop24" width="160" height="160" src="https://www.awin1.com/cshow.php?s=4817204&v=14609&q=607109&r=3083133"></a></div>
+      <div class="offer"><a rel="sponsored noopener" target="_blank" href="https://www.awin1.com/cread.php?s=4817215&v=14609&q=607109&r=3083133"><img loading="lazy" alt="Timeshop24" width="160" height="160" src="https://www.awin1.com/cshow.php?s=4817215&v=14609&q=607109&r=3083133"></a></div>
+      <div class="offer"><a rel="sponsored noopener" target="_blank" href="https://www.awin1.com/cread.php?s=4816920&v=14609&q=607109&r=3083133"><img loading="lazy" alt="Timeshop24" width="160" height="160" src="https://www.awin1.com/cshow.php?s=4816920&v=14609&q=607109&r=3083133"></a></div>
+      <div class="offer"><a rel="sponsored noopener" target="_blank" href="https://www.awin1.com/cread.php?s=4816935&v=14609&q=607109&r=3083133"><img loading="lazy" alt="Timeshop24" width="160" height="160" src="https://www.awin1.com/cshow.php?s=4816935&v=14609&q=607109&r=3083133"></a></div>
+      <div class="offer"><a rel="sponsored noopener" target="_blank" href="https://www.awin1.com/cread.php?s=4816968&v=14609&q=607109&r=3083133"><img loading="lazy" alt="Timeshop24" width="160" height="160" src="https://www.awin1.com/cshow.php?s=4816968&v=14609&q=607109&r=3083133"></a></div>
+      <div class="offer"><a rel="sponsored noopener" target="_blank" href="https://www.awin1.com/cread.php?s=4817018&v=14609&q=607109&r=3083133"><img loading="lazy" alt="Timeshop24" width="160" height="160" src="https://www.awin1.com/cshow.php?s=4817018&v=14609&q=607109&r=3083133"></a></div>
+      <div class="offer"><a rel="sponsored noopener" target="_blank" href="https://www.awin1.com/cread.php?s=4817054&v=14609&q=607109&r=3083133"><img loading="lazy" alt="Timeshop24" width="160" height="160" src="https://www.awin1.com/cshow.php?s=4817054&v=14609&q=607109&r=3083133"></a></div>
+      <div class="offer"><a rel="sponsored noopener" target="_blank" href="https://www.awin1.com/cread.php?s=4817076&v=14609&q=607109&r=3083133"><img loading="lazy" alt="Timeshop24" width="160" height="160" src="https://www.awin1.com/cshow.php?s=4817076&v=14609&q=607109&r=3083133"></a></div>
+      <div class="offer"><a rel="sponsored noopener" target="_blank" href="https://www.awin1.com/cread.php?s=4816359&v=14609&q=607109&r=3083133"><img loading="lazy" alt="Timeshop24" width="160" height="160" src="https://www.awin1.com/cshow.php?s=4816359&v=14609&q=607109&r=3083133"></a></div>
+      <div class="offer"><a rel="sponsored noopener" target="_blank" href="https://www.awin1.com/cread.php?s=4816366&v=14609&q=607109&r=3083133"><img loading="lazy" alt="Timeshop24" width="160" height="160" src="https://www.awin1.com/cshow.php?s=4816366&v=14609&q=607109&r=3083133"></a></div>
+      <div class="offer"><a rel="sponsored noopener" target="_blank" href="https://www.awin1.com/cread.php?s=4816700&v=14609&q=607109&r=3083133"><img loading="lazy" alt="Timeshop24" width="160" height="160" src="https://www.awin1.com/cshow.php?s=4816700&v=14609&q=607109&r=3083133"></a></div>
+      <div class="offer"><a rel="sponsored noopener" target="_blank" href="https://www.awin1.com/cread.php?s=4816709&v=14609&q=607109&r=3083133"><img loading="lazy" alt="Timeshop24" width="160" height="160" src="https://www.awin1.com/cshow.php?s=4816709&v=14609&q=607109&r=3083133"></a></div>
+      <div class="offer"><a rel="sponsored noopener" target="_blank" href="https://www.awin1.com/cread.php?s=4816307&v=14609&q=607109&r=3083133"><img loading="lazy" alt="Timeshop24" width="160" height="160" src="https://www.awin1.com/cshow.php?s=4816307&v=14609&q=607109&r=3083133"></a></div>
+      <div class="offer"><a rel="sponsored noopener" target="_blank" href="https://www.awin1.com/cread.php?s=4816073&v=14609&q=607109&r=3083133"><img loading="lazy" alt="Timeshop24" width="160" height="160" src="https://www.awin1.com/cshow.php?s=4816073&v=14609&q=607109&r=3083133"></a></div>
+      <div class="offer"><a rel="sponsored noopener" target="_blank" href="https://www.awin1.com/cread.php?s=4816092&v=14609&q=607109&r=3083133"><img loading="lazy" alt="Timeshop24" width="160" height="160" src="https://www.awin1.com/cshow.php?s=4816092&v=14609&q=607109&r=3083133"></a></div>
+      <div class="offer"><a rel="sponsored noopener" target="_blank" href="https://www.awin1.com/cread.php?s=4816169&v=14609&q=607109&r=3083133"><img loading="lazy" alt="Timeshop24" width="160" height="160" src="https://www.awin1.com/cshow.php?s=4816169&v=14609&q=607109&r=3083133"></a></div>
+      <div class="offer"><a rel="sponsored noopener" target="_blank" href="https://www.awin1.com/cread.php?s=4816202&v=14609&q=607109&r=3083133"><img loading="lazy" alt="Timeshop24" width="160" height="160" src="https://www.awin1.com/cshow.php?s=4816202&v=14609&q=607109&r=3083133"></a></div>
+      <div class="offer"><a rel="sponsored noopener" target="_blank" href="https://www.awin1.com/cread.php?s=4816235&v=14609&q=607109&r=3083133"><img loading="lazy" alt="Timeshop24" width="160" height="160" src="https://www.awin1.com/cshow.php?s=4816235&v=14609&q=607109&r=3083133"></a></div>
+      <div class="offer"><a rel="sponsored noopener" target="_blank" href="https://www.awin1.com/cread.php?s=4816242&v=14609&q=607109&r=3083133"><img loading="lazy" alt="Timeshop24" width="160" height="160" src="https://www.awin1.com/cshow.php?s=4816242&v=14609&q=607109&r=3083133"></a></div>
+      <div class="offer"><a rel="sponsored noopener" target="_blank" href="https://www.awin1.com/cread.php?s=4816257&v=14609&q=607109&r=3083133"><img loading="lazy" alt="Timeshop24" width="160" height="160" src="https://www.awin1.com/cshow.php?s=4816257&v=14609&q=607109&r=3083133"></a></div>
+      <div class="offer"><a rel="sponsored noopener" target="_blank" href="https://www.awin1.com/cread.php?s=4816290&v=14609&q=607109&r=3083133"><img loading="lazy" alt="Timeshop24" width="160" height="160" src="https://www.awin1.com/cshow.php?s=4816290&v=14609&q=607109&r=3083133"></a></div>
+      <div class="offer"><a rel="sponsored noopener" target="_blank" href="https://www.awin1.com/cread.php?s=4815248&v=14609&q=607109&r=3083133"><img loading="lazy" alt="Timeshop24" width="160" height="160" src="https://www.awin1.com/cshow.php?s=4815248&v=14609&q=607109&r=3083133"></a></div>
+      <div class="offer"><a rel="sponsored noopener" target="_blank" href="https://www.awin1.com/cread.php?s=4815312&v=14609&q=607109&r=3083133"><img loading="lazy" alt="Timeshop24" width="160" height="160" src="https://www.awin1.com/cshow.php?s=4815312&v=14609&q=607109&r=3083133"></a></div>
+      <div class="offer"><a rel="sponsored noopener" target="_blank" href="https://www.awin1.com/cread.php?s=4815440&v=14609&q=607109&r=3083133"><img loading="lazy" alt="Timeshop24" width="160" height="160" src="https://www.awin1.com/cshow.php?s=4815440&v=14609&q=607109&r=3083133"></a></div>
+      <div class="offer"><a rel="sponsored noopener" target="_blank" href="https://www.awin1.com/cread.php?s=4815507&v=14609&q=607109&r=3083133"><img loading="lazy" alt="Timeshop24" width="160" height="160" src="https://www.awin1.com/cshow.php?s=4815507&v=14609&q=607109&r=3083133"></a></div>
+      <div class="offer"><a rel="sponsored noopener" target="_blank" href="https://www.awin1.com/cread.php?s=4815601&v=14609&q=607109&r=3083133"><img loading="lazy" alt="Timeshop24" width="160" height="160" src="https://www.awin1.com/cshow.php?s=4815601&v=14609&q=607109&r=3083133"></a></div>
+      <div class="offer"><a rel="sponsored noopener" target="_blank" href="https://www.awin1.com/cread.php?s=4815645&v=14609&q=607109&r=3083133"><img loading="lazy" alt="Timeshop24" width="160" height="160" src="https://www.awin1.com/cshow.php?s=4815645&v=14609&q=607109&r=3083133"></a></div>
+      <div class="offer"><a rel="sponsored noopener" target="_blank" href="https://www.awin1.com/cread.php?s=4815653&v=14609&q=607109&r=3083133"><img loading="lazy" alt="Timeshop24" width="160" height="160" src="https://www.awin1.com/cshow.php?s=4815653&v=14609&q=607109&r=3083133"></a></div>
+      <div class="offer"><a rel="sponsored noopener" target="_blank" href="https://www.awin1.com/cread.php?s=4815698&v=14609&q=607109&r=3083133"><img loading="lazy" alt="Timeshop24" width="160" height="160" src="https://www.awin1.com/cshow.php?s=4815698&v=14609&q=607109&r=3083133"></a></div>
+      <div class="offer"><a rel="sponsored noopener" target="_blank" href="https://www.awin1.com/cread.php?s=4814026&v=14609&q=607109&r=3083133"><img loading="lazy" alt="Timeshop24" width="160" height="160" src="https://www.awin1.com/cshow.php?s=4814026&v=14609&q=607109&r=3083133"></a></div>
+      <div class="offer"><a rel="sponsored noopener" target="_blank" href="https://www.awin1.com/cread.php?s=4814038&v=14609&q=607109&r=3083133"><img loading="lazy" alt="Timeshop24" width="160" height="160" src="https://www.awin1.com/cshow.php?s=4814038&v=14609&q=607109&r=3083133"></a></div>
+      <div class="offer"><a rel="sponsored noopener" target="_blank" href="https://www.awin1.com/cread.php?s=4814895&v=14609&q=607109&r=3083133"><img loading="lazy" alt="Timeshop24" width="160" height="160" src="https://www.awin1.com/cshow.php?s=4814895&v=14609&q=607109&r=3083133"></a></div>
+      <div class="offer"><a rel="sponsored noopener" target="_blank" href="https://www.awin1.com/cread.php?s=4814945&v=14609&q=607109&r=3083133"><img loading="lazy" alt="Timeshop24" width="160" height="160" src="https://www.awin1.com/cshow.php?s=4814945&v=14609&q=607109&r=3083133"></a></div>
+      <div class="offer"><a rel="sponsored noopener" target="_blank" href="https://www.awin1.com/cread.php?s=4815020&v=14609&q=607109&r=3083133"><img loading="lazy" alt="Timeshop24" width="160" height="160" src="https://www.awin1.com/cshow.php?s=4815020&v=14609&q=607109&r=3083133"></a></div>
+      <div class="offer"><a rel="sponsored noopener" target="_blank" href="https://www.awin1.com/cread.php?s=4815052&v=14609&q=607109&r=3083133"><img loading="lazy" alt="Timeshop24" width="160" height="160" src="https://www.awin1.com/cshow.php?s=4815052&v=14609&q=607109&r=3083133"></a></div>
+      <div class="offer"><a rel="sponsored noopener" target="_blank" href="https://www.awin1.com/cread.php?s=4815134&v=14609&q=607109&r=3083133"><img loading="lazy" alt="Timeshop24" width="160" height="160" src="https://www.awin1.com/cshow.php?s=4815134&v=14609&q=607109&r=3083133"></a></div>
     </div>
   </div>
 </div>
