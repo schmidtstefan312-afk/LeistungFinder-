@@ -1,130 +1,90 @@
-// partner-banners.js
-// Lädt Banner aus Supabase und platziert sie JEWEILS unter ihrem eigenen Partner-Abschnitt.
-// Kein Sammelblock "Weitere Angebote" mehr - jeder Banner gehört zu genau einem Partner.
+// partner-page-banner.js
+// Läuft auf EINER einzelnen Partner-Unterseite (z.B. /partner/explorer-travel-i9d9x/)
+// und zeigt NUR die Banner dieses einen Partners - kein Kategorie-Filter,
+// kein Sammelblock, kein "Weitere Angebote".
+//
+// Einbindung auf der Partnerseite:
+//   <script src="https://leistung-finder.de/assets/partner-page-banner.js" data-partner="EXPLORER TRAVEL"></script>
+//
+// data-partner muss EXAKT dem partner_name in Supabase entsprechen
+// (Groß-/Kleinschreibung wird für die Anzeige ignoriert, für den Datenbank-Filter zählt sie).
 
 (function () {
   "use strict";
 
-  // ---- Konfiguration ----
-  const SUPABASE_URL = window.SUPABASE_URL || "https://rnnmdlibekqhqrxqqrws.supabase.co";
-  const SUPABASE_ANON_KEY = window.SUPABASE_ANON_KEY || "DEIN_ANON_KEY";
+  const SUPABASE_URL = "https://rnnmdlibekqhqrxqqrws.supabase.co";
+  const SUPABASE_KEY = "sb_publishable_PXFh4qggQUq3Eb4AGbPpPg_05HIlS1x";
 
-  // Slug (im HTML als data-category="reisen") -> exakter category-Wert wie in Supabase gespeichert.
-  // WICHTIG: Diese Map ist die Ursache des vorherigen Bugs - die DB speichert ausgeschriebene
-  // Kategorienamen, nicht Slugs. Neue Kategorie in Supabase? Hier ergänzen.
-  const CATEGORY_MAP = {
-    "reisen": "Reisen & Reiseversicherung",
-    "mobilitaet": "Mobilität & Elektrofahrzeuge",
-    "mobilfunk": "Mobilfunk & Internet",
-    "technik": "Technik & Zubehör",
-    // weitere Kategorien nach demselben Muster ergänzen, z.B.:
-    // "versicherungen": "Versicherungen",
-    // "sparen": "Sparen & Finanzen",
-  };
-
-  function slugify(name) {
-    return String(name)
-      .toLowerCase()
-      .replace(/[äöüß]/g, (m) => ({ ä: "ae", ö: "oe", ü: "ue", ß: "ss" }[m]))
-      .replace(/[^a-z0-9]+/g, "-")
-      .replace(/(^-+|-+$)/g, "");
-  }
+  const CONTAINER_ID = "partnerBanners";
 
   function renderBannerHTML(banner) {
     const safeUrl = banner.target_url || "#";
     const safeImg = banner.image_url || "";
-    const safeName = banner.partner_name || "Partnerangebot";
+    const safeAlt = banner.alt_text || banner.partner_name || "Partnerangebot";
     return `
-      <a href="${safeUrl}" target="_blank" rel="noopener sponsored" class="partner-banner" data-partner="${safeName}">
-        <img src="${safeImg}" alt="${safeName} Angebot" loading="lazy">
-      </a>`;
+      <div class="banner">
+        <a href="${safeUrl}" target="_blank" rel="noopener sponsored">
+          <img src="${safeImg}" alt="${safeAlt}" loading="lazy">
+        </a>
+      </div>`;
   }
 
-  async function fetchBanners(realCategory) {
+  function ensureContainer() {
+    let el = document.getElementById(CONTAINER_ID);
+    if (el) return el;
+
+    // Falls die Partnerseite noch keinen Container hat: direkt nach
+    // dem Element mit Klasse "card" einfügen (Standard-Layout dieser Seiten).
+    el = document.createElement("div");
+    el.id = CONTAINER_ID;
+    const card = document.querySelector(".card") || document.body;
+    card.appendChild(el);
+    return el;
+  }
+
+  async function loadPartnerBanner() {
+    const scriptTag = document.currentScript;
+    const partnerName = scriptTag ? scriptTag.dataset.partner : null;
+
+    if (!partnerName) {
+      console.warn("partner-page-banner.js: kein data-partner am <script>-Tag gesetzt - Abbruch.");
+      return;
+    }
+
     const url =
       `${SUPABASE_URL}/rest/v1/banner` +
-      `?category=eq.${encodeURIComponent(realCategory)}` +
+      `?partner_name=eq.${encodeURIComponent(partnerName)}` +
       `&aktiv=eq.true` +
-      `&select=partner_name,category,image_url,target_url,aktiv,sort_order` +
-      `&order=partner_name.asc,sort_order.asc`;
+      `&select=partner_name,image_url,target_url,alt_text,sort_order` +
+      `&order=sort_order.asc`;
 
-    const res = await fetch(url, {
-      headers: {
-        apikey: SUPABASE_ANON_KEY,
-        Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
-      },
-    });
-
-    if (!res.ok) {
-      console.error("partner-banners.js: Supabase-Anfrage fehlgeschlagen", res.status, res.statusText);
-      return [];
-    }
-    const data = await res.json();
-    console.log(`partner-banners.js: ${data.length} aktive Banner für Kategorie "${realCategory}" geladen.`);
-    return data;
-  }
-
-  function groupByPartner(banners) {
-    const grouped = {};
-    for (const banner of banners) {
-      const key = banner.partner_name || "Unbekannt";
-      if (!grouped[key]) grouped[key] = [];
-      grouped[key].push(banner);
-    }
-    return grouped;
-  }
-
-  function placeBanners(grouped) {
-    const unmatched = [];
-
-    for (const [partnerName, partnerBanners] of Object.entries(grouped)) {
-      const slug = slugify(partnerName);
-      const container = document.querySelector(`[data-partner-banners="${slug}"]`);
-
-      if (!container) {
-        unmatched.push(`${partnerName} (erwarteter Slug: "${slug}")`);
-        continue;
-      }
-
-      container.innerHTML = partnerBanners.map(renderBannerHTML).join("");
-      container.classList.add("partner-banners--loaded");
-    }
-
-    // Banner ohne passenden Container werden NICHT irgendwo angehängt
-    // (kein "Weitere Angebote"-Fallback mehr) - nur zur Kontrolle geloggt.
-    if (unmatched.length) {
-      console.warn(
-        "partner-banners.js: Kein Container gefunden für:",
-        unmatched.join(", "),
-        "\nBitte [data-partner-banners=\"<slug>\"] mit genau diesem Slug auf der Seite ergänzen."
-      );
-    }
-  }
-
-  async function loadPartnerBanners() {
-    const slug = document.body.dataset.category;
-    if (!slug) {
-      console.warn("partner-banners.js: kein data-category am <body> gesetzt - Abbruch.");
-      return;
-    }
-
-    const realCategory = CATEGORY_MAP[slug];
-    if (!realCategory) {
-      console.error(
-        `partner-banners.js: Slug "${slug}" ist nicht in CATEGORY_MAP hinterlegt. ` +
-        `Bekannte Slugs: ${Object.keys(CATEGORY_MAP).join(", ")}`
-      );
-      return;
-    }
-
+    let rows = [];
     try {
-      const banners = await fetchBanners(realCategory);
-      const grouped = groupByPartner(banners);
-      placeBanners(grouped);
+      const res = await fetch(url, {
+        headers: {
+          apikey: SUPABASE_KEY,
+          Authorization: `Bearer ${SUPABASE_KEY}`,
+        },
+      });
+      if (!res.ok) {
+        console.error("partner-page-banner.js: Supabase-Anfrage fehlgeschlagen", res.status, res.statusText);
+        return;
+      }
+      rows = await res.json();
     } catch (err) {
-      console.error("partner-banners.js: Fehler beim Laden der Banner", err);
+      console.error("partner-page-banner.js: Fehler beim Laden", err);
+      return;
     }
+
+    console.log(`partner-page-banner.js: ${rows.length} aktive Banner für Partner "${partnerName}" geladen.`);
+
+    if (!rows.length) return; // keine Banner -> kein leerer Block auf der Seite
+
+    const container = ensureContainer();
+    container.innerHTML = rows.map(renderBannerHTML).join("");
   }
 
-  document.addEventListener("DOMContentLoaded", loadPartnerBanners);
+  // WICHTIG: kein DOMContentLoaded-Listener - document.currentScript ist nur
+  // während der synchronen Ausführung des Scripts gültig, deshalb sofort starten.
+  loadPartnerBanner();
 })();
