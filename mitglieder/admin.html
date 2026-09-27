@@ -502,9 +502,9 @@
         <p
           style="color:var(--muted);font-size:0.85rem;margin-top:-0.75rem;"
         >
-          Diese Banner erscheinen automatisch unter
-          „Weitere Angebote" auf der jeweiligen Kategorie-Seite –
-          ohne dass etwas auf GitHub hochgeladen werden muss.
+          Diese Banner erscheinen automatisch unter dem jeweiligen
+          Partner auf dessen Kategorie-Seite – ohne dass etwas auf
+          GitHub hochgeladen werden muss.
         </p>
 
 
@@ -705,6 +705,21 @@
     }
 
 
+    /*
+      NEU: Tab-Zustand aus der URL lesen,
+      damit ein Reload nicht mehr automatisch
+      auf "Aktionen" zurückspringt.
+    */
+
+    function getTabFromHash() {
+
+      const h =
+        window.location.hash.replace("#", "");
+
+      return (h === "banner") ? "banner" : "aktionen";
+    }
+
+
     function showTab(name) {
 
       document
@@ -726,11 +741,36 @@
         .getElementById("tabBtnBanner")
         .classList
         .toggle("active", name === "banner");
+
+      /*
+        NEU: aktiven Tab in der URL merken
+        (kein Sprung/Scroll, nur die Adresse ändert sich)
+      */
+
+      if (window.location.hash.replace("#", "") !== name) {
+
+        history.replaceState(
+          null,
+          "",
+          "#" + name
+        );
+      }
     }
 
 
     window.showTab =
       showTab;
+
+
+    /*
+      NEU: Vor/Zurück-Navigation im Browser
+      soll den Tab ebenfalls korrekt umschalten
+    */
+
+    window.addEventListener(
+      "hashchange",
+      () => showTab(getTabFromHash())
+    );
 
 
     async function checkAccess() {
@@ -772,6 +812,14 @@
       document
         .getElementById("content")
         .style.display = "block";
+
+
+      /*
+        NEU: richtigen Tab anhand der URL setzen,
+        statt immer im Standard-Tab zu bleiben
+      */
+
+      showTab(getTabFromHash());
 
 
       loadTable();
@@ -1303,9 +1351,7 @@
       return {
 
         image_url:
-          targetUrl.trim()
-            ? imageUrl.trim()
-            : null,
+          imageUrl.trim(),
 
         target_url:
           targetUrl.trim(),
