@@ -4,7 +4,8 @@
 
   const script = document.currentScript;
   const category = script?.getAttribute("data-category")?.trim();
-  if (!category) return;
+  const partner = script?.getAttribute("data-partner")?.trim();
+  if (!category && !partner) return;
 
   const wrap = document.getElementById("dynamicBannerWrap");
   const container = document.getElementById("dynamicBanners");
@@ -19,12 +20,19 @@
   }
 
   async function loadBanners() {
-    const { data: rows, error } = await client
+    let query = client
       .from("banner")
       .select("partner_name, image_url, target_url, alt_text, sort_order")
-      .eq("category", category)
       .eq("aktiv", true)
       .order("sort_order", { ascending: true });
+
+    if (partner) {
+      query = query.eq("partner_name", partner);
+    } else if (category) {
+      query = query.eq("category", category);
+    }
+
+    const { data: rows, error } = await query;
 
     if (error || !rows || rows.length === 0) return;
 
