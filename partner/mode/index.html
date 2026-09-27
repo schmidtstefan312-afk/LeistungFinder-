@@ -86,6 +86,11 @@ body { margin: 0px; font-family: var(--sans); background: var(--bg); color: var(
         </li>
 
       </ul>
+
+      <div id="dynamicBannerWrap" style="display:none;">
+        <h2 style="font-family:var(--serif);font-weight:600;font-size:1.05rem;color:var(--primary-dark);margin:1.5rem 0 0.75rem;">Weitere Angebote</h2>
+        <div id="dynamicBanners"></div>
+      </div>
     </div>
   </div>
   <div class="footer">
@@ -93,5 +98,7 @@ body { margin: 0px; font-family: var(--sans); background: var(--bg); color: var(
     <br>Leistung-Finder ist keine Behörde und bietet keine Rechtsberatung.
   </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="https://leistung-finder.de/assets/partner-banners.js" data-category="Mode &amp; Accessoires"></script>
 
 </body></html>
