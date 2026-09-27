@@ -6,8 +6,21 @@
   "use strict";
 
   // ---- Konfiguration ----
-  const SUPABASE_URL = window.SUPABASE_URL || "DEINE_SUPABASE_URL";
+  const SUPABASE_URL = window.SUPABASE_URL || "https://rnnmdlibekqhqrxqqrws.supabase.co";
   const SUPABASE_ANON_KEY = window.SUPABASE_ANON_KEY || "DEIN_ANON_KEY";
+
+  // Slug (im HTML als data-category="reisen") -> exakter category-Wert wie in Supabase gespeichert.
+  // WICHTIG: Diese Map ist die Ursache des vorherigen Bugs - die DB speichert ausgeschriebene
+  // Kategorienamen, nicht Slugs. Neue Kategorie in Supabase? Hier ergänzen.
+  const CATEGORY_MAP = {
+    "reisen": "Reisen & Reiseversicherung",
+    "mobilitaet": "Mobilität & Elektrofahrzeuge",
+    "mobilfunk": "Mobilfunk & Internet",
+    "technik": "Technik & Zubehör",
+    // weitere Kategorien nach demselben Muster ergänzen, z.B.:
+    // "versicherungen": "Versicherungen",
+    // "sparen": "Sparen & Finanzen",
+  };
 
   function slugify(name) {
     return String(name)
@@ -27,10 +40,10 @@
       </a>`;
   }
 
-  async function fetchBanners(category) {
+  async function fetchBanners(realCategory) {
     const url =
       `${SUPABASE_URL}/rest/v1/banner` +
-      `?category=eq.${encodeURIComponent(category)}` +
+      `?category=eq.${encodeURIComponent(realCategory)}` +
       `&aktiv=eq.true` +
       `&select=partner_name,category,image_url,target_url,aktiv,sort_order` +
       `&order=partner_name.asc,sort_order.asc`;
@@ -46,7 +59,9 @@
       console.error("partner-banners.js: Supabase-Anfrage fehlgeschlagen", res.status, res.statusText);
       return [];
     }
-    return res.json();
+    const data = await res.json();
+    console.log(`partner-banners.js: ${data.length} aktive Banner für Kategorie "${realCategory}" geladen.`);
+    return data;
   }
 
   function groupByPartner(banners) {
@@ -67,7 +82,7 @@
       const container = document.querySelector(`[data-partner-banners="${slug}"]`);
 
       if (!container) {
-        unmatched.push(partnerName);
+        unmatched.push(`${partnerName} (erwarteter Slug: "${slug}")`);
         continue;
       }
 
@@ -79,22 +94,31 @@
     // (kein "Weitere Angebote"-Fallback mehr) - nur zur Kontrolle geloggt.
     if (unmatched.length) {
       console.warn(
-        "partner-banners.js: Kein Container gefunden für Partner:",
+        "partner-banners.js: Kein Container gefunden für:",
         unmatched.join(", "),
-        "- bitte [data-partner-banners=\"<slug>\"] auf der Seite ergänzen."
+        "\nBitte [data-partner-banners=\"<slug>\"] mit genau diesem Slug auf der Seite ergänzen."
       );
     }
   }
 
   async function loadPartnerBanners() {
-    const category = document.body.dataset.category;
-    if (!category) {
+    const slug = document.body.dataset.category;
+    if (!slug) {
       console.warn("partner-banners.js: kein data-category am <body> gesetzt - Abbruch.");
       return;
     }
 
+    const realCategory = CATEGORY_MAP[slug];
+    if (!realCategory) {
+      console.error(
+        `partner-banners.js: Slug "${slug}" ist nicht in CATEGORY_MAP hinterlegt. ` +
+        `Bekannte Slugs: ${Object.keys(CATEGORY_MAP).join(", ")}`
+      );
+      return;
+    }
+
     try {
-      const banners = await fetchBanners(category);
+      const banners = await fetchBanners(realCategory);
       const grouped = groupByPartner(banners);
       placeBanners(grouped);
     } catch (err) {
