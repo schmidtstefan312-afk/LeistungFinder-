@@ -30,12 +30,11 @@
 
     container.innerHTML = rows
       .map(
-        (r) => `
-      <div class="banner" style="margin-bottom:1rem;">
-        <a href="${escapeHtml(r.target_url)}" target="_blank" rel="noopener sponsored">
-          <img src="\( {escapeHtml(r.image_url)}" alt=" \){escapeHtml(r.alt_text || r.partner_name)}" loading="lazy" style="max-width:100%;height:auto;display:block;margin:0 auto;">
-        </a>
-      </div>`
+        (r) =>
+          '<div class="banner" style="margin-bottom:1rem;">' +
+          '<a href="' + escapeHtml(r.target_url) + '" target="_blank" rel="noopener sponsored">' +
+          '<img src="' + escapeHtml(r.image_url) + '" alt="' + escapeHtml(r.alt_text || r.partner_name) + '" loading="lazy" style="max-width:100%;height:auto;display:block;margin:0 auto;">' +
+          "</a></div>"
       )
       .join("");
 
