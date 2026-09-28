@@ -1,235 +1,95 @@
-// partner-page-banner.js
-// Leistung-Finder
-// Öffentliche Partnerseiten laden ihre Banner ausschließlich aus Supabase.
-// Fest im HTML eingebaute Banner werden entfernt, damit keine Doppelanzeigen
-// entstehen.
-
+// partner-page-banner.js – Partnerseiten laden ihre Banner ausschließlich aus Supabase.
+// data-partner darf mehrere Namen mit "|" enthalten. Vergleich ohne Groß-/Kleinschreibung,
+// zusätzlich wird die Variante mit/ohne " DE" mitgeladen (z. B. Wondershare / Wondershare DE).
 (function () {
   "use strict";
+  var SUPABASE_URL = "https://rnnmdlibekqhqrxqqrws.supabase.co";
+  var SUPABASE_KEY = "sb_publishable_PXFh4qggQUq3Eb4AGbPpPg_05HIlS1x";
+  var CONTAINER_ID = "partnerBanners";
+  var scriptTag = document.currentScript;
 
-  const SUPABASE_URL =
-    "https://rnnmdlibekqhqrxqqrws.supabase.co";
+  function esc(s) {
+    return String(s == null ? "" : s).replace(/&/g, "&amp;").replace(/"/g, "&quot;")
+      .replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  }
 
-  const SUPABASE_KEY =
-    "sb_publishable_PXFh4qggQUq3Eb4AGbPpPg_05HIlS1x";
-
-  const CONTAINER_ID = "partnerBanners";
-
-  function renderBannerHTML(banner) {
-    const safeUrl = banner.target_url || "#";
-    const safeImg = banner.image_url || "";
-    const safeAlt =
-      banner.alt_text ||
-      banner.partner_name ||
-      "Partnerangebot";
-
-    return `
-      <div class="banner">
-        <span class="badge">Anzeige</span>
-        <a
-          href="${safeUrl}"
-          target="_blank"
-          rel="sponsored noopener"
-        >
-          <img
-            loading="lazy"
-            alt="${safeAlt}"
-            src="${safeImg}"
-          >
-        </a>
-      </div>
-    `;
+  function renderBannerHTML(b) {
+    return '<div class="banner"><span class="badge">Anzeige</span>' +
+      '<a href="' + esc(b.target_url || "#") + '" target="_blank" rel="sponsored noopener">' +
+      '<img loading="lazy" alt="' + esc(b.alt_text || b.partner_name || "Partnerangebot") +
+      '" src="' + esc(b.image_url) + '"></a></div>';
   }
 
   function ensureContainer() {
-    let el = document.getElementById(CONTAINER_ID);
-
-    if (el) {
-      return el;
-    }
-
+    var el = document.getElementById(CONTAINER_ID);
+    if (el) return el;
     el = document.createElement("div");
     el.id = CONTAINER_ID;
-
-    const card =
-      document.querySelector(".card") ||
-      document.body;
-
-    card.appendChild(el);
-
+    (document.querySelector(".card") || document.body).appendChild(el);
     return el;
   }
 
   function removeFixedBanners(container) {
-    /*
-      Alte Banner, die fest im Partner-HTML stehen,
-      werden entfernt.
+    document.querySelectorAll(".banner").forEach(function (el) {
+      if (!container.contains(el)) el.remove();
+    });
+    document.querySelectorAll(".offer").forEach(function (o) {
+      var g = o.parentElement;
+      o.remove();
+      if (g && g.classList.contains("grid") && !g.children.length) g.remove();
+    });
+  }
 
-      Wichtig:
-      Banner innerhalb von #partnerBanners werden NICHT entfernt.
-      Diese kommen aus Supabase.
-    */
-    document
-      .querySelectorAll(".banner")
-      .forEach((el) => {
-        if (!container.contains(el)) {
-          el.remove();
-        }
+  function installStyles() {
+    if (document.getElementById("partner-banner-grid-style")) return;
+    var s = document.createElement("style");
+    s.id = "partner-banner-grid-style";
+    s.textContent =
+      "#partnerBanners.partner-banners-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:1rem}" +
+      "#partnerBanners.partner-banners-grid .banner{margin-top:0;padding:10px}" +
+      "#partnerBanners.partner-banners-grid .banner img{display:block;width:auto;max-width:100%;max-height:180px;height:auto;object-fit:contain;margin:0 auto}" +
+      "@media(max-width:600px){#partnerBanners.partner-banners-grid{grid-template-columns:1fr;gap:12px}#partnerBanners.partner-banners-grid .banner img{max-height:160px}}";
+    document.head.appendChild(s);
+  }
+
+  function nameVariants(raw) {
+    var out = [];
+    raw.split("|").forEach(function (n) {
+      n = n.trim(); if (!n) return;
+      var base = n.replace(/\s+DE$/i, "");
+      [n, base, base + " DE"].forEach(function (v) {
+        if (out.map(function (x) { return x.toLowerCase(); }).indexOf(v.toLowerCase()) < 0) out.push(v);
       });
+    });
+    return out;
   }
 
-  function installCompactStyles() {
-    if (
-      document.getElementById(
-        "partner-banner-grid-style"
-      )
-    ) {
-      return;
-    }
-
-    const style =
-      document.createElement("style");
-
-    style.id =
-      "partner-banner-grid-style";
-
-    style.textContent = `
-      #partnerBanners.partner-banners-grid {
-        display: grid;
-        grid-template-columns:
-          repeat(auto-fit, minmax(220px, 1fr));
-        gap: 16px;
-        margin-top: 1rem;
-      }
-
-      #partnerBanners.partner-banners-grid .banner {
-        margin-top: 0;
-        padding: 10px;
-      }
-
-      #partnerBanners.partner-banners-grid
-      .banner img {
-        display: block;
-        width: auto;
-        max-width: 100%;
-        max-height: 180px;
-        height: auto;
-        object-fit: contain;
-        margin: 0 auto;
-      }
-
-      @media (max-width: 600px) {
-        #partnerBanners.partner-banners-grid {
-          grid-template-columns: 1fr;
-          gap: 12px;
-        }
-
-        #partnerBanners.partner-banners-grid
-        .banner img {
-          max-height: 160px;
-        }
-      }
-    `;
-
-    document.head.appendChild(style);
-  }
-
-  async function loadPartnerBanner() {
-    const scriptTag =
-      document.currentScript;
-
-    const partnerName =
-      scriptTag
-        ? scriptTag.dataset.partner
-        : null;
-
-    if (!partnerName) {
-      console.warn(
-        "partner-page-banner.js: " +
-        "kein data-partner gesetzt."
-      );
-      return;
-    }
-
-    const url =
-      `${SUPABASE_URL}/rest/v1/banner` +
-      `?partner_name=eq.${encodeURIComponent(partnerName)}` +
-      `&aktiv=eq.true` +
-      `&select=partner_name,image_url,target_url,alt_text,sort_order` +
-      `&order=sort_order.asc`;
-
-    let rows = [];
-
+  async function load() {
+    var partner = scriptTag ? scriptTag.dataset.partner : null;
+    if (!partner) { console.warn("partner-page-banner.js: kein data-partner gesetzt."); return; }
+    var names = nameVariants(partner);
+    var orExpr = "(" + names.map(function (n) { return 'partner_name.ilike."' + n + '"'; }).join(",") + ")";
+    var url = SUPABASE_URL + "/rest/v1/banner?or=" + encodeURIComponent(orExpr) +
+      "&aktiv=eq.true&select=partner_name,image_url,target_url,alt_text,sort_order&order=sort_order.asc";
+    var rows;
     try {
-      const res =
-        await fetch(url, {
-          headers: {
-            apikey: SUPABASE_KEY,
-            Authorization:
-              `Bearer ${SUPABASE_KEY}`,
-          },
-        });
-
-      if (!res.ok) {
-        console.error(
-          "partner-page-banner.js: " +
-          "Supabase-Anfrage fehlgeschlagen:",
-          res.status,
-          res.statusText
-        );
-        return;
-      }
-
+      var res = await fetch(url, { headers: { apikey: SUPABASE_KEY, Authorization: "Bearer " + SUPABASE_KEY } });
+      if (!res.ok) { console.error("partner-page-banner.js: Supabase-Fehler", res.status); return; }
       rows = await res.json();
+    } catch (err) { console.error("partner-page-banner.js: Fehler beim Laden:", err); return; }
 
-    } catch (err) {
-      console.error(
-        "partner-page-banner.js: " +
-        "Fehler beim Laden:",
-        err
-      );
-      return;
-    }
-
-    console.log(
-      `partner-page-banner.js: ` +
-      `${rows.length} aktive Banner für ` +
-      `"${partnerName}" geladen.`
-    );
-
-    const container =
-      ensureContainer();
-
-    /*
-      Ganz wichtig:
-      Fest eingebaute Banner werden entfernt.
-      Danach bleiben ausschließlich die
-      Supabase-Banner übrig.
-    */
+    var seen = {};
+    rows = rows.filter(function (r) {
+      if (!r.image_url || !r.target_url || seen[r.target_url]) return false;
+      seen[r.target_url] = 1; return true;
+    });
+    console.log("partner-page-banner.js: " + rows.length + " aktive Banner für " + names.join(" / "));
+    var container = ensureContainer();
     removeFixedBanners(container);
-
-    if (!rows.length) {
-      container.innerHTML = "";
-      return;
-    }
-
-    installCompactStyles();
-
-    container.classList.add(
-      "partner-banners-grid"
-    );
-
-    container.innerHTML =
-      rows
-        .map(renderBannerHTML)
-        .join("");
+    if (!rows.length) { container.innerHTML = ""; return; }
+    installStyles();
+    container.classList.add("partner-banners-grid");
+    container.innerHTML = rows.map(renderBannerHTML).join("");
   }
-
-  /*
-    document.currentScript ist nur während
-    der synchronen Ausführung verfügbar.
-    Deshalb direkt starten.
-  */
-  loadPartnerBanner();
-
+  load();
 })();
