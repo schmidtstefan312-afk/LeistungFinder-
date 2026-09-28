@@ -29,14 +29,16 @@
     return el;
   }
 
-  function removeFixedBanners(container) {
-    document.querySelectorAll(".banner").forEach(function (el) {
-      if (!container.contains(el)) el.remove();
-    });
-    document.querySelectorAll(".offer").forEach(function (o) {
-      var g = o.parentElement;
-      o.remove();
-      if (g && g.classList.contains("grid") && !g.children.length) g.remove();
+  // Entfernt nur feste Banner, die es identisch (gleicher Link) auch in Supabase gibt.
+  // Feste Banner, die nicht in Supabase stehen, bleiben sichtbar.
+  function removeFixedBanners(container, urls) {
+    document.querySelectorAll(".banner, .offer").forEach(function (el) {
+      if (container.contains(el)) return;
+      var a = el.querySelector("a");
+      if (!a || !urls[a.href]) return;
+      var g = el.parentElement;
+      el.remove();
+      if (g && g !== container && g.classList.contains("grid") && !g.children.length) g.remove();
     });
   }
 
@@ -84,9 +86,9 @@
       seen[r.target_url] = 1; return true;
     });
     console.log("partner-page-banner.js: " + rows.length + " aktive Banner für " + names.join(" / "));
+    if (!rows.length) return;
     var container = ensureContainer();
-    removeFixedBanners(container);
-    if (!rows.length) { container.innerHTML = ""; return; }
+    removeFixedBanners(container, seen);
     installStyles();
     container.classList.add("partner-banners-grid");
     container.innerHTML = rows.map(renderBannerHTML).join("");
