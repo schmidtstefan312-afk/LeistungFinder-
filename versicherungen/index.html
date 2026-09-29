@@ -1,21 +1,403 @@
-
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <title>Verkehrsrecht &amp; Bußgeld – Partnerangebote | Leistung-Finder</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Rechtliche Unterstützung bei Bußgeldbescheiden und im Verkehrsrecht. Unabhängige Partnerangebote, keine staatliche Leistung." />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://leistung-finder.de/partner/verkehrsrecht/" />
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Verkehrsrecht &amp; Bußgeld – Partnerangebote | Leistung-Finder" />
-  <meta property="og:description" content="Rechtliche Unterstützung bei Bußgeldbescheiden und im Verkehrsrecht. Unabhängige Partnerangebote, keine staatliche Leistung." />
-  <meta property="og:url" content="https://leistung-finder.de/partner/verkehrsrecht/" />
-  <meta property="og:locale" content="de_DE" />
+  <title>Versicherungen vergleichen – Orientierung & Partnerangebote | Leistung-Finder</title>
+  <meta name="description" content="Versicherungen einfach erklärt: Welche Absicherungen für viele Haushalte wichtig sein können, worauf Sie beim Vergleich achten sollten und wo Sie unabhängige Partnerangebote finden.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://leistung-finder.de/versicherungen/">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+  <meta property="og:title" content="Versicherungen vergleichen – Orientierung | Leistung-Finder">
+  <meta property="og:description" content="Orientierung zu Versicherungen und unabhängige Partnerangebote. Keine staatliche Leistung.">
+  <meta property="og:url" content="https://leistung-finder.de/versicherungen/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:image" content="https://leistung-finder.de/og-image.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Ist eine Versicherung eine staatliche Leistung?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nein. Versicherungen sind private Verträge mit Versicherungsunternehmen. Staatliche Leistungen wie Wohngeld, Bürgergeld oder Pflegegeld werden dagegen von Behörden und Kassen nach gesetzlichen Vorgaben gezahlt."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Welche Versicherungen sind für viele Haushalte wichtig?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Häufig genannt werden die private Haftpflichtversicherung, die Hausratversicherung und je nach Lebenssituation eine Rechtsschutz-, Berufsunfähigkeits- oder Reiseversicherung. Was sinnvoll ist, hängt von Ihrer persönlichen Situation ab."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kann ich Angebote vergleichen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. Vergleichsportale zeigen Tarife mehrerer Anbieter nebeneinander. Prüfen Sie vor einem Abschluss immer die Leistungen, Ausschlüsse und Laufzeiten im Vertrag."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Verdient Leistung-Finder an den Partnerangeboten?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja, möglicherweise. Bei einem Abschluss über einen Partnerlink erhalten wir gegebenenfalls eine Vergütung. Für Sie entstehen dadurch keine Mehrkosten. Die Angebote sind als Werbung gekennzeichnet."
+      }
+    }
+  ]
+}
+  </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #0d3934;
+      --primary-dark: #082621;
+      --accent: #ad7f42;
+      --accent-dark: #8a6533;
+      --bg: #f5f2ea;
+      --text: #1b201e;
+      --muted: #5c655f;
+      --border: #e2ded2;
+      --white: #ffffff;
+      --gold-soft: #f3e7d0;
+      --green-soft: #e3efe9;
+      --shadow-s: 0 1px 2px rgba(8,38,33,.07), 0 6px 16px rgba(8,38,33,.09);
+      --shadow: 0 2px 4px rgba(8,38,33,.06), 0 14px 34px rgba(8,38,33,.14);
+      --serif: "Fraunces", Georgia, "Times New Roman", serif;
+      --sans: "Work Sans", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: var(--sans);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ---------- Kopfbereich ---------- */
+    header {
+      position: relative;
+      background: linear-gradient(160deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: #fff;
+      padding: 1.4rem 1.25rem 5.5rem;
+      overflow: hidden;
+    }
+    header::before {
+      content: "";
+      position: absolute;
+      width: 260px; height: 260px;
+      right: -80px; top: -90px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, #1c5c53, transparent 70%);
+      opacity: .6;
+      pointer-events: none;
+    }
+    header::after {
+      content: "";
+      position: absolute;
+      left: 0; right: 0; bottom: -1px;
+      height: 44px;
+      background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 60' preserveAspectRatio='none'><path d='M0 30 C 240 70 480 0 720 25 C 960 50 1200 65 1440 20 L1440 60 L0 60 Z' fill='%23f5f2ea'/></svg>") center bottom / 100% 100% no-repeat;
+      pointer-events: none;
+    }
+    header .inner { max-width: 1000px; margin: auto; position: relative; z-index: 1; }
+    header a {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: .95rem;
+      padding: .55rem 1.05rem;
+      border-radius: 999px;
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.28);
+      transition: background .2s, transform .2s;
+    }
+    header a:hover { background: rgba(255,255,255,.22); transform: translateX(-2px); }
+
+    /* ---------- Inhalt ---------- */
+    main {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 1.25rem 4rem;
+    }
+
+    .hero {
+      position: relative;
+      background: var(--white);
+      padding: 2.2rem 2.2rem 2rem;
+      border-radius: 24px;
+      margin-top: -3.6rem;
+      margin-bottom: 1.6rem;
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--accent);
+      box-shadow: var(--shadow);
+    }
+
+    h1 {
+      font-family: var(--serif);
+      color: var(--primary);
+      font-size: 2.2rem;
+      line-height: 1.2;
+      margin-top: 0;
+      letter-spacing: -.01em;
+    }
+    h2 {
+      font-family: var(--serif);
+      color: var(--primary);
+      margin-top: 0;
+      line-height: 1.25;
+    }
+    .box h2 + p, .box h2 + ul { margin-top: .6rem; }
+    .box h2:not(:first-child) { margin-top: 1.8rem; }
+    h3 { color: var(--primary); font-family: var(--serif); margin-bottom: .3rem; }
+
+    .box {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 1.7rem 1.8rem;
+      margin: 1.4rem 0;
+      box-shadow: var(--shadow-s);
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+    .box:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+
+    .highlight {
+      border-left: 5px solid var(--accent);
+      background: linear-gradient(135deg, #fff 60%, var(--gold-soft) 140%);
+    }
+
+    ul { padding-left: 0; list-style: none; }
+    ul li {
+      position: relative;
+      padding: .35rem 0 .35rem 1.9rem;
+    }
+    ul li::before {
+      content: "✓";
+      position: absolute;
+      left: 0; top: .5rem;
+      width: 1.35rem; height: 1.35rem;
+      border-radius: 50%;
+      background: var(--green-soft);
+      color: var(--primary);
+      font-size: .78rem;
+      font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+    }
+
+    .button {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+      color: #fff;
+      text-decoration: none;
+      padding: .85rem 1.5rem;
+      border-radius: 999px;
+      font-weight: 700;
+      margin-top: .6rem;
+      box-shadow: 0 6px 16px rgba(138,101,51,.35);
+      transition: transform .2s, box-shadow .2s;
+    }
+    .button:hover { transform: translateY(-2px); box-shadow: 0 10px 22px rgba(138,101,51,.42); }
+    .button:active { transform: translateY(0); }
+
+    .back { margin-top: 2.2rem; }
+
+    footer {
+      background: linear-gradient(160deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: #fff;
+      text-align: center;
+      padding: 1.8rem 1.25rem;
+      font-size: .9rem;
+    }
+    footer p { margin: .3rem 0; }
+    footer a { color: #fff; text-decoration-color: rgba(255,255,255,.5); text-underline-offset: 3px; }
+    footer a:hover { text-decoration-color: #fff; }
+
+    a:focus-visible, .button:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 3px;
+    }
+
+    @media (max-width: 650px) {
+      header { padding-bottom: 5rem; }
+      main { padding: 0 .9rem 3rem; }
+      .hero { padding: 1.6rem 1.25rem; margin-top: -3.4rem; }
+      .box { padding: 1.4rem 1.2rem; }
+      h1 { font-size: 1.75rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; animation: none !important; }
+      html { scroll-behavior: auto; }
+    }
+    .ad-label { font-size: .85rem; color: var(--muted); font-style: italic; background: #faf8f2; border: 1px dashed var(--border); border-radius: 14px; padding: .7rem .9rem; margin: .5rem 0 1rem; }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="inner">
+    <a href="https://leistung-finder.de/">← Zurück zu Leistung-Finder</a>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero">
+    <h1>Versicherungen: Orientierung und Vergleich</h1>
+
+    <p>
+      Neben staatlichen Leistungen können private Versicherungen helfen, finanzielle
+      Risiken abzusichern, etwa bei Schäden, Krankheit, Pflege oder Rechtsstreitigkeiten.
+    </p>
+
+    <p>
+      Auf dieser Seite finden Sie eine kurze Orientierung und den Weg zu unabhängigen
+      Partnerangeboten. Versicherungen sind keine staatliche Leistung.
+    </p>
+  </section>
+
+  <section class="box highlight">
+    <h2>Versicherung oder staatliche Leistung?</h2>
+
+    <p>
+      Staatliche Leistungen wie Wohngeld, Bürgergeld oder Pflegegeld werden von Behörden
+      und Kassen nach gesetzlichen Regeln geprüft und gezahlt. Private Versicherungen
+      dagegen sind Verträge, die Sie freiwillig mit einem Anbieter abschließen.
+    </p>
+
+    <p>
+      Beides kann sich sinnvoll ergänzen. Ob und welche Versicherung für Sie passt, hängt
+      von Ihrer persönlichen Situation ab.
+    </p>
+  </section>
+
+  <section class="box">
+    <h2>Welche Versicherungen gibt es?</h2>
+
+    <ul>
+      <li><strong>Haftpflichtversicherung:</strong> für Schäden, die Sie anderen versehentlich zufügen</li>
+      <li><strong>Hausratversicherung:</strong> für Schäden an Möbeln und Eigentum in der Wohnung</li>
+      <li><strong>Rechtsschutzversicherung:</strong> für Kosten bei Rechtsstreitigkeiten</li>
+      <li><strong>Berufsunfähigkeitsversicherung:</strong> für den Fall, dass Sie Ihren Beruf nicht mehr ausüben können</li>
+      <li><strong>Pflegezusatzversicherung:</strong> zur Ergänzung der gesetzlichen Pflegeversicherung</li>
+      <li><strong>Reiseversicherung:</strong> für Risiken auf Reisen, zum Beispiel Krankheit oder Stornierung</li>
+    </ul>
+
+    <p>
+      Welche Absicherung sinnvoll ist, hängt von Ihrer Lebenssituation, Ihrem Einkommen
+      und Ihren Bedürfnissen ab.
+    </p>
+  </section>
+
+  <section class="box">
+    <h2>Worauf sollten Sie beim Vergleich achten?</h2>
+
+    <ul>
+      <li>Welche Leistungen und Summen sind im Tarif enthalten?</li>
+      <li>Gibt es Ausschlüsse oder Wartezeiten?</li>
+      <li>Wie lange läuft der Vertrag, und wie kann er gekündigt werden?</li>
+      <li>Wie hoch sind Beitrag und mögliche Selbstbeteiligung?</li>
+    </ul>
+
+    <p>
+      Lesen Sie die Vertragsbedingungen vor dem Abschluss sorgfältig. Bei Unsicherheit
+      kann eine unabhängige Beratung, etwa durch die Verbraucherzentrale, helfen.
+    </p>
+  </section>
+
+  <section class="box highlight">
+    <h2>Partnerangebote zu Versicherungen</h2>
+
+    <p class="ad-label">
+      Anzeige – bei Abschluss über diese Links erhalten wir gegebenenfalls eine Vergütung.
+      Für Sie entstehen dadurch keine Mehrkosten. Die Angebote stammen von unabhängigen
+      Partnern, nicht von Behörden.
+    </p>
+
+    <a class="button" href="https://leistung-finder.de/partner/versicherungen/">
+      Versicherungs-Angebote ansehen
+    </a>
+    <br>
+    <a class="button" href="https://leistung-finder.de/partner/verkehrsrecht/">
+      Verkehrsrecht &amp; Bußgeld
+    </a>
+  </section>
+
+  <section class="box">
+    <h2>Häufige Fragen zu Versicherungen</h2>
+
+    <h3>Ist eine Versicherung eine staatliche Leistung?</h3>
+    <p>
+      Nein. Versicherungen sind private Verträge mit Versicherungsunternehmen. Staatliche Leistungen wie Wohngeld, Bürgergeld oder Pflegegeld werden dagegen von Behörden und Kassen nach gesetzlichen Vorgaben gezahlt.
+    </p>
+
+    <h3>Welche Versicherungen sind für viele Haushalte wichtig?</h3>
+    <p>
+      Häufig genannt werden die private Haftpflichtversicherung, die Hausratversicherung und je nach Lebenssituation eine Rechtsschutz-, Berufsunfähigkeits- oder Reiseversicherung. Was sinnvoll ist, hängt von Ihrer persönlichen Situation ab.
+    </p>
+
+    <h3>Kann ich Angebote vergleichen?</h3>
+    <p>
+      Ja. Vergleichsportale zeigen Tarife mehrerer Anbieter nebeneinander. Prüfen Sie vor einem Abschluss immer die Leistungen, Ausschlüsse und Laufzeiten im Vertrag.
+    </p>
+
+    <h3>Verdient Leistung-Finder an den Partnerangeboten?</h3>
+    <p>
+      Ja, möglicherweise. Bei einem Abschluss über einen Partnerlink erhalten wir gegebenenfalls eine Vergütung. Für Sie entstehen dadurch keine Mehrkosten. Die Angebote sind als Werbung gekennzeichnet.
+    </p>
+  </section>
+
+  <section class="box highlight">
+    <h2>Passende Unterstützung finden</h2>
+
+    <p>
+      Sie möchten herausfinden, welche staatliche Unterstützung zu Ihrer Situation
+      passen könnte? Der Leistung-Finder hilft Ihnen, passende Leistungen und
+      Anlaufstellen zu finden.
+    </p>
+
+    <a class="button" href="https://leistung-finder.de/">
+      Zum Leistung-Finder
+    </a>
+  </section>
+
+  <div class="back">
+    <a class="button" href="https://leistung-finder.de/">← Zur Startseite</a>
+  </div>
+
+</main>
+
+<footer>
+  <p>© Leistung-Finder – passende Unterstützung finden</p>
+  <p>
+    <a href="https://leistung-finder.de/">Leistung-Finder</a> ·
+    <a href="https://leistung-finder.de/impressum.html">Impressum</a> ·
+    <a href="https://leistung-finder.de/datenschutz.html">Datenschutz</a>
+  </p>
+</footer>
+
+</body>
+</html>
