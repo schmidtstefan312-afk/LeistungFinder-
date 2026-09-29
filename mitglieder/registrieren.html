@@ -15,14 +15,18 @@
 
   <style>
     :root {
-      --primary: #0f4c46;
-      --primary-dark: #0a3733;
-      --accent: #e0982e;
-      --bg: #faf7f2;
-      --text: #1e2624;
-      --muted: #5c6b67;
-      --border: #dfe3df;
-      --error: #b3261e;
+      --primary: #0d3934;
+      --primary-dark: #082621;
+      --accent: #ad7f42;
+      --accent-dark: #8a6533;
+      --bg: #f5f2ea;
+      --text: #1b201e;
+      --muted: #5c655f;
+      --border: #e2ded2;
+      --error: #a3372f;
+      --green-soft: #e3efe9;
+      --gold-soft: #f3e7d0;
+      --shadow: 0 2px 4px rgba(8,38,33,.08), 0 18px 44px rgba(0,0,0,.28);
       --serif: "Fraunces", Georgia, serif;
       --sans: "Work Sans", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     }
@@ -30,93 +34,123 @@
     body {
       margin: 0;
       font-family: var(--sans);
-      background: var(--bg);
       color: var(--text);
       display: flex;
       align-items: center;
       justify-content: center;
       min-height: 100vh;
       padding: 1.5rem;
+      position: relative;
+      overflow-x: hidden;
+      background:
+        radial-gradient(circle at 85% 8%, rgba(28,92,83,.75), transparent 45%),
+        radial-gradient(circle at 10% 95%, rgba(173,127,66,.22), transparent 40%),
+        linear-gradient(160deg, var(--primary) 0%, var(--primary-dark) 100%);
+      background-attachment: fixed;
     }
     .card {
+      position: relative;
       background: #fff;
       border: 1px solid var(--border);
-      border-radius: 6px;
-      padding: 2rem 1.75rem;
-      max-width: 400px;
+      border-top: 4px solid var(--accent);
+      border-radius: 28px;
+      padding: 2.2rem 1.9rem 2rem;
+      max-width: 420px;
       width: 100%;
-      box-shadow: 0 6px 24px rgba(15,32,29,0.08);
+      box-shadow: var(--shadow);
+      animation: lfUp .5s ease both;
     }
+    @keyframes lfUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
     .logotype {
+      display: flex;
+      align-items: center;
+      gap: .6rem;
       font-family: var(--serif);
       font-weight: 600;
-      font-size: 1.15rem;
-      color: var(--primary-dark);
+      font-size: 1.2rem;
+      color: var(--primary);
       margin-bottom: 1.5rem;
+    }
+    .logotype::before {
+      content: "";
+      width: 34px; height: 34px;
+      border-radius: 10px;
+      background: var(--accent) url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'><circle cx='11' cy='11' r='6'/><path d='M20 20l-4-4'/></svg>") center / 60% no-repeat;
     }
     h1 {
       font-family: var(--serif);
       font-weight: 600;
-      font-size: 1.5rem;
-      margin: 0 0 0.4rem;
-      color: var(--primary-dark);
+      font-size: 1.7rem;
+      margin: 0 0 .4rem;
+      color: var(--primary);
     }
     p.lede {
       color: var(--muted);
-      font-size: 0.92rem;
+      font-size: .95rem;
       margin: 0 0 1.5rem;
     }
     label {
       display: block;
-      font-size: 0.85rem;
+      font-size: .85rem;
       font-weight: 600;
-      margin-bottom: 0.35rem;
+      margin-bottom: .35rem;
       color: var(--text);
     }
     input {
       width: 100%;
-      padding: 0.65rem 0.8rem;
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      font-size: 0.95rem;
+      padding: .8rem 1rem;
+      border: 1.5px solid var(--border);
+      border-radius: 14px;
+      font-size: 1rem;
       font-family: var(--sans);
       margin-bottom: 1.1rem;
+      background: #fcfbf8;
+      transition: border-color .2s, box-shadow .2s, background .2s;
     }
     input:focus {
       outline: none;
       border-color: var(--primary);
+      background: #fff;
+      box-shadow: 0 0 0 4px rgba(13,57,52,.12);
     }
     button {
       width: 100%;
-      padding: 0.75rem;
-      background: var(--primary);
+      padding: .9rem;
+      background: linear-gradient(135deg, var(--primary) 0%, #14524a 100%);
       color: #fff;
       border: none;
-      border-radius: 4px;
-      font-size: 0.95rem;
+      border-radius: 999px;
+      font-size: 1rem;
       font-weight: 700;
       cursor: pointer;
       font-family: var(--sans);
+      box-shadow: 0 8px 20px rgba(8,38,33,.35);
+      transition: transform .2s, box-shadow .2s;
     }
-    button:hover { background: var(--primary-dark); }
-    button:disabled { opacity: 0.6; cursor: default; }
+    button:hover { transform: translateY(-2px); box-shadow: 0 12px 26px rgba(8,38,33,.42); }
+    button:active { transform: translateY(0); }
+    button:disabled { opacity: .6; cursor: default; transform: none; }
     .msg {
       margin-top: 1rem;
-      font-size: 0.88rem;
-      padding: 0.7rem 0.9rem;
-      border-radius: 4px;
+      font-size: .88rem;
+      padding: .75rem 1rem;
+      border-radius: 14px;
       display: none;
     }
     .msg.error { background: #fdecea; color: var(--error); display: block; }
-    .msg.success { background: #e8f5e9; color: #1b5e20; display: block; }
+    .msg.success { background: var(--green-soft); color: #1b5e3a; display: block; }
     .switch {
-      margin-top: 1.3rem;
-      font-size: 0.88rem;
+      margin-top: 1.4rem;
+      font-size: .9rem;
       color: var(--muted);
       text-align: center;
     }
-    .switch a { color: var(--primary); font-weight: 600; text-decoration: none; }
-    .switch a:hover { text-decoration: underline; }
+    .switch a { color: var(--accent-dark); font-weight: 700; text-decoration: none; }
+    .switch a:hover { text-decoration: underline; text-underline-offset: 3px; }
+    button:focus-visible, .switch a:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; transition: none !important; }
+    }
   </style>
 </head>
 <body>
