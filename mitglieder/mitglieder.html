@@ -15,69 +15,134 @@
 
   <style>
     :root {
-      --primary: #0f4c46;
-      --primary-dark: #0a3733;
-      --accent: #e0982e;
-      --bg: #faf7f2;
-      --text: #1e2624;
-      --muted: #5c6b67;
-      --border: #dfe3df;
+      --primary: #0d3934;
+      --primary-dark: #082621;
+      --accent: #ad7f42;
+      --accent-dark: #8a6533;
+      --bg: #f5f2ea;
+      --text: #1b201e;
+      --muted: #5c655f;
+      --border: #e2ded2;
+      --gold-soft: #f3e7d0;
+      --green-soft: #e3efe9;
+      --shadow-s: 0 1px 2px rgba(8,38,33,.07), 0 6px 16px rgba(8,38,33,.09);
+      --shadow: 0 2px 4px rgba(8,38,33,.06), 0 14px 34px rgba(8,38,33,.14);
       --serif: "Fraunces", Georgia, serif;
       --sans: "Work Sans", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     }
     * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
       margin: 0;
       font-family: var(--sans);
       background: var(--bg);
       color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
     }
+
+    /* ---------- Kopfbereich ---------- */
     .hero {
-      background: var(--primary);
+      position: relative;
+      background: linear-gradient(160deg, var(--primary) 0%, var(--primary-dark) 100%);
       color: #fff;
-      padding: 1.75rem 1.25rem;
+      padding: 1.3rem 1.25rem 3.4rem;
       display: flex;
+      flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
+      gap: .6rem;
+      overflow: hidden;
     }
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 260px; height: 260px;
+      right: -80px; top: -100px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, #1c5c53, transparent 70%);
+      opacity: .6;
+      pointer-events: none;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      left: 0; right: 0; bottom: -1px;
+      height: 40px;
+      background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 60' preserveAspectRatio='none'><path d='M0 30 C 240 70 480 0 720 25 C 960 50 1200 65 1440 20 L1440 60 L0 60 Z' fill='%23f5f2ea'/></svg>") center bottom / 100% 100% no-repeat;
+      pointer-events: none;
+    }
+    .hero > * { position: relative; z-index: 1; }
+    .hero > a {
+      display: inline-block;
+      padding: .5rem 1rem;
+      border-radius: 999px;
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.28);
+      opacity: 1 !important;
+      font-size: .85rem !important;
+      font-weight: 600;
+      margin-right: 0 !important;
+      transition: background .2s;
+    }
+    .hero > a:hover { background: rgba(255,255,255,.22); }
     .logotype {
       font-family: var(--serif);
       font-weight: 600;
-      font-size: 1.15rem;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: .55rem;
+    }
+    .logotype::before {
+      content: "";
+      width: 32px; height: 32px;
+      border-radius: 10px;
+      background: var(--accent) url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'><circle cx='11' cy='11' r='6'/><path d='M20 20l-4-4'/></svg>") center / 60% no-repeat;
     }
     #logoutBtn {
-      background: rgba(255,255,255,0.15);
-      border: 1px solid rgba(255,255,255,0.4);
-      color: #fff;
-      padding: 0.45rem 0.9rem;
-      border-radius: 4px;
+      background: #fff;
+      border: none;
+      color: var(--primary);
+      padding: .55rem 1.1rem;
+      border-radius: 999px;
       font-family: var(--sans);
-      font-size: 0.85rem;
+      font-size: .85rem;
+      font-weight: 700;
       cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,.18);
+      transition: transform .2s, box-shadow .2s;
     }
-    #logoutBtn:hover { background: rgba(255,255,255,0.25); }
+    #logoutBtn:hover { transform: translateY(-2px); box-shadow: 0 8px 18px rgba(0,0,0,.24); }
+
+    /* ---------- Inhalt ---------- */
     .container {
-      max-width: 640px;
+      max-width: 760px;
       margin: 0 auto;
-      padding: 2rem 1.25rem;
+      padding: 0 1.1rem 3rem;
     }
     h1 {
       font-family: var(--serif);
       font-weight: 600;
-      font-size: 1.6rem;
-      color: var(--primary-dark);
-      margin: 0 0 0.5rem;
+      font-size: 1.9rem;
+      color: var(--primary);
+      margin: 1.2rem 0 .35rem;
+      position: relative;
     }
     p.lede {
       color: var(--muted);
-      margin: 0 0 1.5rem;
+      margin: 0 0 1.4rem;
+      position: relative;
+      font-size: .95rem;
     }
     .card {
       background: #fff;
       border: 1px solid var(--border);
-      border-radius: 6px;
-      padding: 1.5rem;
+      border-top: 4px solid var(--accent);
+      border-radius: 24px;
+      padding: 1.6rem;
       margin-bottom: 1rem;
+      box-shadow: var(--shadow);
     }
     #loading {
       text-align: center;
@@ -87,181 +152,140 @@
     #content { display: none; }
 
     .ad-label {
-      font-size: 0.8rem;
+      font-size: .8rem;
       color: var(--muted);
       font-style: italic;
-      margin: 0.5rem 0 1.25rem;
+      margin: .5rem 0 1.25rem;
+      padding: .6rem .85rem;
+      background: #faf8f2;
+      border-radius: 12px;
+      border: 1px dashed var(--border);
     }
-
-    .deals-section {
-      margin-top: 2rem;
-    }
-
+    .deals-section { margin-top: 1.6rem; }
     .deals-heading {
       font-family: var(--serif);
       font-weight: 600;
-      font-size: 1.35rem;
-      color: var(--accent);
-      margin: 0 0 0.35rem;
+      font-size: 1.4rem;
+      color: var(--accent-dark);
+      margin: 0 0 .35rem;
     }
-
-    .deals-intro {
-      color: var(--muted);
-      font-size: 0.92rem;
-      margin: 0 0 0.5rem;
-    }
-
-    .deals-grid {
+    .deals-intro { color: var(--muted); font-size: .92rem; margin: 0 0 .5rem; }
+    .deals-grid, .antraege-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 1rem;
     }
 
-    .deal-card {
+    .deal-card, .antrag-card {
       background: #fff;
       border: 1px solid var(--border);
-      border-radius: 6px;
-      padding: 1.1rem 1.2rem;
+      border-radius: 20px;
+      padding: 1.15rem 1.2rem;
+      box-shadow: var(--shadow-s);
+      transition: transform .25s ease, box-shadow .25s ease;
     }
+    .deal-card:hover, .antrag-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+
     .deal-card-header {
       display: flex;
       align-items: baseline;
       justify-content: space-between;
-      gap: 0.5rem;
-      margin-bottom: 0.7rem;
-      border-bottom: 2px solid var(--accent);
-      padding-bottom: 0.4rem;
+      gap: .5rem;
+      margin-bottom: .75rem;
+      border-bottom: 2px solid var(--gold-soft);
+      padding-bottom: .5rem;
     }
-
     .deal-card-header h3 {
       font-family: var(--serif);
-      font-size: 1.02rem;
+      font-size: 1.05rem;
       font-weight: 600;
-      color: var(--primary-dark);
+      color: var(--primary);
       margin: 0;
     }
-
     .deal-cat {
-      font-size: 0.72rem;
-      color: var(--muted);
+      font-size: .72rem;
+      color: var(--accent-dark);
+      background: var(--gold-soft);
+      padding: .15rem .55rem;
+      border-radius: 999px;
       white-space: nowrap;
+      font-weight: 600;
     }
-
-    .deal-links {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-
+    .deal-links { display: flex; flex-direction: column; gap: .5rem; }
     .deal-link {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 0.5rem;
-      padding: 0.55rem 0.7rem;
-      border: 1px solid var(--border);
-      border-radius: 4px;
+      gap: .5rem;
+      padding: .65rem .85rem;
+      border: 1.5px solid var(--border);
+      border-radius: 14px;
       text-decoration: none;
       color: var(--text);
-      font-size: 0.87rem;
-      transition: border-color 0.15s ease, background 0.15s ease;
+      font-size: .87rem;
+      font-weight: 500;
+      transition: border-color .15s ease, background .15s ease, transform .15s ease;
     }
-
-    .deal-link:hover {
-      border-color: var(--primary);
-      background: #f6faf9;
-    }
-
+    .deal-link:hover { border-color: var(--primary); background: var(--green-soft); transform: translateX(2px); }
     .deal-code {
-      font-size: 0.72rem;
+      font-size: .72rem;
       font-weight: 700;
       color: #fff;
-      background: var(--accent);
-      padding: 0.15rem 0.4rem;
-      border-radius: 3px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+      padding: .2rem .55rem;
+      border-radius: 999px;
       white-space: nowrap;
     }
+    .deal-arrow { color: var(--primary); font-weight: 700; }
 
-    .deal-arrow {
-      color: var(--primary);
-      font-weight: 700;
-    }
-
-    .antraege-section {
-      margin-top: 2.5rem;
-    }
-
-    .antraege-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1rem;
-    }
-
-    .antrag-card {
-      background: #fff;
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      padding: 1.1rem 1.2rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-    .antrag-card-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 0.5rem;
-    }
-
+    .antraege-section { margin-top: 2.2rem; }
+    .antrag-card { display: flex; flex-direction: column; gap: .5rem; }
+    .antrag-card-top { display: flex; justify-content: space-between; align-items: flex-start; gap: .5rem; }
     .antrag-card h3 {
       font-family: var(--serif);
       font-size: 1rem;
       font-weight: 600;
-      color: var(--primary-dark);
+      color: var(--primary);
       margin: 0;
     }
-
-    .antrag-card p {
-      font-size: 0.85rem;
-      color: var(--muted);
-      margin: 0;
-      flex: 1;
-    }
-
+    .antrag-card p { font-size: .85rem; color: var(--muted); margin: 0; flex: 1; }
     .antrag-badge {
-      font-size: 0.68rem;
+      font-size: .68rem;
       font-weight: 700;
-      padding: 0.15rem 0.5rem;
-      border-radius: 3px;
+      padding: .2rem .6rem;
+      border-radius: 999px;
       white-space: nowrap;
     }
-
-    .antrag-badge-download {
-      background: var(--primary);
-      color: #fff;
-    }
-
-    .antrag-badge-info {
-      background: #eef1f5;
-      color: var(--primary-dark);
-      border: 1px solid var(--border);
-    }
-
+    .antrag-badge-download { background: var(--primary); color: #fff; }
+    .antrag-badge-info { background: var(--green-soft); color: var(--primary); border: 1px solid #cfe2d9; }
     .antrag-btn {
       align-self: flex-start;
-      margin-top: 0.3rem;
-      font-size: 0.85rem;
+      margin-top: .3rem;
+      font-size: .85rem;
       font-weight: 700;
       color: var(--primary);
       text-decoration: none;
-      border: 1px solid var(--primary);
-      border-radius: 4px;
-      padding: 0.4rem 0.75rem;
+      border: 1.5px solid var(--primary);
+      border-radius: 999px;
+      padding: .45rem 1rem;
+      transition: background .2s, color .2s, transform .2s;
+    }
+    .antrag-btn:hover { background: var(--primary); color: #fff; transform: translateY(-1px); }
+
+    a:focus-visible, button:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 3px;
     }
 
-    .antrag-btn:hover {
-      background: var(--primary);
-      color: #fff;
+    @media (max-width: 600px) {
+      .hero { padding: 1.1rem 1rem 3.2rem; }
+      .container { padding: 0 .85rem 2.5rem; }
+      .card { padding: 1.25rem 1.1rem; }
+      h1 { font-size: 1.6rem; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; animation: none !important; }
+      html { scroll-behavior: auto; }
     }
   </style>
 </head>
