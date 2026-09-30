@@ -2,9 +2,9 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
-  <title>Kostenlos registrieren | Leistung-Finder</title>
+  <title>Mein Leistung-Finder</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="robots" content="noindex, follow" />
+  <meta name="robots" content="noindex, nofollow" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,157 +23,349 @@
       --text: #1b201e;
       --muted: #5c655f;
       --border: #e2ded2;
-      --error: #a3372f;
-      --green-soft: #e3efe9;
       --gold-soft: #f3e7d0;
-      --shadow: 0 2px 4px rgba(8,38,33,.08), 0 18px 44px rgba(0,0,0,.28);
+      --green-soft: #e3efe9;
+      --shadow-s: 0 1px 2px rgba(8,38,33,.07), 0 6px 16px rgba(8,38,33,.09);
+      --shadow: 0 2px 4px rgba(8,38,33,.06), 0 14px 34px rgba(8,38,33,.14);
       --serif: "Fraunces", Georgia, serif;
       --sans: "Work Sans", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     }
     * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
       margin: 0;
       font-family: var(--sans);
+      background: var(--bg);
       color: var(--text);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      padding: 1.5rem;
-      position: relative;
+      line-height: 1.6;
       overflow-x: hidden;
-      background:
-        radial-gradient(circle at 85% 8%, rgba(28,92,83,.75), transparent 45%),
-        radial-gradient(circle at 10% 95%, rgba(173,127,66,.22), transparent 40%),
-        linear-gradient(160deg, var(--primary) 0%, var(--primary-dark) 100%);
-      background-attachment: fixed;
     }
-    .card {
+
+    /* ---------- Kopfbereich ---------- */
+    .hero {
       position: relative;
-      background: #fff;
-      border: 1px solid var(--border);
-      border-top: 4px solid var(--accent);
-      border-radius: 28px;
-      padding: 2.2rem 1.9rem 2rem;
-      max-width: 420px;
-      width: 100%;
-      box-shadow: var(--shadow);
-      animation: lfUp .5s ease both;
-    }
-    @keyframes lfUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
-    .logotype {
+      background: linear-gradient(160deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: #fff;
+      padding: 1.3rem 1.25rem 3.4rem;
       display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
       align-items: center;
       gap: .6rem;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 260px; height: 260px;
+      right: -80px; top: -100px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, #1c5c53, transparent 70%);
+      opacity: .6;
+      pointer-events: none;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      left: 0; right: 0; bottom: -1px;
+      height: 40px;
+      background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 60' preserveAspectRatio='none'><path d='M0 30 C 240 70 480 0 720 25 C 960 50 1200 65 1440 20 L1440 60 L0 60 Z' fill='%23f5f2ea'/></svg>") center bottom / 100% 100% no-repeat;
+      pointer-events: none;
+    }
+    .hero > * { position: relative; z-index: 1; }
+    .hero > a {
+      display: inline-block;
+      padding: .5rem 1rem;
+      border-radius: 999px;
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.28);
+      opacity: 1 !important;
+      font-size: .85rem !important;
+      font-weight: 600;
+      margin-right: 0 !important;
+      transition: background .2s;
+    }
+    .hero > a:hover { background: rgba(255,255,255,.22); }
+    .logotype {
       font-family: var(--serif);
       font-weight: 600;
       font-size: 1.2rem;
-      color: var(--primary);
-      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: .55rem;
     }
     .logotype::before {
       content: "";
-      width: 34px; height: 34px;
+      width: 32px; height: 32px;
       border-radius: 10px;
       background: var(--accent) url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'><circle cx='11' cy='11' r='6'/><path d='M20 20l-4-4'/></svg>") center / 60% no-repeat;
+    }
+    #logoutBtn {
+      background: #fff;
+      border: none;
+      color: var(--primary);
+      padding: .55rem 1.1rem;
+      border-radius: 999px;
+      font-family: var(--sans);
+      font-size: .85rem;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,.18);
+      transition: transform .2s, box-shadow .2s;
+    }
+    #logoutBtn:hover { transform: translateY(-2px); box-shadow: 0 8px 18px rgba(0,0,0,.24); }
+
+    /* ---------- Inhalt ---------- */
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 1.1rem 3rem;
     }
     h1 {
       font-family: var(--serif);
       font-weight: 600;
-      font-size: 1.7rem;
-      margin: 0 0 .4rem;
+      font-size: 1.9rem;
       color: var(--primary);
+      margin: 1.2rem 0 .35rem;
+      position: relative;
     }
     p.lede {
       color: var(--muted);
+      margin: 0 0 1.4rem;
+      position: relative;
       font-size: .95rem;
-      margin: 0 0 1.5rem;
     }
-    label {
-      display: block;
-      font-size: .85rem;
+    .card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--accent);
+      border-radius: 24px;
+      padding: 1.6rem;
+      margin-bottom: 1rem;
+      box-shadow: var(--shadow);
+    }
+    #loading {
+      text-align: center;
+      padding: 3rem 1rem;
+      color: var(--muted);
+    }
+    #content { display: none; }
+
+    .ad-label {
+      font-size: .8rem;
+      color: var(--muted);
+      font-style: italic;
+      margin: .5rem 0 1.25rem;
+      padding: .6rem .85rem;
+      background: #faf8f2;
+      border-radius: 12px;
+      border: 1px dashed var(--border);
+    }
+    .deals-section { margin-top: 1.6rem; }
+    .deals-heading {
+      font-family: var(--serif);
       font-weight: 600;
-      margin-bottom: .35rem;
-      color: var(--text);
+      font-size: 1.4rem;
+      color: var(--accent-dark);
+      margin: 0 0 .35rem;
     }
-    input {
-      width: 100%;
-      padding: .8rem 1rem;
+    .deals-intro { color: var(--muted); font-size: .92rem; margin: 0 0 .5rem; }
+    .deals-grid, .antraege-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+    }
+
+    .deal-card, .antrag-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 1.15rem 1.2rem;
+      box-shadow: var(--shadow-s);
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+    .deal-card:hover, .antrag-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+
+    .deal-card-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: .5rem;
+      margin-bottom: .75rem;
+      border-bottom: 2px solid var(--gold-soft);
+      padding-bottom: .5rem;
+    }
+    .deal-card-header h3 {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin: 0;
+    }
+    .deal-cat {
+      font-size: .72rem;
+      color: var(--accent-dark);
+      background: var(--gold-soft);
+      padding: .15rem .55rem;
+      border-radius: 999px;
+      white-space: nowrap;
+      font-weight: 600;
+    }
+    .deal-links { display: flex; flex-direction: column; gap: .5rem; }
+    .deal-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: .5rem;
+      padding: .65rem .85rem;
       border: 1.5px solid var(--border);
       border-radius: 14px;
-      font-size: 1rem;
-      font-family: var(--sans);
-      margin-bottom: 1.1rem;
-      background: #fcfbf8;
-      transition: border-color .2s, box-shadow .2s, background .2s;
+      text-decoration: none;
+      color: var(--text);
+      font-size: .87rem;
+      font-weight: 500;
+      transition: border-color .15s ease, background .15s ease, transform .15s ease;
     }
-    input:focus {
-      outline: none;
-      border-color: var(--primary);
-      background: #fff;
-      box-shadow: 0 0 0 4px rgba(13,57,52,.12);
-    }
-    button {
-      width: 100%;
-      padding: .9rem;
-      background: linear-gradient(135deg, var(--primary) 0%, #14524a 100%);
-      color: #fff;
-      border: none;
-      border-radius: 999px;
-      font-size: 1rem;
+    .deal-link:hover { border-color: var(--primary); background: var(--green-soft); transform: translateX(2px); }
+    .deal-code {
+      font-size: .72rem;
       font-weight: 700;
-      cursor: pointer;
-      font-family: var(--sans);
-      box-shadow: 0 8px 20px rgba(8,38,33,.35);
-      transition: transform .2s, box-shadow .2s;
+      color: #fff;
+      background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+      padding: .2rem .55rem;
+      border-radius: 999px;
+      white-space: nowrap;
     }
-    button:hover { transform: translateY(-2px); box-shadow: 0 12px 26px rgba(8,38,33,.42); }
-    button:active { transform: translateY(0); }
-    button:disabled { opacity: .6; cursor: default; transform: none; }
-    .msg {
-      margin-top: 1rem;
-      font-size: .88rem;
-      padding: .75rem 1rem;
-      border-radius: 14px;
-      display: none;
+    .deal-arrow { color: var(--primary); font-weight: 700; }
+
+    .antraege-section { margin-top: 2.2rem; }
+    .antrag-card { display: flex; flex-direction: column; gap: .5rem; }
+    .antrag-card-top { display: flex; justify-content: space-between; align-items: flex-start; gap: .5rem; }
+    .antrag-card h3 {
+      font-family: var(--serif);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin: 0;
     }
-    .msg.error { background: #fdecea; color: var(--error); display: block; }
-    .msg.success { background: var(--green-soft); color: #1b5e3a; display: block; }
-    .switch {
-      margin-top: 1.4rem;
-      font-size: .9rem;
-      color: var(--muted);
-      text-align: center;
+    .antrag-card p { font-size: .85rem; color: var(--muted); margin: 0; flex: 1; }
+    .antrag-badge {
+      font-size: .68rem;
+      font-weight: 700;
+      padding: .2rem .6rem;
+      border-radius: 999px;
+      white-space: nowrap;
     }
-    .switch a { color: var(--accent-dark); font-weight: 700; text-decoration: none; }
-    .switch a:hover { text-decoration: underline; text-underline-offset: 3px; }
-    button:focus-visible, .switch a:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+    .antrag-badge-download { background: var(--primary); color: #fff; }
+    .antrag-badge-info { background: var(--green-soft); color: var(--primary); border: 1px solid #cfe2d9; }
+    .antrag-btn {
+      align-self: flex-start;
+      margin-top: .3rem;
+      font-size: .85rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-decoration: none;
+      border: 1.5px solid var(--primary);
+      border-radius: 999px;
+      padding: .45rem 1rem;
+      transition: background .2s, color .2s, transform .2s;
+    }
+    .antrag-btn:hover { background: var(--primary); color: #fff; transform: translateY(-1px); }
+
+    a:focus-visible, button:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 3px;
+    }
+
+    @media (max-width: 600px) {
+      .hero { padding: 1.1rem 1rem 3.2rem; }
+      .container { padding: 0 .85rem 2.5rem; }
+      .card { padding: 1.25rem 1.1rem; }
+      h1 { font-size: 1.6rem; }
+    }
     @media (prefers-reduced-motion: reduce) {
-      * { animation: none !important; transition: none !important; }
+      * { transition: none !important; animation: none !important; }
+      html { scroll-behavior: auto; }
     }
   </style>
 </head>
 <body>
 
-  <div class="card">
-    <div class="logotype">Leistung-Finder</div>
-    <h1>Kostenlos registrieren</h1>
-    <p class="lede">Leg dir dein Konto an, um deine Anträge und Ergebnisse zu speichern.</p>
+  <div id="loading">Wird geladen...</div>
+  <div id="content">
+    <div class="hero">
+      <a href="/" style="color:#fff;text-decoration:none;font-size:0.82rem;opacity:0.85;margin-right:0.75rem;">&larr; Zur Startseite</a>
+      <div class="logotype">Leistung-Finder</div>
+      <a id="adminLink" href="/mitglieder/admin.html" style="display:none;color:#fff;font-size:0.82rem;opacity:0.85;text-decoration:none;margin-right:0.75rem;">Admin</a>
+      <button id="logoutBtn">Ausloggen</button>
+    </div>
 
-    <form id="signupForm">
-      <label for="email">E-Mail-Adresse</label>
-      <input type="email" id="email" required autocomplete="email" />
+    <div class="container">
+      <h1>Willkommen zurück!</h1>
+      <p class="lede" id="userEmail"></p>
 
-      <label for="password">Passwort (mind. 6 Zeichen)</label>
-      <input type="password" id="password" required minlength="6" autocomplete="new-password" />
+      <div class="card">
+        <p>Hier entsteht bald dein persönlicher Bereich mit deinen gespeicherten Anträgen und Ergebnissen.</p>
 
-      <button type="submit" id="submitBtn">Registrieren</button>
-    </form>
+    <div class="deals-section" id="aktionen">
+      <h2 class="deals-heading">&#9733; Spezial-Aktionsangebote</h2>
+      <p class="deals-intro">Exklusiv für registrierte Mitglieder: aktuelle Rabatte und Aktionen unserer Partner.</p>
+      <p class="ad-label">Anzeige – bei Abschluss über diese Links erhalten wir ggf. eine Vergütung. Diese Angebote stammen von unabhängigen Partnern, nicht von Behörden.</p>
+      <div class="deals-grid" id="dealsGrid">
+        <p style="color:var(--muted);font-size:0.9rem;">Lädt Angebote...</p>
+      </div>
+    </div>
 
-    <div class="msg" id="msgBox"></div>
+    <div class="antraege-section" id="antraege">
+      <h2 class="deals-heading">&#128190; Anträge zum Download</h2>
+      <p class="deals-intro">Exklusiv für registrierte Mitglieder: die wichtigsten Antragsformulare direkt verlinkt.</p>
+      <p class="ad-label">Alle Links führen zu offiziellen Stellen (Bundesagentur für Arbeit, Behördensuche des Bundes). Wohngeld, Pflegegeld und Grundsicherung im Alter werden örtlich verwaltet – bitte nutze ausschließlich die offizielle Behördensuche, nicht kostenpflichtige Drittanbieter-Seiten.</p>
+      <div class="antraege-grid">
+        
+        <div class="antrag-card">
+          <div class="antrag-card-top">
+            <h3>Bürgergeld / Grundsicherungsgeld – Hauptantrag</h3>
+            <span class="antrag-badge antrag-badge-download">PDF-Download</span>
+          </div>
+          <p>Offizieller Antrag der Bundesagentur für Arbeit (SGB II), als PDF zum Ausdrucken und Ausfüllen.</p>
+          <a class="antrag-btn" href="https://www.arbeitsagentur.de/datei/antrag-sgb2_ba042689.pdf" target="_blank" rel="noopener">PDF herunterladen &rarr;</a>
+        </div>
+        <div class="antrag-card">
+          <div class="antrag-card-top">
+            <h3>Kinderzuschlag – Antrag</h3>
+            <span class="antrag-badge antrag-badge-download">PDF-Download</span>
+          </div>
+          <p>Offizieller Antrag (KiZ 1) der Familienkasse, als PDF zum Ausdrucken und Ausfüllen.</p>
+          <a class="antrag-btn" href="https://www.arbeitsagentur.de/datei/kiz1-antrag_ba013094.pdf" target="_blank" rel="noopener">PDF herunterladen &rarr;</a>
+        </div>
+        <div class="antrag-card">
+          <div class="antrag-card-top">
+            <h3>Wohngeld</h3>
+            <span class="antrag-badge antrag-badge-info">Offizielle Anlaufstelle</span>
+          </div>
+          <p>Wohngeld wird örtlich verwaltet – das passende Formular findest du über die offizielle Behördensuche des Bundes.</p>
+          <a class="antrag-btn" href="https://verwaltung.bund.de/leistungsverzeichnis/de/suche?q=Wohngeld" target="_blank" rel="noopener">Zuständige Wohngeldstelle finden &rarr;</a>
+        </div>
+        <div class="antrag-card">
+          <div class="antrag-card-top">
+            <h3>Pflegegeld</h3>
+            <span class="antrag-badge antrag-badge-info">Offizielle Anlaufstelle</span>
+          </div>
+          <p>Pflegegeld beantragst du direkt bei deiner Pflegekasse (i.d.R. bei deiner Krankenkasse) – dort erhältst du das passende Formular.</p>
+          <a class="antrag-btn" href="https://www.bundesgesundheitsministerium.de/themen/pflege/online-ratgeber-pflege/antragstellung.html" target="_blank" rel="noopener">Infos zur Antragstellung &rarr;</a>
+        </div>
+        <div class="antrag-card">
+          <div class="antrag-card-top">
+            <h3>Grundsicherung im Alter und bei Erwerbsminderung</h3>
+            <span class="antrag-badge antrag-badge-info">Offizielle Anlaufstelle</span>
+          </div>
+          <p>Diese Leistung beantragst du beim Sozialamt deiner Stadt oder Gemeinde – die zuständige Stelle findest du über die Behördensuche.</p>
+          <a class="antrag-btn" href="https://verwaltung.bund.de/leistungsverzeichnis/de/suche?q=Grundsicherung" target="_blank" rel="noopener">Zuständiges Sozialamt finden &rarr;</a>
+        </div>
+      </div>
+    </div>
 
-    <div class="switch">
-      Schon registriert? <a href="/mitglieder/login.html">Hier einloggen</a>
+      </div>
     </div>
   </div>
 
@@ -182,35 +374,85 @@
     const SUPABASE_KEY = "sb_publishable_PXFh4qggQUq3Eb4AGbPpPg_05HIlS1x";
     const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
-    const form = document.getElementById("signupForm");
-    const msgBox = document.getElementById("msgBox");
-    const submitBtn = document.getElementById("submitBtn");
+    async function checkSession() {
+      const { data } = await client.auth.getSession();
 
-    function showMsg(text, type) {
-      msgBox.textContent = text;
-      msgBox.className = "msg " + type;
-    }
-
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      submitBtn.disabled = true;
-      submitBtn.textContent = "Bitte warten...";
-
-      const email = document.getElementById("email").value.trim();
-      const password = document.getElementById("password").value;
-
-      const { data, error } = await client.auth.signUp({ email, password });
-
-      submitBtn.disabled = false;
-      submitBtn.textContent = "Registrieren";
-
-      if (error) {
-        showMsg("Fehler: " + error.message, "error");
+      if (!data.session) {
+        window.location.href = "/mitglieder/login.html";
         return;
       }
 
-      showMsg("Fast fertig! Bitte prüf dein E-Mail-Postfach und bestätige deine Adresse, bevor du dich einloggst.", "success");
-      form.reset();
+      document.getElementById("userEmail").textContent =
+        "Eingeloggt als: " + data.session.user.email;
+      document.getElementById("loading").style.display = "none";
+      document.getElementById("content").style.display = "block";
+
+      if (data.session.user.email === "schmidtstefan312@gmail.com") {
+        document.getElementById("adminLink").style.display = "inline";
+      }
+
+      loadDeals();
+    }
+
+    function escapeHtml(str) {
+      const div = document.createElement('div');
+      div.textContent = str || '';
+      return div.innerHTML;
+    }
+
+    async function loadDeals() {
+      const grid = document.getElementById("dealsGrid");
+      const { data: rows, error } = await client
+        .from("aktionen")
+        .select("*")
+        .order("partner_name", { ascending: true });
+
+      if (error) {
+        grid.innerHTML = '<p style="color:var(--muted);">Angebote konnten nicht geladen werden.</p>';
+        return;
+      }
+
+      if (!rows || rows.length === 0) {
+        grid.innerHTML = '<p style="color:var(--muted);">Aktuell keine Aktionen verfügbar.</p>';
+        return;
+      }
+
+      const byBrand = {};
+      const order = [];
+      rows.forEach(r => {
+        if (!byBrand[r.partner_name]) {
+          byBrand[r.partner_name] = [];
+          order.push(r.partner_name);
+        }
+        byBrand[r.partner_name].push(r);
+      });
+
+      grid.innerHTML = order.map(brand => {
+        const items = byBrand[brand];
+        const cat = items[0].category || '';
+        const links = items.map(it => `
+          <a class="deal-link" href="${escapeHtml(it.url)}" target="_blank" rel="sponsored noopener">
+            <span>${escapeHtml(it.label)}</span>
+            ${it.code ? `<span class="deal-code">Code: ${escapeHtml(it.code)}</span>` : ''}
+            <span class="deal-arrow">&rarr;</span>
+          </a>`).join('');
+
+        return `
+          <div class="deal-card">
+            <div class="deal-card-header">
+              <h3>${escapeHtml(brand)}</h3>
+              <span class="deal-cat">${escapeHtml(cat)}</span>
+            </div>
+            <div class="deal-links">${links}</div>
+          </div>`;
+      }).join('');
+    }
+
+    checkSession();
+
+    document.getElementById("logoutBtn").addEventListener("click", async () => {
+      await client.auth.signOut();
+      window.location.href = "/mitglieder/login.html";
     });
   </script>
 
