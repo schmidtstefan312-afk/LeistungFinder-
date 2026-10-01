@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
@@ -11,22 +12,76 @@
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Work+Sans:wght@400;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary: #0f4c46; --primary-dark: #0a3733; --accent: #e0982e;
-      --bg: #faf7f2; --text: #1e2624; --muted: #5c6b67; --border: #dfe3df;
+      --primary: #0d3934; --primary-dark: #082621; --accent: #ad7f42; --accent-dark: #8a6533;
+      --bg: #f5f2ea; --text: #1b201e; --muted: #5c655f; --border: #e2ded2;
+      --gold-soft: #f3e7d0; --green-soft: #e3efe9;
+      --shadow: 0 2px 4px rgba(8,38,33,.06), 0 14px 34px rgba(8,38,33,.14);
       --serif: "Fraunces", Georgia, serif;
       --sans: "Work Sans", system-ui, -apple-system, sans-serif;
     }
     * { box-sizing: border-box; }
-    body { margin: 0; font-family: var(--sans); background: var(--bg); color: var(--text); line-height: 1.6; }
-    header { background: var(--primary); color: #fff; padding: 1.5rem 1.25rem; border-bottom: 3px solid var(--accent); }
-    header a { color: #fff; text-decoration: none; font-family: var(--serif); font-weight: 600; font-size: 1.2rem; }
-    .container { max-width: 720px; margin: 0 auto; padding: 2rem 1.25rem 3rem; }
-    h1 { font-family: var(--serif); color: var(--primary-dark); font-size: 1.6rem; }
-    h2 { font-family: var(--serif); color: var(--primary-dark); font-size: 1.1rem; margin-top: 2rem; }
-    a { color: var(--primary-dark); }
-    .back { display: inline-block; margin-top: 2rem; font-size: 0.9rem; }
-    p, li { font-size: 0.96rem; }
-    ul { padding-left: 1.2rem; }
+    body { margin: 0; font-family: var(--sans); background: var(--bg); color: var(--text); line-height: 1.7; overflow-x: hidden; }
+    header {
+      position: relative;
+      background: linear-gradient(160deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: #fff;
+      padding: 1.5rem 1.25rem 4.6rem;
+      overflow: hidden;
+    }
+    header::before {
+      content: ""; position: absolute; width: 260px; height: 260px; right: -80px; top: -100px;
+      border-radius: 50%; background: radial-gradient(circle at 30% 30%, #1c5c53, transparent 70%);
+      opacity: .6; pointer-events: none;
+    }
+    header::after {
+      content: ""; position: absolute; left: 0; right: 0; bottom: -1px; height: 40px;
+      background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 60' preserveAspectRatio='none'><path d='M0 30 C 240 70 480 0 720 25 C 960 50 1200 65 1440 20 L1440 60 L0 60 Z' fill='%23f5f2ea'/></svg>") center bottom / 100% 100% no-repeat;
+      pointer-events: none;
+    }
+    header a {
+      position: relative; z-index: 1;
+      display: inline-flex; align-items: center; gap: .6rem;
+      color: #fff; text-decoration: none;
+      font-family: var(--serif); font-weight: 600; font-size: 1.25rem;
+    }
+    header a::before {
+      content: ""; width: 34px; height: 34px; border-radius: 10px;
+      background: var(--accent) url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'><circle cx='11' cy='11' r='6'/><path d='M20 20l-4-4'/></svg>") center / 60% no-repeat;
+    }
+    .container {
+      position: relative;
+      max-width: 720px;
+      margin: -3rem auto 3rem;
+      padding: 2rem 2rem 2.2rem;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--accent);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+    }
+    h1 { font-family: var(--serif); color: var(--primary); font-size: 1.9rem; margin-top: 0; }
+    h2 { font-family: var(--serif); color: var(--primary); font-size: 1.1rem; margin-top: 2rem; }
+    a { color: var(--primary); text-underline-offset: 3px; }
+    a:hover { color: var(--accent-dark); }
+    .back {
+      display: inline-block; margin-top: 2rem; font-size: .9rem; font-weight: 600;
+      padding: .55rem 1.1rem; border: 1.5px solid var(--primary); border-radius: 999px;
+      text-decoration: none; transition: background .2s, color .2s;
+    }
+    .back:hover { background: var(--primary); color: #fff; }
+    p { font-size: .96rem; }
+    a:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+    @media (max-width: 600px) {
+      .container { margin: -3rem .85rem 2.5rem; padding: 1.5rem 1.2rem 1.8rem; }
+      h1 { font-size: 1.65rem; }
+    }
+    ul { padding-left: 0; list-style: none; }
+    li { position: relative; padding: .4rem 0 .4rem 1.9rem; font-size: .96rem; }
+    li::before {
+      content: "✓"; position: absolute; left: 0; top: .55rem; width: 1.35rem; height: 1.35rem;
+      border-radius: 50%; background: var(--green-soft); color: var(--primary);
+      font-size: .78rem; font-weight: 700; display: flex; align-items: center; justify-content: center;
+    }
   </style>
 </head>
 <body>
@@ -41,12 +96,28 @@
     <p>Wenn du das Kontaktformular auf Leistung-Finder nutzt, verarbeiten wir die von dir eingegebenen Daten (z. B. Name, E-Mail, Telefon, Angaben zu deiner Situation) auf Grundlage deiner ausdrücklichen Einwilligung (Art. 6 Abs. 1 lit. a DSGVO), um deine Anfrage zu bearbeiten und dich bei Bedarf zu kontaktieren.</p>
     <p>Der Versand erfolgt technisch über den Formular-Dienstleister Formspree. Eine automatisierte Weitergabe deiner Daten an externe Partnerunternehmen findet aktuell nicht statt.</p>
     <p>Du kannst deine Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen, indem du uns per E-Mail kontaktierst.</p>
+    <p>Wenn du im Formular eine E-Mail-Adresse angibst, erhältst du automatisch eine E-Mail mit einer ersten, allgemeinen Orientierung zu deinem Anliegen. Dafür wird die Benachrichtigung über das Formular in unserem E-Mail-Postfach (Google Gmail) verarbeitet und mit Hilfe des Automatisierungsdienstes Make ausgewertet; die Antwort wird über Gmail versendet. Die E-Mail-Adresse und deine Auswahl im Formular (z. B. gewünschtes Thema) werden dafür verwendet. Grundlage ist deine Einwilligung durch Absenden des Formulars (Art. 6 Abs. 1 lit. a DSGVO).</p>
+
+    <h2>Newsletter</h2>
+    <p>Wenn du dich für den Newsletter einträgst, verarbeiten wir deine E-Mail-Adresse, um dir den Newsletter zuzusenden. Grundlage ist deine Einwilligung (Art. 6 Abs. 1 lit. a DSGVO). Der Versand erfolgt über den Dienstleister Brevo. Du kannst dich jederzeit über den Abmeldelink im Newsletter oder per E-Mail an uns abmelden.</p>
+
+    <h2>Chat-Assistent</h2>
+    <p>Auf Leistung-Finder kannst du einen automatischen Chat-Assistenten nutzen. Er gibt nur eine erste Orientierung und ersetzt keine Beratung. Deine Fragen werden zur Beantwortung über eine Funktion unseres Datenbank-Dienstleisters Supabase an den KI-Dienst Hugging Face (Inference Providers) gesendet, der die Anfrage an einen Anbieter von Sprachmodellen weiterleitet; dabei kann eine Verarbeitung auch außerhalb der EU stattfinden. Wir speichern die Chat-Verläufe nicht. Zum Schutz vor Missbrauch wird deine IP-Adresse kurzzeitig im Arbeitsspeicher verarbeitet, um die Zahl der Anfragen zu begrenzen. Rechtsgrundlage ist unser berechtigtes Interesse an einem hilfreichen und sicheren Informationsangebot (Art. 6 Abs. 1 lit. f DSGVO).</p>
+    <p>Bitte gib im Chat keine persönlichen Daten ein (z. B. Name, Adresse, Geburtsdatum, Einkommen oder Gesundheitsdaten). Die Antworten sind automatisch erzeugt und können Fehler enthalten. Maßgeblich ist immer die zuständige Stelle.</p>
+
+    <h2>Hosting und Datenbank</h2>
+    <p>Die Webseite wird über GitHub Pages (GitHub, Inc.) ausgeliefert; die Domain wird über Strato verwaltet. Beim Aufruf der Seite werden technisch notwendige Verbindungsdaten (insbesondere deine IP-Adresse) verarbeitet. Dynamische Inhalte (z. B. Partnerangebote und Aktionen) sowie der geschützte Bereich werden über Supabase bereitgestellt; dazu lädt die Seite ein Skript über das Content-Delivery-Network jsDelivr. Für den Anmeldebereich werden die dafür nötigen Zugangsdaten (E-Mail-Adresse und Passwort) bei Supabase verarbeitet.</p>
 
     <h2>Eingebundene externe Dienste</h2>
     <ul>
       <li><strong>Google Fonts</strong> (Google Ireland Ltd.) – zur Darstellung der Schriftarten. Beim Laden der Seite kann deine IP-Adresse an Google übertragen werden.</li>
       <li><strong>Formspree</strong> – zur technischen Verarbeitung und Zustellung des Kontaktformulars.</li>
       <li><strong>Besucherzähler-Dienst</strong> (visitor-badge.laobi.icu) – zeigt eine grobe Besucherzahl an.</li>
+      <li><strong>Brevo</strong> – Versand des Newsletters.</li>
+      <li><strong>Supabase</strong> – Datenbank, Anmeldung und Chat-Funktion.</li>
+      <li><strong>Hugging Face</strong> – KI-Dienst für den Chat-Assistenten.</li>
+      <li><strong>Make</strong> und <strong>Google Gmail</strong> – automatische Antwort-E-Mail nach dem Absenden des Formulars.</li>
+      <li><strong>GitHub Pages</strong> und <strong>jsDelivr</strong> – Auslieferung der Webseite und von Programmbibliotheken.</li>
       <li><strong>Awin</strong> – Affiliate-Netzwerk, über das Partnerangebote (Werbung) eingebunden werden. Beim Anzeigen bzw. Anklicken dieser Angebote können Daten an Awin bzw. die jeweiligen Werbepartner übertragen werden.</li>
     </ul>
 
