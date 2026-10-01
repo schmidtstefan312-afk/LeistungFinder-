@@ -275,10 +275,21 @@
     .brow .thumb{flex:0 0 60px;}
     .brow .binfo{flex:1;font-size:.78rem;color:var(--muted);}
     .btn-ok{background:#1b5e20;}
+    #bannerMsg{position:fixed;left:1rem;right:1rem;bottom:1rem;z-index:60;box-shadow:0 4px 18px rgba(0,0,0,.25);font-size:.95rem;font-weight:600;margin:0;}
+    .addpanel{display:none;padding:.8rem;border-top:1px solid var(--border);background:#f7faf8;}
+    .addpanel textarea{min-height:110px;}
+    .addpanel .cnt{font-weight:600;color:var(--primary-dark);font-size:.82rem;margin-top:.4rem;}
+    #dlg{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:70;align-items:center;justify-content:center;padding:1rem;}
+    #dlg .box{background:#fff;border-radius:8px;padding:1.2rem;max-width:380px;width:100%;}
+    #dlg .box p{margin:0 0 .5rem;font-size:1rem;}
+    #dlg .row2{display:flex;gap:.6rem;}
+    #dlg .row2 button{flex:1;margin-top:.6rem;padding:.8rem;}
   </style>
 </head>
 
 <body>
+
+  <div id="dlg"><div class="box"><p id="dlgText"></p><div class="row2"><button id="dlgNo" style="background:#eef1f5;color:#0a3733;">Abbrechen</button><button id="dlgYes" class="btn-delete">Ja, löschen</button></div></div></div>
 
   <div id="loading">Wird geladen...</div>
 
@@ -1110,11 +1121,26 @@
 
 
     let bannerRows = [];
+    let groupMeta = [];
 
+    let msgTimer;
     function showBannerMsg(text, isError) {
       const box = document.getElementById("bannerMsg");
       box.textContent = text;
       box.className = "msg " + (isError ? "error" : "success");
+      clearTimeout(msgTimer);
+      msgTimer = setTimeout(() => { box.className = "msg"; }, 7000);
+    }
+
+    function askConfirm(text) {
+      return new Promise(resolve => {
+        const d = document.getElementById("dlg");
+        document.getElementById("dlgText").textContent = text;
+        d.style.display = "flex";
+        const done = v => { d.style.display = "none"; resolve(v); };
+        document.getElementById("dlgYes").onclick = () => done(true);
+        document.getElementById("dlgNo").onclick = () => done(false);
+      });
     }
 
     function groupKey(name) {
@@ -1173,8 +1199,14 @@
         (groups[k] = groups[k] || []).push(r);
       });
 
-      wrap.innerHTML = Object.keys(groups).sort().map(k => {
+      groupMeta = [];
+      wrap.innerHTML = Object.keys(groups).sort().map((k, gi) => {
         const items = groups[k];
+        groupMeta[gi] = {
+          name: items[0].partner_name,
+          category: items[0].category,
+          maxSort: Math.max.apply(null, items.map(i => i.sort_order || 0))
+        };
         const aktiv = items.filter(i => i.aktiv).length;
         const enc = encodeURIComponent(k);
         const rowsHtml = items.map(r => `
@@ -1196,8 +1228,16 @@
                 <button class="btn-small btn-toggle" onclick="event.preventDefault();event.stopPropagation();groupAction('${enc}','off')">Alle deaktivieren</button>
                 <button class="btn-small btn-ok" onclick="event.preventDefault();event.stopPropagation();groupAction('${enc}','on')">Alle aktivieren</button>
                 <button class="btn-small btn-delete" onclick="event.preventDefault();event.stopPropagation();groupAction('${enc}','del')">Alle löschen</button>
+                <button class="btn-small" style="background:#ad7f42;" onclick="event.preventDefault();event.stopPropagation();openAdd(${gi})">+ Banner hinzufügen</button>
               </div>
             </summary>
+            <div class="addpanel" id="addp_${gi}">
+              <label>Neue Banner-Codes für ${escapeHtml(items[0].partner_name)} (einer oder mehrere)</label>
+              <textarea id="addt_${gi}" placeholder="Awin-Banner-Code hier einfügen..." oninput="countAdd(${gi})"></textarea>
+              <div class="cnt" id="addc_${gi}"></div>
+              <button class="btn-ok" onclick="saveAdd(${gi})">Speichern</button>
+              <button class="btn-toggle" style="color:#0a3733;" onclick="openAdd(${gi})">Abbrechen</button>
+            </div>
             ${rowsHtml}
           </details>`;
       }).join("");
@@ -1249,14 +1289,16 @@
 
 
     async function toggleBannerAktiv(id, current) {
-      await runBannerChange("update", [id], !current);
+      showBannerMsg("Wird geändert...", false);
+      try { await runBannerChange("update", [id], !current); }
+      catch (e) { showBannerMsg("Fehler: " + e.message, true); }
       loadBannerTable();
     }
 
 
     async function deleteBannerRow(id) {
 
-      if (!confirm("Dieses Banner wirklich endgültig löschen?")) return;
+      if (!(await askConfirm("Dieses Banner wirklich endgültig löschen?"))) return;
 
       await runBannerChange("delete", [id]);
       loadBannerTable();
@@ -1273,7 +1315,7 @@
       const ids = items.map(r => r.id);
 
       if (action === "del") {
-        if (!confirm("Alle " + ids.length + " Banner von „" + name + "“ endgültig löschen?")) return;
+        if (!(await askConfirm("Alle " + ids.length + " Banner von „" + name + "“ endgültig löschen?"))) return;
         await runBannerChange("delete", ids);
       } else {
         await runBannerChange("update", ids, action === "on");
@@ -1284,6 +1326,44 @@
 
 
     document.getElementById("bannerSearch").addEventListener("input", renderBanners);
+
+    function openAdd(gi) {
+      const p = document.getElementById("addp_" + gi);
+      const d = p.closest("details");
+      const show = p.style.display !== "block";
+      p.style.display = show ? "block" : "none";
+      if (show) { d.open = true; document.getElementById("addt_" + gi).focus(); }
+    }
+
+    function countAdd(gi) {
+      const list = parseAwinBanners(document.getElementById("addt_" + gi).value);
+      document.getElementById("addc_" + gi).textContent =
+        document.getElementById("addt_" + gi).value.trim()
+          ? (list.length ? list.length + " Banner erkannt" : "Noch kein Banner erkannt.")
+          : "";
+    }
+
+    async function saveAdd(gi) {
+      const meta = groupMeta[gi];
+      const list = parseAwinBanners(document.getElementById("addt_" + gi).value);
+      if (!list.length) { showBannerMsg("Kein Banner erkannt. Bitte den Awin-Code einfügen.", true); return; }
+      const payload = list.map((p, i) => ({
+        partner_name: meta.name,
+        category: meta.category,
+        image_url: p.image_url,
+        target_url: p.target_url,
+        alt_text: p.alt_text || meta.name,
+        sort_order: meta.maxSort + 1 + i
+      }));
+      const { error } = await client.from("banner").insert(payload);
+      if (error) { showBannerMsg("Fehler beim Speichern: " + error.message, true); return; }
+      showBannerMsg(list.length + (list.length === 1 ? " Banner" : " Banner") + " zu " + meta.name + " hinzugefügt.", false);
+      loadBannerTable();
+    }
+
+    window.openAdd = openAdd;
+    window.countAdd = countAdd;
+    window.saveAdd = saveAdd;
 
     window.toggleBannerAktiv = toggleBannerAktiv;
     window.deleteBannerRow = deleteBannerRow;
