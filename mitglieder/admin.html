@@ -270,7 +270,7 @@
     .bg-title{font-weight:700;font-size:.9rem;color:var(--primary-dark);}
     .bg-sub{color:var(--muted);font-size:.75rem;margin:.1rem 0 .4rem;}
     .bg-actions button{margin:0 .3rem .3rem 0;}
-    .brow{display:flex;gap:.6rem;align-items:center;padding:.5rem .8rem;border-top:1px solid var(--border);}
+    .brow{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center;padding:.5rem .8rem;border-top:1px solid var(--border);}
     .brow .thumb{flex:0 0 60px;}
     .brow .binfo{flex:1;font-size:.78rem;color:var(--muted);}
     .btn-ok{background:#1b5e20;}
@@ -613,7 +613,7 @@
 
 
             <label for="b_awin_code">
-              Kompletter Awin-Banner-Code
+              Awin-Banner-Code (ein Banner oder mehrere auf einmal)
             </label>
 
             <textarea
@@ -623,10 +623,12 @@
             ></textarea>
 
             <p class="hint">
-              Bei Awin den kompletten HTML-Banner-Code kopieren und hier
-              unverändert einfügen. Bild-Link und Klick-Link werden
-              automatisch erkannt.
+              Du kannst mehrere Banner-Codes hintereinander einfügen.
+              Jeder Banner wird einzeln erkannt und gespeichert. Die Links
+              werden unverändert übernommen.
             </p>
+            <div id="parsePreview" class="hint" style="font-weight:600;color:var(--primary-dark);"></div>
+            <div id="parseThumbs" style="display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.4rem;"></div>
 
 
             <label for="b_sort_order">
@@ -660,6 +662,8 @@
         </h2>
 
         <div class="msg" id="bannerMsg"></div>
+
+        <input type="search" id="bannerSearch" placeholder="Partner oder Banner suchen..." style="margin-bottom:.8rem;" />
 
         <div id="bannerGroups"></div>
 
@@ -1121,7 +1125,7 @@
       const { data: rows, error } =
         await client
           .from("banner")
-          .select("id,partner_name,category,image_url,aktiv,sort_order")
+          .select("id,partner_name,category,image_url,target_url,alt_text,aktiv,sort_order")
           .order("partner_name", { ascending: true })
           .order("sort_order", { ascending: true })
           .order("id", { ascending: true })
@@ -1139,9 +1143,28 @@
       bannerRows = rows;
       document.getElementById("bannerCountLabel").textContent = rows.length;
 
+      renderBanners();
+    }
+
+
+    function renderBanners() {
+
+      const wrap = document.getElementById("bannerGroups");
+      const q = (document.getElementById("bannerSearch").value || "").trim().toLowerCase();
+
       const openKeys = new Set(
         Array.from(wrap.querySelectorAll("details[open]")).map(d => d.dataset.key)
       );
+
+      const rows = q
+        ? bannerRows.filter(r =>
+            (r.partner_name + " " + r.category + " " + (r.alt_text || "")).toLowerCase().includes(q))
+        : bannerRows;
+
+      if (!rows.length) {
+        wrap.innerHTML = '<div class="card">Nichts gefunden.</div>';
+        return;
+      }
 
       const groups = {};
       rows.forEach(r => {
@@ -1156,7 +1179,7 @@
         const rowsHtml = items.map(r => `
           <div class="brow ${r.aktiv ? "" : "row-inactive"}">
             <img class="thumb" loading="lazy" src="${escapeHtml(r.image_url)}" alt="">
-            <div class="binfo">${r.aktiv ? "Aktiv" : "Inaktiv"} &middot; ID ${r.id}</div>
+            <div class="binfo">${r.aktiv ? "Aktiv" : "Inaktiv"} &middot; ID ${r.id}${r.alt_text ? "<br>" + escapeHtml(r.alt_text) : ""}</div>
             <div style="white-space:nowrap;">
               <button class="btn-small btn-toggle" onclick="toggleBannerAktiv(${r.id}, ${r.aktiv})">${r.aktiv ? "Deaktivieren" : "Aktivieren"}</button>
               <button class="btn-small btn-delete" onclick="deleteBannerRow(${r.id})">Löschen</button>
@@ -1164,7 +1187,7 @@
           </div>`).join("");
 
         return `
-          <details class="bgroup" data-key="${escapeHtml(k)}" ${openKeys.has(k) ? "open" : ""}>
+          <details class="bgroup" data-key="${escapeHtml(k)}" ${(openKeys.has(k) || q) ? "open" : ""}>
             <summary>
               <div class="bg-title">${escapeHtml(items[0].partner_name)}</div>
               <div class="bg-sub">${escapeHtml(items[0].category)} &middot; ${items.length} Banner (${aktiv} aktiv)</div>
@@ -1259,6 +1282,8 @@
     }
 
 
+    document.getElementById("bannerSearch").addEventListener("input", renderBanners);
+
     window.toggleBannerAktiv = toggleBannerAktiv;
     window.deleteBannerRow = deleteBannerRow;
     window.groupAction = groupAction;
@@ -1269,87 +1294,58 @@
       Awin-Banner-Code automatisch auslesen
     */
 
-    function parseAwinBannerCode(
-      awinCode
-    ) {
+    function parseAwinBanners(code) {
 
-      const parser =
-        new DOMParser();
+      const doc = new DOMParser().parseFromString(code, "text/html");
+      const out = [];
+      const seen = new Set();
 
+      doc.querySelectorAll("a[href]").forEach(link => {
+        const img = link.querySelector("img[src]");
+        if (!img) return;
+        const target = (link.getAttribute("href") || "").trim();
+        const image = (img.getAttribute("src") || "").trim();
+        if (!target || !image) return;
+        const key = target + "|" + image;
+        if (seen.has(key)) return;
+        seen.add(key);
+        out.push({
+          image_url: image,
+          target_url: target,
+          alt_text: (img.getAttribute("alt") || "").trim()
+        });
+      });
 
-      const doc =
-        parser.parseFromString(
-          awinCode,
-          "text/html"
-        );
-
-
-      const link =
-        doc.querySelector(
-          "a[href]"
-        );
-
-
-      const image =
-        doc.querySelector(
-          "img[src]"
-        );
-
-
-      if (
-        !link ||
-        !image
-      ) {
-
-        return {
-          error:
-            "Der Awin-Code konnte nicht erkannt werden. Bitte den kompletten Awin-Banner-Code einfügen."
-        };
-      }
-
-
-      const targetUrl =
-        link.getAttribute(
-          "href"
-        );
-
-
-      const imageUrl =
-        image.getAttribute(
-          "src"
-        );
-
-
-      if (
-        !targetUrl ||
-        !imageUrl
-      ) {
-
-        return {
-          error:
-            "Im Awin-Code fehlen Bild-Link oder Klick-Link."
-        };
-      }
-
-
-      return {
-
-        image_url:
-          imageUrl.trim(),
-
-        target_url:
-          targetUrl.trim(),
-
-        alt_text:
-          (
-            image.getAttribute(
-              "alt"
-            ) ||
-            ""
-          ).trim()
-
-      };
+      return out;
     }
+
+
+    function updateParsePreview() {
+
+      const code = document.getElementById("b_awin_code").value.trim();
+      const info = document.getElementById("parsePreview");
+      const box = document.getElementById("parseThumbs");
+
+      box.innerHTML = "";
+
+      if (!code) { info.textContent = ""; return; }
+
+      const list = parseAwinBanners(code);
+
+      info.textContent = list.length
+        ? list.length + (list.length === 1 ? " Banner erkannt" : " Banner erkannt")
+        : "Noch kein Banner erkannt.";
+
+      list.forEach(p => {
+        const im = document.createElement("img");
+        im.src = p.image_url;
+        im.alt = "";
+        im.style.cssText = "max-width:90px;max-height:50px;object-fit:contain;border:1px solid var(--border);border-radius:3px;background:#fff;";
+        box.appendChild(im);
+      });
+    }
+
+    document.getElementById("b_awin_code").addEventListener("input", updateParsePreview);
 
 
 
@@ -1435,20 +1431,12 @@
           }
 
 
-          /*
-            Awin-Code auswerten
-          */
+          const parsed = parseAwinBanners(awinCode);
 
-          const parsed =
-            parseAwinBannerCode(
-              awinCode
-            );
-
-
-          if (parsed.error) {
+          if (!parsed.length) {
 
             msgBox.textContent =
-              parsed.error;
+              "Es wurde kein Banner erkannt. Bitte den kompletten Awin-Banner-Code einfügen.";
 
             msgBox.className =
               "msg error";
@@ -1456,39 +1444,14 @@
             return;
           }
 
-
-          /*
-            Daten für die vorhandene
-            banner-Tabelle vorbereiten
-          */
-
-          const payload = {
-
-            partner_name:
-              partnerName,
-
-            category:
-              category,
-
-            image_url:
-              parsed.image_url,
-
-            target_url:
-              parsed.target_url,
-
-            alt_text:
-              parsed.alt_text ||
-              partnerName,
-
-            sort_order:
-              sortOrder
-
-          };
-
-
-          /*
-            In Supabase speichern
-          */
+          const payload = parsed.map((p, i) => ({
+            partner_name: partnerName,
+            category: category,
+            image_url: p.image_url,
+            target_url: p.target_url,
+            alt_text: p.alt_text || partnerName,
+            sort_order: sortOrder + i
+          }));
 
           const {
             error
@@ -1498,7 +1461,6 @@
               .insert(
                 payload
               );
-
 
           if (error) {
 
@@ -1518,7 +1480,7 @@
           */
 
           msgBox.textContent =
-            "Banner gespeichert! Awin-Code wurde automatisch erkannt.";
+            parsed.length + (parsed.length === 1 ? " Banner gespeichert." : " Banner gespeichert.");
 
           msgBox.className =
             "msg success";
@@ -1538,6 +1500,7 @@
             .value =
             "0";
 
+          updateParsePreview();
 
           loadBannerTable();
 
