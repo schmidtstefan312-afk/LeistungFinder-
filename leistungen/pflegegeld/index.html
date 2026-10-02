@@ -153,6 +153,24 @@ table.amounts th { color: var(--primary-dark); font-family: var(--serif); font-w
   border-top: 1px solid var(--border);
   padding-top: 1rem;
 }
+.stand { font-size: 0.85rem; opacity: 0.85; margin: 0.9rem 0 0; }
+.faq details { border-bottom: 1px solid var(--border); padding: 0.8rem 0; }
+.faq details:last-of-type { border-bottom: 0; }
+.faq summary {
+  cursor: pointer;
+  font-family: var(--serif);
+  font-weight: 600;
+  color: var(--primary-dark);
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; font-size: 1.4rem; line-height: 1.1; color: var(--accent-dark); flex: none; }
+.faq details[open] summary::after { content: "\2013"; }
+.faq details p { margin: 0.6rem 0 0; font-size: 0.93rem; }
 footer.site-footer {
   text-align: center;
   font-size: 0.85rem;
@@ -177,6 +195,78 @@ footer.site-footer a { color: var(--muted); }
     "inLanguage": "de-DE"
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Wie hoch ist das Pflegegeld 2026?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Pflegegrad 2: 347 € pro Monat, Pflegegrad 3: 599 €, Pflegegrad 4: 800 € und Pflegegrad 5: 990 €. Bei Pflegegrad 1 gibt es kein Pflegegeld, aber den Entlastungsbetrag von 131 € monatlich."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Wer bekommt Pflegegeld?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Anspruch haben pflegebedürftige Menschen mit Pflegegrad 2 bis 5, die zu Hause gepflegt werden, zum Beispiel von Angehörigen, Freunden oder Nachbarn. Das Pflegegeld wird an die pflegebedürftige Person ausgezahlt, die es häufig an die pflegende Person weitergibt."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Wie beantrage ich Pflegegeld?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Der Antrag ist formlos und wird bei der eigenen Pflegekasse gestellt, also bei der Krankenkasse der pflegebedürftigen Person. Danach prüft der Medizinische Dienst den Pflegegrad. Leistungen gibt es frühestens ab Antragstellung, deshalb lohnt es sich nicht, damit zu warten."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Bekomme ich Pflegegeld schon bei Pflegegrad 1?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Nein. Bei Pflegegrad 1 gibt es kein Pflegegeld. Es besteht aber Anspruch auf den Entlastungsbetrag von 131 € pro Monat, zum Beispiel für anerkannte Betreuungs- und Entlastungsangebote."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Kann ich Pflegegeld und einen Pflegedienst kombinieren?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja, das nennt sich Kombinationsleistung. Wird ein Pflegedienst nur teilweise genutzt, wird das Pflegegeld anteilig gekürzt und der Rest weiter ausgezahlt."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Muss ich als Pflegegeld-Empfänger zur Beratung?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja. Wer Pflegegeld bekommt, muss regelmäßig einen Beratungsbesuch nachweisen: bei Pflegegrad 2 und 3 halbjährlich, bei Pflegegrad 4 und 5 vierteljährlich. Wird er nicht nachgewiesen, kann die Pflegekasse das Pflegegeld kürzen."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Wird das Pflegegeld weitergezahlt, wenn die Pflegeperson verhindert ist oder ich ins Krankenhaus muss?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Bei einem Krankenhaus- oder Reha-Aufenthalt wird das Pflegegeld in den ersten vier Wochen weitergezahlt. Wenn die Pflegeperson ausfällt, etwa wegen Urlaub oder Krankheit, kann Verhinderungspflege genutzt werden; auch dann wird das halbe Pflegegeld für begrenzte Zeit weitergezahlt."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Ist Pflegegeld steuerpflichtig und wird es auf andere Leistungen angerechnet?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Pflegegeld ist steuerfrei. Als zweckgebundene Leistung der Pflegeversicherung wird es bei der pflegebedürftigen Person in der Regel nicht auf Sozialleistungen angerechnet. Für deinen Einzelfall gibt das Jobcenter oder das Sozialamt verbindliche Auskunft."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -186,6 +276,7 @@ footer.site-footer a { color: var(--muted); }
       <div class="breadcrumb"><a href="/">Leistung-Finder</a> &rsaquo; <a href="/#top">Leistungen</a> &rsaquo; Pflegegeld</div>
       <h1>Pflegegeld</h1>
       <p class="lede">Eine monatliche Geldleistung der Pflegeversicherung für Menschen, die zu Hause von Angehörigen oder anderen Privatpersonen gepflegt werden.</p>
+      <p class="stand">Stand: Oktober 2026 &middot; Beträge laut Bundesministerium für Gesundheit</p>
     </div>
   </div>
 
@@ -219,7 +310,7 @@ footer.site-footer a { color: var(--muted); }
     </div>
 
     <div class="fact-box">
-      <h2>Wichtige Hinweise</h2>
+      <h2>Pflegegeld 2026: Beträge je Pflegegrad</h2>
       
       <table class="amounts">
         <tr><th>Pflegegrad</th><th>Pflegegeld / Monat</th></tr>
@@ -240,9 +331,49 @@ footer.site-footer a { color: var(--muted); }
       <a class="btn btn-primary" href="https://www.bundesgesundheitsministerium.de/themen/pflege/online-ratgeber-pflege/pflegebeduerftigkeit.html" target="_blank" rel="noopener">Offizielle Informationen (Bundesministerium für Gesundheit)</a>
     </div>
 
+    <div class="card faq">
+      <h2>Häufige Fragen zum Pflegegeld</h2>
+      <details>
+        <summary>Wie hoch ist das Pflegegeld 2026?</summary>
+        <p>Pflegegrad 2: 347 € pro Monat, Pflegegrad 3: 599 €, Pflegegrad 4: 800 € und Pflegegrad 5: 990 €. Bei Pflegegrad 1 gibt es kein Pflegegeld, aber den Entlastungsbetrag von 131 € monatlich.</p>
+      </details>
+      <details>
+        <summary>Wer bekommt Pflegegeld?</summary>
+        <p>Anspruch haben pflegebedürftige Menschen mit Pflegegrad 2 bis 5, die zu Hause gepflegt werden, zum Beispiel von Angehörigen, Freunden oder Nachbarn. Das Pflegegeld wird an die pflegebedürftige Person ausgezahlt, die es häufig an die pflegende Person weitergibt.</p>
+      </details>
+      <details>
+        <summary>Wie beantrage ich Pflegegeld?</summary>
+        <p>Der Antrag ist formlos und wird bei der eigenen Pflegekasse gestellt, also bei der Krankenkasse der pflegebedürftigen Person. Danach prüft der Medizinische Dienst den Pflegegrad. Leistungen gibt es frühestens ab Antragstellung, deshalb lohnt es sich nicht, damit zu warten.</p>
+      </details>
+      <details>
+        <summary>Bekomme ich Pflegegeld schon bei Pflegegrad 1?</summary>
+        <p>Nein. Bei Pflegegrad 1 gibt es kein Pflegegeld. Es besteht aber Anspruch auf den Entlastungsbetrag von 131 € pro Monat, zum Beispiel für anerkannte Betreuungs- und Entlastungsangebote.</p>
+      </details>
+      <details>
+        <summary>Kann ich Pflegegeld und einen Pflegedienst kombinieren?</summary>
+        <p>Ja, das nennt sich Kombinationsleistung. Wird ein Pflegedienst nur teilweise genutzt, wird das Pflegegeld anteilig gekürzt und der Rest weiter ausgezahlt.</p>
+      </details>
+      <details>
+        <summary>Muss ich als Pflegegeld-Empfänger zur Beratung?</summary>
+        <p>Ja. Wer Pflegegeld bekommt, muss regelmäßig einen Beratungsbesuch nachweisen: bei Pflegegrad 2 und 3 halbjährlich, bei Pflegegrad 4 und 5 vierteljährlich. Wird er nicht nachgewiesen, kann die Pflegekasse das Pflegegeld kürzen.</p>
+      </details>
+      <details>
+        <summary>Wird das Pflegegeld weitergezahlt, wenn die Pflegeperson verhindert ist oder ich ins Krankenhaus muss?</summary>
+        <p>Bei einem Krankenhaus- oder Reha-Aufenthalt wird das Pflegegeld in den ersten vier Wochen weitergezahlt. Wenn die Pflegeperson ausfällt, etwa wegen Urlaub oder Krankheit, kann Verhinderungspflege genutzt werden; auch dann wird das halbe Pflegegeld für begrenzte Zeit weitergezahlt.</p>
+      </details>
+      <details>
+        <summary>Ist Pflegegeld steuerpflichtig und wird es auf andere Leistungen angerechnet?</summary>
+        <p>Pflegegeld ist steuerfrei. Als zweckgebundene Leistung der Pflegeversicherung wird es bei der pflegebedürftigen Person in der Regel nicht auf Sozialleistungen angerechnet. Für deinen Einzelfall gibt das Jobcenter oder das Sozialamt verbindliche Auskunft.</p>
+      </details>
+    </div>
+
     <div class="related">
       <h2 style="font-family:var(--serif);font-size:1.05rem;color:var(--primary-dark);">Verwandte Leistungen</h2>
           <a href="/leistungen/wohngeld/">Wohngeld</a>
+          <a href="/pflegegrad/">Pflegegrad</a>
+          <a href="/verhinderungspflege/">Verhinderungspflege</a>
+          <a href="/kurzzeitpflege/">Kurzzeitpflege</a>
+          <a href="/pflegehilfsmittel/">Pflegehilfsmittel</a>
           <a href="/#top">Alle Leistungen im Finder prüfen</a>
     </div>
 
@@ -251,7 +382,7 @@ footer.site-footer a { color: var(--muted); }
     </p>
 
     <div class="source-note">
-      Quellen: Bundesministerium für Gesundheit, § 37 SGB XI – Stand: September 2026. Der Antrag selbst ist formlos direkt bei der eigenen Pflegekasse zu stellen; ein bundesweit einheitliches Online-Portal existiert nicht.
+      Quellen: Bundesministerium für Gesundheit, § 37 SGB XI – Stand: Oktober 2026. Der Antrag selbst ist formlos direkt bei der eigenen Pflegekasse zu stellen; ein bundesweit einheitliches Online-Portal existiert nicht.
     </div>
 
   </div>
