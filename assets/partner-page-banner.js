@@ -1,97 +1,154 @@
-// partner-page-banner.js – Partnerseiten laden ihre Banner ausschließlich aus Supabase.
-// data-partner darf mehrere Namen mit "|" enthalten. Vergleich ohne Groß-/Kleinschreibung,
-// zusätzlich wird die Variante mit/ohne " DE" mitgeladen (z. B. Wondershare / Wondershare DE).
+// partner-page-banner.js
+// Läuft auf EINER einzelnen Partner-Unterseite (z.B. /partner/explorer-travel-i9d9x/)
+// und zeigt NUR die Banner dieses einen Partners - kein Kategorie-Filter,
+// kein Sammelblock, kein "Weitere Angebote".
+//
+// NEU: Lädt zusätzlich den Beschreibungstext des Partners aus der Supabase-Tabelle
+// "partner_texte" und setzt ihn unter die Überschrift. Wenn die Tabelle fehlt oder
+// kein Text vorhanden ist, bleibt der bisherige Text einfach stehen.
+//
+// Einbindung auf der Partnerseite (unverändert):
+//   <script src="https://leistung-finder.de/assets/partner-page-banner.js" data-partner="EXPLORER TRAVEL"></script>
+//
+// data-partner muss EXAKT dem partner_name in Supabase entsprechen
+// (Groß-/Kleinschreibung wird für die Anzeige ignoriert, für den Datenbank-Filter zählt sie).
+
 (function () {
   "use strict";
-  var SUPABASE_URL = "https://rnnmdlibekqhqrxqqrws.supabase.co";
-  var SUPABASE_KEY = "sb_publishable_PXFh4qggQUq3Eb4AGbPpPg_05HIlS1x";
-  var CONTAINER_ID = "partnerBanners";
-  var scriptTag = document.currentScript;
 
-  function esc(s) {
-    return String(s == null ? "" : s).replace(/&/g, "&amp;").replace(/"/g, "&quot;")
-      .replace(/</g, "&lt;").replace(/>/g, "&gt;");
-  }
+  const SUPABASE_URL = "https://rnnmdlibekqhqrxqqrws.supabase.co";
+  const SUPABASE_KEY = "sb_publishable_PXFh4qggQUq3Eb4AGbPpPg_05HIlS1x";
 
-  function renderBannerHTML(b) {
-    return '<div class="banner"><span class="badge">Anzeige</span>' +
-      '<a href="' + esc(b.target_url || "#") + '" target="_blank" rel="sponsored noopener">' +
-      '<img loading="lazy" alt="' + esc(b.alt_text || b.partner_name || "Partnerangebot") +
-      '" src="' + esc(b.image_url) + '"></a></div>';
+  const CONTAINER_ID = "partnerBanners";
+
+  // WICHTIG: document.currentScript ist nur während der synchronen Ausführung
+  // des Scripts gültig, deshalb hier sofort merken.
+  const scriptTag = document.currentScript;
+  const partnerName = scriptTag ? scriptTag.dataset.partner : null;
+
+  function renderBannerHTML(banner) {
+    const safeUrl = banner.target_url || "#";
+    const safeImg = banner.image_url || "";
+    const safeAlt = banner.alt_text || banner.partner_name || "Partnerangebot";
+    return `
+      <div class="banner">
+        <a href="${safeUrl}" target="_blank" rel="noopener sponsored">
+          <img src="${safeImg}" alt="${safeAlt}" loading="lazy">
+        </a>
+      </div>`;
   }
 
   function ensureContainer() {
-    var el = document.getElementById(CONTAINER_ID);
+    let el = document.getElementById(CONTAINER_ID);
     if (el) return el;
+
+    // Falls die Partnerseite noch keinen Container hat: direkt nach
+    // dem Element mit Klasse "card" einfügen (Standard-Layout dieser Seiten).
     el = document.createElement("div");
     el.id = CONTAINER_ID;
-    (document.querySelector(".card") || document.body).appendChild(el);
+    const card = document.querySelector(".card") || document.body;
+    card.appendChild(el);
     return el;
   }
 
-  // Entfernt nur feste Banner, die es identisch (gleicher Link) auch in Supabase gibt.
-  // Feste Banner, die nicht in Supabase stehen, bleiben sichtbar.
-  function removeFixedBanners(container, urls) {
-    document.querySelectorAll(".banner, .offer").forEach(function (el) {
-      if (container.contains(el)) return;
-      var a = el.querySelector("a");
-      if (!a || !urls[a.href]) return;
-      var g = el.parentElement;
-      el.remove();
-      if (g && g !== container && g.classList.contains("grid") && !g.children.length) g.remove();
-    });
-  }
+  // ---------- Banner (unverändert) ----------
+  async function loadPartnerBanner() {
+    if (!partnerName) {
+      console.warn("partner-page-banner.js: kein data-partner am <script>-Tag gesetzt - Abbruch.");
+      return;
+    }
 
-  function installStyles() {
-    if (document.getElementById("partner-banner-grid-style")) return;
-    var s = document.createElement("style");
-    s.id = "partner-banner-grid-style";
-    s.textContent =
-      "#partnerBanners.partner-banners-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:1rem}" +
-      "#partnerBanners.partner-banners-grid .banner{margin-top:0;padding:10px}" +
-      "#partnerBanners.partner-banners-grid .banner img{display:block;width:auto;max-width:100%;max-height:180px;height:auto;object-fit:contain;margin:0 auto}" +
-      "@media(max-width:600px){#partnerBanners.partner-banners-grid{grid-template-columns:1fr;gap:12px}#partnerBanners.partner-banners-grid .banner img{max-height:160px}}";
-    document.head.appendChild(s);
-  }
+    const url =
+      `${SUPABASE_URL}/rest/v1/banner` +
+      `?partner_name=eq.${encodeURIComponent(partnerName)}` +
+      `&aktiv=eq.true` +
+      `&select=partner_name,image_url,target_url,alt_text,sort_order` +
+      `&order=sort_order.asc`;
 
-  function nameVariants(raw) {
-    var out = [];
-    raw.split("|").forEach(function (n) {
-      n = n.trim(); if (!n) return;
-      var base = n.replace(/\s+DE$/i, "");
-      [n, base, base + " DE"].forEach(function (v) {
-        if (out.map(function (x) { return x.toLowerCase(); }).indexOf(v.toLowerCase()) < 0) out.push(v);
-      });
-    });
-    return out;
-  }
-
-  async function load() {
-    var partner = scriptTag ? scriptTag.dataset.partner : null;
-    if (!partner) { console.warn("partner-page-banner.js: kein data-partner gesetzt."); return; }
-    var names = nameVariants(partner);
-    var orExpr = "(" + names.map(function (n) { return 'partner_name.ilike."' + n + '"'; }).join(",") + ")";
-    var url = SUPABASE_URL + "/rest/v1/banner?or=" + encodeURIComponent(orExpr) +
-      "&aktiv=eq.true&select=partner_name,image_url,target_url,alt_text,sort_order&order=sort_order.asc";
-    var rows;
+    let rows = [];
     try {
-      var res = await fetch(url, { headers: { apikey: SUPABASE_KEY, Authorization: "Bearer " + SUPABASE_KEY } });
-      if (!res.ok) { console.error("partner-page-banner.js: Supabase-Fehler", res.status); return; }
+      const res = await fetch(url, {
+        headers: {
+          apikey: SUPABASE_KEY,
+          Authorization: `Bearer ${SUPABASE_KEY}`,
+        },
+      });
+      if (!res.ok) {
+        console.error("partner-page-banner.js: Supabase-Anfrage fehlgeschlagen", res.status, res.statusText);
+        return;
+      }
       rows = await res.json();
-    } catch (err) { console.error("partner-page-banner.js: Fehler beim Laden:", err); return; }
+    } catch (err) {
+      console.error("partner-page-banner.js: Fehler beim Laden", err);
+      return;
+    }
 
-    var seen = {};
-    rows = rows.filter(function (r) {
-      if (!r.image_url || !r.target_url || seen[r.target_url]) return false;
-      seen[r.target_url] = 1; return true;
-    });
-    console.log("partner-page-banner.js: " + rows.length + " aktive Banner für " + names.join(" / "));
-    if (!rows.length) return;
-    var container = ensureContainer();
-    removeFixedBanners(container, seen);
-    installStyles();
-    container.classList.add("partner-banners-grid");
+    console.log(`partner-page-banner.js: ${rows.length} aktive Banner für Partner "${partnerName}" geladen.`);
+
+    if (!rows.length) return; // keine Banner -> kein leerer Block auf der Seite
+
+    const container = ensureContainer();
     container.innerHTML = rows.map(renderBannerHTML).join("");
   }
-  load();
+
+  // ---------- Beschreibungstext (neu) ----------
+
+  // Findet den vorhandenen Beschreibungstext direkt unter der Überschrift.
+  // Bevorzugt ein Element mit Attribut data-partner-beschreibung. Sonst: das erste
+  // kurze Textelement nach der <h1>, das kein Werbehinweis ist und keine Links/Bilder enthält.
+  // Wird nichts Passendes gefunden, passiert nichts.
+  function findDescriptionElement() {
+    const hooked = document.querySelector("[data-partner-beschreibung]");
+    if (hooked) return hooked;
+
+    const h1 = document.querySelector(".card h1") || document.querySelector("h1");
+    if (!h1) return null;
+
+    let el = h1.nextElementSibling;
+    for (let i = 0; i < 3 && el; i++, el = el.nextElementSibling) {
+      if (el.tagName !== "P" && el.tagName !== "DIV") continue;
+      if (el.querySelector("a, img, button, input, form")) continue;
+      const text = (el.textContent || "").trim();
+      if (text.length < 5 || text.length > 300) continue;
+      if (/anzeige|werbung|vergütung|behörde|keine rechtsberatung/i.test(text)) continue;
+      return el;
+    }
+    return null;
+  }
+
+  async function loadPartnerDescription() {
+    if (!partnerName) return;
+
+    const url =
+      `${SUPABASE_URL}/rest/v1/partner_texte` +
+      `?partner_name=ilike.${encodeURIComponent(partnerName)}` +
+      `&aktiv=eq.true` +
+      `&select=beschreibung` +
+      `&limit=1`;
+
+    try {
+      const res = await fetch(url, {
+        headers: {
+          apikey: SUPABASE_KEY,
+          Authorization: `Bearer ${SUPABASE_KEY}`,
+        },
+      });
+      if (!res.ok) return; // Tabelle fehlt o. ä.: bisheriger Text bleibt
+      const rows = await res.json();
+      const text = rows && rows[0] && rows[0].beschreibung;
+      if (!text) return;
+
+      // Wartet kurz, falls die Seite noch lädt
+      if (document.readyState === "loading") {
+        await new Promise((r) => document.addEventListener("DOMContentLoaded", r, { once: true }));
+      }
+      const el = findDescriptionElement();
+      if (el) el.textContent = text;
+    } catch (err) {
+      console.warn("partner-page-banner.js: Beschreibung konnte nicht geladen werden", err);
+    }
+  }
+
+  loadPartnerBanner();
+  loadPartnerDescription();
 })();
