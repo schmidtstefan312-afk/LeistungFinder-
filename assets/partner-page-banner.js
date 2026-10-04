@@ -3,6 +3,10 @@
 // und zeigt NUR die Banner dieses einen Partners - kein Kategorie-Filter,
 // kein Sammelblock, kein "Weitere Angebote".
 //
+// Banner: Die Datenbank (Admin) ist die einzige Quelle. Liefert sie Banner, werden fest
+// eingebaute Awin-Banner der Seite entfernt. Fällt die Datenbank aus oder liefert sie
+// nichts, bleibt die Seite unverändert.
+//
 // NEU: Lädt zusätzlich den Beschreibungstext des Partners aus der Supabase-Tabelle
 // "partner_texte" und setzt ihn unter die Überschrift. Wenn die Tabelle fehlt oder
 // kein Text vorhanden ist, bleibt der bisherige Text einfach stehen.
@@ -26,12 +30,24 @@
   const scriptTag = document.currentScript;
   const partnerName = scriptTag ? scriptTag.dataset.partner : null;
 
-  function renderBannerHTML(banner) {
-    const safeUrl = banner.target_url || "#";
-    const safeImg = banner.image_url || "";
-    const safeAlt = banner.alt_text || banner.partner_name || "Partnerangebot";
+  function esc(v) {
+    return String(v == null ? "" : v)
+      .replace(/&/g, "&amp;").replace(/"/g, "&quot;")
+      .replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  }
+
+  // Katalog-Seiten haben ein .grid mit .offer-Kacheln; dann dasselbe Markup nutzen.
+  function usesGrid() {
+    return !!document.querySelector(".grid .offer");
+  }
+
+  function renderBannerHTML(banner, asOffer) {
+    const safeUrl = esc(banner.target_url || "#");
+    const safeImg = esc(banner.image_url || "");
+    const safeAlt = esc(banner.alt_text || banner.partner_name || "Partnerangebot");
+    const cls = asOffer ? "offer" : "banner";
     return `
-      <div class="banner">
+      <div class="${cls}">
         <a href="${safeUrl}" target="_blank" rel="noopener sponsored">
           <img src="${safeImg}" alt="${safeAlt}" loading="lazy">
         </a>
@@ -41,14 +57,27 @@
   function ensureContainer() {
     let el = document.getElementById(CONTAINER_ID);
     if (el) return el;
-
-    // Falls die Partnerseite noch keinen Container hat: direkt nach
-    // dem Element mit Klasse "card" einfügen (Standard-Layout dieser Seiten).
     el = document.createElement("div");
     el.id = CONTAINER_ID;
     const card = document.querySelector(".card") || document.body;
     card.appendChild(el);
     return el;
+  }
+
+  // Entfernt fest in die Seite eingebaute Awin-Banner (außerhalb des Containers),
+  // damit nur die Banner aus der Datenbank (Admin) angezeigt werden.
+  function removeStaticBanners(container) {
+    const imgs = Array.from(document.querySelectorAll('img[src*="awin1.com/cshow.php"]'));
+    imgs.forEach((img) => {
+      if (container.contains(img)) return;
+      const wrap = img.closest(".offer, .banner") || img.closest("a") || img;
+      const parent = wrap.parentElement;
+      wrap.remove();
+      if (parent && parent !== container && parent.classList &&
+          parent.classList.contains("grid") && !parent.children.length) {
+        parent.remove();
+      }
+    });
   }
 
   // ---------- Banner (unverändert) ----------
@@ -87,8 +116,15 @@
 
     if (!rows.length) return; // keine Banner -> kein leerer Block auf der Seite
 
+    if (document.readyState === "loading") {
+      await new Promise((r) => document.addEventListener("DOMContentLoaded", r, { once: true }));
+    }
+
+    const asOffer = usesGrid(); // vor dem Entfernen prüfen
     const container = ensureContainer();
-    container.innerHTML = rows.map(renderBannerHTML).join("");
+    removeStaticBanners(container);
+    if (asOffer) container.classList.add("grid");
+    container.innerHTML = rows.map((b) => renderBannerHTML(b, asOffer)).join("");
   }
 
   // ---------- Beschreibungstext (neu) ----------
