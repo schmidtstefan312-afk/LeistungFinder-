@@ -25,20 +25,26 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://leistung-finder.de/leistungen/elterngeld/</loc>
-    <lastmod>2026-09-29</lastmod>
+    <loc>https://leistung-finder.de/elterngeld/</loc>
+    <lastmod>2026-10-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://leistung-finder.de/leistungen/kindergeld/</loc>
-    <lastmod>2026-09-29</lastmod>
+    <loc>https://leistung-finder.de/kindergeld/</loc>
+    <lastmod>2026-10-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://leistung-finder.de/leistungen/pflegegeld/</loc>
     <lastmod>2026-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://leistung-finder.de/entlastungsbetrag/</loc>
+    <lastmod>2026-10-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
