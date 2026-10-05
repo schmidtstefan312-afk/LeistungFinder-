@@ -43,20 +43,44 @@
       });
       if (!order.length) return;
       var css = document.createElement("style");
-      css.textContent = ".pc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:.75rem}" +
-        ".pc-grid .banner{margin-top:0;padding:10px}.pc-grid .banner img{max-height:180px;object-fit:contain}";
+      css.textContent =
+        ".pc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,240px),1fr));gap:14px;margin:.75rem 0 .25rem;width:100%;max-width:100%}" +
+        ".pc-grid[hidden]{display:none}" +
+        ".pc-grid .banner{min-width:0;margin:0;padding:0;background:transparent;border:0}" +
+        ".pc-grid .badge{display:block;font-size:.72rem;color:#5c655f;font-style:italic;margin:0 0 4px;position:static}" +
+        ".pc-grid .banner a{display:flex;align-items:center;justify-content:center;width:100%;height:170px;overflow:hidden;background:#fff;border:1px solid #e2ded2;border-radius:3px}" +
+        ".pc-grid .banner img{display:block;max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain}" +
+        ".pc-toggle{cursor:pointer}";
       document.head.appendChild(css);
-      var html = order.map(function (name) {
-        return '<h2 class="name" style="margin-top:1.5rem">' + esc(name) + '</h2><div class="pc-grid">' +
+      var list = document.querySelector(".partner-list");
+      if (!list) {
+        list = document.createElement("ul");
+        list.className = "partner-list";
+        card.appendChild(list);
+      }
+      order.forEach(function (name) {
+        var li = document.createElement("li");
+        li.innerHTML =
+          '<a href="#" class="pc-toggle" aria-expanded="false">' +
+          '<div class="name">' + esc(name) + '</div>' +
+          '<div class="desc">' + esc(cat) + '</div>' +
+          '<div class="go">Angebote ansehen \u2193</div></a>' +
+          '<div class="pc-grid" hidden>' +
           groups[name].map(function (b) {
             return '<div class="banner"><span class="badge">Anzeige</span>' +
               '<a href="' + esc(b.target_url) + '" target="_blank" rel="sponsored noopener">' +
               '<img loading="lazy" alt="' + esc(b.alt_text || b.partner_name) + '" src="' + esc(b.image_url) + '"></a></div>';
-          }).join("") + "</div>";
-      }).join("");
-      var box = document.createElement("div");
-      box.innerHTML = html;
-      card.appendChild(box);
+          }).join("") + '</div>';
+        var t = li.querySelector(".pc-toggle"), g = li.querySelector(".pc-grid"), go = li.querySelector(".go");
+        t.addEventListener("click", function (e) {
+          e.preventDefault();
+          var open = g.hasAttribute("hidden");
+          if (open) g.removeAttribute("hidden"); else g.setAttribute("hidden", "");
+          t.setAttribute("aria-expanded", open ? "true" : "false");
+          go.textContent = open ? "Angebote ausblenden \u2191" : "Angebote ansehen \u2193";
+        });
+        list.appendChild(li);
+      });
     })
     .catch(function (e) { console.warn("partner-category.js:", e); });
 })();
