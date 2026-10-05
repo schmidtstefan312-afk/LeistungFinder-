@@ -20,11 +20,17 @@
   function norm(s) { return String(s).toLowerCase().replace(/[^a-z0-9]/g, ""); }
   function base(s) { return String(s).replace(/\s+DE$/i, "").trim(); }
 
+  // Namensvergleich ohne Rücksicht auf Reihenfolge, Groß-/Kleinschreibung, Zeichen und "DE"/"GmbH"
+  function tokens(s) {
+    return String(s).toLowerCase().split(/[^a-z0-9]+/).filter(function (w) {
+      return w && w !== "de" && w !== "gmbh";
+    }).sort().join(" ");
+  }
   var listed = Array.prototype.map.call(document.querySelectorAll(".partner-list .name"),
-    function (n) { return norm(n.textContent); });
+    function (n) { return { n: norm(n.textContent), t: tokens(n.textContent) }; });
   function hasPage(name) {
-    var n = norm(base(name));
-    return listed.some(function (l) { return l.indexOf(n) >= 0 || n.indexOf(l) >= 0; });
+    var n = norm(base(name)), t = tokens(name);
+    return listed.some(function (l) { return l.t === t || l.n.indexOf(n) >= 0 || n.indexOf(l.n) >= 0; });
   }
 
   var q = "in.(" + cats.map(function (c) { return '"' + c + '"'; }).join(",") + ")";
