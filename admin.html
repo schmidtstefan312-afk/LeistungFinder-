@@ -4,7 +4,7 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
-  <title>Admin – Aktionen &amp; Banner verwalten | Leistung-Finder</title>
+  <title>Admin – Aktionen, Banner &amp; Texte verwalten | Leistung-Finder</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="robots" content="noindex, nofollow" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
@@ -110,7 +110,7 @@
       margin: 0.7rem 0 0.3rem;
     }
     label:first-child { margin-top: 0; }
-    input, select {
+    input, select, textarea {
       width: 100%;
       padding: 0.55rem 0.7rem;
       border: 1px solid var(--border);
@@ -167,6 +167,11 @@
     #deniedBox { text-align: center; padding: 3rem 1rem; display: none; }
     #content { display: none; }
     .wrap-url { word-break: break-all; max-width: 160px; }
+    #textTableBody .btn-small { margin: 0; width: 100%; }
+    textarea { min-height: 90px; resize: vertical; line-height: 1.4; }
+    .chips { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0.4rem 0 0; }
+    .chip { margin: 0; padding: 0.25rem 0.6rem; font-size: 0.78rem; background: #fbeedd; color: #8a6533; border: 1px solid #f0d6ac; border-radius: 99px; font-weight: 600; }
+    .chip:hover { background: #f6e0bd; }
     .thumb { width: 60px; max-height: 40px; object-fit: contain; display: block; }
   </style>
 </head>
@@ -189,6 +194,7 @@
       <div class="tabs">
         <button class="tab-btn active" id="tabBtnAktionen" onclick="showTab('aktionen')">Aktionen</button>
         <button class="tab-btn" id="tabBtnBanner" onclick="showTab('banner')">Partner-Banner</button>
+        <button class="tab-btn" id="tabBtnTexte" onclick="showTab('texte')">Partner-Texte</button>
       </div>
 
       <!-- ================= AKTIONEN TAB ================= -->
@@ -258,8 +264,9 @@
       <div class="tab-panel" id="panelBanner">
         <h1>Partner-Banner verwalten</h1>
         <p style="color:var(--muted);font-size:0.85rem;margin-top:-0.75rem;">
-          Diese Banner erscheinen automatisch unter „Weitere Angebote" auf der jeweiligen Kategorie-Seite –
-          ohne dass etwas auf GitHub hochgeladen werden muss.
+          Ein neuer Partner erscheint automatisch mit seinem Namen auf der Kategorie-Seite. Ein Klick darauf öffnet
+          seine Partnerseite mit Überschrift, Firmenbeschreibung und allen Bannern – ohne dass etwas auf GitHub
+          hochgeladen werden muss. Die Firmenbeschreibung kannst du gleich hier mit eintragen.
         </p>
 
         <div class="card">
@@ -300,6 +307,9 @@
             <label for="b_sort_order">Reihenfolge (optional, kleinere Zahl = weiter oben)</label>
             <input type="number" id="b_sort_order" value="0" />
 
+            <label for="b_beschreibung">Firmenbeschreibung für die Partnerseite (optional – gilt für den ganzen Partner, nicht nur für dieses Banner)</label>
+            <textarea id="b_beschreibung" placeholder="z.B. VATRER stellt nach eigenen Angaben Lithium-Batterien für Wohnmobile her."></textarea>
+
             <button type="submit">Banner speichern</button>
             <div class="msg" id="addBannerMsg"></div>
           </form>
@@ -317,6 +327,51 @@
               </tr>
             </thead>
             <tbody id="bannerTableBody"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- ================= PARTNER-TEXTE TAB ================= -->
+      <div class="tab-panel" id="panelTexte">
+        <h1>Partner-Texte verwalten</h1>
+        <p style="color:var(--muted);font-size:0.85rem;margin-top:-0.75rem;">
+          Der Text steht auf der Partnerseite direkt unter der Überschrift. Der Partner-Name muss genau so geschrieben
+          sein wie bei den Bannern.
+        </p>
+
+        <div class="card" id="ohneTextBox" style="display:none;">
+          <h2 style="margin-top:0;">Partner ohne Text</h2>
+          <p style="margin:0;color:var(--muted);font-size:0.82rem;">Antippen übernimmt den Namen ins Formular.</p>
+          <div class="chips" id="ohneTextChips"></div>
+        </div>
+
+        <div class="card" style="margin-top:1rem;">
+          <h2 style="margin-top:0;" id="textFormTitle">Text hinzufügen / ändern</h2>
+          <form id="textForm">
+            <label for="t_partner_name">Partner-Name (genau wie bei den Bannern)</label>
+            <input type="text" id="t_partner_name" list="t_partner_list" required />
+            <datalist id="t_partner_list"></datalist>
+
+            <label for="t_beschreibung">Firmenbeschreibung</label>
+            <textarea id="t_beschreibung" required></textarea>
+
+            <button type="submit">Text speichern</button>
+            <div class="msg" id="textMsg"></div>
+          </form>
+        </div>
+
+        <h2>Vorhandene Texte (<span id="textCountLabel">0</span>)</h2>
+        <div class="card">
+          <table>
+            <thead>
+              <tr>
+                <th>Partner</th>
+                <th>Text</th>
+                <th>Status</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="textTableBody"></tbody>
           </table>
         </div>
       </div>
@@ -338,8 +393,10 @@
     function showTab(name) {
       document.getElementById('panelAktionen').classList.toggle('active', name === 'aktionen');
       document.getElementById('panelBanner').classList.toggle('active', name === 'banner');
+      document.getElementById('panelTexte').classList.toggle('active', name === 'texte');
       document.getElementById('tabBtnAktionen').classList.toggle('active', name === 'aktionen');
       document.getElementById('tabBtnBanner').classList.toggle('active', name === 'banner');
+      document.getElementById('tabBtnTexte').classList.toggle('active', name === 'texte');
     }
     window.showTab = showTab;
 
@@ -361,6 +418,7 @@
       document.getElementById("content").style.display = "block";
       loadTable();
       loadBannerTable();
+      loadTexte();
     }
 
     /* ---------- Aktionen ---------- */
@@ -489,6 +547,8 @@
         sort_order: parseInt(document.getElementById("b_sort_order").value, 10) || 0,
       };
 
+      const beschreibung = document.getElementById("b_beschreibung").value.trim();
+
       const { error } = await client.from("banner").insert(payload);
 
       if (error) {
@@ -497,11 +557,127 @@
         return;
       }
 
-      msgBox.textContent = "Banner gespeichert!";
+      let hinweis = "";
+      if (beschreibung) {
+        const { error: tErr } = await client.from("partner_texte").upsert({
+          partner_name: payload.partner_name,
+          beschreibung: beschreibung,
+          aktiv: true,
+          geprueft: false,
+          updated_at: new Date().toISOString(),
+        }, { onConflict: "partner_name" });
+        hinweis = tErr ? " Aber die Firmenbeschreibung konnte nicht gespeichert werden: " + tErr.message
+                       : " Firmenbeschreibung gespeichert.";
+      }
+
+      msgBox.textContent = "Banner gespeichert!" + hinweis;
       msgBox.className = "msg success";
       document.getElementById("addBannerForm").reset();
       document.getElementById("b_sort_order").value = "0";
       loadBannerTable();
+      loadTexte();
+    });
+
+    /* ---------- Partner-Texte ---------- */
+
+    function normName(n) { return String(n || "").trim().toLowerCase(); }
+
+    async function loadTexte() {
+      const { data: rows, error } = await client
+        .from("partner_texte")
+        .select("*")
+        .order("partner_name", { ascending: true });
+
+      const tbody = document.getElementById("textTableBody");
+      document.getElementById("textCountLabel").textContent = rows ? rows.length : 0;
+
+      if (error || !rows) {
+        tbody.innerHTML = '<tr><td colspan="4">Fehler beim Laden.</td></tr>';
+        return;
+      }
+      window._texte = rows;
+
+      tbody.innerHTML = rows.map((r, i) => `
+        <tr class="${r.aktiv ? '' : 'row-inactive'}">
+          <td>${escapeHtml(r.partner_name)}</td>
+          <td style="word-break:break-word;">${escapeHtml(r.beschreibung)}</td>
+          <td>${r.aktiv ? 'Aktiv' : 'Inaktiv'}</td>
+          <td style="display:flex;flex-direction:column;gap:0.3rem;min-width:7.5rem;">
+            <button class="btn-small btn-toggle" onclick="editText(${i})">Bearbeiten</button>
+            <button class="btn-small btn-toggle" onclick="toggleText(${i})">${r.aktiv ? 'Deaktivieren' : 'Aktivieren'}</button>
+            <button class="btn-small btn-delete" onclick="deleteText(${i})">Löschen</button>
+          </td>
+        </tr>`).join('');
+
+      // Partner aus den Bannern, für die noch kein Text existiert
+      const { data: banners } = await client.from("banner").select("partner_name");
+      const haben = new Set(rows.map(r => normName(r.partner_name)));
+      const namen = Array.from(new Set((banners || []).map(b => b.partner_name))).sort();
+      document.getElementById("t_partner_list").innerHTML =
+        namen.map(n => `<option value="${escapeHtml(n)}"></option>`).join('');
+      const ohne = namen.filter(n => !haben.has(normName(n)));
+      document.getElementById("ohneTextBox").style.display = ohne.length ? "block" : "none";
+      document.getElementById("ohneTextChips").innerHTML =
+        ohne.map((n, i) => `<button type="button" class="chip" data-i="${i}">${escapeHtml(n)}</button>`).join('');
+      Array.from(document.querySelectorAll("#ohneTextChips .chip")).forEach((btn, i) => {
+        btn.addEventListener("click", () => {
+          document.getElementById("t_partner_name").value = ohne[i];
+          document.getElementById("t_beschreibung").value = "";
+          document.getElementById("t_beschreibung").focus();
+        });
+      });
+    }
+
+    function editText(i) {
+      const r = (window._texte || [])[i];
+      if (!r) return;
+      document.getElementById("t_partner_name").value = r.partner_name;
+      document.getElementById("t_beschreibung").value = r.beschreibung;
+      document.getElementById("textForm").scrollIntoView({ behavior: "smooth" });
+    }
+
+    async function toggleText(i) {
+      const r = (window._texte || [])[i];
+      if (!r) return;
+      await client.from("partner_texte").update({ aktiv: !r.aktiv }).eq("partner_name", r.partner_name);
+      loadTexte();
+    }
+
+    async function deleteText(i) {
+      const r = (window._texte || [])[i];
+      if (!r) return;
+      if (!confirm("Diesen Text wirklich endgültig löschen?")) return;
+      await client.from("partner_texte").delete().eq("partner_name", r.partner_name);
+      loadTexte();
+    }
+
+    window.editText = editText;
+    window.toggleText = toggleText;
+    window.deleteText = deleteText;
+
+    document.getElementById("textForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const msgBox = document.getElementById("textMsg");
+      const payload = {
+        partner_name: document.getElementById("t_partner_name").value.trim(),
+        beschreibung: document.getElementById("t_beschreibung").value.trim(),
+        aktiv: true,
+        geprueft: false,
+        updated_at: new Date().toISOString(),
+      };
+      if (!payload.partner_name || !payload.beschreibung) return;
+
+      const { error } = await client.from("partner_texte").upsert(payload, { onConflict: "partner_name" });
+
+      if (error) {
+        msgBox.textContent = "Fehler: " + error.message;
+        msgBox.className = "msg error";
+        return;
+      }
+      msgBox.textContent = "Text gespeichert!";
+      msgBox.className = "msg success";
+      document.getElementById("textForm").reset();
+      loadTexte();
     });
 
     checkAccess();
