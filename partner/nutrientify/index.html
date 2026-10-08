@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="de">
+<!DOCTYPE html>
+<html lang="de">
 <head>
 <meta charset="UTF-8" />
 <title>Nutrientify – Partnerangebot | Leistung-Finder</title>
@@ -6,61 +7,228 @@
 <meta name="description" content="Nutrientify: Nahrungsergänzungsmittel für Gesundheit und Ernährung. Partnerangebot von Leistung-Finder." />
 <meta name="robots" content="index, follow" />
 <link rel="canonical" href="https://leistung-finder.de/partner/nutrientify/" />
+<link rel="icon" href="https://leistung-finder.de/favicon.svg" type="image/svg+xml" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
     --primary:#0d3934; --primary-dark:#082621; --accent:#ad7f42; --accent-dark:#8a6533;
-    --bg:#f5f2ea; --text:#1b201e; --muted:#5c655f; --card:#ffffff; --border:#e2ded2;
+    --bg:#f9f8f4; --text:#1b201e; --muted:#5c655f; --card:#ffffff; --border:#dfe3df;
     --serif:"Fraunces",Georgia,serif; --sans:"Work Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
   }
   *{box-sizing:border-box;}
   body{margin:0;font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.6;}
-  .hero{background:linear-gradient(160deg,var(--primary) 0%,var(--primary-dark) 100%);color:#fff;padding:2rem 1.25rem 3rem;}
-  .hero-inner{max-width:760px;margin:0 auto;}
-  .back-link{color:#fff;opacity:.8;font-size:.85rem;text-decoration:none;}
-  .logotype{font-family:var(--serif);font-weight:500;font-size:1rem;opacity:.8;margin:.75rem 0 1.25rem;}
-  .hero h1{font-family:var(--serif);font-weight:600;font-size:1.9rem;margin:0 0 .5rem;}
-  .hero p.lede{max-width:52ch;opacity:.92;margin:0;}
-  .container{max-width:760px;margin:0 auto;padding:0 1.25rem 2rem;}
-  .card{background:var(--card);border:1px solid var(--border);border-radius:3px;padding:1.5rem;margin-top:-2.25rem;box-shadow:0 6px 20px rgba(8,38,33,.1);}
-  .ad-label{font-size:.78rem;color:var(--muted);font-style:italic;margin:0 0 1.25rem;}
-  .cta{display:inline-block;background:var(--accent);color:#fff;font-weight:700;padding:.75rem 1.4rem;border-radius:2px;text-decoration:none;margin-top:.5rem;}
-  .banner{margin-top:1.5rem;border:1px solid var(--border);border-radius:4px;background:#fdfcfa;text-align:center;padding:.75rem;}
-  .banner img{max-width:100%;display:block;margin:0 auto;}
-  .badge{display:inline-block;font-size:.72rem;padding:.15rem .5rem;border-radius:2px;background:#fbeedd;color:var(--accent-dark);border:1px solid #f0d6ac;margin-bottom:.5rem;}
+  a:focus-visible{outline:3px solid var(--accent);outline-offset:3px;}
+
+  /* Kopfleiste wie Startseite */
+  .lf-top{background:#fff;border-bottom:1px solid #e7e5dc;}
+  .lf-top-in{max-width:1180px;margin:0 auto;padding:.7rem 1.1rem;display:flex;align-items:center;gap:.8rem;flex-wrap:wrap;}
+  .lf-logo{display:flex;align-items:center;gap:.6rem;text-decoration:none;color:var(--primary);}
+  .lf-logo-mark{width:44px;height:44px;border-radius:9px;background:var(--primary);color:#d4af37;display:inline-flex;align-items:center;justify-content:center;font:700 1.2rem var(--serif);}
+  .lf-logo-text{font:700 1.35rem var(--serif);letter-spacing:-.01em;}
+  .lf-top-btns{margin-left:auto;display:flex;gap:.6rem;}
+  .lf-btn-light{display:inline-flex;align-items:center;background:#fff;color:var(--primary);border:1px solid var(--border);border-radius:10px;padding:.55rem 1rem;font:600 .88rem var(--sans);text-decoration:none;white-space:nowrap;}
+  .lf-btn-light:hover{background:#e3efe9;}
+
+  /* Hero: großes Foto, Text darüber */
+  .hero{position:relative;background:#082621;color:#fff;overflow:hidden;min-height:620px;display:flex;}
+  .hero-photo{position:absolute;top:0;right:0;bottom:0;width:68%;background-size:cover;background-position:58% 52%;-webkit-mask-image:linear-gradient(to right,transparent 0,#000 38%);mask-image:linear-gradient(to right,transparent 0,#000 38%);}
+  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,38,33,.55) 0,rgba(8,38,33,0) 55%),linear-gradient(0deg,rgba(8,38,33,.55) 0,rgba(8,38,33,0) 30%);pointer-events:none;}
+  .hero-in{position:relative;z-index:2;max-width:1180px;width:100%;margin:0 auto;padding:1.4rem 1.1rem 5rem;display:flex;flex-direction:column;justify-content:center;}
+  .hero-txt{max-width:620px;}
+  .breadcrumb{font-size:.85rem;opacity:.9;margin-bottom:2rem;text-shadow:0 1px 6px rgba(0,0,0,.4);}
+  .breadcrumb a{color:#fff;text-decoration:none;}
+  .breadcrumb a:hover{text-decoration:underline;}
+  .eyebrow{display:inline-block;font:600 .78rem var(--sans);letter-spacing:.16em;text-transform:uppercase;color:#d4af37;margin-bottom:.5rem;}
+  .hero h1{font-family:var(--serif);font-weight:700;font-size:clamp(3.4rem,9vw,6.4rem);line-height:.95;letter-spacing:.12em;margin:0;text-shadow:0 2px 24px rgba(0,0,0,.35);}
+  .uline{display:block;width:110px;height:6px;border-radius:99px;background:#2e9e4d;margin:1.2rem 0 1.3rem;}
+  .hero p.lede{font-family:var(--serif);font-weight:500;font-size:clamp(1.35rem,3.4vw,2rem);line-height:1.22;margin:0 0 1.7rem;max-width:22ch;text-shadow:0 1px 14px rgba(0,0,0,.45);}
+  .hero-btns{display:flex;flex-wrap:wrap;gap:.7rem;margin-bottom:1.8rem;}
+  .cta{display:inline-flex;align-items:center;gap:.5rem;background:linear-gradient(135deg,#c99a4e,#ad7f42);color:#fff;font:700 1rem var(--sans);padding:.9rem 1.5rem;border-radius:10px;text-decoration:none;box-shadow:0 8px 20px rgba(0,0,0,.3);}
+  .cta:hover{background:linear-gradient(135deg,#d4a75a,#b88a49);}
+  .cta-light{display:inline-flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.96);color:var(--primary);font:600 1rem var(--sans);padding:.9rem 1.35rem;border-radius:10px;text-decoration:none;}
+  .cta svg,.cta-light svg{width:18px;height:18px;flex:none;}
+  .perks{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem 1.4rem;}
+  .perks li{display:flex;align-items:center;gap:.6rem;font-size:.92rem;line-height:1.3;color:#fff;text-shadow:0 1px 8px rgba(0,0,0,.45);}
+  .perks svg{width:26px;height:26px;color:#d4af37;flex:none;}
+  .wave{position:absolute;left:0;right:0;bottom:-1px;width:100%;height:46px;display:block;z-index:3;}
+
+  /* Inhalt */
+  .container{max-width:1180px;margin:0 auto;padding:.4rem 1.1rem 3rem;}
+  .sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin:1.2rem 0 .3rem;}
+  .sec-head h2{font-family:var(--serif);font-weight:600;font-size:1.75rem;color:var(--primary);margin:0;letter-spacing:-.01em;}
+  .sec-sub{color:var(--muted);margin:0 0 .9rem;}
+  .ad-label{font-size:.8rem;color:var(--muted);font-style:italic;margin:0 0 1.2rem;padding:.6rem .85rem;background:#faf8f2;border-radius:10px;border:1px dashed #e2ded2;}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:1rem;}
+  .offer{background:#fff;border:1px solid var(--border);border-radius:14px;overflow:hidden;text-align:center;box-shadow:0 1px 2px rgba(8,38,33,.06),0 4px 12px rgba(8,38,33,.07);transition:box-shadow .2s ease,transform .2s ease;}
+  .offer:hover{box-shadow:0 2px 4px rgba(8,38,33,.06),0 12px 26px rgba(8,38,33,.16);transform:translateY(-2px);}
+  .offer a{display:block;padding:.7rem;}
+  .offer img{max-width:100%;max-height:220px;object-fit:contain;display:block;margin:0 auto;}
+  .about{background:#fff;border:1px solid var(--border);border-radius:14px;padding:1.3rem 1.4rem;margin:1.6rem 0 0;box-shadow:0 1px 2px rgba(8,38,33,.06),0 4px 12px rgba(8,38,33,.07);}
+  .about h2{font-family:var(--serif);font-weight:600;font-size:1.35rem;color:var(--primary);margin:0 0 .4rem;}
+  .about p{margin:0;color:#3a423e;}
+
+  .about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:0;background:#fff;border:1px solid var(--border);border-radius:18px;overflow:hidden;margin:1.8rem 0 0;box-shadow:0 1px 2px rgba(8,38,33,.06),0 10px 28px rgba(8,38,33,.1);}
+  .about-img{background-size:cover;background-position:50% 35%;min-height:420px;aspect-ratio:4/5;}
+  .about-body{padding:2rem 2rem 2.2rem;display:flex;flex-direction:column;justify-content:center;}
+  .about-body .eyebrow{color:var(--accent-dark);}
+  .about-body h2{font-family:var(--serif);font-weight:600;font-size:clamp(1.7rem,4vw,2.4rem);line-height:1.1;color:var(--primary);margin:0 0 .7rem;}
+  .about-body p{margin:0 0 1.3rem;color:#3a423e;font-size:1.02rem;}
+  .about-body .cta{align-self:flex-start;}
+
+  /* Aktionen-Streifen (nur sichtbar, wenn es aktive Aktionen gibt) */
+  .deals{display:none;background:#fbf4e3;border:1px solid #efddb0;border-radius:14px;padding:1.1rem 1.3rem;margin:1.6rem 0 0;}
+  .deals.on{display:block;}
+  .deals-head{display:flex;align-items:center;gap:.9rem;margin-bottom:.8rem;}
+  .deals-badge{width:48px;height:48px;border-radius:50%;background:#e0a21a;color:#fff;display:inline-flex;align-items:center;justify-content:center;flex:none;}
+  .deals-badge svg{width:24px;height:24px;}
+  .deals h2{font-family:var(--serif);font-weight:600;font-size:1.35rem;color:var(--primary);margin:0;line-height:1.15;}
+  .deals p{margin:0;color:var(--muted);font-size:.9rem;}
+  .deal-list{display:flex;flex-wrap:wrap;gap:.6rem;}
+  .deal-list a{display:inline-flex;align-items:center;gap:.6rem;background:#fff;border:1px solid #e6dbc0;border-radius:10px;padding:.55rem .9rem;font:600 .88rem var(--sans);color:var(--primary);text-decoration:none;}
+  .deal-list a:hover{border-color:var(--primary);}
+  .deal-code{font-size:.72rem;font-weight:700;color:#4a3510;background:linear-gradient(135deg,#f2d98a,#e0a21a);padding:.15rem .55rem;border-radius:99px;}
+
   .footer{background:var(--primary-dark);padding:1.5rem 1.25rem;color:rgba(255,255,255,.7);font-size:.85rem;text-align:center;}
   .footer a{color:#fff;}
+
+  @media (max-width:820px){
+    .hero{min-height:790px;}
+    .hero-photo{width:100%;bottom:auto;height:54%;background-position:50% 52%;-webkit-mask-image:linear-gradient(to bottom,#000 62%,transparent 100%);mask-image:linear-gradient(to bottom,#000 62%,transparent 100%);}
+    .hero::after{background:linear-gradient(180deg,rgba(8,38,33,.6) 0,rgba(8,38,33,0) 20%);}
+    .hero-in{justify-content:flex-end;padding-bottom:4.2rem;}
+    .breadcrumb{position:absolute;top:1.1rem;left:1.1rem;margin:0;}
+    .about-grid{grid-template-columns:minmax(0,1fr) !important;}
+    .about-img{aspect-ratio:4/3 !important;min-height:0 !important;width:100%;}
+    .about-body{padding:1.5rem 1.3rem 1.7rem;}
+  }
+  @media (max-width:480px){
+    .lf-logo-text{font-size:1.15rem;}
+    .perks{grid-template-columns:1fr;gap:.55rem;}
+    .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:.7rem;}
+    .sec-head h2{font-size:1.45rem;}
+    .hero-btns .cta,.hero-btns .cta-light{width:100%;justify-content:center;}
+  }
+  @media (prefers-reduced-motion:reduce){*{transition:none!important;}}
+
+/* Partner ohne eigenes Foto: gleiche Flächen, aber Verlauf mit Symbol */
+.hero-photo.fb{background:radial-gradient(circle at 60% 40%,#2a7a6b 0,#14504a 55%,#0d3934 100%);display:flex;align-items:center;justify-content:center;-webkit-mask-image:linear-gradient(to right,transparent 0,#000 38%);mask-image:linear-gradient(to right,transparent 0,#000 38%);}
+.hero-photo.fb svg{width:min(340px,60%);height:auto;color:rgba(255,255,255,.14);fill:none;stroke:currentColor;stroke-width:.5;stroke-linecap:round;stroke-linejoin:round;transform:rotate(-8deg)}
+.about-img.fb{background:radial-gradient(circle at 70% 20%,#1f6256,#0d3934 60%,#082621);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.about-img.fb svg{width:55%;max-width:240px;color:rgba(255,255,255,.85);fill:none;stroke:currentColor;stroke-width:.7;stroke-linecap:round;stroke-linejoin:round}
+.about-img.logo{background:#fff;display:flex;align-items:center;justify-content:center;padding:2rem}
+.about-img.logo img{max-width:80%;max-height:140px}
+.grid.few{grid-template-columns:repeat(auto-fit,minmax(240px,460px));justify-content:start}
+.grid.few .offer img{max-height:340px}
+#partnerBanners:empty{display:none}
+#partnerBanners{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:1rem;margin-top:1rem}
+.offer iframe{border:0;max-width:100%;display:block;margin:.6rem auto}
+.banner{background:#fff;border:1px solid var(--border);border-radius:14px;overflow:hidden;text-align:center;box-shadow:0 1px 2px rgba(8,38,33,.06),0 4px 12px rgba(8,38,33,.07)}
+.banner a{display:block;padding:.7rem}.banner img{max-width:100%;max-height:220px;object-fit:contain;display:block;margin:0 auto}
+@media (max-width:820px){.hero-photo.fb{-webkit-mask-image:linear-gradient(to bottom,#000 62%,transparent 100%);mask-image:linear-gradient(to bottom,#000 62%,transparent 100%)}}
+.about-img.fb,.about-img.logo{aspect-ratio:auto;min-height:300px}
+@media (max-width:820px){.about-img.fb,.about-img.logo{aspect-ratio:auto !important;min-height:200px !important}}
+
+.hero-logo{position:absolute;z-index:1;right:11%;top:50%;transform:translateY(-50%) rotate(3deg);width:min(400px,30vw);background:#fff;border-radius:22px;padding:2.2rem 2.4rem;box-shadow:0 26px 54px rgba(0,0,0,.4),0 0 0 8px rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center}
+.hero-logo img{max-width:100%;max-height:150px;display:block}
+@media (max-width:820px){.hero-logo{right:auto;left:50%;top:19%;transform:translate(-50%,-50%) rotate(-2deg);width:min(270px,70%);padding:1.2rem 1.4rem}.hero-logo img{max-height:90px}}
+
+.brand-chip{display:flex;width:max-content;max-width:100%;align-items:center;background:#fff;border-radius:14px;padding:.6rem 1.1rem;margin-bottom:1.3rem;box-shadow:0 10px 26px rgba(0,0,0,.28)}
+.brand-chip img{height:54px;width:auto;display:block}
+
+.hero-photo.lg{background-color:#fff;background-size:62% auto;background-repeat:no-repeat;background-position:62% 50%}
+.about-img.lg{background-color:#fff;background-size:70% auto;background-repeat:no-repeat;background-position:center;aspect-ratio:auto;min-height:300px;border:1px solid #e8e4d8}
+@media (max-width:820px){.hero-photo.lg{background-size:70% auto;background-position:50% 45%}}
 </style>
-</head>
-<body><div class="hero">
-  <div class="hero-inner">
-    <a class="back-link" href="/">&larr; Zur&uuml;ck zum Leistung-Finder</a>
-    <div class="logotype">Leistung-Finder &middot; Partnerangebot</div>
-    <h1>Nutrientify</h1>
-    <p class="lede">Nahrungsergänzungsmittel für Gesundheit und Ernährung.</p>
+<style>@media(max-width:820px){.hero h1{font-size:clamp(2rem,10.5vw,3.4rem);letter-spacing:.06em}}</style><style>@media(max-width:820px){.hero-photo{background-size:80% auto!important;background-position:50% 22%!important}}</style><style>/*LFH1*/@media(min-width:821px){.hero h1{font-size:clamp(2.4rem,5vw,4.2rem)!important;letter-spacing:.09em!important}}</style></head>
+<body>
+
+<header class="lf-top">
+  <div class="lf-top-in">
+    <a class="lf-logo" href="/" aria-label="Leistung-Finder Startseite"><span class="lf-logo-mark">LF</span><span class="lf-logo-text">Leistung-Finder</span></a>
+    <div class="lf-top-btns"><a class="lf-btn-light" href="/#partner">&larr; Alle Partner</a></div>
   </div>
-</div><div class="container">
-  <div class="card">
-    <p class="ad-label">Anzeige &ndash; bei Abschluss &uuml;ber diese Links erhalten wir ggf. eine Verg&uuml;tung. Dieses Angebot stammt von einem unabh&auml;ngigen Partner, nicht von einer Beh&ouml;rde.</p><p>Nahrungsergänzungsmittel für Gesundheit und Ernährung.</p>
+</header>
 
-<a class="cta" rel="sponsored noopener" target="_blank" href="https://www.awin1.com/cread.php?s=4732711&v=125708&q=600797&r=3083133">
-  Zum Nutrientify-Angebot
-</a>
+<section class="hero">
+  <div class="hero-photo" role="img" aria-label="Nutrientify" style="background-image:url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAQDAwQDAwQEBAQFBQQFBwsHBwYGBw4KCggLEA4RERAOEA8SFBoWEhMYEw8QFh8XGBsbHR0dERYgIh8cIhocHRz/2wBDAQUFBQcGBw0HBw0cEhASHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBz/wAARCACaAaADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD7+ooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiqWr6vY6Bpl1qep3UVpYWkZlmnlbasajqSaALteffEz42eCfhJp0l34m1qC3kC5jtIz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JCNsbXdsshQegJ6Vjj4MfD4f8yX4f/8AACP/AAoA4zx3/wAmuav/ANiz/wC0a/HCv3vn0ixudNfTZrSCTT3j8o2zxgxlMY27emPauS/4Ux8Pv+hK8Pf+C+P/AAoA+RP+Ca3/ACD/AB4P+m1v/wCgtU//AAUW+H+o6jpvhfxdZWzzWdh5lpdsik+UGwVY47cGvtHw74N0Dwks66Fo1hpi3BBlFnAsQcjpnHXrWtdWcF7byW9zDHNBINrxyKGVh6EGgD8CRX1D+wddTH482EJlkMQsrjCbjtHA7V+ht7+zl8J9QuHnufh94deZzlm+xKufyrX8K/B3wF4Iv1v/AA74R0bS75VKC4tbVUkweo3AZxQB+WX7ZH/Jw3i//rpH/wCi1rkv2e/+S2eBf+wpD/6FX7C6t8MPBuu381/qXhfRry9mx5k9xZo7vjgZJGTUdh8KfBOmXsF7Z+E9Et7q3cSRTRWSK6MOhBA4NAEfxh4+E3jn/sC3n/ol6/Ddu1fvteWkF/azWtzFHNbToY5IpF3K6kYII7giuMHwY+Ho4Hgrw/j/AK8I/wDCgD4x/wCCbP8AyEPHg/6ZW3/s9foNWF4e8FeHvCTXDaFomnaa1xjzTZ26xGTGcZwOepp3jLxbpvgTwxqfiPWZHj0vTYTPcPGhdlQdSFHJ60AfF/8AwUe8Gi40fwn4qjjy1tI9jK/orfMufxz+dfneK+7/ANrX9q/4f/Ez4bt4T8LG61G6up4p2uZbdokgCHP8WCSfavhAUAfb/wDwTk8Hm88X+JvFEseUsbVbSJj2dzk/oK/R6vmH9hHwXJ4V+B1pf3EBiutduJLw5GCY87Yz+IGfxr6eoAKKKKACiiigAooooAKKKKAPgn9sr4GeLfip8aPDkPhbS2uWvNMxNct8sMAWTGXfoODnHX2r1X4EfsWeE/hcbfV9f8rX/EseHWWRP9Ht2/6Zoep9zX1DRQAmKMUtFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFeXftHaTe678DvHWnabay3V9c6bIkMES7nkbI4A716jRQB+HTfBzx+r7G8H60G9DaP/AIV7B8Fv2NPHnj/xBYy+INKm0Pw2kge5nvBskkQHlUTqSfU4FfrLRQBQ0XSLPQdKstLsIVgsrKJYYY16KqjAFX6KKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAP/2Q==);background-color:#ffffff;background-repeat:no-repeat;background-size:68% auto;background-position:72% 50%"></div>
+  <div class="hero-in">
+    <div class="breadcrumb"><a href="/">Startseite</a> &nbsp;›&nbsp; <a href="/partner/gesundheit/">Gesundheit &amp; Ernährung</a> &nbsp;›&nbsp; Nutrientify</div>
+    <div class="hero-txt">
+      
+      <span class="eyebrow">Partnerangebot</span>
+      <h1>Nutrientify</h1>
+      <span class="uline"></span>
+      <p class="lede">Nahrungsergänzungsmittel für Gesundheit und Ernährung.</p>
+      <div class="hero-btns">
+        <a class="cta" rel="sponsored noopener" target="_blank" href="https://www.awin1.com/cread.php?s=4732711&v=125708&q=600797&r=3083133">Zum Nutrientify-Angebot <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a>
+      </div>
+      <ul class="perks">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.2 7.6-8 9-4.8-1.4-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg><span>Offizielle Partnerangebote</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg><span>Direkt zum Anbieter</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16h.01"/></svg><span>Werbung klar gekennzeichnet</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.4A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg><span>Für dich ohne Mehrkosten</span></li>
+      </ul>
+    </div>
+  </div>
+  <svg class="wave" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 30 C 240 70 480 0 720 25 C 960 50 1200 65 1440 20 L1440 60 L0 60 Z" fill="#f9f8f4"/></svg>
+</section>
 
-<div class="banner">
-  <span class="badge">Anzeige</span><br>
-  <a rel="sponsored noopener" target="_blank" href="https://www.awin1.com/cread.php?s=4732711&v=125708&q=600797&r=3083133">
-    <img loading="lazy" alt="Nutrientify" src="https://www.awin1.com/cshow.php?s=4732711&v=125708&q=600797&r=3083133">
-  </a>
+<div class="container">
+  <div class="sec-head" id="angebote"><h2>Alle Angebote von Nutrientify</h2></div>
+  <p class="sec-sub">Entdecke die aktuelle Auswahl.</p>
+  <p class="ad-label">Anzeige &ndash; bei Abschluss &uuml;ber diese Links erhalten wir ggf. eine Verg&uuml;tung. Dieses Angebot stammt von einem unabh&auml;ngigen Partner, nicht von einer Beh&ouml;rde.</p>
+
+  <div class="grid few">
+      <div class="offer"><a href="https://www.awin1.com/cread.php?s=4732711&amp;v=125708&amp;q=600797&amp;r=3083133" rel="sponsored noopener" target="_blank">
+<img alt="Nutrientify" loading="lazy" src="https://www.awin1.com/cshow.php?s=4732711&amp;v=125708&amp;q=600797&amp;r=3083133"/>
+</a></div>
+  </div>
+  <div id="partnerBanners"></div>
+
+  <section class="deals" id="lfDeals" aria-live="polite">
+    <div class="deals-head">
+      <span class="deals-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg></span>
+      <div><h2>Aktuelle Nutrientify Angebote</h2><p>Jetzt entdecken und von attraktiven Aktionen profitieren.</p></div>
+    </div>
+    <div class="deal-list" id="lfDealList"></div>
+  </section>
+
+  <section class="about-grid">
+    <div class="about-img fb"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.4A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></div>
+    <div class="about-body">
+      <span class="eyebrow">&Uuml;ber den Partner</span>
+      <h2>&Uuml;ber Nutrientify</h2>
+      <p data-partner-beschreibung>Nahrungsergänzungsmittel für Gesundheit und Ernährung.</p>
+      <a class="cta" rel="sponsored noopener" target="_blank" href="https://www.awin1.com/cread.php?s=4732711&v=125708&q=600797&r=3083133">Zum Nutrientify-Angebot <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a>
+    </div>
+  </section>
 </div>
 
-<div id="partnerBanners"></div>
-
-  </div>
-</div><div class="footer">
+<div class="footer">
   <a href="/impressum.html">Impressum</a> &nbsp;&middot;&nbsp; <a href="/datenschutz.html">Datenschutz</a>
   <br>Leistung-Finder ist keine Beh&ouml;rde und bietet keine Rechtsberatung.
-</div><script src="https://leistung-finder.de/assets/partner-page-banner.js" data-partner="Nutrientify"></script></body>
+</div>
+
+<script src="https://leistung-finder.de/assets/partner-page-banner.js" data-partner="Nutrientify"></script>
+<script>
+  /* Zeigt aktive Aktionen aus dem Admin-Bereich; ohne Aktionen bleibt der Streifen unsichtbar. */
+  (function () {
+    var URL = "https://rnnmdlibekqhqrxqqrws.supabase.co/rest/v1/aktionen?partner_name=ilike.Nutrientify&aktiv=eq.true&select=label,code,url,ablaufdatum&order=id.asc";
+    var KEY = "sb_publishable_PXFh4qggQUq3Eb4AGbPpPg_05HIlS1x";
+    function esc(v) { var d = document.createElement("div"); d.textContent = v == null ? "" : v; return d.innerHTML; }
+    fetch(URL, { headers: { apikey: KEY, Authorization: "Bearer " + KEY } })
+      .then(function (r) { return r.ok ? r.json() : []; })
+      .then(function (rows) {
+        var today = new Date().toISOString().slice(0, 10);
+        rows = (rows || []).filter(function (r) { return r.url && (!r.ablaufdatum || r.ablaufdatum >= today); });
+        if (!rows.length) return;
+        document.getElementById("lfDealList").innerHTML = rows.map(function (r) {
+          return '<a href="' + esc(r.url) + '" target="_blank" rel="sponsored noopener"><span>' + esc(r.label) + '</span>' +
+                 (r.code ? '<span class="deal-code">Code: ' + esc(r.code) + '</span>' : '') + '</a>';
+        }).join("");
+        document.getElementById("lfDeals").classList.add("on");
+      })
+      .catch(function () {});
+  })();
+</script>
+</body>
 </html>
