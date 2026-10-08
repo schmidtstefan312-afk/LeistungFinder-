@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="de">
+<!DOCTYPE html>
+<html lang="de">
 <head>
 <meta charset="UTF-8" />
 <title>Jobstoday World – Katalog | Leistung-Finder</title>
@@ -6,88 +7,250 @@
 <meta name="description" content="Jobstoday World: Stellenangebote aus verschiedenen Branchen. Alle Angebote im Überblick, Partnerangebot von Leistung-Finder." />
 <meta name="robots" content="index, follow" />
 <link rel="canonical" href="https://leistung-finder.de/partner/jobstoday/" />
+<link rel="icon" href="https://leistung-finder.de/favicon.svg" type="image/svg+xml" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
     --primary:#0d3934; --primary-dark:#082621; --accent:#ad7f42; --accent-dark:#8a6533;
-    --bg:#f5f2ea; --text:#1b201e; --muted:#5c655f; --card:#ffffff; --border:#e2ded2;
+    --bg:#f9f8f4; --text:#1b201e; --muted:#5c655f; --card:#ffffff; --border:#dfe3df;
     --serif:"Fraunces",Georgia,serif; --sans:"Work Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
   }
   *{box-sizing:border-box;}
   body{margin:0;font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.6;}
-  .hero{background:linear-gradient(160deg,var(--primary) 0%,var(--primary-dark) 100%);color:#fff;padding:2rem 1.25rem 3rem;}
-  .hero-inner{max-width:900px;margin:0 auto;}
-  .back-link{color:#fff;opacity:.8;font-size:.85rem;text-decoration:none;}
-  .logotype{font-family:var(--serif);font-weight:500;font-size:1rem;opacity:.8;margin:.75rem 0 1.25rem;}
-  .hero h1{font-family:var(--serif);font-weight:600;font-size:1.9rem;margin:0 0 .5rem;}
-  .hero p.lede{max-width:60ch;opacity:.92;margin:0;}
-  .container{max-width:900px;margin:0 auto;padding:0 1.25rem 2rem;}
-  .card{background:var(--card);border:1px solid var(--border);border-radius:3px;padding:1.5rem;margin-top:-2.25rem;box-shadow:0 6px 20px rgba(8,38,33,.1);}
-  .ad-label{font-size:.78rem;color:var(--muted);font-style:italic;margin:0 0 1.25rem;}
-  .cta{display:inline-block;background:var(--accent);color:#fff;font-weight:700;padding:.75rem 1.4rem;border-radius:2px;text-decoration:none;margin:.5rem 0 1.5rem;}
-  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:.9rem;}
-  .offer{border:1px solid var(--border);border-radius:4px;background:#fdfcfa;overflow:hidden;text-align:center;display:flex;flex-direction:column;}
-  .offer a{display:block;padding:.6rem;}
-  .offer img{max-width:100%;max-height:150px;object-fit:contain;display:block;margin:0 auto;}
-  .badge{display:inline-block;font-size:.68rem;padding:.12rem .4rem;border-radius:2px;background:#fbeedd;color:var(--accent-dark);border:1px solid #f0d6ac;margin-bottom:1rem;}
+  a:focus-visible{outline:3px solid var(--accent);outline-offset:3px;}
+
+  /* Kopfleiste wie Startseite */
+  .lf-top{background:#fff;border-bottom:1px solid #e7e5dc;}
+  .lf-top-in{max-width:1180px;margin:0 auto;padding:.7rem 1.1rem;display:flex;align-items:center;gap:.8rem;flex-wrap:wrap;}
+  .lf-logo{display:flex;align-items:center;gap:.6rem;text-decoration:none;color:var(--primary);}
+  .lf-logo-mark{width:44px;height:44px;border-radius:9px;background:var(--primary);color:#d4af37;display:inline-flex;align-items:center;justify-content:center;font:700 1.2rem var(--serif);}
+  .lf-logo-text{font:700 1.35rem var(--serif);letter-spacing:-.01em;}
+  .lf-top-btns{margin-left:auto;display:flex;gap:.6rem;}
+  .lf-btn-light{display:inline-flex;align-items:center;background:#fff;color:var(--primary);border:1px solid var(--border);border-radius:10px;padding:.55rem 1rem;font:600 .88rem var(--sans);text-decoration:none;white-space:nowrap;}
+  .lf-btn-light:hover{background:#e3efe9;}
+
+  /* Hero: großes Foto, Text darüber */
+  .hero{position:relative;background:#082621;color:#fff;overflow:hidden;min-height:620px;display:flex;}
+  .hero-photo{position:absolute;top:0;right:0;bottom:0;width:68%;background-size:cover;background-position:58% 52%;-webkit-mask-image:linear-gradient(to right,transparent 0,#000 38%);mask-image:linear-gradient(to right,transparent 0,#000 38%);}
+  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,38,33,.55) 0,rgba(8,38,33,0) 55%),linear-gradient(0deg,rgba(8,38,33,.55) 0,rgba(8,38,33,0) 30%);pointer-events:none;}
+  .hero-in{position:relative;z-index:2;max-width:1180px;width:100%;margin:0 auto;padding:1.4rem 1.1rem 5rem;display:flex;flex-direction:column;justify-content:center;}
+  .hero-txt{max-width:620px;}
+  .breadcrumb{font-size:.85rem;opacity:.9;margin-bottom:2rem;text-shadow:0 1px 6px rgba(0,0,0,.4);}
+  .breadcrumb a{color:#fff;text-decoration:none;}
+  .breadcrumb a:hover{text-decoration:underline;}
+  .eyebrow{display:inline-block;font:600 .78rem var(--sans);letter-spacing:.16em;text-transform:uppercase;color:#d4af37;margin-bottom:.5rem;}
+  .hero h1{font-family:var(--serif);font-weight:700;font-size:clamp(3.4rem,9vw,6.4rem);line-height:.95;letter-spacing:.12em;margin:0;text-shadow:0 2px 24px rgba(0,0,0,.35);}
+  .uline{display:block;width:110px;height:6px;border-radius:99px;background:#2e9e4d;margin:1.2rem 0 1.3rem;}
+  .hero p.lede{font-family:var(--serif);font-weight:500;font-size:clamp(1.35rem,3.4vw,2rem);line-height:1.22;margin:0 0 1.7rem;max-width:22ch;text-shadow:0 1px 14px rgba(0,0,0,.45);}
+  .hero-btns{display:flex;flex-wrap:wrap;gap:.7rem;margin-bottom:1.8rem;}
+  .cta{display:inline-flex;align-items:center;gap:.5rem;background:linear-gradient(135deg,#c99a4e,#ad7f42);color:#fff;font:700 1rem var(--sans);padding:.9rem 1.5rem;border-radius:10px;text-decoration:none;box-shadow:0 8px 20px rgba(0,0,0,.3);}
+  .cta:hover{background:linear-gradient(135deg,#d4a75a,#b88a49);}
+  .cta-light{display:inline-flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.96);color:var(--primary);font:600 1rem var(--sans);padding:.9rem 1.35rem;border-radius:10px;text-decoration:none;}
+  .cta svg,.cta-light svg{width:18px;height:18px;flex:none;}
+  .perks{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem 1.4rem;}
+  .perks li{display:flex;align-items:center;gap:.6rem;font-size:.92rem;line-height:1.3;color:#fff;text-shadow:0 1px 8px rgba(0,0,0,.45);}
+  .perks svg{width:26px;height:26px;color:#d4af37;flex:none;}
+  .wave{position:absolute;left:0;right:0;bottom:-1px;width:100%;height:46px;display:block;z-index:3;}
+
+  /* Inhalt */
+  .container{max-width:1180px;margin:0 auto;padding:.4rem 1.1rem 3rem;}
+  .sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin:1.2rem 0 .3rem;}
+  .sec-head h2{font-family:var(--serif);font-weight:600;font-size:1.75rem;color:var(--primary);margin:0;letter-spacing:-.01em;}
+  .sec-sub{color:var(--muted);margin:0 0 .9rem;}
+  .ad-label{font-size:.8rem;color:var(--muted);font-style:italic;margin:0 0 1.2rem;padding:.6rem .85rem;background:#faf8f2;border-radius:10px;border:1px dashed #e2ded2;}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:1rem;}
+  .offer{background:#fff;border:1px solid var(--border);border-radius:14px;overflow:hidden;text-align:center;box-shadow:0 1px 2px rgba(8,38,33,.06),0 4px 12px rgba(8,38,33,.07);transition:box-shadow .2s ease,transform .2s ease;}
+  .offer:hover{box-shadow:0 2px 4px rgba(8,38,33,.06),0 12px 26px rgba(8,38,33,.16);transform:translateY(-2px);}
+  .offer a{display:block;padding:.7rem;}
+  .offer img{max-width:100%;max-height:220px;object-fit:contain;display:block;margin:0 auto;}
+  .about{background:#fff;border:1px solid var(--border);border-radius:14px;padding:1.3rem 1.4rem;margin:1.6rem 0 0;box-shadow:0 1px 2px rgba(8,38,33,.06),0 4px 12px rgba(8,38,33,.07);}
+  .about h2{font-family:var(--serif);font-weight:600;font-size:1.35rem;color:var(--primary);margin:0 0 .4rem;}
+  .about p{margin:0;color:#3a423e;}
+
+  .about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:0;background:#fff;border:1px solid var(--border);border-radius:18px;overflow:hidden;margin:1.8rem 0 0;box-shadow:0 1px 2px rgba(8,38,33,.06),0 10px 28px rgba(8,38,33,.1);}
+  .about-img{background-size:cover;background-position:50% 35%;min-height:420px;aspect-ratio:4/5;}
+  .about-body{padding:2rem 2rem 2.2rem;display:flex;flex-direction:column;justify-content:center;}
+  .about-body .eyebrow{color:var(--accent-dark);}
+  .about-body h2{font-family:var(--serif);font-weight:600;font-size:clamp(1.7rem,4vw,2.4rem);line-height:1.1;color:var(--primary);margin:0 0 .7rem;}
+  .about-body p{margin:0 0 1.3rem;color:#3a423e;font-size:1.02rem;}
+  .about-body .cta{align-self:flex-start;}
+
+  /* Aktionen-Streifen (nur sichtbar, wenn es aktive Aktionen gibt) */
+  .deals{display:none;background:#fbf4e3;border:1px solid #efddb0;border-radius:14px;padding:1.1rem 1.3rem;margin:1.6rem 0 0;}
+  .deals.on{display:block;}
+  .deals-head{display:flex;align-items:center;gap:.9rem;margin-bottom:.8rem;}
+  .deals-badge{width:48px;height:48px;border-radius:50%;background:#e0a21a;color:#fff;display:inline-flex;align-items:center;justify-content:center;flex:none;}
+  .deals-badge svg{width:24px;height:24px;}
+  .deals h2{font-family:var(--serif);font-weight:600;font-size:1.35rem;color:var(--primary);margin:0;line-height:1.15;}
+  .deals p{margin:0;color:var(--muted);font-size:.9rem;}
+  .deal-list{display:flex;flex-wrap:wrap;gap:.6rem;}
+  .deal-list a{display:inline-flex;align-items:center;gap:.6rem;background:#fff;border:1px solid #e6dbc0;border-radius:10px;padding:.55rem .9rem;font:600 .88rem var(--sans);color:var(--primary);text-decoration:none;}
+  .deal-list a:hover{border-color:var(--primary);}
+  .deal-code{font-size:.72rem;font-weight:700;color:#4a3510;background:linear-gradient(135deg,#f2d98a,#e0a21a);padding:.15rem .55rem;border-radius:99px;}
+
   .footer{background:var(--primary-dark);padding:1.5rem 1.25rem;color:rgba(255,255,255,.7);font-size:.85rem;text-align:center;}
   .footer a{color:#fff;}
+
+  @media (max-width:820px){
+    .hero{min-height:790px;}
+    .hero-photo{width:100%;bottom:auto;height:54%;background-position:50% 52%;-webkit-mask-image:linear-gradient(to bottom,#000 62%,transparent 100%);mask-image:linear-gradient(to bottom,#000 62%,transparent 100%);}
+    .hero::after{background:linear-gradient(180deg,rgba(8,38,33,.6) 0,rgba(8,38,33,0) 20%);}
+    .hero-in{justify-content:flex-end;padding-bottom:4.2rem;}
+    .breadcrumb{position:absolute;top:1.1rem;left:1.1rem;margin:0;}
+    .about-grid{grid-template-columns:minmax(0,1fr) !important;}
+    .about-img{aspect-ratio:4/3 !important;min-height:0 !important;width:100%;}
+    .about-body{padding:1.5rem 1.3rem 1.7rem;}
+  }
+  @media (max-width:480px){
+    .lf-logo-text{font-size:1.15rem;}
+    .perks{grid-template-columns:1fr;gap:.55rem;}
+    .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:.7rem;}
+    .sec-head h2{font-size:1.45rem;}
+    .hero-btns .cta,.hero-btns .cta-light{width:100%;justify-content:center;}
+  }
+  @media (prefers-reduced-motion:reduce){*{transition:none!important;}}
+
+/* Partner ohne eigenes Foto: gleiche Flächen, aber Verlauf mit Symbol */
+.hero-photo.fb{background:radial-gradient(circle at 60% 40%,#2a7a6b 0,#14504a 55%,#0d3934 100%);display:flex;align-items:center;justify-content:center;-webkit-mask-image:linear-gradient(to right,transparent 0,#000 38%);mask-image:linear-gradient(to right,transparent 0,#000 38%);}
+.hero-photo.fb svg{width:min(340px,60%);height:auto;color:rgba(255,255,255,.14);fill:none;stroke:currentColor;stroke-width:.5;stroke-linecap:round;stroke-linejoin:round;transform:rotate(-8deg)}
+.about-img.fb{background:radial-gradient(circle at 70% 20%,#1f6256,#0d3934 60%,#082621);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.about-img.fb svg{width:55%;max-width:240px;color:rgba(255,255,255,.85);fill:none;stroke:currentColor;stroke-width:.7;stroke-linecap:round;stroke-linejoin:round}
+.about-img.logo{background:#fff;display:flex;align-items:center;justify-content:center;padding:2rem}
+.about-img.logo img{max-width:80%;max-height:140px}
+.grid.few{grid-template-columns:repeat(auto-fit,minmax(240px,460px));justify-content:start}
+.grid.few .offer img{max-height:340px}
+#partnerBanners:empty{display:none}
+#partnerBanners{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:1rem;margin-top:1rem}
+.offer iframe{border:0;max-width:100%;display:block;margin:.6rem auto}
+.banner{background:#fff;border:1px solid var(--border);border-radius:14px;overflow:hidden;text-align:center;box-shadow:0 1px 2px rgba(8,38,33,.06),0 4px 12px rgba(8,38,33,.07)}
+.banner a{display:block;padding:.7rem}.banner img{max-width:100%;max-height:220px;object-fit:contain;display:block;margin:0 auto}
+@media (max-width:820px){.hero-photo.fb{-webkit-mask-image:linear-gradient(to bottom,#000 62%,transparent 100%);mask-image:linear-gradient(to bottom,#000 62%,transparent 100%)}}
+.about-img.fb,.about-img.logo{aspect-ratio:auto;min-height:300px}
+@media (max-width:820px){.about-img.fb,.about-img.logo{aspect-ratio:auto !important;min-height:200px !important}}
+
+.hero-logo{position:absolute;z-index:1;right:11%;top:50%;transform:translateY(-50%) rotate(3deg);width:min(400px,30vw);background:#fff;border-radius:22px;padding:2.2rem 2.4rem;box-shadow:0 26px 54px rgba(0,0,0,.4),0 0 0 8px rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center}
+.hero-logo img{max-width:100%;max-height:150px;display:block}
+@media (max-width:820px){.hero-logo{right:auto;left:50%;top:19%;transform:translate(-50%,-50%) rotate(-2deg);width:min(270px,70%);padding:1.2rem 1.4rem}.hero-logo img{max-height:90px}}
+
+.brand-chip{display:flex;width:max-content;max-width:100%;align-items:center;background:#fff;border-radius:14px;padding:.6rem 1.1rem;margin-bottom:1.3rem;box-shadow:0 10px 26px rgba(0,0,0,.28)}
+.brand-chip img{height:54px;width:auto;display:block}
+
+.hero-photo.lg{background-color:#fff;background-size:62% auto;background-repeat:no-repeat;background-position:62% 50%}
+.about-img.lg{background-color:#fff;background-size:70% auto;background-repeat:no-repeat;background-position:center;aspect-ratio:auto;min-height:300px;border:1px solid #e8e4d8}
+@media (max-width:820px){.hero-photo.lg{background-size:70% auto;background-position:50% 45%}}
 </style>
-</head>
-<body><div class="hero">
-  <div class="hero-inner">
-    <a class="back-link" href="/">&larr; Zur&uuml;ck zum Leistung-Finder</a>
-    <div class="logotype">Leistung-Finder &middot; Partnerkatalog</div>
-    <h1>Jobstoday World</h1>
-    <p class="lede">Stellenangebote aus verschiedenen Branchen.</p>
+<style>:root{--plogo:url("data:image/png;base64,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")}.hero-photo.lg,.about-img.lg{background-image:var(--plogo)}.hero h1{overflow-wrap:anywhere}@media(max-width:820px){.hero-photo.lg{height:46%}.hero h1{font-size:clamp(2rem,10.5vw,3.4rem);letter-spacing:.06em}}</style></head>
+<body>
+
+<header class="lf-top">
+  <div class="lf-top-in">
+    <a class="lf-logo" href="/" aria-label="Leistung-Finder Startseite"><span class="lf-logo-mark">LF</span><span class="lf-logo-text">Leistung-Finder</span></a>
+    <div class="lf-top-btns"><a class="lf-btn-light" href="/#partner">&larr; Alle Partner</a></div>
   </div>
-</div><div class="container">
-  <div class="card">
-    <p class="ad-label">Anzeige &ndash; bei Abschluss &uuml;ber diese Links erhalten wir ggf. eine Verg&uuml;tung. Diese Angebote stammen von einem unabh&auml;ngigen Partner, nicht von einer Beh&ouml;rde.</p><a class="cta" rel="sponsored noopener" target="_blank" href="https://www.awin1.com/cread.php?s=4898546&v=115232&q=615679&r=3083133">
-  Zum Jobstoday World-Partnerprogramm
+</header>
+
+<section class="hero">
+  <div class="hero-photo lg" role="img" aria-label="Jobstoday World" ></div>
+  <div class="hero-in">
+    <div class="breadcrumb"><a href="/">Startseite</a> &nbsp;›&nbsp; <a href="/partner/arbeit/">Arbeit &amp; Jobs</a> &nbsp;›&nbsp; Jobstoday World</div>
+    <div class="hero-txt">
+      
+      <span class="eyebrow">Partnerangebot</span>
+      <h1>Jobstoday World</h1>
+      <span class="uline"></span>
+      <p class="lede">Stellenangebote aus verschiedenen Branchen.</p>
+      <div class="hero-btns">
+        <a class="cta" rel="sponsored noopener" target="_blank" href="https://www.awin1.com/cread.php?s=4898546&v=115232&q=615679&r=3083133">Zum Jobstoday World-Partnerprogramm <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a>
+      </div>
+      <ul class="perks">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.2 7.6-8 9-4.8-1.4-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg><span>Offizielle Partnerangebote</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg><span>Direkt zum Anbieter</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16h.01"/></svg><span>Werbung klar gekennzeichnet</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.4A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg><span>Für dich ohne Mehrkosten</span></li>
+      </ul>
+    </div>
+  </div>
+  <svg class="wave" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 30 C 240 70 480 0 720 25 C 960 50 1200 65 1440 20 L1440 60 L0 60 Z" fill="#f9f8f4"/></svg>
+</section>
+
+<div class="container">
+  <div class="sec-head" id="angebote"><h2>Alle Angebote von Jobstoday World</h2></div>
+  <p class="sec-sub">Entdecke die aktuelle Auswahl.</p>
+  <p class="ad-label">Anzeige &ndash; bei Abschluss &uuml;ber diese Links erhalten wir ggf. eine Verg&uuml;tung. Diese Angebote stammen von einem unabh&auml;ngigen Partner, nicht von einer Beh&ouml;rde.</p>
+
+  <div class="grid">
+      <div class="offer">
+<a href="https://www.awin1.com/cread.php?s=4898546&amp;v=115232&amp;q=615679&amp;r=3083133" rel="sponsored noopener" target="_blank">
+<img alt="Jobstoday World" loading="lazy" src="https://www.awin1.com/cshow.php?s=4898546&amp;v=115232&amp;q=615679&amp;r=3083133"/>
 </a>
-
-<span class="badge">Alle aktuellen Angebote</span>
-
-<div class="grid">
-  <div class="offer">
-    <a rel="sponsored noopener" target="_blank" href="https://www.awin1.com/cread.php?s=4898546&v=115232&q=615679&r=3083133">
-      <img loading="lazy" alt="Jobstoday World" src="https://www.awin1.com/cshow.php?s=4898546&v=115232&q=615679&r=3083133">
-    </a>
+</div>
+      <div class="offer">
+<a href="https://www.awin1.com/cread.php?s=4898541&amp;v=115232&amp;q=615679&amp;r=3083133" rel="sponsored noopener" target="_blank">
+<img alt="Jobstoday World" loading="lazy" src="https://www.awin1.com/cshow.php?s=4898541&amp;v=115232&amp;q=615679&amp;r=3083133"/>
+</a>
+</div>
+      <div class="offer">
+<a href="https://www.awin1.com/cread.php?s=4898531&amp;v=115232&amp;q=615675&amp;r=3083133" rel="sponsored noopener" target="_blank">
+<img alt="Jobstoday World" loading="lazy" src="https://www.awin1.com/cshow.php?s=4898531&amp;v=115232&amp;q=615675&amp;r=3083133"/>
+</a>
+</div>
+      <div class="offer">
+<a href="https://www.awin1.com/cread.php?s=4898518&amp;v=115232&amp;q=615673&amp;r=3083133" rel="sponsored noopener" target="_blank">
+<img alt="Jobstoday World" loading="lazy" src="https://www.awin1.com/cshow.php?s=4898518&amp;v=115232&amp;q=615673&amp;r=3083133"/>
+</a>
+</div>
+      <div class="offer">
+<a href="https://www.awin1.com/cread.php?s=4353673&amp;v=115232&amp;q=567353&amp;r=3083133" rel="sponsored noopener" target="_blank">
+<img alt="Jobstoday World" loading="lazy" src="https://www.awin1.com/cshow.php?s=4353673&amp;v=115232&amp;q=567353&amp;r=3083133"/>
+</a>
+</div>
   </div>
+  <div id="partnerBanners"></div>
 
-  <div class="offer">
-    <a rel="sponsored noopener" target="_blank" href="https://www.awin1.com/cread.php?s=4898541&v=115232&q=615679&r=3083133">
-      <img loading="lazy" alt="Jobstoday World" src="https://www.awin1.com/cshow.php?s=4898541&v=115232&q=615679&r=3083133">
-    </a>
-  </div>
+  <section class="deals" id="lfDeals" aria-live="polite">
+    <div class="deals-head">
+      <span class="deals-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg></span>
+      <div><h2>Aktuelle Jobstoday World Angebote</h2><p>Jetzt entdecken und von attraktiven Aktionen profitieren.</p></div>
+    </div>
+    <div class="deal-list" id="lfDealList"></div>
+  </section>
 
-  <div class="offer">
-    <a rel="sponsored noopener" target="_blank" href="https://www.awin1.com/cread.php?s=4898531&v=115232&q=615675&r=3083133">
-      <img loading="lazy" alt="Jobstoday World" src="https://www.awin1.com/cshow.php?s=4898531&v=115232&q=615675&r=3083133">
-    </a>
-  </div>
-
-  <div class="offer">
-    <a rel="sponsored noopener" target="_blank" href="https://www.awin1.com/cread.php?s=4898518&v=115232&q=615673&r=3083133">
-      <img loading="lazy" alt="Jobstoday World" src="https://www.awin1.com/cshow.php?s=4898518&v=115232&q=615673&r=3083133">
-    </a>
-  </div>
-
-  <div class="offer">
-    <a rel="sponsored noopener" target="_blank" href="https://www.awin1.com/cread.php?s=4353673&v=115232&q=567353&r=3083133">
-      <img loading="lazy" alt="Jobstoday World" src="https://www.awin1.com/cshow.php?s=4353673&v=115232&q=567353&r=3083133">
-    </a>
-  </div>
+  <section class="about-grid">
+    <div class="about-img lg" role="img" aria-label="Jobstoday World" ></div>
+    <div class="about-body">
+      <span class="eyebrow">&Uuml;ber den Partner</span>
+      <h2>&Uuml;ber Jobstoday World</h2>
+      <p data-partner-beschreibung>Stellenangebote aus verschiedenen Branchen.</p>
+      <a class="cta" rel="sponsored noopener" target="_blank" href="https://www.awin1.com/cread.php?s=4898546&v=115232&q=615679&r=3083133">Zum Jobstoday World-Partnerprogramm <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a>
+    </div>
+  </section>
 </div>
 
-<div id="partnerBanners"></div>
-
-  </div>
-</div><div class="footer">
+<div class="footer">
   <a href="/impressum.html">Impressum</a> &nbsp;&middot;&nbsp; <a href="/datenschutz.html">Datenschutz</a>
   <br>Leistung-Finder ist keine Beh&ouml;rde und bietet keine Rechtsberatung.
-</div><script src="https://leistung-finder.de/assets/partner-page-banner.js" data-partner="Jobstoday World"></script></body>
+</div>
+
+<script src="https://leistung-finder.de/assets/partner-page-banner.js" data-partner="Jobstoday World"></script>
+<script>
+  /* Zeigt aktive Aktionen aus dem Admin-Bereich; ohne Aktionen bleibt der Streifen unsichtbar. */
+  (function () {
+    var URL = "https://rnnmdlibekqhqrxqqrws.supabase.co/rest/v1/aktionen?partner_name=ilike.Jobstoday%20World&aktiv=eq.true&select=label,code,url,ablaufdatum&order=id.asc";
+    var KEY = "sb_publishable_PXFh4qggQUq3Eb4AGbPpPg_05HIlS1x";
+    function esc(v) { var d = document.createElement("div"); d.textContent = v == null ? "" : v; return d.innerHTML; }
+    fetch(URL, { headers: { apikey: KEY, Authorization: "Bearer " + KEY } })
+      .then(function (r) { return r.ok ? r.json() : []; })
+      .then(function (rows) {
+        var today = new Date().toISOString().slice(0, 10);
+        rows = (rows || []).filter(function (r) { return r.url && (!r.ablaufdatum || r.ablaufdatum >= today); });
+        if (!rows.length) return;
+        document.getElementById("lfDealList").innerHTML = rows.map(function (r) {
+          return '<a href="' + esc(r.url) + '" target="_blank" rel="sponsored noopener"><span>' + esc(r.label) + '</span>' +
+                 (r.code ? '<span class="deal-code">Code: ' + esc(r.code) + '</span>' : '') + '</a>';
+        }).join("");
+        document.getElementById("lfDeals").classList.add("on");
+      })
+      .catch(function () {});
+  })();
+</script>
+</body>
 </html>
