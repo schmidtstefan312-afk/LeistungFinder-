@@ -6750,6 +6750,8 @@
 
       if (!root) return;
 
+      if (groups.indexOf('Sonstiges') < 0) groups.push('Sonstiges');
+
       const LF_PMETA = {
         'Arbeit & Jobs': ['Job & Karriere', 'Stellen, Weiterbildung, Karrierechancen', 'people'],
         'Mobilfunk & Internet': ['Mobilfunk & Kommunikation', 'Tarife, Angebote, Service', 'phone'],
@@ -8083,4 +8085,3 @@
 
 </body>
 </html>
-
