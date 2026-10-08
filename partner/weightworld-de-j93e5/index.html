@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="de">
+<!DOCTYPE html>
+<html lang="de">
 <head>
 <meta charset="UTF-8" />
 <title>WeightWorld – Partnerangebot | Leistung-Finder</title>
@@ -6,61 +7,228 @@
 <meta name="description" content="WeightWorld: Nahrungsergänzungsmittel für Ernährung, Fitness und Wohlbefinden. Partnerangebot von Leistung-Finder." />
 <meta name="robots" content="index, follow" />
 <link rel="canonical" href="https://leistung-finder.de/partner/weightworld-de-j93e5/" />
+<link rel="icon" href="https://leistung-finder.de/favicon.svg" type="image/svg+xml" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
     --primary:#0d3934; --primary-dark:#082621; --accent:#ad7f42; --accent-dark:#8a6533;
-    --bg:#f5f2ea; --text:#1b201e; --muted:#5c655f; --card:#ffffff; --border:#e2ded2;
+    --bg:#f9f8f4; --text:#1b201e; --muted:#5c655f; --card:#ffffff; --border:#dfe3df;
     --serif:"Fraunces",Georgia,serif; --sans:"Work Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
   }
   *{box-sizing:border-box;}
   body{margin:0;font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.6;}
-  .hero{background:linear-gradient(160deg,var(--primary) 0%,var(--primary-dark) 100%);color:#fff;padding:2rem 1.25rem 3rem;}
-  .hero-inner{max-width:760px;margin:0 auto;}
-  .back-link{color:#fff;opacity:.8;font-size:.85rem;text-decoration:none;}
-  .logotype{font-family:var(--serif);font-weight:500;font-size:1rem;opacity:.8;margin:.75rem 0 1.25rem;}
-  .hero h1{font-family:var(--serif);font-weight:600;font-size:1.9rem;margin:0 0 .5rem;}
-  .hero p.lede{max-width:52ch;opacity:.92;margin:0;}
-  .container{max-width:760px;margin:0 auto;padding:0 1.25rem 2rem;}
-  .card{background:var(--card);border:1px solid var(--border);border-radius:3px;padding:1.5rem;margin-top:-2.25rem;box-shadow:0 6px 20px rgba(8,38,33,.1);}
-  .ad-label{font-size:.78rem;color:var(--muted);font-style:italic;margin:0 0 1.25rem;}
-  .cta{display:inline-block;background:var(--accent);color:#fff;font-weight:700;padding:.75rem 1.4rem;border-radius:2px;text-decoration:none;margin-top:.5rem;}
-  .banner{margin-top:1.5rem;border:1px solid var(--border);border-radius:4px;background:#fdfcfa;text-align:center;padding:.75rem;}
-  .banner img{max-width:100%;display:block;margin:0 auto;}
-  .badge{display:inline-block;font-size:.72rem;padding:.15rem .5rem;border-radius:2px;background:#fbeedd;color:var(--accent-dark);border:1px solid #f0d6ac;margin-bottom:.5rem;}
+  a:focus-visible{outline:3px solid var(--accent);outline-offset:3px;}
+
+  /* Kopfleiste wie Startseite */
+  .lf-top{background:#fff;border-bottom:1px solid #e7e5dc;}
+  .lf-top-in{max-width:1180px;margin:0 auto;padding:.7rem 1.1rem;display:flex;align-items:center;gap:.8rem;flex-wrap:wrap;}
+  .lf-logo{display:flex;align-items:center;gap:.6rem;text-decoration:none;color:var(--primary);}
+  .lf-logo-mark{width:44px;height:44px;border-radius:9px;background:var(--primary);color:#d4af37;display:inline-flex;align-items:center;justify-content:center;font:700 1.2rem var(--serif);}
+  .lf-logo-text{font:700 1.35rem var(--serif);letter-spacing:-.01em;}
+  .lf-top-btns{margin-left:auto;display:flex;gap:.6rem;}
+  .lf-btn-light{display:inline-flex;align-items:center;background:#fff;color:var(--primary);border:1px solid var(--border);border-radius:10px;padding:.55rem 1rem;font:600 .88rem var(--sans);text-decoration:none;white-space:nowrap;}
+  .lf-btn-light:hover{background:#e3efe9;}
+
+  /* Hero: großes Foto, Text darüber */
+  .hero{position:relative;background:#082621;color:#fff;overflow:hidden;min-height:620px;display:flex;}
+  .hero-photo{position:absolute;top:0;right:0;bottom:0;width:68%;background-size:cover;background-position:58% 52%;-webkit-mask-image:linear-gradient(to right,transparent 0,#000 38%);mask-image:linear-gradient(to right,transparent 0,#000 38%);}
+  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,38,33,.55) 0,rgba(8,38,33,0) 55%),linear-gradient(0deg,rgba(8,38,33,.55) 0,rgba(8,38,33,0) 30%);pointer-events:none;}
+  .hero-in{position:relative;z-index:2;max-width:1180px;width:100%;margin:0 auto;padding:1.4rem 1.1rem 5rem;display:flex;flex-direction:column;justify-content:center;}
+  .hero-txt{max-width:620px;}
+  .breadcrumb{font-size:.85rem;opacity:.9;margin-bottom:2rem;text-shadow:0 1px 6px rgba(0,0,0,.4);}
+  .breadcrumb a{color:#fff;text-decoration:none;}
+  .breadcrumb a:hover{text-decoration:underline;}
+  .eyebrow{display:inline-block;font:600 .78rem var(--sans);letter-spacing:.16em;text-transform:uppercase;color:#d4af37;margin-bottom:.5rem;}
+  .hero h1{font-family:var(--serif);font-weight:700;font-size:clamp(3.4rem,9vw,6.4rem);line-height:.95;letter-spacing:.12em;margin:0;text-shadow:0 2px 24px rgba(0,0,0,.35);}
+  .uline{display:block;width:110px;height:6px;border-radius:99px;background:#2e9e4d;margin:1.2rem 0 1.3rem;}
+  .hero p.lede{font-family:var(--serif);font-weight:500;font-size:clamp(1.35rem,3.4vw,2rem);line-height:1.22;margin:0 0 1.7rem;max-width:22ch;text-shadow:0 1px 14px rgba(0,0,0,.45);}
+  .hero-btns{display:flex;flex-wrap:wrap;gap:.7rem;margin-bottom:1.8rem;}
+  .cta{display:inline-flex;align-items:center;gap:.5rem;background:linear-gradient(135deg,#c99a4e,#ad7f42);color:#fff;font:700 1rem var(--sans);padding:.9rem 1.5rem;border-radius:10px;text-decoration:none;box-shadow:0 8px 20px rgba(0,0,0,.3);}
+  .cta:hover{background:linear-gradient(135deg,#d4a75a,#b88a49);}
+  .cta-light{display:inline-flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.96);color:var(--primary);font:600 1rem var(--sans);padding:.9rem 1.35rem;border-radius:10px;text-decoration:none;}
+  .cta svg,.cta-light svg{width:18px;height:18px;flex:none;}
+  .perks{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem 1.4rem;}
+  .perks li{display:flex;align-items:center;gap:.6rem;font-size:.92rem;line-height:1.3;color:#fff;text-shadow:0 1px 8px rgba(0,0,0,.45);}
+  .perks svg{width:26px;height:26px;color:#d4af37;flex:none;}
+  .wave{position:absolute;left:0;right:0;bottom:-1px;width:100%;height:46px;display:block;z-index:3;}
+
+  /* Inhalt */
+  .container{max-width:1180px;margin:0 auto;padding:.4rem 1.1rem 3rem;}
+  .sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin:1.2rem 0 .3rem;}
+  .sec-head h2{font-family:var(--serif);font-weight:600;font-size:1.75rem;color:var(--primary);margin:0;letter-spacing:-.01em;}
+  .sec-sub{color:var(--muted);margin:0 0 .9rem;}
+  .ad-label{font-size:.8rem;color:var(--muted);font-style:italic;margin:0 0 1.2rem;padding:.6rem .85rem;background:#faf8f2;border-radius:10px;border:1px dashed #e2ded2;}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:1rem;}
+  .offer{background:#fff;border:1px solid var(--border);border-radius:14px;overflow:hidden;text-align:center;box-shadow:0 1px 2px rgba(8,38,33,.06),0 4px 12px rgba(8,38,33,.07);transition:box-shadow .2s ease,transform .2s ease;}
+  .offer:hover{box-shadow:0 2px 4px rgba(8,38,33,.06),0 12px 26px rgba(8,38,33,.16);transform:translateY(-2px);}
+  .offer a{display:block;padding:.7rem;}
+  .offer img{max-width:100%;max-height:220px;object-fit:contain;display:block;margin:0 auto;}
+  .about{background:#fff;border:1px solid var(--border);border-radius:14px;padding:1.3rem 1.4rem;margin:1.6rem 0 0;box-shadow:0 1px 2px rgba(8,38,33,.06),0 4px 12px rgba(8,38,33,.07);}
+  .about h2{font-family:var(--serif);font-weight:600;font-size:1.35rem;color:var(--primary);margin:0 0 .4rem;}
+  .about p{margin:0;color:#3a423e;}
+
+  .about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:0;background:#fff;border:1px solid var(--border);border-radius:18px;overflow:hidden;margin:1.8rem 0 0;box-shadow:0 1px 2px rgba(8,38,33,.06),0 10px 28px rgba(8,38,33,.1);}
+  .about-img{background-size:cover;background-position:50% 35%;min-height:420px;aspect-ratio:4/5;}
+  .about-body{padding:2rem 2rem 2.2rem;display:flex;flex-direction:column;justify-content:center;}
+  .about-body .eyebrow{color:var(--accent-dark);}
+  .about-body h2{font-family:var(--serif);font-weight:600;font-size:clamp(1.7rem,4vw,2.4rem);line-height:1.1;color:var(--primary);margin:0 0 .7rem;}
+  .about-body p{margin:0 0 1.3rem;color:#3a423e;font-size:1.02rem;}
+  .about-body .cta{align-self:flex-start;}
+
+  /* Aktionen-Streifen (nur sichtbar, wenn es aktive Aktionen gibt) */
+  .deals{display:none;background:#fbf4e3;border:1px solid #efddb0;border-radius:14px;padding:1.1rem 1.3rem;margin:1.6rem 0 0;}
+  .deals.on{display:block;}
+  .deals-head{display:flex;align-items:center;gap:.9rem;margin-bottom:.8rem;}
+  .deals-badge{width:48px;height:48px;border-radius:50%;background:#e0a21a;color:#fff;display:inline-flex;align-items:center;justify-content:center;flex:none;}
+  .deals-badge svg{width:24px;height:24px;}
+  .deals h2{font-family:var(--serif);font-weight:600;font-size:1.35rem;color:var(--primary);margin:0;line-height:1.15;}
+  .deals p{margin:0;color:var(--muted);font-size:.9rem;}
+  .deal-list{display:flex;flex-wrap:wrap;gap:.6rem;}
+  .deal-list a{display:inline-flex;align-items:center;gap:.6rem;background:#fff;border:1px solid #e6dbc0;border-radius:10px;padding:.55rem .9rem;font:600 .88rem var(--sans);color:var(--primary);text-decoration:none;}
+  .deal-list a:hover{border-color:var(--primary);}
+  .deal-code{font-size:.72rem;font-weight:700;color:#4a3510;background:linear-gradient(135deg,#f2d98a,#e0a21a);padding:.15rem .55rem;border-radius:99px;}
+
   .footer{background:var(--primary-dark);padding:1.5rem 1.25rem;color:rgba(255,255,255,.7);font-size:.85rem;text-align:center;}
   .footer a{color:#fff;}
+
+  @media (max-width:820px){
+    .hero{min-height:790px;}
+    .hero-photo{width:100%;bottom:auto;height:54%;background-position:50% 52%;-webkit-mask-image:linear-gradient(to bottom,#000 62%,transparent 100%);mask-image:linear-gradient(to bottom,#000 62%,transparent 100%);}
+    .hero::after{background:linear-gradient(180deg,rgba(8,38,33,.6) 0,rgba(8,38,33,0) 20%);}
+    .hero-in{justify-content:flex-end;padding-bottom:4.2rem;}
+    .breadcrumb{position:absolute;top:1.1rem;left:1.1rem;margin:0;}
+    .about-grid{grid-template-columns:minmax(0,1fr) !important;}
+    .about-img{aspect-ratio:4/3 !important;min-height:0 !important;width:100%;}
+    .about-body{padding:1.5rem 1.3rem 1.7rem;}
+  }
+  @media (max-width:480px){
+    .lf-logo-text{font-size:1.15rem;}
+    .perks{grid-template-columns:1fr;gap:.55rem;}
+    .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:.7rem;}
+    .sec-head h2{font-size:1.45rem;}
+    .hero-btns .cta,.hero-btns .cta-light{width:100%;justify-content:center;}
+  }
+  @media (prefers-reduced-motion:reduce){*{transition:none!important;}}
+
+/* Partner ohne eigenes Foto: gleiche Flächen, aber Verlauf mit Symbol */
+.hero-photo.fb{background:radial-gradient(circle at 60% 40%,#2a7a6b 0,#14504a 55%,#0d3934 100%);display:flex;align-items:center;justify-content:center;-webkit-mask-image:linear-gradient(to right,transparent 0,#000 38%);mask-image:linear-gradient(to right,transparent 0,#000 38%);}
+.hero-photo.fb svg{width:min(340px,60%);height:auto;color:rgba(255,255,255,.14);fill:none;stroke:currentColor;stroke-width:.5;stroke-linecap:round;stroke-linejoin:round;transform:rotate(-8deg)}
+.about-img.fb{background:radial-gradient(circle at 70% 20%,#1f6256,#0d3934 60%,#082621);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.about-img.fb svg{width:55%;max-width:240px;color:rgba(255,255,255,.85);fill:none;stroke:currentColor;stroke-width:.7;stroke-linecap:round;stroke-linejoin:round}
+.about-img.logo{background:#fff;display:flex;align-items:center;justify-content:center;padding:2rem}
+.about-img.logo img{max-width:80%;max-height:140px}
+.grid.few{grid-template-columns:repeat(auto-fit,minmax(240px,460px));justify-content:start}
+.grid.few .offer img{max-height:340px}
+#partnerBanners:empty{display:none}
+#partnerBanners{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:1rem;margin-top:1rem}
+.offer iframe{border:0;max-width:100%;display:block;margin:.6rem auto}
+.banner{background:#fff;border:1px solid var(--border);border-radius:14px;overflow:hidden;text-align:center;box-shadow:0 1px 2px rgba(8,38,33,.06),0 4px 12px rgba(8,38,33,.07)}
+.banner a{display:block;padding:.7rem}.banner img{max-width:100%;max-height:220px;object-fit:contain;display:block;margin:0 auto}
+@media (max-width:820px){.hero-photo.fb{-webkit-mask-image:linear-gradient(to bottom,#000 62%,transparent 100%);mask-image:linear-gradient(to bottom,#000 62%,transparent 100%)}}
+.about-img.fb,.about-img.logo{aspect-ratio:auto;min-height:300px}
+@media (max-width:820px){.about-img.fb,.about-img.logo{aspect-ratio:auto !important;min-height:200px !important}}
+
+.hero-logo{position:absolute;z-index:1;right:11%;top:50%;transform:translateY(-50%) rotate(3deg);width:min(400px,30vw);background:#fff;border-radius:22px;padding:2.2rem 2.4rem;box-shadow:0 26px 54px rgba(0,0,0,.4),0 0 0 8px rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center}
+.hero-logo img{max-width:100%;max-height:150px;display:block}
+@media (max-width:820px){.hero-logo{right:auto;left:50%;top:19%;transform:translate(-50%,-50%) rotate(-2deg);width:min(270px,70%);padding:1.2rem 1.4rem}.hero-logo img{max-height:90px}}
+
+.brand-chip{display:flex;width:max-content;max-width:100%;align-items:center;background:#fff;border-radius:14px;padding:.6rem 1.1rem;margin-bottom:1.3rem;box-shadow:0 10px 26px rgba(0,0,0,.28)}
+.brand-chip img{height:54px;width:auto;display:block}
+
+.hero-photo.lg{background-color:#fff;background-size:62% auto;background-repeat:no-repeat;background-position:62% 50%}
+.about-img.lg{background-color:#fff;background-size:70% auto;background-repeat:no-repeat;background-position:center;aspect-ratio:auto;min-height:300px;border:1px solid #e8e4d8}
+@media (max-width:820px){.hero-photo.lg{background-size:70% auto;background-position:50% 45%}}
 </style>
-</head>
-<body><div class="hero">
-  <div class="hero-inner">
-    <a class="back-link" href="/">&larr; Zur&uuml;ck zum Leistung-Finder</a>
-    <div class="logotype">Leistung-Finder &middot; Partnerangebot</div>
-    <h1>WeightWorld</h1>
-    <p class="lede">Nahrungsergänzungsmittel für Ernährung, Fitness und Wohlbefinden.</p>
+<style>@media(max-width:820px){.hero h1{font-size:clamp(2rem,10.5vw,3.4rem);letter-spacing:.06em}}</style><style>@media(max-width:820px){.hero-photo{background-size:auto 60%!important;background-position:50% 12%!important}}</style><style>/*LFH1*/@media(min-width:821px){.hero h1{font-size:clamp(2.4rem,5vw,4.2rem)!important;letter-spacing:.09em!important}}</style></head>
+<body>
+
+<header class="lf-top">
+  <div class="lf-top-in">
+    <a class="lf-logo" href="/" aria-label="Leistung-Finder Startseite"><span class="lf-logo-mark">LF</span><span class="lf-logo-text">Leistung-Finder</span></a>
+    <div class="lf-top-btns"><a class="lf-btn-light" href="/#partner">&larr; Alle Partner</a></div>
   </div>
-</div><div class="container">
-  <div class="card">
-    <p class="ad-label">Anzeige &ndash; bei Abschluss &uuml;ber diese Links erhalten wir ggf. eine Verg&uuml;tung. Dieses Angebot stammt von einem unabh&auml;ngigen Partner, nicht von einer Beh&ouml;rde.</p><p>Nahrungsergänzungsmittel für Ernährung, Fitness und Wohlbefinden.</p>
+</header>
 
-<a class="cta" rel="sponsored noopener" target="_blank" href="https://www.awin1.com/cread.php?s=3657646&v=22720&q=492447&r=3083133">
-  Zum WeightWorld-Angebot
-</a>
+<section class="hero">
+  <div class="hero-photo" role="img" aria-label="WeightWorld" style="background-image:url(data:image/jpeg;base64,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);background-color:#388248;background-size:auto 100%;background-repeat:no-repeat;background-position:76% 50%"></div>
+  <div class="hero-in">
+    <div class="breadcrumb"><a href="/">Startseite</a> &nbsp;›&nbsp; <a href="/partner/gesundheit/">Gesundheit &amp; Ernährung</a> &nbsp;›&nbsp; WeightWorld</div>
+    <div class="hero-txt">
+      
+      <span class="eyebrow">Partnerangebot</span>
+      <h1>WeightWorld</h1>
+      <span class="uline"></span>
+      <p class="lede">Nahrungsergänzungsmittel für Ernährung, Fitness und Wohlbefinden.</p>
+      <div class="hero-btns">
+        <a class="cta" rel="sponsored noopener" target="_blank" href="https://www.awin1.com/cread.php?s=3657646&v=22720&q=492447&r=3083133">Zum WeightWorld-Angebot <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a>
+      </div>
+      <ul class="perks">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.2 7.6-8 9-4.8-1.4-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg><span>Offizielle Partnerangebote</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg><span>Direkt zum Anbieter</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16h.01"/></svg><span>Werbung klar gekennzeichnet</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.4A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg><span>Für dich ohne Mehrkosten</span></li>
+      </ul>
+    </div>
+  </div>
+  <svg class="wave" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 30 C 240 70 480 0 720 25 C 960 50 1200 65 1440 20 L1440 60 L0 60 Z" fill="#f9f8f4"/></svg>
+</section>
 
-<div class="banner">
-  <span class="badge">Anzeige</span><br>
-  <a rel="sponsored noopener" target="_blank" href="https://www.awin1.com/cread.php?s=3657646&v=22720&q=492447&r=3083133">
-    <img loading="lazy" alt="WeightWorld" src="https://www.awin1.com/cshow.php?s=3657646&v=22720&q=492447&r=3083133">
-  </a>
+<div class="container">
+  <div class="sec-head" id="angebote"><h2>Alle Angebote von WeightWorld</h2></div>
+  <p class="sec-sub">Entdecke die aktuelle Auswahl.</p>
+  <p class="ad-label">Anzeige &ndash; bei Abschluss &uuml;ber diese Links erhalten wir ggf. eine Verg&uuml;tung. Dieses Angebot stammt von einem unabh&auml;ngigen Partner, nicht von einer Beh&ouml;rde.</p>
+
+  <div class="grid few">
+      <div class="offer"><a href="https://www.awin1.com/cread.php?s=3657646&amp;v=22720&amp;q=492447&amp;r=3083133" rel="sponsored noopener" target="_blank">
+<img alt="WeightWorld" loading="lazy" src="https://www.awin1.com/cshow.php?s=3657646&amp;v=22720&amp;q=492447&amp;r=3083133"/>
+</a></div>
+  </div>
+  <div id="partnerBanners"></div>
+
+  <section class="deals" id="lfDeals" aria-live="polite">
+    <div class="deals-head">
+      <span class="deals-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg></span>
+      <div><h2>Aktuelle WeightWorld Angebote</h2><p>Jetzt entdecken und von attraktiven Aktionen profitieren.</p></div>
+    </div>
+    <div class="deal-list" id="lfDealList"></div>
+  </section>
+
+  <section class="about-grid">
+    <div class="about-img fb"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.4A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></div>
+    <div class="about-body">
+      <span class="eyebrow">&Uuml;ber den Partner</span>
+      <h2>&Uuml;ber WeightWorld</h2>
+      <p data-partner-beschreibung>Nahrungsergänzungsmittel für Ernährung, Fitness und Wohlbefinden.</p>
+      <a class="cta" rel="sponsored noopener" target="_blank" href="https://www.awin1.com/cread.php?s=3657646&v=22720&q=492447&r=3083133">Zum WeightWorld-Angebot <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a>
+    </div>
+  </section>
 </div>
 
-<div id="partnerBanners" class="grid"></div>
-
-  </div>
-</div><div class="footer">
+<div class="footer">
   <a href="/impressum.html">Impressum</a> &nbsp;&middot;&nbsp; <a href="/datenschutz.html">Datenschutz</a>
   <br>Leistung-Finder ist keine Beh&ouml;rde und bietet keine Rechtsberatung.
-</div><script src="https://leistung-finder.de/assets/partner-page-banner.js" data-partner="WeightWorld"></script></body>
+</div>
+
+<script src="https://leistung-finder.de/assets/partner-page-banner.js" data-partner="WeightWorld"></script>
+<script>
+  /* Zeigt aktive Aktionen aus dem Admin-Bereich; ohne Aktionen bleibt der Streifen unsichtbar. */
+  (function () {
+    var URL = "https://rnnmdlibekqhqrxqqrws.supabase.co/rest/v1/aktionen?partner_name=ilike.WeightWorld&aktiv=eq.true&select=label,code,url,ablaufdatum&order=id.asc";
+    var KEY = "sb_publishable_PXFh4qggQUq3Eb4AGbPpPg_05HIlS1x";
+    function esc(v) { var d = document.createElement("div"); d.textContent = v == null ? "" : v; return d.innerHTML; }
+    fetch(URL, { headers: { apikey: KEY, Authorization: "Bearer " + KEY } })
+      .then(function (r) { return r.ok ? r.json() : []; })
+      .then(function (rows) {
+        var today = new Date().toISOString().slice(0, 10);
+        rows = (rows || []).filter(function (r) { return r.url && (!r.ablaufdatum || r.ablaufdatum >= today); });
+        if (!rows.length) return;
+        document.getElementById("lfDealList").innerHTML = rows.map(function (r) {
+          return '<a href="' + esc(r.url) + '" target="_blank" rel="sponsored noopener"><span>' + esc(r.label) + '</span>' +
+                 (r.code ? '<span class="deal-code">Code: ' + esc(r.code) + '</span>' : '') + '</a>';
+        }).join("");
+        document.getElementById("lfDeals").classList.add("on");
+      })
+      .catch(function () {});
+  })();
+</script>
+</body>
 </html>
