@@ -2374,25 +2374,6 @@
       },
 
       {
-        id: 'kinderzuschlag',
-        name: 'Kinderzuschlag',
-        category: 'finanzen',
-        targetGroup: 'privat',
-        description: 'Zusätzliche Leistung für Familien mit Kindern, deren Einkommen für den eigenen Lebensunterhalt ausreicht, aber nicht vollständig für den Bedarf der Kinder.',
-        eligibility: 'Kindergeldberechtigung und weitere gesetzliche Voraussetzungen, insbesondere ausreichendes Mindesteinkommen der Eltern.',
-        amount: 'Höhe abhängig von den persönlichen Verhältnissen.',
-        region: 'Deutschland',
-        deadline: 'Laufender Antrag möglich',
-        authority: 'Familienkasse',
-        officialUrl: 'https://familienportal.de/familienportal/familienleistungen/kinderzuschlag',
-        applicationUrl: 'https://www.arbeitsagentur.de/familie-und-kinder/kinderzuschlag-verstehen/kinderzuschlag-anspruch-hoehe-dauer',
-        partnerUrl: null,
-        affiliate: false,
-        lastChecked: '2026-09',
-        active: true
-      },
-
-      {
         id: 'bildungsgutschein',
         name: 'Bildungsgutschein',
         category: 'arbeit',
@@ -2470,17 +2451,18 @@
 
       {
         id: 'kindergeld',
-        name: 'Kindergeld',
+        name: 'Kindergeld/Kinderzuschlag',
         category: 'familie',
         targetGroup: 'privat',
-        description: 'Monatliche staatliche Familienleistung für Kinder. Die konkrete Anspruchsdauer richtet sich unter anderem nach Alter, Ausbildung und weiteren Voraussetzungen.',
-        eligibility: 'Kindergeldberechtigung und Erfüllung der jeweiligen gesetzlichen Voraussetzungen.',
-        amount: 'Aktuelle Höhe und Altersgrenzen auf der offiziellen Seite.',
+        description: 'Kindergeld ist die monatliche staatliche Familienleistung für Kinder; die Anspruchsdauer richtet sich unter anderem nach Alter, Ausbildung und weiteren Voraussetzungen. Der Kinderzuschlag ist eine zusätzliche Leistung für Familien, deren Einkommen für den eigenen Lebensunterhalt ausreicht, aber nicht vollständig für den Bedarf der Kinder.',
+        eligibility: 'Kindergeldberechtigung und Erfüllung der jeweiligen gesetzlichen Voraussetzungen. Für den Kinderzuschlag zusätzlich ein ausreichendes Mindesteinkommen der Eltern.',
+        amount: 'Aktuelle Höhe und Altersgrenzen auf der offiziellen Seite; der Kinderzuschlag hängt von den persönlichen Verhältnissen ab.',
         region: 'Deutschland',
         deadline: 'Laufender Antrag möglich',
         authority: 'Familienkasse',
         officialUrl: 'https://familienportal.de/familienportal/familienleistungen/kindergeld',
         applicationUrl: 'https://familienportal.de/familienportal/familienleistungen/kindergeld',
+        linkLabel1: 'Kindergeld/Kinderzuschlag – Offizielle Informationen',
         partnerUrl: null,
         affiliate: false,
         lastChecked: '2026-09',
@@ -6614,14 +6596,14 @@
                     target="_blank"
                     rel="${p.affiliate ? 'sponsored noopener' : 'noopener'}"
                   >
-                    ${(p.applicationUrl && p.applicationUrl !== p.officialUrl) ? (p.affiliate ? 'Partnerangebot' : 'Offizielle Informationen') : (p.affiliate ? 'Zum Partnerangebot' : 'Offizielle Informationen')}
+                    ${p.linkLabel1 || ((p.applicationUrl && p.applicationUrl !== p.officialUrl) ? (p.affiliate ? 'Partnerangebot' : 'Offizielle Informationen') : (p.affiliate ? 'Zum Partnerangebot' : 'Offizielle Informationen'))}
                   </a>
                   ${(p.applicationUrl && p.applicationUrl !== p.officialUrl) ? `<a
                     href="${p.applicationUrl}"
                     target="_blank"
                     rel="${p.affiliate ? 'sponsored noopener' : 'noopener'}"
                   >
-                    ${p.affiliate ? 'Zum Partnerangebot' : 'Zum offiziellen Angebot'}
+                    ${p.linkLabel2 || (p.affiliate ? 'Zum Partnerangebot' : 'Zum offiziellen Angebot')}
                   </a>` : ''}
 
                 </div>
@@ -6855,28 +6837,6 @@
         return {
           relevant: true,
           reason: 'Kann passen, wenn du alleinerziehend bist und der andere Elternteil keinen oder zu wenig Unterhalt zahlt.'
-        };
-
-      },
-
-
-      kinderzuschlag: s => {
-
-        if (
-          s.familyIncome === 'mittel' ||
-          s.familyIncome === 'hoch'
-        ) {
-
-          return {
-            relevant: false,
-            reason: 'Kinderzuschlag richtet sich insbesondere an Familien mit Einkommen, das für die Eltern reicht, aber für den vollständigen Bedarf der Kinder nicht ausreicht.'
-          };
-
-        }
-
-        return {
-          relevant: true,
-          reason: 'Kann passen, wenn dein Einkommen für dich reicht, aber der Bedarf deiner Kinder nicht vollständig gedeckt ist.'
         };
 
       },
@@ -7232,22 +7192,6 @@
         );
 
 
-      if (category === 'familie') {
-
-        const kz =
-          programs.find(
-            p =>
-              p.id === 'kinderzuschlag' &&
-              p.active
-          );
-
-        if (kz) {
-          base = base.concat([kz]);
-        }
-
-      }
-
-
       return base.map(p => {
 
         const rule =
@@ -7356,7 +7300,7 @@
               target="_blank"
               rel="${p.affiliate ? 'sponsored noopener' : 'noopener'}"
             >
-              ${(p.applicationUrl && p.applicationUrl !== p.officialUrl) ? (p.affiliate ? 'Partnerangebot' : 'Offizielle Informationen') : (p.affiliate ? 'Zum Partnerangebot' : 'Offizielle Informationen')}
+              ${p.linkLabel1 || ((p.applicationUrl && p.applicationUrl !== p.officialUrl) ? (p.affiliate ? 'Partnerangebot' : 'Offizielle Informationen') : (p.affiliate ? 'Zum Partnerangebot' : 'Offizielle Informationen'))}
             </a>
 
             ${(p.applicationUrl && p.applicationUrl !== p.officialUrl) ? `<a
@@ -7364,7 +7308,7 @@
               target="_blank"
               rel="${p.affiliate ? 'sponsored noopener' : 'noopener'}"
             >
-              ${p.affiliate ? 'Zum Partnerangebot' : 'Zum offiziellen Angebot'}
+              ${p.linkLabel2 || (p.affiliate ? 'Zum Partnerangebot' : 'Zum offiziellen Angebot')}
             </a>` : ''}
 
           </div>
