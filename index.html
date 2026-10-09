@@ -6752,6 +6752,10 @@
 
       if (groups.indexOf('Sonstiges') < 0) groups.push('Sonstiges');
 
+      // Kachel "Weitere Angebote" entfernt (fuehrte auf /partner/sonstige/ = 404). Die Angebote stehen unter "Sonstiges".
+      const lfWeitere = groups.indexOf('Sonstige Angebote');
+      if (lfWeitere >= 0) groups.splice(lfWeitere, 1);
+
       const LF_PMETA = {
         'Arbeit & Jobs': ['Job & Karriere', 'Stellen, Weiterbildung, Karrierechancen', 'people'],
         'Mobilfunk & Internet': ['Mobilfunk & Kommunikation', 'Tarife, Angebote, Service', 'phone'],
