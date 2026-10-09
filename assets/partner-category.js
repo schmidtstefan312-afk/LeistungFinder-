@@ -22,6 +22,17 @@
     "VATRER": "vatrer-de"
   };
 
+  // Kurzzeile unter dem Namen auf der Karte
+  var KURZTEXT = {
+    "Kalendermaxx-de": "Online-Aktionskalender für Unternehmen",
+    "Airparks de": "Parken, Hotels und Lounges an Flughäfen",
+    "ALLPOWERS DE": "Tragbare Powerstations",
+    "DRBO Greenenergy (DE)": "Solartechnik und Energiespeicher",
+    "Malteser": "Hausnotruf rund um die Uhr",
+    "Marley Spoon DE": "Kochboxen mit Zutaten und Rezepten",
+    "VATRER": "Lithium-Batterien und Energiespeicher"
+  };
+
   function esc(s) {
     return String(s == null ? "" : s).replace(/&/g, "&amp;").replace(/"/g, "&quot;")
       .replace(/</g, "&lt;").replace(/>/g, "&gt;");
@@ -63,19 +74,33 @@
         list.className = "partner-list";
         card.appendChild(list);
       }
-      // Partner ohne feste Seite: Eintrag wie bei den anderen, Klick öffnet die Vorlagenseite
-      // /partner-seite.html?n=<Name> mit Überschrift, Beschreibung (Supabase "partner_texte") und Bannern.
-      // Hat der Partner eine eigene Katalogseite (EIGENE_SEITEN), führt der Klick direkt dorthin.
-      order.forEach(function (name) {
+      // Partner ohne feste Seite: Karte genau wie die festen Einträge (Farbfläche, Buchstabe, "Partner", Button).
+      // Hat der Partner eine eigene Katalogseite (EIGENE_SEITEN), führt der Klick direkt dorthin,
+      // sonst auf die Vorlagenseite /partner-seite.html?n=<Name>.
+      var farben = ["#ad7f42", "#2e9e4d", "#0d6b8a", "#8a3f5c", "#5b6bb0", "#c2622d"];
+      var wm = "";
+      var wmEl = list.querySelector(".ptop .wm");
+      if (wmEl) { wm = wmEl.outerHTML; }
+      else {
+        var hm = document.querySelector(".hero .wmark");
+        if (hm) wm = '<svg class="wm" viewBox="0 0 24 24" aria-hidden="true">' + hm.innerHTML + '</svg>';
+      }
+      var pfeil = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+      var start = list.querySelectorAll("li").length;
+      order.forEach(function (name, i) {
         var li = document.createElement("li");
         var ziel = EIGENE_SEITEN[raw[name]]
           ? "/partner/" + EIGENE_SEITEN[raw[name]] + "/"
           : "/partner-seite.html?n=" + encodeURIComponent(raw[name]);
+        var buchstabe = (name.match(/[A-Za-z0-9]/) || ["•"])[0].toUpperCase();
+        var farbe = farben[(start + i) % farben.length];
         li.innerHTML =
           '<a href="' + ziel + '">' +
-          '<div class="name">' + esc(name) + '</div>' +
-          '<div class="desc">' + esc(cat) + '</div>' +
-          '<div class="go">Zur Partnerseite →</div></a>';
+          '<span class="ptop" style="background:linear-gradient(135deg,' + farbe + ',#0d3934)">' + wm +
+          '<span class="badge">' + esc(buchstabe) + '</span><span class="tag">Partner</span></span>' +
+          '<span class="pbody"><span class="name">' + esc(name) + '</span>' +
+          '<span class="desc">' + esc(KURZTEXT[raw[name]] || cat) + '</span>' +
+          '<span class="go">Alle Angebote ansehen ' + pfeil + '</span></span></a>';
         list.appendChild(li);
       });
     })
