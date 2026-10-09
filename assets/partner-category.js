@@ -1,4 +1,3 @@
-
 // partner-category.js – Kategorieseiten (/partner/<kategorie>/)
 // Die feste Partnerliste bleibt. Partner aus Supabase, die dort noch fehlen,
 // werden mit ihren Bannern direkt auf der Kategorieseite ergänzt.
@@ -11,7 +10,6 @@
   if (!h1 || !card) return;
   var cat = h1.textContent.trim();
   var cats = [cat];
-  if (cat === "Sonstige Angebote") cats.push("Partnerangebote");
 
   function esc(s) {
     return String(s == null ? "" : s).replace(/&/g, "&amp;").replace(/"/g, "&quot;")
