@@ -11,6 +11,16 @@
   var cat = h1.textContent.trim();
   var cats = [cat];
 
+  // Partner mit eigener Katalogseite: Name in der Datenbank -> Ordner unter /partner/
+  var EIGENE_SEITEN = {
+    "Kalendermaxx-de": "kalendermaxx-de",
+    "Airparks de": "airparks-de",
+    "ALLPOWERS DE": "allpowers-de",
+    "DRBO Greenenergy (DE)": "drbo-greenenergy-de",
+    "Malteser": "malteser-de",
+    "Marley Spoon DE": "marley-spoon-de"
+  };
+
   function esc(s) {
     return String(s == null ? "" : s).replace(/&/g, "&amp;").replace(/"/g, "&quot;")
       .replace(/</g, "&lt;").replace(/>/g, "&gt;");
@@ -54,13 +64,17 @@
       }
       // Partner ohne feste Seite: Eintrag wie bei den anderen, Klick öffnet die Vorlagenseite
       // /partner-seite.html?n=<Name> mit Überschrift, Beschreibung (Supabase "partner_texte") und Bannern.
+      // Hat der Partner eine eigene Katalogseite (EIGENE_SEITEN), führt der Klick direkt dorthin.
       order.forEach(function (name) {
         var li = document.createElement("li");
+        var ziel = EIGENE_SEITEN[raw[name]]
+          ? "/partner/" + EIGENE_SEITEN[raw[name]] + "/"
+          : "/partner-seite.html?n=" + encodeURIComponent(raw[name]);
         li.innerHTML =
-          '<a href="/partner-seite.html?n=' + encodeURIComponent(raw[name]) + '">' +
+          '<a href="' + ziel + '">' +
           '<div class="name">' + esc(name) + '</div>' +
           '<div class="desc">' + esc(cat) + '</div>' +
-          '<div class="go">Zur Partnerseite \u2192</div></a>';
+          '<div class="go">Zur Partnerseite →</div></a>';
         list.appendChild(li);
       });
     })
