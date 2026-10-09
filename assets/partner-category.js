@@ -18,7 +18,8 @@
     "ALLPOWERS DE": "allpowers-de",
     "DRBO Greenenergy (DE)": "drbo-greenenergy-de",
     "Malteser": "malteser-de",
-    "Marley Spoon DE": "marley-spoon-de"
+    "Marley Spoon DE": "marley-spoon-de",
+    "VATRER": "vatrer-de"
   };
 
   function esc(s) {
