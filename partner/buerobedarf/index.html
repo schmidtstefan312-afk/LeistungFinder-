@@ -1,4 +1,4 @@
-OCTYPE html>
+<!DOCTYPE html>
 <html lang="de">
 <head>
 <meta charset="UTF-8" />
@@ -56,63 +56,4 @@ body{margin:0;font-family:var(--sans);background:var(--bg);color:var(--text);lin
 .tag{position:absolute;left:14px;top:14px;z-index:2;background:rgba(0,0,0,.28);color:#fff;font:600 .7rem var(--sans);letter-spacing:.12em;text-transform:uppercase;padding:.28rem .7rem;border-radius:99px}
 .steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin:2.4rem 0 0}
 .step{display:flex;gap:.9rem;align-items:flex-start;background:#fff;border:1px solid var(--border);border-radius:14px;padding:1.1rem 1.2rem;box-shadow:0 1px 2px rgba(8,38,33,.05),0 4px 12px rgba(8,38,33,.06)}
-.step b{flex:none;width:42px;height:42px;border-radius:50%;background:var(--primary);color:#d4af37;display:inline-flex;align-items:center;justify-content:center;font:700 1.15rem var(--serif)}
-.step strong{display:block;color:var(--primary);font-size:1rem}
-.step span{color:var(--muted);font-size:.88rem;line-height:1.4}
-.footer{background:var(--primary-dark);padding:1.5rem 1.25rem;color:rgba(255,255,255,.7);font-size:.85rem;text-align:center}
-.footer a{color:#fff}
-@media (max-width:700px){.steps{grid-template-columns:minmax(0,1fr)}.wmark{width:260px;height:260px;right:-60px;top:62%}}
-@media (max-width:600px){.hero-row{flex-direction:column;align-items:flex-start;gap:1.2rem}.hero-ico{width:96px;height:96px}.hero-ico svg{width:50px;height:50px}.partner-list{grid-template-columns:minmax(0,1fr)}.lf-logo-text{font-size:1.15rem}}
-</style>
-</head>
-<body>
-<header class="lf-top">
-  <div class="lf-top-in">
-    <a class="lf-logo" href="/" aria-label="Leistung-Finder Startseite"><span class="lf-logo-mark">LF</span><span class="lf-logo-text">Leistung-Finder</span></a>
-    <div class="lf-top-btns"><a class="lf-btn-light" href="/#partner">&larr; Alle Partner</a></div>
-  </div>
-</header>
-
-<section class="hero">
-  
-  <svg class="wmark" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h4"/></svg>
-  <div class="hero-in">
-    <div class="breadcrumb"><a href="/">Startseite</a> &nbsp;›&nbsp; <a href="/#partner">Partnerangebote</a> &nbsp;›&nbsp; Bürobedarf</div>
-    <div class="hero-row">
-      <span class="hero-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h4"/></svg></span>
-      <div>
-        <span class="eyebrow">Partnerangebote</span>
-        <h1>Bürobedarf</h1>
-        <span class="uline"></span>
-        <p class="lede">Bürobedarf und Produkte für Büro und Arbeitsplatz.</p>
-        <div class="chips"><span>Ausgewählte Partner</span><span>Direkt zum Anbieter</span><span>Für dich ohne Mehrkosten</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="container">
-  <div class="card">
-  <div class="sec-head"><h2>Unsere Partner</h2></div>
-  <p class="sec-sub">Wähle einen Partner und sieh dir alle aktuellen Angebote an.</p>
-  <p class="ad-label">Anzeige &ndash; bei Abschluss &uuml;ber diese Links erhalten wir ggf. eine Verg&uuml;tung. Diese Angebote stammen von unabh&auml;ngigen Partnern, nicht von Beh&ouml;rden.</p>
-  <ul class="partner-list">
-  </ul>
-  <div id="dynamicBannerWrap" style="display:none;"><h2 style="font-family:var(--serif);color:var(--primary);margin:2rem 0 .8rem;">Weitere Angebote</h2><div id="dynamicBanners"></div></div>
-  </div>
-
-  <div class="steps">
-    <div class="step"><b>1</b><div><strong>Partner wählen</strong><span>Such dir oben den passenden Anbieter aus.</span></div></div>
-    <div class="step"><b>2</b><div><strong>Angebote ansehen</strong><span>Auf der Partnerseite findest du alle aktuellen Angebote.</span></div></div>
-    <div class="step"><b>3</b><div><strong>Direkt beim Anbieter</strong><span>Der Kauf läuft beim Anbieter selbst, ohne Mehrkosten für dich.</span></div></div>
-  </div>
-</div>
-
-<div class="footer">
-  <a href="/impressum.html">Impressum</a> &nbsp;&middot;&nbsp; <a href="/datenschutz.html">Datenschutz</a>
-  <br>Leistung-Finder ist keine Beh&ouml;rde und bietet keine Rechtsberatung.
-</div>
-
-<script src="/assets/partner-category.js"></script>
-</body>
-</html>
+.step b{flex:none;width:42px;height:42px;border-radius:50%;background:var(--primary);color:#d4af37;display:inline-flex;align-items:center;justify-content:center
