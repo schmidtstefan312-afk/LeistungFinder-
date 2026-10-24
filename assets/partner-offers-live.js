@@ -14,6 +14,7 @@
     .then(function (rows) {
       if (!Array.isArray(rows) || !rows.length) return;
       partnerCategorySlug["Uhren & Schmuck"] = "uhren-schmuck";
+      partnerCategorySlug["Bürobedarf"] = "buerobedarf";
       var seen = {}, list = [];
       rows.forEach(function (b) {
         if (!b.image_url || !b.target_url || seen[b.target_url]) return;
@@ -28,6 +29,12 @@
       });
       partnerOffers.splice.apply(partnerOffers, [0, partnerOffers.length].concat(list));
       renderPartnerOffers();
+      // Kachel "Bürobedarf": eigener Untertitel und eigenes Symbol
+      var bb = document.querySelector('a.lf-pbtn[href="/partner/buerobedarf/"]');
+      if (bb) {
+        var sm = bb.querySelector("small"); if (sm) sm.textContent = "Alles für Büro und Arbeitsplatz";
+        var ic = bb.querySelector(".lf-pico"); if (ic) ic.innerHTML = '<svg class="lf-pi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h4"/></svg>';
+      }
     })
     .catch(function (e) { console.warn("partner-offers-live.js: Fallback auf feste Liste:", e); });
 })();
