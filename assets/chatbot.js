@@ -1,12 +1,11 @@
-
-/* Leistung-Finder Chat-Assistent \u2013 eigenst\u00e4ndige Datei, keine Abh\u00e4ngigkeiten.
+/* Leistung-Finder Chat-Assistent – eigenständige Datei, keine Abhängigkeiten.
    Einbinden: <script src="chatbot.js" defer></script> kurz vor </body> */
 (function () {
   if (window.__lfChat) return;
   window.__lfChat = true;
 
   var URL = "https://rnnmdlibekqhqrxqqrws.supabase.co/functions/v1/chat";
-  var LINKS = ["arbeitsagentur.de", "verwaltung.bund.de", "familienportal.de",
+  var LINKS = ["leistung-finder.de", "arbeitsagentur.de", "verwaltung.bund.de", "familienportal.de",
     "bundesgesundheitsministerium.de", "bafa.de", "foerderdatenbank.de"];
   var history = [];
   var busy = false;
@@ -36,18 +35,18 @@
   var btn = document.createElement("button");
   btn.id = "lfc-btn";
   btn.type = "button";
-  btn.setAttribute("aria-label", "Chat-Assistent \u00f6ffnen");
-  btn.textContent = "\ud83d\udcac";
+  btn.setAttribute("aria-label", "Chat-Assistent öffnen");
+  btn.textContent = "💬";
 
   var box = document.createElement("div");
   box.id = "lfc-box";
   box.setAttribute("role", "dialog");
   box.setAttribute("aria-label", "Chat-Assistent");
   box.innerHTML =
-    '<div id="lfc-head"><span>Fragen zu Leistungen</span><button id="lfc-x" type="button" aria-label="Chat schlie\u00dfen">\u00d7</button></div>' +
+    '<div id="lfc-head"><span>Fragen zu Leistungen</span><button id="lfc-x" type="button" aria-label="Chat schließen">×</button></div>' +
     '<div id="lfc-msgs" aria-live="polite"></div>' +
-    '<div id="lfc-note">Automatischer Assistent, keine Beratung. Bitte keine pers\u00f6nlichen Daten eingeben.</div>' +
-    '<form id="lfc-form"><input id="lfc-in" type="text" maxlength="500" placeholder="Ihre Frage \u2026" autocomplete="off" aria-label="Ihre Frage">' +
+    '<div id="lfc-note">Automatischer Assistent, keine Beratung. Bitte keine persönlichen Daten eingeben.</div>' +
+    '<form id="lfc-form"><input id="lfc-in" type="text" maxlength="500" placeholder="Ihre Frage …" autocomplete="off" aria-label="Ihre Frage">' +
     '<button id="lfc-send" type="submit">Senden</button></form>';
 
   document.body.appendChild(btn);
@@ -60,15 +59,46 @@
   function esc(s) {
     return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
   }
+  function okHost(h) {
+    h = h.toLowerCase().replace(/^www\./, "");
+    return LINKS.some(function (d) { return h === d || h.slice(-d.length - 1) === "." + d; });
+  }
+  function safeUrl(u) {
+    try {
+      var x = new window.URL(u);
+      if (x.protocol !== "https:" || !okHost(x.hostname)) return null;
+      return x.href;
+    } catch (e) { return null; }
+  }
   function linkify(s) {
-    s = esc(s);
-    LINKS.forEach(function (d) {
-      var re = new RegExp("(^|[^\\w./-])((?:https?://)?(?:www\\.)?" + d.replace(/\./g, "\\.") + ")(?![\\w-])", "gi");
-      s = s.replace(re, function (m, pre) {
-        return pre + '<a href="https://' + d + '" target="_blank" rel="noopener noreferrer">' + d + "</a>";
-      });
+    /* Zeilen der Form "• Titel: https://…" → Titel als Link */
+    var lines = s.split("\n").map(function (line) {
+      var m = line.match(/^•\s*(.+?):\s*(https:\/\/\S+)\s*$/);
+      if (m) {
+        var u = safeUrl(m[2]);
+        if (u) return '• <a href="' + esc(u) + '" target="_blank" rel="noopener noreferrer">' + esc(m[1]) + "</a>";
+      }
+      return null;
     });
-    return s;
+    var raw = s.split("\n");
+    var out = raw.map(function (line, i) {
+      if (lines[i] !== null) return lines[i];
+      var t = esc(line);
+      /* freistehende vollständige Adressen */
+      t = t.replace(/(https:\/\/[^\s<>"']+?)([.,;:!?)]*)(?=\s|$)/g, function (m, u, tail) {
+        var su = safeUrl(u.replace(/&amp;/g, "&"));
+        return su ? '<a href="' + esc(su) + '" target="_blank" rel="noopener noreferrer">' + esc(u.replace(/&amp;/g, "&")) + "</a>" + tail : m;
+      });
+      /* blanke Domains wie arbeitsagentur.de */
+      LINKS.forEach(function (d) {
+        var re = new RegExp("(^|[^\\w./>\"-])((?:www\\.)?" + d.replace(/\./g, "\\.") + ")(?![\\w/-])", "gi");
+        t = t.replace(re, function (m, pre) {
+          return pre + '<a href="https://' + d + '" target="_blank" rel="noopener noreferrer">' + d + "</a>";
+        });
+      });
+      return t;
+    });
+    return out.join("\n");
   }
   function add(role, text) {
     var d = document.createElement("div");
@@ -79,12 +109,12 @@
     return d;
   }
 
-  add("assistant", "Guten Tag! Ich gebe Ihnen eine erste Orientierung zu staatlichen Leistungen und F\u00f6rderungen, z. B. B\u00fcrgergeld, Wohngeld, Kindergeld oder Pflegegrad. Was m\u00f6chten Sie wissen?");
+  add("assistant", "Guten Tag! Ich gebe Ihnen eine erste Orientierung zu staatlichen Leistungen für Privatpersonen und zu Förderungen für Unternehmen, z. B. Kindergeld, Wohngeld, Pflegegrad, Arbeitslosengeld, BAföG oder Gründungszuschuss. Was möchten Sie wissen?");
 
   function toggle(open) {
     var o = open === undefined ? !box.classList.contains("open") : open;
     box.classList.toggle("open", o);
-    btn.setAttribute("aria-label", o ? "Chat-Assistent schlie\u00dfen" : "Chat-Assistent \u00f6ffnen");
+    btn.setAttribute("aria-label", o ? "Chat-Assistent schließen" : "Chat-Assistent öffnen");
     if (o) setTimeout(function () { input.focus(); }, 50);
   }
   btn.addEventListener("click", function () { toggle(); });
@@ -99,7 +129,7 @@
     add("user", text);
     history.push({ role: "user", content: text });
     busy = true; send.disabled = true;
-    var wait = add("assistant", "\u2026");
+    var wait = add("assistant", "…");
     var ctrl = typeof AbortController !== "undefined" ? new AbortController() : null;
     var timer = setTimeout(function () { if (ctrl) ctrl.abort(); }, 30000);
     fetch(URL, {
@@ -109,12 +139,12 @@
       signal: ctrl ? ctrl.signal : undefined
     }).then(function (r) { return r.json(); })
       .then(function (j) {
-        var reply = (j && j.reply) || "Dazu habe ich gerade keine Antwort. Bitte wenden Sie sich an die zust\u00e4ndige Stelle.";
+        var reply = (j && j.reply) || "Dazu habe ich gerade keine Antwort. Bitte wenden Sie sich an die zuständige Stelle.";
         wait.innerHTML = linkify(reply);
         history.push({ role: "assistant", content: reply });
       })
       .catch(function () {
-        wait.innerHTML = linkify("Der Assistent ist gerade nicht erreichbar. Bitte nutzen Sie die Suche auf Leistung-Finder oder wenden Sie sich an die zust\u00e4ndige Stelle, z. B. \u00fcber arbeitsagentur.de oder verwaltung.bund.de.");
+        wait.innerHTML = linkify("Der Assistent ist gerade nicht erreichbar. Bitte nutzen Sie die Suche auf Leistung-Finder oder wenden Sie sich an die zuständige Stelle, z. B. über arbeitsagentur.de oder verwaltung.bund.de.");
         history.pop();
       })
       .then(function () {
